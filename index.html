@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老師講義索引 | TOEIC</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0F172A;--navy2:#1E3A5F;
+  --amber:#F59E0B;--amber-lt:#FEF3C7;
+  --green:#059669;--green-lt:#D1FAE5;
+  --gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-300:#CBD5E1;
+  --gray-400:#94A3B8;--gray-600:#475569;--white:#fff;
+}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:#0F172A;color:var(--white);min-height:100vh}
+
+header{
+  padding:52px 24px 44px;text-align:center;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.header-tag{
+  display:inline-block;background:var(--amber);color:var(--navy);
+  font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 14px;border-radius:20px;margin-bottom:16px;
+  font-family:"Inter",sans-serif;
+}
+header h1{
+  font-family:"Inter",sans-serif;font-size:32px;font-weight:900;
+  color:white;margin-bottom:8px;
+}
+header h1 span{color:var(--amber)}
+header p{color:rgba(255,255,255,.45);font-size:14px}
+
+main{max-width:960px;margin:0 auto;padding:40px 24px 80px}
+
+.grid-label{
+  font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1.5px;color:rgba(255,255,255,.3);
+  display:flex;align-items:center;gap:10px;margin-bottom:22px;
+}
+.grid-label::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.07)}
+
+.lesson-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:10px;
+}
+
+.lesson-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:18px 16px 16px;
+  text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;gap:7px;
+  transition:all .18s;
+  opacity:.4;
+  cursor:default;
+  pointer-events:none;
+}
+.lesson-card.ready{
+  opacity:1;
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.14);
+  cursor:pointer;
+  pointer-events:auto;
+}
+.lesson-card.ready:hover{
+  background:rgba(255,255,255,.1);
+  border-color:var(--amber);
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,0,0,.3);
+}
+
+.lesson-num{
+  font-family:"Inter",sans-serif;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);
+}
+.lesson-card.ready .lesson-num{color:var(--amber)}
+
+.lesson-topic{
+  font-size:14px;font-weight:600;color:white;line-height:1.4;min-height:40px;
+}
+.lesson-topic.placeholder{color:rgba(255,255,255,.2);font-weight:400}
+
+.lesson-file{
+  font-family:"JetBrains Mono",monospace;
+  font-size:10px;color:rgba(255,255,255,.25);
+  margin-top:4px;word-break:break-all;
+}
+.lesson-card.ready .lesson-file{color:rgba(255,255,255,.35)}
+
+footer{
+  text-align:center;padding:24px;
+  font-size:12px;color:rgba(255,255,255,.2);
+  border-top:1px solid rgba(255,255,255,.06);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-tag">老師版</div>
+  <h1>TOEIC 講義<span>索引</span></h1>
+  <p>點選已完成的堂次開啟老師逐字稿</p>
+</header>
+
+<main>
+  <div class="grid-label">全部課次 (Lesson 01–20)</div>
+  <div class="lesson-grid">
+    
+    <a class="lesson-card ready" href="Toeic-Lesson01-Teacher.html">
+      <div class="lesson-num">Lesson 01</div>
+      <div class="lesson-topic">五大句型 & 及物不及物動詞</div>
+      <div class="lesson-file">Toeic-Lesson01-Teacher.html</div>
+    </a>
+    <a class="lesson-card ready" href="Toeic-Lesson02-Teacher.html">
+      <div class="lesson-num">Lesson 02</div>
+      <div class="lesson-topic">名詞系統 & 121–138</div>
+      <div class="lesson-file">Toeic-Lesson02-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson03-Teacher.html">
+      <div class="lesson-num">Lesson 03</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson03-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson04-Teacher.html">
+      <div class="lesson-num">Lesson 04</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson04-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson05-Teacher.html">
+      <div class="lesson-num">Lesson 05</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson05-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson06-Teacher.html">
+      <div class="lesson-num">Lesson 06</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson06-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson07-Teacher.html">
+      <div class="lesson-num">Lesson 07</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson07-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson08-Teacher.html">
+      <div class="lesson-num">Lesson 08</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson08-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson09-Teacher.html">
+      <div class="lesson-num">Lesson 09</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson09-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson10-Teacher.html">
+      <div class="lesson-num">Lesson 10</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson10-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson11-Teacher.html">
+      <div class="lesson-num">Lesson 11</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson11-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson12-Teacher.html">
+      <div class="lesson-num">Lesson 12</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson12-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson13-Teacher.html">
+      <div class="lesson-num">Lesson 13</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson13-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson14-Teacher.html">
+      <div class="lesson-num">Lesson 14</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson14-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson15-Teacher.html">
+      <div class="lesson-num">Lesson 15</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson15-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson16-Teacher.html">
+      <div class="lesson-num">Lesson 16</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson16-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson17-Teacher.html">
+      <div class="lesson-num">Lesson 17</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson17-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson18-Teacher.html">
+      <div class="lesson-num">Lesson 18</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson18-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson19-Teacher.html">
+      <div class="lesson-num">Lesson 19</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson19-Teacher.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson20-Teacher.html">
+      <div class="lesson-num">Lesson 20</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson20-Teacher.html</div>
+    </a>
+  </div>
+</main>
+
+<footer>TOEIC Reading · 老師講義 · 共 20 堂</footer>
+
+</body>
+</html>

@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老師講義 | TOEIC Part 5</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0F172A;--navy2:#1E3A5F;--white:#fff;
+  --bg:#F0F4F8;--card:#fff;
+  --amber:#F59E0B;--amber-lt:#FEF3C7;--amber-dk:#92400E;
+  --green:#059669;--green-lt:#D1FAE5;
+  --red:#DC2626;--red-lt:#FEE2E2;
+  --sky:#0EA5E9;--sky-lt:#E0F2FE;
+  --purple:#7C3AED;--purple-lt:#EDE9FE;
+  --gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;
+  --script-bg:#0F172A;--script-text:#E2E8F0;
+  --sidebar-w:220px;
+  --r:10px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans TC','Inter',sans-serif;background:var(--bg);color:var(--gray-800);font-size:14px;line-height:1.7;display:flex;flex-direction:column;min-height:100vh}
+
+/* ── TOP BAR ── */
+#topbar{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:var(--navy);color:white;
+  height:52px;display:flex;align-items:center;
+  padding:0 20px;gap:16px;
+  box-shadow:0 2px 12px rgba(0,0,0,0.3);
+}
+#topbar .logo{font-weight:800;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+#topbar .logo span{background:var(--amber);color:var(--navy);padding:2px 8px;border-radius:5px;font-size:12px}
+.timer-wrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.timer-label{font-size:11px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:.5px}
+#timer{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--amber);min-width:60px}
+.timer-btns{display:flex;gap:6px}
+.timer-btns button{background:rgba(255,255,255,0.1);border:none;color:white;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;transition:.15s}
+.timer-btns button:hover{background:rgba(255,255,255,0.2)}
+.progress-pill{background:rgba(255,255,255,0.1);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+#currentSection{color:var(--amber);font-weight:700}
+
+/* ── LAYOUT ── */
+#layout{display:flex;margin-top:52px;min-height:calc(100vh - 52px)}
+
+/* ── SIDEBAR ── */
+#sidebar{
+  width:var(--sidebar-w);min-width:var(--sidebar-w);
+  background:var(--navy);
+  position:fixed;top:52px;left:0;bottom:0;
+  overflow-y:auto;padding:20px 0;
+  scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent;
+}
+.sb-section{margin-bottom:4px}
+.sb-head{
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  color:rgba(255,255,255,.35);padding:12px 16px 4px;
+}
+.sb-link{
+  display:block;padding:7px 16px;color:rgba(255,255,255,.65);
+  font-size:12px;text-decoration:none;cursor:pointer;
+  border-left:3px solid transparent;transition:.15s;
+}
+.sb-link:hover{color:white;background:rgba(255,255,255,.07)}
+.sb-link.active{color:var(--amber);border-left-color:var(--amber);background:rgba(245,158,11,.08)}
+.sb-link .time{font-size:10px;color:rgba(255,255,255,.3);float:right;font-family:'JetBrains Mono',monospace}
+
+/* ── MAIN ── */
+#main{margin-left:var(--sidebar-w);flex:1;padding:28px 32px 80px}
+
+/* ── SECTION ── */
+.lesson-section{margin-bottom:40px}
+.section-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:20px;padding-bottom:12px;
+  border-bottom:2px solid var(--gray-200);
+}
+.section-num{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--navy);color:white;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:16px;flex-shrink:0;
+  font-family:'Inter',sans-serif;
+}
+.section-title{font-size:20px;font-weight:800;color:var(--navy)}
+.section-time{
+  margin-left:auto;background:var(--navy);color:var(--amber);
+  font-size:11px;font-weight:700;font-family:'JetBrains Mono',monospace;
+  padding:4px 12px;border-radius:20px;white-space:nowrap;
+}
+
+/* ── LESSON BLOCK ── */
+.block{background:var(--card);border-radius:var(--r);margin-bottom:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.block-title{
+  background:var(--gray-100);padding:10px 18px;
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+  color:var(--gray-600);border-bottom:1px solid var(--gray-200);
+  display:flex;align-items:center;gap:8px;
+}
+.block-title .dot{width:8px;height:8px;border-radius:50%;background:var(--gray-400)}
+.block-title.amber-head{background:var(--amber-lt);color:var(--amber-dk);border-bottom-color:#FDE68A}
+.block-title.amber-head .dot{background:var(--amber)}
+.block-title.green-head{background:var(--green-lt);color:var(--green);border-bottom-color:#A7F3D0}
+.block-title.green-head .dot{background:var(--green)}
+.block-title.dark-head{background:var(--navy);color:white;border:none}
+.block-title.dark-head .dot{background:var(--amber)}
+.block-body{padding:18px}
+
+/* ── SCRIPT BOX ── */
+.script{
+  background:var(--script-bg);color:var(--script-text);
+  border-radius:8px;padding:16px 20px;
+  font-size:14px;line-height:1.9;
+  position:relative;
+}
+.script::before{
+  content:'📢 說';
+  position:absolute;top:-10px;left:14px;
+  background:var(--sky);color:white;
+  font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;
+  font-family:'Inter',sans-serif;letter-spacing:.5px;
+}
+.script em{color:var(--amber);font-style:normal;font-weight:600}
+.script strong{color:white;font-weight:700}
+.script code{background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#7DD3FC}
+
+/* ── ASK BOX ── */
+.ask{background:var(--amber-lt);border:1.5px solid #FDE68A;border-radius:8px;padding:14px 18px;margin:10px 0;position:relative}
+.ask::before{content:'❓ 問學生';position:absolute;top:-10px;left:14px;background:var(--amber);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:'Inter',sans-serif;letter-spacing:.5px}
+.ask p{color:var(--amber-dk);font-weight:600;font-size:14px;margin-top:2px}
+.ask .ans{margin-top:8px;padding-top:8px;border-top:1px solid #FDE68A}
+.ask .ans-label{font-size:11px;color:var(--amber-dk);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.ask .ans p{color:var(--green);font-weight:700;font-size:14px}
+
+/* ── CORRECTION BOX ── */
+.correction{background:var(--red-lt);border:1.5px solid #FECACA;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.correction::before{content:'⚠️ 答錯時';position:absolute;top:-10px;left:14px;background:var(--red);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:'Inter',sans-serif;letter-spacing:.5px}
+.correction p{color:#991B1B;font-size:13px;margin-top:4px;line-height:1.7}
+
+/* ── TIP BOX ── */
+.tip{background:var(--purple-lt);border:1.5px solid #DDD6FE;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.tip::before{content:'💡 重點';position:absolute;top:-10px;left:14px;background:var(--purple);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:'Inter',sans-serif;letter-spacing:.5px}
+.tip p{color:#4C1D95;font-size:13px;margin-top:4px;line-height:1.7}
+.tip strong{color:#5B21B6}
+
+/* ── EXAMPLE SENTENCE ── */
+.example-sentence{
+  background:var(--gray-100);border-left:3px solid var(--navy);
+  border-radius:0 8px 8px 0;padding:12px 16px;margin:8px 0;
+  font-size:15px;font-weight:500;
+}
+.example-sentence .blank{background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700}
+.example-sentence .zh{font-size:12px;color:var(--gray-400);margin-top:4px;font-weight:400}
+
+/* ── SENTENCE PATTERN VISUAL ── */
+.formula{
+  font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;
+  color:var(--navy);background:var(--gray-100);border-radius:8px;
+  padding:12px 16px;border-left:3px solid var(--amber);
+  margin:10px 0;
+}
+.formula .S{color:#0EA5E9}.formula .V{color:#059669}.formula .O{color:#F59E0B}.formula .C{color:#7C3AED}.formula .SC{color:#DC2626}
+
+/* ── TRAP PAIR ── */
+.trap-pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.trap-wrong,.trap-right{padding:8px 12px;border-radius:6px;font-size:13px;font-family:'JetBrains Mono',monospace}
+.trap-wrong{background:var(--red-lt);color:var(--red)}
+.trap-wrong::before{content:'❌ '}
+.trap-right{background:var(--green-lt);color:var(--green)}
+.trap-right::before{content:'✅ '}
+
+/* ── TOEIC QUESTION ── */
+.q-block{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:20px}
+.q-header{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 18px;background:var(--gray-100);
+  border-bottom:1px solid var(--gray-200);flex-wrap:wrap;
+}
+.q-num-badge{background:var(--navy);color:white;font-weight:700;font-size:12px;padding:3px 10px;border-radius:6px;font-family:'Inter',sans-serif}
+.q-type-badge{background:var(--sky-lt);color:var(--sky);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.q-star-badge{background:var(--amber-lt);color:var(--amber-dk);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.q-body{padding:20px}
+.q-sentence{
+  font-size:15px;font-weight:500;background:var(--gray-100);
+  border-left:3px solid var(--navy);border-radius:0 8px 8px 0;
+  padding:12px 16px;margin-bottom:6px;line-height:1.8;
+}
+.q-zh{font-size:12px;color:var(--gray-400);margin-bottom:16px;padding-left:2px}
+.q-options{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.q-opt{
+  background:var(--gray-100);border:1.5px solid var(--gray-200);
+  border-radius:8px;padding:9px 14px;font-size:13px;
+  display:flex;align-items:center;gap:8px;
+}
+.q-opt.correct{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.q-opt.wrong{background:var(--red-lt);border-color:var(--red);color:var(--red)}
+.q-opt-label{
+  width:22px;height:22px;border-radius:50%;
+  background:var(--gray-200);display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;flex-shrink:0;font-family:'Inter',sans-serif;
+}
+.q-opt.correct .q-opt-label{background:var(--green);color:white}
+.q-opt.wrong .q-opt-label{background:var(--red);color:white}
+.q-answer{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--green-lt);color:var(--green);
+  border:1.5px solid var(--green);border-radius:8px;
+  padding:6px 14px;font-weight:700;font-size:13px;margin-bottom:14px;
+}
+
+/* ── TEACHER GUIDE for Q ── */
+.q-teacher{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:900px){.q-teacher{grid-template-columns:1fr}}
+
+.guide-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-400);margin-bottom:8px}
+
+.vocab-grid{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.vocab-word{font-family:'JetBrains Mono',monospace;color:var(--navy);font-weight:600}
+.vocab-def{color:var(--gray-600)}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--gray-200);margin:20px 0}
+
+/* UTILITY */
+.flex{display:flex;align-items:center;gap:8px}
+.mt8{margin-top:8px}
+.mt12{margin-top:12px}
+.mt16{margin-top:16px}
+.small{font-size:12px;color:var(--gray-400)}
+
+code{font-family:'JetBrains Mono',monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:12px}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <div class="logo">🎓 <span>老師</span> TOEIC Part 5 講義</div>
+  <div class="progress-pill">現在：<span id="currentSection">開場介紹</span></div>
+  <div class="timer-wrap">
+    <span class="timer-label">上課時間</span>
+    <span id="timer">00:00</span>
+    <div class="timer-btns">
+      <button onclick="toggleTimer()">▶ 開始</button>
+      <button onclick="resetTimer()">↺</button>
+    </div>
+  </div>
+</div>
+
+<div id="layout">
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div class="sb-section">
+    <div class="sb-head">第一部分</div>
+    <a class="sb-link active" onclick="goTo('s1')">TOEIC 介紹 <span class="time">10m</span></a>
+    <a class="sb-link" onclick="goTo('s1b')">解題流程</a>
+    <a class="sb-link" onclick="goTo('s1c')">三個例子</a>
+  </div>
+  <div class="sb-section">
+    <div class="sb-head">第二部分</div>
+    <a class="sb-link" onclick="goTo('s2')">及物 / 不及物 <span class="time">15m</span></a>
+    <a class="sb-link" onclick="goTo('s2b')">S + V</a>
+    <a class="sb-link" onclick="goTo('s2c')">S + V + O</a>
+    <a class="sb-link" onclick="goTo('s2d')">S + V + SC</a>
+    <a class="sb-link" onclick="goTo('s2e')">S + V + O + C</a>
+    <a class="sb-link" onclick="goTo('s2f')">S + V + O + O</a>
+    <a class="sb-link" onclick="goTo('s2g')">陷阱整理 <span class="time">10m</span></a>
+  </div>
+  <div class="sb-section">
+    <div class="sb-head">第三部分 · 練習題</div>
+    <a class="sb-link" onclick="goTo('q101')">101 — 片語動詞 ⭐</a>
+    <a class="sb-link" onclick="goTo('q102')">102 — 時態 ⭐</a>
+    <a class="sb-link" onclick="goTo('q103')">103 — 固定片語</a>
+    <a class="sb-link" onclick="goTo('q104')">104 — 詞性</a>
+    <a class="sb-link" onclick="goTo('q105')">105 — 介系詞</a>
+    <a class="sb-link" onclick="goTo('q106')">106 — 搭配 ⭐</a>
+    <a class="sb-link" onclick="goTo('q107')">107 — 詞彙</a>
+    <a class="sb-link" onclick="goTo('q108')">108 — 比較</a>
+    <a class="sb-link" onclick="goTo('q109')">109 — 一致 ⭐</a>
+    <a class="sb-link" onclick="goTo('q110')">110 — 句型 ⭐</a>
+    <a class="sb-link" onclick="goTo('q111')">111 — 一致 ⭐</a>
+    <a class="sb-link" onclick="goTo('q112')">112 — 搭配 ⭐</a>
+    <a class="sb-link" onclick="goTo('q113')">113 — 句型 ⭐</a>
+    <a class="sb-link" onclick="goTo('q114')">114 — 詞性 ⭐</a>
+    <a class="sb-link" onclick="goTo('q115')">115 — 詞性 ⭐</a>
+    <a class="sb-link" onclick="goTo('q116')">116 — 連接詞</a>
+    <a class="sb-link" onclick="goTo('q117')">117 — 詞彙</a>
+    <a class="sb-link" onclick="goTo('q118')">118 — 被動 ⭐</a>
+    <a class="sb-link" onclick="goTo('q119')">119 — 詞彙</a>
+    <a class="sb-link" onclick="goTo('q120')">120 — 片語 ⭐</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main id="main">
+
+<!-- ══════════════════════════════════════════
+     SECTION 1 — TOEIC 介紹
+══════════════════════════════════════════ -->
+<div class="lesson-section" id="s1">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title">TOEIC Reading Part 5 介紹</div>
+    <div class="section-time">⏱ 約 10 分鐘</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title dark-head"><span class="dot"></span>開場：打破學生心態</div>
+    <div class="block-body">
+      <div class="script mt8">
+        今天除了學文法之外，我們也會開始接觸 TOEIC Reading <em>Part 5</em>。<br><br>
+        很多學生看到 Part 5 第一反應是什麼？<strong>「單字不會就不會寫。」</strong><br><br>
+        但其實 Part 5 有很多題，就算不懂全部翻譯，也可以用<em>句型、詞性、時態、固定搭配</em>來解題。<br><br>
+        所以今天的目標不是背答案，是學會一套解題方法。
+      </div>
+      <div class="ask mt16">
+        <p>你以前有做過英文考試的文法題嗎？大概是什麼感覺？</p>
+        <div class="ans">
+          <div class="ans-label">目的</div>
+          <p>了解學生程度，不需要標準答案，讓學生開口說話暖身。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="s1b">
+    <div class="block-title amber-head"><span class="dot"></span>五種考題能力</div>
+    <div class="block-body">
+      <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">帶過這五個就好，不用深入解釋，等等實際看題目學生自然會懂。</p>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
+        <div style="background:var(--gray-100);border-radius:8px;padding:12px;text-align:center">
+          <div style="font-size:20px;font-weight:800;color:var(--navy);font-family:Inter">01</div>
+          <div style="font-size:12px;font-weight:700;margin-top:4px">詞性判斷</div>
+        </div>
+        <div style="background:var(--gray-100);border-radius:8px;padding:12px;text-align:center">
+          <div style="font-size:20px;font-weight:800;color:var(--navy);font-family:Inter">02</div>
+          <div style="font-size:12px;font-weight:700;margin-top:4px">動詞形式</div>
+        </div>
+        <div style="background:var(--gray-100);border-radius:8px;padding:12px;text-align:center">
+          <div style="font-size:20px;font-weight:800;color:var(--navy);font-family:Inter">03</div>
+          <div style="font-size:12px;font-weight:700;margin-top:4px">時態</div>
+        </div>
+        <div style="background:var(--gray-100);border-radius:8px;padding:12px;text-align:center">
+          <div style="font-size:20px;font-weight:800;color:var(--navy);font-family:Inter">04</div>
+          <div style="font-size:12px;font-weight:700;margin-top:4px">固定搭配</div>
+        </div>
+        <div style="background:var(--gray-100);border-radius:8px;padding:12px;text-align:center">
+          <div style="font-size:20px;font-weight:800;color:var(--navy);font-family:Inter">05</div>
+          <div style="font-size:12px;font-weight:700;margin-top:4px">句意判斷</div>
+        </div>
+      </div>
+      <div class="script mt16">
+        這五種能力，今天我們都會接觸到。<br>
+        最重要的是前三個：<em>詞性、動詞形式、時態</em>。搞懂這三個，Part 5 大概六成的題目都有方向了。
+      </div>
+    </div>
+  </div>
+
+  <div class="block" id="s1c">
+    <div class="block-title amber-head"><span class="dot"></span>解題流程 + 三個例子</div>
+    <div class="block-body">
+      <div class="script">
+        很多人做 TOEIC 是：<em>翻譯整句 → 猜答案</em>。<br>
+        比較快的方法是：<em>句型 → 詞性 → 搭配 → 最後才看意思</em>。<br><br>
+        我們直接用三題來練。
+      </div>
+
+      <div class="divider"></div>
+
+      <p style="font-weight:700;color:var(--navy);margin-bottom:8px">例一：詞性題</p>
+      <div class="example-sentence">
+        The company needs an <span class="blank">______</span> manager.<br>
+        <div class="zh">(A) experience (B) experienced (C) experiencing (D) experiences</div>
+      </div>
+      <div class="ask">
+        <p>先不要翻譯。看空格後面是什麼詞？</p>
+        <div class="ans"><div class="ans-label">預期回答</div><p>manager — 名詞</p></div>
+      </div>
+      <div class="ask">
+        <p>名詞前面通常需要放什麼？</p>
+        <div class="ans"><div class="ans-label">預期回答</div><p>形容詞</p></div>
+      </div>
+      <div class="ask">
+        <p>四個選項哪個是形容詞？</p>
+        <div class="ans"><div class="ans-label">答案</div><p>B — experienced（有經驗的）</p></div>
+      </div>
+      <div class="correction">
+        <p>如果學生說 A experience：提醒 experience 這裡是名詞，名詞不能修飾名詞，需要形容詞形式 experienced。</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <p style="font-weight:700;color:var(--navy);margin-bottom:8px">例二：時態題</p>
+      <div class="example-sentence">
+        The meeting <span class="blank">______</span> tomorrow.<br>
+        <div class="zh">(A) begin (B) began (C) will begin (D) beginning</div>
+      </div>
+      <div class="ask">
+        <p>看到 tomorrow 這個字，直接想到什麼時態？</p>
+        <div class="ans"><div class="ans-label">答案</div><p>未來式 → will begin</p></div>
+      </div>
+      <div class="tip mt8"><p><strong>時態關鍵字：</strong> yesterday / last week → 過去式 ｜ tomorrow / next week → 未來式 ｜ now / currently → 現在進行式</p></div>
+
+      <div class="divider"></div>
+
+      <p style="font-weight:700;color:var(--navy);margin-bottom:8px">例三：固定搭配題</p>
+      <div class="example-sentence">
+        Please <span class="blank">______</span> the application form.<br>
+        <div class="zh">(A) fill out (B) fill on (C) fill over (D) fill under</div>
+      </div>
+      <div class="ask">
+        <p>這題不用猜翻譯。你有沒有看過「填寫表格」的英文說法？</p>
+        <div class="ans"><div class="ans-label">答案</div><p>fill out a form — 答案 A</p></div>
+      </div>
+      <div class="script mt12">
+        這三題說明了一件事：<em>不用每個字都看懂</em>，找關鍵線索就好。<br>
+        等等我們學了五大句型，這個技巧會更有方向。
+      </div>
+    </div>
+  </div>
+</div><!-- /s1 -->
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 2 — 五大句型
+══════════════════════════════════════════ -->
+<div class="lesson-section" id="s2">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div class="section-title">五大句型 & 及物 / 不及物動詞</div>
+    <div class="section-time">⏱ 約 50 分鐘</div>
+  </div>
+
+  <!-- 核心概念 -->
+  <div class="block">
+    <div class="block-title dark-head"><span class="dot"></span>最重要的核心概念</div>
+    <div class="block-body">
+      <div class="script">
+        今天我們要學英文句子的基本結構。先不要急著背「五大句型」這個名字。<br><br>
+        其實英文句子最重要的核心只有一件事：
+      </div>
+      <div style="font-size:18px;font-weight:800;color:var(--navy);background:var(--amber-lt);border-radius:10px;padding:18px 22px;border-left:4px solid var(--amber);margin:12px 0">
+        一個動詞後面，還需不需要接東西？
+      </div>
+      <div class="script">
+        看得出來動詞後面缺什麼，你做 TOEIC Part 5 就會比較有方向。
+      </div>
+    </div>
+  </div>
+
+  <!-- S+V -->
+  <div class="block" id="s2b">
+    <div class="block-title green-head"><span class="dot"></span>句型一：S + V（不及物動詞）</div>
+    <div class="block-body">
+      <div class="formula"><span class="S">S</span> + <span class="V">V</span></div>
+      <div class="script">
+        先看這句：<code>I sleep.</code>　這句完整嗎？<br><br>
+        完整。因為 <em>sleep</em> 這個動作不需要再接一個東西。你不會問「你睡什麼？」<br><br>
+        這種動詞叫做<em>不及物動詞</em>：後面不需要受詞，句子也完整。
+      </div>
+      <div class="ask mt12">
+        <p>The price rose. — 主詞是什麼？動詞是什麼？後面有受詞嗎？</p>
+        <div class="ans"><div class="ans-label">預期回答</div><p>S = The price ｜ V = rose ｜ 無受詞 → S + V</p></div>
+      </div>
+      <div class="ask">
+        <p>He arrived at the airport. — at the airport 是受詞嗎？</p>
+        <div class="ans"><div class="ans-label">正確答案</div><p>不是受詞，是地點補充。核心是 He arrived. → 還是 S + V</p></div>
+      </div>
+      <div class="correction">
+        <p>如果學生說「at the airport 是受詞」：問他，你可以說 <strong>He arrived the airport</strong> 嗎？不行對嗎？因為 arrive 是不及物動詞，airport 不能直接接，要用 at。</p>
+      </div>
+      <div class="tip mt8"><p><strong>口訣：</strong>不及物動詞後面可以接介系詞片語，但不能直接接名詞受詞。</p></div>
+    </div>
+  </div>
+
+  <!-- S+V+O -->
+  <div class="block" id="s2c">
+    <div class="block-title green-head"><span class="dot"></span>句型二：S + V + O（及物動詞）</div>
+    <div class="block-body">
+      <div class="formula"><span class="S">S</span> + <span class="V">V</span> + <span class="O">O</span></div>
+      <div class="script">
+        看這句：<code>I like.</code>　完整嗎？<br><br>
+        不完整。你會想問：<em>「你喜歡什麼？」</em><br><br>
+        補上：<code>I like English.</code>　這樣才完整。<br><br>
+        這種後面需要受詞的動詞叫做<em>及物動詞</em>。
+      </div>
+      <div class="ask mt12">
+        <p>She bought a ticket. — 問自己「買什麼？」答案是什麼？這個字是受詞嗎？</p>
+        <div class="ans"><div class="ans-label">預期回答</div><p>a ticket — 是受詞 → S + V + O</p></div>
+      </div>
+      <div class="ask">
+        <p>We discussed the problem. — 這句有什麼常見錯誤？</p>
+        <div class="ans"><div class="ans-label">答案</div><p>很多人會寫 discuss about the problem ❌ — discuss 是及物動詞，直接接受詞，不加 about</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S+V+SC -->
+  <div class="block" id="s2d">
+    <div class="block-title green-head"><span class="dot"></span>句型三：S + V + SC（主詞補語）</div>
+    <div class="block-body">
+      <div class="formula"><span class="S">S</span> + <span class="V">V</span> + <span class="SC">SC</span></div>
+      <div class="script">
+        SC = 主詞補語。不用怕名字，把它理解成：<em>補充說明主詞是誰，或主詞怎麼樣。</em><br><br>
+        <code>Mary is a teacher.</code><br>
+        teacher 不是 Mary 做的動作對象，而是說明 <em>Mary = teacher</em>。<br><br>
+        <code>The room looks clean.</code><br>
+        clean 是在描述誰？The room。所以是主詞補語。
+      </div>
+      <div class="ask mt12">
+        <p>He seems tired. — seems 後面的 tired 是在描述誰？</p>
+        <div class="ans"><div class="ans-label">答案</div><p>描述主詞 He → tired 是主詞補語 SC</p></div>
+      </div>
+      <div class="tip mt8">
+        <p><strong>接主詞補語的常見動詞：</strong> be, become, seem, look, feel, sound, smell, taste, remain, stay<br><br>
+        <strong>記憶法：</strong>這些動詞多半是「感官動詞」或「狀態動詞」，後面描述主詞本身的狀態。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- S+V+O+C -->
+  <div class="block" id="s2e">
+    <div class="block-title green-head"><span class="dot"></span>句型四：S + V + O + C（受詞補語）</div>
+    <div class="block-body">
+      <div class="formula"><span class="S">S</span> + <span class="V">V</span> + <span class="O">O</span> + <span class="C">C</span></div>
+      <div class="script">
+        C = 受詞補語，補充說明<em>受詞的狀態</em>。<br><br>
+        <code>The news made him nervous.</code><br>
+        nervous 是在描述誰？不是 The news，是 <em>him</em>。所以是受詞補語。
+      </div>
+      <div class="ask mt12">
+        <p>Please keep the door open. — open 是在描述主詞 you，還是受詞 door？</p>
+        <div class="ans"><div class="ans-label">答案</div><p>描述受詞 the door → S + V + O + C</p></div>
+      </div>
+      <div class="ask">
+        <p>I found the test difficult. — C 是哪個字？它在描述誰？</p>
+        <div class="ans"><div class="ans-label">答案</div><p>difficult — 描述受詞 the test → 受詞補語</p></div>
+      </div>
+      <div class="tip mt8">
+        <p><strong>常見動詞：</strong> make, keep, find, call, name, elect, consider, appoint<br>
+        <strong>判斷法：</strong>如果能造句說「O is/becomes C」就是受詞補語。<br>
+        例：the door is open ✓　→ open 是受詞補語</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- S+V+O+O -->
+  <div class="block" id="s2f">
+    <div class="block-title green-head"><span class="dot"></span>句型五：S + V + O + O（雙受詞）</div>
+    <div class="block-body">
+      <div class="formula"><span class="S">S</span> + <span class="V">V</span> + <span class="O">O₁(給誰)</span> + <span class="O">O₂(給什麼)</span></div>
+      <div class="script">
+        這個句型通常是「<em>給誰 + 給什麼</em>」的結構。
+      </div>
+      <div class="ask mt12">
+        <p>She sent her boss an email. — 寄給誰？寄什麼？</p>
+        <div class="ans"><div class="ans-label">答案</div><p>O₁ = her boss（給誰）｜ O₂ = an email（給什麼）</p></div>
+      </div>
+      <div class="script mt8">
+        這類句子可以改寫成：<em>She sent an email to her boss.</em><br>
+        也就是 S + V + O + to/for + 人。兩種寫法都對。
+      </div>
+      <div class="tip mt8"><p><strong>常見雙受詞動詞：</strong> give, send, tell, show, lend, offer, bring, teach, ask</p></div>
+    </div>
+  </div>
+
+  <!-- 陷阱 -->
+  <div class="block" id="s2g">
+    <div class="block-title dark-head"><span class="dot"></span>TOEIC 超常考陷阱（帶著學生念）</div>
+    <div class="block-body">
+      <div class="script">
+        TOEIC 不只考你知不知道單字意思，它考你<em>這個動詞後面到底怎麼接</em>。<br>
+        以下這些要讓學生記住：
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:14px">
+        <div>
+          <div class="trap-pair"><div class="trap-wrong">discuss about the issue</div><div class="trap-right">discuss the issue</div></div>
+          <div class="small" style="margin-top:4px">discuss 是及物動詞，直接接受詞</div>
+        </div>
+        <div>
+          <div class="trap-pair"><div class="trap-wrong">arrive the airport</div><div class="trap-right">arrive at the airport</div></div>
+          <div class="small" style="margin-top:4px">arrive 是不及物動詞，需要 at</div>
+        </div>
+        <div>
+          <div class="trap-pair"><div class="trap-wrong">attend to a meeting</div><div class="trap-right">attend a meeting</div></div>
+          <div class="small" style="margin-top:4px">attend 是及物動詞，不加 to</div>
+        </div>
+        <div>
+          <div class="trap-pair"><div class="trap-wrong">contact with the customer</div><div class="trap-right">contact the customer</div></div>
+          <div class="small" style="margin-top:4px">contact 是及物動詞，不加 with</div>
+        </div>
+        <div>
+          <div class="trap-pair"><div class="trap-wrong">listen music</div><div class="trap-right">listen to music</div></div>
+          <div class="small" style="margin-top:4px">listen 是不及物動詞，需要 to</div>
+        </div>
+        <div>
+          <div class="trap-pair"><div class="trap-wrong">answer to the question</div><div class="trap-right">answer the question</div></div>
+          <div class="small" style="margin-top:4px">answer 是及物動詞，不加 to</div>
+        </div>
+      </div>
+      <div class="ask mt16">
+        <p>（指著任意一組）這兩個哪個對？為什麼？</p>
+        <div class="ans"><div class="ans-label">目的</div><p>讓學生開口說，確認他記住了，不是只是點頭。</p></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /s2 -->
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 3 — 練習題 101–120
+══════════════════════════════════════════ -->
+<div class="lesson-section" id="s3">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title">練習題 101–120</div>
+    <div class="section-time">⏱ 約 60–80 分鐘</div>
+  </div>
+
+  <div class="block">
+    <div class="block-title dark-head"><span class="dot"></span>做題節奏說明</div>
+    <div class="block-body">
+      <div class="script">
+        我們來練習題。做法是：<br>
+        我唸題目給你，你先不要看答案，<em>自己說出解題邏輯</em>，再說答案。<br><br>
+        不用急著翻譯。先看空格前後，判斷缺什麼。
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Q101 ─── -->
+  <div class="q-block" id="q101">
+    <div class="q-header">
+      <span class="q-num-badge">101</span>
+      <span class="q-type-badge">片語動詞</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">Our company plans to <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> more employees during the busy holiday season.</div>
+      <div class="q-zh">我們公司計畫在繁忙的假期期間 ______ 更多員工。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> take on</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> wait on</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> move to</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> apply for</div>
+      </div>
+      <div class="q-teacher">
+        <div>
+          <div class="guide-col-title">解題引導</div>
+          <div class="ask"><p>plans to 後面缺什麼詞性？</p><div class="ans"><div class="ans-label">答</div><p>動詞原形（四選項都是片語動詞）</p></div></div>
+          <div class="ask mt8"><p>受詞是 more employees，哪個片語可以接「員工」？</p><div class="ans"><div class="ans-label">答</div><p>take on employees = 雇用員工 → A</p></div></div>
+          <div class="correction mt8"><p>如果選 D apply for：提醒學生 apply for 是「申請」（自己去申請），不是「雇用別人」。</p></div>
+        </div>
+        <div>
+          <div class="guide-col-title">生詞</div>
+          <div class="vocab-grid">
+            <span class="vocab-word">take on</span><span class="vocab-def">雇用；承擔</span>
+            <span class="vocab-word">wait on</span><span class="vocab-def">服務顧客</span>
+            <span class="vocab-word">apply for</span><span class="vocab-def">申請</span>
+            <span class="vocab-word">move to</span><span class="vocab-def">搬到</span>
+          </div>
+          <div class="tip mt12"><p><strong>take on</strong> 可接人（雇用）或工作/責任（承擔）</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Q102 ─── -->
+  <div class="q-block" id="q102">
+    <div class="q-header">
+      <span class="q-num-badge">102</span>
+      <span class="q-type-badge">時態</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">The department store <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> for three days next week in order to take stock.</div>
+      <div class="q-zh">這間百貨公司下週將 ______ 三天，以便盤點庫存。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> has closed</div>
+        <div class="q-opt correct"><span class="q-opt-label">B</span> will close</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> be closed</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> was closing</div>
+      </div>
+      <div class="q-teacher">
+        <div>
+          <div class="guide-col-title">解題引導</div>
+          <div class="ask"><p>句子裡有什麼時態關鍵字？</p><div class="ans"><div class="ans-label">答</div><p>next week → 未來 → will + V</p></div></div>
+          <div class="ask mt8"><p>A has closed 是什麼時態？適合 next week 嗎？</p><div class="ans"><div class="ans-label">答</div><p>現在完成式，不適合未來</p></div></div>
+        </div>
+        <div>
+          <div class="guide-col-title">生詞</div>
+          <div class="vocab-grid">
+            <span class="vocab-word">department store</span><span class="vocab-def">百貨公司</span>
+            <span class="vocab-word">take stock</span><span class="vocab-def">盤點庫存</span>
+            <span class="vocab-word">in order to + V</span><span class="vocab-def">為了……</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Q103 ─── -->
+  <div class="q-block" id="q103">
+    <div class="q-header">
+      <span class="q-num-badge">103</span>
+      <span class="q-type-badge">固定片語</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">Our new juice products were selling like <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> at the end of last quarter.</div>
+      <div class="q-zh">新果汁產品在上個季度末賣得像 ______ 一樣好。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> hotcakes</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> hot goods</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> white goods</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> red tape</div>
+      </div>
+      <div class="script mt12">固定片語題：<em>sell like hotcakes</em> = 非常暢銷。其他選項：white goods（大型家電）、red tape（繁文縟節）。純記憶型題目，快速帶過。</div>
+    </div>
+  </div>
+
+  <!-- ─── Q104 ─── -->
+  <div class="q-block" id="q104">
+    <div class="q-header">
+      <span class="q-num-badge">104</span>
+      <span class="q-type-badge">詞性</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">The most common source of dietary problems while traveling is <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> water.</div>
+      <div class="q-zh">旅行時，飲食問題最常見的來源是 ______ 水。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> drinking</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> drink</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> drank</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> drunk</div>
+      </div>
+      <div class="ask mt12"><p>drinking water 是固定片語，意思是？</p><div class="ans"><div class="ans-label">答</div><p>飲用水（不是「正在喝的水」）</p></div></div>
+      <div class="tip mt8"><p>類似結構：<strong>sleeping bag</strong>（睡袋）、<strong>waiting room</strong>（等候室）— 動名詞修飾名詞</p></div>
+    </div>
+  </div>
+
+  <!-- ─── Q105 ─── -->
+  <div class="q-block" id="q105">
+    <div class="q-header">
+      <span class="q-num-badge">105</span>
+      <span class="q-type-badge">介系詞</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence"><span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> most managers, one common cause of problems in decision-making is over-optimism.</div>
+      <div class="q-zh">______ 大多數經理，決策問題的一個常見原因是過度樂觀。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> In</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> When</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> By</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> For</div>
+      </div>
+      <div class="script mt12"><em>in most managers</em> = 在大多數經理身上（存在某種特質或問題）。<br>For most managers 雖然常見，但這句強調的是問題「存在於」某群人身上，所以 in 更精確。這題可以快速帶過，不要太鑽牛角尖。</div>
+    </div>
+  </div>
+
+  <!-- ─── Q106 ─── -->
+  <div class="q-block" id="q106">
+    <div class="q-header">
+      <span class="q-num-badge">106</span>
+      <span class="q-type-badge">固定搭配</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">People should arrange their daily schedules to include a healthy balance <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> work and leisure.</div>
+      <div class="q-zh">人們應適當安排每日行程，以包含工作與休閒 ______ 健康平衡。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> relation</div>
+        <div class="q-opt correct"><span class="q-opt-label">B</span> between</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> to</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> linking</div>
+      </div>
+      <div class="ask mt12"><p>balance ______ A and B — 這個介系詞是什麼固定搭配？</p><div class="ans"><div class="ans-label">答</div><p>balance between A and B（A 和 B 之間的平衡）→ B</p></div></div>
+      <div class="tip mt8"><p>同類固定搭配：<strong>difference between A and B</strong>、<strong>relationship between A and B</strong></p></div>
+    </div>
+  </div>
+
+  <!-- ─── Q107 ─── -->
+  <div class="q-block" id="q107">
+    <div class="q-header">
+      <span class="q-num-badge">107</span>
+      <span class="q-type-badge">詞彙語意</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">Recycling is one of many <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> ways to care for our environment.</div>
+      <div class="q-zh">回收是許多照顧環境的 ______ 方法之一。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> additional</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> impractical</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> unworkable</div>
+        <div class="q-opt correct"><span class="q-opt-label">D</span> effective</div>
+      </div>
+      <div class="script mt12">語意判斷題。回收是照顧環境的「有效方法」→ <em>effective</em>。B、C 是負面形容詞，語意相反。A additional（額外的）不符合語境。</div>
+    </div>
+  </div>
+
+  <!-- ─── Q108 ─── -->
+  <div class="q-block" id="q108">
+    <div class="q-header">
+      <span class="q-num-badge">108</span>
+      <span class="q-type-badge">比較 / 語意</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">Nowadays, with the vast popularity of email, <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> people communicate through letter writing.</div>
+      <div class="q-zh">如今，由於電子郵件非常普及，______ 人透過寫信溝通。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> less</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> more</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> most</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> unless</div>
+      </div>
+      <div class="ask mt12"><p>email 普及了，寫信的人變多還是變少？</p><div class="ans"><div class="ans-label">答</div><p>變少 → less（嚴格應用 fewer，但選項沒有）→ A</p></div></div>
+    </div>
+  </div>
+
+  <!-- ─── Q109 ─── -->
+  <div class="q-block" id="q109">
+    <div class="q-header">
+      <span class="q-num-badge">109</span>
+      <span class="q-type-badge">主詞動詞一致</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">A good designer usually <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> sharp observation and a good imagination.</div>
+      <div class="q-zh">一位好的設計師通常 ______ 敏銳的觀察力和好的想像力。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> has</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> have</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> had</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> has been</div>
+      </div>
+      <div class="q-teacher">
+        <div>
+          <div class="guide-col-title">解題引導</div>
+          <div class="ask"><p>主詞是 A good designer — 單數還是複數？現在式用什麼動詞？</p><div class="ans"><div class="ans-label">答</div><p>單數 → 第三人稱單數現在式 → has</p></div></div>
+          <div class="tip mt8"><p>判斷主詞單複數是 TOEIC 常考點：<br>A good designer（單數）→ has<br>Good designers（複數）→ have</p></div>
+        </div>
+        <div>
+          <div class="guide-col-title">搭配問 Q111</div>
+          <div class="script" style="font-size:12px">這題和 111 題都是主詞動詞一致，兩題可以連在一起講完後，讓學生比較。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Q110 ─── -->
+  <div class="q-block" id="q110">
+    <div class="q-header">
+      <span class="q-num-badge">110</span>
+      <span class="q-type-badge">固定句型</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">Nowadays, many parents are too busy <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> spend a sufficient amount of quality time with their children.</div>
+      <div class="q-zh">如今，許多父母太忙，______ 花足夠的高品質時間陪孩子。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> than</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> as well</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> too</div>
+        <div class="q-opt correct"><span class="q-opt-label">D</span> to</div>
+      </div>
+      <div class="ask mt12"><p>看到 too busy，想到什麼固定句型？</p><div class="ans"><div class="ans-label">答</div><p>too + adj. + to V = 太……以至於不能……</p></div></div>
+      <div style="background:var(--navy);color:white;border-radius:8px;padding:14px 18px;margin-top:10px">
+        <div style="font-size:11px;color:var(--amber);font-weight:700;margin-bottom:6px">固定句型板書</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px">too + <span style="color:var(--amber)">adj.</span> + to + <span style="color:#7DD3FC">V</span></div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:6px">I am too tired to study. — 我太累了，無法讀書</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Q111 ─── -->
+  <div class="q-block" id="q111">
+    <div class="q-header">
+      <span class="q-num-badge">111</span>
+      <span class="q-type-badge">主詞動詞一致</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">A person's appearance creates the first impression, but a good personality <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> more in the long run.</div>
+      <div class="q-zh">外表創造第一印象，但好個性長遠來看更 ______。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> matter-of-fact</div>
+        <div class="q-opt correct"><span class="q-opt-label">B</span> matters</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> matter</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> doesn't matter</div>
+      </div>
+      <div class="ask mt12"><p>主詞是 a good personality，動詞 matter 要加 s 嗎？D 語意上對不對？</p><div class="ans"><div class="ans-label">答</div><p>單數 → matters ｜ D doesn't matter = 不重要（語意相反）</p></div></div>
+      <div class="tip mt8"><p><strong>matter（動詞）= 重要</strong>，常出現在 TOEIC：<br>Your attitude matters. / Teamwork matters.</p></div>
+    </div>
+  </div>
+
+  <!-- ─── Q112 ─── -->
+  <div class="q-block" id="q112">
+    <div class="q-header">
+      <span class="q-num-badge">112</span>
+      <span class="q-type-badge">固定搭配</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">In this competitive society, people are <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> a lot of stress.</div>
+      <div class="q-zh">在這個競爭社會中，人們 ______ 很多壓力。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> gathering</div>
+        <div class="q-opt correct"><span class="q-opt-label">B</span> under</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> exposed</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> welcoming</div>
+      </div>
+      <div class="ask mt12"><p>「承受壓力」的固定搭配是什麼？</p><div class="ans"><div class="ans-label">答</div><p>be under stress / be under pressure → B</p></div></div>
+      <div class="correction mt8"><p>如果選 C exposed：提醒學生 be exposed to stress 才對，選項 C 後面沒有 to，所以不能選。</p></div>
+    </div>
+  </div>
+
+  <!-- ─── Q113 ─── -->
+  <div class="q-block" id="q113">
+    <div class="q-header">
+      <span class="q-num-badge">113</span>
+      <span class="q-type-badge">固定句型</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">To learn something successfully requires not only memorization <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> comprehension of facts.</div>
+      <div class="q-zh">成功學習某件事不只需要記憶，______ 需要理解事實。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> but also</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> follow by</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> as long as</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> along with</div>
+      </div>
+      <div class="ask mt12"><p>前面有 not only，固定搭配下一個字是什麼？</p><div class="ans"><div class="ans-label">答</div><p>not only A but also B → A</p></div></div>
+      <div style="background:var(--navy);color:white;border-radius:8px;padding:14px 18px;margin-top:10px">
+        <div style="font-size:11px;color:var(--amber);font-weight:700;margin-bottom:6px">固定句型板書</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px">not only <span style="color:var(--amber)">A</span> but also <span style="color:#7DD3FC">B</span></div>
+        <div style="font-size:13px;color:rgba(255,255,255,.6);margin-top:6px">不但 A，而且 B</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Q114 ─── -->
+  <div class="q-block" id="q114">
+    <div class="q-header">
+      <span class="q-num-badge">114</span>
+      <span class="q-type-badge">詞性</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">Marketing people need to know how advertising and packaging <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> people's shopping decisions.</div>
+      <div class="q-zh">行銷人員需要知道廣告和包裝如何 ______ 人們的購物決策。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> influenced</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> influencing</div>
+        <div class="q-opt correct"><span class="q-opt-label">C</span> influence</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> influential</div>
+      </div>
+      <div class="q-teacher">
+        <div>
+          <div class="ask"><p>how 子句的主詞是什麼？advertising and packaging — 這是單數還是複數？</p><div class="ans"><div class="ans-label">答</div><p>兩個並列 → 複數 → 動詞不加 s → influence（C）</p></div></div>
+          <div class="correction mt8"><p>如果選 D influential：這是形容詞「有影響力的」，不能當這裡的動詞用。</p></div>
+        </div>
+        <div>
+          <div class="vocab-grid">
+            <span class="vocab-word">influence (v.)</span><span class="vocab-def">影響</span>
+            <span class="vocab-word">influential (adj.)</span><span class="vocab-def">有影響力的</span>
+            <span class="vocab-word">advertising</span><span class="vocab-def">廣告</span>
+            <span class="vocab-word">packaging</span><span class="vocab-def">包裝</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Q115 ─── -->
+  <div class="q-block" id="q115">
+    <div class="q-header">
+      <span class="q-num-badge">115</span>
+      <span class="q-type-badge">詞性</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">Team work always helps in increasing workplace <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span>.</div>
+      <div class="q-zh">團隊合作總是有助於提高職場 ______。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> productivity</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> products</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> producing</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> produces</div>
+      </div>
+      <div class="ask mt12"><p>空格前面是 workplace（名詞），後面要填什麼詞性？workplace + ______ 要組成什麼？</p><div class="ans"><div class="ans-label">答</div><p>名詞 → workplace productivity（職場生產力）→ A</p></div></div>
+      <div class="tip mt8"><p><strong>workplace productivity</strong> 是 TOEIC 高頻詞組，順便記。</p></div>
+    </div>
+  </div>
+
+  <!-- ─── Q116 ─── -->
+  <div class="q-block" id="q116">
+    <div class="q-header">
+      <span class="q-num-badge">116</span>
+      <span class="q-type-badge">連接詞</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">Soda <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> coffee are the beverages most commonly preferred by people in the US.</div>
+      <div class="q-zh">汽水 ______ 咖啡是美國人最普遍偏好的飲料。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> or</div>
+        <div class="q-opt correct"><span class="q-opt-label">B</span> and</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> both</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> too</div>
+      </div>
+      <div class="script mt12">並列兩個名詞用 <em>and</em>。如果要用 both，完整句型是 <em>Both A and B</em>（空格要放在 Soda 前面），但這題空格在 Soda 後面，所以選 and。</div>
+    </div>
+  </div>
+
+  <!-- ─── Q117 ─── -->
+  <div class="q-block" id="q117">
+    <div class="q-header">
+      <span class="q-num-badge">117</span>
+      <span class="q-type-badge">詞彙語意</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">Employees are <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> when they can get additional learning opportunities sponsored by the employer.</div>
+      <div class="q-zh">當員工能獲得由雇主贊助的額外學習機會時，他們會感到 ______。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> depressed</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> deprived</div>
+        <div class="q-opt correct"><span class="q-opt-label">C</span> delighted</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> despondent</div>
+      </div>
+      <div class="script mt12">語意題：得到額外學習機會 → 正面情緒 → <em>delighted</em>（高興）。A、B、D 都是負面情緒。快速帶過。</div>
+    </div>
+  </div>
+
+  <!-- ─── Q118 ─── -->
+  <div class="q-block" id="q118">
+    <div class="q-header">
+      <span class="q-num-badge">118</span>
+      <span class="q-type-badge">被動語態</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">My boss always reminds us that time is something that should be <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> and spent productively.</div>
+      <div class="q-zh">老闆總是提醒我們，時間是應該被 ______ 並且有效運用的東西。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> treasured</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> treasure</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> treasurer</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> treasuring</div>
+      </div>
+      <div class="ask mt12"><p>should be + ______ — 後面要接什麼形式？</p><div class="ans"><div class="ans-label">答</div><p>過去分詞 p.p. → 被動語態 → treasured（A）</p></div></div>
+      <div style="background:var(--navy);color:white;border-radius:8px;padding:14px 18px;margin-top:10px">
+        <div style="font-size:11px;color:var(--amber);font-weight:700;margin-bottom:6px">被動語態公式</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px">be / should be / can be + <span style="color:var(--amber)">p.p.</span></div>
+      </div>
+      <div class="correction mt10"><p>如果選 C treasurer（財務主管）：提醒學生注意詞性，這裡需要動詞的 p.p. 形式，不是名詞。</p></div>
+    </div>
+  </div>
+
+  <!-- ─── Q119 ─── -->
+  <div class="q-block" id="q119">
+    <div class="q-header">
+      <span class="q-num-badge">119</span>
+      <span class="q-type-badge">詞彙語意</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">This museum <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> extensions of international art from all over the world.</div>
+      <div class="q-zh">這座博物館 ______ 來自世界各地的國際藝術展品。</div>
+      <div class="q-options">
+        <div class="q-opt correct"><span class="q-opt-label">A</span> accommodates</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> evaluates</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> simplifies</div>
+        <div class="q-opt"><span class="q-opt-label">D</span> accomplishes</div>
+      </div>
+      <div class="script mt12">主詞是博物館，受詞是藝術展品。博物館「容納」展品 → <em>accommodate</em>。不需要深挖，快速帶答案即可。</div>
+      <div class="vocab-grid mt8">
+        <span class="vocab-word">accommodate</span><span class="vocab-def">容納；提供空間</span>
+        <span class="vocab-word">evaluate</span><span class="vocab-def">評估</span>
+        <span class="vocab-word">accomplish</span><span class="vocab-def">完成、達成</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Q120 ─── -->
+  <div class="q-block" id="q120">
+    <div class="q-header">
+      <span class="q-num-badge">120</span>
+      <span class="q-type-badge">固定片語</span>
+      <span class="q-star-badge">⭐ 重點題</span>
+    </div>
+    <div class="q-body">
+      <div class="q-sentence">In general, people just read the newspaper to keep <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span> on current events.</div>
+      <div class="q-zh">一般來說，人們讀報只是為了保持對時事 ______。</div>
+      <div class="q-options">
+        <div class="q-opt"><span class="q-opt-label">A</span> state-of-the-art</div>
+        <div class="q-opt"><span class="q-opt-label">B</span> outdated</div>
+        <div class="q-opt"><span class="q-opt-label">C</span> old-fashioned</div>
+        <div class="q-opt correct"><span class="q-opt-label">D</span> up-to-date</div>
+      </div>
+      <div class="ask mt12"><p>keep ______ on current events — 掌握時事的固定片語是？</p><div class="ans"><div class="ans-label">答</div><p>keep up-to-date on current events → D</p></div></div>
+      <div class="tip mt8"><p><strong>up-to-date</strong>（最新的）vs <strong>outdated</strong>（過時的）— 語意完全相反<br>
+      <strong>state-of-the-art</strong> = 最先進的，通常形容設備、科技，不用在「掌握資訊」的語境</p></div>
+
+      <div class="block" style="margin-top:20px;background:var(--amber-lt);border:none;box-shadow:none">
+        <div class="block-title amber-head"><span class="dot"></span>課堂收尾</div>
+        <div class="block-body">
+          <div class="script" style="background:var(--navy)">
+            今天我們做了 20 題。<br><br>
+            回顧一下：不是每題都要翻譯整句。先看空格前後，判斷缺什麼，最後才用意思確認。<br><br>
+            <em>詞性、時態、固定搭配</em> — 這三個搞懂，Part 5 六成以上都有方向了。<br><br>
+            回家把今天的陷阱那頁（discuss / arrive / attend / contact）再看一遍就好。
+          </div>
+          <div class="ask mt12"><p>今天哪一題覺得最難？為什麼？</p><div class="ans"><div class="ans-label">目的</div><p>讓學生自我反思，確認哪個概念還沒穩固，下次可以複習。</p></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /s3 -->
+
+</main>
+</div><!-- /layout -->
+
+<script>
+// ── TIMER ──
+let seconds=0, running=false, interval=null;
+function pad(n){return n.toString().padStart(2,'0')}
+function updateTimerDisplay(){
+  const m=Math.floor(seconds/60), s=seconds%60;
+  document.getElementById('timer').textContent=pad(m)+':'+pad(s);
+}
+function toggleTimer(){
+  if(running){
+    clearInterval(interval);running=false;
+    document.querySelector('.timer-btns button').textContent='▶ 繼續';
+  } else {
+    interval=setInterval(()=>{seconds++;updateTimerDisplay()},1000);
+    running=true;
+    document.querySelector('.timer-btns button').textContent='⏸ 暫停';
+  }
+}
+function resetTimer(){
+  clearInterval(interval);running=false;seconds=0;
+  updateTimerDisplay();
+  document.querySelector('.timer-btns button').textContent='▶ 開始';
+}
+
+// ── SIDEBAR SCROLL ──
+function goTo(id){
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── ACTIVE SIDEBAR LINK ──
+const sections=[
+  {id:'s1',label:'開場介紹'},
+  {id:'s1b',label:'解題流程'},
+  {id:'s1c',label:'三個例子'},
+  {id:'s2',label:'及物 / 不及物'},
+  {id:'s2b',label:'S + V'},
+  {id:'s2c',label:'S + V + O'},
+  {id:'s2d',label:'S + V + SC'},
+  {id:'s2e',label:'S + V + O + C'},
+  {id:'s2f',label:'S + V + O + O'},
+  {id:'s2g',label:'陷阱整理'},
+  {id:'q101',label:'101'},{id:'q102',label:'102'},{id:'q103',label:'103'},
+  {id:'q104',label:'104'},{id:'q105',label:'105'},{id:'q106',label:'106'},
+  {id:'q107',label:'107'},{id:'q108',label:'108'},{id:'q109',label:'109'},
+  {id:'q110',label:'110'},{id:'q111',label:'111'},{id:'q112',label:'112'},
+  {id:'q113',label:'113'},{id:'q114',label:'114'},{id:'q115',label:'115'},
+  {id:'q116',label:'116'},{id:'q117',label:'117'},{id:'q118',label:'118'},
+  {id:'q119',label:'119'},{id:'q120',label:'120'},
+];
+
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      const sec=sections.find(s=>s.id===id);
+      if(sec){
+        document.querySelectorAll('.sb-link').forEach(l=>l.classList.remove('active'));
+        const link=document.querySelector(`.sb-link[onclick*="${id}"]`);
+        if(link) link.classList.add('active');
+        document.getElementById('currentSection').textContent=sec.label;
+      }
+    }
+  });
+},{threshold:0.3,rootMargin:'-60px 0px -60% 0px'});
+
+sections.forEach(s=>{
+  const el=document.getElementById(s.id);
+  if(el) obs.observe(el);
+});
+</script>
+</body>
+</html>

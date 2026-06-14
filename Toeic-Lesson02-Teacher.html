@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老師講義 | TOEIC Lesson 02</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--navy2:#1E3A5F;--white:#fff;--bg:#F0F4F8;--card:#fff;--amber:#F59E0B;--amber-lt:#FEF3C7;--amber-dk:#92400E;--green:#059669;--green-lt:#D1FAE5;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--purple-lt:#EDE9FE;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;--sidebar-w:230px;--r:10px}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:var(--gray-800);font-size:14px;line-height:1.7}
+#topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);color:white;height:52px;display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.logo{font-weight:800;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.logo span{background:var(--amber);color:var(--navy);padding:2px 8px;border-radius:5px;font-size:12px}
+.timer-wrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.timer-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px}
+#timer{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--amber);min-width:60px}
+.tbtn{background:rgba(255,255,255,.1);border:none;color:white;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;margin-left:4px;font-family:"Noto Sans TC",sans-serif}
+.tbtn:hover{background:rgba(255,255,255,.2)}
+.ppill{background:rgba(255,255,255,.1);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+#csec{color:var(--amber);font-weight:700}
+#layout{display:flex;margin-top:52px;min-height:calc(100vh - 52px)}
+#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--navy);position:fixed;top:52px;left:0;bottom:0;overflow-y:auto;padding:16px 0;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
+.sbh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);padding:10px 16px 4px}
+.sbl{display:block;padding:6px 16px;color:rgba(255,255,255,.65);font-size:12px;text-decoration:none;cursor:pointer;border-left:3px solid transparent;transition:.15s}
+.sbl:hover{color:white;background:rgba(255,255,255,.07)}
+.sbl.active{color:var(--amber);border-left-color:var(--amber);background:rgba(245,158,11,.08)}
+.t{font-size:10px;color:rgba(255,255,255,.3);float:right;font-family:"JetBrains Mono",monospace}
+#main{margin-left:var(--sidebar-w);flex:1;padding:28px 32px 80px}
+.ls{margin-bottom:40px}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gray-200)}
+.sn{width:36px;height:36px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;font-family:"Inter",sans-serif}
+.st{font-size:20px;font-weight:800;color:var(--navy)}
+.stm{margin-left:auto;background:var(--navy);color:var(--amber);font-size:11px;font-weight:700;font-family:"JetBrains Mono",monospace;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.block{background:var(--card);border-radius:var(--r);margin-bottom:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.bh{background:var(--gray-100);padding:10px 18px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-600);border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:8px}
+.bh .d{width:8px;height:8px;border-radius:50%;background:var(--gray-400)}
+.bh.dk{background:var(--navy);color:white;border:none}.bh.dk .d{background:var(--amber)}
+.bh.am{background:var(--amber-lt);color:var(--amber-dk);border-bottom-color:#FDE68A}.bh.am .d{background:var(--amber)}
+.bh.gn{background:var(--green-lt);color:var(--green);border-bottom-color:#A7F3D0}.bh.gn .d{background:var(--green)}
+.bb{padding:18px}
+.script{background:#0F172A;color:#E2E8F0;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.9;position:relative;margin:12px 0}
+.script::before{content:"📢 說";position:absolute;top:-10px;left:14px;background:var(--sky);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.script em{color:var(--amber);font-style:normal;font-weight:600}
+.script strong{color:white}.script code{background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px;color:#7DD3FC}
+.ask{background:var(--amber-lt);border:1.5px solid #FDE68A;border-radius:8px;padding:14px 18px;margin:10px 0;position:relative}
+.ask::before{content:"❓ 問學生";position:absolute;top:-10px;left:14px;background:var(--amber);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.ask p{color:var(--amber-dk);font-weight:600;font-size:14px;margin-top:2px}
+.ask .al{font-size:11px;color:var(--amber-dk);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:8px 0 3px;border-top:1px solid #FDE68A;padding-top:8px}
+.ask .ap{color:var(--green);font-weight:700;font-size:14px}
+.corr{background:var(--red-lt);border:1.5px solid #FECACA;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.corr::before{content:"⚠️ 答錯時";position:absolute;top:-10px;left:14px;background:var(--red);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.corr p{color:#991B1B;font-size:13px;margin-top:4px;line-height:1.7}
+.tip{background:var(--purple-lt);border:1.5px solid #DDD6FE;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.tip::before{content:"💡 重點";position:absolute;top:-10px;left:14px;background:var(--purple);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.tip p{color:#4C1D95;font-size:13px;margin-top:4px;line-height:1.7}
+.goal2{background:var(--green-lt);border:1.5px solid #A7F3D0;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.goal2::before{content:"✅ 重點帶走";position:absolute;top:-10px;left:14px;background:var(--green);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.goal2 p,.goal2 li{color:#064E3B;font-size:13px;margin-top:4px;line-height:1.8}
+.goal2 ul{padding-left:18px;margin-top:6px}
+.formula{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:700;color:var(--navy);background:var(--gray-100);border-radius:8px;padding:12px 16px;border-left:3px solid var(--amber);margin:10px 0}
+.es{background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 14px;margin:6px 0;font-size:14px;font-weight:500}
+.tp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.tw{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--red);background:var(--red-lt);padding:6px 10px;border-radius:6px}
+.tw::before{content:"❌ "}
+.tr{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--green);background:var(--green-lt);padding:6px 10px;border-radius:6px}
+.tr::before{content:"✅ "}
+.qb{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:20px}
+.qh{display:flex;align-items:center;gap:10px;padding:12px 18px;background:var(--gray-100);border-bottom:1px solid var(--gray-200);flex-wrap:wrap}
+.qn{background:var(--navy);color:white;font-weight:700;font-size:12px;padding:3px 10px;border-radius:6px;font-family:"Inter",sans-serif}
+.qt{background:var(--sky-lt);color:var(--sky);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qs{background:var(--amber-lt);color:var(--amber-dk);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qbody{padding:20px}
+.qsen{font-size:15px;font-weight:500;background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:6px;line-height:1.8}
+.qsen .bl{background:var(--amber-lt);color:var(--amber-dk);padding:0 6px;border-radius:4px;font-weight:700}
+.qzh{font-size:12px;color:var(--gray-400);margin-bottom:14px}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.qo{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;display:flex;align-items:center;gap:8px}
+.qo.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.qo.no{background:var(--red-lt);border-color:var(--red);color:var(--red)}
+.ol{width:22px;height:22px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:"Inter",sans-serif}
+.qo.ok .ol{background:var(--green);color:white}
+.qtc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.gtl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-400);margin-bottom:8px}
+.vg{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.vw{font-family:"JetBrains Mono",monospace;color:var(--navy);font-weight:600}
+.vd{color:var(--gray-600)}
+.artbox{background:#F8FAFC;border:1.5px solid #CBD5E1;border-radius:12px;padding:18px;margin:14px 0;font-size:15px;line-height:1.9}
+.artbox .abl{color:#1d4ed8;font-weight:800;background:var(--sky-lt);padding:1px 6px;border-radius:4px}
+.tmtable{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tmtable th,.tmtable td{border:1px solid var(--gray-200);padding:10px 12px;text-align:left;vertical-align:top}
+.tmtable th{background:var(--navy);color:white;font-size:12px}
+.tmtable td:first-child{font-family:"JetBrains Mono",monospace;font-weight:700;background:var(--amber-lt);color:var(--amber-dk);white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tbl th,.tbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
+.tbl th{background:var(--gray-100);font-weight:700;font-size:12px}
+.dv{height:1px;background:var(--gray-200);margin:18px 0}
+.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}
+code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:12px;color:var(--navy)}
+.q4o{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;margin:4px 0}
+.q4o.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div class="logo">🎓 <span>老師</span> Lesson 02 · 名詞系統 + 121–138</div>
+  <div class="ppill">現在：<span id="csec">課程總覽</span></div>
+  <div class="timer-wrap">
+    <span class="timer-label">上課時間</span>
+    <span id="timer">00:00</span>
+    <button class="tbtn" onclick="toggleTimer()">▶ 開始</button>
+    <button class="tbtn" onclick="resetTimer()">↺</button>
+  </div>
+</div>
+<div id="layout">
+<nav id="sidebar">
+  <div class="sbh">課程總覽</div>
+  <a class="sbl active" onclick="goTo('s-overview')">課程定位 &amp; 流程</a>
+  <div class="sbh">名詞系統理論</div>
+  <a class="sbl" onclick="goTo('s-open')">開場銜接上週 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-noun')">名詞是什麼 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-why')">TOEIC 為什麼考名詞 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-count')">可數 vs 不可數 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-piece')">不可數量詞 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-quant')">many/much/few/little <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-article')">冠詞 a/an/the <span class="t">15m</span></a>
+  <a class="sbl" onclick="goTo('s-plural')">複數變化 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-compound')">合成名詞 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-suffix')">名詞字尾 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-practice')">課堂練習 A–E <span class="t">20m</span></a>
+  <a class="sbl" onclick="goTo('s-close')">收尾總結 <span class="t">5m</span></a>
+  <div class="sbh">Part 5 · 121–130</div>
+  <a class="sbl" onclick="goTo('q121')">121 平行結構 ⭐</a>
+  <a class="sbl" onclick="goTo('q122')">122 worthwhile</a>
+  <a class="sbl" onclick="goTo('q123')">123 a range of</a>
+  <a class="sbl" onclick="goTo('q124')">124 副詞詞性</a>
+  <a class="sbl" onclick="goTo('q125')">125 keep O C ⭐</a>
+  <a class="sbl" onclick="goTo('q126')">126 形容詞+名詞</a>
+  <a class="sbl" onclick="goTo('q127')">127 固定搭配</a>
+  <a class="sbl" onclick="goTo('q128')">128 動詞字義</a>
+  <a class="sbl" onclick="goTo('q129')">129 形容詞語意</a>
+  <a class="sbl" onclick="goTo('q130')">130 關係代名詞 ⭐</a>
+  <div class="sbh">Part 6 · 131–134</div>
+  <a class="sbl" onclick="goTo('p6-131-v')">文章先導 &amp; 單字</a>
+  <a class="sbl" onclick="goTo('q131')">131 have an impact on ⭐</a>
+  <a class="sbl" onclick="goTo('q132')">132 resistant to</a>
+  <a class="sbl" onclick="goTo('q133')">133 主詞動詞一致 ⭐</a>
+  <a class="sbl" onclick="goTo('q134')">134 文章主旨</a>
+  <div class="sbh">Part 6 · 135–138</div>
+  <a class="sbl" onclick="goTo('p6-135-v')">文章先導 &amp; 單字</a>
+  <a class="sbl" onclick="goTo('q135')">135 商業語境</a>
+  <a class="sbl" onclick="goTo('q136')">136 necessary to ⭐</a>
+  <a class="sbl" onclick="goTo('q137')">137 as good as ⭐</a>
+  <a class="sbl" onclick="goTo('q138')">138 上下文銜接</a>
+  <div class="sbh">收尾</div>
+  <a class="sbl" onclick="goTo('s-summary')">121–138 總整理</a>
+</nav>
+<main id="main">
+<div class="ls" id="s-overview">
+<div class="sh"><div class="sn">0</div><div class="st">課程定位 &amp; 上課流程</div></div>
+<div class="block"><div class="bh gn"><span class="d"></span>本堂目標</div><div class="bb">
+<div class="goal2"><p>今天不只教「名詞有哪些種類」。真正目標是讓學生懂：TOEIC Part 5 很多題考的是<strong>這個名詞可不可數？要不要加 s？前面要不要加 a/an/the？空格需要什麼詞性？</strong></p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>建議上課流程（共 ~90 分鐘）</div><div class="bb">
+<table class="tmtable">
+<tr><th>時間</th><th>內容</th><th>重點提示</th></tr>
+<tr><td>0–5 min</td><td>開場：銜接上週五大句型</td><td>從「動詞後面缺什麼」轉到「名詞本身的規則」</td></tr>
+<tr><td>5–15 min</td><td>名詞定義 + TOEIC 為什麼考名詞</td><td>先建立動機，學生才有學下去的理由</td></tr>
+<tr><td>15–35 min</td><td>可數 vs 不可數 + 量詞 + many/much</td><td>這段最重要，要讓學生練習判斷</td></tr>
+<tr><td>35–50 min</td><td>冠詞 a/an/the/不加</td><td>用「特定 vs 泛指」核心概念帶，不要硬背規則</td></tr>
+<tr><td>50–60 min</td><td>複數 + 合成名詞 + 字尾</td><td>速度可以快，重點是 TOEIC 陷阱</td></tr>
+<tr><td>60–80 min</td><td>課堂練習 A–E</td><td>讓學生開口說，確認觀念有沒有吸收</td></tr>
+<tr><td>80–90 min</td><td>收尾 + 帶出下節 Part 5</td><td>若時間允許，帶 1–2 題 121 當預告</td></tr>
+</table>
+<div class="tip mt12"><p><strong>如果這是兩堂課：</strong>第一堂講完理論 + 練習，第二堂再做 121–138 題目解析。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-open">
+<div class="sh"><div class="sn">1</div><div class="st">開場：銜接上週</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>開場白</div><div class="bb">
+<div class="script">上週我們學的是句子的骨架：主詞、動詞、受詞、補語。我們一直在問一個問題：<em>動詞後面缺什麼？</em><br><br>今天我們換個角度。今天要問的是：<em>名詞本身的規則是什麼？</em><br><br>這個名詞可不可數？前面要不要加 a、an、the？後面要不要加 s？<br><br>因為 TOEIC Part 5 很常考這種題目。很多學生錯，不是因為完全不懂意思，而是知道中文，卻不知道英文規則。</div>
+<div class="ask mt16"><p>舉例：information 是什麼意思？</p><div class="al">預期回答</div><p class="ap">資訊</p></div>
+<div class="ask"><p>那可以說 <code>an information</code> 嗎？</p><div class="al">答案</div><p class="ap">不能。information 是不可數名詞。</p></div>
+<div class="ask"><p>那如果要說「一則資訊」，英文怎麼說？</p><div class="al">答案（學生通常不知道）</div><p class="ap">a piece of information</p></div>
+<div class="script mt12">這就是今天這堂課最重要的地方。不是背更多單字，而是搞懂名詞規則。</div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-noun">
+<div class="sh"><div class="sn">2</div><div class="st">名詞是什麼？</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>定義</div><div class="bb">
+<div class="ask"><p>什麼是名詞？</p><div class="al">一般學生答</div><p class="ap">人、事、物、地點</p></div>
+<div class="script">這個答案對，但不夠。英文裡的名詞還包括：<em>概念、狀態、活動、品質、抽象想法</em>。</div>
+<div class="tip mt12"><p><strong>TOEIC 最常考的名詞，反而常常是看不見、摸不到的抽象名詞：</strong><br>productivity / efficiency / performance / development / improvement / decision / information / experience / knowledge</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-why">
+<div class="sh"><div class="sn">3</div><div class="st">TOEIC 為什麼一直考名詞？</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>示範題</div><div class="bb">
+<div class="script">TOEIC Part 5 很常出現這種題目：</div>
+<div class="es">The company needs more <span style="background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700">______</span>.<br><small style="color:var(--gray-400)">(A) employ　(B) employee　(C) employees　(D) employment</small></div>
+<div class="ask mt12"><p>這題的解法是什麼？先看什麼？</p><div class="al">引導學生</div><p class="ap">more 後面 → 可數複數名詞 → employees（C）</p></div>
+<div class="script mt12">這就是 TOEIC 的思路：<em>不是每題都靠翻譯，很多題靠結構判斷。</em><br>所以今天學名詞規則，直接影響你的 Part 5 答題速度。</div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-count">
+<div class="sh"><div class="sn">4</div><div class="st">可數 vs 不可數名詞</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心判斷法</div><div class="bb">
+<div class="script">英文名詞最重要的不是中文意思，而是：<em>這個東西英文世界裡能不能「一個、兩個、三個」地數？</em></div>
+<div class="ask mt12"><p>可以問自己：我可以說 <code>one ___, two ___</code> 嗎？</p><div class="al">邏輯</div><p class="ap">可以 → 可數名詞　不行 → 不可數名詞</p></div>
+</div></div>
+<div class="block"><div class="bh gn"><span class="d"></span>可數名詞 Countable</div><div class="bb">
+<div class="script">可數名詞可以加 a/an，可以加 s 變複數，可以用 many、few、several。</div>
+<div class="es">a student / two students / many employees / a report / three reports</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>不可數名詞 Uncountable — TOEIC 高頻考點</div><div class="bb">
+<div class="script">這些不能直接加 s，也不能加 a/an：</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:12px 0">
+<div style="background:var(--red-lt);border-radius:8px;padding:10px;font-size:13px"><strong style="color:var(--red)">TOEIC 超常考</strong><br>information<br>equipment<br>furniture<br>advice<br>knowledge<br>luggage<br>research</div>
+<div style="background:var(--gray-100);border-radius:8px;padding:10px;font-size:13px"><strong>其他常見</strong><br>water / air<br>rice / bread<br>coffee / tea<br>traffic<br>homework<br>work / money<br>news</div>
+</div>
+<div class="tip"><p><strong>看到這些就要警覺，不能加 s：</strong><br>informations ❌　equipments ❌　furnitures ❌　advices ❌</p></div>
+<div class="ask mt12"><p>「很多資訊」英文怎麼說？</p><div class="al">答案</div><p class="ap">much information（不是 many informations）</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-piece">
+<div class="sh"><div class="sn">5</div><div class="st">不可數名詞怎麼數？</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>量詞結構</div><div class="bb">
+<div class="script">不可數名詞不是不能表達數量，而是<em>不能直接加數字</em>，要靠量詞。</div>
+<div class="tp mt12"><div class="tw">two informations</div><div class="tr">two pieces of information</div></div>
+<div class="tp"><div class="tw">three equipments</div><div class="tr">three pieces of equipment</div></div>
+<div class="tp"><div class="tw">two breads</div><div class="tr">two slices of bread</div></div>
+<table class="tbl mt16">
+<tr><th>不可數名詞</th><th>一個單位說法</th></tr>
+<tr><td>information</td><td>a piece of information</td></tr>
+<tr><td>advice</td><td>a piece of advice</td></tr>
+<tr><td>equipment</td><td>a piece of equipment</td></tr>
+<tr><td>furniture</td><td>a piece of furniture</td></tr>
+<tr><td>bread</td><td>a slice / loaf of bread</td></tr>
+<tr><td>water</td><td>a glass / bottle of water</td></tr>
+<tr><td>coffee</td><td>a cup of coffee</td></tr>
+<tr><td>paper</td><td>a sheet / piece of paper</td></tr>
+</table>
+<div class="tip mt12"><p><strong>TOEIC 最常考：</strong> a piece of information / a piece of equipment / a piece of advice<br>因為學生常說 an information, an equipment, an advice，全部錯誤。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-quant">
+<div class="sh"><div class="sn">6</div><div class="st">many / much / few / little</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心對照</div><div class="bb">
+<table class="tbl">
+<tr><th>後面名詞類型</th><th>多</th><th>少（幾乎沒有）</th><th>少（有一些）</th></tr>
+<tr><td>可數複數</td><td><strong>many</strong></td><td><strong>few</strong> ← 偏負面</td><td><strong>a few</strong> ← 中性</td></tr>
+<tr><td>不可數</td><td><strong>much</strong></td><td><strong>little</strong> ← 偏負面</td><td><strong>a little</strong> ← 中性</td></tr>
+</table>
+<div class="tip mt12"><p><strong>口訣：</strong>many/few 找可數複數　much/little 找不可數</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>例句對照</div><div class="bb">
+<div class="es">Many employees attended the meeting. ／ Few employees understood the policy.<br><span style="color:var(--gray-400);font-size:12px">員工 = 可數複數 → many / few</span></div>
+<div class="es">We do not have much information. ／ We still have a little time.<br><span style="color:var(--gray-400);font-size:12px">information / time = 不可數 → much / little</span></div>
+<div class="ask mt12"><p>「很多交通」英文怎麼說？many traffic 還是 much traffic？</p><div class="al">答案</div><p class="ap">much traffic（traffic 不可數）</p></div>
+<div class="ask"><p>「有幾位員工問了問題」？</p><div class="al">答案</div><p class="ap">A few employees asked questions.（a few = 有一些，中性）</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-article">
+<div class="sh"><div class="sn">7</div><div class="st">冠詞：a / an / the / 不加</div><div class="stm">⏱ 15 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>三個核心概念</div><div class="bb">
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:8px 0">
+<div style="background:var(--sky-lt);border-radius:8px;padding:12px;text-align:center"><div style="font-size:20px;font-weight:800;color:var(--sky);font-family:Inter">a / an</div><div style="font-size:12px;color:#0369A1;margin-top:4px">一個、不特定<br>第一次提到</div></div>
+<div style="background:var(--amber-lt);border-radius:8px;padding:12px;text-align:center"><div style="font-size:20px;font-weight:800;color:var(--amber);font-family:Inter">the</div><div style="font-size:12px;color:var(--amber-dk);margin-top:4px">特定<br>雙方都知道哪個</div></div>
+<div style="background:var(--gray-100);border-radius:8px;padding:12px;text-align:center"><div style="font-size:20px;font-weight:800;color:var(--gray-600);font-family:Inter">Ø</div><div style="font-size:12px;color:var(--gray-600);margin-top:4px">不加<br>泛指整體概念</div></div>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>a / an：一個、不特定</div><div class="bb">
+<div class="script">a / an 用在可數單數名詞前面，表示「一個」，但<em>不是特定哪一個</em>。</div>
+<div class="es">I bought <strong>a</strong> book yesterday.（哪一本？還不知道）<br>She works for <strong>a</strong> company in Taipei.（哪家公司？不特定）</div>
+<div class="tip mt12"><p><strong>a 還是 an？看發音，不是看字母：</strong><br>a university（u 發 /ju/）/ an hour（h 不發音）/ an honest person / a useful tool</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>the：特定，七種情況</div><div class="bb">
+<table class="tbl">
+<tr><th>情況</th><th>例子</th></tr>
+<tr><td>第二次提到</td><td>I saw a dog. <strong>The</strong> dog was cute.</td></tr>
+<tr><td>後面有修飾語限定</td><td><strong>The</strong> report on the desk is important.</td></tr>
+<tr><td>世界唯一</td><td><strong>the</strong> sun / <strong>the</strong> moon / <strong>the</strong> earth</td></tr>
+<tr><td>最高級</td><td><strong>the</strong> best solution / <strong>the</strong> most important factor</td></tr>
+<tr><td>序數</td><td><strong>the</strong> first step / <strong>the</strong> second floor</td></tr>
+<tr><td>樂器</td><td>play <strong>the</strong> piano / play <strong>the</strong> violin</td></tr>
+<tr><td>特定地理名詞</td><td><strong>the</strong> United States / <strong>the</strong> Pacific Ocean</td></tr>
+</table>
+<div class="ask mt12"><p>「桌上的那份報告」英文怎麼加冠詞？</p><div class="al">答案</div><p class="ap">The report on the desk（後面有修飾語限定 → the）</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>不加 Ø：泛指整體</div><div class="bb">
+<div class="script">不加冠詞最常見兩種：<em>複數可數名詞泛指整體</em>，和<em>不可數名詞泛指整體</em>。</div>
+<table class="tbl mt12">
+<tr><th>泛指，不加</th><th>特指，加 the</th></tr>
+<tr><td>Information is important.</td><td>The information in this report is useful.</td></tr>
+<tr><td>Employees need training.</td><td>The employees in our department are excellent.</td></tr>
+<tr><td>Dogs are friendly.</td><td>The dog I saw yesterday was cute.</td></tr>
+</table>
+<div class="corr mt12"><p>常見錯誤：Taiwan → <strong>the Taiwan ❌</strong>。專有名詞通常不加 the。例外：the United States / the Philippines（固定用法）。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-plural">
+<div class="sh"><div class="sn">8</div><div class="st">複數變化</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>規則 + 不規則</div><div class="bb">
+<table class="tbl">
+<tr><th>規則</th><th>例子</th></tr>
+<tr><td>一般加 s</td><td>student → students, report → reports</td></tr>
+<tr><td>s/x/ch/sh 結尾加 es</td><td>class → classes, box → boxes, watch → watches</td></tr>
+<tr><td>子音 + y → ies</td><td>company → companies, policy → policies</td></tr>
+<tr><td>母音 + y → s</td><td>day → days, key → keys</td></tr>
+<tr><td>部分 f/fe → ves</td><td>leaf → leaves, knife → knives</td></tr>
+</table>
+<table class="tbl mt12">
+<tr><th>不規則</th><th>複數</th><th>單複數同形</th></tr>
+<tr><td>man → men</td><td>child → children</td><td>fish / species / aircraft / series / means</td></tr>
+<tr><td>woman → women</td><td>person → people</td><td></td></tr>
+</table>
+<div class="tip mt12"><p><strong>TOEIC 最常考：</strong> person → people（不是 persons）；不規則複數前的數量詞判斷</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-compound">
+<div class="sh"><div class="sn">9</div><div class="st">合成名詞</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>前面名詞用單數</div><div class="bb">
+<div class="script">合成名詞就是兩個名詞放在一起，前面的名詞像形容詞修飾後面的名詞。<em>前面的名詞通常用單數</em>。</div>
+<div class="tp mt12"><div class="tw">a shoes store</div><div class="tr">a shoe store</div></div>
+<div class="tp"><div class="tw">a five-days trip</div><div class="tr">a five-day trip</div></div>
+<div class="tp"><div class="tw">a 100-pages report</div><div class="tr">a 100-page report</div></div>
+<div class="ask mt12"><p>「七天的訓練課程」英文怎麼說？</p><div class="al">答案</div><p class="ap">a seven-day training program（day 不加 s）</p></div>
+<div class="tip mt12"><p><strong>例外：</strong>有些固定詞本來就是複數形式：sales representative / savings account / sports car — 先當固定搭配記。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-suffix">
+<div class="sh"><div class="sn">10</div><div class="st">名詞字尾快速判斷</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>常見名詞字尾</div><div class="bb">
+<div class="script">不認識單字時，靠字尾猜詞性。字尾不是 100% 絕對，但 TOEIC Part 5 很實用。</div>
+<table class="tbl mt12">
+<tr><th>字尾</th><th>例子</th></tr>
+<tr><td>-tion / -sion</td><td>information, application, communication, decision</td></tr>
+<tr><td>-ment</td><td>development, improvement, management, agreement</td></tr>
+<tr><td>-ness</td><td>business, kindness, happiness, awareness</td></tr>
+<tr><td>-ity</td><td>productivity, ability, responsibility, quality</td></tr>
+<tr><td>-ance / -ence</td><td>performance, assistance, experience, difference</td></tr>
+<tr><td>-er / -or</td><td>manager, employer, employee, director, supervisor</td></tr>
+<tr><td>-ship</td><td>leadership, partnership, friendship</td></tr>
+</table>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-practice">
+<div class="sh"><div class="sn">11</div><div class="st">課堂練習 A–E</div><div class="stm">⏱ 20 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>練習 A：可數 C / 不可數 U</div><div class="bb">
+<div class="script">以下請判斷每個名詞是 C（可數）還是 U（不可數）。<em>學生說，你確認。</em></div>
+<p style="font-size:13px;color:var(--gray-600);margin:10px 0">1. information　2. employee　3. equipment　4. report　5. furniture　6. meeting　7. advice　8. customer　9. traffic　10. problem</p>
+<div class="ask"><p>（逐一問，讓學生回答）</p><div class="al">答案</div><p class="ap">U / C / U / C / U / C / U / C / U / C</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>練習 B：many or much</div><div class="bb">
+<p style="font-size:13px;color:var(--gray-600);margin:0 0 10px">1. We need ______ information.　2. The company hired ______ employees.　3. There is ______ traffic.　4. She gave me ______ advice.　5. The manager received ______ reports.</p>
+<div class="ask"><p>（讓學生一句一句說答案）</p><div class="al">答案</div><p class="ap">much / many / much / much / many</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>練習 C：a / an / the / 不加</div><div class="bb">
+<p style="font-size:13px;color:var(--gray-600);margin:0 0 10px">1. I bought ___ laptop yesterday. ___ laptop was expensive.<br>2. ___ information in this email is important.<br>3. ___ information is important in business.<br>4. She works for ___ company in Taipei.<br>5. ___ company we visited last week is very successful.<br>6. He lives in ___ Taiwan.　7. She is ___ honest employee.　8. This is ___ most important decision.</p>
+<div class="ask"><p>（逐句問）</p><div class="al">答案</div><p class="ap">a / The ／ The ／ 不加 ／ a ／ The ／ 不加 ／ an ／ the</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>練習 D：改錯</div><div class="bb">
+<table class="tbl">
+<tr><th>錯誤句</th><th>正確句</th></tr>
+<tr><td>We need many informations.</td><td>We need much information.</td></tr>
+<tr><td>The company bought new equipments.</td><td>The company bought new equipment.</td></tr>
+<tr><td>She gave me an advice.</td><td>She gave me a piece of advice.</td></tr>
+<tr><td>I attended a five-days training program.</td><td>I attended a five-day training program.</td></tr>
+<tr><td>The Google is a famous company.</td><td>Google is a famous company.</td></tr>
+<tr><td>Everyone are ready.</td><td>Everyone is ready.</td></tr>
+<tr><td>One of my friend is here.</td><td>One of my friends is here.</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>練習 E：TOEIC 風格選擇題</div><div class="bb">
+<div class="es">1. The office needs new ______ for the conference room.<br><small>(A) furnitures　(B) furniture　(C) a furniture　(D) many furniture</small></div>
+<div class="es">2. One of the ______ is missing from the file.<br><small>(A) report　(B) reports　(C) reporting　(D) reported</small></div>
+<div class="es">3. Everyone in the department ______ required to attend the meeting.<br><small>(A) are　(B) be　(C) is　(D) were</small></div>
+<div class="es">4. The manager gave us a useful ______ of advice.<br><small>(A) piece　(B) sheet　(C) bottle　(D) cup</small></div>
+<div class="es">5. Most of the information ______ correct.<br><small>(A) are　(B) is　(C) have　(D) were</small></div>
+<div class="ask mt12"><p>（逐題問學生）</p><div class="al">答案</div><p class="ap">1-B / 2-B / 3-C / 4-A / 5-B</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-close">
+<div class="sh"><div class="sn">12</div><div class="st">收尾總結</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>收尾逐字稿</div><div class="bb">
+<div class="script">今天我們學了很多名詞規則，但你不用一次背完全部。最重要記得三個問題：<br><br><strong>第一：這個名詞可不可數？</strong><br>可數 → 注意 a/an、複數 s、many、few。不可數 → 不能加 a/an 和 s，用 much、little、a piece of。<br><br><strong>第二：這個名詞是泛指還是特定？</strong><br>泛指整體 → 不加 the。特定某個 → 加 the。<br><br><strong>第三：空格是考詞性還是意思？</strong><br>先找詞性，再看可數不可數，最後才用意思確認。</div>
+<div class="goal2 mt12"><p><strong>本堂學生要帶走：</strong></p><ul>
+<li>information / equipment / furniture / advice 不可數，不加 s，不加 a</li>
+<li>a/an 用於可數單數、第一次或不特定</li>
+<li>the 用於特定、第二次、最高級、序數、世界唯一</li>
+<li>one of + 複數名詞 + 單數動詞</li>
+<li>合成名詞前面用單數（a five-day trip）</li>
+</ul></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-part5">
+<div class="sh"><div class="sn">➋</div><div class="st">TOEIC Part 5｜121–130</div><div class="stm">⏱ 30 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>做題節奏</div><div class="bb">
+<div class="script">接下來進 Part 5。做法：<em>你唸題目，學生不看答案，先說解題邏輯再說答案。</em>不急著翻譯，先看空格前後判斷缺什麼。</div>
+</div></div>
+</div>
+
+
+<div class="qb" id="q121">
+<div class="qh"><span class="qn">121</span><span class="qt">平行結構</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Recycling not only mitigates the impact on the environment but also <span class="bl">______</span> the wasting of our earth's limited resources.</div>
+<div class="qzh">回收不只減輕對環境的影響，也 ______ 地球有限資源的浪費。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>reduces</div>
+<div class="qo"><span class="ol">B</span>reducing</div>
+<div class="qo"><span class="ol">C</span>reduced</div>
+<div class="qo"><span class="ol">D</span>being reduced</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>句子裡有 not only A but also B，這個句型對 A 和 B 有什麼要求？</p><div class="al">答案</div><p class="ap">文法形式要平行（parallel structure）</p></div>
+<div class="ask mt12"><p>前面是 <code>not only mitigates</code>，mitigates 是什麼形式？</p><div class="al">答案</div><p class="ap">現在式三單動詞 → but also 後面要同樣形式 → reduces（A）</p></div>
+<div class="formula mt12">not only <span style="color:var(--sky)">V(三單)</span> but also <span style="color:var(--amber)">V(三單)</span></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">mitigate</span><span class="vd">減輕、緩和</span>
+<span class="vw">impact</span><span class="vd">影響</span>
+<span class="vw">limited resources</span><span class="vd">有限資源</span>
+<span class="vw">wasting</span><span class="vd">浪費（名詞）</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q122">
+<div class="qh"><span class="qn">122</span><span class="qt">形容詞語意</span></div>
+<div class="qbody">
+<div class="qsen">Mr. Jackson always says that it is <span class="bl">______</span> to work hard when you are doing something that you truly enjoy.</div>
+<div class="qzh">Jackson 先生說，當你做自己真正喜歡的事，努力工作是 ______ 的。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>worthy</div>
+<div class="qo"><span class="ol">B</span>worthless</div>
+<div class="qo ok"><span class="ol">C</span>worthwhile</div>
+<div class="qo"><span class="ol">D</span>trustworthy</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>It is ______ to work hard — 哪個選項和 to V 最搭？</p><div class="al">答案</div><p class="ap">It is worthwhile to V = 做某事是值得的（C）</p></div>
+<div class="corr mt12"><p>worthy vs worthwhile：worthy 常接 of（be worthy of praise）；worthwhile 接 to V。</p></div>
+</div>
+<div>
+<div class="gtl">選項對照</div>
+<div class="vg">
+<span class="vw">worthy</span><span class="vd">值得的，常搭 of</span>
+<span class="vw">worthless</span><span class="vd">沒有價值的</span>
+<span class="vw">worthwhile</span><span class="vd">值得做的，接 to V</span>
+<span class="vw">trustworthy</span><span class="vd">值得信任的</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q123">
+<div class="qh"><span class="qn">123</span><span class="qt">名詞搭配</span></div>
+<div class="qbody">
+<div class="qsen">Students in the class are asked to use a <span class="bl">______</span> of computer software programs to make videos.</div>
+<div class="qzh">班上學生被要求使用一 ______ 電腦軟體程式製作影片。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>type</div>
+<div class="qo ok"><span class="ol">B</span>range</div>
+<div class="qo"><span class="ol">C</span>line</div>
+<div class="qo"><span class="ol">D</span>kind</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>後面是複數 programs，表示很多種不同軟體，哪個片語最自然？</p><div class="al">答案</div><p class="ap">a range of = 一系列、各式各樣（B）</p></div>
+<div class="tip mt12"><p><strong>對比：</strong>a type of / a kind of 後面接單數不可數；a range of 後面接複數，強調多樣性。</p></div>
+</div>
+<div>
+<div class="gtl">搭配對照</div>
+<div class="vg">
+<span class="vw">a range of</span><span class="vd">一系列（多樣）</span>
+<span class="vw">a type of</span><span class="vd">一種（單一類型）</span>
+<span class="vw">a kind of</span><span class="vd">一種（單一類型）</span>
+<span class="vw">a line of</span><span class="vd">一條產品線</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q124">
+<div class="qh"><span class="qn">124</span><span class="qt">詞性 — 副詞</span></div>
+<div class="qbody">
+<div class="qsen">Mr. Smith mentions that we should think <span class="bl">______</span>, stand outside the box, and see our workmates as friends.</div>
+<div class="qzh">Smith 先生說我們應該以 ______ 角度思考、跳出框架，把同事視為朋友。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>global（形容詞）</div>
+<div class="qo ok"><span class="ol">B</span>globally（副詞）</div>
+<div class="qo"><span class="ol">C</span>globalization（名詞）</div>
+<div class="qo"><span class="ol">D</span>globalize（動詞）</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>空格前面是 <code>think</code>（動詞），空格要修飾動詞，需要什麼詞性？</p><div class="al">答案</div><p class="ap">副詞 → globally（B）</p></div>
+<div class="tip mt12"><p><strong>快速記：</strong>修飾動詞用副詞（-ly）；修飾名詞用形容詞。think globally = 以全球角度思考</p></div>
+</div>
+<div>
+<div class="gtl">補充片語</div>
+<div class="vg">
+<span class="vw">think globally</span><span class="vd">以全球角度思考</span>
+<span class="vw">think outside the box</span><span class="vd">跳出框架</span>
+<span class="vw">workmate</span><span class="vd">同事</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q125">
+<div class="qh"><span class="qn">125</span><span class="qt">S + V + O + C</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">My boss thinks that meetings for reviews can be kept <span class="bl">______</span>.</div>
+<div class="qzh">我老闆認為檢討會議可以保持 ______。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>revised</div>
+<div class="qo"><span class="ol">B</span>enlarged</div>
+<div class="qo"><span class="ol">C</span>expanded</div>
+<div class="qo ok"><span class="ol">D</span>short</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>這題連回上週！keep + O + C 是哪個句型？C 在描述誰？</p><div class="al">答案</div><p class="ap">S + V + O + C（受詞補語）。short 描述 meetings 的狀態 → keep meetings short</p></div>
+<div class="formula mt12">keep + O + <span style="color:var(--purple)">adj.(C)</span> = 讓…保持某狀態</div>
+<div class="tip mt12"><p>同類：keep the room clean / keep the door open / keep your answer short</p></div>
+</div>
+<div>
+<div class="gtl">選項對照</div>
+<div class="vg">
+<span class="vw">revised</span><span class="vd">被修改的</span>
+<span class="vw">enlarged</span><span class="vd">被放大的</span>
+<span class="vw">expanded</span><span class="vd">被擴大的</span>
+<span class="vw">short</span><span class="vd">簡短的（正確）</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q126">
+<div class="qh"><span class="qn">126</span><span class="qt">詞性 — 形容詞+名詞</span></div>
+<div class="qbody">
+<div class="qsen">Learning a foreign language well is not easy, and perfection only comes with diligent <span class="bl">______</span>.</div>
+<div class="qzh">學好外語不容易，完美只會透過勤奮 ______ 而來。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>practice</div>
+<div class="qo"><span class="ol">B</span>practiced</div>
+<div class="qo"><span class="ol">C</span>practicing</div>
+<div class="qo"><span class="ol">D</span>practitioner</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>空格前面是 <code>diligent</code>（形容詞），後面需要什麼詞性？</p><div class="al">答案</div><p class="ap">名詞 → practice（A）</p></div>
+<div class="corr mt12"><p>practitioner（D）也是名詞，但是「從業者」，不符句意。</p></div>
+</div>
+<div>
+<div class="gtl">補充</div>
+<div class="vg">
+<span class="vw">diligent</span><span class="vd">勤奮的</span>
+<span class="vw">practice (n.)</span><span class="vd">練習</span>
+<span class="vw">practitioner</span><span class="vd">從業者</span>
+</div>
+<div class="tip mt12"><p>Practice makes perfect. 熟能生巧。</p></div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q127">
+<div class="qh"><span class="qn">127</span><span class="qt">固定搭配</span></div>
+<div class="qbody">
+<div class="qsen">The vegetarian lifestyle has moved into the <span class="bl">______</span> in many parts of the world.</div>
+<div class="qzh">素食生活方式在世界很多地方已進入 ______。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>strategy</div>
+<div class="qo"><span class="ol">B</span>examination</div>
+<div class="qo ok"><span class="ol">C</span>mainstream</div>
+<div class="qo"><span class="ol">D</span>accomplishment</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>move into the ______ — 哪個字最自然？</p><div class="al">答案</div><p class="ap">move into the mainstream = 進入主流（C）</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">vegetarian</span><span class="vd">素食的</span>
+<span class="vw">lifestyle</span><span class="vd">生活方式</span>
+<span class="vw">mainstream</span><span class="vd">主流</span>
+<span class="vw">accomplishment</span><span class="vd">成就</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q128">
+<div class="qh"><span class="qn">128</span><span class="qt">動詞字義</span></div>
+<div class="qbody">
+<div class="qsen">Following irregular eating schedules can compromise the immune system and <span class="bl">______</span> some health problems.</div>
+<div class="qzh">不規律的飲食時間會損害免疫系統並 ______ 一些健康問題。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>solve</div>
+<div class="qo"><span class="ol">B</span>promote</div>
+<div class="qo ok"><span class="ol">C</span>cause</div>
+<div class="qo"><span class="ol">D</span>compress</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>主詞是「不規律的飲食」，它會對健康「造成」什麼？</p><div class="al">答案</div><p class="ap">cause health problems（C）— 不規律飲食會造成問題，不是解決或促進。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">irregular</span><span class="vd">不規律的</span>
+<span class="vw">compromise</span><span class="vd">損害、危及</span>
+<span class="vw">immune system</span><span class="vd">免疫系統</span>
+<span class="vw">cause</span><span class="vd">造成</span>
+<span class="vw">promote</span><span class="vd">促進、推廣</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q129">
+<div class="qh"><span class="qn">129</span><span class="qt">形容詞語意</span></div>
+<div class="qbody">
+<div class="qsen">In the office, humors can bring timely relief to an <span class="bl">______</span> atmosphere.</div>
+<div class="qzh">在辦公室裡，幽默可以及時緩解 ______ 的氣氛。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>uncomfortable</div>
+<div class="qo"><span class="ol">B</span>unreasonable</div>
+<div class="qo"><span class="ol">C</span>unacceptable</div>
+<div class="qo"><span class="ol">D</span>unaccountable</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>humor 帶來 relief（緩解），什麼樣的氣氛最需要被緩解？</p><div class="al">答案</div><p class="ap">uncomfortable（不舒服的、尷尬的）atmosphere（A）</p></div>
+</div>
+<div>
+<div class="gtl">選項對照</div>
+<div class="vg">
+<span class="vw">uncomfortable</span><span class="vd">不舒服的</span>
+<span class="vw">unreasonable</span><span class="vd">不合理的</span>
+<span class="vw">unacceptable</span><span class="vd">無法接受的</span>
+<span class="vw">unaccountable</span><span class="vd">無法解釋的</span>
+</div>
+<div class="vg mt12">
+<span class="vw">timely</span><span class="vd">及時的</span>
+<span class="vw">relief</span><span class="vd">緩解、寬慰</span>
+<span class="vw">atmosphere</span><span class="vd">氣氛</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q130">
+<div class="qh"><span class="qn">130</span><span class="qt">關係代名詞</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The workplace must have the best devices <span class="bl">______</span> yield free results in the minimum possible time.</div>
+<div class="qzh">職場必須有最好的設備，______ 能在最短時間內產生成效。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>when</div>
+<div class="qo"><span class="ol">B</span>therefore</div>
+<div class="qo ok"><span class="ol">C</span>that</div>
+<div class="qo"><span class="ol">D</span>because</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>devices ______ yield results — 這裡空格要連接名詞 devices 和動詞 yield，需要什麼？</p><div class="al">答案</div><p class="ap">關係代名詞 that，修飾 devices（C）</p></div>
+<div class="tip mt12"><p><strong>規則：</strong>N + that + V = 修飾名詞的關係子句<br>例：The strategy that yields results is important.</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">device</span><span class="vd">設備、裝置</span>
+<span class="vw">yield</span><span class="vd">產生、帶來</span>
+<span class="vw">minimum</span><span class="vd">最少的</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="ls" id="p6-131-v">
+<div class="sh"><div class="sn">➌</div><div class="st">Part 6｜131–134 文章先導</div><div class="stm">⏱ 20 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>Part 6 上課順序</div><div class="bb">
+<div class="goal2"><p><strong>Part 6 做題順序：</strong>先看文章類型 → 先講核心單字 → 講重要文法 → 帶讀抓主旨 → 最後才解題。<br>不要一開始就看選項，否則學生會變成猜答案。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章主題先講</div><div class="bb">
+<div class="script">這篇文章在講兩件事：<em>身體吃什麼會影響健康；心理吸收什麼會影響人格。</em><br>也就是：physical diet 影響身體；mental diet 影響個性。先記住這個主軸，等一下解題會快很多。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章原文</div><div class="bb">
+<div class="artbox">Our physical diet has a large <span class="abl">---131---</span> on our levels of health and energy. If we eat fresh, healthy, high-quality foods of all kinds and avoid the foods that are bad for us, we will have more energy, be generally <span class="abl">---132---</span> to most diseases, sleep better, and feel healthier and happier. In the same way, our mental diet largely <span class="abl">---133---</span> our character and personality. When we <span class="abl">---134---</span>, we develop a more positive and effective personality.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>physical diet</td><td>身體飲食</td><td>A healthy physical diet gives us more energy.</td></tr>
+<tr><td>mental diet</td><td>心理飲食（每天吸收的想法）</td><td>Reading positive books improves your mental diet.</td></tr>
+<tr><td>avoid</td><td>避免</td><td>We should avoid unhealthy foods.</td></tr>
+<tr><td>disease</td><td>疾病</td><td>Exercise can reduce the risk of disease.</td></tr>
+<tr><td>character</td><td>性格、本質</td><td>Challenges can shape a person's character.</td></tr>
+<tr><td>personality</td><td>個性、人格</td><td>She has a friendly personality.</td></tr>
+<tr><td>positive</td><td>正面的、積極的</td><td>A positive attitude helps us solve problems.</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>文章帶讀逐字稿</div><div class="bb">
+<div class="script">這篇先不看選項。第一句說：我們的 physical diet 對健康和能量有很大影響。<br><br>第二句說：如果我們吃新鮮高品質食物，我們會更有能量，更能<em>抵抗疾病</em>（132 的伏筆）。<br><br>接下來看到 <em>In the same way</em>——這個很重要，代表作者要從身體飲食轉到 mental diet。<br><br>結論是：<em>吃對東西身體好；吸收正面想法人格更正面。</em>所以 134 一定要跟 mental diet、正面想法有關。</div>
+<div class="tip mt12"><p><strong>文章解題伏筆：</strong><br>131 → have an impact on（固定搭配）<br>132 → be resistant to + N（詞性 + 搭配）<br>133 → 主詞 mental diet（單數）→ 動詞要加 s<br>134 → 文章主旨：mental diet + 正面想法</p></div>
+</div></div>
+</div>
+
+
+<div class="qb" id="q131">
+<div class="qh"><span class="qn">131</span><span class="qt">固定搭配</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Our physical diet has a large <span class="bl">---131---</span> on our levels of health and energy.</div>
+<div class="qzh">我們的身體飲食對健康和能量水平有很大的 ______。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>thought</div>
+<div class="qo"><span class="ol">B</span>dream</div>
+<div class="qo ok"><span class="ol">C</span>impact</div>
+<div class="qo"><span class="ol">D</span>attitude</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>has a large ______ on — 想到什麼固定搭配？</p><div class="al">答案</div><p class="ap">have an impact on = 對……有影響（C）</p></div>
+<div class="formula mt12">have an impact on + N<br><small style="color:var(--gray-600)">= 對……產生影響</small></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">impact (n.)</span><span class="vd">影響</span>
+<span class="vw">have an impact on</span><span class="vd">對…有影響</span>
+<span class="vw">attitude</span><span class="vd">態度</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q132">
+<div class="qh"><span class="qn">132</span><span class="qt">詞性 + 固定搭配</span></div>
+<div class="qbody">
+<div class="qsen">we will have more energy, be generally <span class="bl">---132---</span> to most diseases...</div>
+<div class="qzh">我們會更有能量，通常對大多數疾病 ______ ...</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>resistant</div>
+<div class="qo"><span class="ol">B</span>resist</div>
+<div class="qo"><span class="ol">C</span>resistance</div>
+<div class="qo"><span class="ol">D</span>resists</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>be generally ______ to — be 後面需要什麼詞性？</p><div class="al">答案</div><p class="ap">形容詞 → resistant（A）。固定搭配：be resistant to = 對…有抵抗力</p></div>
+<div class="tip mt12"><p><strong>be resistant to + N</strong>：對…有抵抗力<br>Some bacteria are resistant to antibiotics.</p></div>
+</div>
+<div>
+<div class="gtl">選項詞性</div>
+<div class="vg">
+<span class="vw">resistant</span><span class="vd">形容詞（正確）</span>
+<span class="vw">resist</span><span class="vd">動詞</span>
+<span class="vw">resistance</span><span class="vd">名詞</span>
+<span class="vw">resists</span><span class="vd">動詞三單</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q133">
+<div class="qh"><span class="qn">133</span><span class="qt">主詞動詞一致</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">In the same way, our mental diet largely <span class="bl">---133---</span> our character and personality.</div>
+<div class="qzh">同樣地，我們的心理飲食在很大程度上 ______ 我們的性格與人格。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>determines</div>
+<div class="qo"><span class="ol">B</span>determining</div>
+<div class="qo"><span class="ol">C</span>determine</div>
+<div class="qo"><span class="ol">D</span>determination</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>主詞是 our mental diet，真正核心主詞是哪個字？單複數？</p><div class="al">答案</div><p class="ap">diet（單數）→ 現在式動詞要加 s → determines（A）</p></div>
+<div class="corr mt12"><p>D determination 是名詞「決心」，詞性不對，這裡需要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">determine (v.)</span><span class="vd">決定、影響</span>
+<span class="vw">determination (n.)</span><span class="vd">決心</span>
+<span class="vw">largely</span><span class="vd">在很大程度上</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q134">
+<div class="qh"><span class="qn">134</span><span class="qt">文章主旨 — 上下文</span></div>
+<div class="qbody">
+<div class="qsen">When we <span class="bl">---134---</span>, we develop a more positive and effective personality.</div>
+<div class="qzh">當我們 ______，我們會發展出更正面、有效的人格。</div>
+<div style="margin-bottom:14px">
+<div class="q4o ok">B. feed our mind with positive ideas（用正面想法滋養心智）</div>
+<div class="q4o">A. work hard enough（夠努力工作）</div>
+<div class="q4o">C. deal with difficult customers（處理難搞客戶）</div>
+<div class="q4o">D. encounter problems（遇到問題）</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>文章主軸是 mental diet。讓人格更正面的做法應該是什麼？</p><div class="al">答案</div><p class="ap">feed our mind with positive ideas（B）— 和文章 mental diet 主題完全吻合</p></div>
+<div class="corr mt12"><p>A/C/D 都偏離 mental diet 主題。記住 In the same way 後面是在講吸收正面想法，不是工作、客服或遇到問題。</p></div>
+</div>
+<div>
+<div class="gtl">補充片語</div>
+<div class="vg">
+<span class="vw">feed A with B</span><span class="vd">用 B 滋養 A</span>
+<span class="vw">positive</span><span class="vd">正面的、積極的</span>
+<span class="vw">effective</span><span class="vd">有效的</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="ls" id="p6-135-v">
+<div class="sh"><div class="sn">➍</div><div class="st">Part 6｜135–138 文章先導</div><div class="stm">⏱ 20 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章主題先講</div><div class="bb">
+<div class="script">這篇在講：<em>成功的管理者會把公司看成互相連結的系統，各部門都需要彼此支援。</em></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章原文</div><div class="bb">
+<div class="artbox">Successful <span class="abl">---135---</span> see their company as a series of interlocking parts. Each division is important on its own, but it is also <span class="abl">---136---</span> to the support of the others. That is the only way to be sure that the product is as good <span class="abl">---137---</span> the advertising. "The most important parts of the business world is, however, often invisible." The General Manager of Best-Tech Company says, "<span class="abl">---138---</span>, we also focus on the need for an efficient service department."</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>interlocking parts</td><td>互相連結的部分</td><td>The system consists of interlocking parts.</td></tr>
+<tr><td>division</td><td>部門</td><td>The sales division is very busy.</td></tr>
+<tr><td>on its own</td><td>單獨地、本身</td><td>Each department is important on its own.</td></tr>
+<tr><td>invisible</td><td>看不見的</td><td>Some important work is invisible.</td></tr>
+<tr><td>general manager</td><td>總經理</td><td>The general manager made the final decision.</td></tr>
+<tr><td>focus on</td><td>專注於、重視</td><td>The company focuses on customer service.</td></tr>
+<tr><td>efficient</td><td>有效率的</td><td>We need an efficient system.</td></tr>
+<tr><td>service department</td><td>服務部門</td><td>The service department handles complaints.</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>文章帶讀逐字稿</div><div class="bb">
+<div class="script">先不看選項。第一句說：成功的 ______ 會把公司看成一系列互相連結的部分。<em>誰最可能這樣看公司？</em> 135 要想 managers。<br><br>接著說：每個部門本身都很重要，但它也需要其他部門的 support。這句的 but it is also ______ to the support 要想 be ______ to 的搭配。<br><br>後面說：這是唯一能確保產品和廣告<em>一樣好</em>的方式。看到 as good ______，直接想到 as good as。<br><br>最後總經理說：除了吸引新顧客之外，我們也重視有效率的服務部門。also 在這裡是關鍵——also 前面一定要有「另一件事」。</div>
+<div class="tip mt12"><p><strong>解題伏筆：</strong><br>135 → 誰看公司整體？managers<br>136 → be ______ to → 形容詞 → necessary to<br>137 → as good ______ → as good as（同等比較）<br>138 → also 暗示前面有另一件事 → In addition to...</p></div>
+</div></div>
+</div>
+
+
+<div class="qb" id="q135">
+<div class="qh"><span class="qn">135</span><span class="qt">商業語境</span></div>
+<div class="qbody">
+<div class="qsen">Successful <span class="bl">---135---</span> see their company as a series of interlocking parts.</div>
+<div class="qzh">成功的 ______ 會把他們的公司看成一系列互相連結的部分。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>candidates</div>
+<div class="qo ok"><span class="ol">B</span>managers</div>
+<div class="qo"><span class="ol">C</span>subordinates</div>
+<div class="qo"><span class="ol">D</span>parents</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>誰最可能「把公司看成整體系統」？</p><div class="al">答案</div><p class="ap">managers（管理者）（B）</p></div>
+</div>
+<div>
+<div class="gtl">選項對照</div>
+<div class="vg">
+<span class="vw">candidate</span><span class="vd">候選人；應徵者</span>
+<span class="vw">manager</span><span class="vd">經理、管理者</span>
+<span class="vw">subordinate</span><span class="vd">下屬</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q136">
+<div class="qh"><span class="qn">136</span><span class="qt">形容詞搭配</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Each division is important on its own, but it is also <span class="bl">---136---</span> to the support of the others.</div>
+<div class="qzh">每個部門本身都很重要，但它對其他部門的支持也是 ______。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>impersonal</div>
+<div class="qo ok"><span class="ol">B</span>necessary</div>
+<div class="qo"><span class="ol">C</span>operational</div>
+<div class="qo"><span class="ol">D</span>effective</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>be also ______ to the support — 哪個形容詞和 to 搭配最自然，語意也最合理？</p><div class="al">答案</div><p class="ap">be necessary to = 對…是必要的（B）</p></div>
+<div class="formula mt12">be necessary to + N</div>
+</div>
+<div>
+<div class="gtl">選項對照</div>
+<div class="vg">
+<span class="vw">impersonal</span><span class="vd">非個人的</span>
+<span class="vw">necessary</span><span class="vd">必要的</span>
+<span class="vw">operational</span><span class="vd">運作中的</span>
+<span class="vw">effective</span><span class="vd">有效的</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q137">
+<div class="qh"><span class="qn">137</span><span class="qt">同等比較句型</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">That is the only way to be sure that the product is as good <span class="bl">---137---</span> the advertising.</div>
+<div class="qzh">這是唯一能確保產品和廣告 ______ 好的方式。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>as</div>
+<div class="qo"><span class="ol">B</span>like</div>
+<div class="qo"><span class="ol">C</span>the same</div>
+<div class="qo"><span class="ol">D</span>similar to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>看到 as good ______，想到什麼句型？</p><div class="al">答案</div><p class="ap">as + adj. + as（同等比較）→ as good as（A）</p></div>
+<div class="formula mt12">as + <span style="color:var(--sky)">adj.</span> + as = 和…一樣…</div>
+</div>
+<div>
+<div class="gtl">選項對照</div>
+<div class="vg">
+<span class="vw">as...as...</span><span class="vd">同等比較（正確）</span>
+<span class="vw">like</span><span class="vd">像（不是比較）</span>
+<span class="vw">the same as</span><span class="vd">和…一樣（需兩個 as）</span>
+<span class="vw">similar to</span><span class="vd">類似於</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q138">
+<div class="qh"><span class="qn">138</span><span class="qt">上下文銜接</span></div>
+<div class="qbody">
+<div class="qsen">The General Manager says, "<span class="bl">---138---</span>, we also focus on the need for an efficient service department."</div>
+<div class="qzh">總經理說：「______，我們也重視有效率的服務部門。」</div>
+<div style="margin-bottom:14px">
+<div class="q4o ok">D. In addition to attracting new customers（除了吸引新顧客之外）</div>
+<div class="q4o">A. Therefore, it is necessary to take actions</div>
+<div class="q4o">B. As long as you are competitive enough</div>
+<div class="q4o">C. When we are talking to strangers</div>
+</div>
+<div class="qtc">
+<div>
+<div class="ask"><p>後面有 <code>we also focus on</code>，also 表示「也」，前面應該有什麼？</p><div class="al">答案</div><p class="ap">另一件公司重視的事 → In addition to attracting new customers（除了吸引新顧客之外）（D）</p></div>
+<div class="formula mt12">In addition to + V-ing<br><small style="color:var(--gray-600)">除了…之外（also 的上文）</small></div>
+<div class="corr mt12"><p>A 的 Therefore 和 also 不搭；B/C 偏離商業主題。</p></div>
+</div>
+<div>
+<div class="gtl">補充片語</div>
+<div class="vg">
+<span class="vw">in addition to + N/V-ing</span><span class="vd">除了…之外</span>
+<span class="vw">focus on</span><span class="vd">專注於、重視</span>
+<span class="vw">efficient</span><span class="vd">有效率的</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="ls" id="s-summary">
+<div class="sh"><div class="sn">✓</div><div class="st">121–138 總整理</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>考點速查表</div><div class="bb">
+<table class="tbl">
+<tr><th>題號</th><th>答案</th><th>考點</th><th>學生要記住</th></tr>
+<tr><td>121</td><td>A reduces</td><td>not only…but also 平行結構</td><td>前後動詞形式要一致</td></tr>
+<tr><td>122</td><td>C worthwhile</td><td>固定句型</td><td>It is worthwhile to V</td></tr>
+<tr><td>123</td><td>B range</td><td>名詞搭配</td><td>a range of = 一系列（多樣）</td></tr>
+<tr><td>124</td><td>B globally</td><td>詞性 — 副詞</td><td>修飾動詞用副詞（-ly）</td></tr>
+<tr><td>125</td><td>D short</td><td>S+V+O+C</td><td>keep meetings short（連回上週）</td></tr>
+<tr><td>126</td><td>A practice</td><td>詞性 — 形容詞+名詞</td><td>diligent 後面接名詞</td></tr>
+<tr><td>127</td><td>C mainstream</td><td>固定搭配</td><td>move into the mainstream</td></tr>
+<tr><td>128</td><td>C cause</td><td>動詞字義</td><td>不規律飲食 cause 健康問題</td></tr>
+<tr><td>129</td><td>A uncomfortable</td><td>形容詞語意</td><td>humor 緩解 uncomfortable atmosphere</td></tr>
+<tr><td>130</td><td>C that</td><td>關係代名詞</td><td>N + that + V 修飾名詞</td></tr>
+<tr><td>131</td><td>C impact</td><td>固定搭配</td><td>have an impact on</td></tr>
+<tr><td>132</td><td>A resistant</td><td>詞性 + 搭配</td><td>be resistant to + N</td></tr>
+<tr><td>133</td><td>A determines</td><td>主詞動詞一致</td><td>mental diet（單數）→ determines</td></tr>
+<tr><td>134</td><td>B feed our mind</td><td>文章主旨</td><td>mental diet → positive ideas</td></tr>
+<tr><td>135</td><td>B managers</td><td>商業語境</td><td>managers 看公司整體</td></tr>
+<tr><td>136</td><td>B necessary</td><td>形容詞搭配</td><td>be necessary to + N</td></tr>
+<tr><td>137</td><td>A as</td><td>同等比較</td><td>as good as</td></tr>
+<tr><td>138</td><td>D In addition to</td><td>上下文銜接</td><td>also 前面要有另一件事</td></tr>
+</table>
+<div class="goal2 mt16"><p><strong>下次複習建議：</strong>先考 10 個片語：have an impact on / be resistant to / determine / feed A with B / a series of / see A as B / on its own / as good as / in addition to / focus on</p></div>
+</div></div>
+</div>
+
+</main>
+</div>
+<script>
+let sec=0,running=false,iv=null;
+function pad(n){return n.toString().padStart(2,'0')}
+function upd(){const m=Math.floor(sec/60),s=sec%60;document.getElementById('timer').textContent=pad(m)+':'+pad(s)}
+function toggleTimer(){
+  if(running){clearInterval(iv);running=false;document.querySelector('.tbtn').textContent='▶ 開始'}
+  else{iv=setInterval(()=>{sec++;upd()},1000);running=true;document.querySelector('.tbtn').textContent='⏸ 暫停'}
+}
+function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.querySelector('.tbtn').textContent='▶ 開始'}
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+const allSecs=[
+  {id:'s-overview',label:'課程總覽'},
+  {id:'s-open',label:'開場銜接'},
+  {id:'s-noun',label:'名詞定義'},
+  {id:'s-why',label:'TOEIC考名詞'},
+  {id:'s-count',label:'可數/不可數'},
+  {id:'s-piece',label:'不可數量詞'},
+  {id:'s-quant',label:'many/much'},
+  {id:'s-article',label:'冠詞'},
+  {id:'s-plural',label:'複數變化'},
+  {id:'s-compound',label:'合成名詞'},
+  {id:'s-suffix',label:'名詞字尾'},
+  {id:'s-practice',label:'課堂練習'},
+  {id:'s-close',label:'收尾'},
+  {id:'s-part5',label:'Part 5'},
+  {id:'q121',label:'121'},
+  {id:'q122',label:'122'},
+  {id:'q123',label:'123'},
+  {id:'q124',label:'124'},
+  {id:'q125',label:'125'},
+  {id:'q126',label:'126'},
+  {id:'q127',label:'127'},
+  {id:'q128',label:'128'},
+  {id:'q129',label:'129'},
+  {id:'q130',label:'130'},
+  {id:'p6-131-v',label:'131-134先導'},
+  {id:'q131',label:'131'},
+  {id:'q132',label:'132'},
+  {id:'q133',label:'133'},
+  {id:'q134',label:'134'},
+  {id:'p6-135-v',label:'135-138先導'},
+  {id:'q135',label:'135'},
+  {id:'q136',label:'136'},
+  {id:'q137',label:'137'},
+  {id:'q138',label:'138'},
+  {id:'s-summary',label:'總整理'},
+];
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      const s=allSecs.find(x=>x.id===id);
+      if(s){
+        document.querySelectorAll('.sbl').forEach(l=>l.classList.remove('active'));
+        const lk=document.querySelector(`.sbl[onclick*="${id}"]`);
+        if(lk)lk.classList.add('active');
+        document.getElementById('csec').textContent=s.label;
+      }
+    }
+  });
+},{threshold:0.2,rootMargin:'-60px 0px -65% 0px'});
+allSecs.forEach(s=>{const el=document.getElementById(s.id);if(el)obs.observe(el)});
+</script>
+</body>
+</html>
