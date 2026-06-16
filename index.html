@@ -8,96 +8,98 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0F172A;--navy2:#1E3A5F;
-  --amber:#F59E0B;--amber-lt:#FEF3C7;
-  --green:#059669;--green-lt:#D1FAE5;
-  --gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-300:#CBD5E1;
-  --gray-400:#94A3B8;--gray-600:#475569;--white:#fff;
+  --navy:#0F172A;
+  --amber:#F59E0B;
+  --green:#059669;
+  --sky:#0EA5E9;
+  --purple:#7C3AED;
 }
 html{scroll-behavior:smooth}
-body{font-family:"Noto Sans TC","Inter",sans-serif;background:#0F172A;color:var(--white);min-height:100vh}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:white;min-height:100vh}
 
-header{
-  padding:52px 24px 44px;text-align:center;
-  border-bottom:1px solid rgba(255,255,255,.07);
-}
-.header-tag{
-  display:inline-block;background:var(--amber);color:var(--navy);
-  font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
-  padding:4px 14px;border-radius:20px;margin-bottom:16px;
-  font-family:"Inter",sans-serif;
-}
-header h1{
-  font-family:"Inter",sans-serif;font-size:32px;font-weight:900;
-  color:white;margin-bottom:8px;
-}
+header{padding:48px 24px 40px;text-align:center;border-bottom:1px solid rgba(255,255,255,.07)}
+.header-tag{display:inline-block;background:var(--amber);color:var(--navy);font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:16px;font-family:"Inter",sans-serif}
+header h1{font-family:"Inter",sans-serif;font-size:32px;font-weight:900;margin-bottom:8px}
 header h1 span{color:var(--amber)}
-header p{color:rgba(255,255,255,.45);font-size:14px}
+header p{color:rgba(255,255,255,.4);font-size:14px}
 
-main{max-width:960px;margin:0 auto;padding:40px 24px 80px}
+main{max-width:980px;margin:0 auto;padding:44px 24px 80px}
 
-.grid-label{
-  font-size:11px;font-weight:700;text-transform:uppercase;
-  letter-spacing:1.5px;color:rgba(255,255,255,.3);
-  display:flex;align-items:center;gap:10px;margin-bottom:22px;
+/* ZONE */
+.zone{margin-bottom:52px}
+.zone-header{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:20px;padding-bottom:14px;
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
-.grid-label::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.07)}
+.zone-icon{
+  width:36px;height:36px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;flex-shrink:0;
+}
+.zone-icon.sky{background:rgba(14,165,233,.15)}
+.zone-icon.purple{background:rgba(124,58,237,.15)}
+.zone-title{
+  font-family:"Inter",sans-serif;font-size:17px;font-weight:800;
+}
+.zone-sub{font-size:13px;color:rgba(255,255,255,.35);margin-top:2px}
 
+.zone-note{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:600;
+  padding:3px 10px;border-radius:6px;
+  margin-left:auto;
+}
+.note-sky{background:rgba(14,165,233,.12);color:#38BDF8}
+.note-purple{background:rgba(124,58,237,.12);color:#A78BFA}
+
+/* GRID */
 .lesson-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(175px,1fr));
   gap:10px;
 }
 
+/* CARD */
 .lesson-card{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.07);
   border-radius:12px;
-  padding:18px 16px 16px;
+  padding:16px 15px 14px;
   text-decoration:none;color:inherit;
-  display:flex;flex-direction:column;gap:7px;
+  display:flex;flex-direction:column;gap:6px;
   transition:all .18s;
-  opacity:.4;
-  cursor:default;
-  pointer-events:none;
+  opacity:.35;cursor:default;pointer-events:none;
 }
 .lesson-card.ready{
   opacity:1;
-  background:rgba(255,255,255,.06);
-  border-color:rgba(255,255,255,.14);
-  cursor:pointer;
-  pointer-events:auto;
+  background:rgba(255,255,255,.05);
+  border-color:rgba(255,255,255,.12);
+  cursor:pointer;pointer-events:auto;
 }
 .lesson-card.ready:hover{
-  background:rgba(255,255,255,.1);
-  border-color:var(--amber);
+  background:rgba(255,255,255,.09);
   transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(0,0,0,.3);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
+.zone.class-zone .lesson-card.ready{border-color:rgba(14,165,233,.3)}
+.zone.class-zone .lesson-card.ready:hover{border-color:var(--sky)}
+.zone.teacher-zone .lesson-card.ready{border-color:rgba(124,58,237,.3)}
+.zone.teacher-zone .lesson-card.ready:hover{border-color:var(--purple)}
 
 .lesson-num{
   font-family:"Inter",sans-serif;font-size:11px;font-weight:700;
-  text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);
+  text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.3);
 }
-.lesson-card.ready .lesson-num{color:var(--amber)}
+.zone.class-zone .lesson-card.ready .lesson-num{color:#38BDF8}
+.zone.teacher-zone .lesson-card.ready .lesson-num{color:#A78BFA}
 
-.lesson-topic{
-  font-size:14px;font-weight:600;color:white;line-height:1.4;min-height:40px;
-}
-.lesson-topic.placeholder{color:rgba(255,255,255,.2);font-weight:400}
+.lesson-topic{font-size:13px;font-weight:600;color:white;line-height:1.4;min-height:36px}
+.lesson-topic.placeholder{color:rgba(255,255,255,.18);font-weight:400}
+.lesson-file{font-family:"JetBrains Mono",monospace;font-size:10px;color:rgba(255,255,255,.2);word-break:break-all;margin-top:2px}
+.lesson-card.ready .lesson-file{color:rgba(255,255,255,.3)}
 
-.lesson-file{
-  font-family:"JetBrains Mono",monospace;
-  font-size:10px;color:rgba(255,255,255,.25);
-  margin-top:4px;word-break:break-all;
-}
-.lesson-card.ready .lesson-file{color:rgba(255,255,255,.35)}
-
-footer{
-  text-align:center;padding:24px;
-  font-size:12px;color:rgba(255,255,255,.2);
-  border-top:1px solid rgba(255,255,255,.06);
-}
+footer{text-align:center;padding:24px;font-size:12px;color:rgba(255,255,255,.18);border-top:1px solid rgba(255,255,255,.06)}
 </style>
 </head>
 <body>
@@ -105,13 +107,136 @@ footer{
 <header>
   <div class="header-tag">老師版</div>
   <h1>TOEIC 講義<span>索引</span></h1>
-  <p>點選已完成的堂次開啟老師逐字稿</p>
+  <p>上課投影 & 老師逐字稿，共 20 堂</p>
 </header>
 
 <main>
-  <div class="grid-label">全部課次 (Lesson 01–20)</div>
-  <div class="lesson-grid">
-    
+
+  <!-- ZONE 1: 上課分享畫面 -->
+  <div class="zone class-zone">
+    <div class="zone-header">
+      <div class="zone-icon sky">🖥️</div>
+      <div>
+        <div class="zone-title">上課投影版</div>
+        <div class="zone-sub">分享畫面給學生看 · 答案需點擊才顯示</div>
+      </div>
+      <span class="zone-note note-sky">分享畫面用</span>
+    </div>
+    <div class="lesson-grid">
+    <a class="lesson-card" href="Toeic-Lesson01-Class.html">
+      <div class="lesson-num">Lesson 01</div>
+      <div class="lesson-topic">五大句型 & 及物不及物動詞</div>
+      <div class="lesson-file">Toeic-Lesson01-Class.html</div>
+    </a>
+    <a class="lesson-card ready" href="Toeic-Lesson02-Class.html">
+      <div class="lesson-num">Lesson 02</div>
+      <div class="lesson-topic">名詞系統 & 121–138</div>
+      <div class="lesson-file">Toeic-Lesson02-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson03-Class.html">
+      <div class="lesson-num">Lesson 03</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson03-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson04-Class.html">
+      <div class="lesson-num">Lesson 04</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson04-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson05-Class.html">
+      <div class="lesson-num">Lesson 05</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson05-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson06-Class.html">
+      <div class="lesson-num">Lesson 06</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson06-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson07-Class.html">
+      <div class="lesson-num">Lesson 07</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson07-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson08-Class.html">
+      <div class="lesson-num">Lesson 08</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson08-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson09-Class.html">
+      <div class="lesson-num">Lesson 09</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson09-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson10-Class.html">
+      <div class="lesson-num">Lesson 10</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson10-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson11-Class.html">
+      <div class="lesson-num">Lesson 11</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson11-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson12-Class.html">
+      <div class="lesson-num">Lesson 12</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson12-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson13-Class.html">
+      <div class="lesson-num">Lesson 13</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson13-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson14-Class.html">
+      <div class="lesson-num">Lesson 14</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson14-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson15-Class.html">
+      <div class="lesson-num">Lesson 15</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson15-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson16-Class.html">
+      <div class="lesson-num">Lesson 16</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson16-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson17-Class.html">
+      <div class="lesson-num">Lesson 17</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson17-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson18-Class.html">
+      <div class="lesson-num">Lesson 18</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson18-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson19-Class.html">
+      <div class="lesson-num">Lesson 19</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson19-Class.html</div>
+    </a>
+    <a class="lesson-card" href="Toeic-Lesson20-Class.html">
+      <div class="lesson-num">Lesson 20</div>
+      <div class="lesson-topic placeholder">—</div>
+      <div class="lesson-file">Toeic-Lesson20-Class.html</div>
+    </a>
+    </div>
+  </div>
+
+  <!-- ZONE 2: 老師逐字稿 -->
+  <div class="zone teacher-zone">
+    <div class="zone-header">
+      <div class="zone-icon purple">📋</div>
+      <div>
+        <div class="zone-title">老師逐字稿</div>
+        <div class="zone-sub">自己開、不分享 · 含腳本、問學生、計時器</div>
+      </div>
+      <span class="zone-note note-purple">自己開</span>
+    </div>
+    <div class="lesson-grid">
     <a class="lesson-card ready" href="Toeic-Lesson01-Teacher.html">
       <div class="lesson-num">Lesson 01</div>
       <div class="lesson-topic">五大句型 & 及物不及物動詞</div>
@@ -212,7 +337,9 @@ footer{
       <div class="lesson-topic placeholder">—</div>
       <div class="lesson-file">Toeic-Lesson20-Teacher.html</div>
     </a>
+    </div>
   </div>
+
 </main>
 
 <footer>TOEIC Reading · 老師講義 · 共 20 堂</footer>
