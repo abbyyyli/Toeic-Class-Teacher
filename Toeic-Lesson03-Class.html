@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 03 上課投影版</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--amber:#F59E0B;--green:#059669;--green-lt:#D1FAE5;--green-dk:#064E3B;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--gray-400:#94A3B8}
+html,body{height:100%;overflow:hidden}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:white;display:flex;flex-direction:column}
+
+/* TOP */
+#topbar{height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.top-badge{background:var(--amber);color:var(--navy);font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;font-family:Inter,sans-serif;letter-spacing:.5px}
+.top-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.7);margin-left:12px}
+.top-right{display:flex;align-items:center;gap:16px}
+#progress-text{font-family:"JetBrains Mono",monospace;font-size:13px;color:rgba(255,255,255,.45)}
+.pbwrap{width:140px;height:4px;background:rgba(255,255,255,.1);border-radius:2px}
+#progress-bar{height:100%;background:var(--amber);border-radius:2px;transition:width .3s}
+
+/* SLIDE */
+#slide-area{flex:1;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:28px 40px 16px}
+.slide{width:100%;max-width:940px;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* BOTTOM */
+#bottombar{height:64px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.07)}
+.nav-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:white;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.nav-btn:hover{background:rgba(255,255,255,.14)}
+.nav-btn:disabled{opacity:.25;cursor:default}
+.center-btns{display:flex;align-items:center;gap:10px;flex-direction:column}
+#slide-type-label{font-size:11px;color:rgba(255,255,255,.3);font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:1px}
+.action-row{display:flex;gap:8px}
+.action-btn{border:none;border-radius:10px;padding:9px 22px;font-size:14px;font-weight:800;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.action-btn.hidden{display:none}
+#reveal-btn{background:var(--amber);color:var(--navy)}
+#reveal-btn:hover{background:#FBBF24}
+#next-item-btn{background:rgba(14,165,233,.2);color:#38BDF8;border:1px solid rgba(14,165,233,.3)}
+#next-item-btn:hover{background:rgba(14,165,233,.3)}
+#ask-btn{background:rgba(245,158,11,.15);color:var(--amber);border:1px solid rgba(245,158,11,.25)}
+#ask-btn:hover{background:rgba(245,158,11,.25)}
+.zh-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.45);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.zh-btn.on{background:rgba(14,165,233,.15);border-color:rgba(14,165,233,.4);color:#38BDF8}
+.zh-hidden{display:none!important}
+
+/* GRAMMAR */
+.gram-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);margin-bottom:8px}
+.gram-title{font-size:28px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:5px}
+.gram-sub{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:20px}
+.g-question{font-size:19px;font-weight:700;background:rgba(245,158,11,.12);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:18px}
+.g-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.g-col{border-radius:12px;padding:16px}
+.green-col{background:rgba(5,150,105,.1);border:1.5px solid rgba(5,150,105,.25)}
+.red-col{background:rgba(220,38,38,.08);border:1.5px solid rgba(220,38,38,.18)}
+.g-col-title{font-weight:700;font-size:14px;margin-bottom:8px}
+.green-col .g-col-title{color:#34D399}
+.red-col .g-col-title{color:#FC8181}
+.g-col-body{font-size:13px;line-height:2;color:rgba(255,255,255,.75)}
+.g-col-body code{font-family:"JetBrains Mono",monospace;background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-size:12px}
+.g-highlight{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.18);border-radius:8px;padding:11px 15px;font-size:13px;color:rgba(255,255,255,.8)}
+.g-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:14px}
+.g-table th,.g-table td{padding:9px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+.g-table th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.35);font-weight:700}
+.cell-em{font-family:"JetBrains Mono",monospace;color:var(--amber);font-weight:700;font-size:15px}
+.g-examples{display:flex;flex-direction:column;gap:7px;margin-top:12px}
+.g-ex{font-family:"JetBrains Mono",monospace;font-size:13px;color:#34D399;background:rgba(5,150,105,.1);padding:7px 12px;border-radius:6px}
+.g-ex-wrong{font-family:"JetBrains Mono",monospace;font-size:13px;color:#FC8181;background:rgba(220,38,38,.08);padding:7px 12px;border-radius:6px}
+.trap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.trap-item{background:rgba(255,255,255,.04);border-radius:10px;padding:12px}
+.tw{font-family:"JetBrains Mono",monospace;font-size:12px;color:#FC8181;background:rgba(220,38,38,.1);padding:5px 9px;border-radius:5px;margin-bottom:5px}
+.tw::before{content:"❌ "}
+.tr{font-family:"JetBrains Mono",monospace;font-size:12px;color:#34D399;background:rgba(5,150,105,.1);padding:5px 9px;border-radius:5px}
+.tr::before{content:"✅ "}
+
+/* Q&A PANEL */
+#ask-panel{background:rgba(245,158,11,.08);border:1.5px solid rgba(245,158,11,.2);border-radius:12px;padding:16px 20px;margin-top:16px}
+.ask-progress{font-size:11px;color:rgba(255,255,255,.35);font-family:"JetBrains Mono",monospace;margin-bottom:10px}
+.ask-q{font-size:16px;font-weight:700;color:white;margin-bottom:10px}
+.ask-a{display:none;background:rgba(5,150,105,.15);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px;color:#34D399;font-weight:700}
+.ask-a.show{display:block}
+
+/* MULTI PRACTICE */
+.multi-header{margin-bottom:18px}
+.multi-title{font-size:24px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:4px}
+.multi-instr{font-size:14px;color:rgba(255,255,255,.4)}
+.multi-progress{font-size:12px;color:var(--amber);font-family:"JetBrains Mono",monospace;margin-top:4px}
+.multi-items{display:flex;flex-direction:column;gap:10px}
+.multi-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:14px}
+.multi-item.revealed{border-color:rgba(5,150,105,.3);background:rgba(5,150,105,.06)}
+.item-num{font-family:"JetBrains Mono",monospace;font-size:12px;color:rgba(255,255,255,.3);width:22px;flex-shrink:0;padding-top:2px}
+.item-q{font-size:15px;font-weight:600;color:white;line-height:1.5}
+.item-a{font-size:13px;color:#34D399;margin-top:6px;display:none;padding-top:6px;border-top:1px solid rgba(5,150,105,.2)}
+.item-a.show{display:block}
+.item-note{font-size:12px;color:rgba(52,211,153,.7);margin-top:3px}
+
+/* CORRECTION */
+.corr-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.corr-item.revealed{border-color:rgba(5,150,105,.25)}
+.corr-wrong{font-family:"JetBrains Mono",monospace;font-size:14px;color:#FC8181;background:rgba(220,38,38,.08);padding:7px 12px;border-radius:6px;margin-bottom:8px}
+.corr-wrong::before{content:"❌ "}
+.corr-right{font-family:"JetBrains Mono",monospace;font-size:14px;color:#34D399;background:rgba(5,150,105,.1);padding:7px 12px;border-radius:6px;display:none}
+.corr-right.show{display:block}
+.corr-right::before{content:"✅ "}
+.corr-reason{font-size:12px;color:rgba(255,255,255,.4);margin-top:6px;display:none}
+.corr-reason.show{display:block}
+
+/* ARTICLE */
+.art-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--sky);margin-bottom:10px}
+.art-title{font-size:22px;font-weight:800;font-family:Inter,sans-serif;margin-bottom:5px}
+.art-theme{font-size:13px;color:rgba(255,255,255,.35);margin-bottom:16px}
+.art-text{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:20px 22px;font-size:15px;line-height:2.1;color:rgba(255,255,255,.85);margin-bottom:12px}
+.art-blank{color:var(--amber);font-weight:800;background:rgba(245,158,11,.12);padding:1px 7px;border-radius:4px}
+.art-zh{font-size:12px;color:rgba(255,255,255,.3);line-height:1.8}
+
+/* QUESTION */
+.q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.q-num{font-family:Inter,sans-serif;font-size:13px;font-weight:800;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:6px}
+.q-type-tag{font-size:12px;font-weight:700;background:rgba(14,165,233,.15);color:var(--sky);padding:4px 12px;border-radius:6px}
+.q-star{font-size:12px;font-weight:700;background:rgba(245,158,11,.15);color:var(--amber);padding:4px 10px;border-radius:6px}
+.q-p6{font-size:12px;font-weight:700;background:rgba(124,58,237,.15);color:#A78BFA;padding:4px 10px;border-radius:6px}
+.q-sentence{font-size:17px;font-weight:500;line-height:1.9;background:rgba(255,255,255,.05);border-left:3px solid rgba(255,255,255,.2);border-radius:0 10px 10px 0;padding:13px 17px;margin-bottom:5px}
+.q-sentence u{text-decoration:none;background:rgba(245,158,11,.18);color:var(--amber);font-weight:700;padding:0 6px;border-radius:4px}
+.q-zh{font-size:12px;color:rgba(255,255,255,.3);margin-bottom:16px;padding-left:2px}
+.q-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:0}
+.q-opt{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 15px;font-size:14px;transition:all .2s}
+.q-opt-lbl{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:Inter,sans-serif}
+.q-opt.correct{background:rgba(5,150,105,.16);border-color:var(--green)}
+.q-opt.correct .q-opt-lbl{background:var(--green);color:white}
+.q-opt.dimmed{opacity:.28}
+.key-reveal{display:none;background:rgba(245,158,11,.08);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:11px 17px;font-size:14px;color:rgba(255,255,255,.85);margin-top:12px}
+.key-reveal.show{display:block}
+.key-reveal strong{color:var(--amber)}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <div style="display:flex;align-items:center">
+    <span class="top-badge">上課投影</span>
+    <span class="top-title">Lesson 03 · 代名詞 + Part 6 閱讀策略（139–146）</span>
+  </div>
+  <div class="top-right">
+    <span id="progress-text">1 / 32</span>
+    <div class="pbwrap"><div id="progress-bar" style="width:3%"></div></div>
+  </div>
+</div>
+
+<div id="slide-area"><div class="slide" id="slide-content"></div></div>
+
+<div id="bottombar">
+  <button class="nav-btn" id="prev-btn" onclick="navigate(-1)" disabled>← 上一頁</button>
+  <div class="center-btns">
+    <span id="slide-type-label"></span>
+    <div class="action-row">
+      <button class="zh-btn" id="zh-btn" onclick="toggleZh()">中文 OFF</button>
+      <button class="action-btn hidden" id="ask-btn" onclick="nextAsk()">❓ 問學生</button>
+      <button class="action-btn hidden" id="next-item-btn" onclick="nextItem()">下一題 ▶</button>
+      <button class="action-btn hidden" id="reveal-btn" onclick="reveal()">揭曉答案 ▼</button>
+    </div>
+  </div>
+  <button class="nav-btn" id="next-btn" onclick="navigate(1)">下一頁 →</button>
+</div>
+
+<script>
+const SLIDES = [
+{type:'grammar',title:"主格 vs 受格",subtitle:"先看位置，不要先翻譯",content:"<div class='g-question'>空格在動詞前面，還是動詞後面？</div><div class='g-cols'><div class='g-col green-col'><div class='g-col-title'>✅ 主格 Subject</div><div class='g-col-body'>做動作的人或事物<br>放在動詞前面<br><br><code>I / he / she / it</code><br><code>we / you / they</code></div></div><div class='g-col red-col'><div class='g-col-title'>🎯 受格 Object</div><div class='g-col-body'>接受動作的人或事物<br>放在動詞後面、介系詞後面<br><br><code>me / him / her / it</code><br><code>us / you / them</code></div></div></div><div class='g-highlight'>超快判斷法：<b>動詞前面找主格；動詞後面找受格。</b></div><div class='g-examples'><div class='g-ex'>The hotel cannot accommodate them.（動詞後 → 受格）</div><div class='g-ex-wrong'>The hotel cannot accommodate they.</div></div>",ask:[["______ prepared the report.（動詞前，選哪種代名詞？）", "主格 → She prepared the report."], ["Please contact ______.（介系詞後）", "受格 → him"], ["The hotel cannot accommodate ______.", "受格 → them"]]},
+{type:'grammar',title:"所有格 vs 獨立所有格",subtitle:"後面有沒有名詞是關鍵",content:"<div class='g-question'>空格後面有名詞嗎？</div><table class='g-table'><tr><th>類型</th><th>後面要不要接名詞</th><th>例子</th></tr><tr><td class='cell-em'>所有格形容詞</td><td>要</td><td><code>my computer / his attorney</code></td></tr><tr><td class='cell-em'>獨立所有格</td><td>不要</td><td><code>This is mine. / The report is hers.</code></td></tr></table><div class='g-highlight'>後面有名詞 → my / his / her / their；後面沒有名詞 → mine / his / hers / theirs</div><div class='g-examples'><div class='g-ex'>my computer ✓　This computer is mine. ✓</div><div class='g-ex-wrong'>mine computer ✗　This report is her. ✗</div></div>",ask:[["______ computer（後面有名詞，選哪一個？）", "my（所有格形容詞）"], ["This report is ______.（後面沒有名詞）", "hers（獨立所有格）"], ["her 和 hers，哪個後面可以接名詞？", "her 可以接名詞；hers 不能"]]},
+{type:'grammar',title:"反身代名詞",subtitle:"主詞和受詞是同一人時使用",content:"<div class='g-question'>主詞和「自己」是不是同一個人？</div><table class='g-table'><tr><th>主詞</th><th>反身代名詞</th></tr><tr><td>I</td><td class='cell-em'>myself</td></tr><tr><td>he / she / it</td><td class='cell-em'>himself / herself / itself</td></tr><tr><td>we / they</td><td class='cell-em'>ourselves / themselves</td></tr></table><div class='g-highlight'>Jason installed the air conditioner <b>himself</b>.（主詞 Jason = 自己安裝的人）</div><div class='g-examples'><div class='g-ex'>She introduced herself. ✓</div><div class='g-ex-wrong'>Jason installed it him.（him 是另一個人，不是 Jason 自己）</div></div>",ask:[["Jason installed it ______.（主詞和動作執行者是同一人）", "himself"], ["反身代名詞可以放在名詞前面當所有格嗎？", "不行。X myself computer → O my computer"]]},
+{type:'grammar',title:"each other",subtitle:"彼此、互相",content:"<div class='g-question'>是一群人互相做某事，還是一個人對另一個不特定的人？</div><div class='g-highlight'>複數主詞 + <b>each other</b> = 彼此、互相</div><div class='g-examples'><div class='g-ex'>The trainees helped each other.（互相幫忙）</div><div class='g-ex-wrong'>The trainees helped another.（another 不是彼此的意思）</div></div>",ask:[["The two departments support ______.", "each other"], ["each other 和 another 有什麼不同？", "each other = 彼此互相；another = 不特定的另一個"]]},
+{type:'grammar',title:"不定代名詞",subtitle:"someone / anyone / everyone / no one",content:"<table class='g-table'><tr><th>字</th><th>意思</th><th>常見概念</th></tr><tr><td class='cell-em'>someone</td><td>某人</td><td>肯定句常見</td></tr><tr><td class='cell-em'>anyone</td><td>任何人</td><td>問句/否定句常見</td></tr><tr><td class='cell-em'>everyone</td><td>每一個人</td><td>動詞通常單數</td></tr><tr><td class='cell-em'>no one</td><td>沒有人</td><td>已是否定，不加 not</td></tr></table><div class='g-highlight'>雖然意思像很多人，<b>everyone / no one 文法上當單數</b>！</div><div class='g-examples'><div class='g-ex'>Everyone is ready. ✓　No one was absent. ✓</div><div class='g-ex-wrong'>Everyone are required to attend. ✗</div></div>",ask:[["Everyone ______ ready.（is/are？）", "is（everyone 當單數）"], ["No one ______ absent.（was/were？）", "was"], ["No one was not absent. 這句對嗎？", "不對。no one 已是否定，不需要再加 not"]]},
+{type:'grammar',title:"every / each / all / some / any",subtitle:"後面接什麼名詞？",content:"<table class='g-table'><tr><th>字</th><th>後面接</th><th>例子</th></tr><tr><td class='cell-em'>every</td><td>單數可數</td><td><code>every employee</code></td></tr><tr><td class='cell-em'>each</td><td>單數可數 / each of+複數</td><td><code>each manager</code></td></tr><tr><td class='cell-em'>all</td><td>複數可數 / 不可數</td><td><code>all employees</code></td></tr><tr><td class='cell-em'>some</td><td>複數可數 / 不可數（肯定句）</td><td><code>some customers</code></td></tr><tr><td class='cell-em'>any</td><td>複數可數 / 不可數（問句/否定）</td><td><code>any questions</code></td></tr></table>",ask:[["______ employee is required to attend.（every/all？）", "Every（單數可數）"], ["Do you have ______ questions?", "any"], ["We need ______ information.", "some"]]},
+{type:'grammar',title:"another / other / others",subtitle:"空格後面有沒有名詞？",content:"<div class='g-question'>空格後面有名詞嗎？</div><table class='g-table'><tr><th>字</th><th>意思</th><th>後面接名詞?</th></tr><tr><td class='cell-em'>another</td><td>另一個</td><td>接單數可數</td></tr><tr><td class='cell-em'>other</td><td>其他的</td><td>要接名詞</td></tr><tr><td class='cell-em'>the other</td><td>兩者中的另一個</td><td>可單獨用</td></tr><tr><td class='cell-em'>others</td><td>其他人/東西</td><td>不接名詞</td></tr></table><div class='g-highlight'>有名詞 → other；沒有名詞 → others</div><div class='g-examples'><div class='g-ex'>Some employees work at home; others work in the office.</div><div class='g-ex-wrong'>others employees ✗　other are waiting. ✗</div></div>",ask:[["I need ______ copy.（不特定的另一個）", "another"], ["Some accepted the offer, but ______ declined it.（沒有名詞）", "others"], ["One is on vacation, and ______ is working.（兩者中的另一個）", "the other"]]},
+{type:'grammar',title:"that / those 比較句",subtitle:"代替前面的名詞",content:"<div class='g-question'>比較的兩個東西是什麼？單數還是複數？</div><div class='g-highlight'>單數名詞 → <b>that</b>　複數名詞 → <b>those</b></div><div class='g-examples'><div class='g-ex'>The price of this model is lower than that of the previous model.</div><div class='g-ex'>Sales this year are higher than those of last year.</div><div class='g-ex-wrong'>The average temperature this July is higher than last July.（少了 that，變成比較 temperature 和 July）</div></div>",ask:[["The average temperature this July is higher than ______ of last July.（temperature 單數）", "that"], ["Sales this year are higher than ______ of last year.（sales 複數）", "those"]]},
+{type:'grammar',title:"代名詞超常考陷阱",subtitle:"TOEIC 最愛考的混淆點",content:"<div class='trap-grid'><div class='trap-item'><div class='tw'>accommodate they</div><div class='tr'>accommodate them</div></div><div class='trap-item'><div class='tw'>hers report</div><div class='tr'>her report</div></div><div class='trap-item'><div class='tw'>Jason installed it him.</div><div class='tr'>Jason installed it himself.</div></div><div class='trap-item'><div class='tw'>Everyone are invited.</div><div class='tr'>Everyone is invited.</div></div><div class='trap-item'><div class='tw'>others employees</div><div class='tr'>other employees</div></div><div class='trap-item'><div class='tw'>higher than last year</div><div class='tr'>higher than those of last year</div></div></div>",ask:[]},
+{type:'multi',title:"Practice A：主格 / 受格 / 所有格 / 反身",instruction:"判斷每句空格該用哪一種代名詞",items:[["The manager thanked ______ for the report.（受格）", "them　動詞後面要受格"], ["______ prepared the report.（主格）", "She　動詞前面要主格"], ["I bought ______ laptop yesterday.（所有格形容詞）", "my　後面有名詞 laptop"], ["This laptop is ______.（獨立所有格）", "mine　後面沒有名詞"], ["Jason repaired the machine ______.（反身代名詞）", "himself　主詞=動作執行者"]]},
+{type:'multi',title:"Practice B：another / other / others / each other",instruction:"填入正確的代名詞",items:[["I need ______ chance.（不特定的另一個）", "another　接單數可數名詞"], ["Some students passed; ______ failed.（沒有名詞）", "others　代名詞不接名詞"], ["The two teams support ______.（彼此）", "each other　互相代名詞"], ["One report is ready, but ______ is not.（兩者中的另一個）", "the other　兩者中第二個"], ["______ employees are waiting outside.（後面有名詞）", "Other　形容詞後接名詞"]]},
+{type:'correction',title:"Practice C：改錯",instruction:"找出錯誤並改正",items:[["The hotel cannot accommodate they.", "The hotel cannot accommodate them.", "動詞後面要受格"], ["This report is her.", "This report is hers.", "be 動詞後沒有名詞 → 獨立所有格"], ["Jason installed it him.", "Jason installed it himself.", "主詞和受詞同一人 → 反身代名詞"], ["Everyone are ready.", "Everyone is ready.", "everyone 當單數"], ["others employees are waiting.", "other employees are waiting.", "後面有名詞用 other"], ["Sales this year are higher than last year's sales.", "Sales this year are higher than those of last year.", "比較句用 those 代替複數名詞"]]},
+{type:'question',num:1,qtype:"受格代名詞",star:true,part6:false,sentence:"Unfortunately, our hotel is too small for all the guests invited on the list; we are afraid that our hotel cannot accommodate <u>______</u>.",zh:"很不幸地，我們的飯店對於名單上所有受邀賓客來說太小了；我們擔心飯店無法容納他們。",options:["they", "their", "them", "themselves"],answer:2,key:"accommodate 是動詞，後面需要受詞 → them（受格）。their 後面要接名詞；themselves 主詞是 hotel 不是 guests，不符合。"},
+{type:'question',num:2,qtype:"反身代名詞",star:false,part6:false,sentence:"Jason bought an air conditioner and installed it <u>______</u>.",zh:"Jason 買了一台冷氣，並且自己把它安裝好了。",options:["them", "him", "himself", "he"],answer:2,key:"主詞 Jason 自己安裝 → himself。若選 him，表示安裝給另一個男生，不符句意。"},
+{type:'question',num:3,qtype:"所有格形容詞",star:false,part6:false,sentence:"I believe your shop is responsible for the damage to <u>______</u> computer.",zh:"我相信你們的店家要對我的電腦損壞負責。",options:["me", "mine", "my", "myself"],answer:2,key:"空格後面有名詞 computer → 所有格形容詞 my。mine 後面不能接名詞。"},
+{type:'question',num:4,qtype:"獨立所有格",star:true,part6:false,sentence:"Once the president signs the contract, the company will be <u>______</u> to do with as he likes.",zh:"一旦總裁簽署合約，這家公司就可以任由他處置。",options:["him", "his", "he", "himself"],answer:1,key:"be + 獨立所有格 his = 屬於他的，相當於 his company。him/he 不能當補語表示所有權。"},
+{type:'question',num:5,qtype:"互相代名詞",star:false,part6:false,sentence:"We are happy to see that the trainees helped <u>______</u> out during the orientation.",zh:"我們很高興看到這些受訓者在說明會期間彼此互相幫忙。",options:["another", "the other", "each other", "other"],answer:2,key:"trainees 複數，彼此互相幫忙 → each other。other 後面要接名詞。"},
+{type:'question',num:6,qtype:"所有格 + 指涉判斷",star:false,part6:false,sentence:"Ms. Peterson, acting as <u>______</u> attorney, defended Mr. Jones in a very determined fashion.",zh:"Peterson 女士擔任 Jones 先生的律師，以非常堅定的態度為他辯護。",options:["her", "his", "hers", "he"],answer:1,key:"空格後面有 attorney，需要所有格形容詞；Peterson 是在為 Jones（男性）辯護 → his attorney。"},
+{type:'question',num:7,qtype:"主格 + 省略 that",star:true,part6:false,sentence:"Ms. Lee has agreed to let us use the report <u>______</u> prepared.",zh:"Lee 女士已同意讓我們使用她準備的那份報告。",options:["her", "she", "hers", "herself"],answer:1,key:"完整概念是 the report [that] she prepared，that 省略後，prepared 前面仍要主格 she。"},
+{type:'question',num:8,qtype:"複數受格代名詞",star:false,part6:false,sentence:"If the products do not meet with your satisfaction, you can return <u>______</u> within seven days for a full refund.",zh:"如果這些產品無法令您滿意，您可以在七天內退回它們，以獲得全額退款。",options:["it", "them", "him", "yourselves"],answer:1,key:"products 是複數，return 後面需要受詞 → them（複數受格）。"},
+{type:'question',num:9,qtype:"不定代名詞語意",star:false,part6:false,sentence:"It is anticipated that <u>______</u> in the division would miss the superb opportunity to attend the computer skill seminar.",zh:"預期該部門裡沒有人會錯過參加這場電腦技能研討會的大好機會。",options:["each one", "anyone", "someone", "no one"],answer:3,key:"superb opportunity 這麼好的機會，預期「沒有人」會錯過 → no one。no one 已是否定，不再加 not。"},
+{type:'question',num:10,qtype:"指示代名詞比較句",star:true,part6:false,sentence:"The average temperature this July is higher, compared with <u>______</u> of last July.",zh:"今年七月的平均氣溫，和去年七月的平均氣溫相比較高。",options:["it", "them", "that", "those"],answer:2,key:"比較的是 temperature（單數）和 temperature，不是 July 和 July → that of last July。"},
+{type:'article',label:"Part 6 · 139–142 文章",text:"Dear Lily,<br><br>I am sorry to tell you that it seems there are <b class='art-blank'>---139---</b> problems in the project report you sent me yesterday. Could you have <b class='art-blank'>---140---</b> look at the data from the survey? We need to have a correct <b class='art-blank'>---141---</b> of the report next Wednesday. This is urgent. We don't have much time as <b class='art-blank'>---142---</b>. Please do call me if you need any further information.<br><br>Best wishes,<br>John",zh:"親愛的 Lily，很抱歉要告訴你，你昨天寄給我的專案報告裡似乎有幾個問題。你可以再看一次調查資料嗎？我們下週三前需要一份正確版本的報告。這件事很緊急，我們沒有很多時間，因為專案必須在一週內完成。如果需要進一步資訊請務必打電話給我。",theme:"John 請 Lily 重新檢查報告，時間緊急"},
+{type:'question',num:139,qtype:"數量詞+複數可數",star:false,part6:true,sentence:"There are <u>---139---</u> problems in the project report.",zh:"專案報告裡似乎有幾個問題。",options:["any", "another", "several", "little"],answer:2,key:"problems 是複數可數名詞 → several problems（幾個問題）。any 用於否定/問句；another 接單數；little 修飾不可數名詞。"},
+{type:'question',num:140,qtype:"固定搭配",star:true,part6:true,sentence:"Could you have <u>---140---</u> look at the data from the survey?",zh:"你可以再看一次這份調查資料嗎？",options:["another", "the other", "others", "other"],answer:0,key:"have another look at = 再看一次、重新檢查（固定搭配）。look 是單數名詞，只能搭配 another。"},
+{type:'question',num:141,qtype:"名詞搭配",star:false,part6:true,sentence:"We need to have a correct <u>---141---</u> of the report next Wednesday.",zh:"我們下週三需要有一份正確版本的報告。",options:["answer", "plan", "version", "test"],answer:2,key:"a version of the report = 報告的一個版本，最自然搭配。"},
+{type:'question',num:142,qtype:"前後邏輯題",star:false,part6:true,sentence:"We don't have much time as <u>---142---</u>.",zh:"我們沒有很多時間，因為這個專案必須在一週內完成。",options:["the project is not that important", "the project is extremely ambitious", "the project has been assigned to Mr. Chen", "the project has to be completed within a week"],answer:3,key:"as = because，後面要接「為什麼時間不多」最直接的原因 → 專案必須一週內完成。"},
+{type:'article',label:"Part 6 · 143–146 文章",text:"In new product development, it takes more <b class='art-blank'>---143---</b> the accepted basics of high quality, low cost, and differentiation to succeed in today's <b class='art-blank'>---144---</b>. The new rules also emphasize the <b class='art-blank'>---145---</b> of speed and flexibility as these are key components in delivering new products to market. Therefore, nowadays companies are trying to <b class='art-blank'>---146---</b> how to move faster than their competitors.",zh:"在新產品開發中，要在今日競爭激烈的全球市場成功，光靠高品質、低成本和差異化還不夠。這些新規則也強調速度和彈性的重要性，因為它們是把新產品推向市場的重要要素。因此，現在許多公司正試著想出如何比競爭對手更快行動的方法。",theme:"基本條件還不夠，速度與彈性才是關鍵"},
+{type:'question',num:143,qtype:"固定搭配 more than",star:true,part6:true,sentence:"It takes more <u>---143---</u> the accepted basics of high quality, low cost, and differentiation to succeed.",zh:"要成功，所需要的不只是高品質、低成本和差異化這些基本原則。",options:["then", "to", "than", "from"],answer:2,key:"more than = 不只是、光靠……還不夠（固定搭配）。"},
+{type:'question',num:144,qtype:"語境判斷",star:false,part6:true,sentence:"To succeed in today's <u>---144---</u>.",zh:"要在今日競爭激烈的全球市場中成功。",options:["natural environments", "famous graduate schools", "competitive world markets", "easy atmosphere"],answer:2,key:"整段主題是 product development、competitors、move faster → competitive world markets 最合理。"},
+{type:'question',num:145,qtype:"固定搭配 importance of",star:false,part6:true,sentence:"The new rules also emphasize the <u>---145---</u> of speed and flexibility.",zh:"這些新規則也強調速度和彈性的重要性。",options:["importance", "appearance", "development", "achievement"],answer:0,key:"emphasize the importance of = 強調……的重要性（固定搭配）。"},
+{type:'question',num:146,qtype:"動詞片語搭配",star:false,part6:true,sentence:"Nowadays companies are trying to <u>---146---</u> how to move faster than their competitors.",zh:"現在公司正試著想出如何比競爭對手更快行動的方法。",options:["apply for", "figure out", "devote to", "speed up"],answer:1,key:"figure out how to V = 想出如何做某事，後面接 how to + 原形動詞最自然。"}
+];
+const TOTAL = SLIDES.length;
+let current=0, revealed=false, zhVisible=false;
+let itemStep=0, askStep=0;
+
+function applyZh(){document.querySelectorAll('.zh-target').forEach(el=>el.classList.toggle('zh-hidden',!zhVisible))}
+function toggleZh(){zhVisible=!zhVisible;applyZh();const b=document.getElementById('zh-btn');b.textContent=zhVisible?'中文 ON':'中文 OFF';b.classList.toggle('on',zhVisible)}
+
+function showBtn(id,show){document.getElementById(id).classList.toggle('hidden',!show)}
+function setText(id,t){const el=document.getElementById(id);if(el)el.textContent=t}
+
+function render(){
+  const s=SLIDES[current];
+  revealed=false; itemStep=0; askStep=0;
+  document.getElementById('progress-text').textContent=(current+1)+' / '+TOTAL;
+  document.getElementById('progress-bar').style.width=Math.round((current+1)/TOTAL*100)+'%';
+  document.getElementById('prev-btn').disabled=current===0;
+  document.getElementById('next-btn').disabled=current===TOTAL-1;
+  const labels={grammar:'文法觀念',multi:'課堂練習',correction:'改錯練習',article:'閱讀文章',question:'練習題'};
+  setText('slide-type-label', labels[s.type]||'');
+  showBtn('reveal-btn', s.type==='question');
+  showBtn('next-item-btn', s.type==='multi'||s.type==='correction');
+  showBtn('ask-btn', s.type==='grammar' && s.ask && s.ask.length>0);
+  showBtn('zh-btn', s.type==='question'||s.type==='article');
+  const el=document.getElementById('slide-content');
+
+  if(s.type==='grammar'){
+    const hasAsk=s.ask&&s.ask.length>0;
+    el.innerHTML=`
+      <div class="gram-label">Lesson 03 · 代名詞</div>
+      <div class="gram-title">${s.title}</div>
+      <div class="gram-sub">${s.subtitle}</div>
+      ${s.content}
+      ${hasAsk?`<div id="ask-panel" style="display:none">
+        <div class="ask-progress" id="ask-prog"></div>
+        <div class="ask-q" id="ask-q"></div>
+        <div class="ask-a" id="ask-a"></div>
+      </div>`:''}
+    `;
+    if(hasAsk) document.getElementById('ask-btn').textContent='❓ 問學生 ('+s.ask.length+')';
+  }
+  else if(s.type==='multi'){
+    const rows=s.items.map((it,i)=>`
+      <div class="multi-item" id="mi-${i}">
+        <span class="item-num">${i+1}</span>
+        <div><div class="item-q">${it[0]}</div><div class="item-a" id="ma-${i}">${it[1].split('　')[0]}<span class="item-note"> — ${it[1].split('　')[1]||''}</span></div></div>
+      </div>`).join('');
+    el.innerHTML=`
+      <div class="multi-header">
+        <div class="multi-title">${s.title}</div>
+        <div class="multi-instr">${s.instruction}</div>
+        <div class="multi-progress" id="multi-prog">0 / ${s.items.length} 已揭曉</div>
+      </div>
+      <div class="multi-items">${rows}</div>`;
+    document.getElementById('next-item-btn').textContent='揭曉 1/'+ s.items.length +' ▶';
+  }
+  else if(s.type==='correction'){
+    const rows=s.items.map((it,i)=>`
+      <div class="corr-item" id="ci-${i}">
+        <div class="corr-wrong">${it[0]}</div>
+        <div class="corr-right" id="cr-${i}">${it[1]}</div>
+        <div class="corr-reason" id="cn-${i}">${it[2]}</div>
+      </div>`).join('');
+    el.innerHTML=`
+      <div class="multi-header">
+        <div class="multi-title">${s.title}</div>
+        <div class="multi-instr">${s.instruction}</div>
+        <div class="multi-progress" id="multi-prog">0 / ${s.items.length} 已改正</div>
+      </div>
+      ${rows}`;
+    document.getElementById('next-item-btn').textContent='改正 1/'+s.items.length+' ▶';
+  }
+  else if(s.type==='article'){
+    el.innerHTML=`
+      <div class="art-label">${s.label}</div>
+      <div class="art-title">閱讀文章</div>
+      <div class="art-theme">📌 主題：${s.theme}</div>
+      <div class="art-text">${s.text}</div>
+      <div class="art-zh zh-target">${s.zh}</div>`;
+  }
+  else{
+    const opts=s.options.map((o,i)=>`<div class="q-opt" id="opt-${i}"><span class="q-opt-lbl">${String.fromCharCode(65+i)}</span>${o}</div>`).join('');
+    el.innerHTML=`
+      <div class="q-header">
+        <span class="q-num">${s.num}</span>
+        <span class="q-type-tag">${s.qtype}</span>
+        ${s.star?'<span class="q-star">⭐ 重點題</span>':''}
+        ${s.part6?'<span class="q-p6">Part 6</span>':''}
+      </div>
+      <div class="q-sentence">${s.sentence}</div>
+      <div class="q-zh zh-target">${s.zh}</div>
+      <div class="q-opts">${opts}</div>
+      <div class="key-reveal" id="key-reveal">
+        <strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong>
+        &nbsp;—&nbsp; ${s.key}
+      </div>`;
+  }
+  setTimeout(applyZh,0);
+  resetRevealBtn();
+}
+
+function resetRevealBtn(){
+  const b=document.getElementById('reveal-btn');
+  b.textContent='揭曉答案 ▼';b.style.background='';b.style.color='';
+}
+
+function reveal(){
+  const s=SLIDES[current];
+  const b=document.getElementById('reveal-btn');
+  if(!revealed){
+    revealed=true;
+    s.options.forEach((_,i)=>{
+      const el=document.getElementById('opt-'+i);
+      if(i===s.answer) el.classList.add('correct');
+      else el.classList.add('dimmed');
+    });
+    document.getElementById('key-reveal').classList.add('show');
+    b.textContent='隱藏答案 ▲';b.style.background='rgba(5,150,105,.25)';b.style.color='#34D399';
+  } else {
+    revealed=false;
+    s.options.forEach((_,i)=>{
+      const el=document.getElementById('opt-'+i);
+      el.classList.remove('correct','dimmed');
+    });
+    document.getElementById('key-reveal').classList.remove('show');
+    resetRevealBtn();
+  }
+}
+
+function nextItem(){
+  const s=SLIDES[current];
+  const b=document.getElementById('next-item-btn');
+  if(s.type==='multi'){
+    if(itemStep<s.items.length){
+      document.getElementById('ma-'+itemStep).classList.add('show');
+      document.getElementById('mi-'+itemStep).classList.add('revealed');
+      itemStep++;
+      const prog=document.getElementById('multi-prog');
+      if(prog) prog.textContent=itemStep+' / '+s.items.length+' 已揭曉';
+      b.textContent=itemStep<s.items.length?'揭曉 '+(itemStep+1)+'/'+s.items.length+' ▶':'完成 ✓';
+      if(itemStep>=s.items.length){b.style.background='rgba(5,150,105,.2)';b.style.color='#34D399';}
+    }
+  } else if(s.type==='correction'){
+    if(itemStep<s.items.length){
+      document.getElementById('cr-'+itemStep).classList.add('show');
+      document.getElementById('cn-'+itemStep).classList.add('show');
+      document.getElementById('ci-'+itemStep).classList.add('revealed');
+      itemStep++;
+      const prog=document.getElementById('multi-prog');
+      if(prog) prog.textContent=itemStep+' / '+s.items.length+' 已改正';
+      b.textContent=itemStep<s.items.length?'改正 '+(itemStep+1)+'/'+s.items.length+' ▶':'完成 ✓';
+      if(itemStep>=s.items.length){b.style.background='rgba(5,150,105,.2)';b.style.color='#34D399';}
+    }
+  }
+}
+
+function nextAsk(){
+  const s=SLIDES[current];
+  const panel=document.getElementById('ask-panel');
+  const b=document.getElementById('ask-btn');
+  if(!panel) return;
+  if(askStep===0) panel.style.display='block';
+  if(askStep<s.ask.length){
+    const [q,a]=s.ask[askStep];
+    document.getElementById('ask-q').textContent=q;
+    document.getElementById('ask-a').textContent=a;
+    document.getElementById('ask-a').classList.remove('show');
+    document.getElementById('ask-prog').textContent='問題 '+(askStep+1)+' / '+s.ask.length;
+    const oldStep=askStep;
+    b.onclick=function(){
+      const aa=document.getElementById('ask-a');
+      if(!aa.classList.contains('show')){
+        aa.classList.add('show');
+        b.onclick=function(){askStep=oldStep+1;nextAsk()};
+      }
+    };
+    askStep++;
+  } else {
+    panel.style.display='none';
+    askStep=0;
+    b.textContent='❓ 問學生 ('+s.ask.length+')';
+    b.onclick=nextAsk;
+  }
+}
+
+function navigate(dir){
+  current=Math.max(0,Math.min(TOTAL-1,current+dir));
+  render();
+  document.getElementById('slide-area').scrollTop=0;
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();navigate(1)}
+  else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();navigate(-1)}
+  else if(e.key===' '||e.key==='Enter'){
+    e.preventDefault();
+    const s=SLIDES[current];
+    if(s.type==='question') reveal();
+    else if(s.type==='multi'||s.type==='correction') nextItem();
+    else if(s.type==='grammar'&&s.ask&&s.ask.length>0) document.getElementById('ask-btn').click();
+  }
+});
+
+render();
+</script>
+</body>
+</html>

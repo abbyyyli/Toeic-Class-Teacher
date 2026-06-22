@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老師講義 | TOEIC Lesson 03</title>
+<!-- Lesson 03：代名詞 Pronouns + Part 5 (1–10) + Part 6 閱讀策略 (139–146)。Part 7 (147–164) 另成 Lesson 04。 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--navy2:#1E3A5F;--white:#fff;--bg:#F0F4F8;--card:#fff;--amber:#F59E0B;--amber-lt:#FEF3C7;--amber-dk:#92400E;--green:#059669;--green-lt:#D1FAE5;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--purple-lt:#EDE9FE;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;--sidebar-w:230px;--r:10px}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:var(--gray-800);font-size:14px;line-height:1.7}
+#topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);color:white;height:52px;display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.logo{font-weight:800;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.logo span{background:var(--amber);color:var(--navy);padding:2px 8px;border-radius:5px;font-size:12px}
+.timer-wrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.timer-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px}
+#timer{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--amber);min-width:60px}
+.tbtn{background:rgba(255,255,255,.1);border:none;color:white;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;margin-left:4px;font-family:"Noto Sans TC",sans-serif}
+.tbtn:hover{background:rgba(255,255,255,.2)}
+.ppill{background:rgba(255,255,255,.1);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+#csec{color:var(--amber);font-weight:700}
+#layout{display:flex;margin-top:52px;min-height:calc(100vh - 52px)}
+#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--navy);position:fixed;top:52px;left:0;bottom:0;overflow-y:auto;padding:16px 0;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
+.sbh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);padding:10px 16px 4px}
+.sbl{display:block;padding:6px 16px;color:rgba(255,255,255,.65);font-size:12px;text-decoration:none;cursor:pointer;border-left:3px solid transparent;transition:.15s}
+.sbl:hover{color:white;background:rgba(255,255,255,.07)}
+.sbl.active{color:var(--amber);border-left-color:var(--amber);background:rgba(245,158,11,.08)}
+.t{font-size:10px;color:rgba(255,255,255,.3);float:right;font-family:"JetBrains Mono",monospace}
+#main{margin-left:var(--sidebar-w);flex:1;padding:28px 32px 80px}
+.ls{margin-bottom:40px}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gray-200)}
+.sn{width:36px;height:36px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;font-family:"Inter",sans-serif}
+.st{font-size:20px;font-weight:800;color:var(--navy)}
+.stm{margin-left:auto;background:var(--navy);color:var(--amber);font-size:11px;font-weight:700;font-family:"JetBrains Mono",monospace;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.block{background:var(--card);border-radius:var(--r);margin-bottom:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.bh{background:var(--gray-100);padding:10px 18px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-600);border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:8px}
+.bh .d{width:8px;height:8px;border-radius:50%;background:var(--gray-400)}
+.bh.dk{background:var(--navy);color:white;border:none}.bh.dk .d{background:var(--amber)}
+.bh.am{background:var(--amber-lt);color:var(--amber-dk);border-bottom-color:#FDE68A}.bh.am .d{background:var(--amber)}
+.bh.gn{background:var(--green-lt);color:var(--green);border-bottom-color:#A7F3D0}.bh.gn .d{background:var(--green)}
+.bb{padding:18px}
+.script{background:#0F172A;color:#E2E8F0;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.9;position:relative;margin:12px 0}
+.script::before{content:"📢 說";position:absolute;top:-10px;left:14px;background:var(--sky);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.script em{color:var(--amber);font-style:normal;font-weight:600}
+.script strong{color:white}.script code{background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px;color:#7DD3FC}
+.ask{background:var(--amber-lt);border:1.5px solid #FDE68A;border-radius:8px;padding:14px 18px;margin:10px 0;position:relative}
+.ask::before{content:"❓ 問學生";position:absolute;top:-10px;left:14px;background:var(--amber);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.ask p{color:var(--amber-dk);font-weight:600;font-size:14px;margin-top:2px}
+.ask .al{font-size:11px;color:var(--amber-dk);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:8px 0 3px;border-top:1px solid #FDE68A;padding-top:8px}
+.ask .ap{color:var(--green);font-weight:700;font-size:14px}
+.corr{background:var(--red-lt);border:1.5px solid #FECACA;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.corr::before{content:"⚠️ 答錯時";position:absolute;top:-10px;left:14px;background:var(--red);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.corr p{color:#991B1B;font-size:13px;margin-top:4px;line-height:1.7}
+.tip{background:var(--purple-lt);border:1.5px solid #DDD6FE;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.tip::before{content:"💡 重點";position:absolute;top:-10px;left:14px;background:var(--purple);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.tip p{color:#4C1D95;font-size:13px;margin-top:4px;line-height:1.7}
+.goal2{background:var(--green-lt);border:1.5px solid #A7F3D0;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.goal2::before{content:"✅ 重點帶走";position:absolute;top:-10px;left:14px;background:var(--green);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.goal2 p,.goal2 li{color:#064E3B;font-size:13px;margin-top:4px;line-height:1.8}
+.goal2 ul{padding-left:18px;margin-top:6px}
+.formula{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:700;color:var(--navy);background:var(--gray-100);border-radius:8px;padding:12px 16px;border-left:3px solid var(--amber);margin:10px 0}
+.es{background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 14px;margin:6px 0;font-size:14px;font-weight:500}
+.tp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.tw{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--red);background:var(--red-lt);padding:6px 10px;border-radius:6px}
+.tw::before{content:"❌ "}
+.tr{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--green);background:var(--green-lt);padding:6px 10px;border-radius:6px}
+.tr::before{content:"✅ "}
+.qb{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:20px}
+.qh{display:flex;align-items:center;gap:10px;padding:12px 18px;background:var(--gray-100);border-bottom:1px solid var(--gray-200);flex-wrap:wrap}
+.qn{background:var(--navy);color:white;font-weight:700;font-size:12px;padding:3px 10px;border-radius:6px;font-family:"Inter",sans-serif}
+.qt{background:var(--sky-lt);color:var(--sky);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qs{background:var(--amber-lt);color:var(--amber-dk);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qbody{padding:20px}
+.qsen{font-size:15px;font-weight:500;background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:6px;line-height:1.8}
+.qsen .bl{background:var(--amber-lt);color:var(--amber-dk);padding:0 6px;border-radius:4px;font-weight:700}
+.qzh{font-size:12px;color:var(--gray-400);margin-bottom:14px}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.qo{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;display:flex;align-items:center;gap:8px}
+.qo.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.qo.no{background:var(--red-lt);border-color:var(--red);color:var(--red)}
+.ol{width:22px;height:22px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:"Inter",sans-serif}
+.qo.ok .ol{background:var(--green);color:white}
+.qtc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.gtl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-400);margin-bottom:8px}
+.vg{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.vw{font-family:"JetBrains Mono",monospace;color:var(--navy);font-weight:600}
+.vd{color:var(--gray-600)}
+.artbox{background:#F8FAFC;border:1.5px solid #CBD5E1;border-radius:12px;padding:18px;margin:14px 0;font-size:15px;line-height:1.9}
+.artbox .abl{color:#1d4ed8;font-weight:800;background:var(--sky-lt);padding:1px 6px;border-radius:4px}
+.tmtable{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tmtable th,.tmtable td{border:1px solid var(--gray-200);padding:10px 12px;text-align:left;vertical-align:top}
+.tmtable th{background:var(--navy);color:white;font-size:12px}
+.tmtable td:first-child{font-family:"JetBrains Mono",monospace;font-weight:700;background:var(--amber-lt);color:var(--amber-dk);white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tbl th,.tbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
+.tbl th{background:var(--gray-100);font-weight:700;font-size:12px}
+.dv{height:1px;background:var(--gray-200);margin:18px 0}
+.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}
+code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:12px;color:var(--navy)}
+.q4o{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;margin:4px 0}
+.q4o.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.p7box{background:#F8FAFC;border:1.5px solid #CBD5E1;border-radius:12px;padding:18px 22px;margin:14px 0;font-size:14px;line-height:1.85}
+.p7box h4{font-size:13px;color:var(--navy);margin-bottom:10px;font-weight:800;letter-spacing:.3px}
+.p7box p{margin-bottom:10px}
+.p7box p:last-child{margin-bottom:0}
+.chatline{display:flex;gap:10px;margin-bottom:8px;font-size:13px;align-items:flex-start}
+.chatline b{color:var(--sky);min-width:46px;flex-shrink:0;font-family:"Inter",sans-serif}
+.insmark{background:var(--purple-lt);color:var(--purple);font-weight:800;padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:12px}
+.qref{font-size:11px;color:var(--gray-400);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div class="logo">🎓 <span>老師</span> Lesson 03 · 代名詞 + Part6 閱讀策略</div>
+  <div class="ppill">現在：<span id="csec">課程總覽</span></div>
+  <div class="timer-wrap">
+    <span class="timer-label">上課時間</span>
+    <span id="timer">00:00</span>
+    <button class="tbtn" onclick="toggleTimer()">▶ 開始</button>
+    <button class="tbtn" onclick="resetTimer()">↺</button>
+  </div>
+</div>
+<div id="layout">
+<nav id="sidebar">
+  <div class="sbh">課程總覽</div>
+  <a class="sbl active" onclick="goTo('s-overview')">課程定位 &amp; 流程</a>
+  <div class="sbh">代名詞文法理論</div>
+  <a class="sbl" onclick="goTo('s-open')">開場：為什麼考代名詞 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-rule1')">主格 vs 受格 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule2')">所有格 vs 獨立所有格 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule3')">反身代名詞 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule4')">each other <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-rule5')">不定代名詞 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule6')">every/each/all/some/any <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule7')">another/other/others <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule8')">that/those 比較句 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-close')">收尾總結 <span class="t">5m</span></a>
+  <div class="sbh">Part 5 · 代名詞練習 1–10</div>
+  <a class="sbl" onclick="goTo('q1')">1 受格代名詞 ⭐</a>
+  <a class="sbl" onclick="goTo('q2')">2 反身代名詞</a>
+  <a class="sbl" onclick="goTo('q3')">3 所有格形容詞</a>
+  <a class="sbl" onclick="goTo('q4')">4 獨立所有格 ⭐</a>
+  <a class="sbl" onclick="goTo('q5')">5 each other</a>
+  <a class="sbl" onclick="goTo('q6')">6 所有格+指涉</a>
+  <a class="sbl" onclick="goTo('q7')">7 主格+省略that ⭐</a>
+  <a class="sbl" onclick="goTo('q8')">8 複數受格</a>
+  <a class="sbl" onclick="goTo('q9')">9 no one 語意</a>
+  <a class="sbl" onclick="goTo('q10')">10 that比較句 ⭐</a>
+  <div class="sbh">Part 6 閱讀策略導論</div>
+  <a class="sbl" onclick="goTo('s-reading-intro')">解題四步驟</a>
+  <div class="sbh">Part 6 · 139–142</div>
+  <a class="sbl" onclick="goTo('p6-139-v')">文章先導 · Email</a>
+  <a class="sbl" onclick="goTo('q139')">139 several</a>
+  <a class="sbl" onclick="goTo('q140')">140 another look ⭐</a>
+  <a class="sbl" onclick="goTo('q141')">141 version</a>
+  <a class="sbl" onclick="goTo('q142')">142 邏輯銜接</a>
+  <div class="sbh">Part 6 · 143–146</div>
+  <a class="sbl" onclick="goTo('p6-143-v')">文章先導 · 產品開發</a>
+  <a class="sbl" onclick="goTo('q143')">143 more than ⭐</a>
+  <a class="sbl" onclick="goTo('q144')">144 競爭市場</a>
+  <a class="sbl" onclick="goTo('q145')">145 importance of</a>
+  <a class="sbl" onclick="goTo('q146')">146 figure out</a>
+  <div class="sbh">收尾</div>
+  <a class="sbl" onclick="goTo('s-summary')">總整理 &amp; 解答表</a>
+</nav>
+<main id="main">
+<div class="ls" id="s-overview">
+<div class="sh"><div class="sn">0</div><div class="st">課程定位 &amp; 上課流程</div></div>
+<div class="block"><div class="bh gn"><span class="d"></span>本堂目標</div><div class="bb">
+<div class="goal2"><p>本堂分兩大主題：①代名詞文法系統（人稱/所有格/反身/不定/each other/that-those）+ Part 5 練習 1–10；②Part 6（139–146）閱讀解題策略，重點是<strong>先抓文章大意、再回文章找證據</strong>，不是逐字翻譯、不是憑印象猜答案。Part 7（147–164）份量更大，另外排成 Lesson 04。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>⚠️ 份量提醒：建議拆成 2 次上課</div><div class="bb">
+<div class="tip"><p><strong>這份內容量比一般單堂課大（共 18 題 + 8 條文法規則 + 2 篇 Part 6 文章）。</strong>建議拆法：<br>第一次：代名詞文法 + Part 5（1–10）<br>第二次：Part 6 閱讀策略 + 139–146</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>建議上課流程（單次 90 分鐘版本，僅供參考）</div><div class="bb">
+<table class="tmtable">
+<tr><th>時間</th><th>內容</th><th>重點提示</th></tr>
+<tr><td>0–5 min</td><td>開場：代名詞為什麼重要</td><td>先建立「先看位置，不要先翻譯」的態度</td></tr>
+<tr><td>5–70 min</td><td>Rule 1–8 代名詞系統 + 課堂練習</td><td>每條規則都要先問學生再公布答案</td></tr>
+<tr><td>70–90 min</td><td>Part 5 練習 1–10（可挑 5 題精講）</td><td>每題先問「空格前後是什麼」</td></tr>
+</table>
+<div class="tip mt12"><p>Part 6 閱讀策略（139–146）建議另開一次課，扎實地練習「先讀大意、再找空格、再回文章驗證」的流程。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-open">
+<div class="sh"><div class="sn">1</div><div class="st">開場：代名詞為什麼重要</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>開場逐字稿</div><div class="bb">
+<div class="script">今天我們要學代名詞。很多人看到代名詞會覺得就是 he、she、it，很簡單；可是 TOEIC 不會只問你「他」是 he 還是 him。<br><br>TOEIC 真正要考你的是：<em>這個空格在句子裡到底需要主詞、受詞、所有格，還是反身代名詞。</em><br><br>所以今天我們先訂一個規則：<strong>看到代名詞題，不要先翻譯。先看空格前後。</strong></div>
+<div class="ask mt12"><p>我會一直問你三個問題：①空格前面是什麼？②空格後面是什麼？③空格在句子裡是主詞、受詞，還是修飾名詞？</p><div class="al">提醒學生</div><p class="ap">只要這三個問題問對，很多代名詞題根本不用完全翻譯也可以做對。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>代名詞分類總覽（先讓學生有架構）</div><div class="bb">
+<table class="tbl">
+<tr><th>類型</th><th>例子</th></tr>
+<tr><td>人稱代名詞（主格/受格）</td><td>I / me / he / him / they / them</td></tr>
+<tr><td>所有格形容詞</td><td>my / his / their</td></tr>
+<tr><td>獨立所有格</td><td>mine / his / theirs</td></tr>
+<tr><td>反身代名詞</td><td>myself / himself / themselves</td></tr>
+<tr><td>不定代名詞</td><td>someone / anyone / everyone / no one</td></tr>
+<tr><td>不定形容詞</td><td>some / any / every / each / another / other</td></tr>
+<tr><td>指示代名詞</td><td>this / that / these / those</td></tr>
+<tr><td>名詞列代名詞</td><td>one / another / the other / others / the others</td></tr>
+<tr><td>互相代名詞</td><td>each other</td></tr>
+</table>
+<div class="tip mt12"><p><strong>與前面文法的連結：</strong>五大句型的主詞/受詞/補語位置、及物動詞後面要受詞、所有格後面要接名詞、主詞動詞一致（each/everyone/no one 當單數）、比較句用 that/those 代替前面名詞——這些舊觀念今天全部會用到。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-rule1">
+<div class="sh"><div class="sn">2</div><div class="st">Rule 1｜主格 vs 受格：先看位置</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
+<div class="script">先不要急著看中文，先看位置。<em>如果空格在動詞前面，通常要找誰做動作，所以要主格；如果空格在動詞後面，表示有人或某個東西承受動作，通常就是受格。</em></div>
+<table class="tbl mt12">
+<tr><th>功能</th><th>單數</th><th>複數</th></tr>
+<tr><td>主格：做動作的人或事物</td><td>I / you / he / she / it</td><td>we / you / they</td></tr>
+<tr><td>受格：接受動作的人或事物</td><td>me / you / him / her / it</td><td>us / you / them</td></tr>
+</table>
+<div class="formula mt12">主詞 + 動詞　／　動詞 + 受詞　／　介系詞 + 受詞</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>TOEIC 常見位置示範</div><div class="bb">
+<div class="es">______ prepared the report.（動詞前 → 主格）<br><small style="color:var(--gray-600)">She prepared the report.</small></div>
+<div class="es mt12">The hotel cannot accommodate ______.（動詞後 → 受格）<br><small style="color:var(--gray-600)">The hotel cannot accommodate them.</small></div>
+<div class="es mt12">Please contact ______.（介系詞/動詞後 → 受格）<br><small style="color:var(--gray-600)">Please contact him.</small></div>
+<div class="ask mt12"><p>accommodate 是動詞，意思是容納、接待。動詞後面需要一個受詞，所以 they、their、them、themselves 裡面哪一個可以放在動詞後面當受詞？</p><div class="al">答案</div><p class="ap">them（受格）</p></div>
+<div class="tip mt12"><p><strong>超快判斷法：</strong>動詞前面找主格；動詞後面找受格。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-rule2">
+<div class="sh"><div class="sn">3</div><div class="st">Rule 2｜所有格 vs 獨立所有格：後面有沒有名詞是關鍵</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心判斷法</div><div class="bb">
+<div class="script">接下來最容易混的是 my 和 mine、his 和 his、their 和 theirs。你不用背一大堆意思，你只要看<em>空格後面有沒有名詞</em>。</div>
+<table class="tbl mt12">
+<tr><th>類型</th><th>例子</th><th>後面要不要接名詞？</th></tr>
+<tr><td>所有格形容詞</td><td>my / your / his / her / our / their</td><td>要</td></tr>
+<tr><td>獨立所有格</td><td>mine / yours / his / hers / ours / theirs</td><td>不要</td></tr>
+</table>
+<div class="formula mt12">所有格 + 名詞　／　獨立所有格單獨使用</div>
+<div class="es mt12">my computer　their company　his attorney<br>This computer is mine.　The report is hers.　That office is theirs.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>TOEIC 常見位置</div><div class="bb">
+<div class="script">看到空格後面直接有名詞，先優先想：<strong>所有格形容詞</strong>。例如 ______ computer / ______ attorney / ______ proposal，答案通常會是 my / his / her / their，<em>不是</em> mine / hers / theirs。</div>
+<div class="corr mt12"><p>常見錯誤：X hers report → O her report；X This report is her. → O This report is hers.（her 和 hers 中文都翻成「她的」，學生容易混）</p></div>
+<div class="tip mt12"><p><strong>快速避免法：</strong>後面有名詞選 her；後面沒名詞選 hers。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-rule3">
+<div class="sh"><div class="sn">4</div><div class="st">Rule 3｜反身代名詞：主詞和受詞是同一人時使用</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
+<div class="script">反身代名詞不是看到「自己」就亂選。你要先找主詞，再找受詞。<em>如果主詞和受詞是同一個人，才用 myself、himself、herself、themselves。</em></div>
+<table class="tbl mt12">
+<tr><th>主詞</th><th>反身代名詞</th></tr>
+<tr><td>I</td><td>myself</td></tr>
+<tr><td>you</td><td>yourself / yourselves</td></tr>
+<tr><td>he / she / it</td><td>himself / herself / itself</td></tr>
+<tr><td>we / they</td><td>ourselves / themselves</td></tr>
+</table>
+<div class="formula mt12">主詞自己做動作，也作用在自己身上</div>
+<div class="es mt12">Jason installed the air conditioner himself.<br>She introduced herself.<br>The employees prepared themselves for the meeting.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>常見 TOEIC 用法 + 陷阱</div><div class="bb">
+<div class="vg">
+<span class="vw">introduce oneself</span><span class="vd">Please introduce yourself.</span>
+<span class="vw">by oneself</span><span class="vd">She finished the report by herself.</span>
+<span class="vw">help oneself</span><span class="vd">Please help yourself to some coffee.</span>
+</div>
+<div class="ask mt12"><p>Jason installed the air conditioner himself. 主詞是誰？做安裝動作的人是誰？自己安裝的人是誰？</p><div class="al">答案</div><p class="ap">三個都是 Jason → himself。如果寫成 installed it him，就錯了，因為 him 是另一個男性，不是 Jason 自己。</p></div>
+<div class="tp mt12"><div class="tw">myself computer</div><div class="tr">my computer</div></div>
+<div class="tp"><div class="tw">my myself computer</div><div class="tr">my own computer</div></div>
+<div class="tip mt12"><p>反身代名詞不能直接放在名詞前面當所有格，也不要把 own 和 myself 混在一起。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-rule4">
+<div class="sh"><div class="sn">5</div><div class="st">Rule 4｜each other：彼此、互相</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
+<div class="formula">複數主詞 + each other</div>
+<div class="es mt12">The trainees helped each other.<br>The two departments support each other.<br>The employees know each other well.</div>
+<div class="script mt12">each other 不是「另一個」。它表示兩個以上的人互相做某件事。They helped each other.（他們互相幫忙）不是 They helped another.（他們幫助另一個人）。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>課堂提問</div><div class="bb">
+<div class="ask"><p>The trainees helped ______ out during the orientation. 主詞是 trainees，複數，這是一群人互相幫忙，還是一個人幫另一個不特定的人？</p><div class="al">答案</div><p class="ap">互相幫忙 → each other（不是 another，也不是 the other，也不是 other）</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-rule5">
+<div class="sh"><div class="sn">6</div><div class="st">Rule 5｜不定代名詞：someone / anyone / everyone / no one</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
+<table class="tbl">
+<tr><th>字</th><th>意思</th><th>常見概念</th></tr>
+<tr><td>someone / somebody</td><td>某人</td><td>肯定句常見</td></tr>
+<tr><td>anyone / anybody</td><td>任何人；有人</td><td>問句、否定句常見</td></tr>
+<tr><td>everyone / everybody</td><td>每一個人</td><td>看起來很多人，但動詞通常單數</td></tr>
+<tr><td>no one / nobody</td><td>沒有人</td><td>否定意思，但句子不需要再加 not</td></tr>
+</table>
+<div class="formula mt12">Everyone <em>is</em> ready.　No one <em>was</em> absent.　Someone <em>has</em> called.　Anyone <em>can</em> apply.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>TOEIC 高頻提醒</div><div class="bb">
+<div class="script">看到 everyone、someone、no one 這些字時，先不要被中文騙。中文的 everyone 是「所有人」，感覺很多人；可是英文文法把它當成一個整體，所以動詞通常用單數。TOEIC 很愛考這種地方，因為學生一看到很多人，就會選 are。</div>
+<div class="tp mt12"><div class="tw">Everyone are required to attend.</div><div class="tr">Everyone is required to attend.</div></div>
+<div class="tp"><div class="tw">No one were absent.</div><div class="tr">No one was absent.</div></div>
+<div class="tip mt12"><p>no one 本身已經有否定意思，所以句子後面不用再加 not。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-rule6">
+<div class="sh"><div class="sn">7</div><div class="st">Rule 6｜every / each / all / some / any</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>四組公式逐一帶</div><div class="bb">
+<div class="formula">every + 單數可數名詞</div>
+<div class="es">Every employee is required to attend.　Every sales representative must register.</div>
+<div class="formula mt12">each + 單數可數名詞　／　each of + 複數名詞/受格代名詞</div>
+<div class="es">Each manager has a different opinion.　Each of the managers has a different opinion.</div>
+<div class="formula mt12">all + 複數可數名詞 / 不可數名詞</div>
+<div class="es">All employees are invited.　All information is confidential.</div>
+<div class="formula mt12">some + 複數可數名詞 / 不可數名詞（通常用於肯定句）</div>
+<div class="es">Some customers have canceled their orders.　We need some information.</div>
+<div class="formula mt12">any + 複數可數名詞 / 不可數名詞（常見於問句與否定句）</div>
+<div class="es">Do you have any questions?　We do not have any information.</div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-rule7">
+<div class="sh"><div class="sn">8</div><div class="st">Rule 7｜another / other / the other / others / the others</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心判斷法：空格後面有沒有名詞？</div><div class="bb">
+<div class="script">這是 TOEIC 很常考的組合。先問學生：<em>空格後面有名詞嗎？</em>有名詞 → other；沒有名詞 → others / the others；兩個之中另一個 → the other；不特定的另一個 → another。</div>
+<table class="tbl mt12">
+<tr><th>字</th><th>意思</th><th>後面要不要接名詞？</th></tr>
+<tr><td>another</td><td>另一個</td><td>通常不用再接複數名詞（接單數可數名詞）</td></tr>
+<tr><td>other</td><td>其他的</td><td>要接名詞</td></tr>
+<tr><td>the other</td><td>兩者中的另一個</td><td>可單獨用，也可接單數名詞</td></tr>
+<tr><td>others</td><td>其他人／其他東西</td><td>不接名詞</td></tr>
+<tr><td>the others</td><td>剩下的其他人／東西</td><td>不接名詞</td></tr>
+</table>
+<div class="es mt12">One employee is on vacation, and the other is working.<br>Some employees work at home; others work in the office.<br>I need another copy.<br>Other customers have the same complaint.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>常見混用陷阱</div><div class="bb">
+<div class="tp"><div class="tw">others employees</div><div class="tr">other employees</div></div>
+<div class="tp"><div class="tw">other are waiting.</div><div class="tr">others are waiting.</div></div>
+<div class="tip mt12"><p><strong>快速避免法：</strong>後面有名詞選 other；後面沒有名詞選 others。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-rule8">
+<div class="sh"><div class="sn">9</div><div class="st">Rule 8｜that / those：比較句中代替前面的名詞</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
+<div class="formula">單數名詞 → that　／　複數名詞 → those</div>
+<div class="es mt12">The price of this model is lower than <strong>that of</strong> the previous model.<br>Sales this year are higher than <strong>those of</strong> last year.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>為什麼不能直接重複名詞？</div><div class="bb">
+<div class="script">比較句裡最重要的是，不要把比較的東西搞錯。The average temperature this July is higher than that of last July.——這裡不是在比較 July 和 July，而是在比較 temperature 和 temperature。所以 that 代替前面的單數名詞 temperature。如果前面是複數名詞，例如 sales、prices、employees，就比較常用 those。</div>
+<div class="corr mt12"><p>文法沒有錯但很冗：The average temperature this July is higher than the average temperature of last July. → TOEIC 很常用 that 來避免重複：...higher than that of last July.</p></div>
+<div class="tip mt12"><p><strong>解題口訣：</strong>先問「現在到底在比較哪兩個東西？」temperature vs. temperature → that；sales vs. sales → those。</p></div>
+</div></div>
+</div>
+
+
+<div class="ls" id="s-close">
+<div class="sh"><div class="sn">10</div><div class="st">收尾總結</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>收尾逐字稿</div><div class="bb">
+<div class="script">今天學了很多代名詞規則，但你不用一次背完全部。最重要記得四個判斷：<br><br><strong>第一：空格的位置。</strong>動詞前面 → 主格；動詞後面 → 受格；名詞前面 → 所有格形容詞；後面沒有名詞、表示所有權 → 獨立所有格。<br><br><strong>第二：主詞和受詞是不是同一人。</strong>是 → 反身代名詞。<br><br><strong>第三：空格後面有沒有名詞。</strong>有名詞不能選 others / theirs / hers。<br><br><strong>第四：比較的是單數還是複數名詞。</strong>單數 → that；複數 → those。</div>
+<div class="goal2 mt12"><p><strong>本堂學生要帶走：</strong></p><ul>
+<li>動詞前面找主格；動詞後面找受格</li>
+<li>空格後面有名詞 → 所有格形容詞；沒有名詞 → 獨立所有格</li>
+<li>主詞和受詞同一人 → 反身代名詞</li>
+<li>everyone / someone / anyone / no one 先當單數看</li>
+<li>other + 名詞；others 不接名詞</li>
+<li>比較句：單數名詞用 that，複數名詞用 those</li>
+</ul></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-part5">
+<div class="sh"><div class="sn">➋</div><div class="st">TOEIC Part 5｜代名詞練習 1–10</div><div class="stm">⏱ 20–25 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>做題節奏</div><div class="bb">
+<div class="script">接下來進練習題。做法：<em>你唸題目，學生不看答案，先說空格前後是什麼、需要哪種代名詞，再說答案。</em>不急著翻譯，先看位置判斷詞性。</div>
+</div></div>
+</div>
+
+
+<div class="qb" id="q1">
+<div class="qh"><span class="qn">1</span><span class="qt">受格代名詞</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Unfortunately, our hotel is too small for all the guests invited on the list; we are afraid that our hotel cannot accommodate <span class="bl">______</span>.</div>
+<div class="qzh">很不幸地，我們的飯店對於名單上所有受邀賓客來說太小了；我們擔心飯店無法容納他們。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>they</div>
+<div class="qo"><span class="ol">B</span>their</div>
+<div class="qo ok"><span class="ol">C</span>them</div>
+<div class="qo"><span class="ol">D</span>themselves</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 accommodate，這是動詞，意思是容納、接待。動詞後面通常要什麼？</p><div class="al">答案</div><p class="ap">要受詞 → 受格代名詞 them（C）</p></div>
+<div class="formula mt12">動詞 + 受詞</div>
+<div class="corr mt12"><p>A they 是主格，只能當主詞；B their 是所有格形容詞，後面要接名詞（their rooms）；D themselves 是反身代名詞，主詞是 hotel 不是 guests，主詞和受詞不是同一對象，不符合。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">accommodate</span><span class="vd">容納；接待；提供住宿</span>
+<span class="vw">accommodate guests</span><span class="vd">容納／接待賓客</span>
+<span class="vw">guest</span><span class="vd">客人；賓客</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q2">
+<div class="qh"><span class="qn">2</span><span class="qt">反身代名詞</span></div>
+<div class="qbody">
+<div class="qsen">Jason bought an air conditioner and installed it <span class="bl">______</span>.</div>
+<div class="qzh">Jason 買了一台冷氣，並且自己把它安裝好了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>them</div>
+<div class="qo"><span class="ol">B</span>him</div>
+<div class="qo ok"><span class="ol">C</span>himself</div>
+<div class="qo"><span class="ol">D</span>he</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞是 Jason，做安裝動作的人是 Jason，現在句子要表達「他自己安裝」還是「安裝給另一個男生」？</p><div class="al">答案</div><p class="ap">自己安裝 → himself（C），主詞和動作執行者是同一人</p></div>
+<div class="corr mt12"><p>B him 是受格，若選 him 表示安裝給另一個男性，不符句意；D he 是主格，不能放在句尾作補充；A them 是複數受格，和單數男性 Jason 不符。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">air conditioner</span><span class="vd">冷氣機</span>
+<span class="vw">install</span><span class="vd">安裝</span>
+<span class="vw">install it himself</span><span class="vd">親自安裝它</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q3">
+<div class="qh"><span class="qn">3</span><span class="qt">所有格形容詞</span></div>
+<div class="qbody">
+<div class="qsen">I believe your shop is responsible for the damage to <span class="bl">______</span> computer.</div>
+<div class="qzh">我相信你們的店家要對我的電腦損壞負責。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>me</div>
+<div class="qo"><span class="ol">B</span>mine</div>
+<div class="qo ok"><span class="ol">C</span>my</div>
+<div class="qo"><span class="ol">D</span>myself</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面直接接 computer，只要空格後面有名詞，先找哪一種代名詞？</p><div class="al">答案</div><p class="ap">所有格形容詞 → my（C），my computer = 我的電腦</p></div>
+<div class="corr mt12"><p>A me 是受格，不能直接修飾 computer；B mine 是獨立所有格，後面不能接名詞（可說 The computer is mine.）；D myself 是反身代名詞，不能放在名詞前面表示所有關係。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">be responsible for</span><span class="vd">對……負責</span>
+<span class="vw">damage</span><span class="vd">損壞；損失</span>
+<span class="vw">damage to + 名詞</span><span class="vd">對某物造成的損壞</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q4">
+<div class="qh"><span class="qn">4</span><span class="qt">獨立所有格</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Once the president signs the contract, the company will be <span class="bl">______</span> to do with as he likes.</div>
+<div class="qzh">一旦總裁簽署合約，這家公司就可以任由他處置。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>him</div>
+<div class="qo ok"><span class="ol">B</span>his</div>
+<div class="qo"><span class="ol">C</span>he</div>
+<div class="qo"><span class="ol">D</span>himself</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>his 後面沒有名詞，但 his 有兩種功能：所有格形容詞（his company）和獨立所有格（The company is his）。這句是哪一種？</p><div class="al">答案</div><p class="ap">be 動詞後面需要補語 → 獨立所有格 his（B），= 這家公司將成為他的</p></div>
+<div class="formula mt12">be + 獨立所有格 = 屬於……、是……的</div>
+<div class="corr mt12"><p>A him 是受格，不能放在 be 動詞後面表示所有權；C he 是主格，不能當補語；D himself 是反身代名詞，意思是他自己，不表示所有權。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">president</span><span class="vd">總裁；總經理</span>
+<span class="vw">contract</span><span class="vd">合約</span>
+<span class="vw">sign a contract</span><span class="vd">簽署合約</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q5">
+<div class="qh"><span class="qn">5</span><span class="qt">互相代名詞</span></div>
+<div class="qbody">
+<div class="qsen">We are happy to see that the trainees helped <span class="bl">______</span> out during the orientation.</div>
+<div class="qzh">我們很高興看到這些受訓者在說明會期間彼此互相幫忙。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>another</div>
+<div class="qo"><span class="ol">B</span>the other</div>
+<div class="qo ok"><span class="ol">C</span>each other</div>
+<div class="qo"><span class="ol">D</span>other</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞是 the trainees，複數，這是一群人彼此互相幫忙，還是一個人幫另一個不特定的人？</p><div class="al">答案</div><p class="ap">彼此互相 → each other（C）</p></div>
+<div class="corr mt12"><p>A another 通常指單數不特定對象，不表示互相；B the other 表示兩者中的另一個，不符合一群人互相幫忙；D other 通常後面要接名詞（other trainees）。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">trainee</span><span class="vd">受訓者；培訓生</span>
+<span class="vw">orientation</span><span class="vd">新生／職前說明會</span>
+<span class="vw">help someone out</span><span class="vd">幫某人一把</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q6">
+<div class="qh"><span class="qn">6</span><span class="qt">所有格 + 指涉判斷</span></div>
+<div class="qbody">
+<div class="qsen">Ms. Peterson, acting as <span class="bl">______</span> attorney, defended Mr. Jones in a very determined fashion.</div>
+<div class="qzh">Peterson 女士擔任 Jones 先生的律師，以非常堅定的態度為他辯護。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>her</div>
+<div class="qo ok"><span class="ol">B</span>his</div>
+<div class="qo"><span class="ol">C</span>hers</div>
+<div class="qo"><span class="ol">D</span>he</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 attorney，需要所有格形容詞。現在要問：誰的 attorney？Peterson 女士正在為 Mr. Jones 辯護，所以她是誰的律師？</p><div class="al">答案</div><p class="ap">Mr. Jones 的律師，Jones 是男性 → his（B）</p></div>
+<div class="corr mt12"><p>A her 文法上可接 attorney，但意思會變成「她自己的律師」，不符合 Peterson 正在為 Jones 辯護的情境；C hers 是獨立所有格，後面不能接名詞；D he 是主格，不能修飾名詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">attorney</span><span class="vd">律師</span>
+<span class="vw">defend</span><span class="vd">為……辯護；保護</span>
+<span class="vw">act as someone's attorney</span><span class="vd">擔任某人的律師</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q7">
+<div class="qh"><span class="qn">7</span><span class="qt">主格 + 省略 that</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Ms. Lee has agreed to let us use the report <span class="bl">______</span> prepared.</div>
+<div class="qzh">Lee 女士已同意讓我們使用她準備的那份報告。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>her</div>
+<div class="qo ok"><span class="ol">B</span>she</div>
+<div class="qo"><span class="ol">C</span>hers</div>
+<div class="qo"><span class="ol">D</span>herself</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這題要慢慢帶，學生很容易看到 report 就選 her。先看 report 後面有 prepared，這是動詞，誰準備了這份報告？需要一個主詞。</p><div class="al">答案</div><p class="ap">完整概念是 the report [that] she prepared（that 被省略）→ she（B）是 prepared 的主詞</p></div>
+<div class="formula mt12">N + [that] + S + V（關係代名詞省略後，主詞仍要用主格）</div>
+<div class="corr mt12"><p>A her 是受格或所有格形容詞，後面是動詞 prepared，不能當主詞；C hers 是獨立所有格，不能當主詞；D herself 是反身代名詞，不能當普通主詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">agree to do something</span><span class="vd">同意做某事</span>
+<span class="vw">prepare a report</span><span class="vd">準備報告</span>
+<span class="vw">let someone use something</span><span class="vd">讓某人使用某物</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q8">
+<div class="qh"><span class="qn">8</span><span class="qt">複數受格代名詞</span></div>
+<div class="qbody">
+<div class="qsen">If the products do not meet with your satisfaction, you can return <span class="bl">______</span> within seven days for a full refund.</div>
+<div class="qzh">如果這些產品無法令您滿意，您可以在七天內退回它們，以獲得全額退款。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>it</div>
+<div class="qo ok"><span class="ol">B</span>them</div>
+<div class="qo"><span class="ol">C</span>him</div>
+<div class="qo"><span class="ol">D</span>yourselves</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前面出現的名詞是 products，單數還是複數？return 是動詞，後面需要受詞，要選哪一種受格？</p><div class="al">答案</div><p class="ap">products 是複數 → 需要複數受格 → them（B）</p></div>
+<div class="corr mt12"><p>A it 是單數受格，無法代替複數 products；C him 是男性單數受格，不可代替產品；D yourselves 是反身代名詞，意思是你們自己，不符合句意。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">meet someone's satisfaction</span><span class="vd">符合某人的滿意程度</span>
+<span class="vw">refund</span><span class="vd">退款；退費</span>
+<span class="vw">return products for a full refund</span><span class="vd">退回產品以取得全額退款</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q9">
+<div class="qh"><span class="qn">9</span><span class="qt">不定代名詞語意判斷</span></div>
+<div class="qbody">
+<div class="qsen">It is anticipated that <span class="bl">______</span> in the division would miss the superb opportunity to attend the computer skill seminar.</div>
+<div class="qzh">預期該部門裡沒有人會錯過參加這場電腦技能研討會的大好機會。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>each one</div>
+<div class="qo"><span class="ol">B</span>anyone</div>
+<div class="qo"><span class="ol">C</span>someone</div>
+<div class="qo ok"><span class="ol">D</span>no one</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>superb opportunity 是很棒的機會。正常來說，這麼好的機會，預期會有人錯過，還是沒有人錯過？</p><div class="al">答案</div><p class="ap">沒有人會錯過 → no one（D）。注意：no one 本身已有否定意思，後面不用再加 not</p></div>
+<div class="corr mt12"><p>A each one 表示每一個人，若說每個人都會錯過好機會，語意不合理；B anyone 表示任何人，不符合這裡要表達的否定意思；C someone 變成「某人會錯過」，不符合原句預期語氣。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">anticipate</span><span class="vd">預期；預料</span>
+<span class="vw">superb</span><span class="vd">極佳的；非常優秀的</span>
+<span class="vw">miss an opportunity</span><span class="vd">錯過機會</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="qb" id="q10">
+<div class="qh"><span class="qn">10</span><span class="qt">指示代名詞 — 比較句</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The average temperature this July is higher, compared with <span class="bl">______</span> of last July.</div>
+<div class="qzh">今年七月的平均氣溫，和去年七月的平均氣溫相比較高。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>it</div>
+<div class="qo"><span class="ol">B</span>them</div>
+<div class="qo ok"><span class="ol">C</span>that</div>
+<div class="qo"><span class="ol">D</span>those</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>不要先看 this July 或 last July，要問：兩邊真正比較的是什麼？左邊是 average temperature this July，右邊應該也是 average temperature of last July。temperature 是單數還是複數？</p><div class="al">答案</div><p class="ap">temperature 是單數名詞 → 用 that 代替它（C），不是比較七月和七月，而是比較氣溫和氣溫</p></div>
+<div class="formula mt12">that of + 名詞 = 代替前面提過的單數名詞</div>
+<div class="corr mt12"><p>A it 可代替單數事物，但在正式比較句中不適合用來和另一個同類名詞比較；B them 是複數受格，不能代替單數 temperature；D those 只能代替複數名詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">average temperature</span><span class="vd">平均氣溫</span>
+<span class="vw">compared with</span><span class="vd">與……相比</span>
+<span class="vw">that of + 名詞</span><span class="vd">代替前面提過的單數名詞</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="ls" id="s-reading-intro">
+<div class="sh"><div class="sn">➌</div><div class="st">Part 6 閱讀策略：先讀懂文章，再解題</div><div class="stm">⏱ 5–10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>學生常見問題</div><div class="bb">
+<div class="script">做閱讀題最容易出現的問題：一看到文章就想逐字翻譯；遇到不會的單字就停住；還沒搞懂文章在講什麼，就先看題目猜答案；做完全不回文章找證據。<br><br><strong>提醒學生：不需要一開始就翻完整篇。先抓：這是什麼文章、誰、要做什麼、重要數字、時間、結果。</strong></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>Part 6 解題四步驟</div><div class="bb">
+<table class="tbl">
+<tr><th>步驟</th><th>做什麼</th></tr>
+<tr><td>Step 1</td><td>先看文章類型（Email？商業文章？）</td></tr>
+<tr><td>Step 2</td><td>先把整段大意讀過一次，不要急著填空</td></tr>
+<tr><td>Step 3</td><td>看空格前後：詞性、固定搭配、單複數、連接詞、文意邏輯、句子插入</td></tr>
+<tr><td>Step 4</td><td>填進去後再讀一次，問自己「整句自然嗎？接得上前後文嗎？」</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="ls" id="p6-139-v">
+<div class="sh"><div class="sn">6A</div><div class="st">Part 6 · 139–142 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（Email）</div><div class="bb">
+<div class="artbox">Dear Lily,<br><br>I am sorry to tell you that it seems there are <span class="abl">---139---</span> problems in the project report you sent me yesterday. Could you have <span class="abl">---140---</span> look at the data from the survey? We need to have a correct <span class="abl">---141---</span> of the report next Wednesday. This is urgent. We don't have much time as <span class="abl">---142---</span>. Please do call me if you need any further information.<br><br>Best wishes,<br>John</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">John 寫信給 Lily，說她昨天寄出的專案報告似乎有問題。他請 Lily 再檢查一次問卷調查資料，因為下週三前需要一份正確版本的報告。這件事很緊急，因為專案必須在一週內完成。<br><br><em>先抓住這個主軸：報告有問題 → 要重新檢查 → 時間很趕。</em>等一下解題會快很多。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>I am sorry to tell you that...</td><td>很抱歉要告訴你……（委婉告知壞消息）</td><td>I am sorry to tell you that your application was not approved.</td></tr>
+<tr><td>There are + 複數名詞</td><td>有……（複數）</td><td>There are several problems in this report.</td></tr>
+<tr><td>have another look at</td><td>再看一次；重新檢查</td><td>Could you have another look at this contract?</td></tr>
+<tr><td>a version of + 名詞</td><td>……的一個版本</td><td>Please send me the final version of the proposal.</td></tr>
+<tr><td>urgent</td><td>緊急的</td><td>This is an urgent request.</td></tr>
+<tr><td>as = because</td><td>因為（連接詞）</td><td>We canceled the event as the weather was bad.</td></tr>
+<tr><td>has to be completed</td><td>必須被完成（被動）</td><td>The project has to be completed within a week.</td></tr>
+<tr><td>Please do + 原形動詞</td><td>請務必……（do 加強語氣）</td><td>Please do let me know if you have any questions.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q139">
+<div class="qh"><span class="qn">139</span><span class="qt">數量詞 + 複數可數</span></div>
+<div class="qbody">
+<div class="qsen">There are <span class="bl">---139---</span> problems in the project report.</div>
+<div class="qzh">專案報告裡似乎有幾個問題。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>any</div>
+<div class="qo"><span class="ol">B</span>another</div>
+<div class="qo ok"><span class="ol">C</span>several</div>
+<div class="qo"><span class="ol">D</span>little</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>先看空格後面：problems 是可數還是不可數？單數還是複數？</p><div class="al">答案</div><p class="ap">可數複數 → several problems = 幾個問題（C）最合理</p></div>
+<div class="corr mt12"><p>A any 常見於否定句/問句，這裡是肯定句不能選；B another 後面接單數可數名詞，不能接 problems（複數）；D little 修飾不可數名詞，不能修飾複數的 problems。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">several + 複數可數</span><span class="vd">幾個</span>
+<span class="vw">problem</span><span class="vd">問題</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q140">
+<div class="qh"><span class="qn">140</span><span class="qt">固定搭配 another</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Could you have <span class="bl">---140---</span> look at the data from the survey?</div>
+<div class="qzh">你可以再看一次這份調查資料嗎？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>another</div>
+<div class="qo"><span class="ol">B</span>the other</div>
+<div class="qo"><span class="ol">C</span>others</div>
+<div class="qo"><span class="ol">D</span>other</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>have ______ look at 是固定搭配。look 在這裡是單數名詞，哪個選項可以接單數可數名詞？</p><div class="al">答案</div><p class="ap">have another look at = 再看一次……（A）</p></div>
+<div class="formula mt12">have another look at + 名詞 = 再看一次、重新檢查</div>
+<div class="corr mt12"><p>B the other 是兩者中的另一個，這裡不是在兩個 look 中選一個；C others 後面不能再接名詞；D other 後面通常接複數或不可數名詞，look 是單數，不能用 other。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">data</span><span class="vd">資料；數據</span>
+<span class="vw">survey</span><span class="vd">調查；問卷</span>
+<span class="vw">have another look at</span><span class="vd">再看一次；重新檢查</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q141">
+<div class="qh"><span class="qn">141</span><span class="qt">名詞搭配 — 報告版本</span></div>
+<div class="qbody">
+<div class="qsen">We need to have a correct <span class="bl">---141---</span> of the report next Wednesday.</div>
+<div class="qzh">我們下週三需要有一份正確版本的報告。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>answer</div>
+<div class="qo"><span class="ol">B</span>plan</div>
+<div class="qo ok"><span class="ol">C</span>version</div>
+<div class="qo"><span class="ol">D</span>test</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>四個選項都是名詞，不是詞性題，要看搭配。報告可以有不同版本，哪個字最自然？</p><div class="al">答案</div><p class="ap">a version of the report = 報告的一個版本（C）</p></div>
+<div class="corr mt12"><p>A answer 常搭配 answer a question；B plan 是在制定計畫，這裡是在修改報告；D test 是測驗/測試，不會用來表示報告版本。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">version</span><span class="vd">版本</span>
+<span class="vw">final / revised / latest version</span><span class="vd">最終／修訂／最新版本</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q142">
+<div class="qh"><span class="qn">142</span><span class="qt">前後邏輯題</span></div>
+<div class="qbody">
+<div class="qsen">We don't have much time as <span class="bl">---142---</span>.</div>
+<div class="qzh">我們沒有很多時間，因為這個專案必須在一週內完成。</div>
+<div class="q4o">A. the project is not that important</div>
+<div class="q4o">B. the project is extremely ambitious</div>
+<div class="q4o">C. the project has been assigned to Mr. Chen</div>
+<div class="q4o ok">D. the project has to be completed within a week</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這題不是文法題，是邏輯題。前面說「我們時間不多」，as = because，後面應該接「為什麼時間不多」最直接的原因。</p><div class="al">答案</div><p class="ap">專案必須在一週內完成（D）— 最直接的時間緊急原因</p></div>
+<div class="corr mt12"><p>A 如果專案不重要，通常不會那麼急，邏輯相反；B「規模有企圖心」不一定代表時間少；C 分配給誰跟時間不夠沒有直接關係。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">complete</span><span class="vd">完成</span>
+<span class="vw">within a week</span><span class="vd">在一週內</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="ls" id="p6-143-v">
+<div class="sh"><div class="sn">6B</div><div class="st">Part 6 · 143–146 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（商業文章）</div><div class="bb">
+<div class="artbox">In new product development, it takes more <span class="abl">---143---</span> the accepted basics of high quality, low cost, and differentiation to succeed in today's <span class="abl">---144---</span>. The new rules also emphasize the <span class="abl">---145---</span> of speed and flexibility as these are key components in delivering new products to market. Therefore, nowadays companies are trying to <span class="abl">---146---</span> how to move faster than their competitors.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">在現代產品開發中，要成功不能只靠高品質、低成本和產品差異化這些基本原則。公司還必須重視速度與彈性，因為這些因素對於把新產品快速推出市場很重要。因此，現在很多公司都在想辦法如何比競爭對手更快行動。<br><br><em>主軸：基本原則還不夠 → 速度/彈性更重要 → 比對手快。</em></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>It takes more than A to B</td><td>要做到 B，光靠 A 還不夠</td><td>It takes more than talent to succeed.</td></tr>
+<tr><td>differentiation</td><td>差異化</td><td>product differentiation</td></tr>
+<tr><td>competitive world markets</td><td>競爭激烈的全球市場</td><td>The company operates in a highly competitive market.</td></tr>
+<tr><td>emphasize the importance of</td><td>強調……的重要性</td><td>The manager emphasized the importance of teamwork.</td></tr>
+<tr><td>deliver products to market</td><td>把產品推出市場</td><td>—</td></tr>
+<tr><td>figure out how to + V</td><td>想出如何做某事</td><td>We need to figure out how to improve customer service.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q143">
+<div class="qh"><span class="qn">143</span><span class="qt">固定搭配 more than</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">It takes more <span class="bl">---143---</span> the accepted basics of high quality, low cost, and differentiation to succeed.</div>
+<div class="qzh">要成功，所需要的不只是高品質、低成本和差異化這些基本原則。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>then</div>
+<div class="qo"><span class="ol">B</span>to</div>
+<div class="qo ok"><span class="ol">C</span>than</div>
+<div class="qo"><span class="ol">D</span>from</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 more ______，第一個要想到什麼固定搭配？</p><div class="al">答案</div><p class="ap">more than = 不只是、光靠……還不夠（C）</p></div>
+<div class="formula mt12">It takes more than A to B = 要做到 B，不只是需要 A</div>
+<div class="corr mt12"><p>A then 是然後、那時候，和比較無關；B more to 不符合固定結構；D more from 表示「從……得到更多」，不符合本句。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">accepted basics</span><span class="vd">被普遍接受的基本原則</span>
+<span class="vw">differentiation</span><span class="vd">差異化</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q144">
+<div class="qh"><span class="qn">144</span><span class="qt">語境判斷</span></div>
+<div class="qbody">
+<div class="qsen">To succeed in today's <span class="bl">---144---</span>.</div>
+<div class="qzh">要在今日競爭激烈的全球市場中成功。</div>
+<div class="q4o">A. natural environments</div>
+<div class="q4o">B. famous graduate schools</div>
+<div class="q4o ok">C. competitive world markets</div>
+<div class="q4o">D. easy atmosphere</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看整段主題：product development、speed、flexibility、competitors、move faster——這是哪一種文章？</p><div class="al">答案</div><p class="ap">商業競爭文章 → competitive world markets（C）最合理</p></div>
+<div class="corr mt12"><p>A 自然環境和產品開發、競爭對手無關；B 知名研究所完全不符合商業市場文章；D 輕鬆的氣氛不符合公司競爭、產品開發的語境。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">competitive</span><span class="vd">競爭激烈的</span>
+<span class="vw">world markets</span><span class="vd">全球市場</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q145">
+<div class="qh"><span class="qn">145</span><span class="qt">固定搭配 importance of</span></div>
+<div class="qbody">
+<div class="qsen">The new rules also emphasize the <span class="bl">---145---</span> of speed and flexibility.</div>
+<div class="qzh">這些新規則也強調速度和彈性的重要性。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>importance</div>
+<div class="qo"><span class="ol">B</span>appearance</div>
+<div class="qo"><span class="ol">C</span>development</div>
+<div class="qo"><span class="ol">D</span>achievement</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>emphasize the ______ of speed and flexibility，emphasize 後面最常見搭配是什麼？</p><div class="al">答案</div><p class="ap">emphasize the importance of = 強調……的重要性（A）</p></div>
+<div class="corr mt12"><p>B appearance（外表）、C development（發展）、D achievement（成就）都不符合「強調速度和彈性的重要性」的語意。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">importance</span><span class="vd">重要性</span>
+<span class="vw">the importance of + N/V-ing</span><span class="vd">……的重要性</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q146">
+<div class="qh"><span class="qn">146</span><span class="qt">動詞片語搭配</span></div>
+<div class="qbody">
+<div class="qsen">Nowadays companies are trying to <span class="bl">---146---</span> how to move faster than their competitors.</div>
+<div class="qzh">現在公司正試著想出如何比競爭對手更快行動的方法。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>apply for</div>
+<div class="qo ok"><span class="ol">B</span>figure out</div>
+<div class="qo"><span class="ol">C</span>devote to</div>
+<div class="qo"><span class="ol">D</span>speed up</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 how to move faster，需要一個可以接「how to + 原形動詞」的動詞片語。</p><div class="al">答案</div><p class="ap">figure out how to V = 想出如何……（B）</p></div>
+<div class="corr mt12"><p>A apply for 後面接名詞，不能接 how to V；C devote to 是 devote A to B 的結構，不能直接接 how to move faster；D speed up 後面已經有 move faster，重複不自然。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">figure out</span><span class="vd">想出；弄清楚</span>
+<span class="vw">figure out how to V</span><span class="vd">想出如何做……</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="ls" id="s-summary">
+<div class="sh"><div class="sn">✓</div><div class="st">總整理 &amp; 解答表</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>代名詞四個判斷 + Part 5（1–10）考點速查</div><div class="bb">
+<table class="tbl">
+<tr><th>題號</th><th>答案</th><th>考點</th><th>學生要記住</th></tr>
+<tr><td>1</td><td>C them</td><td>動詞後受格</td><td>accommodate + 受詞</td></tr>
+<tr><td>2</td><td>C himself</td><td>反身代名詞</td><td>主詞=動作執行者→himself</td></tr>
+<tr><td>3</td><td>C my</td><td>所有格形容詞</td><td>後面有名詞→my，不是mine</td></tr>
+<tr><td>4</td><td>B his</td><td>獨立所有格</td><td>be + his（屬於他的）</td></tr>
+<tr><td>5</td><td>C each other</td><td>互相代名詞</td><td>複數主詞互相幫忙</td></tr>
+<tr><td>6</td><td>B his</td><td>所有格+指涉判斷</td><td>誰的attorney？看語境</td></tr>
+<tr><td>7</td><td>B she</td><td>主格+省略that</td><td>N+[that]+S+V，動詞前要主格</td></tr>
+<tr><td>8</td><td>B them</td><td>複數受格</td><td>products複數→them</td></tr>
+<tr><td>9</td><td>D no one</td><td>不定代名詞語意</td><td>no one已是否定，不加not</td></tr>
+<tr><td>10</td><td>C that</td><td>比較句指示代名詞</td><td>單數名詞用that，複數用those</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>Part 6（139–146）考點速查</div><div class="bb">
+<table class="tbl">
+<tr><th>題號</th><th>答案</th><th>考點</th><th>學生要記住</th></tr>
+<tr><td>139</td><td>C several</td><td>數量詞+複數可數</td><td>several problems</td></tr>
+<tr><td>140</td><td>A another</td><td>固定搭配</td><td>have another look at</td></tr>
+<tr><td>141</td><td>C version</td><td>名詞搭配</td><td>a version of the report</td></tr>
+<tr><td>142</td><td>D 整句</td><td>前後邏輯</td><td>as=because，找最直接原因</td></tr>
+<tr><td>143</td><td>C than</td><td>固定搭配</td><td>more than = 不只是</td></tr>
+<tr><td>144</td><td>C competitive world markets</td><td>語境判斷</td><td>看整段主題抓情境</td></tr>
+<tr><td>145</td><td>A importance</td><td>固定搭配</td><td>emphasize the importance of</td></tr>
+<tr><td>146</td><td>B figure out</td><td>動詞片語</td><td>figure out how to V</td></tr>
+</table>
+<div class="goal2 mt16"><p><strong>下次複習建議：</strong>先考代名詞四個判斷口訣（位置／反身／後面有無名詞／單複數比較），再考 8 個 Part6 片語：accommodate guests / install equipment / sign a contract / help someone out / act as someone's attorney / prepare a report / have another look at / a version of the report / figure out how to V。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>下一堂預告</div><div class="bb">
+<div class="tip"><p>下一堂（Lesson 04）會接續同一份練習測驗，進入 Part 7（147–164），共 7 篇文章、18 題，包含廣告、訊息對話、新聞、活動資訊、徵才廣告、飯店介紹、雜誌訂閱（含句子插入題）。建議這堂課結束前先預告：「下次開始我們要練習怎麼讀完整篇文章再解題，不是讀題目片段。」</p></div>
+</div></div>
+</div>
+
+</main>
+</div>
+<script>
+let sec=0,running=false,iv=null;
+function pad(n){return n.toString().padStart(2,'0')}
+function upd(){const m=Math.floor(sec/60),s=sec%60;document.getElementById('timer').textContent=pad(m)+':'+pad(s)}
+function toggleTimer(){
+  if(running){clearInterval(iv);running=false;document.querySelector('.tbtn').textContent='▶ 開始'}
+  else{iv=setInterval(()=>{sec++;upd()},1000);running=true;document.querySelector('.tbtn').textContent='⏸ 暫停'}
+}
+function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.querySelector('.tbtn').textContent='▶ 開始'}
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+const allSecs=[
+  {id:'s-overview',label:'課程總覽'},
+  {id:'s-open',label:'開場：為什麼考代名詞'},
+  {id:'s-rule1',label:'主格 vs 受格'},
+  {id:'s-rule2',label:'所有格 vs 獨立所有格'},
+  {id:'s-rule3',label:'反身代名詞'},
+  {id:'s-rule4',label:'each other'},
+  {id:'s-rule5',label:'不定代名詞'},
+  {id:'s-rule6',label:'every/each/all/some/any'},
+  {id:'s-rule7',label:'another/other/others'},
+  {id:'s-rule8',label:'that/those 比較句'},
+  {id:'s-close',label:'收尾總結'},
+  {id:'q1',label:'1'},{id:'q2',label:'2'},{id:'q3',label:'3'},{id:'q4',label:'4'},{id:'q5',label:'5'},
+  {id:'q6',label:'6'},{id:'q7',label:'7'},{id:'q8',label:'8'},{id:'q9',label:'9'},{id:'q10',label:'10'},
+  {id:'s-reading-intro',label:'Part6解題四步驟'},
+  {id:'p6-139-v',label:'139-142文章先導'},
+  {id:'q139',label:'139'},{id:'q140',label:'140'},{id:'q141',label:'141'},{id:'q142',label:'142'},
+  {id:'p6-143-v',label:'143-146文章先導'},
+  {id:'q143',label:'143'},{id:'q144',label:'144'},{id:'q145',label:'145'},{id:'q146',label:'146'},
+  {id:'s-summary',label:'總整理'},
+];
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      const s=allSecs.find(x=>x.id===id);
+      if(s){
+        document.querySelectorAll('.sbl').forEach(l=>l.classList.remove('active'));
+        const lk=document.querySelector(`.sbl[onclick*="${id}"]`);
+        if(lk)lk.classList.add('active');
+        document.getElementById('csec').textContent=s.label;
+      }
+    }
+  });
+},{threshold:0.2,rootMargin:'-60px 0px -65% 0px'});
+allSecs.forEach(s=>{const el=document.getElementById(s.id);if(el)obs.observe(el)});
+</script>
+</body>
+</html>
