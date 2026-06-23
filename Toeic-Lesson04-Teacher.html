@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老師講義 | TOEIC Lesson 04</title>
+<!-- Lesson 04：Part 6/7 閱讀策略，完整 131–164（16題Part6 + 18題Part7，共34題，11篇文章）。 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--navy2:#1E3A5F;--white:#fff;--bg:#F0F4F8;--card:#fff;--amber:#F59E0B;--amber-lt:#FEF3C7;--amber-dk:#92400E;--green:#059669;--green-lt:#D1FAE5;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--purple-lt:#EDE9FE;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;--sidebar-w:230px;--r:10px}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:var(--gray-800);font-size:14px;line-height:1.7}
+#topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);color:white;height:52px;display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.logo{font-weight:800;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.logo span{background:var(--amber);color:var(--navy);padding:2px 8px;border-radius:5px;font-size:12px}
+.timer-wrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.timer-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px}
+#timer{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--amber);min-width:60px}
+.tbtn{background:rgba(255,255,255,.1);border:none;color:white;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;margin-left:4px;font-family:"Noto Sans TC",sans-serif}
+.tbtn:hover{background:rgba(255,255,255,.2)}
+.ppill{background:rgba(255,255,255,.1);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+#csec{color:var(--amber);font-weight:700}
+#layout{display:flex;margin-top:52px;min-height:calc(100vh - 52px)}
+#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--navy);position:fixed;top:52px;left:0;bottom:0;overflow-y:auto;padding:16px 0;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
+.sbh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);padding:10px 16px 4px}
+.sbl{display:block;padding:6px 16px;color:rgba(255,255,255,.65);font-size:12px;text-decoration:none;cursor:pointer;border-left:3px solid transparent;transition:.15s}
+.sbl:hover{color:white;background:rgba(255,255,255,.07)}
+.sbl.active{color:var(--amber);border-left-color:var(--amber);background:rgba(245,158,11,.08)}
+.t{font-size:10px;color:rgba(255,255,255,.3);float:right;font-family:"JetBrains Mono",monospace}
+#main{margin-left:var(--sidebar-w);flex:1;padding:28px 32px 80px}
+.ls{margin-bottom:40px}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gray-200)}
+.sn{width:36px;height:36px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;font-family:"Inter",sans-serif}
+.st{font-size:20px;font-weight:800;color:var(--navy)}
+.stm{margin-left:auto;background:var(--navy);color:var(--amber);font-size:11px;font-weight:700;font-family:"JetBrains Mono",monospace;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.block{background:var(--card);border-radius:var(--r);margin-bottom:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.bh{background:var(--gray-100);padding:10px 18px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-600);border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:8px}
+.bh .d{width:8px;height:8px;border-radius:50%;background:var(--gray-400)}
+.bh.dk{background:var(--navy);color:white;border:none}.bh.dk .d{background:var(--amber)}
+.bh.am{background:var(--amber-lt);color:var(--amber-dk);border-bottom-color:#FDE68A}.bh.am .d{background:var(--amber)}
+.bh.gn{background:var(--green-lt);color:var(--green);border-bottom-color:#A7F3D0}.bh.gn .d{background:var(--green)}
+.bb{padding:18px}
+.script{background:#0F172A;color:#E2E8F0;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.9;position:relative;margin:12px 0}
+.script::before{content:"📢 說";position:absolute;top:-10px;left:14px;background:var(--sky);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.script em{color:var(--amber);font-style:normal;font-weight:600}
+.script strong{color:white}.script code{background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px;color:#7DD3FC}
+.ask{background:var(--amber-lt);border:1.5px solid #FDE68A;border-radius:8px;padding:14px 18px;margin:10px 0;position:relative}
+.ask::before{content:"❓ 問學生";position:absolute;top:-10px;left:14px;background:var(--amber);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.ask p{color:var(--amber-dk);font-weight:600;font-size:14px;margin-top:2px}
+.ask .al{font-size:11px;color:var(--amber-dk);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:8px 0 3px;border-top:1px solid #FDE68A;padding-top:8px}
+.ask .ap{color:var(--green);font-weight:700;font-size:14px}
+.corr{background:var(--red-lt);border:1.5px solid #FECACA;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.corr::before{content:"⚠️ 答錯時";position:absolute;top:-10px;left:14px;background:var(--red);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.corr p{color:#991B1B;font-size:13px;margin-top:4px;line-height:1.7}
+.tip{background:var(--purple-lt);border:1.5px solid #DDD6FE;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.tip::before{content:"💡 重點";position:absolute;top:-10px;left:14px;background:var(--purple);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.tip p{color:#4C1D95;font-size:13px;margin-top:4px;line-height:1.7}
+.goal2{background:var(--green-lt);border:1.5px solid #A7F3D0;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.goal2::before{content:"✅ 重點帶走";position:absolute;top:-10px;left:14px;background:var(--green);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.goal2 p,.goal2 li{color:#064E3B;font-size:13px;margin-top:4px;line-height:1.8}
+.goal2 ul{padding-left:18px;margin-top:6px}
+.formula{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:700;color:var(--navy);background:var(--gray-100);border-radius:8px;padding:12px 16px;border-left:3px solid var(--amber);margin:10px 0}
+.es{background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 14px;margin:6px 0;font-size:14px;font-weight:500}
+.tp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.tw{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--red);background:var(--red-lt);padding:6px 10px;border-radius:6px}
+.tw::before{content:"❌ "}
+.tr{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--green);background:var(--green-lt);padding:6px 10px;border-radius:6px}
+.tr::before{content:"✅ "}
+.qb{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:20px}
+.qh{display:flex;align-items:center;gap:10px;padding:12px 18px;background:var(--gray-100);border-bottom:1px solid var(--gray-200);flex-wrap:wrap}
+.qn{background:var(--navy);color:white;font-weight:700;font-size:12px;padding:3px 10px;border-radius:6px;font-family:"Inter",sans-serif}
+.qt{background:var(--sky-lt);color:var(--sky);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qs{background:var(--amber-lt);color:var(--amber-dk);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qbody{padding:20px}
+.qsen{font-size:15px;font-weight:500;background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:6px;line-height:1.8}
+.qsen .bl{background:var(--amber-lt);color:var(--amber-dk);padding:0 6px;border-radius:4px;font-weight:700}
+.qzh{font-size:12px;color:var(--gray-400);margin-bottom:14px}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.qo{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;display:flex;align-items:center;gap:8px}
+.qo.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.qo.no{background:var(--red-lt);border-color:var(--red);color:var(--red)}
+.ol{width:22px;height:22px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:"Inter",sans-serif}
+.qo.ok .ol{background:var(--green);color:white}
+.qtc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.gtl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-400);margin-bottom:8px}
+.vg{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.vw{font-family:"JetBrains Mono",monospace;color:var(--navy);font-weight:600}
+.vd{color:var(--gray-600)}
+.artbox{background:#F8FAFC;border:1.5px solid #CBD5E1;border-radius:12px;padding:18px;margin:14px 0;font-size:15px;line-height:1.9}
+.artbox .abl{color:#1d4ed8;font-weight:800;background:var(--sky-lt);padding:1px 6px;border-radius:4px}
+.tmtable{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tmtable th,.tmtable td{border:1px solid var(--gray-200);padding:10px 12px;text-align:left;vertical-align:top}
+.tmtable th{background:var(--navy);color:white;font-size:12px}
+.tmtable td:first-child{font-family:"JetBrains Mono",monospace;font-weight:700;background:var(--amber-lt);color:var(--amber-dk);white-space:nowrap}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tbl th,.tbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
+.tbl th{background:var(--gray-100);font-weight:700;font-size:12px}
+.dv{height:1px;background:var(--gray-200);margin:18px 0}
+.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}
+code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:12px;color:var(--navy)}
+.q4o{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;margin:4px 0}
+.q4o.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.p7box{background:#F8FAFC;border:1.5px solid #CBD5E1;border-radius:12px;padding:18px 22px;margin:14px 0;font-size:14px;line-height:1.85}
+.p7box h4{font-size:13px;color:var(--navy);margin-bottom:10px;font-weight:800;letter-spacing:.3px}
+.p7box p{margin-bottom:10px}
+.p7box p:last-child{margin-bottom:0}
+.chatline{display:flex;gap:10px;margin-bottom:8px;font-size:13px;align-items:flex-start}
+.chatline b{color:var(--sky);min-width:46px;flex-shrink:0;font-family:"Inter",sans-serif}
+.insmark{background:var(--purple-lt);color:var(--purple);font-weight:800;padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:12px}
+.steptbl td.snum{font-family:"JetBrains Mono",monospace;font-weight:800;color:var(--amber);background:var(--navy);text-align:center;border-radius:6px;width:60px}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div class="logo">🎓 <span>老師</span> Lesson 04 · Part 6/7 閱讀策略 131–164</div>
+  <div class="ppill">現在：<span id="csec">課程總覽</span></div>
+  <div class="timer-wrap">
+    <span class="timer-label">上課時間</span>
+    <span id="timer">00:00</span>
+    <button class="tbtn" onclick="toggleTimer()">▶ 開始</button>
+    <button class="tbtn" onclick="resetTimer()">↺</button>
+  </div>
+</div>
+<div id="layout">
+<nav id="sidebar">
+  <div class="sbh">課程總覽</div>
+  <a class="sbl active" onclick="goTo('s-overview')">課程定位 &amp; 流程</a>
+  <div class="sbh">閱讀策略導論</div>
+  <a class="sbl" onclick="goTo('s-reading-intro')">Part6/7 解題完整流程 <span class="t">15m</span></a>
+  <div class="sbh">Part 6 · 131–134</div>
+  <a class="sbl" onclick="goTo('p6-131-v')">文章先導 · 身心飲食</a>
+  <a class="sbl" onclick="goTo('q131')">131 have an impact on ⭐</a>
+  <a class="sbl" onclick="goTo('q132')">132 be resistant to</a>
+  <a class="sbl" onclick="goTo('q133')">133 主詞動詞一致 ⭐</a>
+  <a class="sbl" onclick="goTo('q134')">134 文章主旨</a>
+  <div class="sbh">Part 6 · 135–138</div>
+  <a class="sbl" onclick="goTo('p6-135-v')">文章先導 · 管理者協作</a>
+  <a class="sbl" onclick="goTo('q135')">135 商業語境</a>
+  <a class="sbl" onclick="goTo('q136')">136 necessary to ⭐</a>
+  <a class="sbl" onclick="goTo('q137')">137 as good as ⭐</a>
+  <a class="sbl" onclick="goTo('q138')">138 上下文銜接</a>
+  <div class="sbh">Part 6 · 139–142</div>
+  <a class="sbl" onclick="goTo('p6-139-v')">文章先導 · Email</a>
+  <a class="sbl" onclick="goTo('q139')">139 several</a>
+  <a class="sbl" onclick="goTo('q140')">140 another look ⭐</a>
+  <a class="sbl" onclick="goTo('q141')">141 version</a>
+  <a class="sbl" onclick="goTo('q142')">142 邏輯銜接</a>
+  <div class="sbh">Part 6 · 143–146</div>
+  <a class="sbl" onclick="goTo('p6-143-v')">文章先導 · 產品開發</a>
+  <a class="sbl" onclick="goTo('q143')">143 more than ⭐</a>
+  <a class="sbl" onclick="goTo('q144')">144 競爭市場</a>
+  <a class="sbl" onclick="goTo('q145')">145 importance of</a>
+  <a class="sbl" onclick="goTo('q146')">146 figure out</a>
+  <div class="sbh">Part 7 · 147–148 房地產廣告</div>
+  <a class="sbl" onclick="goTo('p7-147-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q147')">147 廣告目的</a>
+  <a class="sbl" onclick="goTo('q148')">148 entire 同義</a>
+  <div class="sbh">Part 7 · 149–150 訊息對話</div>
+  <a class="sbl" onclick="goTo('p7-149-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q149')">149 對話主旨</a>
+  <a class="sbl" onclick="goTo('q150')">150 說話目的</a>
+  <div class="sbh">Part 7 · 151–153 新聞</div>
+  <a class="sbl" onclick="goTo('p7-151-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q151')">151 銷售變化</a>
+  <a class="sbl" onclick="goTo('q152')">152 引述推論 ⭐</a>
+  <a class="sbl" onclick="goTo('q153')">153 房價推論</a>
+  <div class="sbh">Part 7 · 154–156 活動資訊</div>
+  <a class="sbl" onclick="goTo('p7-154-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q154')">154 活動目的</a>
+  <a class="sbl" onclick="goTo('q155')">155 NOT題 ⭐</a>
+  <a class="sbl" onclick="goTo('q156')">156 grant 同義</a>
+  <div class="sbh">Part 7 · 157–158 徵才廣告</div>
+  <a class="sbl" onclick="goTo('p7-157-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q157')">157 推論</a>
+  <a class="sbl" onclick="goTo('q158')">158 NOT題</a>
+  <div class="sbh">Part 7 · 159–161 飯店介紹</div>
+  <a class="sbl" onclick="goTo('p7-159-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q159')">159 文章目的</a>
+  <a class="sbl" onclick="goTo('q160')">160 graceful 同義</a>
+  <a class="sbl" onclick="goTo('q161')">161 NOT題</a>
+  <div class="sbh">Part 7 · 162–164 雜誌訂閱</div>
+  <a class="sbl" onclick="goTo('p7-162-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q162')">162 頻率細節</a>
+  <a class="sbl" onclick="goTo('q163')">163 優惠細節</a>
+  <a class="sbl" onclick="goTo('q164')">164 句子插入 ⭐</a>
+  <div class="sbh">收尾</div>
+  <a class="sbl" onclick="goTo('s-summary')">總整理 &amp; 解答表</a>
+</nav>
+<main id="main">
+<div class="ls" id="s-overview">
+<div class="sh"><div class="sn">0</div><div class="st">課程定位 &amp; 上課流程</div></div>
+<div class="block"><div class="bh gn"><span class="d"></span>本堂目標</div><div class="bb">
+<div class="goal2"><p>本堂沒有新文法主題，完全聚焦在<strong>閱讀解題策略</strong>：先抓文章大意、再看空格/題目、回文章找證據，不是逐字翻譯、不是憑印象猜答案。範圍是同一份測驗的 Part 6（131–146）+ Part 7（147–164），共 11 篇文章、34 題。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>⚠️ 份量提醒：建議拆成 2–3 次上課</div><div class="bb">
+<div class="tip"><p><strong>11 篇文章、34 題，份量非常大。</strong>建議拆法：<br>第一次：閱讀策略導論 + Part 6 全部（131–146，4篇16題）<br>第二次：Part 7 前半（147–156，4篇13題）<br>第三次：Part 7 後半（157–164，3篇13題）+ 總複習</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>文章類型總覽</div><div class="bb">
+<table class="tmtable">
+<tr><th>題號</th><th>文章類型</th><th>題數</th></tr>
+<tr><td>131–134</td><td>商業文章（身體飲食 vs 心理飲食）</td><td>4</td></tr>
+<tr><td>135–138</td><td>商業文章（管理者與部門協作）</td><td>4</td></tr>
+<tr><td>139–142</td><td>Email（專案報告問題）</td><td>4</td></tr>
+<tr><td>143–146</td><td>商業文章（產品開發）</td><td>4</td></tr>
+<tr><td>147–148</td><td>廣告（辦公室出租）</td><td>2</td></tr>
+<tr><td>149–150</td><td>簡訊對話（行銷報告討論）</td><td>2</td></tr>
+<tr><td>151–153</td><td>新聞（房市銷售）</td><td>3</td></tr>
+<tr><td>154–156</td><td>活動資訊（綠色生活節）</td><td>3</td></tr>
+<tr><td>157–158</td><td>廣告（徵才）</td><td>2</td></tr>
+<tr><td>159–161</td><td>介紹文（飯店）</td><td>3</td></tr>
+<tr><td>162–164</td><td>廣告（雜誌訂閱，含句子插入題）</td><td>3</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="ls" id="s-reading-intro">
+<div class="sh"><div class="sn">1</div><div class="st">Part 6/7 閱讀策略：先讀懂文章，再解題</div><div class="stm">⏱ 15 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>開場逐字稿：學生常見問題</div><div class="bb">
+<div class="script">今天不是先做題目，而是先練習怎麼讀一篇 TOEIC 文章。<br><br>做閱讀題最容易出現的問題：<em>一看到文章就想逐字翻譯；遇到不會的單字就停住；還沒搞懂文章在講什麼，就先看題目猜答案；做細節題時沒有回文章找證據；做 NOT 題時忘記題目在問「沒有提到的」；做推論題時自己加太多想像。</em><br><br><strong>不需要一開始就翻完整篇。先抓：這是什�麼文章、誰、要做什麼、重要數字、時間、結果。</strong></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>Part 6 解題四步驟</div><div class="bb">
+<table class="tbl steptbl">
+<tr><th style="width:60px">步驟</th><th>做什麼</th></tr>
+<tr><td class="snum">1</td><td>先看文章類型（Dear Lily → Email；In new product development → 商業/管理文章）</td></tr>
+<tr><td class="snum">2</td><td>先把整段大意讀過一次，不要急著填空</td></tr>
+<tr><td class="snum">3</td><td>看空格前後：詞性、固定搭配、單複數、連接詞、文意邏輯、句子插入</td></tr>
+<tr><td class="snum">4</td><td>填進去後再讀一次，問自己「整句自然嗎？接得上前後文嗎？這句是在補充、轉折，還是說原因？」</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>Part 7 解題三步驟</div><div class="bb">
+<table class="tbl steptbl">
+<tr><th style="width:60px">步驟</th><th>做什麼</th></tr>
+<tr><td class="snum">1</td><td>先看標題與格式（Property Details → 出租廣告；Graphics Designer → 徵才廣告；Grand Hotel → 飯店介紹）</td></tr>
+<tr><td class="snum">2</td><td>先抓四個資訊：Who（誰）、What（發生什麼事/提供什麼）、When（什麼時候）、Why（原因/目的/結果）</td></tr>
+<tr><td class="snum">3</td><td>題目問什麼，再回文章找答案——TOEIC 閱讀不是靠印象選，每一題都要在文章裡找到證據</td></tr>
+</table>
+<div class="tip mt12"><p><strong>五種 Part 7 題型應對方式：</strong>目的題看整篇在做什麼；細節題回文章找原句；NOT 題逐項核對找沒出現的；推論題只能根據文章推、不可自己加戲；單字題一定回原句看語境。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="p6-131-v">
+<div class="sh"><div class="sn">6A</div><div class="st">Part 6 · 131–134 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章</div><div class="bb">
+<div class="artbox">Our physical diet has a large <span class="abl">---131---</span> on our levels of health and energy. If we eat fresh, healthy, high-quality foods of all kinds and avoid the foods that are bad for us, we will have more energy, be generally <span class="abl">---132---</span> to most diseases, sleep better, and feel healthier and happier. In the same way, our mental diet largely <span class="abl">---133---</span> our character and personality. When we <span class="abl">---134---</span>, we develop a more positive and effective personality.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">這篇文章在講兩件事：<em>身體吃什麼會影響健康；心理吸收什麼會影響人格。</em>也就是 physical diet 影響身體；mental diet 影響個性。<br><br>先不看選項：第一句說 physical diet 對健康和能量有很大影響。第二句說吃新鮮高品質食物會更有能量、更能<em>抵抗疾病</em>（132 的伏筆）。接著看到 <em>In the same way</em>——這代表作者要從身體飲食轉到 mental diet。結論：吃對東西身體好；吸收正面想法人格更正面，所以 134 一定跟 mental diet、正面想法有關。</div>
+<div class="tip mt12"><p><strong>解題伏筆：</strong>131 → have an impact on（固定搭配）；132 → be resistant to + N（詞性+搭配）；133 → 主詞 mental diet 單數 → 動詞要加 s；134 → 文章主旨 mental diet + 正面想法。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>physical diet</td><td>身體飲食</td><td>A healthy physical diet gives us more energy.</td></tr>
+<tr><td>mental diet</td><td>心理飲食（每天吸收的想法）</td><td>Reading positive books improves your mental diet.</td></tr>
+<tr><td>have an impact on</td><td>對……有影響</td><td>—</td></tr>
+<tr><td>be resistant to</td><td>對……有抵抗力</td><td>Some bacteria are resistant to antibiotics.</td></tr>
+<tr><td>disease</td><td>疾病</td><td>Exercise can reduce the risk of disease.</td></tr>
+<tr><td>character / personality</td><td>性格、本質 / 個性、人格</td><td>She has a friendly personality.</td></tr>
+<tr><td>positive / effective</td><td>正面的 / 有效的</td><td>A positive attitude helps us solve problems.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q131">
+<div class="qh"><span class="qn">131</span><span class="qt">固定搭配</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Our physical diet has a large <span class="bl">---131---</span> on our levels of health and energy.</div>
+<div class="qzh">我們的身體飲食對健康和能量水平有很大的 ______。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>thought</div>
+<div class="qo"><span class="ol">B</span>dream</div>
+<div class="qo ok"><span class="ol">C</span>impact</div>
+<div class="qo"><span class="ol">D</span>attitude</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>has a large ______ on — 想到什麼固定搭配？</p><div class="al">答案</div><p class="ap">have an impact on = 對……有影響（C）</p></div>
+<div class="formula mt12">have an impact on + N</div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">impact (n.)</span><span class="vd">影響</span>
+<span class="vw">have an impact on</span><span class="vd">對…有影響</span>
+<span class="vw">attitude</span><span class="vd">態度</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q132">
+<div class="qh"><span class="qn">132</span><span class="qt">詞性 + 固定搭配</span></div>
+<div class="qbody">
+<div class="qsen">we will have more energy, be generally <span class="bl">---132---</span> to most diseases...</div>
+<div class="qzh">我們會更有能量，通常對大多數疾病 ______ ...</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>resistant</div>
+<div class="qo"><span class="ol">B</span>resist</div>
+<div class="qo"><span class="ol">C</span>resistance</div>
+<div class="qo"><span class="ol">D</span>resists</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>be generally ______ to — be 後面需要什麼詞性？</p><div class="al">答案</div><p class="ap">形容詞 → resistant（A）。固定搭配 be resistant to = 對…有抵抗力</p></div>
+</div>
+<div>
+<div class="gtl">選項詞性</div>
+<div class="vg">
+<span class="vw">resistant</span><span class="vd">形容詞（正確）</span>
+<span class="vw">resist</span><span class="vd">動詞</span>
+<span class="vw">resistance</span><span class="vd">名詞</span>
+<span class="vw">resists</span><span class="vd">動詞三單</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q133">
+<div class="qh"><span class="qn">133</span><span class="qt">主詞動詞一致</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">In the same way, our mental diet largely <span class="bl">---133---</span> our character and personality.</div>
+<div class="qzh">同樣地，我們的心理飲食在很大程度上 ______ 我們的性格與人格。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>determines</div>
+<div class="qo"><span class="ol">B</span>determining</div>
+<div class="qo"><span class="ol">C</span>determine</div>
+<div class="qo"><span class="ol">D</span>determination</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞是 our mental diet，真正核心主詞是哪個字？單複數？</p><div class="al">答案</div><p class="ap">diet（單數）→ 現在式動詞要加 s → determines（A）</p></div>
+<div class="corr mt12"><p>D determination 是名詞「決心」，詞性不對，這裡需要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">determine (v.)</span><span class="vd">決定、影響</span>
+<span class="vw">determination (n.)</span><span class="vd">決心</span>
+<span class="vw">largely</span><span class="vd">在很大程度上</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q134">
+<div class="qh"><span class="qn">134</span><span class="qt">文章主旨 — 上下文</span></div>
+<div class="qbody">
+<div class="qsen">When we <span class="bl">---134---</span>, we develop a more positive and effective personality.</div>
+<div class="qzh">當我們 ______，我們會發展出更正面、有效的人格。</div>
+<div class="q4o">A. work hard enough（夠努力工作）</div>
+<div class="q4o ok">B. feed our mind with positive ideas（用正面想法滋養心智）</div>
+<div class="q4o">C. deal with difficult customers（處理難搞客戶）</div>
+<div class="q4o">D. encounter problems（遇到問題）</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文章主軸是 mental diet。讓人格更正面的做法應該是什麼？</p><div class="al">答案</div><p class="ap">feed our mind with positive ideas（B）— 和文章 mental diet 主題完全吻合</p></div>
+<div class="corr mt12"><p>A/C/D 都偏離 mental diet 主題。記住 In the same way 後面是在講吸收正面想法，不是工作、客服或遇到問題。</p></div>
+</div>
+<div>
+<div class="gtl">補充片語</div>
+<div class="vg">
+<span class="vw">feed A with B</span><span class="vd">用 B 滋養 A</span>
+<span class="vw">positive</span><span class="vd">正面的、積極的</span>
+<span class="vw">effective</span><span class="vd">有效的</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="ls" id="p6-135-v">
+<div class="sh"><div class="sn">6B</div><div class="st">Part 6 · 135–138 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章</div><div class="bb">
+<div class="artbox">Successful <span class="abl">---135---</span> see their company as a series of interlocking parts. Each division is important on its own, but it is also <span class="abl">---136---</span> to the support of the others. That is the only way to be sure that the product is as good <span class="abl">---137---</span> the advertising. The General Manager of Best-Tech Company says, "<span class="abl">---138---</span>, we also focus on the need for an efficient service department."</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">這篇在講：<em>成功的管理者會把公司看成互相連結的系統，各部門都需要彼此支援。</em><br><br>先不看選項：第一句說成功的 ______ 會把公司看成一系列互相連結的部分——誰最可能這樣看公司？135 要想 managers。接著說每個部門本身都很重要，但也需要其他部門的 support，看到 be ______ to 要想固定搭配。再來說這是唯一能確保產品和廣告<em>一樣好</em>的方式，看到 as good ______ 直接想到 as good as。最後總經理說「______，我們也重視有效率的服務部門」——also 在這裡是關鍵，also 前面一定要有「另一件事」。</div>
+<div class="tip mt12"><p><strong>解題伏筆：</strong>135 → 誰看公司整體？managers；136 → be ______ to → 形容詞 → necessary to；137 → as good ______ → as good as（同等比較）；138 → also 暗示前面有另一件事 → In addition to...</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>interlocking parts</td><td>互相連結的部分</td><td>The system consists of interlocking parts.</td></tr>
+<tr><td>division</td><td>部門</td><td>The sales division is very busy.</td></tr>
+<tr><td>on its own</td><td>單獨地、本身</td><td>Each department is important on its own.</td></tr>
+<tr><td>be necessary to</td><td>對……是必要的</td><td>—</td></tr>
+<tr><td>as good as</td><td>和……一樣好（同等比較）</td><td>—</td></tr>
+<tr><td>in addition to + N/V-ing</td><td>除了……之外</td><td>—</td></tr>
+<tr><td>focus on</td><td>專注於、重視</td><td>The company focuses on customer service.</td></tr>
+<tr><td>efficient / service department</td><td>有效率的 / 服務部門</td><td>The service department handles complaints.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q135">
+<div class="qh"><span class="qn">135</span><span class="qt">商業語境</span></div>
+<div class="qbody">
+<div class="qsen">Successful <span class="bl">---135---</span> see their company as a series of interlocking parts.</div>
+<div class="qzh">成功的 ______ 會把他們的公司看成一系列互相連結的部分。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>candidates</div>
+<div class="qo ok"><span class="ol">B</span>managers</div>
+<div class="qo"><span class="ol">C</span>subordinates</div>
+<div class="qo"><span class="ol">D</span>parents</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>誰最可能「把公司看成整體系統」？</p><div class="al">答案</div><p class="ap">managers（管理者）（B）</p></div>
+</div>
+<div>
+<div class="gtl">選項對照</div>
+<div class="vg">
+<span class="vw">candidate</span><span class="vd">候選人；應徵者</span>
+<span class="vw">manager</span><span class="vd">經理、管理者</span>
+<span class="vw">subordinate</span><span class="vd">下屬</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q136">
+<div class="qh"><span class="qn">136</span><span class="qt">形容詞搭配</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Each division is important on its own, but it is also <span class="bl">---136---</span> to the support of the others.</div>
+<div class="qzh">每個部門本身都很重要，但它對其他部門的支持也是 ______。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>impersonal</div>
+<div class="qo ok"><span class="ol">B</span>necessary</div>
+<div class="qo"><span class="ol">C</span>operational</div>
+<div class="qo"><span class="ol">D</span>effective</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>be also ______ to the support — 哪個形容詞和 to 搭配最自然，語意也最合理？</p><div class="al">答案</div><p class="ap">be necessary to = 對…是必要的（B）</p></div>
+<div class="formula mt12">be necessary to + N</div>
+</div>
+<div>
+<div class="gtl">選項對照</div>
+<div class="vg">
+<span class="vw">impersonal</span><span class="vd">非個人的</span>
+<span class="vw">necessary</span><span class="vd">必要的</span>
+<span class="vw">operational</span><span class="vd">運作中的</span>
+<span class="vw">effective</span><span class="vd">有效的</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q137">
+<div class="qh"><span class="qn">137</span><span class="qt">同等比較句型</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">That is the only way to be sure that the product is as good <span class="bl">---137---</span> the advertising.</div>
+<div class="qzh">這是唯一能確保產品和廣告 ______ 好的方式。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>as</div>
+<div class="qo"><span class="ol">B</span>like</div>
+<div class="qo"><span class="ol">C</span>the same</div>
+<div class="qo"><span class="ol">D</span>similar to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 as good ______，想到什麼句型？</p><div class="al">答案</div><p class="ap">as + adj. + as（同等比較）→ as good as（A）</p></div>
+<div class="formula mt12">as + adj. + as = 和…一樣…</div>
+</div>
+<div>
+<div class="gtl">選項對照</div>
+<div class="vg">
+<span class="vw">as...as...</span><span class="vd">同等比較（正確）</span>
+<span class="vw">like</span><span class="vd">像（不是比較）</span>
+<span class="vw">the same as</span><span class="vd">和…一樣（需兩個 as）</span>
+<span class="vw">similar to</span><span class="vd">類似於</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q138">
+<div class="qh"><span class="qn">138</span><span class="qt">上下文銜接</span></div>
+<div class="qbody">
+<div class="qsen">The General Manager says, "<span class="bl">---138---</span>, we also focus on the need for an efficient service department."</div>
+<div class="qzh">總經理說：「______，我們也重視有效率的服務部門。」</div>
+<div class="q4o">A. Therefore, it is necessary to take actions</div>
+<div class="q4o">B. As long as you are competitive enough</div>
+<div class="q4o">C. When we are talking to strangers</div>
+<div class="q4o ok">D. In addition to attracting new customers（除了吸引新顧客之外）</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>後面有 we also focus on，also 表示「也」，前面應該有什麼？</p><div class="al">答案</div><p class="ap">另一件公司重視的事 → In addition to attracting new customers（D）</p></div>
+<div class="formula mt12">In addition to + V-ing = 除了…之外（also 的上文）</div>
+<div class="corr mt12"><p>A 的 Therefore 和 also 不搭；B/C 偏離商業主題。</p></div>
+</div>
+<div>
+<div class="gtl">補充片語</div>
+<div class="vg">
+<span class="vw">in addition to + N/V-ing</span><span class="vd">除了…之外</span>
+<span class="vw">focus on</span><span class="vd">專注於、重視</span>
+<span class="vw">efficient</span><span class="vd">有效率的</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+<div class="ls" id="p6-139-v">
+<div class="sh"><div class="sn">6C</div><div class="st">Part 6 · 139–142 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（Email）</div><div class="bb">
+<div class="artbox">Dear Lily,<br><br>I am sorry to tell you that it seems there are <span class="abl">---139---</span> problems in the project report you sent me yesterday. Could you have <span class="abl">---140---</span> look at the data from the survey? We need to have a correct <span class="abl">---141---</span> of the report next Wednesday. This is urgent. We don't have much time as <span class="abl">---142---</span>. Please do call me if you need any further information.<br><br>Best wishes,<br>John</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">John 寫信給 Lily，說她昨天寄出的專案報告似乎有問題。他請 Lily 再檢查一次問卷調查資料，因為下週三前需要一份正確版本的報告。這件事很緊急，因為專案必須在一週內完成。<br><br><em>先抓住這個主軸：報告有問題 → 要重新檢查 → 時間很趕。</em>等一下解題會快很多。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>I am sorry to tell you that...</td><td>很抱歉要告訴你……（委婉告知壞消息）</td><td>I am sorry to tell you that your application was not approved.</td></tr>
+<tr><td>There are + 複數名詞</td><td>有……（複數）</td><td>There are several problems in this report.</td></tr>
+<tr><td>have another look at</td><td>再看一次；重新檢查</td><td>Could you have another look at this contract?</td></tr>
+<tr><td>a version of + 名詞</td><td>……的一個版本</td><td>Please send me the final version of the proposal.</td></tr>
+<tr><td>urgent</td><td>緊急的</td><td>This is an urgent request.</td></tr>
+<tr><td>as = because</td><td>因為（連接詞）</td><td>We canceled the event as the weather was bad.</td></tr>
+<tr><td>has to be completed</td><td>必須被完成（被動）</td><td>The project has to be completed within a week.</td></tr>
+<tr><td>Please do + 原形動詞</td><td>請務必……（do 加強語氣）</td><td>Please do let me know if you have any questions.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q139">
+<div class="qh"><span class="qn">139</span><span class="qt">數量詞 + 複數可數</span></div>
+<div class="qbody">
+<div class="qsen">There are <span class="bl">---139---</span> problems in the project report.</div>
+<div class="qzh">專案報告裡似乎有幾個問題。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>any</div>
+<div class="qo"><span class="ol">B</span>another</div>
+<div class="qo ok"><span class="ol">C</span>several</div>
+<div class="qo"><span class="ol">D</span>little</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>先看空格後面：problems 是可數還是不可數？單數還是複數？</p><div class="al">答案</div><p class="ap">可數複數 → several problems = 幾個問題（C）最合理</p></div>
+<div class="corr mt12"><p>A any 常見於否定句/問句，這裡是肯定句不能選；B another 後面接單數可數名詞，不能接 problems（複數）；D little 修飾不可數名詞，不能修飾複數的 problems。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">several + 複數可數</span><span class="vd">幾個</span>
+<span class="vw">problem</span><span class="vd">問題</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q140">
+<div class="qh"><span class="qn">140</span><span class="qt">固定搭配 another</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Could you have <span class="bl">---140---</span> look at the data from the survey?</div>
+<div class="qzh">你可以再看一次這份調查資料嗎？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>another</div>
+<div class="qo"><span class="ol">B</span>the other</div>
+<div class="qo"><span class="ol">C</span>others</div>
+<div class="qo"><span class="ol">D</span>other</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>have ______ look at 是固定搭配。look 在這裡是單數名詞，哪個選項可以接單數可數名詞？</p><div class="al">答案</div><p class="ap">have another look at = 再看一次……（A）</p></div>
+<div class="formula mt12">have another look at + 名詞 = 再看一次、重新檢查</div>
+<div class="corr mt12"><p>B the other 是兩者中的另一個，這裡不是在兩個 look 中選一個；C others 後面不能再接名詞；D other 後面通常接複數或不可數名詞，look 是單數，不能用 other。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">data</span><span class="vd">資料；數據</span>
+<span class="vw">survey</span><span class="vd">調查；問卷</span>
+<span class="vw">have another look at</span><span class="vd">再看一次；重新檢查</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q141">
+<div class="qh"><span class="qn">141</span><span class="qt">名詞搭配 — 報告版本</span></div>
+<div class="qbody">
+<div class="qsen">We need to have a correct <span class="bl">---141---</span> of the report next Wednesday.</div>
+<div class="qzh">我們下週三需要有一份正確版本的報告。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>answer</div>
+<div class="qo"><span class="ol">B</span>plan</div>
+<div class="qo ok"><span class="ol">C</span>version</div>
+<div class="qo"><span class="ol">D</span>test</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>四個選項都是名詞，不是詞性題，要看搭配。報告可以有不同版本，哪個字最自然？</p><div class="al">答案</div><p class="ap">a version of the report = 報告的一個版本（C）</p></div>
+<div class="corr mt12"><p>A answer 常搭配 answer a question；B plan 是在制定計畫，這裡是在修改報告；D test 是測驗/測試，不會用來表示報告版本。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">version</span><span class="vd">版本</span>
+<span class="vw">final / revised / latest version</span><span class="vd">最終／修訂／最新版本</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q142">
+<div class="qh"><span class="qn">142</span><span class="qt">前後邏輯題</span></div>
+<div class="qbody">
+<div class="qsen">We don't have much time as <span class="bl">---142---</span>.</div>
+<div class="qzh">我們沒有很多時間，因為這個專案必須在一週內完成。</div>
+<div class="q4o">A. the project is not that important</div>
+<div class="q4o">B. the project is extremely ambitious</div>
+<div class="q4o">C. the project has been assigned to Mr. Chen</div>
+<div class="q4o ok">D. the project has to be completed within a week</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這題不是文法題，是邏輯題。前面說「我們時間不多」，as = because，後面應該接「為什麼時間不多」最直接的原因。</p><div class="al">答案</div><p class="ap">專案必須在一週內完成（D）— 最直接的時間緊急原因</p></div>
+<div class="corr mt12"><p>A 如果專案不重要，通常不會那麼急，邏輯相反；B「規模有企圖心」不一定代表時間少；C 分配給誰跟時間不夠沒有直接關係。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">complete</span><span class="vd">完成</span>
+<span class="vw">within a week</span><span class="vd">在一週內</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="ls" id="p6-143-v">
+<div class="sh"><div class="sn">6D</div><div class="st">Part 6 · 143–146 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（商業文章）</div><div class="bb">
+<div class="artbox">In new product development, it takes more <span class="abl">---143---</span> the accepted basics of high quality, low cost, and differentiation to succeed in today's <span class="abl">---144---</span>. The new rules also emphasize the <span class="abl">---145---</span> of speed and flexibility as these are key components in delivering new products to market. Therefore, nowadays companies are trying to <span class="abl">---146---</span> how to move faster than their competitors.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">在現代產品開發中，要成功不能只靠高品質、低成本和產品差異化這些基本原則。公司還必須重視速度與彈性，因為這些因素對於把新產品快速推出市場很重要。因此，現在很多公司都在想辦法如何比競爭對手更快行動。<br><br><em>主軸：基本原則還不夠 → 速度/彈性更重要 → 比對手快。</em></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>It takes more than A to B</td><td>要做到 B，光靠 A 還不夠</td><td>It takes more than talent to succeed.</td></tr>
+<tr><td>differentiation</td><td>差異化</td><td>product differentiation</td></tr>
+<tr><td>competitive world markets</td><td>競爭激烈的全球市場</td><td>The company operates in a highly competitive market.</td></tr>
+<tr><td>emphasize the importance of</td><td>強調……的重要性</td><td>The manager emphasized the importance of teamwork.</td></tr>
+<tr><td>deliver products to market</td><td>把產品推出市場</td><td>—</td></tr>
+<tr><td>figure out how to + V</td><td>想出如何做某事</td><td>We need to figure out how to improve customer service.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q143">
+<div class="qh"><span class="qn">143</span><span class="qt">固定搭配 more than</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">It takes more <span class="bl">---143---</span> the accepted basics of high quality, low cost, and differentiation to succeed.</div>
+<div class="qzh">要成功，所需要的不只是高品質、低成本和差異化這些基本原則。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>then</div>
+<div class="qo"><span class="ol">B</span>to</div>
+<div class="qo ok"><span class="ol">C</span>than</div>
+<div class="qo"><span class="ol">D</span>from</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 more ______，第一個要想到什麼固定搭配？</p><div class="al">答案</div><p class="ap">more than = 不只是、光靠……還不夠（C）</p></div>
+<div class="formula mt12">It takes more than A to B = 要做到 B，不只是需要 A</div>
+<div class="corr mt12"><p>A then 是然後、那時候，和比較無關；B more to 不符合固定結構；D more from 表示「從……得到更多」，不符合本句。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">accepted basics</span><span class="vd">被普遍接受的基本原則</span>
+<span class="vw">differentiation</span><span class="vd">差異化</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q144">
+<div class="qh"><span class="qn">144</span><span class="qt">語境判斷</span></div>
+<div class="qbody">
+<div class="qsen">To succeed in today's <span class="bl">---144---</span>.</div>
+<div class="qzh">要在今日競爭激烈的全球市場中成功。</div>
+<div class="q4o">A. natural environments</div>
+<div class="q4o">B. famous graduate schools</div>
+<div class="q4o ok">C. competitive world markets</div>
+<div class="q4o">D. easy atmosphere</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看整段主題：product development、speed、flexibility、competitors、move faster——這是哪一種文章？</p><div class="al">答案</div><p class="ap">商業競爭文章 → competitive world markets（C）最合理</p></div>
+<div class="corr mt12"><p>A 自然環境和產品開發、競爭對手無關；B 知名研究所完全不符合商業市場文章；D 輕鬆的氣氛不符合公司競爭、產品開發的語境。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">competitive</span><span class="vd">競爭激烈的</span>
+<span class="vw">world markets</span><span class="vd">全球市場</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q145">
+<div class="qh"><span class="qn">145</span><span class="qt">固定搭配 importance of</span></div>
+<div class="qbody">
+<div class="qsen">The new rules also emphasize the <span class="bl">---145---</span> of speed and flexibility.</div>
+<div class="qzh">這些新規則也強調速度和彈性的重要性。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>importance</div>
+<div class="qo"><span class="ol">B</span>appearance</div>
+<div class="qo"><span class="ol">C</span>development</div>
+<div class="qo"><span class="ol">D</span>achievement</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>emphasize the ______ of speed and flexibility，emphasize 後面最常見搭配是什麼？</p><div class="al">答案</div><p class="ap">emphasize the importance of = 強調……的重要性（A）</p></div>
+<div class="corr mt12"><p>B appearance（外表）、C development（發展）、D achievement（成就）都不符合「強調速度和彈性的重要性」的語意。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">importance</span><span class="vd">重要性</span>
+<span class="vw">the importance of + N/V-ing</span><span class="vd">……的重要性</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q146">
+<div class="qh"><span class="qn">146</span><span class="qt">動詞片語搭配</span></div>
+<div class="qbody">
+<div class="qsen">Nowadays companies are trying to <span class="bl">---146---</span> how to move faster than their competitors.</div>
+<div class="qzh">現在公司正試著想出如何比競爭對手更快行動的方法。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>apply for</div>
+<div class="qo ok"><span class="ol">B</span>figure out</div>
+<div class="qo"><span class="ol">C</span>devote to</div>
+<div class="qo"><span class="ol">D</span>speed up</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 how to move faster，需要一個可以接「how to + 原形動詞」的動詞片語。</p><div class="al">答案</div><p class="ap">figure out how to V = 想出如何……（B）</p></div>
+<div class="corr mt12"><p>A apply for 後面接名詞，不能接 how to V；C devote to 是 devote A to B 的結構，不能直接接 how to move faster；D speed up 後面已經有 move faster，重複不自然。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">figure out</span><span class="vd">想出；弄清楚</span>
+<span class="vw">figure out how to V</span><span class="vd">想出如何做……</span>
+</div>
+</div>
+</div>
+</div></div>
+
+
+
+<div class="ls" id="p7-147-v">
+<div class="sh"><div class="sn">7A</div><div class="st">Part 7 · 147–148 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（廣告）</div><div class="bb">
+<div class="p7box"><h4>📄 Property Details</h4>
+<p>3723 Cedar Lane, Teaneck, NJ 45837</p>
+<p>For Rent: 2000 sq. ft. office building, 2 miles north of Teaneck. Can be divided into two businesses (USD$700/month for one office, USD$800/month for larger office with kitchen) or will rent the entire building for $1500/month. Large parking lot. Call (123) 2848-3828 to schedule a visit.</p>
+<p>Updated: 01-05</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講（Step1+2：先看類型，再抓大意）</div><div class="bb">
+<div class="script">先看開頭格式：地址 + Property Details 標題 + For Rent。一看到 <code>For Rent</code> 就先知道：<em>這是辦公大樓出租廣告。</em><br><br>大意：這棟辦公大樓 2,000 平方英尺，位於 Teaneck 北方兩英里。可以分成兩間辦公空間出租，也可以整棟出租。有大型停車場，要打電話預約參觀。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>for rent</td><td>出租</td><td>There is an apartment for rent near the station.</td></tr>
+<tr><td>sq. ft. (square feet)</td><td>平方英尺</td><td>—</td></tr>
+<tr><td>can be divided into</td><td>可以被分成（被動）</td><td>The room can be divided into two smaller rooms.</td></tr>
+<tr><td>the entire building</td><td>整棟建築</td><td>—</td></tr>
+<tr><td>schedule a visit</td><td>安排參觀時間</td><td>—</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q147">
+<div class="qh"><span class="qn">147</span><span class="qt">目的題</span></div>
+<div class="qbody">
+<div class="qsen">What is the purpose of this advertisement?</div>
+<div class="qzh">這則廣告的目的為何？</div>
+<div class="q4o">A. To promote a newly developed product</div>
+<div class="q4o ok">B. To release office-leasing information</div>
+<div class="q4o">C. To recruit new security guards</div>
+<div class="q4o">D. To explain how the property can be used</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導（Step1 先看類型）</div>
+<div class="ask"><p>整篇出現 For Rent，後面提供辦公室大小、地點、租金、是否可分租、停車場、聯絡電話——這些全都是哪一類資訊？</p><div class="al">答案</div><p class="ap">招租資訊 → office-leasing information（B）</p></div>
+<div class="corr mt12"><p>A 文章沒有產品；C 文章沒有職缺；D 文章有提到可分租/整棟出租，但主要目的不是「解釋用途」，而是「出租」。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">office leasing</span><span class="vd">辦公室租賃</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q148">
+<div class="qh"><span class="qn">148</span><span class="qt">單字同義題</span></div>
+<div class="qbody">
+<div class="qsen">The word "entire" in line 3 is closest in meaning to</div>
+<div class="qzh">第三行的 entire 最接近哪一個意思？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>immediate</div>
+<div class="qo"><span class="ol">B</span>worth</div>
+<div class="qo ok"><span class="ol">C</span>whole</div>
+<div class="qo"><span class="ol">D</span>tired</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導（單字題回原句看語境）</div>
+<div class="ask"><p>回到原句：rent the entire building——整棟建築出租。entire building 最接近哪個字？</p><div class="al">答案</div><p class="ap">entire = whole（C），整個的、全部的</p></div>
+<div class="corr mt12"><p>A immediate（立刻的）、B worth（值得的）、D tired（疲倦的）都不符合修飾 building 的語境。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">entire = whole</span><span class="vd">整個的；全部的</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="ls" id="p7-149-v">
+<div class="sh"><div class="sn">7B</div><div class="st">Part 7 · 149–150 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（簡訊對話）</div><div class="bb">
+<div class="p7box"><h4>💬 簡訊對話</h4>
+<div class="chatline"><b>Anna</b><span>Hey, Leo. We are supposed to write a marketing report, right? But I'm not sure what we should do.</span></div>
+<div class="chatline"><b>Leo</b><span>Yes, and what we should do is to choose a product or service and compare two companies that produce it.</span></div>
+<div class="chatline"><b>Anna</b><span>All right, I see. Then I plan to do instant coffee. There are so many brands on the market now, and I think I will find tons of articles on the Internet.</span></div>
+<div class="chatline"><b>Leo</b><span>Good idea. Maybe you can also mention something like herbal tea? People think it's healthier, right?</span></div>
+<div class="chatline"><b>Anna</b><span>Exactly. I'll cover that part as well. Thank you for your help.</span></div>
+<div class="chatline"><b>Leo</b><span>Sure, no problem at all. If you need further assistance, just send me a message.</span></div>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講（Step2：先抓 Who/What）</div><div class="bb">
+<div class="script">Who：Anna 和 Leo。What：他們要寫一份行銷報告，要選一項產品或服務，比較兩家生產該產品的公司。Anna 決定做即溶咖啡，Leo 建議她也可以加入花草茶這個相關內容。<br><br><em>先抓住：這是同學討論作業內容，不是在聊天喝飲料。</em></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>be supposed to + V</td><td>應該……；理應……</td><td>We are supposed to submit the report by Friday.</td></tr>
+<tr><td>What S + V is...</td><td>……做的事是……</td><td>What he needs is more experience.</td></tr>
+<tr><td>so many + 複數可數</td><td>這麼多……</td><td>There are so many choices.</td></tr>
+<tr><td>cover（涵蓋/討論）</td><td>涵蓋；討論；處理</td><td>The report covers several important topics.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q149">
+<div class="qh"><span class="qn">149</span><span class="qt">主旨題</span></div>
+<div class="qbody">
+<div class="qsen">What are Anna and Leo discussing via Messenger?</div>
+<div class="qzh">Anna 和 Leo 正透過 Messenger 討論什麼？</div>
+<div class="q4o ok">A. What to include in their marketing report</div>
+<div class="q4o">B. The sales of their instant coffee</div>
+<div class="q4o">C. A new product they are going to launch</div>
+<div class="q4o">D. Market expansion in Japan</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一句直接說 We are supposed to write a marketing report，後面一直在討論選什麼產品、比較哪兩家公司。這些對話內容圍繞在什麼主題？</p><div class="al">答案</div><p class="ap">討論行銷報告要放什麼內容（A）</p></div>
+<div class="corr mt12"><p>B 文章沒有談銷售數字；C 他們是在選報告主題，不是在推出產品；D 文章沒有提到日本。</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="ask" style="background:var(--sky-lt);border-color:#BAE6FD"><p>主旨題不要只看其中一個字，例如 instant coffee，要看整段對話一直在做什麼。</p><div class="al">提醒學生</div><p class="ap">這裡不是討論咖啡銷售，而是在討論報告內容。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q150">
+<div class="qh"><span class="qn">150</span><span class="qt">說話目的題</span></div>
+<div class="qbody">
+<div class="qsen">Why does Leo mention, "Maybe you can also mention something like herbal tea"?</div>
+<div class="qzh">Leo 為什麼提到「也許你也可以提到像花草茶之類的東西」？</div>
+<div class="q4o">A. To invite Anna to drink something together</div>
+<div class="q4o">B. To make sure if Anna has some tea</div>
+<div class="q4o ok">C. To suggest that Anna include another related topic</div>
+<div class="q4o">D. To remind Anna to prepare tea for a meeting</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前面 Anna 說她要寫 instant coffee。Leo 接著說 Maybe you can also mention something like herbal tea，這是在邀請喝茶，還是在給報告內容建議？</p><div class="al">答案</div><p class="ap">給報告內容建議，建議加入相關主題（C）</p></div>
+<div class="corr mt12"><p>A 沒有邀請語氣，也沒有 let's drink tea；B 完全沒有問 Anna 有沒有茶；D 文章沒有會議，也沒有泡茶情境。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">herbal tea</span><span class="vd">花草茶</span><span class="vw">mention</span><span class="vd">提到</span><span class="vw">related</span><span class="vd">相關的</span></div>
+</div>
+</div>
+</div></div>
+
+
+<div class="ls" id="p7-151-v">
+<div class="sh"><div class="sn">7C</div><div class="st">Part 7 · 151–153 文章先導</div><div class="stm">⏱ 6 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（新聞）</div><div class="bb">
+<div class="p7box"><h4>📰 Home sales down 13% in July</h4>
+<p>Local home sales in July fell to the lowest level since 2016, even as average prices closed in on an all-time high, according to statistics released Monday.</p>
+<p>Members of the Springfield Real Estate Board sold 922 homes last month, a decrease of 13% from the 1,059 homes that changed hands a year earlier. However, a local official said the drop-off was not entirely unexpected. "The market was forecasted to slow down in 2017 as a result of recent mortgage changes, and indeed it has," said Kim Timberland, the manager of the Springfield Real Estate Board, in a statement.</p>
+<p>Condominium sales did not decrease as sharply as the broader market, falling 8%. Two-story homes took the greatest drop in sales, falling 19%. The drop-off in sales did not pull down the average home price. Average prices increased 1% year over year.</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">七月當地房屋銷售量下降了 13%，是自 2016 年以來最低。不過平均房價沒有下降，反而比去年同期上升 1%。市場放緩其實不完全令人意外，因為近期房貸政策改變後，市場原本就被預測會減速。<br><br><em>抓住關鍵對比：銷售量下降 vs. 房價不降反升。</em>這是這篇文章最重要的張力。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>fall to the lowest level</td><td>降到最低水準</td><td>Sales fell to the lowest level in five years.</td></tr>
+<tr><td>all-time high</td><td>歷史新高</td><td>The company's stock price reached an all-time high.</td></tr>
+<tr><td>a decrease of + 數字</td><td>下降了……</td><td>The company reported a decrease of 10% in sales.</td></tr>
+<tr><td>change hands</td><td>易手；被買賣；換主人</td><td>More than 500 homes changed hands last month.</td></tr>
+<tr><td>not entirely unexpected</td><td>並不是完全出乎意料</td><td>—</td></tr>
+<tr><td>be forecasted to + V</td><td>被預測將……</td><td>Sales are forecasted to increase next year.</td></tr>
+<tr><td>as a result of</td><td>因為；由於</td><td>The event was canceled as a result of heavy rain.</td></tr>
+<tr><td>not as ... as</td><td>沒有像……那麼……</td><td>—</td></tr>
+<tr><td>pull down</td><td>拉低；使下降</td><td>Lower demand may pull down prices.</td></tr>
+<tr><td>year over year</td><td>與去年同期相比</td><td>Sales increased 5% year over year.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q151">
+<div class="qh"><span class="qn">151</span><span class="qt">標題細節題</span></div>
+<div class="qbody">
+<div class="qsen">What has happened to the home sales in July?</div>
+<div class="qzh">七月的房屋銷售發生了什麼變化？</div>
+<div class="q4o">A. It decreased by 30%.</div>
+<div class="q4o ok">B. It dropped by 13%.</div>
+<div class="q4o">C. It increased by 13%.</div>
+<div class="q4o">D. It surged to its record high.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>標題直接說 Home sales down 13% in July，第二段也再寫 a decrease of 13%。</p><div class="al">答案</div><p class="ap">下降 13%（B）</p></div>
+<div class="corr mt12"><p>A 文章沒有 30%；C 文章是下降，不是增加；D 文章說銷售量是 2016 年以來最低，不是創新高（創新高的是房價，不是銷售量）。</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>新聞標題通常直接給主旨數字，看到 down 13% 就先鎖定答案方向。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q152">
+<div class="qh"><span class="qn">152</span><span class="qt">引述推論題</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">According to the article, what has Kim Timberland suggested?</div>
+<div class="qzh">根據文章，Kim Timberland 表示了什麼？</div>
+<div class="q4o">A. The drop-off was totally unexpected.</div>
+<div class="q4o">B. People did not expect that the market would slow down at all.</div>
+<div class="q4o ok">C. People predicted the situation would happen anyway.</div>
+<div class="q4o">D. The drop-off shocked many analysts.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>回文章找 Kim Timberland 的話：The drop-off was not entirely unexpected，以及 The market was forecasted to slow down。這兩句都表示什麼？</p><div class="al">答案</div><p class="ap">市場變慢早就被預期（C）</p></div>
+<div class="corr mt12"><p>A/B 原文是 <code>not entirely unexpected</code>，意思相反（不是完全出乎意料）；D 文章沒有提到分析師震驚。</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒：陷阱在哪裡</div>
+<div class="corr" style="margin:0"><p>陷阱是 not entirely unexpected。不要只看到 unexpected 就以為是意外，前面有 not，意思是「不是完全沒料到」。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q153">
+<div class="qh"><span class="qn">153</span><span class="qt">推論題</span></div>
+<div class="qbody">
+<div class="qsen">According to the article, what can be inferred about the average home price?</div>
+<div class="qzh">根據文章，可以推論平均房價如何？</div>
+<div class="q4o">A. It was seriously affected.</div>
+<div class="q4o">B. It increased over 10%.</div>
+<div class="q4o ok">C. It edged higher a little as well.</div>
+<div class="q4o">D. It fell by 8%.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文章最後一句：Average prices increased 1% year over year。1% 是大幅還是小幅增加？</p><div class="al">答案</div><p class="ap">小幅上升（edge higher）→ C</p></div>
+<div class="corr mt12"><p>A 文章說銷售下降沒有拉低房價，不能說受嚴重影響；B 是上升 1%，不是超過 10%；D 8% 是 condominium sales 的下降，不是房價。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">edge higher</span><span class="vd">緩慢、小幅上升</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="ls" id="p7-154-v">
+<div class="sh"><div class="sn">7D</div><div class="st">Part 7 · 154–156 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（活動資訊）</div><div class="bb">
+<div class="p7box"><h4>🌱 University Town Green Festival</h4>
+<p>Saturday, July 15th, 10:00 a.m.　Jasper Hall, University Town</p>
+<p>The east region's largest and most trusted green living event is bringing the University Town green community together at the Green Festival for the third time. Join us for leaders in the environmental community, an organic pavilion, a Green Kids' Zone and a unique marketplace of more than 300 eco-friendly businesses.</p>
+<p>Local nonprofits are invited to enter Community Green Grants contest for the chance to win a $1,000 grant or a $500 runner-up prize.</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">這是一場 Green Festival，環保生活活動。有環保社群領袖、有機展區、兒童綠色區，還有超過 300 家環保企業的市集。當地非營利組織也可以參加獎助金比賽。<br><br><em>核心字一直出現：green living、environmental community、eco-friendly——這是在推廣環保意識，不是單純市集賣東西。</em></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>green living</td><td>綠色生活；環保生活方式</td><td>—</td></tr>
+<tr><td>bring A together</td><td>讓 A 聚在一起</td><td>The event brings local businesses together.</td></tr>
+<tr><td>organic pavilion</td><td>有機展區</td><td>—</td></tr>
+<tr><td>eco-friendly</td><td>環保的</td><td>—</td></tr>
+<tr><td>be invited to + V</td><td>被邀請做……</td><td>Local businesses are invited to participate.</td></tr>
+<tr><td>for the chance to + V</td><td>為了有機會……</td><td>—</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q154">
+<div class="qh"><span class="qn">154</span><span class="qt">目的題</span></div>
+<div class="qbody">
+<div class="qsen">What is the purpose of the event?</div>
+<div class="qzh">這個活動的目的為何？</div>
+<div class="q4o ok">A. To raise awareness of green environment</div>
+<div class="q4o">B. To inform students of new training courses</div>
+<div class="q4o">C. To attract new customers to purchase products</div>
+<div class="q4o">D. To announce a new policy to the public</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文章反覆出現 green living、environmental community、organic、eco-friendly。整個活動的目的是什麼？</p><div class="al">答案</div><p class="ap">提升環保意識（A）</p></div>
+<div class="corr mt12"><p>B 文章沒有課程；C 雖然活動有市集，但整體目的不是單純賣東西；D 文章沒有政策。</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>目的題要看整篇，不要只看到 marketplace 就選賣東西。文章最核心的字是 green living 和 eco-friendly。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q155">
+<div class="qh"><span class="qn">155</span><span class="qt">NOT題</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What is NOT mentioned as one of this event's features?</div>
+<div class="qzh">以下哪一項沒有被提到是這個活動的特色？</div>
+<div class="q4o">A. It is the biggest event in the east region.</div>
+<div class="q4o ok">B. The event will last for the whole week.</div>
+<div class="q4o">C. Leaders in the community will also participate.</div>
+<div class="q4o">D. A contest will take place in the event.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導（NOT題要逐項回文章核對）</div>
+<div class="ask"><p>逐項核對：A「The east region's largest」有提到；C「leaders in the environmental community」有提到；D「Community Green Grants contest」有提到。B 呢？</p><div class="al">答案</div><p class="ap">文章只寫 Saturday, July 15th，沒有說活動持續一整週 → B 是答案</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>NOT 題一定要用排除法：A、C、D 都能回文章畫到證據，只有 B 完全沒有寫，所以選 B。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q156">
+<div class="qh"><span class="qn">156</span><span class="qt">單字同義題</span></div>
+<div class="qbody">
+<div class="qsen">The word "grant" in the last line is closest in meaning to</div>
+<div class="qzh">最後一行的 grant 最接近哪一個意思？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>subsidy</div>
+<div class="qo"><span class="ol">B</span>brand</div>
+<div class="qo"><span class="ol">C</span>profit</div>
+<div class="qo"><span class="ol">D</span>innovation</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看 grant 前後：win a $1,000 grant，這是一筆可以贏得的錢，而且對象是 nonprofit。grant 是哪種錢？</p><div class="al">答案</div><p class="ap">補助金、資助金 → subsidy（A）</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>grant 是 TOEIC 常見字：前面有金額、後面是 nonprofit 或 organization，通常就是補助金。</p></div>
+</div>
+</div>
+</div></div>
+
+
+<div class="ls" id="p7-157-v">
+<div class="sh"><div class="sn">7E</div><div class="st">Part 7 · 157–158 文章先導</div><div class="stm">⏱ 4 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（徵才廣告）</div><div class="bb">
+<div class="p7box"><h4>💼 Graphics Designer — Goleta City, GA</h4>
+<p><b>About the Job</b><br>Max Services is recruiting an entry-level Graphics Designer for a reputable company in Goleta City. Candidates must have a one-year minimum experience working with graphics and creating specific designs. Candidates should have experience working with graphic software as well as Microsoft Office programs. Position is 1st shift. There are never any fees to applicants or employees.</p>
+<p>To apply for this position, or to view other current openings, please visit www.max-services.net. Please include an updated resume with your application.</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">Max Services 正在替 Goleta City 一家信譽良好的公司招募初階平面設計師。應徵者至少需要一年平面設計經驗，也要熟悉平面設計軟體和 Microsoft Office。申請要附上更新過的履歷。<br><br><em>注意：graphic software（平面設計軟體）≠ computer programs（電腦程式），這是 158 題的陷阱。</em></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>recruit</td><td>招募；徵才</td><td>—</td></tr>
+<tr><td>entry-level</td><td>初階的；入門級的</td><td>—</td></tr>
+<tr><td>reputable</td><td>信譽良好的</td><td>She works for a reputable company.</td></tr>
+<tr><td>A as well as B</td><td>A 以及 B</td><td>Applicants should know Excel as well as Word.</td></tr>
+<tr><td>updated resume</td><td>更新過的履歷</td><td>—</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q157">
+<div class="qh"><span class="qn">157</span><span class="qt">推論題</span></div>
+<div class="qbody">
+<div class="qsen">According to the article, what can be inferred about the Max Services company?</div>
+<div class="qzh">根據文章，可以推論 Max Services 公司如何？</div>
+<div class="q4o">A. Its website is currently under construction.</div>
+<div class="q4o">B. It is a rather old company.</div>
+<div class="q4o ok">C. It is now hiring.</div>
+<div class="q4o">D. It is located in Asia.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一句直接說 Max Services is recruiting，is recruiting 是什麼意思？</p><div class="al">答案</div><p class="ap">正在徵人 → It is now hiring（C）</p></div>
+<div class="corr mt12"><p>A 文章叫人去網站申請，沒說網站施工；B 文章沒有公司成立多久的資訊；D 文章提到 Goleta City, GA，沒有亞洲資訊。</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>推論題不一定是原文完全一樣的句子，但 recruiting 就是徵人，所以可以推得它目前正在 hiring。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q158">
+<div class="qh"><span class="qn">158</span><span class="qt">NOT題</span></div>
+<div class="qbody">
+<div class="qsen">Which of the following is NOT a requirement of the job?</div>
+<div class="qzh">以下哪一項不是這份工作的要求？</div>
+<div class="q4o">A. Applicants should possess at least one year of experience.</div>
+<div class="q4o">B. Applicants should be familiar with graphical software applications.</div>
+<div class="q4o">C. Applicants need to know how to use MS Office programs.</div>
+<div class="q4o ok">D. Applicants must have experience designing computer programs.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>逐項回文章找：一年經驗有提到、graphic software 有提到、Microsoft Office 有提到。「設計電腦程式」呢？</p><div class="al">答案</div><p class="ap">文章沒有提到設計電腦程式 → D 是答案</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒：陷阱在哪裡</div>
+<div class="corr" style="margin:0"><p>graphic software 是平面設計軟體，不是 computer programs。看到 program 不要馬上以為是寫程式，要看前面到底在講什麼。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="ls" id="p7-159-v">
+<div class="sh"><div class="sn">7F</div><div class="st">Part 7 · 159–161 文章先導</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（飯店介紹）</div><div class="bb">
+<div class="p7box"><h4>🏨 Grand Hotel</h4>
+<p>Grand Hotel is located at the border of New Jersey and New York. From the very beginning, the hotel targets customers for business and leisure purposes. With the advantage of convenient transportation, Grand Hotel also offers luxury rooms, hospitable services, and completely furnished business facilities. Today, Grand Hotel has become the first choice for the local and international business travelers. Grand Hotel owns 150 comfortable guest rooms with simple and graceful designs. Some of our services are listed below:</p>
+<p><b>Business Center</b> — The Business Center on the first floor opens 24 hours and is fully equipped with business facilities that allow guests to manage their business without leaving the hotel.</p>
+<p><b>Fitness Center</b> — The Grand Fitness Club offers free fitness equipment for guests to enjoy the exercise and to release stress.</p>
+<p><b>Wireless Internet Access</b> — Hotel guests may access to the Internet in the public area by using laptops equipped with a wireless network card.</p>
+<p><b>Laundry Service</b> — Hotel guests can fill in the laundry list in the room and our hotel staff will take care of the washing and ironing. The finished clothing shall be returned the same day.</p>
+<p>Cab Service ／ Airplane Ticket Reservation ／ Airport Transfer Service ／ And more!</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">Grand Hotel 位於 New Jersey 和 New York 的交界，主要服務商務與休閒旅客。文章介紹飯店賣點與服務：商務中心、健身中心、無線網路、洗衣服務、計程車服務、機票訂位、機場接送。<br><br><em>整篇是條列式服務介紹——這篇文章長，但結構很規律，每個小標題就是一項服務。</em></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>at the border of A and B</td><td>在 A 和 B 的交界</td><td>—</td></tr>
+<tr><td>with the advantage of</td><td>因為有……的優勢</td><td>—</td></tr>
+<tr><td>hospitable</td><td>好客的；熱情接待的</td><td>—</td></tr>
+<tr><td>be fully equipped with</td><td>配備齊全的……</td><td>The office is fully equipped with computers.</td></tr>
+<tr><td>without + V-ing</td><td>不必……</td><td>—</td></tr>
+<tr><td>take care of</td><td>處理；負責；照顧</td><td>—</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q159">
+<div class="qh"><span class="qn">159</span><span class="qt">目的題</span></div>
+<div class="qbody">
+<div class="qsen">What's the purpose of this introduction?</div>
+<div class="qzh">這篇介紹的目的為何？</div>
+<div class="q4o">A. To encourage foreign investments</div>
+<div class="q4o">B. To fill a vacancy for a hotel manager</div>
+<div class="q4o ok">C. To promote unique selling points of a hotel</div>
+<div class="q4o">D. To explain how to release stress</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文章介紹地點、交通、客房、商務中心、健身中心、網路、洗衣、機場接送。這是在做什麼？</p><div class="al">答案</div><p class="ap">宣傳飯店的獨特賣點（C）</p></div>
+<div class="corr mt12"><p>A 文章沒有投資內容；B 沒有徵才資訊；D 只在健身中心部分提到 release stress，不是全文主旨。</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>主旨題不要因為看到 fitness center 就以為文章是在教紓壓。它列出很多飯店服務，整篇是在宣傳飯店。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q160">
+<div class="qh"><span class="qn">160</span><span class="qt">單字同義題</span></div>
+<div class="qbody">
+<div class="qsen">The word "graceful" in line 6 is closest in meaning to</div>
+<div class="qzh">第六行的 graceful 最接近哪一個意思？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>pitiful</div>
+<div class="qo"><span class="ol">B</span>thorough</div>
+<div class="qo"><span class="ol">C</span>detailed</div>
+<div class="qo ok"><span class="ol">D</span>beautiful</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>原文：simple and graceful designs，這是在形容房間設計。graceful 在這裡是優雅、美麗、有品味的，最接近哪個字？</p><div class="al">答案</div><p class="ap">beautiful（D）</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>單字題要看它修飾什麼。graceful designs 是優雅的設計，最接近 beautiful，不是 detailed（詳細的）。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q161">
+<div class="qh"><span class="qn">161</span><span class="qt">NOT題</span></div>
+<div class="qbody">
+<div class="qsen">What is NOT mentioned as a service in the hotel?</div>
+<div class="qzh">以下哪一項沒有被提到是飯店服務？</div>
+<div class="q4o ok">A. Movie theaters</div>
+<div class="q4o">B. Workout facilities</div>
+<div class="q4o">C. Business amenities</div>
+<div class="q4o">D. Taxi to and from the airport</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>逐項回文章找：Workout facilities → Fitness Center 有；Business amenities → Business Center 有；Taxi → Cab Service / Airport Transfer Service 有。Movie theaters 呢？</p><div class="al">答案</div><p class="ap">文章沒有提到電影院 → A 是答案</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>NOT 題核心就是回文章找。不要憑記憶，一個一個畫：健身有、商務有、機場接送有，只有電影院沒有。</p></div>
+</div>
+</div>
+</div></div>
+
+
+<div class="ls" id="p7-162-v">
+<div class="sh"><div class="sn">7G</div><div class="st">Part 7 · 162–164 文章先導</div><div class="stm">⏱ 6 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（雜誌訂閱廣告，含句子插入）</div><div class="bb">
+<div class="p7box"><h4>📖 The Art of Business Management — 12 Month Subscription</h4>
+<p>The Art of Business Management is the leading business management magazine examining the trends and opportunities shaping Singapore business. <span class="insmark">[1]</span> Keep up to date on the world of business with The Art of Business Management subscription which includes a monthly magazine delivered to your door. <span class="insmark">[2]</span></p>
+<p>For a limited time, The Art of Business Management is offering subscribers an exclusive 50% saving on a 12-month subscription. Your subscription includes:</p>
+<p>✓ The Art of Business Management magazine delivered to your door each month <span class="insmark">[3]</span><br>✓ Daily news and analysis on the nation's top entrepreneurs and business personalities on our website<br>✓ Weekly newsletters providing you insights into what business news you need to know</p>
+<p>To get your finger on the business pulse with a The Art of Business Management subscription, you can take up this offer before November 15. <span class="insmark">[4]</span> Subscribe today at www.the-art-of-biz-mgmt.com.</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">這是商業管理雜誌的一年期訂閱廣告。訂閱者每月收到雜誌、網站可讀每日商業新聞分析、每週電子報。限時訂閱一年享五折優惠，必須 11 月 15 日前申請。<br><br><em>注意三個時間頻率不要搞混：雜誌是 monthly，電子報是 weekly，新聞分析在網站上是 daily。</em></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
+<tr><td>keep up to date on/with</td><td>掌握……的最新資訊</td><td>I read the news to keep up to date on current events.</td></tr>
+<tr><td>for a limited time</td><td>限時</td><td>—</td></tr>
+<tr><td>take up an offer</td><td>接受優惠；採用方案</td><td>Customers can take up this offer before Friday.</td></tr>
+<tr><td>get one's finger on the pulse</td><td>掌握最新趨勢與動態</td><td>—</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q162">
+<div class="qh"><span class="qn">162</span><span class="qt">細節題</span></div>
+<div class="qbody">
+<div class="qsen">How often does the magazine come out?</div>
+<div class="qzh">這本雜誌多久出刊一次？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>Per week</div>
+<div class="qo ok"><span class="ol">B</span>Per month</div>
+<div class="qo"><span class="ol">C</span>Every other month</div>
+<div class="qo"><span class="ol">D</span>Twice a month</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文章明確寫 a monthly magazine、delivered to your door each month。</p><div class="al">答案</div><p class="ap">monthly = 每月一次（B）</p></div>
+<div class="corr mt12"><p>A weekly 是電子報，不是雜誌；C/D 文章沒有這樣說。</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒：陷阱在哪裡</div>
+<div class="corr" style="margin:0"><p>不要把 weekly newsletters 看成雜誌。雜誌是 monthly，電子報才是 weekly。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q163">
+<div class="qh"><span class="qn">163</span><span class="qt">細節題</span></div>
+<div class="qbody">
+<div class="qsen">What benefit can subscribers enjoy if they subscribe to the magazine by 11/15?</div>
+<div class="qzh">如果讀者在 11 月 15 日前訂閱，可以享有什麼好處？</div>
+<div class="q4o">A. Subscribers can get two extra issues.</div>
+<div class="q4o ok">B. Subscribers will receive a 50% off discount.</div>
+<div class="q4o">C. Subscribers can get a watch as a gift.</div>
+<div class="q4o">D. Subscribers will receive free daily newsletters.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文章說 For a limited time...an exclusive 50% saving，而最後說 take up this offer before November 15。在期限前訂閱的優惠是什麼？</p><div class="al">答案</div><p class="ap">五折優惠（B）</p></div>
+<div class="corr mt12"><p>A/C 文章沒有提到；D daily news 是網站新聞，電子報是 weekly，且問的是期限前的特別優惠，重點是五折。</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>這題問的是 by 11/15 的優惠，不是問訂閱內容。看到日期，就回去找 offer 和 saving。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q164">
+<div class="qh"><span class="qn">164</span><span class="qt">句子插入題</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong? <br>"So why wait?"</div>
+<div class="qzh">「那還等什麼呢？」這句話最適合放在哪一個位置？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>[1]</div>
+<div class="qo"><span class="ol">B</span>[2]</div>
+<div class="qo"><span class="ol">C</span>[3]</div>
+<div class="qo ok"><span class="ol">D</span>[4]</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導（句子插入題：先看句子的功能）</div>
+<div class="ask"><p>"So why wait?" 是一句廣告中的催促行動句，意思是「既然有這麼好的優惠，還等什麼？」這種句子最適合放在優惠資訊之後、行動呼籲之前。[4] 前面剛說 11月15日前可接受優惠，後面要說 Subscribe today，中間放這句最自然嗎？</p><div class="al">答案</div><p class="ap">[4]（D）</p></div>
+<div class="corr mt12"><p>[1] 還在介紹雜誌內容，太早催促不自然；[2] 還沒講到五折優惠，語氣不夠有力；[3] 在條列內容中間，會把資訊切斷。</p></div>
+</div>
+<div>
+<div class="gtl">教學提醒</div>
+<div class="tip" style="margin:0"><p>句子插入題一定先問：這句話在做什麼？So why wait? 是催促讀者立刻行動，所以放在 deadline 後面、Subscribe today 前面最合理。</p></div>
+</div>
+</div>
+</div></div>
+
+
+<div class="ls" id="s-summary">
+<div class="sh"><div class="sn">✓</div><div class="st">總整理 &amp; 解答表</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>Part 6（131–146）考點速查</div><div class="bb">
+<table class="tbl">
+<tr><th>題號</th><th>答案</th><th>考點</th></tr>
+<tr><td>131</td><td>C impact</td><td>固定搭配 have an impact on</td></tr>
+<tr><td>132</td><td>A resistant</td><td>詞性+固定搭配 be resistant to</td></tr>
+<tr><td>133</td><td>A determines</td><td>主詞動詞一致（diet單數）</td></tr>
+<tr><td>134</td><td>B feed our mind...</td><td>文章主旨判斷</td></tr>
+<tr><td>135</td><td>B managers</td><td>商業語境判斷</td></tr>
+<tr><td>136</td><td>B necessary</td><td>形容詞固定搭配 be necessary to</td></tr>
+<tr><td>137</td><td>A as</td><td>同等比較句型 as...as</td></tr>
+<tr><td>138</td><td>D In addition to...</td><td>上下文銜接（also的提示）</td></tr>
+<tr><td>139</td><td>C several</td><td>數量詞+複數可數</td></tr>
+<tr><td>140</td><td>A another</td><td>固定搭配 have another look at</td></tr>
+<tr><td>141</td><td>C version</td><td>名詞搭配 a version of</td></tr>
+<tr><td>142</td><td>D 整句</td><td>前後邏輯（as=because）</td></tr>
+<tr><td>143</td><td>C than</td><td>固定搭配 more than</td></tr>
+<tr><td>144</td><td>C competitive world markets</td><td>語境判斷</td></tr>
+<tr><td>145</td><td>A importance</td><td>固定搭配 emphasize the importance of</td></tr>
+<tr><td>146</td><td>B figure out</td><td>動詞片語 figure out how to V</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>Part 7（147–164）考點速查</div><div class="bb">
+<table class="tbl">
+<tr><th>題號</th><th>答案</th><th>考點</th></tr>
+<tr><td>147</td><td>B office-leasing information</td><td>目的題</td></tr>
+<tr><td>148</td><td>C whole</td><td>單字同義（entire）</td></tr>
+<tr><td>149</td><td>A 報告內容</td><td>主旨題</td></tr>
+<tr><td>150</td><td>C 建議加入主題</td><td>說話目的題</td></tr>
+<tr><td>151</td><td>B dropped by 13%</td><td>標題細節題</td></tr>
+<tr><td>152</td><td>C 早被預測</td><td>引述推論題（not entirely unexpected 陷阱）</td></tr>
+<tr><td>153</td><td>C edged higher</td><td>推論題</td></tr>
+<tr><td>154</td><td>A raise awareness</td><td>目的題</td></tr>
+<tr><td>155</td><td>B 整週</td><td>NOT題</td></tr>
+<tr><td>156</td><td>A subsidy</td><td>單字同義（grant）</td></tr>
+<tr><td>157</td><td>C now hiring</td><td>推論題</td></tr>
+<tr><td>158</td><td>D 設計程式</td><td>NOT題（graphic software≠computer programs 陷阱）</td></tr>
+<tr><td>159</td><td>C 宣傳賣點</td><td>目的題</td></tr>
+<tr><td>160</td><td>D beautiful</td><td>單字同義（graceful）</td></tr>
+<tr><td>161</td><td>A 電影院</td><td>NOT題</td></tr>
+<tr><td>162</td><td>B Per month</td><td>細節題</td></tr>
+<tr><td>163</td><td>B 50% off</td><td>細節題</td></tr>
+<tr><td>164</td><td>D [4]</td><td>句子插入題</td></tr>
+</table>
+<div class="goal2 mt16"><p><strong>下次複習建議：</strong>先考五種 Part7 題型應對方式（目的/細節/NOT/推論/單字），再考常見陷阱：not entirely unexpected（雙重否定）、graphic software vs computer programs（看似相關但不同的字）、weekly newsletter vs monthly magazine（頻率混淆）。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>下一堂預告</div><div class="bb">
+<div class="tip"><p>Lesson 04 涵蓋的 131–164（共 34 題）已是完整的 Part 6/7 閱讀策略複習。下一堂可以視進度安排新的文法主題或新一份練習測驗。</p></div>
+</div></div>
+</div>
+
+</main>
+</div>
+<script>
+let sec=0,running=false,iv=null;
+function pad(n){return n.toString().padStart(2,'0')}
+function upd(){const m=Math.floor(sec/60),s=sec%60;document.getElementById('timer').textContent=pad(m)+':'+pad(s)}
+function toggleTimer(){
+  if(running){clearInterval(iv);running=false;document.querySelector('.tbtn').textContent='▶ 開始'}
+  else{iv=setInterval(()=>{sec++;upd()},1000);running=true;document.querySelector('.tbtn').textContent='⏸ 暫停'}
+}
+function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.querySelector('.tbtn').textContent='▶ 開始'}
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+const allSecs=[
+  {id:'s-overview',label:'課程總覽'},
+  {id:'s-reading-intro',label:'Part6/7解題策略'},
+  {id:'p6-131-v',label:'131-134文章先導'},
+  {id:'q131',label:'131'},{id:'q132',label:'132'},{id:'q133',label:'133'},{id:'q134',label:'134'},
+  {id:'p6-135-v',label:'135-138文章先導'},
+  {id:'q135',label:'135'},{id:'q136',label:'136'},{id:'q137',label:'137'},{id:'q138',label:'138'},
+  {id:'p6-139-v',label:'139-142文章先導'},
+  {id:'q139',label:'139'},{id:'q140',label:'140'},{id:'q141',label:'141'},{id:'q142',label:'142'},
+  {id:'p6-143-v',label:'143-146文章先導'},
+  {id:'q143',label:'143'},{id:'q144',label:'144'},{id:'q145',label:'145'},{id:'q146',label:'146'},
+  {id:'p7-147-v',label:'147-148文章先導'},
+  {id:'q147',label:'147'},{id:'q148',label:'148'},
+  {id:'p7-149-v',label:'149-150文章先導'},
+  {id:'q149',label:'149'},{id:'q150',label:'150'},
+  {id:'p7-151-v',label:'151-153文章先導'},
+  {id:'q151',label:'151'},{id:'q152',label:'152'},{id:'q153',label:'153'},
+  {id:'p7-154-v',label:'154-156文章先導'},
+  {id:'q154',label:'154'},{id:'q155',label:'155'},{id:'q156',label:'156'},
+  {id:'p7-157-v',label:'157-158文章先導'},
+  {id:'q157',label:'157'},{id:'q158',label:'158'},
+  {id:'p7-159-v',label:'159-161文章先導'},
+  {id:'q159',label:'159'},{id:'q160',label:'160'},{id:'q161',label:'161'},
+  {id:'p7-162-v',label:'162-164文章先導'},
+  {id:'q162',label:'162'},{id:'q163',label:'163'},{id:'q164',label:'164'},
+  {id:'s-summary',label:'總整理'},
+];
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      const s=allSecs.find(x=>x.id===id);
+      if(s){
+        document.querySelectorAll('.sbl').forEach(l=>l.classList.remove('active'));
+        const lk=document.querySelector(`.sbl[onclick*="${id}"]`);
+        if(lk)lk.classList.add('active');
+        document.getElementById('csec').textContent=s.label;
+      }
+    }
+  });
+},{threshold:0.2,rootMargin:'-60px 0px -65% 0px'});
+allSecs.forEach(s=>{const el=document.getElementById(s.id);if(el)obs.observe(el)});
+</script>
+</body>
+</html>
