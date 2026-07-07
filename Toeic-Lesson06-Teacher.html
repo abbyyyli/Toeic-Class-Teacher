@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老師講義 | TOEIC Lesson 06</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--navy2:#1E3A5F;--white:#fff;--bg:#F0F4F8;--card:#fff;--amber:#F59E0B;--amber-lt:#FEF3C7;--amber-dk:#92400E;--green:#059669;--green-lt:#D1FAE5;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--purple-lt:#EDE9FE;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;--sidebar-w:230px;--r:10px}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:var(--gray-800);font-size:14px;line-height:1.7}
+#topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);color:white;height:52px;display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.logo{font-weight:800;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.logo span{background:var(--amber);color:var(--navy);padding:2px 8px;border-radius:5px;font-size:12px}
+.timer-wrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.timer-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px}
+#timer{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--amber);min-width:60px}
+.tbtn{background:rgba(255,255,255,.1);border:none;color:white;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;margin-left:4px;font-family:"Noto Sans TC",sans-serif}
+.tbtn:hover{background:rgba(255,255,255,.2)}
+.ppill{background:rgba(255,255,255,.1);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+#csec{color:var(--amber);font-weight:700}
+#layout{display:flex;margin-top:52px;min-height:calc(100vh - 52px)}
+#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--navy);position:fixed;top:52px;left:0;bottom:0;overflow-y:auto;padding:16px 0;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
+.sbh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);padding:10px 16px 4px}
+.sbl{display:block;padding:6px 16px;color:rgba(255,255,255,.65);font-size:12px;text-decoration:none;cursor:pointer;border-left:3px solid transparent;transition:.15s}
+.sbl:hover{color:white;background:rgba(255,255,255,.07)}
+.sbl.active{color:var(--amber);border-left-color:var(--amber);background:rgba(245,158,11,.08)}
+.t{font-size:10px;color:rgba(255,255,255,.3);float:right;font-family:"JetBrains Mono",monospace}
+#main{margin-left:var(--sidebar-w);flex:1;padding:28px 32px 80px}
+.ls{margin-bottom:40px}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gray-200)}
+.sn{width:36px;height:36px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;font-family:"Inter",sans-serif}
+.st{font-size:20px;font-weight:800;color:var(--navy)}
+.stm{margin-left:auto;background:var(--navy);color:var(--amber);font-size:11px;font-weight:700;font-family:"JetBrains Mono",monospace;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.block{background:var(--card);border-radius:var(--r);margin-bottom:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.bh{background:var(--gray-100);padding:10px 18px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-600);border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:8px}
+.bh .d{width:8px;height:8px;border-radius:50%;background:var(--gray-400)}
+.bh.dk{background:var(--navy);color:white;border:none}.bh.dk .d{background:var(--amber)}
+.bh.am{background:var(--amber-lt);color:var(--amber-dk);border-bottom-color:#FDE68A}.bh.am .d{background:var(--amber)}
+.bh.gn{background:var(--green-lt);color:var(--green);border-bottom-color:#A7F3D0}.bh.gn .d{background:var(--green)}
+.bb{padding:18px}
+.script{background:#0F172A;color:#E2E8F0;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.9;position:relative;margin:12px 0}
+.script::before{content:"📢 說";position:absolute;top:-10px;left:14px;background:var(--sky);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.script em{color:var(--amber);font-style:normal;font-weight:600}
+.script strong{color:white}.script code{background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px;color:#7DD3FC}
+.ask{background:var(--amber-lt);border:1.5px solid #FDE68A;border-radius:8px;padding:14px 18px;margin:10px 0;position:relative}
+.ask::before{content:"❓ 問學生";position:absolute;top:-10px;left:14px;background:var(--amber);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.ask p{color:var(--amber-dk);font-weight:600;font-size:14px;margin-top:2px}
+.ask .al{font-size:11px;color:var(--amber-dk);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:8px 0 3px;border-top:1px solid #FDE68A;padding-top:8px}
+.ask .ap{color:var(--green);font-weight:700;font-size:14px}
+.corr{background:var(--red-lt);border:1.5px solid #FECACA;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.corr::before{content:"⚠️ 答錯時";position:absolute;top:-10px;left:14px;background:var(--red);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.corr p{color:#991B1B;font-size:13px;margin-top:4px;line-height:1.7}
+.tip{background:var(--purple-lt);border:1.5px solid #DDD6FE;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.tip::before{content:"💡 重點";position:absolute;top:-10px;left:14px;background:var(--purple);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.tip p{color:#4C1D95;font-size:13px;margin-top:4px;line-height:1.7}
+.goal2{background:var(--green-lt);border:1.5px solid #A7F3D0;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.goal2::before{content:"✅ 重點帶走";position:absolute;top:-10px;left:14px;background:var(--green);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.goal2 p,.goal2 li{color:#064E3B;font-size:13px;margin-top:4px;line-height:1.8}
+.goal2 ul{padding-left:18px;margin-top:6px}
+.formula{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:700;color:var(--navy);background:var(--gray-100);border-radius:8px;padding:12px 16px;border-left:3px solid var(--amber);margin:10px 0}
+.es{background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 14px;margin:6px 0;font-size:14px;font-weight:500}
+.tp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.tw{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--red);background:var(--red-lt);padding:6px 10px;border-radius:6px}
+.tw::before{content:"❌ "}
+.tr{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--green);background:var(--green-lt);padding:6px 10px;border-radius:6px}
+.tr::before{content:"✅ "}
+.qb{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:20px}
+.qh{display:flex;align-items:center;gap:10px;padding:12px 18px;background:var(--gray-100);border-bottom:1px solid var(--gray-200);flex-wrap:wrap}
+.qn{background:var(--navy);color:white;font-weight:700;font-size:12px;padding:3px 10px;border-radius:6px;font-family:"Inter",sans-serif}
+.qt{background:var(--sky-lt);color:var(--sky);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qs{background:var(--amber-lt);color:var(--amber-dk);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qbody{padding:20px}
+.qsen{font-size:15px;font-weight:500;background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:6px;line-height:1.8}
+.qsen .bl{background:var(--amber-lt);color:var(--amber-dk);padding:0 6px;border-radius:4px;font-weight:700}
+.qzh{font-size:12px;color:var(--gray-400);margin-bottom:14px}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.qo{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;display:flex;align-items:center;gap:8px}
+.qo.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.ol{width:22px;height:22px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:"Inter",sans-serif}
+.qo.ok .ol{background:var(--green);color:white}
+.qtc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.gtl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-400);margin-bottom:8px}
+.vg{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.vw{font-family:"JetBrains Mono",monospace;color:var(--navy);font-weight:600}
+.vd{color:var(--gray-600)}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tbl th,.tbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
+.tbl th{background:var(--gray-100);font-weight:700;font-size:12px}
+.tmtable{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tmtable th,.tmtable td{border:1px solid var(--gray-200);padding:10px 12px;text-align:left;vertical-align:top}
+.tmtable th{background:var(--navy);color:white;font-size:12px}
+.tmtable td:first-child{font-family:"JetBrains Mono",monospace;font-weight:700;background:var(--amber-lt);color:var(--amber-dk);white-space:nowrap}
+.dv{height:1px;background:var(--gray-200);margin:18px 0}
+.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}
+code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:12px;color:var(--navy)}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <div class="logo">🎓 <span>老師</span> Lesson 06 · 關係子句 &amp; 名詞子句</div>
+  <div class="ppill">現在：<span id="csec">課程總覽</span></div>
+  <div class="timer-wrap">
+    <span class="timer-label">上課時間</span>
+    <span id="timer">00:00</span>
+    <button class="tbtn" onclick="toggleTimer()">▶ 開始</button>
+    <button class="tbtn" onclick="resetTimer()">↺</button>
+  </div>
+</div>
+<div id="layout">
+<nav id="sidebar">
+  <div class="sbh">課程總覽</div>
+  <a class="sbl active" onclick="goTo('s-overview')">課程定位 &amp; 流程</a>
+  <div class="sbh">文法理論</div>
+  <a class="sbl" onclick="goTo('s-open')">開場：判斷系統 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-rule1')">Rule 1 關係子句 vs 名詞子句 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule2')">Rule 2 who / whom <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule3')">Rule 3 whose <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-rule4')">Rule 4 which / that <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule5')">Rule 5 where / when / why <span class="t">8m</span></a>
+  <a class="sbl" onclick="goTo('s-rule6')">Rule 6 how 陷阱 <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-rule7')">Rule 7 what <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-rule8')">Rule 8 that 名詞子句 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-rule9')">Rule 9 reason is that <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-rule10')">Rule 10 whether / if <span class="t">5m</span></a>
+  <a class="sbl" onclick="goTo('s-traps')">TOEIC 陷阱整理 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-close')">收尾總結 <span class="t">5m</span></a>
+  <div class="sbh">Part 5 練習 · 1–11</div>
+  <a class="sbl" onclick="goTo('s-part5')">做題節奏提示</a>
+  <a class="sbl" onclick="goTo('q1')">1 make sure that ⭐</a>
+  <a class="sbl" onclick="goTo('q2')">2 year when</a>
+  <a class="sbl" onclick="goTo('q3')">3 reason that ⭐</a>
+  <a class="sbl" onclick="goTo('q4')">4 reports that</a>
+  <a class="sbl" onclick="goTo('q5')">5 determine who ⭐</a>
+  <a class="sbl" onclick="goTo('q6')">6 which of two</a>
+  <a class="sbl" onclick="goTo('q7')">7 to whom ⭐</a>
+  <a class="sbl" onclick="goTo('q8')">8 whose computer ⭐</a>
+  <a class="sbl" onclick="goTo('q9')">9 restaurant which</a>
+  <a class="sbl" onclick="goTo('q10')">10 for which ⭐</a>
+  <a class="sbl" onclick="goTo('q11')">11 非限定 who</a>
+  <div class="sbh">收尾</div>
+  <a class="sbl" onclick="goTo('s-summary')">總整理 &amp; 解答表</a>
+</nav>
+<main id="main">
+
+<div class="ls" id="s-overview">
+<div class="sh"><div class="sn">0</div><div class="st">課程定位 &amp; 上課流程</div></div>
+<div class="block"><div class="bh gn"><span class="d"></span>本堂目標</div><div class="bb">
+<div class="goal2"><p>本堂主題：<strong>關係代名詞（who / whom / whose / which / that）、關係副詞（where / when / why）、名詞子句（that / whether / 疑問詞子句）</strong>。TOEIC Part 5 常把這十幾個字放在同一題選項裡，學生如果只靠中文翻譯，非常容易選錯。今天核心是建立一套判斷系統：<em>先看空格後面是缺東西的子句，還是完整句子。</em>這是關係子句和名詞子句最重要的分界。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>建議上課流程（共 ~90 分鐘）</div><div class="bb">
+<table class="tmtable">
+<tr><th>時間</th><th>內容</th><th>重點提示</th></tr>
+<tr><td>0–5 min</td><td>開場：建立判斷系統</td><td>先讓學生知道「一個問題判斷所有題」</td></tr>
+<tr><td>5–40 min</td><td>Rule 1–5 關係子句系列</td><td>每條規則都要先問學生再公布</td></tr>
+<tr><td>40–55 min</td><td>Rule 6–10 名詞子句系列</td><td>重點在 that / whether；reason 陷阱一定要講</td></tr>
+<tr><td>55–65 min</td><td>TOEIC 陷阱整理 + 收尾</td><td>讓學生自己說出每個陷阱是什麼</td></tr>
+<tr><td>65–90 min</td><td>Part 5 練習題 1–11</td><td>每題先問「空格前有沒有名詞？後面完整嗎？」</td></tr>
+</table>
+<div class="tip mt12"><p><strong>建議拆法：</strong>第一次教關係子句（Rule 1–5）+ 部分練習；第二次教名詞子句（Rule 6–10）+ 陷阱 + 剩餘練習題。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-open">
+<div class="sh"><div class="sn">1</div><div class="st">開場：建立判斷系統</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>開場逐字稿</div><div class="bb">
+<div class="script">今天的主題看起來很多：who、whom、which、that、where、when、why、what、whether、how。<br><br>但是你不用一次背十個字。今天你只要先學會一個判斷系統。<br><br><em>每一題先問：空格後面是一個缺東西的子句，還是一個完整句子？</em><br><br>如果它缺主詞、受詞、所有格，通常是在考<strong>關係代名詞</strong>。<br>如果它本身已經完整，而整塊句子只是放進另一個句子裡當一件事，通常是在考<strong>名詞子句</strong>。</div>
+<div class="block" style="margin:0"><div class="bh am"><span class="d"></span>板書核心：兩步判斷法</div><div class="bb">
+<div class="formula">空格前有名詞 → 後面在修飾名詞 → 關係子句</div>
+<div class="formula mt12">動詞後 / be 後 + 完整句子 → 整塊當名詞 → 名詞子句</div>
+</div></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>引導練習（開場三題）</div><div class="bb">
+<div class="ask"><p>The employee <code>______</code> submitted the report is absent. → 空格後面第一個字是 submitted（動詞），誰 submitted？</p><div class="al">答案</div><p class="ap">缺主詞，前面是人 employee → <strong>who</strong></p></div>
+<div class="ask mt16"><p>I know <code>______</code> the employee submitted the report. → 空格後面：the employee submitted the report，主詞有了、動詞有了，完整嗎？</p><div class="al">答案</div><p class="ap">完整句子，整塊是 know 的受詞 → 名詞子句 → <strong>that</strong></p></div>
+<div class="ask mt16"><p>The reason for the delay is <code>______</code> the weather was terrible. → 空格後面完整，前面是 is，在補充 reason 的內容 → ?</p><div class="al">答案</div><p class="ap">名詞子句當補語 → <strong>that</strong>（不是 because！）</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule1">
+<div class="sh"><div class="sn">2</div><div class="st">Rule 1｜關係子句 vs 名詞子句</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>A. 關係子句：修飾名詞</div><div class="bb">
+<div class="formula">名詞 + 關係代名詞／副詞 + 子句</div>
+<div class="es">The employee <strong>who submitted the report</strong> is absent today. → 修飾 employee（哪一位員工）</div>
+<div class="script mt12">空格前面有沒有一個名詞，需要後面的句子來補充說明「哪一個」？有的話，先考慮關係子句。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>B. 名詞子句：整塊當名詞</div><div class="bb">
+<div class="formula">連接詞 + 完整句子 → 整塊當主詞、受詞、補語</div>
+<div class="es">I know <strong>that the meeting has been canceled.</strong> → that 子句是 know 的受詞</div>
+<div class="es mt12">The problem is <strong>that the report is incomplete.</strong> → that 子句是補語</div>
+<div class="script mt12">不要先問中文是什麼。先問：這裡是「修飾名詞」，還是「當名詞」？</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>判斷流程練習</div><div class="bb">
+<div class="ask"><p>The restaurant <code>______</code> was advertised on the radio is popular. → 先看前面：the restaurant 是名詞嗎？空格後面缺主詞嗎？</p><div class="al">答案</div><p class="ap">前有名詞，缺主詞 → 關係子句 → <strong>which / that</strong></p></div>
+<div class="ask mt16"><p>I heard <code>______</code> Mr. Smith will be promoted. → 空格後面 Mr. Smith will be promoted 完整嗎？整塊在當受詞嗎？</p><div class="al">答案</div><p class="ap">完整句，整塊是受詞 → 名詞子句 → <strong>that</strong></p></div>
+<div class="tip mt12"><p><strong>最重要判斷法：</strong>空格後子句缺成分（主詞/受詞/所有格）→ 關係子句；空格後句子完整且整塊當名詞 → 名詞子句。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule2">
+<div class="sh"><div class="sn">3</div><div class="st">Rule 2｜who vs whom：先看空格後有沒有主詞</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
+<div class="script">看到 who 和 whom，不要先背誰是誰。直接看空格後面。<br><em>空格後面立刻出現動詞，缺主詞，用 who；空格後面已有主詞，缺的是受詞，用 whom。</em></div>
+<table class="tbl mt12">
+<tr><th>關係代名詞</th><th>功能</th><th>後面常見型態</th></tr>
+<tr><td><code>who</code></td><td>代替人，當子句主詞</td><td>後面直接接動詞</td></tr>
+<tr><td><code>whom</code></td><td>代替人，當子句受詞</td><td>後面通常有主詞＋動詞</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>例句分析</div><div class="bb">
+<div class="es">The manager <strong>who leads</strong> the sales team is on vacation. → who 後面直接接動詞 leads → <strong>who 是主詞</strong></div>
+<div class="es mt12">The client <strong>whom we met</strong> yesterday signed the contract. → whom 後面有主詞 we + 動詞 met → <strong>whom 是受詞</strong></div>
+<div class="ask mt12"><p>The woman <code>______</code> we met yesterday is our new client. → 空格後面有 we（主詞）→ 缺的是受詞，答案？</p><div class="al">答案</div><p class="ap">whom（受格）。woman 是人，且子句中 we 是主詞，met 是動詞，缺受詞。</p></div>
+<div class="tip mt12"><p><strong>快速判斷：</strong>空格後面先看第一個字。第一個字是動詞 → 缺主詞 → who；第一個字是主詞（we / I / the company / she 等）→ 缺受詞 → whom。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule3">
+<div class="sh"><div class="sn">4</div><div class="st">Rule 3｜whose：所有格關係代名詞</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
+<div class="formula">人或事物 + whose + 名詞</div>
+<div class="es">The engineer <strong>whose computer</strong> is being repaired is working from home. → whose 後接名詞 computer</div>
+<div class="es mt12">The company <strong>whose sales</strong> increased hired more workers. → whose 後接名詞 sales</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>判斷技巧 + 陷阱</div><div class="bb">
+<div class="script">看到空格後面的第一個字是名詞，馬上考慮：這裡是不是在說「誰的某物」？如果是，答案很常是 <em>whose</em>。</div>
+<div class="ask mt12"><p>The engineer, <code>______</code> computer you will be using, has been transferred. → 空格後面第一個字是 computer（名詞），前面是人 engineer → 表示「工程師的電腦」 → ?</p><div class="al">答案</div><p class="ap">whose（所有格）。whose computer = 工程師的電腦。</p></div>
+<div class="tip mt12"><p><strong>記住：</strong>whose 後面一定要有名詞。who 後面常接動詞；whose 後面接名詞。空格後是名詞，先想 whose。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule4">
+<div class="sh"><div class="sn">5</div><div class="st">Rule 4｜which / that：事物的關係代名詞</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>which 和 that 的基本用法</div><div class="bb">
+<div class="es">The report <strong>which contains</strong> sales figures is confidential. → which 代替事物 report</div>
+<div class="es mt12">The proposal <strong>that we discussed</strong> was approved. → that 也可代替事物（限定用法）</div>
+<div class="tip mt12"><p><strong>that 的三個限制：TOEIC 必考！</strong></p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>三種不能用 that 的情況</div><div class="bb">
+<table class="tbl">
+<tr><th>情況</th><th>錯誤</th><th>正確</th></tr>
+<tr><td>有逗號（非限定）</td><td>The office, <em>that</em> is on the third floor, is large. ✗</td><td>The office, <strong>which</strong> is on the third floor, is large. ✓</td></tr>
+<tr><td>介系詞後</td><td>The building <em>for that</em> a fund was set aside. ✗</td><td>The building <strong>for which</strong> a fund was set aside. ✓</td></tr>
+<tr><td>所有格</td><td>不能說 <em>that's</em> 當關係代名詞所有格</td><td>改用 <strong>whose</strong></td></tr>
+</table>
+<div class="ask mt12"><p>The new building, for <code>______</code> a purchasing fund has been set aside, is modern. → 空格前有介系詞 for，而且有逗號 → that 能用嗎？</p><div class="al">答案</div><p class="ap">不能。介系詞後 + 有逗號，兩個限制都到了 → <strong>which</strong></p></div>
+<div class="corr mt12"><p>常見錯誤：看到事物就無條件選 that，完全忽略逗號和介系詞的提示。「有逗號就想 which」是最快的記憶方式。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule5">
+<div class="sh"><div class="sn">6</div><div class="st">Rule 5｜where / when / why：關係副詞</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>先行詞類型對應表</div><div class="bb">
+<table class="tbl">
+<tr><th>先行詞類型</th><th>關係副詞</th><th>可改寫成</th><th>例子</th></tr>
+<tr><td>地點（city / office / place）</td><td><code>where</code></td><td>in / at / on which</td><td>the city <strong>where</strong> Taipei 101 is located</td></tr>
+<tr><td>時間（day / year / time）</td><td><code>when</code></td><td>on / in / at which</td><td>the day <strong>when</strong> we hold our meeting</td></tr>
+<tr><td>理由（reason）</td><td><code>why</code></td><td>for which</td><td>the reason <strong>why</strong> the project was delayed</td></tr>
+</table>
+<div class="script mt12">where、when、why 前面通常要先有一個對應的名詞。看到 city / office / place，想 where；看到 day / year / time，想 when；看到 reason，想 why 或 that。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>關係副詞的特點：後面子句完整</div><div class="bb">
+<div class="es">1945 is the year <strong>when</strong> World War II ended. → when 後面：World War II ended（主詞+動詞都有，句子完整！）</div>
+<div class="es mt12">可改寫：1945 is the year <strong>in which</strong> World War II ended.</div>
+<div class="ask mt12"><p>1945 is the year <code>______</code> World War II ended. → 先行詞是 year（時間），後面 World War II ended 完整嗎？選哪個？</p><div class="al">答案</div><p class="ap">子句完整 + 時間先行詞 → <strong>when</strong>（不是 which，because which 後面子句要缺成分）</p></div>
+<div class="corr mt12"><p>學生常犯錯：前面是事物（year）就選 which。但 which 後面子句要缺主詞或受詞；when 後面子句完整。這是關係副詞 vs 關係代名詞的關鍵區別。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule6">
+<div class="sh"><div class="sn">7</div><div class="st">Rule 6｜how 的重要陷阱</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>the way how 是錯的</div><div class="bb">
+<div class="script">how 本身已經帶有「方式」的概念，所以不要同時說 the way how。</div>
+<div class="tp mt12"><div class="tw">the way how the system works</div><div class="tr">how the system works</div></div>
+<div class="tp"><div class="tw">the way how it is done</div><div class="tr">the way it is done</div></div>
+<div class="tip mt12"><p><strong>三種正確說法：</strong><br>① This is <strong>how</strong> the system works.<br>② This is <strong>the way</strong> the system works.<br>③ This is <strong>the way in which</strong> the system works.</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule7">
+<div class="sh"><div class="sn">8</div><div class="st">Rule 7｜what：本身包含先行詞</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>what = the thing that</div><div class="bb">
+<div class="formula">what = the thing that（不需要另外加先行詞）</div>
+<div class="es">What I need now is your advice. = The thing that I need now is your advice.</div>
+<div class="tip mt12"><p>what 整塊可以當主詞（What I need is advice.）或受詞（I know what you did.）</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>最重要陷阱</div><div class="bb">
+<div class="tp"><div class="tw">The thing what I need is advice.</div><div class="tr">What I need is advice.</div></div>
+<div class="tp"><div class="tw">The thing what she wants is clear.</div><div class="tr">The thing that she wants is clear.</div></div>
+<div class="script mt12">因為 what 本身已經包含「先行詞 + 關係代名詞」，所以前面不能再加 the thing。要麼用 what，要麼用 the thing that。</div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule8">
+<div class="sh"><div class="sn">9</div><div class="st">Rule 8｜that 名詞子句的三種位置</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>A. 當受詞（最常考）</div><div class="bb">
+<div class="formula">動詞 + that + 完整句子</div>
+<div class="es">The manager confirmed <strong>that the meeting had been canceled.</strong></div>
+<div class="tip mt12"><p><strong>TOEIC 常見動詞後接 that 子句：</strong><br>admit / announce / believe / confirm / conclude / estimate / indicate / know / report / say / think</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>B. 當主詞（較正式）</div><div class="bb">
+<div class="formula">That + 完整句子 + 單數動詞</div>
+<div class="es">That the company will cut costs <strong>is true.</strong> （主詞）</div>
+<div class="es mt12">→ 實際上更常用虛主詞：<strong>It</strong> is true <strong>that</strong> the company will cut costs.</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>C. 當補語</div><div class="bb">
+<div class="formula">主詞 + be + that + 完整句子</div>
+<div class="es">The problem is <strong>that the report is incomplete.</strong></div>
+<div class="es mt12">The reason for the delay is <strong>that the weather was terrible.</strong></div>
+<div class="ask mt12"><p>The company newsletter reports <code>______</code> the retiring CEO will stay on as a creative consultant. → 主句動詞是 reports，後面的句子完整嗎？需要什麼連接詞？</p><div class="al">答案</div><p class="ap">完整句，report + 受詞（what is reported）→ <strong>that</strong>（C）</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule9">
+<div class="sh"><div class="sn">10</div><div class="st">Rule 9｜The reason is that（不是 because）</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>最高頻 TOEIC 陷阱</div><div class="bb">
+<div class="script">看到 reason，先不要直接反射選 because。如果句型是「The reason is <code>______</code> S + V」，最安全答案通常是 that。</div>
+<div class="tp mt12"><div class="tw">The reason is because the weather was terrible.</div><div class="tr">The reason is that the weather was terrible.</div></div>
+<div class="formula mt12">The reason is that + 完整句子</div>
+<div class="tip mt12"><p><strong>為什麼不用 because？</strong>the reason 本身已經表示「原因」，because 也表示「因為（原因）」，放在一起概念重複。TOEIC 最安全的選擇是 that。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-rule10">
+<div class="sh"><div class="sn">11</div><div class="st">Rule 10｜whether / if：是否</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>基本用法</div><div class="bb">
+<div class="es">I do not know <strong>whether</strong> the meeting will be canceled. （我不知道會議是否取消）</div>
+<div class="es mt12">I do not know <strong>if</strong> the meeting will be canceled. （受詞子句中 whether / if 可互換）</div>
+<div class="tip mt12"><p><strong>三種情況 whether 優先（if 不用）：</strong><br>① 介系詞後：Please discuss <strong>whether</strong> to proceed.<br>② 當主詞：<strong>Whether</strong> the factory will close is undecided.<br>③ whether to V 固定句型：The manager discussed <strong>whether to postpone</strong> the meeting.</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-traps">
+<div class="sh"><div class="sn">12</div><div class="st">TOEIC 六大陷阱整理</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>六大陷阱速查</div><div class="bb">
+<div class="tp"><div class="tw">The woman who we met → 後面有主詞 we</div><div class="tr">The woman whom we met ✓（受格）</div></div>
+<div class="tp mt12"><div class="tw">The building, that was renovated...</div><div class="tr">The building, which was renovated... ✓（逗號後用 which）</div></div>
+<div class="tp mt12"><div class="tw">The project for that we prepared...</div><div class="tr">The project for which we prepared... ✓（介系詞後用 which）</div></div>
+<div class="tp mt12"><div class="tw">The reason is because the weather was bad.</div><div class="tr">The reason is that the weather was bad. ✓</div></div>
+<div class="tp mt12"><div class="tw">The thing what I need is time.</div><div class="tr">What I need is time. ✓（what 已包含先行詞）</div></div>
+<div class="tp mt12"><div class="tw">the way how the system works</div><div class="tr">how the system works / the way it works ✓</div></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-close">
+<div class="sh"><div class="sn">13</div><div class="st">收尾總結</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>收尾逐字稿</div><div class="bb">
+<div class="script">今天學了很多，但最重要的是那個判斷系統，我們再走一次。<br><br><strong>第一步：空格前有沒有名詞？</strong>有名詞 → 先考慮關係子句（who / which / that / where / when / whose）。<br><br><strong>第二步：空格後的子句完整嗎？</strong>不完整（缺主詞/受詞/所有格）→ 關係代名詞；完整 + 後面整塊是名詞 → 名詞子句（that / whether / who / which）。<br><br><strong>記住三個 that 的限制：</strong>有逗號、有介系詞前置、所有格位置 → 不能用 that，改 which / whom。<br><br><strong>記住兩個陷阱：</strong>the reason is that（不是 because）；what 不能前面再加 the thing。</div>
+<div class="goal2 mt12"><p><strong>本堂學生要帶走：</strong></p><ul>
+<li>先問：缺成分 → 關係子句；後面完整且整塊當名詞 → 名詞子句</li>
+<li>空格後先有動詞 → who；先有主詞 → whom；先有名詞 → whose</li>
+<li>有逗號或介系詞前置 → 不能用 that，用 which / whom</li>
+<li>時間先行詞（year/day）→ when；地點先行詞 → where；reason → why 或 that</li>
+<li>The reason is that（不是 because）</li>
+<li>what = the thing that，不要前面再加 the thing</li>
+</ul></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-part5">
+<div class="sh"><div class="sn">➋</div><div class="st">Part 5 練習題 1–11</div><div class="stm">⏱ 25–30 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>做題節奏</div><div class="bb">
+<div class="script">接下來進練習題。每題先問學生兩件事：<em>①空格前面有沒有名詞？②空格後面的句子完整嗎？</em>先問完再選，不要直接翻譯。</div>
+</div></div>
+</div>
+
+<div class="qb" id="q1">
+<div class="qh"><span class="qn">1</span><span class="qt">名詞子句</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Please make sure <span class="bl">______</span> the conference will start on time.</div>
+<div class="qzh">請確保會議會準時開始。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>how</div>
+<div class="qo ok"><span class="ol">B</span>that</div>
+<div class="qo"><span class="ol">C</span>why</div>
+<div class="qo"><span class="ol">D</span>for which</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>make sure 後面要接什麼？空格後面 the conference will start on time 完整嗎？</p><div class="al">答案</div><p class="ap">完整句子 → 名詞子句 → make sure that + S + V（B）</p></div>
+<div class="formula mt12">make sure that + S + V = 確保……</div>
+<div class="corr mt12"><p>A how：表示「如何」，句意不符；C why：表示「為什麼」，句意不通；D for which：需要可指涉的先行詞，本題前面沒有名詞可對應。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">make sure that</span><span class="vd">確保……</span>
+<span class="vw">conference</span><span class="vd">會議；研討會</span>
+<span class="vw">on time</span><span class="vd">準時</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q2">
+<div class="qh"><span class="qn">2</span><span class="qt">關係副詞</span></div>
+<div class="qbody">
+<div class="qsen">1945 is the year <span class="bl">______</span> World War II ended.</div>
+<div class="qzh">1945 年是第二次世界大戰結束的那一年。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>why</div>
+<div class="qo"><span class="ol">B</span>which</div>
+<div class="qo ok"><span class="ol">C</span>when</div>
+<div class="qo"><span class="ol">D</span>who</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>先行詞是什麼？year 是時間還是地點？空格後面 World War II ended 完整嗎？</p><div class="al">答案</div><p class="ap">先行詞 year = 時間；後面子句完整（主詞+動詞都有）→ 關係副詞 when（C）</p></div>
+<div class="corr mt12"><p>B which：which 後面的子句要缺主詞或受詞；這裡 World War II ended 已完整，缺的不是成分，而是「在哪一年」這個時間修飾，所以用 when。A why：修飾 reason，不修飾 year。D who：year 不是人。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">the year when</span><span class="vd">……的那一年</span>
+<span class="vw">World War II</span><span class="vd">第二次世界大戰</span>
+<span class="vw">come to an end</span><span class="vd">結束</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q3">
+<div class="qh"><span class="qn">3</span><span class="qt">名詞子句補語</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The reason for the long delays was <span class="bl">______</span> the weather condition was horrible.</div>
+<div class="qzh">長時間延誤的原因是天氣狀況非常糟糕。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>because</div>
+<div class="qo ok"><span class="ol">B</span>that</div>
+<div class="qo"><span class="ol">C</span>due to</div>
+<div class="qo"><span class="ol">D</span>since</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 reason，不要反射選 because。先找句子骨架：The reason was <code>______</code>。空格在做什麼角色？</p><div class="al">答案</div><p class="ap">補語（說明 reason 是什麼） → The reason is that + 完整句子（B）</p></div>
+<div class="formula mt12">The reason is that + S + V（標準 TOEIC 句型）</div>
+<div class="corr mt12"><p>A because：因為（引導原因副詞子句），但 reason 已是「原因」，和 because 重複；C due to：後接名詞，不接完整句；D since：引導副詞子句，不是用來說明 reason 內容的補語連接詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">the reason is that</span><span class="vd">原因是……</span>
+<span class="vw">weather condition</span><span class="vd">天氣狀況</span>
+<span class="vw">delay</span><span class="vd">延誤；延遲（名詞/動詞）</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q4">
+<div class="qh"><span class="qn">4</span><span class="qt">that 名詞子句</span></div>
+<div class="qbody">
+<div class="qsen">The company newsletter reports <span class="bl">______</span> the retiring CEO will stay on as a creative consultant.</div>
+<div class="qzh">公司電子報報導，即將退休的執行長將繼續擔任創意顧問。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>on</div>
+<div class="qo"><span class="ol">B</span>who</div>
+<div class="qo ok"><span class="ol">C</span>that</div>
+<div class="qo"><span class="ol">D</span>it</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主句動詞是 reports。後面 the retiring CEO will stay on... 完整嗎？reports 後面要接的是什麼？</p><div class="al">答案</div><p class="ap">完整句，reports 後接「報導的內容」→ report that + S + V（C）</p></div>
+<div class="corr mt12"><p>A on：report on + 名詞（不接完整句）；B who：用來修飾人，這裡不是在修飾某名詞；D it：代名詞，不能引導子句。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">retiring</span><span class="vd">即將退休的</span>
+<span class="vw">stay on as</span><span class="vd">留下繼續擔任……</span>
+<span class="vw">creative consultant</span><span class="vd">創意顧問</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q5">
+<div class="qh"><span class="qn">5</span><span class="qt">疑問詞名詞子句</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The supervisor needs to determine <span class="bl">______</span> in the division will be responsible for the survey.</div>
+<div class="qzh">主管需要決定部門裡誰將負責這份調查。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>who</div>
+<div class="qo"><span class="ol">B</span>where</div>
+<div class="qo"><span class="ol">C</span>how</div>
+<div class="qo"><span class="ol">D</span>why</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>determine 後面要接「要決定的事情」。空格後面 in the division will be responsible 有主詞嗎？缺的是什麼？</p><div class="al">答案</div><p class="ap">缺主詞（誰）→ who 當子句主詞，整塊 who...survey 是 determine 的受詞（A）</p></div>
+<div class="tip mt12"><p><strong>重要：</strong>這題的 who 不是關係代名詞，而是疑問詞名詞子句的引導詞，整塊 who ... survey 是受詞。疑問詞名詞子句中，who / what / which 可以直接當子句主詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">determine</span><span class="vd">決定；確定</span>
+<span class="vw">be responsible for</span><span class="vd">負責……</span>
+<span class="vw">survey</span><span class="vd">調查；問卷</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q6">
+<div class="qh"><span class="qn">6</span><span class="qt">which 名詞子句</span></div>
+<div class="qbody">
+<div class="qsen">The manager has not decided <span class="bl">______</span> of the two marketing strategies he should adopt.</div>
+<div class="qzh">經理尚未決定兩種行銷策略中他應該採用哪一種。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>what</div>
+<div class="qo"><span class="ol">B</span>that</div>
+<div class="qo ok"><span class="ol">C</span>which</div>
+<div class="qo"><span class="ol">D</span>who</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>注意關鍵字：of the two marketing strategies。範圍有限（兩種中選一），選哪一個用什麼字？</p><div class="al">答案</div><p class="ap">有限範圍中選哪一個 → which（C）。子句 he should adopt 缺受詞，which 是 adopt 的受詞。</p></div>
+<div class="corr mt12"><p>A what：表示「什麼」，範圍不特定；題目已限定只有兩種策略，which 更精確。B that：不表示選擇，也不能當子句受詞。D who：指人，不指 strategy。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">marketing strategy</span><span class="vd">行銷策略</span>
+<span class="vw">adopt</span><span class="vd">採用；採納</span>
+<span class="vw">which of the two</span><span class="vd">兩者中的哪一個</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q7">
+<div class="qh"><span class="qn">7</span><span class="qt">介系詞 + whom</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The executive assistant, to <span class="bl">______</span> you sent the forms, is on personal leave this afternoon.</div>
+<div class="qzh">你把表格寄給的那位行政助理，今天下午正在請私人事假。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>which</div>
+<div class="qo"><span class="ol">B</span>her</div>
+<div class="qo"><span class="ol">C</span>what</div>
+<div class="qo ok"><span class="ol">D</span>whom</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 to（介系詞）。先行詞是 executive assistant（人）。你後面 you sent the forms 有主詞有動詞，缺的是「寄給誰」→ ?</p><div class="al">答案</div><p class="ap">介系詞後 + 人作受詞 → whom（D）</p></div>
+<div class="formula mt12">介系詞 + whom（代人受格）　/　介系詞 + which（代事物）</div>
+<div class="corr mt12"><p>A which：指事物，不指 executive assistant（人）；B her：受格代名詞，不能引導關係子句；C what：不用來修飾前面的 assistant；另外本題有逗號，非限定子句，也不能用 that。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">executive assistant</span><span class="vd">行政助理；高階主管助理</span>
+<span class="vw">personal leave</span><span class="vd">私人事假</span>
+<span class="vw">send A to B</span><span class="vd">把 A 寄給 B</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q8">
+<div class="qh"><span class="qn">8</span><span class="qt">whose 所有格</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The engineer, <span class="bl">______</span> computer you will be using, has been transferred to the new branch office.</div>
+<div class="qzh">你將使用其電腦的那位工程師，已被調到新的分公司。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>who</div>
+<div class="qo ok"><span class="ol">B</span>whose</div>
+<div class="qo"><span class="ol">C</span>which</div>
+<div class="qo"><span class="ol">D</span>with a</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面第一個字是什麼？computer 是名詞，表示「工程師的電腦」，需要什麼詞性？</p><div class="al">答案</div><p class="ap">空格後接名詞 → 所有格關係代名詞 → whose（B）</p></div>
+<div class="formula mt12">whose + 名詞 = ……的（某物）</div>
+<div class="corr mt12"><p>A who：後面通常接動詞，不接名詞；C which：不表示所有格，不能說 which computer you will be using 代表「工程師的電腦」；D with a：結構不完整。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">engineer</span><span class="vd">工程師</span>
+<span class="vw">be transferred to</span><span class="vd">被調到……</span>
+<span class="vw">branch office</span><span class="vd">分公司；分辦事處</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q9">
+<div class="qh"><span class="qn">9</span><span class="qt">關係代名詞（主詞）</span></div>
+<div class="qbody">
+<div class="qsen">We went to the new restaurant <span class="bl">______</span> was advertised on the radio.</div>
+<div class="qzh">我們去了那家在廣播上被宣傳的新餐廳。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>it</div>
+<div class="qo"><span class="ol">B</span>who</div>
+<div class="qo"><span class="ol">C</span>where</div>
+<div class="qo ok"><span class="ol">D</span>which</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>先行詞是 the new restaurant（事物）。空格後 was advertised 有動詞，缺的是什麼？</p><div class="al">答案</div><p class="ap">缺主詞，先行詞是事物 → which（D）</p></div>
+<div class="corr mt12"><p>A it：一般代名詞，不能連接兩個子句；B who：指人，restaurant 不是人；C where：表地點，後面子句應完整，但這裡缺主詞（was advertised 缺主詞）；where 後面子句不缺成分，所以 C 錯。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">advertise</span><span class="vd">做廣告；宣傳</span>
+<span class="vw">on the radio</span><span class="vd">在廣播上</span>
+<span class="vw">be advertised</span><span class="vd">被宣傳（被動）</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q10">
+<div class="qh"><span class="qn">10</span><span class="qt">介系詞 + which（非限定）</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The new building, for <span class="bl">______</span> a purchasing fund has been set aside, is modern and spacious.</div>
+<div class="qzh">那棟已經撥出採購基金的新建築，既現代又寬敞。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>which</div>
+<div class="qo"><span class="ol">B</span>that</div>
+<div class="qo"><span class="ol">C</span>whom</div>
+<div class="qo"><span class="ol">D</span>this</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前是 for（介系詞）。先行詞是 the new building（事物）。有沒有逗號？這兩個條件各告訴我們什麼？</p><div class="al">答案</div><p class="ap">介系詞後不能用 that → 要用 which 或 whom；先行詞是事物 → which（A）</p></div>
+<div class="corr mt12"><p>B that：介系詞後不能直接接 that，有逗號也不能用 that；C whom：指人，building 不是人；D this：指示代名詞，不能引導關係子句。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">set aside</span><span class="vd">保留；撥出（資金）</span>
+<span class="vw">purchasing fund</span><span class="vd">採購基金</span>
+<span class="vw">spacious</span><span class="vd">寬敞的</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q11">
+<div class="qh"><span class="qn">11</span><span class="qt">非限定關係子句</span></div>
+<div class="qbody">
+<div class="qsen">Ms. Holloway, <span class="bl">______</span> has worked here for many years, has retired.</div>
+<div class="qzh">已經在這裡工作多年的 Holloway 女士退休了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>which</div>
+<div class="qo"><span class="ol">B</span>she</div>
+<div class="qo"><span class="ol">C</span>that</div>
+<div class="qo ok"><span class="ol">D</span>who</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>先行詞是 Ms. Holloway（人）。空格後 has worked 缺主詞。有逗號嗎？what does that mean？</p><div class="al">答案</div><p class="ap">人 + 缺主詞 → who；有逗號（非限定）→ 不能用 that → who（D）</p></div>
+<div class="tip mt12"><p><strong>雙重確認：</strong>①人 + 缺主詞 → who；②逗號後的非限定子句 → 不用 that。兩個條件都指向 who。</p></div>
+<div class="corr mt12"><p>A which：指事物；B she：一般代名詞，不能在逗號後引導關係子句；C that：非限定子句（有逗號）不用 that，這是最重要的規則。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">retire</span><span class="vd">退休</span>
+<span class="vw">for many years</span><span class="vd">多年來</span>
+<span class="vw">非限定關係子句</span><span class="vd">有逗號 → 不用 that</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="ls" id="s-summary">
+<div class="sh"><div class="sn">✓</div><div class="st">1–11 總整理</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>考點速查表</div><div class="bb">
+<table class="tbl">
+<tr><th>題號</th><th>答案</th><th>考點</th><th>學生要記住</th></tr>
+<tr><td>1</td><td>B that</td><td>名詞子句</td><td>make sure that + S + V 固定句型</td></tr>
+<tr><td>2</td><td>C when</td><td>關係副詞</td><td>時間先行詞 year → when（後面子句完整）</td></tr>
+<tr><td>3</td><td>B that</td><td>名詞子句補語</td><td>The reason is that（不是 because）</td></tr>
+<tr><td>4</td><td>C that</td><td>that 名詞子句</td><td>report / announce / confirm + that + S + V</td></tr>
+<tr><td>5</td><td>A who</td><td>疑問詞名詞子句</td><td>determine who（子句中缺主詞）</td></tr>
+<tr><td>6</td><td>C which</td><td>which 名詞子句</td><td>which of the two = 有限範圍選哪一個</td></tr>
+<tr><td>7</td><td>D whom</td><td>介系詞 + whom</td><td>介系詞後 + 人 → whom；有逗號不用 that</td></tr>
+<tr><td>8</td><td>B whose</td><td>所有格關係代名詞</td><td>空格後接名詞 → whose</td></tr>
+<tr><td>9</td><td>D which</td><td>事物 + 缺主詞</td><td>事物 + 缺主詞 → which</td></tr>
+<tr><td>10</td><td>A which</td><td>介系詞 + which</td><td>for which；介系詞後 + 有逗號 → 不能 that</td></tr>
+<tr><td>11</td><td>D who</td><td>非限定關係子句</td><td>人 + 缺主詞 + 有逗號 → who（不能 that）</td></tr>
+</table>
+<div class="goal2 mt16"><p><strong>下次複習建議：</strong>先考判斷系統口訣（缺成分→關係子句；後面完整→名詞子句），再考 6 個片語：make sure that / the reason is that / be responsible for / determine who / stay on as / set aside funds for。</p></div>
+</div></div>
+</div>
+
+</main>
+</div>
+<script>
+let sec=0,running=false,iv=null;
+function pad(n){return n.toString().padStart(2,'0')}
+function upd(){const m=Math.floor(sec/60),s=sec%60;document.getElementById('timer').textContent=pad(m)+':'+pad(s)}
+function toggleTimer(){
+  if(running){clearInterval(iv);running=false;document.querySelector('.tbtn').textContent='▶ 開始'}
+  else{iv=setInterval(()=>{sec++;upd()},1000);running=true;document.querySelector('.tbtn').textContent='⏸ 暫停'}
+}
+function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.querySelector('.tbtn').textContent='▶ 開始'}
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+const allSecs=[
+  {id:'s-overview',label:'課程總覽'},
+  {id:'s-open',label:'開場：判斷系統'},
+  {id:'s-rule1',label:'Rule1 關係子句vs名詞子句'},
+  {id:'s-rule2',label:'Rule2 who/whom'},
+  {id:'s-rule3',label:'Rule3 whose'},
+  {id:'s-rule4',label:'Rule4 which/that'},
+  {id:'s-rule5',label:'Rule5 where/when/why'},
+  {id:'s-rule6',label:'Rule6 how 陷阱'},
+  {id:'s-rule7',label:'Rule7 what'},
+  {id:'s-rule8',label:'Rule8 that 名詞子句'},
+  {id:'s-rule9',label:'Rule9 reason is that'},
+  {id:'s-rule10',label:'Rule10 whether/if'},
+  {id:'s-traps',label:'TOEIC 陷阱整理'},
+  {id:'s-close',label:'收尾總結'},
+  {id:'s-part5',label:'做題節奏'},
+  {id:'q1',label:'1'},{id:'q2',label:'2'},{id:'q3',label:'3'},
+  {id:'q4',label:'4'},{id:'q5',label:'5'},{id:'q6',label:'6'},
+  {id:'q7',label:'7'},{id:'q8',label:'8'},{id:'q9',label:'9'},
+  {id:'q10',label:'10'},{id:'q11',label:'11'},
+  {id:'s-summary',label:'總整理'},
+];
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      const s=allSecs.find(x=>x.id===id);
+      if(s){
+        document.querySelectorAll('.sbl').forEach(l=>l.classList.remove('active'));
+        const lk=document.querySelector('.sbl[onclick*="'+id+'"]');
+        if(lk)lk.classList.add('active');
+        document.getElementById('csec').textContent=s.label;
+      }
+    }
+  });
+},{threshold:0.2,rootMargin:'-60px 0px -65% 0px'});
+allSecs.forEach(s=>{const el=document.getElementById(s.id);if(el)obs.observe(el)});
+</script>
+</body>
+</html>

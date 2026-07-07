@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 06 上課投影版</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--amber:#F59E0B;--green:#059669;--green-lt:#D1FAE5;--green-dk:#064E3B;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--gray-400:#94A3B8}
+html,body{height:100%;overflow:hidden}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:white;display:flex;flex-direction:column}
+#topbar{height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.top-badge{background:var(--amber);color:var(--navy);font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;font-family:Inter,sans-serif;letter-spacing:.5px}
+.top-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.7);margin-left:12px}
+.top-right{display:flex;align-items:center;gap:16px}
+#progress-text{font-family:"JetBrains Mono",monospace;font-size:13px;color:rgba(255,255,255,.45)}
+.pbwrap{width:140px;height:4px;background:rgba(255,255,255,.1);border-radius:2px}
+#progress-bar{height:100%;background:var(--amber);border-radius:2px;transition:width .3s}
+#slide-area{flex:1;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:28px 40px 16px}
+.slide{width:100%;max-width:940px;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+#bottombar{height:64px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.07)}
+.nav-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:white;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.nav-btn:hover{background:rgba(255,255,255,.14)}
+.nav-btn:disabled{opacity:.25;cursor:default}
+.center-btns{display:flex;align-items:center;gap:10px;flex-direction:column}
+#slide-type-label{font-size:11px;color:rgba(255,255,255,.3);font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:1px}
+.action-row{display:flex;gap:8px}
+.action-btn{border:none;border-radius:10px;padding:9px 22px;font-size:14px;font-weight:800;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.action-btn.hidden{display:none}
+#reveal-btn{background:var(--amber);color:var(--navy)}
+#reveal-btn:hover{background:#FBBF24}
+#next-item-btn{background:rgba(14,165,233,.2);color:#38BDF8;border:1px solid rgba(14,165,233,.3)}
+#next-item-btn:hover{background:rgba(14,165,233,.3)}
+#ask-btn{background:rgba(245,158,11,.15);color:var(--amber);border:1px solid rgba(245,158,11,.25)}
+#ask-btn:hover{background:rgba(245,158,11,.25)}
+.zh-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.45);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.zh-btn.on{background:rgba(14,165,233,.15);border-color:rgba(14,165,233,.4);color:#38BDF8}
+.zh-hidden{display:none!important}
+.gram-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);margin-bottom:8px}
+.gram-title{font-size:28px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:5px}
+.gram-sub{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:20px}
+.g-question{font-size:19px;font-weight:700;background:rgba(245,158,11,.12);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:18px}
+.g-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.g-col{border-radius:12px;padding:16px}
+.green-col{background:rgba(5,150,105,.1);border:1.5px solid rgba(5,150,105,.25)}
+.red-col{background:rgba(220,38,38,.08);border:1.5px solid rgba(220,38,38,.18)}
+.g-col-title{font-weight:700;font-size:14px;margin-bottom:8px}
+.green-col .g-col-title{color:#34D399}
+.red-col .g-col-title{color:#FC8181}
+.g-col-body{font-size:13px;line-height:2;color:rgba(255,255,255,.75)}
+.g-col-body code{font-family:"JetBrains Mono",monospace;background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-size:12px}
+.g-highlight{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.18);border-radius:8px;padding:11px 15px;font-size:13px;color:rgba(255,255,255,.8);margin-bottom:12px}
+.g-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:14px}
+.g-table th,.g-table td{padding:9px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+.g-table th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.35);font-weight:700}
+.cell-em{font-family:"JetBrains Mono",monospace;color:var(--amber);font-weight:700;font-size:15px}
+.g-examples{display:flex;flex-direction:column;gap:7px;margin-top:12px}
+.g-ex{font-family:"JetBrains Mono",monospace;font-size:13px;color:#34D399;background:rgba(5,150,105,.1);padding:7px 12px;border-radius:6px}
+.g-ex-wrong{font-family:"JetBrains Mono",monospace;font-size:13px;color:#FC8181;background:rgba(220,38,38,.08);padding:7px 12px;border-radius:6px}
+.trap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.trap-item{background:rgba(255,255,255,.04);border-radius:10px;padding:12px}
+.tw{font-family:"JetBrains Mono",monospace;font-size:12px;color:#FC8181;background:rgba(220,38,38,.1);padding:5px 9px;border-radius:5px;margin-bottom:5px}
+.tw::before{content:"❌ "}
+.tr{font-family:"JetBrains Mono",monospace;font-size:12px;color:#34D399;background:rgba(5,150,105,.1);padding:5px 9px;border-radius:5px}
+.tr::before{content:"✅ "}
+#ask-panel{background:rgba(245,158,11,.08);border:1.5px solid rgba(245,158,11,.2);border-radius:12px;padding:16px 20px;margin-top:16px}
+.ask-progress{font-size:11px;color:rgba(255,255,255,.35);font-family:"JetBrains Mono",monospace;margin-bottom:10px}
+.ask-q{font-size:16px;font-weight:700;color:white;margin-bottom:10px}
+.ask-a{display:none;background:rgba(5,150,105,.15);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px;color:#34D399;font-weight:700}
+.ask-a.show{display:block}
+.multi-header{margin-bottom:18px}
+.multi-title{font-size:24px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:4px}
+.multi-instr{font-size:14px;color:rgba(255,255,255,.4)}
+.multi-progress{font-size:12px;color:var(--amber);font-family:"JetBrains Mono",monospace;margin-top:4px}
+.multi-items{display:flex;flex-direction:column;gap:10px}
+.multi-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:14px}
+.multi-item.revealed{border-color:rgba(5,150,105,.3);background:rgba(5,150,105,.06)}
+.item-num{font-family:"JetBrains Mono",monospace;font-size:12px;color:rgba(255,255,255,.3);width:22px;flex-shrink:0;padding-top:2px}
+.item-q{font-size:15px;font-weight:600;color:white;line-height:1.5}
+.item-a{font-size:13px;color:#34D399;margin-top:6px;display:none;padding-top:6px;border-top:1px solid rgba(5,150,105,.2)}
+.item-a.show{display:block}
+.item-note{font-size:12px;color:rgba(52,211,153,.7);margin-top:3px}
+.corr-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.corr-item.revealed{border-color:rgba(5,150,105,.25)}
+.corr-wrong{font-family:"JetBrains Mono",monospace;font-size:14px;color:#FC8181;background:rgba(220,38,38,.08);padding:7px 12px;border-radius:6px;margin-bottom:8px}
+.corr-wrong::before{content:"❌ "}
+.corr-right{font-family:"JetBrains Mono",monospace;font-size:14px;color:#34D399;background:rgba(5,150,105,.1);padding:7px 12px;border-radius:6px;display:none}
+.corr-right.show{display:block}
+.corr-right::before{content:"✅ "}
+.corr-reason{font-size:12px;color:rgba(255,255,255,.4);margin-top:6px;display:none}
+.corr-reason.show{display:block}
+.q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.q-num{font-family:Inter,sans-serif;font-size:13px;font-weight:800;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:6px}
+.q-type-tag{font-size:12px;font-weight:700;background:rgba(14,165,233,.15);color:var(--sky);padding:4px 12px;border-radius:6px}
+.q-star{font-size:12px;font-weight:700;background:rgba(245,158,11,.15);color:var(--amber);padding:4px 10px;border-radius:6px}
+.q-p6{font-size:12px;font-weight:700;background:rgba(124,58,237,.15);color:#A78BFA;padding:4px 10px;border-radius:6px}
+.q-sentence{font-size:17px;font-weight:500;line-height:1.9;background:rgba(255,255,255,.05);border-left:3px solid rgba(255,255,255,.2);border-radius:0 10px 10px 0;padding:13px 17px;margin-bottom:5px}
+.q-sentence u{text-decoration:none;background:rgba(245,158,11,.18);color:var(--amber);font-weight:700;padding:0 6px;border-radius:4px}
+.q-zh{font-size:12px;color:rgba(255,255,255,.3);margin-bottom:16px;padding-left:2px}
+.q-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:0}
+.q-opts.wide{grid-template-columns:1fr}
+.q-opt{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 15px;font-size:14px;transition:all .2s}
+.q-opt-lbl{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:Inter,sans-serif}
+.q-opt.correct{background:rgba(5,150,105,.16);border-color:var(--green)}
+.q-opt.correct .q-opt-lbl{background:var(--green);color:white}
+.q-opt.dimmed{opacity:.28}
+.key-reveal{display:none;background:rgba(245,158,11,.08);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:11px 17px;font-size:14px;color:rgba(255,255,255,.85);margin-top:12px}
+.key-reveal.show{display:block}
+.key-reveal strong{color:var(--amber)}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div style="display:flex;align-items:center">
+    <span class="top-badge">上課投影</span>
+    <span class="top-title">Lesson 06 · 關係子句 &amp; 名詞子句</span>
+  </div>
+  <div class="top-right">
+    <span id="progress-text">1 / 23</span>
+    <div class="pbwrap"><div id="progress-bar" style="width:4%"></div></div>
+  </div>
+</div>
+
+<div id="slide-area"><div class="slide" id="slide-content"></div></div>
+
+<div id="bottombar">
+  <button class="nav-btn" id="prev-btn" onclick="navigate(-1)" disabled>← 上一頁</button>
+  <div class="center-btns">
+    <span id="slide-type-label"></span>
+    <div class="action-row">
+      <button class="zh-btn" id="zh-btn" onclick="toggleZh()">中文 OFF</button>
+      <button class="action-btn hidden" id="ask-btn" onclick="nextAsk()">❓ 問學生</button>
+      <button class="action-btn hidden" id="next-item-btn" onclick="nextItem()">下一題 ▶</button>
+      <button class="action-btn hidden" id="reveal-btn" onclick="reveal()">揭曉答案 ▼</button>
+    </div>
+  </div>
+  <button class="nav-btn" id="next-btn" onclick="navigate(1)">下一頁 →</button>
+</div>
+
+<script>
+const SLIDES = [
+{type:'grammar',title:"關係子句 vs 名詞子句",subtitle:"最重要的判斷分界",content:"<div class='g-question'>空格前有沒有名詞？空格後子句完整嗎？</div><div class='g-cols'><div class='g-col green-col'><div class='g-col-title'>🔍 關係子句：修飾名詞</div><div class='g-col-body'>名詞 + 關係代名詞/副詞 + 子句<br>子句<b>缺成分</b>（主詞/受詞/所有格）<br><br><code>The employee who submitted...</code><br><code>The report which was approved</code></div></div><div class='g-col red-col'><div class='g-col-title'>📦 名詞子句：整塊當名詞</div><div class='g-col-body'>連接詞 + <b>完整句子</b><br>整塊當主詞、受詞或補語<br><br><code>I know that the meeting...</code><br><code>The reason is that...</code></div></div></div><div class='g-highlight'>判斷法：<b>缺成分 → 關係子句；後面完整 → 名詞子句</b></div>",ask:[["The restaurant ______ was advertised on the radio is popular.（空格後缺主詞，前面有名詞）", "關係子句 → which / that"],["I heard ______ Mr. Smith will be promoted.（後面 Mr. Smith will be promoted 完整）", "名詞子句 → that"],["The reason for the delay is ______ the weather was terrible.（完整句補充 reason）", "名詞子句 → that（不是 because）"]]},
+{type:'grammar',title:"who vs whom",subtitle:"先看空格後面有沒有主詞",content:"<div class='g-question'>空格後面第一個字是動詞，還是主詞？</div><table class='g-table'><tr><th>關係代名詞</th><th>功能</th><th>空格後面型態</th></tr><tr><td class='cell-em'>who</td><td>代人，當子句主詞</td><td>直接接動詞</td></tr><tr><td class='cell-em'>whom</td><td>代人，當子句受詞</td><td>有主詞＋動詞</td></tr></table><div class='g-highlight'>超快判斷：空格後先見<b>動詞 → who</b>；先見<b>主詞（we/I/she…） → whom</b></div><div class='g-examples'><div class='g-ex'>The manager who leads the team is on vacation.（who 後面 leads 是動詞）</div><div class='g-ex'>The client whom we met signed the contract.（whom 後面 we 是主詞）</div></div>",ask:[["The employee ______ submitted the report is absent.（空格後 submitted 是動詞）", "who（缺主詞，動詞前 → who）"],["The woman ______ we met yesterday is our new client.（空格後 we 是主詞）", "whom（後面有主詞 we → 缺受詞 → whom）"],["The client ______ the manager contacted accepted the offer.（後面有主詞 the manager）", "whom（the manager 是主詞，contacted 是動詞，whom 是受詞）"]]},
+{type:'grammar',title:"whose：所有格關係代名詞",subtitle:"後面一定接名詞",content:"<div class='g-question'>空格後面第一個字是名詞嗎？</div><div class='g-highlight'>空格後接<b>名詞</b>，表示「某人的某物」→ <b>whose</b></div><div class='g-examples'><div class='g-ex'>The engineer whose computer is being repaired is working from home.</div><div class='g-ex'>The company whose sales increased hired more workers.</div><div class='g-ex-wrong'>The engineer who computer... ✗（who 後要接動詞，不接名詞）</div></div><table class='g-table'><tr><th>字</th><th>後面接</th><th>例</th></tr><tr><td class='cell-em'>who</td><td>動詞</td><td>who submitted / who leads</td></tr><tr><td class='cell-em'>whose</td><td>名詞</td><td>whose computer / whose report</td></tr></table>",ask:[["The engineer, ______ computer you will be using, has been transferred.（空格後接名詞 computer）", "whose（空格後接名詞 → 所有格 → whose）"],["whose 和 who 的最快區別？", "who 後接動詞；whose 後接名詞（表所有格）"]]},
+{type:'grammar',title:"which / that：三種不能用 that 的情況",subtitle:"有逗號？有介系詞？",content:"<div class='g-question'>看到 that，先檢查這三個情況！</div><table class='g-table'><tr><th>情況</th><th>錯誤</th><th>正確</th></tr><tr><td>有逗號（非限定）</td><td style='color:#FC8181'>The office, that is on 3F, is large. ✗</td><td style='color:#34D399'>改用 which ✓</td></tr><tr><td>介系詞後</td><td style='color:#FC8181'>The building for that... ✗</td><td style='color:#34D399'>改用 for which ✓</td></tr><tr><td>所有格位置</td><td style='color:#FC8181'>that's computer ✗</td><td style='color:#34D399'>改用 whose ✓</td></tr></table><div class='g-highlight'>有逗號或介系詞前置 → 不能用 that，改 <b>which</b> 或 <b>whom</b></div>",ask:[["The new building, for ______ a purchasing fund has been set aside...（有逗號 + 介系詞 for）", "which（介系詞後 + 有逗號 → 不能用 that）"],["The office, ______ is on the third floor, is large.（有逗號）", "which（有逗號的非限定子句 → 不用 that）"]]},
+{type:'grammar',title:"where / when / why：關係副詞",subtitle:"先找先行詞類型，子句後面完整",content:"<div class='g-question'>先行詞是地點、時間還是理由？</div><table class='g-table'><tr><th>先行詞類型</th><th>關係副詞</th><th>可改寫成</th></tr><tr><td>地點（city / office）</td><td class='cell-em'>where</td><td>in / at which</td></tr><tr><td>時間（day / year）</td><td class='cell-em'>when</td><td>on / in which</td></tr><tr><td>理由（reason）</td><td class='cell-em'>why</td><td>for which</td></tr></table><div class='g-highlight'>關係副詞後面：子句<b>完整</b>（不缺成分）← 和關係代名詞的關鍵區別！</div><div class='g-examples'><div class='g-ex'>1945 is the year when World War II ended.（when 後：子句完整）</div><div class='g-ex'>This is the reason why the project was delayed.</div></div>",ask:[["1945 is the year ______ World War II ended.（先行詞 year = 時間，後面完整）", "when（時間先行詞 → when；後面子句完整）"],["This is the office ______ the training sessions are held.（先行詞 office = 地點）", "where（地點先行詞 → where）"],["This is the reason ______ the project was delayed.（先行詞 reason）", "why 或 that（reason 後可用 why 或 that）"]]},
+{type:'grammar',title:"how 與 what：特殊陷阱",subtitle:"不要重複先行詞",content:"<div class='g-question'>how 自帶「方式」；what 自帶先行詞</div><div class='g-cols'><div class='g-col red-col'><div class='g-col-title'>⚠️ how 陷阱</div><div class='g-col-body'><b>the way how</b> ✗（重複）<br><br>正確：<br><code>This is how it works. ✓</code><br><code>This is the way it works. ✓</code><br><code>This is the way in which it works. ✓</code></div></div><div class='g-col red-col'><div class='g-col-title'>⚠️ what 陷阱</div><div class='g-col-body'><b>The thing what</b> ✗（重複）<br><br>what = the thing that<br><br><code>What I need is time. ✓</code><br><code>The thing that I need is time. ✓</code></div></div></div><div class='g-highlight'>what 已包含先行詞，不要前面再加 the thing</div>",ask:[["This is the way ______ the system works.（how 後面能放嗎？）", "不能。the way how ✗ → 改 how the system works 或 the way the system works"],["The thing ______ she needs is support.（what 還是 that？）", "that（the thing that）或直接改成 What she needs is support."]]},
+{type:'grammar',title:"that 名詞子句",subtitle:"受詞、主詞、補語三種位置",content:"<div class='g-question'>that 引導的完整子句，在句中擔任什麼角色？</div><table class='g-table'><tr><th>位置</th><th>公式</th><th>例句</th></tr><tr><td>受詞</td><td>動詞 + that + 完整句</td><td>The manager confirmed <b>that</b> the meeting was canceled.</td></tr><tr><td>主詞</td><td>That + 完整句 + 動詞</td><td><b>That</b> the company will cut costs is true.</td></tr><tr><td>補語</td><td>be + that + 完整句</td><td>The problem is <b>that</b> the report is incomplete.</td></tr></table><div class='g-highlight'>TOEIC 常見：confirm / report / announce / believe / indicate + <b>that</b></div>",ask:[["The company newsletter reports ______ the retiring CEO will stay on.（reports 後接報導內容）", "that（report that + S + V）"],["The problem is ______ the report is incomplete.（be 動詞後補充說明）", "that（名詞子句補語）"]]},
+{type:'grammar',title:"The reason is that（不是 because）",subtitle:"TOEIC 最高頻陷阱",content:"<div class='g-question'>reason 後面用什麼？</div><div class='g-cols'><div class='g-col red-col'><div class='g-col-title'>❌ 常見錯誤</div><div class='g-col-body'>The reason is <b>because</b> the weather was terrible.<br><br>reason = 原因<br>because = 因為<br>→ 兩個都表示「原因」，概念重複！</div></div><div class='g-col green-col'><div class='g-col-title'>✅ TOEIC 標準句型</div><div class='g-col-body'>The reason is <b>that</b> the weather was terrible.<br><br>that = 引導名詞子句補語<br>→ 說明 reason 的內容</div></div></div><div class='g-highlight'>The reason is <b>that</b> + S + V（TOEIC 最安全答案）</div>",ask:[["The reason for the long delays was ______ the weather was horrible.（看到 reason + was + 空格）", "that（The reason is that + S + V，不是 because）"],["看到選項有 because 和 that，前面有 The reason is，選哪個？", "that（reason 已是「原因」，不重複 because）"]]},
+{type:'grammar',title:"whether / if：是否",subtitle:"三種情況 whether 優先",content:"<div class='g-question'>「是否」用 whether 還是 if？</div><div class='g-highlight'>受詞子句中 whether / if 可互換，但以下三種情況 <b>whether 優先</b>：</div><div class='g-examples'><div class='g-ex'>① 介系詞後：Please discuss whether to proceed. ✓（不用 if to V）</div><div class='g-ex'>② 當主詞：Whether the factory will close is undecided. ✓</div><div class='g-ex'>③ whether to V：The manager discussed whether to postpone. ✓</div><div class='g-ex'>④ 受詞子句（兩者皆可）：I do not know whether / if the meeting will be held. ✓</div></div>",ask:[["I do not know ______ the meeting will be canceled.（受詞子句）", "whether 或 if（受詞位置兩者皆可）"],["______ the factory will close is undecided.（主詞位置）", "Whether（主詞位置用 whether，不用 if）"]]},
+{type:'grammar',title:"TOEIC 六大陷阱快速對照",subtitle:"考前必看",content:"<div class='trap-grid'><div class='trap-item'><div class='tw'>The woman who we met</div><div class='tr'>The woman whom we met（後有主詞 we → 受格 whom）</div></div><div class='trap-item'><div class='tw'>The building, that was renovated...</div><div class='tr'>The building, which was renovated...（有逗號 → which）</div></div><div class='trap-item'><div class='tw'>The project for that...</div><div class='tr'>The project for which...（介系詞後 → which）</div></div><div class='trap-item'><div class='tw'>The reason is because...</div><div class='tr'>The reason is that...（reason + because 重複）</div></div><div class='trap-item'><div class='tw'>The thing what I need</div><div class='tr'>What I need（what = the thing that）</div></div><div class='trap-item'><div class='tw'>the way how it works</div><div class='tr'>how it works / the way it works</div></div></div>",ask:[]},
+{type:'multi',title:"Practice A：判斷關係代名詞",instruction:"分析空格前後，說出答案",items:[["The employee ______ submitted the report is absent.（空格後動詞 submitted，前面是人）", "who　人+缺主詞→ who"],["The woman ______ we met yesterday is our new client.（空格後 we 是主詞）", "whom　後有主詞 we，缺受詞 → whom"],["The office ______ the training session is held is on the 5th floor.（先行詞 office = 地點）", "where　地點先行詞 → where"],["The reason for the change is ______ the budget was reduced.（The reason is...）", "that　The reason is that + S + V，不是 because"],["I do not know ______ the proposal will be approved.（是否）", "whether　表示是否，受詞子句"]]},
+{type:'correction',title:"Practice B：改錯",instruction:"找出錯誤並說明原因",items:[["The building, that was renovated last year, is for sale.", "The building, which was renovated last year, is for sale.", "有逗號 → 非限定子句，不用 that"],["The project for that we prepared a budget was approved.", "The project for which we prepared a budget was approved.", "介系詞後不能直接接 that"],["The reason is because the weather was terrible.", "The reason is that the weather was terrible.", "reason 已表示原因，不重複 because"],["The thing what she needs is more time.", "What she needs is more time.", "what 已包含先行詞，不要前面再加 the thing"],["1945 is the year who the war ended.", "1945 is the year when the war ended.", "時間先行詞 year → 關係副詞 when"]]},
+{type:'question',num:1,qtype:"名詞子句",star:true,part6:false,sentence:"Please make sure <u>______</u> the conference will start on time.",zh:"請確保會議會準時開始。",options:["how","that","why","for which"],answer:1,key:"make sure that + S + V = 確保……（固定句型）"},
+{type:'question',num:2,qtype:"關係副詞",star:false,part6:false,sentence:"1945 is the year <u>______</u> World War II ended.",zh:"1945 年是第二次世界大戰結束的那一年。",options:["why","which","when","who"],answer:2,key:"時間先行詞 year → when；後面子句完整（World War II ended 無缺成分）"},
+{type:'question',num:3,qtype:"名詞子句補語",star:true,part6:false,sentence:"The reason for the long delays was <u>______</u> the weather condition was horrible.",zh:"長時間延誤的原因是天氣狀況非常糟糕。",options:["because","that","due to","since"],answer:1,key:"The reason is that + S + V（reason + because 重複，due to 接名詞不接句子）"},
+{type:'question',num:4,qtype:"that 名詞子句",star:false,part6:false,sentence:"The company newsletter reports <u>______</u> the retiring CEO will stay on as a creative consultant.",zh:"公司電子報報導，即將退休的執行長將繼續擔任創意顧問。",options:["on","who","that","it"],answer:2,key:"report that + S + V（陳述報導內容用 that；on 後接名詞；it 不能引導子句）"},
+{type:'question',num:5,qtype:"疑問詞子句",star:true,part6:false,sentence:"The supervisor needs to determine <u>______</u> in the division will be responsible for the survey.",zh:"主管需要決定部門裡誰將負責這份調查。",options:["who","where","how","why"],answer:0,key:"子句缺主詞（誰負責）→ who 當疑問詞名詞子句主詞"},
+{type:'question',num:6,qtype:"which 子句",star:false,part6:false,sentence:"The manager has not decided <u>______</u> of the two marketing strategies he should adopt.",zh:"經理尚未決定兩種行銷策略中他應該採用哪一種。",options:["what","that","which","who"],answer:2,key:"of the two = 有限範圍中選哪一個 → which；he should adopt 缺受詞"},
+{type:'question',num:7,qtype:"介系詞 + whom",star:true,part6:false,sentence:"The executive assistant, to <u>______</u> you sent the forms, is on personal leave this afternoon.",zh:"你把表格寄給的那位行政助理，今天下午正在請私人事假。",options:["which","her","what","whom"],answer:3,key:"介系詞後 + 人作受詞 → whom；有逗號也不能用 that"},
+{type:'question',num:8,qtype:"whose 所有格",star:true,part6:false,sentence:"The engineer, <u>______</u> computer you will be using, has been transferred to the new branch office.",zh:"你將使用其電腦的那位工程師，已被調到新的分公司。",options:["who","whose","which","with a"],answer:1,key:"空格後接名詞 computer → 所有格關係代名詞 whose"},
+{type:'question',num:9,qtype:"關係代名詞（主詞）",star:false,part6:false,sentence:"We went to the new restaurant <u>______</u> was advertised on the radio.",zh:"我們去了那家在廣播上被宣傳的新餐廳。",options:["it","who","where","which"],answer:3,key:"先行詞是事物 restaurant + 缺主詞 → which"},
+{type:'question',num:10,qtype:"介系詞 + which",star:true,part6:false,sentence:"The new building, for <u>______</u> a purchasing fund has been set aside, is modern and spacious.",zh:"那棟已經撥出採購基金的新建築，既現代又寬敞。",options:["which","that","whom","this"],answer:0,key:"介系詞後 + 有逗號 → 不能 that → which（代替事物 building）"},
+{type:'question',num:11,qtype:"非限定關係子句",star:false,part6:false,sentence:"Ms. Holloway, <u>______</u> has worked here for many years, has retired.",zh:"已經在這裡工作多年的 Holloway 女士退休了。",options:["which","she","that","who"],answer:3,key:"人 + 缺主詞 + 有逗號 → who（逗號後非限定子句不用 that）"}
+];
+
+const TOTAL = SLIDES.length;
+let current=0, revealed=false, zhVisible=false;
+let itemStep=0, askStep=0;
+
+function applyZh(){document.querySelectorAll('.zh-target').forEach(el=>el.classList.toggle('zh-hidden',!zhVisible))}
+function toggleZh(){zhVisible=!zhVisible;applyZh();const b=document.getElementById('zh-btn');b.textContent=zhVisible?'中文 ON':'中文 OFF';b.classList.toggle('on',zhVisible)}
+function showBtn(id,show){document.getElementById(id).classList.toggle('hidden',!show)}
+function setText(id,t){const el=document.getElementById(id);if(el)el.textContent=t}
+
+function render(){
+  const s=SLIDES[current];
+  revealed=false; itemStep=0; askStep=0;
+  document.getElementById('progress-text').textContent=(current+1)+' / '+TOTAL;
+  document.getElementById('progress-bar').style.width=Math.round((current+1)/TOTAL*100)+'%';
+  document.getElementById('prev-btn').disabled=current===0;
+  document.getElementById('next-btn').disabled=current===TOTAL-1;
+  const labels={grammar:'文法觀念',multi:'課堂練習',correction:'改錯練習',question:'練習題'};
+  setText('slide-type-label', labels[s.type]||'');
+  showBtn('reveal-btn', s.type==='question');
+  showBtn('next-item-btn', s.type==='multi'||s.type==='correction');
+  showBtn('ask-btn', s.type==='grammar' && s.ask && s.ask.length>0);
+  showBtn('zh-btn', s.type==='question');
+  const el=document.getElementById('slide-content');
+
+  if(s.type==='grammar'){
+    const hasAsk=s.ask&&s.ask.length>0;
+    el.innerHTML=`
+      <div class="gram-label">Lesson 06 · 關係子句 &amp; 名詞子句</div>
+      <div class="gram-title">${s.title}</div>
+      <div class="gram-sub">${s.subtitle}</div>
+      ${s.content}
+      ${hasAsk?`<div id="ask-panel" style="display:none">
+        <div class="ask-progress" id="ask-prog"></div>
+        <div class="ask-q" id="ask-q"></div>
+        <div class="ask-a" id="ask-a"></div>
+      </div>`:''}
+    `;
+    if(hasAsk) document.getElementById('ask-btn').textContent='❓ 問學生 ('+s.ask.length+')';
+  }
+  else if(s.type==='multi'){
+    const rows=s.items.map((it,i)=>`
+      <div class="multi-item" id="mi-${i}">
+        <span class="item-num">${i+1}</span>
+        <div><div class="item-q">${it[0]}</div><div class="item-a" id="ma-${i}">${it[1].split('\u3000')[0]}<span class="item-note"> — ${it[1].split('\u3000')[1]||''}</span></div></div>
+      </div>`).join('');
+    el.innerHTML=`
+      <div class="multi-header">
+        <div class="multi-title">${s.title}</div>
+        <div class="multi-instr">${s.instruction}</div>
+        <div class="multi-progress" id="multi-prog">0 / ${s.items.length} 已揭曉</div>
+      </div>
+      <div class="multi-items">${rows}</div>`;
+    document.getElementById('next-item-btn').textContent='揭曉 1/'+ s.items.length +' ▶';
+  }
+  else if(s.type==='correction'){
+    const rows=s.items.map((it,i)=>`
+      <div class="corr-item" id="ci-${i}">
+        <div class="corr-wrong">${it[0]}</div>
+        <div class="corr-right" id="cr-${i}">${it[1]}</div>
+        <div class="corr-reason" id="cn-${i}">${it[2]}</div>
+      </div>`).join('');
+    el.innerHTML=`
+      <div class="multi-header">
+        <div class="multi-title">${s.title}</div>
+        <div class="multi-instr">${s.instruction}</div>
+        <div class="multi-progress" id="multi-prog">0 / ${s.items.length} 已改正</div>
+      </div>
+      ${rows}`;
+    document.getElementById('next-item-btn').textContent='改正 1/'+s.items.length+' ▶';
+  }
+  else{
+    const wide=s.options.some(o=>o.length>28);
+    const opts=s.options.map((o,i)=>`<div class="q-opt" id="opt-${i}"><span class="q-opt-lbl">${String.fromCharCode(65+i)}</span>${o}</div>`).join('');
+    el.innerHTML=`
+      <div class="q-header">
+        <span class="q-num">${s.num}</span>
+        <span class="q-type-tag">${s.qtype}</span>
+        ${s.star?'<span class="q-star">⭐ 重點題</span>':''}
+        ${s.part6?'<span class="q-p6">Part 6</span>':''}
+      </div>
+      <div class="q-sentence">${s.sentence}</div>
+      <div class="q-zh zh-target">${s.zh}</div>
+      <div class="q-opts ${wide?'wide':''}">${opts}</div>
+      <div class="key-reveal" id="key-reveal">
+        <strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong>
+        &nbsp;—&nbsp; ${s.key}
+      </div>`;
+  }
+  setTimeout(applyZh,0);
+  resetRevealBtn();
+}
+
+function resetRevealBtn(){
+  const b=document.getElementById('reveal-btn');
+  b.textContent='揭曉答案 ▼';b.style.background='';b.style.color='';
+}
+
+function reveal(){
+  const s=SLIDES[current];
+  const b=document.getElementById('reveal-btn');
+  if(!revealed){
+    revealed=true;
+    s.options.forEach((_,i)=>{
+      const el=document.getElementById('opt-'+i);
+      if(i===s.answer) el.classList.add('correct');
+      else el.classList.add('dimmed');
+    });
+    document.getElementById('key-reveal').classList.add('show');
+    b.textContent='隱藏答案 ▲';b.style.background='rgba(5,150,105,.25)';b.style.color='#34D399';
+  } else {
+    revealed=false;
+    s.options.forEach((_,i)=>{
+      const el=document.getElementById('opt-'+i);
+      el.classList.remove('correct','dimmed');
+    });
+    document.getElementById('key-reveal').classList.remove('show');
+    resetRevealBtn();
+  }
+}
+
+function nextItem(){
+  const s=SLIDES[current];
+  const b=document.getElementById('next-item-btn');
+  if(s.type==='multi'){
+    if(itemStep<s.items.length){
+      document.getElementById('ma-'+itemStep).classList.add('show');
+      document.getElementById('mi-'+itemStep).classList.add('revealed');
+      itemStep++;
+      const prog=document.getElementById('multi-prog');
+      if(prog) prog.textContent=itemStep+' / '+s.items.length+' 已揭曉';
+      b.textContent=itemStep<s.items.length?'揭曉 '+(itemStep+1)+'/'+s.items.length+' ▶':'完成 ✓';
+      if(itemStep>=s.items.length){b.style.background='rgba(5,150,105,.2)';b.style.color='#34D399';}
+    }
+  } else if(s.type==='correction'){
+    if(itemStep<s.items.length){
+      document.getElementById('cr-'+itemStep).classList.add('show');
+      document.getElementById('cn-'+itemStep).classList.add('show');
+      document.getElementById('ci-'+itemStep).classList.add('revealed');
+      itemStep++;
+      const prog=document.getElementById('multi-prog');
+      if(prog) prog.textContent=itemStep+' / '+s.items.length+' 已改正';
+      b.textContent=itemStep<s.items.length?'改正 '+(itemStep+1)+'/'+s.items.length+' ▶':'完成 ✓';
+      if(itemStep>=s.items.length){b.style.background='rgba(5,150,105,.2)';b.style.color='#34D399';}
+    }
+  }
+}
+
+function nextAsk(){
+  const s=SLIDES[current];
+  const panel=document.getElementById('ask-panel');
+  const b=document.getElementById('ask-btn');
+  if(!panel) return;
+  if(askStep===0) panel.style.display='block';
+  if(askStep<s.ask.length){
+    const [q,a]=s.ask[askStep];
+    document.getElementById('ask-q').textContent=q;
+    document.getElementById('ask-a').textContent=a;
+    document.getElementById('ask-a').classList.remove('show');
+    document.getElementById('ask-prog').textContent='問題 '+(askStep+1)+' / '+s.ask.length;
+    const oldStep=askStep;
+    b.onclick=function(){
+      const aa=document.getElementById('ask-a');
+      if(!aa.classList.contains('show')){
+        aa.classList.add('show');
+        b.onclick=function(){askStep=oldStep+1;nextAsk()};
+      }
+    };
+    askStep++;
+  } else {
+    panel.style.display='none';
+    askStep=0;
+    b.textContent='❓ 問學生 ('+s.ask.length+')';
+    b.onclick=nextAsk;
+  }
+}
+
+function navigate(dir){
+  current=Math.max(0,Math.min(TOTAL-1,current+dir));
+  render();
+  document.getElementById('slide-area').scrollTop=0;
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();navigate(1)}
+  else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();navigate(-1)}
+  else if(e.key===' '||e.key==='Enter'){
+    e.preventDefault();
+    const s=SLIDES[current];
+    if(s.type==='question') reveal();
+    else if(s.type==='multi'||s.type==='correction') nextItem();
+    else if(s.type==='grammar'&&s.ask&&s.ask.length>0) document.getElementById('ask-btn').click();
+  }
+});
+
+render();
+</script>
+</body>
+</html>
