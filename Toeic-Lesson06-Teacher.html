@@ -43,7 +43,7 @@ body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:va
 .script{background:#0F172A;color:#E2E8F0;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.9;position:relative;margin:12px 0}
 .script::before{content:"📢 說";position:absolute;top:-10px;left:14px;background:var(--sky);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
 .script em{color:var(--amber);font-style:normal;font-weight:600}
-.script strong{color:white}.script code{background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px;color:#7DD3FC}
+.script strong{color:white}
 .ask{background:var(--amber-lt);border:1.5px solid #FDE68A;border-radius:8px;padding:14px 18px;margin:10px 0;position:relative}
 .ask::before{content:"❓ 問學生";position:absolute;top:-10px;left:14px;background:var(--amber);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
 .ask p{color:var(--amber-dk);font-weight:600;font-size:14px;margin-top:2px}
@@ -61,11 +61,6 @@ body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:va
 .goal2 ul{padding-left:18px;margin-top:6px}
 .formula{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:700;color:var(--navy);background:var(--gray-100);border-radius:8px;padding:12px 16px;border-left:3px solid var(--amber);margin:10px 0}
 .es{background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 14px;margin:6px 0;font-size:14px;font-weight:500}
-.tp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
-.tw{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--red);background:var(--red-lt);padding:6px 10px;border-radius:6px}
-.tw::before{content:"❌ "}
-.tr{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--green);background:var(--green-lt);padding:6px 10px;border-radius:6px}
-.tr::before{content:"✅ "}
 .qb{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:20px}
 .qh{display:flex;align-items:center;gap:10px;padding:12px 18px;background:var(--gray-100);border-bottom:1px solid var(--gray-200);flex-wrap:wrap}
 .qn{background:var(--navy);color:white;font-weight:700;font-size:12px;padding:3px 10px;border-radius:6px;font-family:"Inter",sans-serif}
@@ -73,7 +68,6 @@ body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:va
 .qs{background:var(--amber-lt);color:var(--amber-dk);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
 .qbody{padding:20px}
 .qsen{font-size:15px;font-weight:500;background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:6px;line-height:1.8}
-.qsen .bl{background:var(--amber-lt);color:var(--amber-dk);padding:0 6px;border-radius:4px;font-weight:700}
 .qzh{font-size:12px;color:var(--gray-400);margin-bottom:14px}
 .qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
 .qo{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;display:flex;align-items:center;gap:8px}
@@ -92,15 +86,19 @@ body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:va
 .tmtable th,.tmtable td{border:1px solid var(--gray-200);padding:10px 12px;text-align:left;vertical-align:top}
 .tmtable th{background:var(--navy);color:white;font-size:12px}
 .tmtable td:first-child{font-family:"JetBrains Mono",monospace;font-weight:700;background:var(--amber-lt);color:var(--amber-dk);white-space:nowrap}
-.dv{height:1px;background:var(--gray-200);margin:18px 0}
 .mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}
 code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:12px;color:var(--navy)}
+.p7box{background:#F8FAFC;border:1.5px solid #CBD5E1;border-radius:12px;padding:18px 22px;margin:14px 0;font-size:14px;line-height:1.85}
+.p7box h4{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:10px;letter-spacing:.3px;text-transform:uppercase}
+.p7box p{margin-bottom:10px}.p7box p:last-child{margin-bottom:0}
+.insmark{background:var(--purple-lt);color:var(--purple);font-weight:800;padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:12px}
+.qref{font-size:11px;color:var(--gray-400);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.doc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--sky);margin-bottom:6px}
 </style>
 </head>
 <body>
-
 <div id="topbar">
-  <div class="logo">🎓 <span>老師</span> Lesson 06 · 關係子句 &amp; 名詞子句</div>
+  <div class="logo">🎓 <span>老師</span> Lesson 06 · Part 7 閱讀（165–200）</div>
   <div class="ppill">現在：<span id="csec">課程總覽</span></div>
   <div class="timer-wrap">
     <span class="timer-label">上課時間</span>
@@ -110,36 +108,64 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
   </div>
 </div>
 <div id="layout">
+
 <nav id="sidebar">
   <div class="sbh">課程總覽</div>
   <a class="sbl active" onclick="goTo('s-overview')">課程定位 &amp; 流程</a>
-  <div class="sbh">文法理論</div>
-  <a class="sbl" onclick="goTo('s-open')">開場：判斷系統 <span class="t">5m</span></a>
-  <a class="sbl" onclick="goTo('s-rule1')">Rule 1 關係子句 vs 名詞子句 <span class="t">10m</span></a>
-  <a class="sbl" onclick="goTo('s-rule2')">Rule 2 who / whom <span class="t">10m</span></a>
-  <a class="sbl" onclick="goTo('s-rule3')">Rule 3 whose <span class="t">5m</span></a>
-  <a class="sbl" onclick="goTo('s-rule4')">Rule 4 which / that <span class="t">10m</span></a>
-  <a class="sbl" onclick="goTo('s-rule5')">Rule 5 where / when / why <span class="t">8m</span></a>
-  <a class="sbl" onclick="goTo('s-rule6')">Rule 6 how 陷阱 <span class="t">5m</span></a>
-  <a class="sbl" onclick="goTo('s-rule7')">Rule 7 what <span class="t">5m</span></a>
-  <a class="sbl" onclick="goTo('s-rule8')">Rule 8 that 名詞子句 <span class="t">10m</span></a>
-  <a class="sbl" onclick="goTo('s-rule9')">Rule 9 reason is that <span class="t">5m</span></a>
-  <a class="sbl" onclick="goTo('s-rule10')">Rule 10 whether / if <span class="t">5m</span></a>
-  <a class="sbl" onclick="goTo('s-traps')">TOEIC 陷阱整理 <span class="t">10m</span></a>
-  <a class="sbl" onclick="goTo('s-close')">收尾總結 <span class="t">5m</span></a>
-  <div class="sbh">Part 5 練習 · 1–11</div>
-  <a class="sbl" onclick="goTo('s-part5')">做題節奏提示</a>
-  <a class="sbl" onclick="goTo('q1')">1 make sure that ⭐</a>
-  <a class="sbl" onclick="goTo('q2')">2 year when</a>
-  <a class="sbl" onclick="goTo('q3')">3 reason that ⭐</a>
-  <a class="sbl" onclick="goTo('q4')">4 reports that</a>
-  <a class="sbl" onclick="goTo('q5')">5 determine who ⭐</a>
-  <a class="sbl" onclick="goTo('q6')">6 which of two</a>
-  <a class="sbl" onclick="goTo('q7')">7 to whom ⭐</a>
-  <a class="sbl" onclick="goTo('q8')">8 whose computer ⭐</a>
-  <a class="sbl" onclick="goTo('q9')">9 restaurant which</a>
-  <a class="sbl" onclick="goTo('q10')">10 for which ⭐</a>
-  <a class="sbl" onclick="goTo('q11')">11 非限定 who</a>
+  <div class="sbh">閱讀策略</div>
+  <a class="sbl" onclick="goTo('s-strategy')">雙篇 / 三篇解題策略 <span class="t">10m</span></a>
+  <div class="sbh">Part 7 · 165–167 推廣信</div>
+  <a class="sbl" onclick="goTo('p7-165-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q165')">165 文章類型</a>
+  <a class="sbl" onclick="goTo('q166')">166 NOT 題 ⭐</a>
+  <a class="sbl" onclick="goTo('q167')">167 predictive 同義</a>
+  <div class="sbh">Part 7 · 168–171 徵才廣告</div>
+  <a class="sbl" onclick="goTo('p7-168-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q168')">168 廣告目的</a>
+  <a class="sbl" onclick="goTo('q169')">169 職位要求</a>
+  <a class="sbl" onclick="goTo('q170')">170 NOT 職責 ⭐</a>
+  <a class="sbl" onclick="goTo('q171')">171 公司年齡</a>
+  <div class="sbh">Part 7 · 172–175 活動邀請</div>
+  <a class="sbl" onclick="goTo('p7-172-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q172')">172 vital 同義</a>
+  <a class="sbl" onclick="goTo('q173')">173 會議主旨</a>
+  <a class="sbl" onclick="goTo('q174')">174 早餐時長</a>
+  <a class="sbl" onclick="goTo('q175')">175 句子插入 ⭐</a>
+  <div class="sbh">Part 7 · 176–180 商展（雙篇）</div>
+  <a class="sbl" onclick="goTo('p7-176-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q176')">176 展覽地點</a>
+  <a class="sbl" onclick="goTo('q177')">177 預計人數</a>
+  <a class="sbl" onclick="goTo('q178')">178 設攤好處</a>
+  <a class="sbl" onclick="goTo('q179')">179 NOT 攤位內容 ⭐</a>
+  <a class="sbl" onclick="goTo('q180')">180 布展時間</a>
+  <div class="sbh">Part 7 · 181–185 MBA（雙篇）</div>
+  <a class="sbl" onclick="goTo('p7-181-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q181')">181 說明會目的</a>
+  <a class="sbl" onclick="goTo('q182')">182 emphasize 同義</a>
+  <a class="sbl" onclick="goTo('q183')">183 NOT 議題 ⭐</a>
+  <a class="sbl" onclick="goTo('q184')">184 寫信目的</a>
+  <a class="sbl" onclick="goTo('q185')">185 NOT 詢問 ⭐</a>
+  <div class="sbh">Part 7 · 186–190 求職（三篇）</div>
+  <a class="sbl" onclick="goTo('p7-186-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q186')">186 寫信目的</a>
+  <a class="sbl" onclick="goTo('q187')">187 職位查詢</a>
+  <a class="sbl" onclick="goTo('q188')">188 改期做法</a>
+  <a class="sbl" onclick="goTo('q189')">189 附件判斷 ⭐</a>
+  <a class="sbl" onclick="goTo('q190')">190 NOT 事實 ⭐</a>
+  <div class="sbh">Part 7 · 191–195 停車場（三篇）</div>
+  <a class="sbl" onclick="goTo('p7-191-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q191')">191 公司識別</a>
+  <a class="sbl" onclick="goTo('q192')">192 NOT 好處</a>
+  <a class="sbl" onclick="goTo('q193')">193 聯絡原因</a>
+  <a class="sbl" onclick="goTo('q194')">194 主要抱怨 ⭐</a>
+  <a class="sbl" onclick="goTo('q195')">195 後續行動 ⭐</a>
+  <div class="sbh">Part 7 · 196–200 廣播（三篇）</div>
+  <a class="sbl" onclick="goTo('p7-196-v')">文章先導</a>
+  <a class="sbl" onclick="goTo('q196')">196 Tiffany Cole</a>
+  <a class="sbl" onclick="goTo('q197')">197 節目配對 ⭐</a>
+  <a class="sbl" onclick="goTo('q198')">198 節目內容</a>
+  <a class="sbl" onclick="goTo('q199')">199 訊息目的</a>
+  <a class="sbl" onclick="goTo('q200')">200 主題配對 ⭐</a>
   <div class="sbh">收尾</div>
   <a class="sbl" onclick="goTo('s-summary')">總整理 &amp; 解答表</a>
 </nav>
@@ -148,558 +174,1207 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 <div class="ls" id="s-overview">
 <div class="sh"><div class="sn">0</div><div class="st">課程定位 &amp; 上課流程</div></div>
 <div class="block"><div class="bh gn"><span class="d"></span>本堂目標</div><div class="bb">
-<div class="goal2"><p>本堂主題：<strong>關係代名詞（who / whom / whose / which / that）、關係副詞（where / when / why）、名詞子句（that / whether / 疑問詞子句）</strong>。TOEIC Part 5 常把這十幾個字放在同一題選項裡，學生如果只靠中文翻譯，非常容易選錯。今天核心是建立一套判斷系統：<em>先看空格後面是缺東西的子句，還是完整句子。</em>這是關係子句和名詞子句最重要的分界。</p></div>
+<div class="goal2"><p>本堂完全聚焦 <strong>Part 7（165–200）</strong>：8 組文章、36 題。本堂新增的重點是<strong>雙篇與三篇交叉比對策略</strong>。雙篇（176–185）和三篇（186–200）不只要讀懂單一文章，還需要跨文章找答案——這是 TOEIC 最高難度的閱讀類型。</p></div>
 </div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>建議上課流程（共 ~90 分鐘）</div><div class="bb">
+<div class="block"><div class="bh dk"><span class="d"></span>⚠️ 份量提醒：建議拆 3 次上課</div><div class="bb">
+<div class="tip"><p><strong>8 組文章、36 題，包含 3 組雙篇 + 3 組三篇，份量非常大。</strong>建議拆法：<br>第一次：策略導論 + 165–175（3 組單篇，13 題）<br>第二次：176–185（2 組雙篇，10 題）<br>第三次：186–200（3 組三篇，15 題）</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>文章組合總覽</div><div class="bb">
 <table class="tmtable">
-<tr><th>時間</th><th>內容</th><th>重點提示</th></tr>
-<tr><td>0–5 min</td><td>開場：建立判斷系統</td><td>先讓學生知道「一個問題判斷所有題」</td></tr>
-<tr><td>5–40 min</td><td>Rule 1–5 關係子句系列</td><td>每條規則都要先問學生再公布</td></tr>
-<tr><td>40–55 min</td><td>Rule 6–10 名詞子句系列</td><td>重點在 that / whether；reason 陷阱一定要講</td></tr>
-<tr><td>55–65 min</td><td>TOEIC 陷阱整理 + 收尾</td><td>讓學生自己說出每個陷阱是什麼</td></tr>
-<tr><td>65–90 min</td><td>Part 5 練習題 1–11</td><td>每題先問「空格前有沒有名詞？後面完整嗎？」</td></tr>
+<tr><th>題號</th><th>文章類型</th><th>文件數</th><th>題數</th></tr>
+<tr><td>165–167</td><td>推廣信（New-IT 服務）</td><td>1 篇</td><td>3</td></tr>
+<tr><td>168–171</td><td>徵才廣告（雙語客服）</td><td>1 篇</td><td>4</td></tr>
+<tr><td>172–175</td><td>活動邀請（市長早餐系列）+ 句子插入</td><td>1 篇</td><td>4</td></tr>
+<tr><td>176–180</td><td>⬛ 雙篇：商展邀請函 + 展覽資訊</td><td>2 篇</td><td>5</td></tr>
+<tr><td>181–185</td><td>⬛ 雙篇：MBA 說明會邀請信 + 回覆信</td><td>2 篇</td><td>5</td></tr>
+<tr><td>186–190</td><td>⬛⬛ 三篇：面試邀請信 + 回覆信 + 履歷</td><td>3 篇</td><td>5</td></tr>
+<tr><td>191–195</td><td>⬛⬛ 三篇：停車場介紹 + 投訴表單 + 客服回覆</td><td>3 篇</td><td>5</td></tr>
+<tr><td>196–200</td><td>⬛⬛ 三篇：廣播節目表 + 節目介紹 + 聽眾回饋</td><td>3 篇</td><td>5</td></tr>
 </table>
-<div class="tip mt12"><p><strong>建議拆法：</strong>第一次教關係子句（Rule 1–5）+ 部分練習；第二次教名詞子句（Rule 6–10）+ 陷阱 + 剩餘練習題。</p></div>
 </div></div>
 </div>
-
-<div class="ls" id="s-open">
-<div class="sh"><div class="sn">1</div><div class="st">開場：建立判斷系統</div><div class="stm">⏱ 5 min</div></div>
+<div class="ls" id="s-strategy">
+<div class="sh"><div class="sn">1</div><div class="st">雙篇 / 三篇解題策略</div><div class="stm">⏱ 10 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>開場逐字稿</div><div class="bb">
-<div class="script">今天的主題看起來很多：who、whom、which、that、where、when、why、what、whether、how。<br><br>但是你不用一次背十個字。今天你只要先學會一個判斷系統。<br><br><em>每一題先問：空格後面是一個缺東西的子句，還是一個完整句子？</em><br><br>如果它缺主詞、受詞、所有格，通常是在考<strong>關係代名詞</strong>。<br>如果它本身已經完整，而整塊句子只是放進另一個句子裡當一件事，通常是在考<strong>名詞子句</strong>。</div>
-<div class="block" style="margin:0"><div class="bh am"><span class="d"></span>板書核心：兩步判斷法</div><div class="bb">
-<div class="formula">空格前有名詞 → 後面在修飾名詞 → 關係子句</div>
-<div class="formula mt12">動詞後 / be 後 + 完整句子 → 整塊當名詞 → 名詞子句</div>
+<div class="script">今天有一個新挑戰：從 176 題開始，一組題目會給你兩份或三份文件。這些叫做雙篇（double passage）和三篇（triple passage）。<br><br><em>它們不是要你把每份文件都讀完再做題，而是先掌握每份文件在講什麼、有哪些關鍵資訊，然後根據題目問的，快速回到正確的文件找答案。</em><br><br>有些題目只在第一份文件找得到答案；有些需要把兩份文件對照才能推出來。判斷哪一題需要哪份文件，是今天的核心技能。</div>
 </div></div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>引導練習（開場三題）</div><div class="bb">
-<div class="ask"><p>The employee <code>______</code> submitted the report is absent. → 空格後面第一個字是 submitted（動詞），誰 submitted？</p><div class="al">答案</div><p class="ap">缺主詞，前面是人 employee → <strong>who</strong></p></div>
-<div class="ask mt16"><p>I know <code>______</code> the employee submitted the report. → 空格後面：the employee submitted the report，主詞有了、動詞有了，完整嗎？</p><div class="al">答案</div><p class="ap">完整句子，整塊是 know 的受詞 → 名詞子句 → <strong>that</strong></p></div>
-<div class="ask mt16"><p>The reason for the delay is <code>______</code> the weather was terrible. → 空格後面完整，前面是 is，在補充 reason 的內容 → ?</p><div class="al">答案</div><p class="ap">名詞子句當補語 → <strong>that</strong>（不是 because！）</p></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-rule1">
-<div class="sh"><div class="sn">2</div><div class="st">Rule 1｜關係子句 vs 名詞子句</div><div class="stm">⏱ 10 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>A. 關係子句：修飾名詞</div><div class="bb">
-<div class="formula">名詞 + 關係代名詞／副詞 + 子句</div>
-<div class="es">The employee <strong>who submitted the report</strong> is absent today. → 修飾 employee（哪一位員工）</div>
-<div class="script mt12">空格前面有沒有一個名詞，需要後面的句子來補充說明「哪一個」？有的話，先考慮關係子句。</div>
-</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>B. 名詞子句：整塊當名詞</div><div class="bb">
-<div class="formula">連接詞 + 完整句子 → 整塊當主詞、受詞、補語</div>
-<div class="es">I know <strong>that the meeting has been canceled.</strong> → that 子句是 know 的受詞</div>
-<div class="es mt12">The problem is <strong>that the report is incomplete.</strong> → that 子句是補語</div>
-<div class="script mt12">不要先問中文是什麼。先問：這裡是「修飾名詞」，還是「當名詞」？</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>判斷流程練習</div><div class="bb">
-<div class="ask"><p>The restaurant <code>______</code> was advertised on the radio is popular. → 先看前面：the restaurant 是名詞嗎？空格後面缺主詞嗎？</p><div class="al">答案</div><p class="ap">前有名詞，缺主詞 → 關係子句 → <strong>which / that</strong></p></div>
-<div class="ask mt16"><p>I heard <code>______</code> Mr. Smith will be promoted. → 空格後面 Mr. Smith will be promoted 完整嗎？整塊在當受詞嗎？</p><div class="al">答案</div><p class="ap">完整句，整塊是受詞 → 名詞子句 → <strong>that</strong></p></div>
-<div class="tip mt12"><p><strong>最重要判斷法：</strong>空格後子句缺成分（主詞/受詞/所有格）→ 關係子句；空格後句子完整且整塊當名詞 → 名詞子句。</p></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-rule2">
-<div class="sh"><div class="sn">3</div><div class="st">Rule 2｜who vs whom：先看空格後有沒有主詞</div><div class="stm">⏱ 10 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
-<div class="script">看到 who 和 whom，不要先背誰是誰。直接看空格後面。<br><em>空格後面立刻出現動詞，缺主詞，用 who；空格後面已有主詞，缺的是受詞，用 whom。</em></div>
-<table class="tbl mt12">
-<tr><th>關係代名詞</th><th>功能</th><th>後面常見型態</th></tr>
-<tr><td><code>who</code></td><td>代替人，當子句主詞</td><td>後面直接接動詞</td></tr>
-<tr><td><code>whom</code></td><td>代替人，當子句受詞</td><td>後面通常有主詞＋動詞</td></tr>
-</table>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>例句分析</div><div class="bb">
-<div class="es">The manager <strong>who leads</strong> the sales team is on vacation. → who 後面直接接動詞 leads → <strong>who 是主詞</strong></div>
-<div class="es mt12">The client <strong>whom we met</strong> yesterday signed the contract. → whom 後面有主詞 we + 動詞 met → <strong>whom 是受詞</strong></div>
-<div class="ask mt12"><p>The woman <code>______</code> we met yesterday is our new client. → 空格後面有 we（主詞）→ 缺的是受詞，答案？</p><div class="al">答案</div><p class="ap">whom（受格）。woman 是人，且子句中 we 是主詞，met 是動詞，缺受詞。</p></div>
-<div class="tip mt12"><p><strong>快速判斷：</strong>空格後面先看第一個字。第一個字是動詞 → 缺主詞 → who；第一個字是主詞（we / I / the company / she 等）→ 缺受詞 → whom。</p></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-rule3">
-<div class="sh"><div class="sn">4</div><div class="st">Rule 3｜whose：所有格關係代名詞</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
-<div class="formula">人或事物 + whose + 名詞</div>
-<div class="es">The engineer <strong>whose computer</strong> is being repaired is working from home. → whose 後接名詞 computer</div>
-<div class="es mt12">The company <strong>whose sales</strong> increased hired more workers. → whose 後接名詞 sales</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>判斷技巧 + 陷阱</div><div class="bb">
-<div class="script">看到空格後面的第一個字是名詞，馬上考慮：這裡是不是在說「誰的某物」？如果是，答案很常是 <em>whose</em>。</div>
-<div class="ask mt12"><p>The engineer, <code>______</code> computer you will be using, has been transferred. → 空格後面第一個字是 computer（名詞），前面是人 engineer → 表示「工程師的電腦」 → ?</p><div class="al">答案</div><p class="ap">whose（所有格）。whose computer = 工程師的電腦。</p></div>
-<div class="tip mt12"><p><strong>記住：</strong>whose 後面一定要有名詞。who 後面常接動詞；whose 後面接名詞。空格後是名詞，先想 whose。</p></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-rule4">
-<div class="sh"><div class="sn">5</div><div class="st">Rule 4｜which / that：事物的關係代名詞</div><div class="stm">⏱ 10 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>which 和 that 的基本用法</div><div class="bb">
-<div class="es">The report <strong>which contains</strong> sales figures is confidential. → which 代替事物 report</div>
-<div class="es mt12">The proposal <strong>that we discussed</strong> was approved. → that 也可代替事物（限定用法）</div>
-<div class="tip mt12"><p><strong>that 的三個限制：TOEIC 必考！</strong></p></div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>三種不能用 that 的情況</div><div class="bb">
+<div class="block"><div class="bh am"><span class="d"></span>雙篇 / 三篇解題四步驟</div><div class="bb">
 <table class="tbl">
-<tr><th>情況</th><th>錯誤</th><th>正確</th></tr>
-<tr><td>有逗號（非限定）</td><td>The office, <em>that</em> is on the third floor, is large. ✗</td><td>The office, <strong>which</strong> is on the third floor, is large. ✓</td></tr>
-<tr><td>介系詞後</td><td>The building <em>for that</em> a fund was set aside. ✗</td><td>The building <strong>for which</strong> a fund was set aside. ✓</td></tr>
-<tr><td>所有格</td><td>不能說 <em>that's</em> 當關係代名詞所有格</td><td>改用 <strong>whose</strong></td></tr>
+<tr><th style="width:60px">步驟</th><th>做什麼</th><th>重點提醒</th></tr>
+<tr><td>Step 1</td><td>看每份文件的<strong>標題或類型</strong></td><td>先弄清楚每份是什麼：邀請信、規格表、履歷、投訴表等</td></tr>
+<tr><td>Step 2</td><td>快速抓出每份文件的<strong>核心資訊</strong></td><td>誰、什麼事、什麼時間、什麼地點、關鍵數字</td></tr>
+<tr><td>Step 3</td><td>看題目，判斷<strong>答案在哪份文件</strong></td><td>細節題通常在一份文件；推論題和 NOT 題常需跨文件</td></tr>
+<tr><td>Step 4</td><td>回原文找<strong>直接證據</strong></td><td>不要靠印象猜，一定要在文字中找到支撐答案的句子</td></tr>
 </table>
-<div class="ask mt12"><p>The new building, for <code>______</code> a purchasing fund has been set aside, is modern. → 空格前有介系詞 for，而且有逗號 → that 能用嗎？</p><div class="al">答案</div><p class="ap">不能。介系詞後 + 有逗號，兩個限制都到了 → <strong>which</strong></p></div>
-<div class="corr mt12"><p>常見錯誤：看到事物就無條件選 that，完全忽略逗號和介系詞的提示。「有逗號就想 which」是最快的記憶方式。</p></div>
+<div class="tip mt12"><p><strong>常見跨文件題型：</strong>第一份文件要求某件事（附上 A），第二份文件確認做到了（我有附上 A）。這種配對需要同時讀兩份文件才能驗證。</p></div>
 </div></div>
 </div>
-
-<div class="ls" id="s-rule5">
-<div class="sh"><div class="sn">6</div><div class="st">Rule 5｜where / when / why：關係副詞</div><div class="stm">⏱ 8 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>先行詞類型對應表</div><div class="bb">
-<table class="tbl">
-<tr><th>先行詞類型</th><th>關係副詞</th><th>可改寫成</th><th>例子</th></tr>
-<tr><td>地點（city / office / place）</td><td><code>where</code></td><td>in / at / on which</td><td>the city <strong>where</strong> Taipei 101 is located</td></tr>
-<tr><td>時間（day / year / time）</td><td><code>when</code></td><td>on / in / at which</td><td>the day <strong>when</strong> we hold our meeting</td></tr>
-<tr><td>理由（reason）</td><td><code>why</code></td><td>for which</td><td>the reason <strong>why</strong> the project was delayed</td></tr>
-</table>
-<div class="script mt12">where、when、why 前面通常要先有一個對應的名詞。看到 city / office / place，想 where；看到 day / year / time，想 when；看到 reason，想 why 或 that。</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>關係副詞的特點：後面子句完整</div><div class="bb">
-<div class="es">1945 is the year <strong>when</strong> World War II ended. → when 後面：World War II ended（主詞+動詞都有，句子完整！）</div>
-<div class="es mt12">可改寫：1945 is the year <strong>in which</strong> World War II ended.</div>
-<div class="ask mt12"><p>1945 is the year <code>______</code> World War II ended. → 先行詞是 year（時間），後面 World War II ended 完整嗎？選哪個？</p><div class="al">答案</div><p class="ap">子句完整 + 時間先行詞 → <strong>when</strong>（不是 which，because which 後面子句要缺成分）</p></div>
-<div class="corr mt12"><p>學生常犯錯：前面是事物（year）就選 which。但 which 後面子句要缺主詞或受詞；when 後面子句完整。這是關係副詞 vs 關係代名詞的關鍵區別。</p></div>
+<div class="ls" id="p7-165-v">
+<div class="sh"><div class="sn">A</div><div class="st">Part 7 · 165–167 推廣信（New-IT）</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章先導</div><div class="bb">
+<div class="p7box"><h4>文章類型：商業服務推廣信 / 銷售信</h4>
+<p>New-IT 公司寄給潛在客戶的推廣信。針對那些希望在不犧牲創新的前提下降低 IT 預算的企業，推廣兩項服務：<strong>Budget Control（BC）</strong> 和 <strong>Project Management（PM）</strong>。</p>
+<p>文章以紐約州政府為成功案例，引用其 Enterprise Governance Director 的評語說明系統成效：「提供治理架構、流程紀律、最佳實務與預測分析，以降低風險並提升專案成功率。」</p>
+<p>最後附上 Mitch Weinzimmer 的聯絡方式與公司網站。</p></div>
+<div class="qzh" style="margin-top:8px">中文大意：New-IT 推廣 Budget Control 和 Project Management，以紐約州政府為成功案例。</div>
+<div class="tip mt12"><p>關鍵片語：cut costs / be innovative / Budget Control / Project Management / reduce risk / predictive analysis</p></div>
 </div></div>
 </div>
-
-<div class="ls" id="s-rule6">
-<div class="sh"><div class="sn">7</div><div class="st">Rule 6｜how 的重要陷阱</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>the way how 是錯的</div><div class="bb">
-<div class="script">how 本身已經帶有「方式」的概念，所以不要同時說 the way how。</div>
-<div class="tp mt12"><div class="tw">the way how the system works</div><div class="tr">how the system works</div></div>
-<div class="tp"><div class="tw">the way how it is done</div><div class="tr">the way it is done</div></div>
-<div class="tip mt12"><p><strong>三種正確說法：</strong><br>① This is <strong>how</strong> the system works.<br>② This is <strong>the way</strong> the system works.<br>③ This is <strong>the way in which</strong> the system works.</p></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-rule7">
-<div class="sh"><div class="sn">8</div><div class="st">Rule 7｜what：本身包含先行詞</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>what = the thing that</div><div class="bb">
-<div class="formula">what = the thing that（不需要另外加先行詞）</div>
-<div class="es">What I need now is your advice. = The thing that I need now is your advice.</div>
-<div class="tip mt12"><p>what 整塊可以當主詞（What I need is advice.）或受詞（I know what you did.）</p></div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>最重要陷阱</div><div class="bb">
-<div class="tp"><div class="tw">The thing what I need is advice.</div><div class="tr">What I need is advice.</div></div>
-<div class="tp"><div class="tw">The thing what she wants is clear.</div><div class="tr">The thing that she wants is clear.</div></div>
-<div class="script mt12">因為 what 本身已經包含「先行詞 + 關係代名詞」，所以前面不能再加 the thing。要麼用 what，要麼用 the thing that。</div>
-</div></div>
-</div>
-
-<div class="ls" id="s-rule8">
-<div class="sh"><div class="sn">9</div><div class="st">Rule 8｜that 名詞子句的三種位置</div><div class="stm">⏱ 10 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>A. 當受詞（最常考）</div><div class="bb">
-<div class="formula">動詞 + that + 完整句子</div>
-<div class="es">The manager confirmed <strong>that the meeting had been canceled.</strong></div>
-<div class="tip mt12"><p><strong>TOEIC 常見動詞後接 that 子句：</strong><br>admit / announce / believe / confirm / conclude / estimate / indicate / know / report / say / think</p></div>
-</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>B. 當主詞（較正式）</div><div class="bb">
-<div class="formula">That + 完整句子 + 單數動詞</div>
-<div class="es">That the company will cut costs <strong>is true.</strong> （主詞）</div>
-<div class="es mt12">→ 實際上更常用虛主詞：<strong>It</strong> is true <strong>that</strong> the company will cut costs.</div>
-</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>C. 當補語</div><div class="bb">
-<div class="formula">主詞 + be + that + 完整句子</div>
-<div class="es">The problem is <strong>that the report is incomplete.</strong></div>
-<div class="es mt12">The reason for the delay is <strong>that the weather was terrible.</strong></div>
-<div class="ask mt12"><p>The company newsletter reports <code>______</code> the retiring CEO will stay on as a creative consultant. → 主句動詞是 reports，後面的句子完整嗎？需要什麼連接詞？</p><div class="al">答案</div><p class="ap">完整句，report + 受詞（what is reported）→ <strong>that</strong>（C）</p></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-rule9">
-<div class="sh"><div class="sn">10</div><div class="st">Rule 9｜The reason is that（不是 because）</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>最高頻 TOEIC 陷阱</div><div class="bb">
-<div class="script">看到 reason，先不要直接反射選 because。如果句型是「The reason is <code>______</code> S + V」，最安全答案通常是 that。</div>
-<div class="tp mt12"><div class="tw">The reason is because the weather was terrible.</div><div class="tr">The reason is that the weather was terrible.</div></div>
-<div class="formula mt12">The reason is that + 完整句子</div>
-<div class="tip mt12"><p><strong>為什麼不用 because？</strong>the reason 本身已經表示「原因」，because 也表示「因為（原因）」，放在一起概念重複。TOEIC 最安全的選擇是 that。</p></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-rule10">
-<div class="sh"><div class="sn">11</div><div class="st">Rule 10｜whether / if：是否</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>基本用法</div><div class="bb">
-<div class="es">I do not know <strong>whether</strong> the meeting will be canceled. （我不知道會議是否取消）</div>
-<div class="es mt12">I do not know <strong>if</strong> the meeting will be canceled. （受詞子句中 whether / if 可互換）</div>
-<div class="tip mt12"><p><strong>三種情況 whether 優先（if 不用）：</strong><br>① 介系詞後：Please discuss <strong>whether</strong> to proceed.<br>② 當主詞：<strong>Whether</strong> the factory will close is undecided.<br>③ whether to V 固定句型：The manager discussed <strong>whether to postpone</strong> the meeting.</p></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-traps">
-<div class="sh"><div class="sn">12</div><div class="st">TOEIC 六大陷阱整理</div><div class="stm">⏱ 10 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>六大陷阱速查</div><div class="bb">
-<div class="tp"><div class="tw">The woman who we met → 後面有主詞 we</div><div class="tr">The woman whom we met ✓（受格）</div></div>
-<div class="tp mt12"><div class="tw">The building, that was renovated...</div><div class="tr">The building, which was renovated... ✓（逗號後用 which）</div></div>
-<div class="tp mt12"><div class="tw">The project for that we prepared...</div><div class="tr">The project for which we prepared... ✓（介系詞後用 which）</div></div>
-<div class="tp mt12"><div class="tw">The reason is because the weather was bad.</div><div class="tr">The reason is that the weather was bad. ✓</div></div>
-<div class="tp mt12"><div class="tw">The thing what I need is time.</div><div class="tr">What I need is time. ✓（what 已包含先行詞）</div></div>
-<div class="tp mt12"><div class="tw">the way how the system works</div><div class="tr">how the system works / the way it works ✓</div></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-close">
-<div class="sh"><div class="sn">13</div><div class="st">收尾總結</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>收尾逐字稿</div><div class="bb">
-<div class="script">今天學了很多，但最重要的是那個判斷系統，我們再走一次。<br><br><strong>第一步：空格前有沒有名詞？</strong>有名詞 → 先考慮關係子句（who / which / that / where / when / whose）。<br><br><strong>第二步：空格後的子句完整嗎？</strong>不完整（缺主詞/受詞/所有格）→ 關係代名詞；完整 + 後面整塊是名詞 → 名詞子句（that / whether / who / which）。<br><br><strong>記住三個 that 的限制：</strong>有逗號、有介系詞前置、所有格位置 → 不能用 that，改 which / whom。<br><br><strong>記住兩個陷阱：</strong>the reason is that（不是 because）；what 不能前面再加 the thing。</div>
-<div class="goal2 mt12"><p><strong>本堂學生要帶走：</strong></p><ul>
-<li>先問：缺成分 → 關係子句；後面完整且整塊當名詞 → 名詞子句</li>
-<li>空格後先有動詞 → who；先有主詞 → whom；先有名詞 → whose</li>
-<li>有逗號或介系詞前置 → 不能用 that，用 which / whom</li>
-<li>時間先行詞（year/day）→ when；地點先行詞 → where；reason → why 或 that</li>
-<li>The reason is that（不是 because）</li>
-<li>what = the thing that，不要前面再加 the thing</li>
-</ul></div>
-</div></div>
-</div>
-
-<div class="ls" id="s-part5">
-<div class="sh"><div class="sn">➋</div><div class="st">Part 5 練習題 1–11</div><div class="stm">⏱ 25–30 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>做題節奏</div><div class="bb">
-<div class="script">接下來進練習題。每題先問學生兩件事：<em>①空格前面有沒有名詞？②空格後面的句子完整嗎？</em>先問完再選，不要直接翻譯。</div>
-</div></div>
-</div>
-
-<div class="qb" id="q1">
-<div class="qh"><span class="qn">1</span><span class="qt">名詞子句</span><span class="qs">⭐ 重點題</span></div>
+<div class="qb" id="q165">
+<div class="qh"><span class="qn">165</span><span class="qt">文章類型</span></div>
 <div class="qbody">
-<div class="qsen">Please make sure <span class="bl">______</span> the conference will start on time.</div>
-<div class="qzh">請確保會議會準時開始。</div>
+<div class="qsen">What type of letter is this?</div>
+<div class="qzh">這是一封什麼類型的信？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>how</div>
-<div class="qo ok"><span class="ol">B</span>that</div>
-<div class="qo"><span class="ol">C</span>why</div>
-<div class="qo"><span class="ol">D</span>for which</div>
+<div class="qo "><span class="ol">A</span>A request letter</div>
+<div class="qo ok"><span class="ol">B</span>A sales letter</div>
+<div class="qo "><span class="ol">C</span>A reference letter</div>
+<div class="qo "><span class="ol">D</span>A resignation letter</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>make sure 後面要接什麼？空格後面 the conference will start on time 完整嗎？</p><div class="al">答案</div><p class="ap">完整句子 → 名詞子句 → make sure that + S + V（B）</p></div>
-<div class="formula mt12">make sure that + S + V = 確保……</div>
-<div class="corr mt12"><p>A how：表示「如何」，句意不符；C why：表示「為什麼」，句意不通；D for which：需要可指涉的先行詞，本題前面沒有名詞可對應。</p></div>
+<div class="ask"><p>這封信一直用問題吸引讀者（Do you want to cut costs?），然後介紹 solution，最後叫人 Learn more。這是哪種信？</p><div class="al">答案</div><p class="ap">推廣服務、吸引潛在客戶 → sales letter（B）</p></div>
+<div class="corr mt12"><p>A request letter（請求信）：向對方請求某件事；C reference letter（推薦信）：介紹某人能力；D resignation letter（辭職信）：文章沒有 resign / leave 等字。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">make sure that</span><span class="vd">確保……</span>
-<span class="vw">conference</span><span class="vd">會議；研討會</span>
-<span class="vw">on time</span><span class="vd">準時</span>
+<span class="vw">sales letter</span><span class="vd">銷售信；推廣信</span>
+<span class="vw">innovative</span><span class="vd">創新的</span>
+<span class="vw">cut costs</span><span class="vd">降低成本</span>
+<span class="vw">solution</span><span class="vd">解決方案</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q2">
-<div class="qh"><span class="qn">2</span><span class="qt">關係副詞</span></div>
+<div class="qb" id="q166">
+<div class="qh"><span class="qn">166</span><span class="qt">NOT 題</span><span class="qs">⭐ 重點題</span></div>
 <div class="qbody">
-<div class="qsen">1945 is the year <span class="bl">______</span> World War II ended.</div>
-<div class="qzh">1945 年是第二次世界大戰結束的那一年。</div>
+<div class="qsen">What is NOT mentioned in the article about the New-IT company?</div>
+<div class="qzh">關於 New-IT 公司，下列哪一項沒有在文章中提到？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>why</div>
-<div class="qo"><span class="ol">B</span>which</div>
-<div class="qo ok"><span class="ol">C</span>when</div>
-<div class="qo"><span class="ol">D</span>who</div>
+<div class="qo "><span class="ol">A</span>It assists clients with budgeting.</div>
+<div class="qo "><span class="ol">B</span>It provides project management solutions.</div>
+<div class="qo "><span class="ol">C</span>The New York state government is one of its successful cases.</div>
+<div class="qo ok"><span class="ol">D</span>It is going to celebrate its 12th anniversary.</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>先行詞是什麼？year 是時間還是地點？空格後面 World War II ended 完整嗎？</p><div class="al">答案</div><p class="ap">先行詞 year = 時間；後面子句完整（主詞+動詞都有）→ 關係副詞 when（C）</p></div>
-<div class="corr mt12"><p>B which：which 後面的子句要缺主詞或受詞；這裡 World War II ended 已完整，缺的不是成分，而是「在哪一年」這個時間修飾，所以用 when。A why：修飾 reason，不修飾 year。D who：year 不是人。</p></div>
+<div class="ask"><p>NOT 題 → 逐一回文章核對四個選項。哪一個完全找不到證據？</p><div class="al">答案</div><p class="ap">D：12th anniversary — 文章完全沒有周年或成立年份資訊。A 有 Budget Control；B 有 Project Management；C 有 state of New York。答案 D。</p></div>
+<div class="corr mt12"><p>三個干擾選項都在文章中明確出現。只有 D 的 12th anniversary 完全找不到任何線索，不要被 New-IT 這個名字誤導以為有「12」。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">the year when</span><span class="vd">……的那一年</span>
-<span class="vw">World War II</span><span class="vd">第二次世界大戰</span>
-<span class="vw">come to an end</span><span class="vd">結束</span>
+<span class="vw">anniversary</span><span class="vd">周年紀念</span>
+<span class="vw">assist</span><span class="vd">協助</span>
+<span class="vw">budgeting</span><span class="vd">預算規劃</span>
+<span class="vw">NOT 題做法</span><span class="vd">逐項回文章畫證據</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q3">
-<div class="qh"><span class="qn">3</span><span class="qt">名詞子句補語</span><span class="qs">⭐ 重點題</span></div>
+<div class="qb" id="q167">
+<div class="qh"><span class="qn">167</span><span class="qt">單字同義</span></div>
 <div class="qbody">
-<div class="qsen">The reason for the long delays was <span class="bl">______</span> the weather condition was horrible.</div>
-<div class="qzh">長時間延誤的原因是天氣狀況非常糟糕。</div>
+<div class="qsen">The word "predictive" in paragraph 2 is closest in meaning to</div>
+<div class="qzh">第二段的 predictive 最接近哪一個意思？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>because</div>
-<div class="qo ok"><span class="ol">B</span>that</div>
-<div class="qo"><span class="ol">C</span>due to</div>
-<div class="qo"><span class="ol">D</span>since</div>
+<div class="qo "><span class="ol">A</span>complicated</div>
+<div class="qo ok"><span class="ol">B</span>foreboding</div>
+<div class="qo "><span class="ol">C</span>complete</div>
+<div class="qo "><span class="ol">D</span>practical</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>看到 reason，不要反射選 because。先找句子骨架：The reason was <code>______</code>。空格在做什麼角色？</p><div class="al">答案</div><p class="ap">補語（說明 reason 是什麼） → The reason is that + 完整句子（B）</p></div>
-<div class="formula mt12">The reason is that + S + V（標準 TOEIC 句型）</div>
-<div class="corr mt12"><p>A because：因為（引導原因副詞子句），但 reason 已是「原因」，和 because 重複；C due to：後接名詞，不接完整句；D since：引導副詞子句，不是用來說明 reason 內容的補語連接詞。</p></div>
+<div class="ask"><p>predictive 來自動詞 predict。predict = 預測。predictive = 有預測性的。四個選項哪個帶有「預測未來」的概念？</p><div class="al">答案</div><p class="ap">B foreboding（預感；不祥的預兆）是唯一有「預知未來狀況」概念的選項。答案 B。</p></div>
+<div class="corr mt12"><p>A complicated（複雜的）；C complete（完整的）；D practical（實用的）——三者與「預測」無關。foreboding 本義是不祥預感，但本題考的是「predict 家族字」，選最接近的。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">the reason is that</span><span class="vd">原因是……</span>
-<span class="vw">weather condition</span><span class="vd">天氣狀況</span>
-<span class="vw">delay</span><span class="vd">延誤；延遲（名詞/動詞）</span>
+<span class="vw">predictive</span><span class="vd">有預測性的</span>
+<span class="vw">predict</span><span class="vd">預測</span>
+<span class="vw">foreboding</span><span class="vd">預感；不祥之兆</span>
+<span class="vw">predictive analysis</span><span class="vd">預測分析</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q4">
-<div class="qh"><span class="qn">4</span><span class="qt">that 名詞子句</span></div>
+<div class="ls" id="p7-168-v">
+<div class="sh"><div class="sn">B</div><div class="st">Part 7 · 168–171 徵才廣告（CNC 雙語客服）</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章先導</div><div class="bb">
+<div class="p7box"><h4>文章類型：徵才廣告</h4>
+<p>CNC（Computer Network Company）正在 New Jersey 的 Clean City 客服中心徵求<strong>雙語客服代表（Bilingual Customer Service Representatives）</strong>。</p>
+<p>工作內容：透過電話協助日語使用者排除網路整合系統問題。<br>語言要求：日文與英文，書寫與口語均需具備。<br>班次：<strong>3rd shift，週一到週五 7 p.m.–5 a.m.</strong><br>可全職或兼職。公司成立 15 年。</p></div>
+<div class="qzh" style="margin-top:8px">中文大意：CNC 徵求日英雙語客服，夜班（7pm-5am，週一到週五），需書面與口語溝通能力。</div>
+<div class="tip mt12"><p>三個核心細節：①雙語（日文+英文）；②第三班（7pm-5am）；③公司 15 年經驗</p></div>
+</div></div>
+</div>
+<div class="qb" id="q168">
+<div class="qh"><span class="qn">168</span><span class="qt">目的題</span></div>
 <div class="qbody">
-<div class="qsen">The company newsletter reports <span class="bl">______</span> the retiring CEO will stay on as a creative consultant.</div>
-<div class="qzh">公司電子報報導，即將退休的執行長將繼續擔任創意顧問。</div>
+<div class="qsen">Why is this advertisement posted?</div>
+<div class="qzh">這則廣告為什麼刊登？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>on</div>
-<div class="qo"><span class="ol">B</span>who</div>
-<div class="qo ok"><span class="ol">C</span>that</div>
-<div class="qo"><span class="ol">D</span>it</div>
+<div class="qo ok"><span class="ol">A</span>To recruit customer service representatives</div>
+<div class="qo "><span class="ol">B</span>To present the results of a customer survey</div>
+<div class="qo "><span class="ol">C</span>To announce a marketing meeting</div>
+<div class="qo "><span class="ol">D</span>To promote a newly launched product</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>主句動詞是 reports。後面 the retiring CEO will stay on... 完整嗎？reports 後面要接的是什麼？</p><div class="al">答案</div><p class="ap">完整句，reports 後接「報導的內容」→ report that + S + V（C）</p></div>
-<div class="corr mt12"><p>A on：report on + 名詞（不接完整句）；B who：用來修飾人，這裡不是在修飾某名詞；D it：代名詞，不能引導子句。</p></div>
+<div class="ask"><p>看標題最關鍵字：BILINGUAL CUSTOMER SERVICE REPRESENTATIVES WANTED。wanted 表示徵人，openings 表示職缺。</p><div class="al">答案</div><p class="ap">整篇是職缺公告 → 招募客服代表（A）。</p></div>
+<div class="corr mt12"><p>B survey results：沒有調查數據；C marketing meeting：沒有會議資訊；D new product：不是在賣產品。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">retiring</span><span class="vd">即將退休的</span>
-<span class="vw">stay on as</span><span class="vd">留下繼續擔任……</span>
-<span class="vw">creative consultant</span><span class="vd">創意顧問</span>
+<span class="vw">recruit</span><span class="vd">招募</span>
+<span class="vw">wanted</span><span class="vd">徵求；有招募需求</span>
+<span class="vw">openings</span><span class="vd">職缺</span>
+<span class="vw">call center</span><span class="vd">客服中心</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q5">
-<div class="qh"><span class="qn">5</span><span class="qt">疑問詞名詞子句</span><span class="qs">⭐ 重點題</span></div>
+<div class="qb" id="q169">
+<div class="qh"><span class="qn">169</span><span class="qt">細節題</span></div>
 <div class="qbody">
-<div class="qsen">The supervisor needs to determine <span class="bl">______</span> in the division will be responsible for the survey.</div>
-<div class="qzh">主管需要決定部門裡誰將負責這份調查。</div>
+<div class="qsen">What can be said about the position?</div>
+<div class="qzh">關於這個職位，下列哪一項正確？</div>
 <div class="qopts">
-<div class="qo ok"><span class="ol">A</span>who</div>
-<div class="qo"><span class="ol">B</span>where</div>
-<div class="qo"><span class="ol">C</span>how</div>
-<div class="qo"><span class="ol">D</span>why</div>
+<div class="qo ok"><span class="ol">A</span>It requires applicants to be able to speak two languages.</div>
+<div class="qo "><span class="ol">B</span>It requires applicants to relocate to Japan for two years.</div>
+<div class="qo "><span class="ol">C</span>It requires applicants to sign a one-year contract.</div>
+<div class="qo "><span class="ol">D</span>It requires applicants to work from 8 a.m. to 5 p.m.</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>determine 後面要接「要決定的事情」。空格後面 in the division will be responsible 有主詞嗎？缺的是什麼？</p><div class="al">答案</div><p class="ap">缺主詞（誰）→ who 當子句主詞，整塊 who...survey 是 determine 的受詞（A）</p></div>
-<div class="tip mt12"><p><strong>重要：</strong>這題的 who 不是關係代名詞，而是疑問詞名詞子句的引導詞，整塊 who ... survey 是受詞。疑問詞名詞子句中，who / what / which 可以直接當子句主詞。</p></div>
+<div class="ask"><p>文章最重要的條件是什麼？Bilingual in JAPANESE & ENGLISH（written and spoken）這句話說的是什麼要求？</p><div class="al">答案</div><p class="ap">需要使用兩種語言（日文＋英文）→ A。</p></div>
+<div class="corr mt12"><p>B 搬去日本：工作地點是 New Jersey，不是日本；C 一年合約：文章沒有合約年限；D 早上 8-5：原文是 7pm–5am（夜班），不是白天。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">determine</span><span class="vd">決定；確定</span>
-<span class="vw">be responsible for</span><span class="vd">負責……</span>
-<span class="vw">survey</span><span class="vd">調查；問卷</span>
+<span class="vw">bilingual</span><span class="vd">雙語的</span>
+<span class="vw">relocate</span><span class="vd">搬遷</span>
+<span class="vw">written and spoken</span><span class="vd">書寫和口語</span>
+<span class="vw">trouble-shoot</span><span class="vd">排除故障</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q6">
-<div class="qh"><span class="qn">6</span><span class="qt">which 名詞子句</span></div>
+<div class="qb" id="q170">
+<div class="qh"><span class="qn">170</span><span class="qt">NOT 題</span><span class="qs">⭐ 重點題</span></div>
 <div class="qbody">
-<div class="qsen">The manager has not decided <span class="bl">______</span> of the two marketing strategies he should adopt.</div>
-<div class="qzh">經理尚未決定兩種行銷策略中他應該採用哪一種。</div>
+<div class="qsen">What is NOT part of the service representative's duties?</div>
+<div class="qzh">以下哪一項不是客服代表的工作內容？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>what</div>
-<div class="qo"><span class="ol">B</span>that</div>
-<div class="qo ok"><span class="ol">C</span>which</div>
-<div class="qo"><span class="ol">D</span>who</div>
+<div class="qo "><span class="ol">A</span>Resolving customers' problems via the phone</div>
+<div class="qo ok"><span class="ol">B</span>Teaching basic Japanese grammar rules</div>
+<div class="qo "><span class="ol">C</span>Working from 7 p.m. to 5 a.m.</div>
+<div class="qo "><span class="ol">D</span>Assisting Japanese-speaking customers</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>注意關鍵字：of the two marketing strategies。範圍有限（兩種中選一），選哪一個用什麼字？</p><div class="al">答案</div><p class="ap">有限範圍中選哪一個 → which（C）。子句 he should adopt 缺受詞，which 是 adopt 的受詞。</p></div>
-<div class="corr mt12"><p>A what：表示「什麼」，範圍不特定；題目已限定只有兩種策略，which 更精確。B that：不表示選擇，也不能當子句受詞。D who：指人，不指 strategy。</p></div>
+<div class="ask"><p>NOT 題 → 逐一核對工作職責。文章說 trouble-shoot and resolve issues via the telephone；assist Japanese-speaking people；hours 7pm-5am。哪一項不在清單裡？</p><div class="al">答案</div><p class="ap">B Teaching Japanese grammar rules — 文章完全沒有「教日文」。日文只是服務語言，不是教學內容。答案 B。</p></div>
+<div class="corr mt12"><p>容易誤選：看到 Japanese 就以為要教日文。但工作是 customer service 與 technical support，日文只是服務工具。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">marketing strategy</span><span class="vd">行銷策略</span>
-<span class="vw">adopt</span><span class="vd">採用；採納</span>
-<span class="vw">which of the two</span><span class="vd">兩者中的哪一個</span>
+<span class="vw">resolve issues</span><span class="vd">解決問題</span>
+<span class="vw">via the telephone</span><span class="vd">透過電話</span>
+<span class="vw">Japanese-speaking</span><span class="vd">說日語的</span>
+<span class="vw">3rd shift</span><span class="vd">第三班（夜班）</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q7">
-<div class="qh"><span class="qn">7</span><span class="qt">介系詞 + whom</span><span class="qs">⭐ 重點題</span></div>
+<div class="qb" id="q171">
+<div class="qh"><span class="qn">171</span><span class="qt">事實判斷</span></div>
 <div class="qbody">
-<div class="qsen">The executive assistant, to <span class="bl">______</span> you sent the forms, is on personal leave this afternoon.</div>
-<div class="qzh">你把表格寄給的那位行政助理，今天下午正在請私人事假。</div>
+<div class="qsen">What is true about the CNC Company?</div>
+<div class="qzh">關於 CNC 公司，下列哪一項正確？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>which</div>
-<div class="qo"><span class="ol">B</span>her</div>
-<div class="qo"><span class="ol">C</span>what</div>
-<div class="qo ok"><span class="ol">D</span>whom</div>
+<div class="qo "><span class="ol">A</span>The company specializes in drug-testing.</div>
+<div class="qo "><span class="ol">B</span>The company will be relocated to New Jersey next month.</div>
+<div class="qo "><span class="ol">C</span>The company is recruiting only Japanese employees.</div>
+<div class="qo ok"><span class="ol">D</span>The company is 15 years old.</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>空格前面是 to（介系詞）。先行詞是 executive assistant（人）。你後面 you sent the forms 有主詞有動詞，缺的是「寄給誰」→ ?</p><div class="al">答案</div><p class="ap">介系詞後 + 人作受詞 → whom（D）</p></div>
-<div class="formula mt12">介系詞 + whom（代人受格）　/　介系詞 + which（代事物）</div>
-<div class="corr mt12"><p>A which：指事物，不指 executive assistant（人）；B her：受格代名詞，不能引導關係子句；C what：不用來修飾前面的 assistant；另外本題有逗號，非限定子句，也不能用 that。</p></div>
+<div class="ask"><p>第一段有一個時間數字：has grown steadily in the computer network industry for the past 15 years。這句說明公司多久了？</p><div class="al">答案</div><p class="ap">公司在業界穩定發展 15 年 → The company is 15 years old（D）。</p></div>
+<div class="corr mt12"><p>A drug-testing：文章是網路顧問公司；B 搬遷：文章只說職缺地點在 NJ；C 只招日本員工：要求會日文 ≠ 只招日本人。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">executive assistant</span><span class="vd">行政助理；高階主管助理</span>
-<span class="vw">personal leave</span><span class="vd">私人事假</span>
-<span class="vw">send A to B</span><span class="vd">把 A 寄給 B</span>
+<span class="vw">for the past 15 years</span><span class="vd">過去 15 年</span>
+<span class="vw">steadily</span><span class="vd">穩定地</span>
+<span class="vw">industry</span><span class="vd">產業</span>
+<span class="vw">bilingual ≠ Japanese-only</span><span class="vd">雙語能力 ≠ 只招日本籍員工</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q8">
-<div class="qh"><span class="qn">8</span><span class="qt">whose 所有格</span><span class="qs">⭐ 重點題</span></div>
+<div class="ls" id="p7-172-v">
+<div class="sh"><div class="sn">C</div><div class="st">Part 7 · 172–175 活動邀請（市長早餐系列）</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章先導</div><div class="bb">
+<div class="p7box"><h4>文章類型：活動邀請函 / 論壇公告（含句子插入題）</h4>
+<p>Garden City 市長早餐系列（Mayor's Breakfast Series）是一個討論城市發展、交通與環境議題的論壇，吸引企業領導人參與。</p>
+<p>下次早餐日期：5 月 19 日，主講嘉賓：CTI Telecommunications CEO Anny Lord。<br>地點：Garden-City City Hall，No. 354 East Avenue。</p>
+<p>議程：Registration 7:15 → Buffet 7:30–8:30 → Presentation 8:30–9:30。票價每張 $40。<br>截止日：<strong>活動前的週五</strong>；取消需書面通知，至少 48 個工作小時前。<br>文章有 [1][2][3][4] 四個插入點（句子插入題 Q175）。</p></div>
+<div class="qzh" style="margin-top:8px">中文大意：市長早餐論壇邀請信，討論城市議題，活動含早餐和演講，有報名截止和取消規定。句子插入題答案是 [3]。</div>
+<div class="tip mt12"><p>時間計算核心：Buffet 7:30–8:30 = 一小時；Registration 到 Presentation 結束 = 7:15–9:30 = 2hr15min（不是 breakfast 時長）</p></div>
+</div></div>
+</div>
+<div class="qb" id="q172">
+<div class="qh"><span class="qn">172</span><span class="qt">單字同義</span></div>
 <div class="qbody">
-<div class="qsen">The engineer, <span class="bl">______</span> computer you will be using, has been transferred to the new branch office.</div>
-<div class="qzh">你將使用其電腦的那位工程師，已被調到新的分公司。</div>
+<div class="qsen">The word "vital" in paragraph 1 is closest in meaning to</div>
+<div class="qzh">第一段的 vital 最接近哪一個意思？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>who</div>
-<div class="qo ok"><span class="ol">B</span>whose</div>
-<div class="qo"><span class="ol">C</span>which</div>
-<div class="qo"><span class="ol">D</span>with a</div>
+<div class="qo "><span class="ol">A</span>different</div>
+<div class="qo "><span class="ol">B</span>prominent</div>
+<div class="qo ok"><span class="ol">C</span>significant</div>
+<div class="qo "><span class="ol">D</span>professional</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>空格後面第一個字是什麼？computer 是名詞，表示「工程師的電腦」，需要什麼詞性？</p><div class="al">答案</div><p class="ap">空格後接名詞 → 所有格關係代名詞 → whose（B）</p></div>
-<div class="formula mt12">whose + 名詞 = ……的（某物）</div>
-<div class="corr mt12"><p>A who：後面通常接動詞，不接名詞；C which：不表示所有格，不能說 which computer you will be using 代表「工程師的電腦」；D with a：結構不完整。</p></div>
+<div class="ask"><p>原文：issues that are vital to Garden City's prosperity and quality of life。vital 在此表示「非常重要、不可或缺」。四個選項哪個最接近？</p><div class="al">答案</div><p class="ap">C significant（重要的；有重大意義的）最接近 vital 的語義。答案 C。</p></div>
+<div class="corr mt12"><p>A different（不同的）；B prominent（知名的；突出的）；D professional（專業的）——都與「重要性」無直接關係。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">engineer</span><span class="vd">工程師</span>
-<span class="vw">be transferred to</span><span class="vd">被調到……</span>
-<span class="vw">branch office</span><span class="vd">分公司；分辦事處</span>
+<span class="vw">vital</span><span class="vd">至關重要的；不可或缺的</span>
+<span class="vw">significant</span><span class="vd">重要的；重大的</span>
+<span class="vw">prominent</span><span class="vd">知名的；突出的</span>
+<span class="vw">prosperity</span><span class="vd">繁榮</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q9">
-<div class="qh"><span class="qn">9</span><span class="qt">關係代名詞（主詞）</span></div>
+<div class="qb" id="q173">
+<div class="qh"><span class="qn">173</span><span class="qt">主旨題</span></div>
 <div class="qbody">
-<div class="qsen">We went to the new restaurant <span class="bl">______</span> was advertised on the radio.</div>
-<div class="qzh">我們去了那家在廣播上被宣傳的新餐廳。</div>
+<div class="qsen">What is the main purpose of this meeting?</div>
+<div class="qzh">這場會議的主要目的為何？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>it</div>
-<div class="qo"><span class="ol">B</span>who</div>
-<div class="qo"><span class="ol">C</span>where</div>
-<div class="qo ok"><span class="ol">D</span>which</div>
+<div class="qo "><span class="ol">A</span>To prepare for a product launch event</div>
+<div class="qo "><span class="ol">B</span>To analyze a financial report</div>
+<div class="qo "><span class="ol">C</span>To discuss a business proposal with managers</div>
+<div class="qo ok"><span class="ol">D</span>To exchange ideas with the Mayor</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>先行詞是 the new restaurant（事物）。空格後 was advertised 有動詞，缺的是什麼？</p><div class="al">答案</div><p class="ap">缺主詞，先行詞是事物 → which（D）</p></div>
-<div class="corr mt12"><p>A it：一般代名詞，不能連接兩個子句；B who：指人，restaurant 不是人；C where：表地點，後面子句應完整，但這裡缺主詞（was advertised 缺主詞）；where 後面子句不缺成分，所以 C 錯。</p></div>
+<div class="ask"><p>文章的核心是什麼？Mayor's Breakfast Series、Mayor Phil Dave updates attendees on city issues、forum for vital issues。這是誰主導的什麼性質活動？</p><div class="al">答案</div><p class="ap">市長主持的城市議題論壇 → 與市長交流想法（D）。</p></div>
+<div class="corr mt12"><p>A product launch：文章沒有產品發表；B financial report：沒有財報分析；C business proposal：商業人士是參與者，但活動主題遠超過一個商業提案。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">advertise</span><span class="vd">做廣告；宣傳</span>
-<span class="vw">on the radio</span><span class="vd">在廣播上</span>
-<span class="vw">be advertised</span><span class="vd">被宣傳（被動）</span>
+<span class="vw">forum</span><span class="vd">論壇</span>
+<span class="vw">attendee</span><span class="vd">參加者</span>
+<span class="vw">initiative</span><span class="vd">倡議；新政策</span>
+<span class="vw">stay informed</span><span class="vd">掌握最新資訊</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q10">
-<div class="qh"><span class="qn">10</span><span class="qt">介系詞 + which（非限定）</span><span class="qs">⭐ 重點題</span></div>
+<div class="qb" id="q174">
+<div class="qh"><span class="qn">174</span><span class="qt">時間計算</span></div>
 <div class="qbody">
-<div class="qsen">The new building, for <span class="bl">______</span> a purchasing fund has been set aside, is modern and spacious.</div>
-<div class="qzh">那棟已經撥出採購基金的新建築，既現代又寬敞。</div>
+<div class="qsen">How long will the breakfast last?</div>
+<div class="qzh">早餐將持續多久？</div>
 <div class="qopts">
-<div class="qo ok"><span class="ol">A</span>which</div>
-<div class="qo"><span class="ol">B</span>that</div>
-<div class="qo"><span class="ol">C</span>whom</div>
-<div class="qo"><span class="ol">D</span>this</div>
+<div class="qo "><span class="ol">A</span>Thirty minutes</div>
+<div class="qo ok"><span class="ol">B</span>One hour</div>
+<div class="qo "><span class="ol">C</span>One and a half hours</div>
+<div class="qo "><span class="ol">D</span>Fifteen minutes</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>空格前是 for（介系詞）。先行詞是 the new building（事物）。有沒有逗號？這兩個條件各告訴我們什麼？</p><div class="al">答案</div><p class="ap">介系詞後不能用 that → 要用 which 或 whom；先行詞是事物 → which（A）</p></div>
-<div class="corr mt12"><p>B that：介系詞後不能直接接 that，有逗號也不能用 that；C whom：指人，building 不是人；D this：指示代名詞，不能引導關係子句。</p></div>
+<div class="ask"><p>題目問的是 breakfast 持續多久。先找 Buffet Breakfast 的時間：7:30 a.m.–8:30 a.m.。從七點半到八點半是多久？</p><div class="al">答案</div><p class="ap">7:30 到 8:30 = 一小時（B）。</p></div>
+<div class="corr mt12"><p>不要把整場活動 7:15–9:30 算進去，題目只問 breakfast 段。C 一小時半不對；30 分鐘不對。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">set aside</span><span class="vd">保留；撥出（資金）</span>
-<span class="vw">purchasing fund</span><span class="vd">採購基金</span>
-<span class="vw">spacious</span><span class="vd">寬敞的</span>
+<span class="vw">agenda</span><span class="vd">議程</span>
+<span class="vw">registration</span><span class="vd">報名；登記</span>
+<span class="vw">buffet</span><span class="vd">自助式餐點</span>
+<span class="vw">presentation</span><span class="vd">演講；簡報</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q11">
-<div class="qh"><span class="qn">11</span><span class="qt">非限定關係子句</span></div>
+<div class="qb" id="q175">
+<div class="qh"><span class="qn">175</span><span class="qt">句子插入</span><span class="qs">⭐ 重點題</span></div>
 <div class="qbody">
-<div class="qsen">Ms. Holloway, <span class="bl">______</span> has worked here for many years, has retired.</div>
-<div class="qzh">已經在這裡工作多年的 Holloway 女士退休了。</div>
+<div class="qsen">In which position does "Pre-registration is required." best belong?</div>
+<div class="qzh">"Pre-registration is required." 最適合放在哪一個位置？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>which</div>
-<div class="qo"><span class="ol">B</span>she</div>
-<div class="qo"><span class="ol">C</span>that</div>
-<div class="qo ok"><span class="ol">D</span>who</div>
+<div class="qo "><span class="ol">A</span>[1]</div>
+<div class="qo "><span class="ol">B</span>[2]</div>
+<div class="qo ok"><span class="ol">C</span>[3]</div>
+<div class="qo "><span class="ol">D</span>[4]</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>先行詞是 Ms. Holloway（人）。空格後 has worked 缺主詞。有逗號嗎？what does that mean？</p><div class="al">答案</div><p class="ap">人 + 缺主詞 → who；有逗號（非限定）→ 不能用 that → who（D）</p></div>
-<div class="tip mt12"><p><strong>雙重確認：</strong>①人 + 缺主詞 → who；②逗號後的非限定子句 → 不用 that。兩個條件都指向 who。</p></div>
-<div class="corr mt12"><p>A which：指事物；B she：一般代名詞，不能在逗號後引導關係子句；C that：非限定子句（有逗號）不用 that，這是最重要的規則。</p></div>
+<div class="ask"><p>先看這句的功能：Pre-registration is required = 必須提前報名。再看 [3] 後面接的是什麼？</p><div class="al">答案</div><p class="ap">[3] 後面緊接：The deadline to register is the Friday prior to the event. / Please note that no tickets will be issued at the registration desk upon arrival. 這些都是報名規定，Pre-registration 放 [3] 最完整。答案 C。</p></div>
+<div class="corr mt12"><p>[1] 在城市議題介紹後；[2] 在市長更新內容後；[4] 在聯絡資訊前。這三個位置都不是「報名規定段落」的開頭。句子插入題先判斷句子功能，再找前後文最相關的位置。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">retire</span><span class="vd">退休</span>
-<span class="vw">for many years</span><span class="vd">多年來</span>
-<span class="vw">非限定關係子句</span><span class="vd">有逗號 → 不用 that</span>
+<span class="vw">pre-registration</span><span class="vd">事先報名</span>
+<span class="vw">deadline</span><span class="vd">截止日期</span>
+<span class="vw">upon arrival</span><span class="vd">到場時</span>
+<span class="vw">prior to</span><span class="vd">在……之前</span>
 </div>
 </div>
 </div>
 </div></div>
-
+<div class="ls" id="p7-176-v">
+<div class="sh"><div class="sn">D</div><div class="st">Part 7 · 176–180 商展（雙篇）</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>⬛ 雙篇 — 文件一：商展邀請函（ITC）</div><div class="bb">
+<div class="p7box"><h4>文件一：Invitation to Exhibit（ITC 2020 Annual Meeting）</h4>
+<p>ITC 邀請企業到 <strong>Chicago, IL</strong> 的 2020 年度會議設攤參展。預計有超過 <strong>3,000</strong> 位 IT 主管參與。</p>
+<p>設攤機會：展示產品給 IT 主管；建立銷售聯繫；接觸採購決策者（半數與會者參與採購）。</p>
+<p>展覽大廳提供：免費早午餐、網路咖啡廳、Case of the Day 活動。</p>
+<p>寄信人：Jenny Miller，ITC 公關經理。</p></div>
+<div class="p7box" style="margin-top:10px"><h4>文件二：Exhibit Information（攤位規格）</h4>
+<p>地點：International Convention Center / September 21–23, 2020（ITC Annual Meeting: 9/21–22）</p>
+<p>標準攤位（US$2,500）含：10'×10' 攤位 / 背板與側板 / 50 字公司簡介（於節目手冊）/ 網站 listing / <strong>兩張一日參觀通行證</strong> / 24 小時保全</p>
+<p>布展時間：<strong>9/19（週日）和 9/20（週一），各 8:00–4:30</strong>（共兩天）<br>撤展時間：9/24（週五）1:00–6:00</p></div>
+<div class="qzh" style="margin-top:8px">中文大意：ITC 邀請企業在 Chicago 設攤，3,000+ 位 IT 主管參與。標準攤位含多項服務，布展時間是展覽前兩天（9/19 和 9/20）。</div>
+<div class="tip mt12"><p>雙篇注意：Q176-177 答案在文件一；Q178-180 答案在文件二</p></div>
+</div></div>
+</div>
+<div class="qb" id="q176">
+<div class="qh"><span class="qn">176</span><span class="qt">地點細節</span></div>
+<div class="qbody">
+<div class="qsen">Where will the trade show be held?</div>
+<div class="qzh">這場商展將在哪裡舉行？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Italy</div>
+<div class="qo "><span class="ol">B</span>Japan</div>
+<div class="qo ok"><span class="ol">C</span>U.S.A.</div>
+<div class="qo "><span class="ol">D</span>Brazil</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文件一第一段：2020 ITC Annual Meeting in Chicago, IL。Chicago 是美國哪個州的城市？IL 是什麼的縮寫？</p><div class="al">答案</div><p class="ap">IL = Illinois（伊利諾州），美國 → C。</p></div>
+<div class="corr mt12"><p>A Italy / B Japan / D Brazil：文章完全沒有提到這三個國家。Chicago, IL 是美國城市。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">trade show</span><span class="vd">商展</span>
+<span class="vw">Chicago, IL</span><span class="vd">芝加哥，伊利諾州，美國</span>
+<span class="vw">U.S.A.</span><span class="vd">美利堅合眾國</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q177">
+<div class="qh"><span class="qn">177</span><span class="qt">數字細節</span></div>
+<div class="qbody">
+<div class="qsen">Approximately how many attendees are expected to join this event?</div>
+<div class="qzh">大約有多少參加者預計會參加？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Close to 1,000</div>
+<div class="qo ok"><span class="ol">B</span>More than 3,000</div>
+<div class="qo "><span class="ol">C</span>Around 2,500</div>
+<div class="qo "><span class="ol">D</span>Less than 2,200</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文件一直接有數字：More than 3,000 IT managers will be participating。</p><div class="al">答案</div><p class="ap">超過 3,000 人 → B。數字題直接回文章找原句。</p></div>
+<div class="corr mt12"><p>干擾：Around 2,500 和 Less than 2,200 都不對；文章說 More than 3,000，選項 B 原文直接抄。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">approximately</span><span class="vd">大約</span>
+<span class="vw">attendee</span><span class="vd">參加者</span>
+<span class="vw">be expected to</span><span class="vd">預計將……</span>
+<span class="vw">participating</span><span class="vd">參與的</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q178">
+<div class="qh"><span class="qn">178</span><span class="qt">好處推論</span></div>
+<div class="qbody">
+<div class="qsen">What benefit can exhibitors enjoy if they set up a booth at the show?</div>
+<div class="qzh">參展商設攤可以享有什麼好處？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Increase customer satisfaction</div>
+<div class="qo "><span class="ol">B</span>Establish a relationship with ITC</div>
+<div class="qo ok"><span class="ol">C</span>Develop new sales contacts with potential customers</div>
+<div class="qo "><span class="ol">D</span>Promote new products to business partners</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文件一列出設攤機會：Develop new sales contacts in the IT industry；也提到 current and potential customers。哪個選項最準確？</p><div class="al">答案</div><p class="ap">C develop new sales contacts with potential customers — 直接對應文件一的 develop new sales contacts 和 potential customers。</p></div>
+<div class="corr mt12"><p>A customer satisfaction：文章沒有提到；B relationship with ITC：重點不是跟 ITC 建立關係；D business partners：文章說的是 IT managers，不特定是 business partners。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">exhibitor</span><span class="vd">參展商</span>
+<span class="vw">sales contacts</span><span class="vd">銷售聯繫；人脈</span>
+<span class="vw">potential customer</span><span class="vd">潛在顧客</span>
+<span class="vw">showcase</span><span class="vd">展示</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q179">
+<div class="qh"><span class="qn">179</span><span class="qt">NOT 題（雙篇）</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What item is NOT included in a standard booth?</div>
+<div class="qzh">標準攤位不包含哪一項？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>A 10' x 10' booth space</div>
+<div class="qo "><span class="ol">B</span>A company introduction in the event program</div>
+<div class="qo ok"><span class="ol">C</span>A free web-design software package</div>
+<div class="qo "><span class="ol">D</span>Two free passes to the exhibition</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這是 NOT 題，需要逐一核對文件二的 Standard Booth Includes 清單。哪一個不在清單裡？</p><div class="al">答案</div><p class="ap">C free web-design software — 文件二有：攤位空間、公司簡介、兩張通行證，沒有任何軟體贈品。答案 C。</p></div>
+<div class="corr mt12"><p>容易混淆：文件二有 a listing on the ARRS website（網站列表），不代表送你設計網站的軟體。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">web-design software</span><span class="vd">網頁設計軟體</span>
+<span class="vw">guest pass</span><span class="vd">參觀通行證</span>
+<span class="vw">company description</span><span class="vd">公司簡介</span>
+<span class="vw">24-hour security</span><span class="vd">24 小時保全</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q180">
+<div class="qh"><span class="qn">180</span><span class="qt">時間計算</span></div>
+<div class="qbody">
+<div class="qsen">How much time do exhibitors have to install their booths?</div>
+<div class="qzh">參展商有多少時間布置攤位？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>2 days</div>
+<div class="qo "><span class="ol">B</span>3 days</div>
+<div class="qo "><span class="ol">C</span>1 day</div>
+<div class="qo "><span class="ol">D</span>4 days</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>找文件二的 Exhibitor Installation 段落。列出了哪些日期？</p><div class="al">答案</div><p class="ap">Sunday, September 19 和 Monday, September 20 → 共兩天 → A。</p></div>
+<div class="corr mt12"><p>不要看展覽期間 9/21–23（那是展覽日，不是布展日）。撤展是 9/24，也不是布展。只看 Exhibitor Installation 這個標題下的日期。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">installation</span><span class="vd">布展；安裝</span>
+<span class="vw">dismantle</span><span class="vd">撤展</span>
+<span class="vw">exhibitor</span><span class="vd">參展商</span>
+<span class="vw">布展 vs 撤展</span><span class="vd">Setup ≠ Take down</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="p7-181-v">
+<div class="sh"><div class="sn">E</div><div class="st">Part 7 · 181–185 MBA Webinar（雙篇）</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>⬛ 雙篇 — 文件一：FSU MBA 說明會邀請信</div><div class="bb">
+<div class="p7box"><h4>文件一：FSU Online MBA Webinar 邀請</h4>
+<p>FSU 邀請 Mr. Madison 參加線上 MBA 說明會，時間：<strong>10 月 7 日（週五）正午 12 點</strong>。</p>
+<p>說明會內容：① 院長介紹學位特色；② 申請資訊與技巧；③ 互動問答（Q&amp;A）。<br>Biz Master 評選 FSU MBA 為全球第一（社會與環境管理方向）。</p>
+<p>回覆請寄：info@fsu.edu。寄信人：May Adams（招生專員）。</p></div>
+<div class="p7box" style="margin-top:10px"><h4>文件二：Mark Madison 的回覆信</h4>
+<p>Mark 對說明會感興趣，但想先知道三件事：<br>① 說明會持續多久（duration）<br>② 需要哪些電腦設備（computer equipment）<br>③ 可否提供議程（agenda）及涵蓋的 MBA 主題</p>
+<p>Mark 表示他很可能即將報名（I expect that I shall register soon）。</p></div>
+<div class="qzh" style="margin-top:8px">中文大意：FSU 邀請 Mark 參加 MBA 線上說明會。Mark 回信詢問三項資訊（時長/設備/議程），並表示即將報名。</div>
+<div class="tip mt12"><p>雙篇跨文件題：Q184 和 Q185 需要讀文件二（Mark 的信）</p></div>
+</div></div>
+</div>
+<div class="qb" id="q181">
+<div class="qh"><span class="qn">181</span><span class="qt">目的題</span></div>
+<div class="qbody">
+<div class="qsen">What is the purpose of this FSU online webinar?</div>
+<div class="qzh">這場 FSU 線上 MBA 說明會的目的為何？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>To let prospective students learn more about their MBA programs</div>
+<div class="qo "><span class="ol">B</span>To ask students to register for classes as soon as possible</div>
+<div class="qo "><span class="ol">C</span>To invite students to attend a luncheon</div>
+<div class="qo "><span class="ol">D</span>To inform existing students of a new MBA course</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一封信核心：介紹 Online MBA program，包括課程特色、申請資訊、Q&A。對象是誰？</p><div class="al">答案</div><p class="ap">讓潛在學生了解 MBA 課程 → A prospective students（潛在學生）。</p></div>
+<div class="corr mt12"><p>B 要求立刻報名：信中有邀請 webinar，不是要求立即報名課程；C luncheon 午餐會：Spend your lunch break 不是午餐會；D existing students：對象是 prospective students，不是現有學生。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">prospective student</span><span class="vd">潛在學生；準學生</span>
+<span class="vw">webinar</span><span class="vd">網路說明會</span>
+<span class="vw">admissions</span><span class="vd">招生；入學申請</span>
+<span class="vw">emphasize</span><span class="vd">強調</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q182">
+<div class="qh"><span class="qn">182</span><span class="qt">單字同義</span></div>
+<div class="qbody">
+<div class="qsen">The word "emphasize" in the first e-mail is closest in meaning to</div>
+<div class="qzh">第一封 email 的 emphasize 最接近哪一個意思？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>encourage</div>
+<div class="qo "><span class="ol">B</span>implement</div>
+<div class="qo ok"><span class="ol">C</span>stress</div>
+<div class="qo "><span class="ol">D</span>found</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>原句：emphasizes skills that create leaders and innovators。emphasize = 特別重視、強調。四個選項哪個最接近？</p><div class="al">答案</div><p class="ap">C stress（強調）= emphasize。答案 C。</p></div>
+<div class="corr mt12"><p>A encourage（鼓勵）；B implement（實施）；D found（建立；創立）——都不是「強調」。stress 和 emphasize 都可作動詞表示「強調」。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">emphasize</span><span class="vd">強調</span>
+<span class="vw">stress</span><span class="vd">強調（動詞）；壓力（名詞）</span>
+<span class="vw">implement</span><span class="vd">實施</span>
+<span class="vw">innovator</span><span class="vd">創新者</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q183">
+<div class="qh"><span class="qn">183</span><span class="qt">NOT 題（雙篇）</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What topic will NOT be discussed at the webinar?</div>
+<div class="qzh">以下哪個主題不會在說明會討論？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Highlights on why FSU's degree is special</div>
+<div class="qo "><span class="ol">B</span>Information on how to apply</div>
+<div class="qo ok"><span class="ol">C</span>Tips on how to score better on TOEFL exam</div>
+<div class="qo "><span class="ol">D</span>Answers to questions that students have</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>回文件一確認說明會內容：① 學位特色；② 申請資訊（admissions information）；③ Q&A。哪個不在清單裡？</p><div class="al">答案</div><p class="ap">C TOEFL exam tips — 文章完全沒有 TOEFL、英文考試或考試技巧。答案 C。</p></div>
+<div class="corr mt12"><p>admissions information 是申請資訊，不是考試技巧。說明會關注的是 MBA program 本身，不是如何考到入學資格。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">admissions information</span><span class="vd">招生資訊；申請說明</span>
+<span class="vw">TOEFL</span><span class="vd">托福考試</span>
+<span class="vw">Q&A session</span><span class="vd">問答環節</span>
+<span class="vw">highlights</span><span class="vd">精華；重點</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q184">
+<div class="qh"><span class="qn">184</span><span class="qt">寫信目的</span></div>
+<div class="qbody">
+<div class="qsen">Why does Mark Madison write the letter?</div>
+<div class="qzh">Mark Madison 為什麼寫這封信？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>To ask May Adams for additional information</div>
+<div class="qo "><span class="ol">B</span>To apologize to May Adams for his no-show</div>
+<div class="qo "><span class="ol">C</span>To inform May Adams of a new event</div>
+<div class="qo "><span class="ol">D</span>To request a copy of his transcript</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Mark 信的第一句最重要：I would like to know some further information。他列出了哪三個問題？</p><div class="al">答案</div><p class="ap">詢問更多資訊 → A。這是雙篇跨文件題，答案在文件二（Mark 的回信）。</p></div>
+<div class="corr mt12"><p>B no-show（缺席）：說明會還沒舉行，他沒有缺席；C 告知新活動：他是被邀請的那方；D transcript（成績單）：他要的是 agenda，不是成績單。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">additional information</span><span class="vd">補充資訊；進一步資訊</span>
+<span class="vw">no-show</span><span class="vd">缺席未出現</span>
+<span class="vw">transcript</span><span class="vd">成績單</span>
+<span class="vw">duration</span><span class="vd">持續時間</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q185">
+<div class="qh"><span class="qn">185</span><span class="qt">NOT 詢問（雙篇）</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What information does Mark NOT seek in his letter?</div>
+<div class="qzh">Mark 在信中沒有詢問哪一項資訊？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>The duration of the webinar</div>
+<div class="qo "><span class="ol">B</span>The hardware requirement</div>
+<div class="qo "><span class="ol">C</span>The topic list of this event</div>
+<div class="qo ok"><span class="ol">D</span>The attendance rate of this activity</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>回文件二列出 Mark 的三個問題：① 持續多久；② 電腦設備；③ 議程與主題。哪個不在這三個裡面？</p><div class="al">答案</div><p class="ap">D attendance rate（參加率）— Mark 沒有問。答案 D。</p></div>
+<div class="corr mt12"><p>三個問題對應：A duration（持續多久）✓；B hardware（電腦設備）✓；C topic list（agenda）✓；只有 D 完全沒問到。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">attendance rate</span><span class="vd">參加率</span>
+<span class="vw">hardware requirement</span><span class="vd">硬體設備要求</span>
+<span class="vw">agenda</span><span class="vd">議程</span>
+<span class="vw">duration</span><span class="vd">時長</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="p7-186-v">
+<div class="sh"><div class="sn">F</div><div class="st">Part 7 · 186–190 求職三篇（三篇）</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>⬛⬛ 三篇 — 信件一：George Sherman 邀請面試</div><div class="bb">
+<div class="p7box"><h4>文件一：George Sherman（HR Director）→ Doris Andrews</h4>
+<p>公司考慮 Doris 擔任 <strong>Product Manager</strong>。邀請她 <strong>3 月 25 日早上 10 點</strong>到辦公室進行測驗與初步面試（preliminary interview）。</p>
+<p>到場後找 Ms. Grace Richardson（HR 部門專員）。需攜帶：履歷（resume）+ 過去作品集（portfolio）。</p>
+<p>若 3/25 無法出席 → 聯絡秘書 <strong>Ms. Wendy Garfield</strong>（123-348-5487）改期。</p></div>
+<div class="p7box" style="margin-top:10px"><h4>文件二：Doris Andrews 回覆信</h4>
+<p>Doris 確認 3 月 25 日早上 10 點面試。說明 Wendy Garfield 打電話告知需書面確認出席，並附上最新的<strong>推薦信（letter of reference）</strong>。</p>
+<p>如有更動請電：(236) 4638-4274。</p></div>
+<div class="p7box" style="margin-top:10px"><h4>文件三：Doris Andrews 履歷</h4>
+<p>Job Target：Product Manager<br>工作經驗：2010 至今（NY → IL → CA），現在在 Pacific Advertising Company（Springfield, CA）。<br>Achievement：2018 & 2019 達成 110% 年度目標；管理 90 位新客戶；獲得 outstanding sales awards。<br>學歷：B.S. Business（Sales &amp; Marketing），New York State College。</p></div>
+<div class="qzh" style="margin-top:8px">中文大意：George 邀請 Doris 面試擔任 Product Manager。Doris 確認並附上推薦信。履歷顯示她有多年商業管理經驗。</div>
+<div class="tip mt12"><p>三篇跨文件：Q188 在文件一（改期聯絡人）；Q189 需比對文件一要求 vs. 文件二實際附上的文件</p></div>
+</div></div>
+</div>
+<div class="qb" id="q186">
+<div class="qh"><span class="qn">186</span><span class="qt">寫信目的</span></div>
+<div class="qbody">
+<div class="qsen">Why does George Sherman write the letter?</div>
+<div class="qzh">George Sherman 為什麼寫這封信？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>To seek suggestions about a project</div>
+<div class="qo "><span class="ol">B</span>To ensure staff know the opening of a new branch office</div>
+<div class="qo ok"><span class="ol">C</span>To invite a candidate to an interview</div>
+<div class="qo "><span class="ol">D</span>To announce the opening of the company</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文件一最重要的句子：we would like you to come to our office for testing and a preliminary interview。</p><div class="al">答案</div><p class="ap">邀請候選人面試 → C。</p></div>
+<div class="corr mt12"><p>A project suggestions：沒有專案討論；B branch office：沒有分公司開幕；D company opening：也沒有這個主題。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">preliminary interview</span><span class="vd">初步面試</span>
+<span class="vw">candidate</span><span class="vd">候選人；應徵者</span>
+<span class="vw">portfolio</span><span class="vd">作品集</span>
+<span class="vw">HR department</span><span class="vd">人資部門</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q187">
+<div class="qh"><span class="qn">187</span><span class="qt">職位查詢</span></div>
+<div class="qbody">
+<div class="qsen">What position is Doris Andrews seeking?</div>
+<div class="qzh">Doris Andrews 正在申請哪一個職位？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>Product manager</div>
+<div class="qo "><span class="ol">B</span>HR specialist</div>
+<div class="qo "><span class="ol">C</span>Marketing manager</div>
+<div class="qo "><span class="ol">D</span>Technical support engineer</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>三份文件都有提到職位。文件一說 considering you for the position of product manager；文件二說 my application as Product Manager；履歷 Job Target 是 Product Manager。</p><div class="al">答案</div><p class="ap">Product Manager → A。三份文件一致。</p></div>
+<div class="corr mt12"><p>TOEIC 三篇題中，越重複出現的資訊越可能是答案。這裡三份文件都指向同一職位，答案非常明確。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">product manager</span><span class="vd">產品經理</span>
+<span class="vw">HR specialist</span><span class="vd">人資專員</span>
+<span class="vw">job target</span><span class="vd">求職目標</span>
+<span class="vw">application</span><span class="vd">應徵；申請</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q188">
+<div class="qh"><span class="qn">188</span><span class="qt">條件細節</span></div>
+<div class="qbody">
+<div class="qsen">What should Doris do if she can't make it on March 25?</div>
+<div class="qzh">如果 Doris 3 月 25 日無法出席，她應該怎麼做？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Call Ms. Grace Richardson</div>
+<div class="qo ok"><span class="ol">B</span>Call Wendy Garfield</div>
+<div class="qo "><span class="ol">C</span>Call George Sherman</div>
+<div class="qo "><span class="ol">D</span>Call a sales manager</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文件一：If you cannot make it on the above date, please call my secretary, Ms. Wendy Garfield。</p><div class="al">答案</div><p class="ap">聯絡 Wendy Garfield → B。</p></div>
+<div class="corr mt12"><p>A Grace Richardson 是到場時要找的人，不是改期聯絡人；C George Sherman 是 HR Director，原文要求打電話給他的秘書；D sales manager：文章沒有這個人。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">cannot make it</span><span class="vd">無法出席</span>
+<span class="vw">reschedule</span><span class="vd">改期</span>
+<span class="vw">secretary</span><span class="vd">秘書</span>
+<span class="vw">preliminary interview</span><span class="vd">初步面試</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q189">
+<div class="qh"><span class="qn">189</span><span class="qt">跨文件判斷</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What document is also sent with Doris's letter?</div>
+<div class="qzh">Doris 的信中還附上了什麼文件？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>A business plan</div>
+<div class="qo ok"><span class="ol">B</span>A reference letter from her previous boss</div>
+<div class="qo "><span class="ol">C</span>Her business card</div>
+<div class="qo "><span class="ol">D</span>Her curriculum vitae</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這是跨文件題。文件一說 George 要求她面試時帶 resume 和 portfolio。文件二說 Doris 在回信中附上了什麼？</p><div class="al">答案</div><p class="ap">Doris 說：I have attached my most recent letter of reference（推薦信）→ B。注意：她信中附的是推薦信，不是履歷！</p></div>
+<div class="corr mt12"><p>D curriculum vitae（CV/履歷）：George 要她面試時帶履歷，但 Doris 在這封回信中 attach 的是 letter of reference，不是履歷。bring ≠ attach 是這題的關鍵區別。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">letter of reference</span><span class="vd">推薦信</span>
+<span class="vw">curriculum vitae</span><span class="vd">履歷（CV）</span>
+<span class="vw">attach</span><span class="vd">附上</span>
+<span class="vw">bring vs attach</span><span class="vd">面試攜帶 vs 信中附上</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q190">
+<div class="qh"><span class="qn">190</span><span class="qt">NOT 事實（三篇）</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What is NOT true about Doris Andrews?</div>
+<div class="qzh">關於 Doris Andrews，下列哪一項不正確？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>She has known Mr. Sherman for a long time.</div>
+<div class="qo "><span class="ol">B</span>She has several years of work experience.</div>
+<div class="qo "><span class="ol">C</span>She won some sales awards in the past.</div>
+<div class="qo ok"><span class="ol">D</span>If she gets the new job, she will move to New York.</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>逐一核對四個選項。B 和 C 可直接在履歷中確認。D 說的是：如果她得到新工作，她會搬到紐約。文章有任何新職位地點或搬家計畫的資訊嗎？</p><div class="al">答案</div><p class="ap">D：文章完全沒有說新工作在紐約，也沒有說她要搬家。履歷中 NY 是她 2010–2013 的工作地點，現在在 California。答案 D。</p></div>
+<div class="corr mt12"><p>B several years：履歷從 2010 至今，顯然有多年經驗；C sales awards：履歷直接寫 Received outstanding sales awards；A 雖然無法完全確認，但 D 的錯誤最明確。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">curriculum vitae</span><span class="vd">履歷</span>
+<span class="vw">sales award</span><span class="vd">銷售獎項</span>
+<span class="vw">relocate</span><span class="vd">搬遷</span>
+<span class="vw">past experience ≠ future plan</span><span class="vd">過去地點 ≠ 未來計畫</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="p7-191-v">
+<div class="sh"><div class="sn">G</div><div class="st">Part 7 · 191–195 停車場投訴（三篇）</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>⬛⬛ 三篇 — Super-Safe 停車場 + 投訴 + 回覆</div><div class="bb">
+<div class="p7box"><h4>文件一：Super-Safe Airport Parking 服務介紹</h4>
+<p>Detroit International Airport 附近的停車場。服務亮點：預約保障、自助停車、短期/長期停車、每週七天開放、<strong>免費機場接駁</strong>、24 小時保全、免費行李協助。</p></div>
+<div class="p7box" style="margin-top:10px"><h4>文件二：Linda Johnson 的回饋表（投訴）</h4>
+<p>Linda 和丈夫晚上 11:30 去取車，比規定的 <strong>11 p.m.</strong> 晚了 30 分鐘，被多收 <strong>$10</strong>。停車場人員說有標示，但 Linda 說她從來沒有看到那個標示，表示服務很令她不滿。</p></div>
+<div class="p7box" style="margin-top:10px"><h4>文件三：John Lucas（客服經理）回覆</h4>
+<p>為不便致歉，決定<strong>全額退還</strong>多收的 $10（complete refund of the extra fee）。也承認停車場人員需要更好的顧客服務訓練。</p></div>
+<div class="qzh" style="margin-top:8px">中文大意：Linda 投訴未被告知取車截止時間被多收 $10。客服經理 John Lucas 致歉並決定全額退還 $10。</div>
+<div class="tip mt12"><p>三篇跨文件：Linda 的投訴在文件二；公司回覆在文件三；Q195 問後續行動需對照文件三的 refund 決定</p></div>
+</div></div>
+</div>
+<div class="qb" id="q191">
+<div class="qh"><span class="qn">191</span><span class="qt">公司識別</span></div>
+<div class="qbody">
+<div class="qsen">What is Super-Safe?</div>
+<div class="qzh">Super-Safe 是什麼？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>A local government department</div>
+<div class="qo "><span class="ol">B</span>A car dealer in New Jersey</div>
+<div class="qo ok"><span class="ol">C</span>A parking lot near the airport in Detroit</div>
+<div class="qo "><span class="ol">D</span>A resource conservation group</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文件一標題：Super-Safe Airport Parking；第一句：When parking at Detroit International Airport, Super-Safe Parking...。</p><div class="al">答案</div><p class="ap">Detroit 機場附近的停車場 → C。</p></div>
+<div class="corr mt12"><p>B car dealer in New Jersey：Linda 住在 New Jersey，但服務地點是 Detroit，公司也不是汽車經銷商；D conservation group：文章完全沒有環保資源保育主題。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">parking lot</span><span class="vd">停車場</span>
+<span class="vw">airport</span><span class="vd">機場</span>
+<span class="vw">shuttle service</span><span class="vd">接駁服務</span>
+<span class="vw">Detroit</span><span class="vd">底特律，美國密西根州</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q192">
+<div class="qh"><span class="qn">192</span><span class="qt">NOT 好處</span></div>
+<div class="qbody">
+<div class="qsen">What is NOT mentioned as a benefit of Super-Safe?</div>
+<div class="qzh">以下哪一項沒有被提到是 Super-Safe 的優點？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>It's open seven days a week.</div>
+<div class="qo "><span class="ol">B</span>It provides shuttle service at no cost.</div>
+<div class="qo ok"><span class="ol">C</span>It offers gifts to customers from other states.</div>
+<div class="qo "><span class="ol">D</span>Customers can choose to park their cars there short-term.</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>逐一對照文件一的 Benefits at a Glance 清單。哪一個不在清單裡？</p><div class="al">答案</div><p class="ap">C gifts to customers from other states — 文章有 complimentary luggage assistance（免費行李協助），不是給外州客戶的禮物。答案 C。</p></div>
+<div class="corr mt12"><p>complimentary 在這裡是「免費的」，不是「贈禮的」。文章沒有提到任何針對外州客戶的特別贈品。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">complimentary</span><span class="vd">免費的；贈送的</span>
+<span class="vw">luggage assistance</span><span class="vd">行李協助</span>
+<span class="vw">shuttle service</span><span class="vd">接駁服務</span>
+<span class="vw">short-term parking</span><span class="vd">短期停車</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q193">
+<div class="qh"><span class="qn">193</span><span class="qt">聯絡原因</span></div>
+<div class="qbody">
+<div class="qsen">Why did Linda Johnson contact Super-Safe?</div>
+<div class="qzh">Linda Johnson 為什麼聯絡 Super-Safe？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>To thank them for placing an order</div>
+<div class="qo ok"><span class="ol">B</span>To file a complaint of bad parking experience</div>
+<div class="qo "><span class="ol">C</span>To discuss partnership opportunities</div>
+<div class="qo "><span class="ol">D</span>To request a donation for her company</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文件二的情緒關鍵字：upset、not being told、charged an additional $10、never saw any signs、bad taste in our mouths。這是什麼性質的訊息？</p><div class="al">答案</div><p class="ap">投訴不良服務體驗 → B（file a complaint）。</p></div>
+<div class="corr mt12"><p>A 感謝：她用的是 upset 和 bad taste，不是感謝；C 商業合作：沒有；D 捐款：沒有。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">file a complaint</span><span class="vd">提出投訴</span>
+<span class="vw">bad taste in one's mouth</span><span class="vd">留下不好的印象</span>
+<span class="vw">charged</span><span class="vd">被收費</span>
+<span class="vw">feedback form</span><span class="vd">回饋表</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q194">
+<div class="qh"><span class="qn">194</span><span class="qt">主要抱怨</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What is Linda Johnson's main concern?</div>
+<div class="qzh">Linda Johnson 最主要的抱怨是什麼？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Her car was stolen.</div>
+<div class="qo "><span class="ol">B</span>The parking lot is too far away from the airport.</div>
+<div class="qo ok"><span class="ol">C</span>Parking lot signs should clearly indicate pick-up hours.</div>
+<div class="qo "><span class="ol">D</span>More parking lot attendants should be hired.</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Linda 不只是在抱怨 $10。她更強調的是什麼？not being told we had to pick our car up by 11 p.m. / we never saw any signs like that。</p><div class="al">答案</div><p class="ap">核心問題：取車截止時間沒有清楚告知 → C（標示應清楚說明取車時間）。</p></div>
+<div class="corr mt12"><p>A 車被偷：沒有；B 停車場太遠：文章沒有距離抱怨（還有免費接駁）；D 需要更多人員：是公司後來自己說要訓練，Linda 沒有要求增加人手。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">pick-up hour</span><span class="vd">取車時間</span>
+<span class="vw">sign</span><span class="vd">標示；告示</span>
+<span class="vw">clearly indicate</span><span class="vd">清楚標示</span>
+<span class="vw">main concern</span><span class="vd">主要顧慮；核心問題</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q195">
+<div class="qh"><span class="qn">195</span><span class="qt">後續行動</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What will John Lucas do next most likely?</div>
+<div class="qzh">John Lucas 接下來最可能會做什麼？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Meet Linda Johnson in person.</div>
+<div class="qo "><span class="ol">B</span>Offer Linda Johnson a 10% off voucher.</div>
+<div class="qo ok"><span class="ol">C</span>Return $10 to Linda Johnson.</div>
+<div class="qo "><span class="ol">D</span>Drive Linda Johnson to the airport.</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文件三：we have decided to make a complete refund of the extra fee you've paid。Linda 說她被多收了多少？</p><div class="al">答案</div><p class="ap">多收 $10 → 全額退款 → 退還 $10 → C。</p></div>
+<div class="corr mt12"><p>A 親自見面：文章沒有；B 折扣券：文章沒有折價券；D 開車送機：文章沒有接送安排。complete refund of the extra fee = 退還額外收取的費用 = $10。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">complete refund</span><span class="vd">全額退款</span>
+<span class="vw">extra fee</span><span class="vd">額外費用</span>
+<span class="vw">inconvenience</span><span class="vd">不便</span>
+<span class="vw">parking attendant</span><span class="vd">停車場服務人員</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="p7-196-v">
+<div class="sh"><div class="sn">H</div><div class="st">Part 7 · 196–200 廣播節目（三篇）</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>⬛⬛ 三篇 — 節目表 + 節目介紹 + 聽眾回饋</div><div class="bb">
+<div class="p7box"><h4>文件一：Good Radio Schedule（節目時間表）</h4>
+<table class="tbl" style="font-size:12px"><tr><th>Time</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+<tr><td>6 a.m.</td><td></td><td></td><td></td><td></td><td></td><td>J.J. Lin</td><td></td></tr>
+<tr><td>8 a.m.</td><td></td><td></td><td>Jerry Smith</td><td></td><td></td><td></td><td style="background:var(--amber-lt)"><strong>Larry Good</strong></td></tr>
+<tr><td>10 a.m.</td><td></td><td></td><td></td><td></td><td></td><td>Jack Connor</td><td></td></tr>
+<tr><td>2 p.m.</td><td></td><td></td><td style="background:var(--sky-lt)"><strong>Tiffany Cole</strong></td><td></td><td></td><td>Steven Ford</td><td>Jerry Smith</td></tr>
+<tr><td>6 p.m.</td><td>Linda Smith</td><td></td><td></td><td></td><td>Linda Smith</td><td></td><td>Will Brooks</td></tr>
+<tr><td>8 p.m.</td><td></td><td></td><td>Eva McCarthy</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>10 p.m.</td><td>Eva McCarthy</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></div>
+<div class="p7box" style="margin-top:10px"><h4>文件二：節目介紹（4 個節目）</h4>
+<p><strong>News News</strong> / Host: <strong>Tiffany Cole</strong> — 跨越國界與時區的重要故事。<br>
+<strong>Our World</strong> / Host: <strong>Eva McCarthy</strong> — 音樂、訪談與世界故事（<em>music, interviews, and stories</em>）。<br>
+<strong>Health Channel</strong> / Host: <strong>Linda Smith</strong> — 壓力應對、身心健康（cope with stress / stay healthy）。<br>
+<strong>Best Performance</strong> / Host: <strong>Larry Good</strong> — 達成目標、個人成就（achieve greater results / fulfill their goals）。</p></div>
+<div class="p7box" style="margin-top:10px"><h4>文件三：聽眾 Laura Hart 的回饋</h4>
+<p>Laura 長期工作壓力大，聽了某個節目後學到：treat myself in a healthier way / take time off / rest / my health is everything。她想說的是 thank you。</p></div>
+<div class="qzh" style="margin-top:8px">中文大意：廣播節目表 + 四個節目介紹（新聞/世界/健康/成就）+ 聽眾 Laura 的感謝回饋（聽了健康節目後改變生活方式）。</div>
+<div class="tip mt12"><p>三篇跨文件：Q196 需對照文件一（時間表）和文件二（節目介紹）；Q197 需先找對應節目再看時間表；Q200 需比對文件三的關鍵字和文件二的節目描述</p></div>
+</div></div>
+</div>
+<div class="qb" id="q196">
+<div class="qh"><span class="qn">196</span><span class="qt">跨文件細節</span></div>
+<div class="qbody">
+<div class="qsen">What is true about Tiffany Cole?</div>
+<div class="qzh">關於 Tiffany Cole，下列哪一項正確？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>She is the host of an afternoon program in a radio station.</div>
+<div class="qo "><span class="ol">B</span>She is the manager of the radio station.</div>
+<div class="qo "><span class="ol">C</span>She is a health expert.</div>
+<div class="qo "><span class="ol">D</span>She has been working in the radio station for two years.</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這是跨文件題。先從文件二找 Tiffany Cole：她是 News News 的 host。再從文件一找她的播出時間：週三幾點？</p><div class="al">答案</div><p class="ap">文件一：Wednesday 2 p.m. = 下午 → 她是電台下午節目主持人（A）。</p></div>
+<div class="corr mt12"><p>B 她是電台經理：文章沒有說；C 健康專家：那是 Linda Smith；D 任職兩年：文章沒有任職年資資訊。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">host</span><span class="vd">主持人</span>
+<span class="vw">afternoon program</span><span class="vd">下午節目</span>
+<span class="vw">Tiffany Cole</span><span class="vd">主持 News News</span>
+<span class="vw">cross-reference</span><span class="vd">跨文件比對</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q197">
+<div class="qh"><span class="qn">197</span><span class="qt">節目配對</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">If a person wants to learn about achieving goals, when should he turn on the radio?</div>
+<div class="qzh">想學習達成目標，應該什麼時候收聽？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Tuesday evening</div>
+<div class="qo "><span class="ol">B</span>Wednesday afternoon</div>
+<div class="qo ok"><span class="ol">C</span>Sunday morning</div>
+<div class="qo "><span class="ol">D</span>Friday evening</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>先從文件二找哪個節目是關於 achieving goals / fulfill their goals：哪一個節目？再到文件一找那個主持人的播出時間。</p><div class="al">答案</div><p class="ap">Best Performance（Larry Good）→ 文件一：Sunday 8 a.m. = 星期日早上（C）。</p></div>
+<div class="corr mt12"><p>A Tuesday evening：Larry 不在週二；B Wednesday afternoon：那是 Tiffany Cole（News News）；D Friday evening：那是 Linda Smith（Health Channel）。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">achieve goals</span><span class="vd">達成目標</span>
+<span class="vw">fulfill goals</span><span class="vd">實現目標</span>
+<span class="vw">Larry Good</span><span class="vd">Best Performance 主持人</span>
+<span class="vw">Sunday morning</span><span class="vd">星期日早上</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q198">
+<div class="qh"><span class="qn">198</span><span class="qt">節目內容</span></div>
+<div class="qbody">
+<div class="qsen">What can be heard in the "Our World" program?</div>
+<div class="qzh">在 Our World 節目可以聽到什麼？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Technology developments</div>
+<div class="qo "><span class="ol">B</span>Business strategies</div>
+<div class="qo "><span class="ol">C</span>Local News</div>
+<div class="qo ok"><span class="ol">D</span>Music</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>直接看文件二 Our World 的 description：a lively blend of music, interviews, and stories。</p><div class="al">答案</div><p class="ap">Music 直接在描述中出現 → D。</p></div>
+<div class="corr mt12"><p>A technology / B business strategies / C local news：都不在 Our World 的描述中。Our World 是音樂、訪談與故事，不是新聞或商業節目。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">blend of</span><span class="vd">混合；融合了</span>
+<span class="vw">lively</span><span class="vd">生動的</span>
+<span class="vw">Our World</span><span class="vd">由 Eva McCarthy 主持</span>
+<span class="vw">description</span><span class="vd">節目介紹；描述</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q199">
+<div class="qh"><span class="qn">199</span><span class="qt">訊息目的</span></div>
+<div class="qbody">
+<div class="qsen">What's the purpose of Laura Hart's message?</div>
+<div class="qzh">Laura Hart 這封訊息的目的為何？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>To propose a plan</div>
+<div class="qo ok"><span class="ol">B</span>To show her appreciation</div>
+<div class="qo "><span class="ol">C</span>To file a complaint</div>
+<div class="qo "><span class="ol">D</span>To make some suggestions</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文件三的關鍵字和最後一句：all I want is thank you！Laura 一直在說她的正面改變和感謝。這是什麼目的？</p><div class="al">答案</div><p class="ap">表達感謝 → B（show her appreciation）。</p></div>
+<div class="corr mt12"><p>C complaint（抱怨）：Laura 完全沒有抱怨節目，而是說改變了生活；A 提出計畫：沒有；D 建議：她沒有提出改善建議。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">show appreciation</span><span class="vd">表達感謝</span>
+<span class="vw">propose</span><span class="vd">提出；建議</span>
+<span class="vw">feedback</span><span class="vd">回饋</span>
+<span class="vw">change for the better</span><span class="vd">正向改變</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q200">
+<div class="qh"><span class="qn">200</span><span class="qt">主題配對（三篇）</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Which program does Laura Hart listen to most likely?</div>
+<div class="qzh">Laura Hart 最可能收聽哪一個節目？</div>
+<div class="qopts">
+<div class="qo "><span class="ol">A</span>Best Performance</div>
+<div class="qo "><span class="ol">B</span>Our World</div>
+<div class="qo "><span class="ol">C</span>News News</div>
+<div class="qo ok"><span class="ol">D</span>Health Channel</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這是三篇主題配對題。Laura 的回饋關鍵字：stressed out / working long hours / healthier way / take time off / rest / my health is everything。哪個節目描述最吻合？</p><div class="al">答案</div><p class="ap">Health Channel：cope with stress / stay healthy physically and mentally / happier and healthier → D。</p></div>
+<div class="corr mt12"><p>A Best Performance：談達成目標、領導力——Laura 的問題不是目標不達成，而是壓力過大忽略健康；B Our World / C News News：都不是健康主題。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">cope with stress</span><span class="vd">應對壓力</span>
+<span class="vw">Health Channel</span><span class="vd">由 Linda Smith 主持</span>
+<span class="vw">feel healthier</span><span class="vd">感覺更健康</span>
+<span class="vw">三篇主題配對</span><span class="vd">文件三關鍵字 vs. 文件二節目描述</span>
+</div>
+</div>
+</div>
+</div></div>
 <div class="ls" id="s-summary">
-<div class="sh"><div class="sn">✓</div><div class="st">1–11 總整理</div></div>
+<div class="sh"><div class="sn">✓</div><div class="st">165–200 總整理 &amp; 解答表</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>考點速查表</div><div class="bb">
 <table class="tbl">
 <tr><th>題號</th><th>答案</th><th>考點</th><th>學生要記住</th></tr>
-<tr><td>1</td><td>B that</td><td>名詞子句</td><td>make sure that + S + V 固定句型</td></tr>
-<tr><td>2</td><td>C when</td><td>關係副詞</td><td>時間先行詞 year → when（後面子句完整）</td></tr>
-<tr><td>3</td><td>B that</td><td>名詞子句補語</td><td>The reason is that（不是 because）</td></tr>
-<tr><td>4</td><td>C that</td><td>that 名詞子句</td><td>report / announce / confirm + that + S + V</td></tr>
-<tr><td>5</td><td>A who</td><td>疑問詞名詞子句</td><td>determine who（子句中缺主詞）</td></tr>
-<tr><td>6</td><td>C which</td><td>which 名詞子句</td><td>which of the two = 有限範圍選哪一個</td></tr>
-<tr><td>7</td><td>D whom</td><td>介系詞 + whom</td><td>介系詞後 + 人 → whom；有逗號不用 that</td></tr>
-<tr><td>8</td><td>B whose</td><td>所有格關係代名詞</td><td>空格後接名詞 → whose</td></tr>
-<tr><td>9</td><td>D which</td><td>事物 + 缺主詞</td><td>事物 + 缺主詞 → which</td></tr>
-<tr><td>10</td><td>A which</td><td>介系詞 + which</td><td>for which；介系詞後 + 有逗號 → 不能 that</td></tr>
-<tr><td>11</td><td>D who</td><td>非限定關係子句</td><td>人 + 缺主詞 + 有逗號 → who（不能 that）</td></tr>
+<tr><td>165</td><td>B sales letter</td><td>文章類型</td><td>cut costs + introduce solutions + Learn more = 推廣信</td></tr>
+<tr><td>166</td><td>D anniversary</td><td>NOT 題</td><td>逐項核對，12th anniversary 完全找不到</td></tr>
+<tr><td>167</td><td>B foreboding</td><td>單字同義</td><td>predictive → predict → 預測性的</td></tr>
+<tr><td>168</td><td>A recruit</td><td>目的題</td><td>WANTED + openings = 徵才廣告</td></tr>
+<tr><td>169</td><td>A bilingual</td><td>細節題</td><td>雙語能力（書寫+口語）</td></tr>
+<tr><td>170</td><td>B Japanese grammar</td><td>NOT 題</td><td>客服不等於教日文</td></tr>
+<tr><td>171</td><td>D 15 years old</td><td>事實判斷</td><td>has grown for the past 15 years</td></tr>
+<tr><td>172</td><td>C significant</td><td>單字同義</td><td>vital = significant（重要的）</td></tr>
+<tr><td>173</td><td>D exchange ideas</td><td>主旨題</td><td>Mayor's Breakfast = 公共議題論壇</td></tr>
+<tr><td>174</td><td>B one hour</td><td>時間計算</td><td>Buffet 7:30–8:30 = 一小時</td></tr>
+<tr><td>175</td><td>C [3]</td><td>句子插入</td><td>Pre-registration → 接 deadline to register</td></tr>
+<tr><td>176</td><td>C U.S.A.</td><td>地點細節</td><td>Chicago, IL = 美國</td></tr>
+<tr><td>177</td><td>B more than 3,000</td><td>數字細節</td><td>原文直接寫 More than 3,000</td></tr>
+<tr><td>178</td><td>C sales contacts</td><td>好處推論</td><td>develop new sales contacts + potential customers</td></tr>
+<tr><td>179</td><td>C software</td><td>NOT 題</td><td>website listing ≠ web-design software</td></tr>
+<tr><td>180</td><td>A 2 days</td><td>時間計算</td><td>布展 9/19 + 9/20 = 兩天</td></tr>
+<tr><td>181</td><td>A prospective students</td><td>目的題</td><td>說明會 = 讓潛在學生了解 MBA</td></tr>
+<tr><td>182</td><td>C stress</td><td>單字同義</td><td>emphasize = stress（強調）</td></tr>
+<tr><td>183</td><td>C TOEFL</td><td>NOT 題</td><td>admissions info ≠ TOEFL tips</td></tr>
+<tr><td>184</td><td>A additional info</td><td>寫信目的</td><td>I would like to know further information = 詢問資訊</td></tr>
+<tr><td>185</td><td>D attendance rate</td><td>NOT 詢問</td><td>Mark 問了時長、設備、議程；沒問參加率</td></tr>
+<tr><td>186</td><td>C invite to interview</td><td>寫信目的</td><td>preliminary interview = 初步面試邀請</td></tr>
+<tr><td>187</td><td>A product manager</td><td>職位查詢</td><td>三份文件都一致指向 Product Manager</td></tr>
+<tr><td>188</td><td>B Wendy Garfield</td><td>細節條件</td><td>If cannot make it → call secretary Wendy Garfield</td></tr>
+<tr><td>189</td><td>B reference letter</td><td>跨文件判斷</td><td>附上 letter of reference（不是 resume）</td></tr>
+<tr><td>190</td><td>D move to New York</td><td>NOT 事實</td><td>履歷中 NY 是過去工作地，不是未來計畫</td></tr>
+<tr><td>191</td><td>C parking lot</td><td>公司識別</td><td>Super-Safe Parking at Detroit Airport</td></tr>
+<tr><td>192</td><td>C gifts</td><td>NOT 好處</td><td>complimentary luggage ≠ gifts to out-of-state</td></tr>
+<tr><td>193</td><td>B complaint</td><td>聯絡原因</td><td>upset + bad taste = 投訴</td></tr>
+<tr><td>194</td><td>C signs unclear</td><td>主要抱怨</td><td>核心是取車時間沒清楚標示</td></tr>
+<tr><td>195</td><td>C return $10</td><td>後續行動</td><td>complete refund of extra fee = 退還 $10</td></tr>
+<tr><td>196</td><td>A afternoon host</td><td>跨文件細節</td><td>Tiffany Cole + 文件一 Wed 2pm = 下午節目</td></tr>
+<tr><td>197</td><td>C Sunday morning</td><td>節目配對</td><td>achieve goals → Best Performance → Larry Good → Sun 8am</td></tr>
+<tr><td>198</td><td>D music</td><td>節目內容</td><td>Our World = music, interviews, stories</td></tr>
+<tr><td>199</td><td>B appreciation</td><td>訊息目的</td><td>all I want is thank you = 感謝</td></tr>
+<tr><td>200</td><td>D Health Channel</td><td>三篇主題配對</td><td>stress/healthy/rest → Health Channel（Linda Smith）</td></tr>
 </table>
-<div class="goal2 mt16"><p><strong>下次複習建議：</strong>先考判斷系統口訣（缺成分→關係子句；後面完整→名詞子句），再考 6 個片語：make sure that / the reason is that / be responsible for / determine who / stay on as / set aside funds for。</p></div>
+<div class="goal2 mt16"><p><strong>下次複習建議：</strong>先考「三步驟雙篇/三篇策略」；再考以下片語：cut costs / be bilingual in A and B / file a complaint / complete refund / pre-registration is required / develop sales contacts / achieve goals / cope with stress / show appreciation。</p></div>
 </div></div>
 </div>
-
 </main>
 </div>
 <script>
@@ -713,25 +1388,15 @@ function toggleTimer(){
 function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.querySelector('.tbtn').textContent='▶ 開始'}
 function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
 const allSecs=[
-  {id:'s-overview',label:'課程總覽'},
-  {id:'s-open',label:'開場：判斷系統'},
-  {id:'s-rule1',label:'Rule1 關係子句vs名詞子句'},
-  {id:'s-rule2',label:'Rule2 who/whom'},
-  {id:'s-rule3',label:'Rule3 whose'},
-  {id:'s-rule4',label:'Rule4 which/that'},
-  {id:'s-rule5',label:'Rule5 where/when/why'},
-  {id:'s-rule6',label:'Rule6 how 陷阱'},
-  {id:'s-rule7',label:'Rule7 what'},
-  {id:'s-rule8',label:'Rule8 that 名詞子句'},
-  {id:'s-rule9',label:'Rule9 reason is that'},
-  {id:'s-rule10',label:'Rule10 whether/if'},
-  {id:'s-traps',label:'TOEIC 陷阱整理'},
-  {id:'s-close',label:'收尾總結'},
-  {id:'s-part5',label:'做題節奏'},
-  {id:'q1',label:'1'},{id:'q2',label:'2'},{id:'q3',label:'3'},
-  {id:'q4',label:'4'},{id:'q5',label:'5'},{id:'q6',label:'6'},
-  {id:'q7',label:'7'},{id:'q8',label:'8'},{id:'q9',label:'9'},
-  {id:'q10',label:'10'},{id:'q11',label:'11'},
+  {id:'s-overview',label:'課程總覽'},{id:'s-strategy',label:'雙篇/三篇策略'},
+  {id:'p7-165-v',label:'165-167文章'},{id:'q165',label:'165'},{id:'q166',label:'166'},{id:'q167',label:'167'},
+  {id:'p7-168-v',label:'168-171文章'},{id:'q168',label:'168'},{id:'q169',label:'169'},{id:'q170',label:'170'},{id:'q171',label:'171'},
+  {id:'p7-172-v',label:'172-175文章'},{id:'q172',label:'172'},{id:'q173',label:'173'},{id:'q174',label:'174'},{id:'q175',label:'175'},
+  {id:'p7-176-v',label:'176-180文章'},{id:'q176',label:'176'},{id:'q177',label:'177'},{id:'q178',label:'178'},{id:'q179',label:'179'},{id:'q180',label:'180'},
+  {id:'p7-181-v',label:'181-185文章'},{id:'q181',label:'181'},{id:'q182',label:'182'},{id:'q183',label:'183'},{id:'q184',label:'184'},{id:'q185',label:'185'},
+  {id:'p7-186-v',label:'186-190文章'},{id:'q186',label:'186'},{id:'q187',label:'187'},{id:'q188',label:'188'},{id:'q189',label:'189'},{id:'q190',label:'190'},
+  {id:'p7-191-v',label:'191-195文章'},{id:'q191',label:'191'},{id:'q192',label:'192'},{id:'q193',label:'193'},{id:'q194',label:'194'},{id:'q195',label:'195'},
+  {id:'p7-196-v',label:'196-200文章'},{id:'q196',label:'196'},{id:'q197',label:'197'},{id:'q198',label:'198'},{id:'q199',label:'199'},{id:'q200',label:'200'},
   {id:'s-summary',label:'總整理'},
 ];
 const obs=new IntersectionObserver((entries)=>{

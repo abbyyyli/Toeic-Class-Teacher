@@ -42,89 +42,59 @@ body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:
 .gram-title{font-size:28px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:5px}
 .gram-sub{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:20px}
 .g-question{font-size:19px;font-weight:700;background:rgba(245,158,11,.12);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:18px}
-.g-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.g-col{border-radius:12px;padding:16px}
-.green-col{background:rgba(5,150,105,.1);border:1.5px solid rgba(5,150,105,.25)}
-.red-col{background:rgba(220,38,38,.08);border:1.5px solid rgba(220,38,38,.18)}
-.g-col-title{font-weight:700;font-size:14px;margin-bottom:8px}
-.green-col .g-col-title{color:#34D399}
-.red-col .g-col-title{color:#FC8181}
-.g-col-body{font-size:13px;line-height:2;color:rgba(255,255,255,.75)}
-.g-col-body code{font-family:"JetBrains Mono",monospace;background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-size:12px}
 .g-highlight{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.18);border-radius:8px;padding:11px 15px;font-size:13px;color:rgba(255,255,255,.8);margin-bottom:12px}
 .g-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:14px}
 .g-table th,.g-table td{padding:9px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
 .g-table th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.35);font-weight:700}
-.cell-em{font-family:"JetBrains Mono",monospace;color:var(--amber);font-weight:700;font-size:15px}
-.g-examples{display:flex;flex-direction:column;gap:7px;margin-top:12px}
-.g-ex{font-family:"JetBrains Mono",monospace;font-size:13px;color:#34D399;background:rgba(5,150,105,.1);padding:7px 12px;border-radius:6px}
-.g-ex-wrong{font-family:"JetBrains Mono",monospace;font-size:13px;color:#FC8181;background:rgba(220,38,38,.08);padding:7px 12px;border-radius:6px}
-.trap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.trap-item{background:rgba(255,255,255,.04);border-radius:10px;padding:12px}
-.tw{font-family:"JetBrains Mono",monospace;font-size:12px;color:#FC8181;background:rgba(220,38,38,.1);padding:5px 9px;border-radius:5px;margin-bottom:5px}
-.tw::before{content:"❌ "}
-.tr{font-family:"JetBrains Mono",monospace;font-size:12px;color:#34D399;background:rgba(5,150,105,.1);padding:5px 9px;border-radius:5px}
-.tr::before{content:"✅ "}
+.cell-em{font-family:"JetBrains Mono",monospace;color:var(--amber);font-weight:700;font-size:14px}
+.g-table .snum{font-family:"JetBrains Mono",monospace;font-weight:800;color:var(--navy);background:var(--amber);text-align:center;border-radius:6px;width:36px}
 #ask-panel{background:rgba(245,158,11,.08);border:1.5px solid rgba(245,158,11,.2);border-radius:12px;padding:16px 20px;margin-top:16px}
 .ask-progress{font-size:11px;color:rgba(255,255,255,.35);font-family:"JetBrains Mono",monospace;margin-bottom:10px}
 .ask-q{font-size:16px;font-weight:700;color:white;margin-bottom:10px}
 .ask-a{display:none;background:rgba(5,150,105,.15);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px;color:#34D399;font-weight:700}
 .ask-a.show{display:block}
-.multi-header{margin-bottom:18px}
-.multi-title{font-size:24px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:4px}
-.multi-instr{font-size:14px;color:rgba(255,255,255,.4)}
-.multi-progress{font-size:12px;color:var(--amber);font-family:"JetBrains Mono",monospace;margin-top:4px}
-.multi-items{display:flex;flex-direction:column;gap:10px}
-.multi-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:14px}
-.multi-item.revealed{border-color:rgba(5,150,105,.3);background:rgba(5,150,105,.06)}
-.item-num{font-family:"JetBrains Mono",monospace;font-size:12px;color:rgba(255,255,255,.3);width:22px;flex-shrink:0;padding-top:2px}
-.item-q{font-size:15px;font-weight:600;color:white;line-height:1.5}
-.item-a{font-size:13px;color:#34D399;margin-top:6px;display:none;padding-top:6px;border-top:1px solid rgba(5,150,105,.2)}
-.item-a.show{display:block}
-.item-note{font-size:12px;color:rgba(52,211,153,.7);margin-top:3px}
-.corr-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;margin-bottom:10px}
-.corr-item.revealed{border-color:rgba(5,150,105,.25)}
-.corr-wrong{font-family:"JetBrains Mono",monospace;font-size:14px;color:#FC8181;background:rgba(220,38,38,.08);padding:7px 12px;border-radius:6px;margin-bottom:8px}
-.corr-wrong::before{content:"❌ "}
-.corr-right{font-family:"JetBrains Mono",monospace;font-size:14px;color:#34D399;background:rgba(5,150,105,.1);padding:7px 12px;border-radius:6px;display:none}
-.corr-right.show{display:block}
-.corr-right::before{content:"✅ "}
-.corr-reason{font-size:12px;color:rgba(255,255,255,.4);margin-top:6px;display:none}
-.corr-reason.show{display:block}
+.art-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--sky);margin-bottom:10px}
+.art-title{font-size:22px;font-weight:800;font-family:Inter,sans-serif;margin-bottom:5px}
+.art-theme{font-size:13px;color:rgba(255,255,255,.35);margin-bottom:16px}
+.art-text{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:20px 22px;font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:12px}
+.art-text p{margin-bottom:10px}.art-text p:last-child{margin-bottom:0}
+.art-blank{color:var(--amber);font-weight:800;background:rgba(245,158,11,.12);padding:1px 7px;border-radius:4px}
+.art-ins{background:rgba(124,58,237,.18);color:#A78BFA;font-weight:800;padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px}
+.art-zh{font-size:12px;color:rgba(255,255,255,.3);line-height:1.8}
+.art-doc{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--amber);margin-bottom:8px;padding:3px 10px;background:rgba(245,158,11,.1);border-radius:6px;display:inline-block}
+.art-text table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+.art-text table th,.art-text table td{padding:5px 8px;border:1px solid rgba(255,255,255,.1);text-align:left}
+.art-text table th{background:rgba(255,255,255,.07);font-weight:700;font-size:11px}
 .q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
 .q-num{font-family:Inter,sans-serif;font-size:13px;font-weight:800;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:6px}
 .q-type-tag{font-size:12px;font-weight:700;background:rgba(14,165,233,.15);color:var(--sky);padding:4px 12px;border-radius:6px}
 .q-star{font-size:12px;font-weight:700;background:rgba(245,158,11,.15);color:var(--amber);padding:4px 10px;border-radius:6px}
 .q-p6{font-size:12px;font-weight:700;background:rgba(124,58,237,.15);color:#A78BFA;padding:4px 10px;border-radius:6px}
-.q-sentence{font-size:17px;font-weight:500;line-height:1.9;background:rgba(255,255,255,.05);border-left:3px solid rgba(255,255,255,.2);border-radius:0 10px 10px 0;padding:13px 17px;margin-bottom:5px}
-.q-sentence u{text-decoration:none;background:rgba(245,158,11,.18);color:var(--amber);font-weight:700;padding:0 6px;border-radius:4px}
-.q-zh{font-size:12px;color:rgba(255,255,255,.3);margin-bottom:16px;padding-left:2px}
-.q-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:0}
-.q-opts.wide{grid-template-columns:1fr}
-.q-opt{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 15px;font-size:14px;transition:all .2s}
-.q-opt-lbl{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:Inter,sans-serif}
-.q-opt.correct{background:rgba(5,150,105,.16);border-color:var(--green)}
+.q-sentence{font-size:19px;font-weight:600;line-height:1.8;background:rgba(255,255,255,.04);border-left:3px solid var(--amber);border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:10px}
+.q-sentence u{text-decoration:none;background:rgba(245,158,11,.2);padding:0 8px;border-radius:4px;color:var(--amber);font-weight:800}
+.q-zh{font-size:13px;color:rgba(255,255,255,.35);margin-bottom:18px;line-height:1.6}
+.q-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.q-opt{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;font-size:14px;font-weight:600;cursor:default;display:flex;align-items:center;gap:10px;transition:.15s}
+.q-opt-lbl{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;font-family:Inter,sans-serif}
+.q-opt.correct{background:rgba(5,150,105,.2);border-color:rgba(5,150,105,.5);color:#34D399}
 .q-opt.correct .q-opt-lbl{background:var(--green);color:white}
-.q-opt.dimmed{opacity:.28}
-.key-reveal{display:none;background:rgba(245,158,11,.08);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:11px 17px;font-size:14px;color:rgba(255,255,255,.85);margin-top:12px}
+.q-opt.dimmed{opacity:.3}
+.key-reveal{background:rgba(245,158,11,.1);border:1.5px solid rgba(245,158,11,.25);border-radius:10px;padding:14px 18px;font-size:14px;display:none;margin-top:8px;color:rgba(255,255,255,.9)}
 .key-reveal.show{display:block}
-.key-reveal strong{color:var(--amber)}
 </style>
 </head>
 <body>
 <div id="topbar">
   <div style="display:flex;align-items:center">
     <span class="top-badge">上課投影</span>
-    <span class="top-title">Lesson 06 · 關係子句 &amp; 名詞子句</span>
+    <span class="top-title">Lesson 06 · Part 7 閱讀（165–200）</span>
   </div>
   <div class="top-right">
-    <span id="progress-text">1 / 23</span>
-    <div class="pbwrap"><div id="progress-bar" style="width:4%"></div></div>
+    <span id="progress-text">1 / 50</span>
+    <div class="pbwrap"><div id="progress-bar" style="width:2%"></div></div>
   </div>
 </div>
-
 <div id="slide-area"><div class="slide" id="slide-content"></div></div>
-
 <div id="bottombar">
   <button class="nav-btn" id="prev-btn" onclick="navigate(-1)" disabled>← 上一頁</button>
   <div class="center-btns">
@@ -132,234 +102,133 @@ body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:
     <div class="action-row">
       <button class="zh-btn" id="zh-btn" onclick="toggleZh()">中文 OFF</button>
       <button class="action-btn hidden" id="ask-btn" onclick="nextAsk()">❓ 問學生</button>
-      <button class="action-btn hidden" id="next-item-btn" onclick="nextItem()">下一題 ▶</button>
+      <button class="action-btn hidden" id="next-item-btn" onclick="">下一題 ▶</button>
       <button class="action-btn hidden" id="reveal-btn" onclick="reveal()">揭曉答案 ▼</button>
     </div>
   </div>
   <button class="nav-btn" id="next-btn" onclick="navigate(1)">下一頁 →</button>
 </div>
-
 <script>
 const SLIDES = [
-{type:'grammar',title:"關係子句 vs 名詞子句",subtitle:"最重要的判斷分界",content:"<div class='g-question'>空格前有沒有名詞？空格後子句完整嗎？</div><div class='g-cols'><div class='g-col green-col'><div class='g-col-title'>🔍 關係子句：修飾名詞</div><div class='g-col-body'>名詞 + 關係代名詞/副詞 + 子句<br>子句<b>缺成分</b>（主詞/受詞/所有格）<br><br><code>The employee who submitted...</code><br><code>The report which was approved</code></div></div><div class='g-col red-col'><div class='g-col-title'>📦 名詞子句：整塊當名詞</div><div class='g-col-body'>連接詞 + <b>完整句子</b><br>整塊當主詞、受詞或補語<br><br><code>I know that the meeting...</code><br><code>The reason is that...</code></div></div></div><div class='g-highlight'>判斷法：<b>缺成分 → 關係子句；後面完整 → 名詞子句</b></div>",ask:[["The restaurant ______ was advertised on the radio is popular.（空格後缺主詞，前面有名詞）", "關係子句 → which / that"],["I heard ______ Mr. Smith will be promoted.（後面 Mr. Smith will be promoted 完整）", "名詞子句 → that"],["The reason for the delay is ______ the weather was terrible.（完整句補充 reason）", "名詞子句 → that（不是 because）"]]},
-{type:'grammar',title:"who vs whom",subtitle:"先看空格後面有沒有主詞",content:"<div class='g-question'>空格後面第一個字是動詞，還是主詞？</div><table class='g-table'><tr><th>關係代名詞</th><th>功能</th><th>空格後面型態</th></tr><tr><td class='cell-em'>who</td><td>代人，當子句主詞</td><td>直接接動詞</td></tr><tr><td class='cell-em'>whom</td><td>代人，當子句受詞</td><td>有主詞＋動詞</td></tr></table><div class='g-highlight'>超快判斷：空格後先見<b>動詞 → who</b>；先見<b>主詞（we/I/she…） → whom</b></div><div class='g-examples'><div class='g-ex'>The manager who leads the team is on vacation.（who 後面 leads 是動詞）</div><div class='g-ex'>The client whom we met signed the contract.（whom 後面 we 是主詞）</div></div>",ask:[["The employee ______ submitted the report is absent.（空格後 submitted 是動詞）", "who（缺主詞，動詞前 → who）"],["The woman ______ we met yesterday is our new client.（空格後 we 是主詞）", "whom（後面有主詞 we → 缺受詞 → whom）"],["The client ______ the manager contacted accepted the offer.（後面有主詞 the manager）", "whom（the manager 是主詞，contacted 是動詞，whom 是受詞）"]]},
-{type:'grammar',title:"whose：所有格關係代名詞",subtitle:"後面一定接名詞",content:"<div class='g-question'>空格後面第一個字是名詞嗎？</div><div class='g-highlight'>空格後接<b>名詞</b>，表示「某人的某物」→ <b>whose</b></div><div class='g-examples'><div class='g-ex'>The engineer whose computer is being repaired is working from home.</div><div class='g-ex'>The company whose sales increased hired more workers.</div><div class='g-ex-wrong'>The engineer who computer... ✗（who 後要接動詞，不接名詞）</div></div><table class='g-table'><tr><th>字</th><th>後面接</th><th>例</th></tr><tr><td class='cell-em'>who</td><td>動詞</td><td>who submitted / who leads</td></tr><tr><td class='cell-em'>whose</td><td>名詞</td><td>whose computer / whose report</td></tr></table>",ask:[["The engineer, ______ computer you will be using, has been transferred.（空格後接名詞 computer）", "whose（空格後接名詞 → 所有格 → whose）"],["whose 和 who 的最快區別？", "who 後接動詞；whose 後接名詞（表所有格）"]]},
-{type:'grammar',title:"which / that：三種不能用 that 的情況",subtitle:"有逗號？有介系詞？",content:"<div class='g-question'>看到 that，先檢查這三個情況！</div><table class='g-table'><tr><th>情況</th><th>錯誤</th><th>正確</th></tr><tr><td>有逗號（非限定）</td><td style='color:#FC8181'>The office, that is on 3F, is large. ✗</td><td style='color:#34D399'>改用 which ✓</td></tr><tr><td>介系詞後</td><td style='color:#FC8181'>The building for that... ✗</td><td style='color:#34D399'>改用 for which ✓</td></tr><tr><td>所有格位置</td><td style='color:#FC8181'>that's computer ✗</td><td style='color:#34D399'>改用 whose ✓</td></tr></table><div class='g-highlight'>有逗號或介系詞前置 → 不能用 that，改 <b>which</b> 或 <b>whom</b></div>",ask:[["The new building, for ______ a purchasing fund has been set aside...（有逗號 + 介系詞 for）", "which（介系詞後 + 有逗號 → 不能用 that）"],["The office, ______ is on the third floor, is large.（有逗號）", "which（有逗號的非限定子句 → 不用 that）"]]},
-{type:'grammar',title:"where / when / why：關係副詞",subtitle:"先找先行詞類型，子句後面完整",content:"<div class='g-question'>先行詞是地點、時間還是理由？</div><table class='g-table'><tr><th>先行詞類型</th><th>關係副詞</th><th>可改寫成</th></tr><tr><td>地點（city / office）</td><td class='cell-em'>where</td><td>in / at which</td></tr><tr><td>時間（day / year）</td><td class='cell-em'>when</td><td>on / in which</td></tr><tr><td>理由（reason）</td><td class='cell-em'>why</td><td>for which</td></tr></table><div class='g-highlight'>關係副詞後面：子句<b>完整</b>（不缺成分）← 和關係代名詞的關鍵區別！</div><div class='g-examples'><div class='g-ex'>1945 is the year when World War II ended.（when 後：子句完整）</div><div class='g-ex'>This is the reason why the project was delayed.</div></div>",ask:[["1945 is the year ______ World War II ended.（先行詞 year = 時間，後面完整）", "when（時間先行詞 → when；後面子句完整）"],["This is the office ______ the training sessions are held.（先行詞 office = 地點）", "where（地點先行詞 → where）"],["This is the reason ______ the project was delayed.（先行詞 reason）", "why 或 that（reason 後可用 why 或 that）"]]},
-{type:'grammar',title:"how 與 what：特殊陷阱",subtitle:"不要重複先行詞",content:"<div class='g-question'>how 自帶「方式」；what 自帶先行詞</div><div class='g-cols'><div class='g-col red-col'><div class='g-col-title'>⚠️ how 陷阱</div><div class='g-col-body'><b>the way how</b> ✗（重複）<br><br>正確：<br><code>This is how it works. ✓</code><br><code>This is the way it works. ✓</code><br><code>This is the way in which it works. ✓</code></div></div><div class='g-col red-col'><div class='g-col-title'>⚠️ what 陷阱</div><div class='g-col-body'><b>The thing what</b> ✗（重複）<br><br>what = the thing that<br><br><code>What I need is time. ✓</code><br><code>The thing that I need is time. ✓</code></div></div></div><div class='g-highlight'>what 已包含先行詞，不要前面再加 the thing</div>",ask:[["This is the way ______ the system works.（how 後面能放嗎？）", "不能。the way how ✗ → 改 how the system works 或 the way the system works"],["The thing ______ she needs is support.（what 還是 that？）", "that（the thing that）或直接改成 What she needs is support."]]},
-{type:'grammar',title:"that 名詞子句",subtitle:"受詞、主詞、補語三種位置",content:"<div class='g-question'>that 引導的完整子句，在句中擔任什麼角色？</div><table class='g-table'><tr><th>位置</th><th>公式</th><th>例句</th></tr><tr><td>受詞</td><td>動詞 + that + 完整句</td><td>The manager confirmed <b>that</b> the meeting was canceled.</td></tr><tr><td>主詞</td><td>That + 完整句 + 動詞</td><td><b>That</b> the company will cut costs is true.</td></tr><tr><td>補語</td><td>be + that + 完整句</td><td>The problem is <b>that</b> the report is incomplete.</td></tr></table><div class='g-highlight'>TOEIC 常見：confirm / report / announce / believe / indicate + <b>that</b></div>",ask:[["The company newsletter reports ______ the retiring CEO will stay on.（reports 後接報導內容）", "that（report that + S + V）"],["The problem is ______ the report is incomplete.（be 動詞後補充說明）", "that（名詞子句補語）"]]},
-{type:'grammar',title:"The reason is that（不是 because）",subtitle:"TOEIC 最高頻陷阱",content:"<div class='g-question'>reason 後面用什麼？</div><div class='g-cols'><div class='g-col red-col'><div class='g-col-title'>❌ 常見錯誤</div><div class='g-col-body'>The reason is <b>because</b> the weather was terrible.<br><br>reason = 原因<br>because = 因為<br>→ 兩個都表示「原因」，概念重複！</div></div><div class='g-col green-col'><div class='g-col-title'>✅ TOEIC 標準句型</div><div class='g-col-body'>The reason is <b>that</b> the weather was terrible.<br><br>that = 引導名詞子句補語<br>→ 說明 reason 的內容</div></div></div><div class='g-highlight'>The reason is <b>that</b> + S + V（TOEIC 最安全答案）</div>",ask:[["The reason for the long delays was ______ the weather was horrible.（看到 reason + was + 空格）", "that（The reason is that + S + V，不是 because）"],["看到選項有 because 和 that，前面有 The reason is，選哪個？", "that（reason 已是「原因」，不重複 because）"]]},
-{type:'grammar',title:"whether / if：是否",subtitle:"三種情況 whether 優先",content:"<div class='g-question'>「是否」用 whether 還是 if？</div><div class='g-highlight'>受詞子句中 whether / if 可互換，但以下三種情況 <b>whether 優先</b>：</div><div class='g-examples'><div class='g-ex'>① 介系詞後：Please discuss whether to proceed. ✓（不用 if to V）</div><div class='g-ex'>② 當主詞：Whether the factory will close is undecided. ✓</div><div class='g-ex'>③ whether to V：The manager discussed whether to postpone. ✓</div><div class='g-ex'>④ 受詞子句（兩者皆可）：I do not know whether / if the meeting will be held. ✓</div></div>",ask:[["I do not know ______ the meeting will be canceled.（受詞子句）", "whether 或 if（受詞位置兩者皆可）"],["______ the factory will close is undecided.（主詞位置）", "Whether（主詞位置用 whether，不用 if）"]]},
-{type:'grammar',title:"TOEIC 六大陷阱快速對照",subtitle:"考前必看",content:"<div class='trap-grid'><div class='trap-item'><div class='tw'>The woman who we met</div><div class='tr'>The woman whom we met（後有主詞 we → 受格 whom）</div></div><div class='trap-item'><div class='tw'>The building, that was renovated...</div><div class='tr'>The building, which was renovated...（有逗號 → which）</div></div><div class='trap-item'><div class='tw'>The project for that...</div><div class='tr'>The project for which...（介系詞後 → which）</div></div><div class='trap-item'><div class='tw'>The reason is because...</div><div class='tr'>The reason is that...（reason + because 重複）</div></div><div class='trap-item'><div class='tw'>The thing what I need</div><div class='tr'>What I need（what = the thing that）</div></div><div class='trap-item'><div class='tw'>the way how it works</div><div class='tr'>how it works / the way it works</div></div></div>",ask:[]},
-{type:'multi',title:"Practice A：判斷關係代名詞",instruction:"分析空格前後，說出答案",items:[["The employee ______ submitted the report is absent.（空格後動詞 submitted，前面是人）", "who　人+缺主詞→ who"],["The woman ______ we met yesterday is our new client.（空格後 we 是主詞）", "whom　後有主詞 we，缺受詞 → whom"],["The office ______ the training session is held is on the 5th floor.（先行詞 office = 地點）", "where　地點先行詞 → where"],["The reason for the change is ______ the budget was reduced.（The reason is...）", "that　The reason is that + S + V，不是 because"],["I do not know ______ the proposal will be approved.（是否）", "whether　表示是否，受詞子句"]]},
-{type:'correction',title:"Practice B：改錯",instruction:"找出錯誤並說明原因",items:[["The building, that was renovated last year, is for sale.", "The building, which was renovated last year, is for sale.", "有逗號 → 非限定子句，不用 that"],["The project for that we prepared a budget was approved.", "The project for which we prepared a budget was approved.", "介系詞後不能直接接 that"],["The reason is because the weather was terrible.", "The reason is that the weather was terrible.", "reason 已表示原因，不重複 because"],["The thing what she needs is more time.", "What she needs is more time.", "what 已包含先行詞，不要前面再加 the thing"],["1945 is the year who the war ended.", "1945 is the year when the war ended.", "時間先行詞 year → 關係副詞 when"]]},
-{type:'question',num:1,qtype:"名詞子句",star:true,part6:false,sentence:"Please make sure <u>______</u> the conference will start on time.",zh:"請確保會議會準時開始。",options:["how","that","why","for which"],answer:1,key:"make sure that + S + V = 確保……（固定句型）"},
-{type:'question',num:2,qtype:"關係副詞",star:false,part6:false,sentence:"1945 is the year <u>______</u> World War II ended.",zh:"1945 年是第二次世界大戰結束的那一年。",options:["why","which","when","who"],answer:2,key:"時間先行詞 year → when；後面子句完整（World War II ended 無缺成分）"},
-{type:'question',num:3,qtype:"名詞子句補語",star:true,part6:false,sentence:"The reason for the long delays was <u>______</u> the weather condition was horrible.",zh:"長時間延誤的原因是天氣狀況非常糟糕。",options:["because","that","due to","since"],answer:1,key:"The reason is that + S + V（reason + because 重複，due to 接名詞不接句子）"},
-{type:'question',num:4,qtype:"that 名詞子句",star:false,part6:false,sentence:"The company newsletter reports <u>______</u> the retiring CEO will stay on as a creative consultant.",zh:"公司電子報報導，即將退休的執行長將繼續擔任創意顧問。",options:["on","who","that","it"],answer:2,key:"report that + S + V（陳述報導內容用 that；on 後接名詞；it 不能引導子句）"},
-{type:'question',num:5,qtype:"疑問詞子句",star:true,part6:false,sentence:"The supervisor needs to determine <u>______</u> in the division will be responsible for the survey.",zh:"主管需要決定部門裡誰將負責這份調查。",options:["who","where","how","why"],answer:0,key:"子句缺主詞（誰負責）→ who 當疑問詞名詞子句主詞"},
-{type:'question',num:6,qtype:"which 子句",star:false,part6:false,sentence:"The manager has not decided <u>______</u> of the two marketing strategies he should adopt.",zh:"經理尚未決定兩種行銷策略中他應該採用哪一種。",options:["what","that","which","who"],answer:2,key:"of the two = 有限範圍中選哪一個 → which；he should adopt 缺受詞"},
-{type:'question',num:7,qtype:"介系詞 + whom",star:true,part6:false,sentence:"The executive assistant, to <u>______</u> you sent the forms, is on personal leave this afternoon.",zh:"你把表格寄給的那位行政助理，今天下午正在請私人事假。",options:["which","her","what","whom"],answer:3,key:"介系詞後 + 人作受詞 → whom；有逗號也不能用 that"},
-{type:'question',num:8,qtype:"whose 所有格",star:true,part6:false,sentence:"The engineer, <u>______</u> computer you will be using, has been transferred to the new branch office.",zh:"你將使用其電腦的那位工程師，已被調到新的分公司。",options:["who","whose","which","with a"],answer:1,key:"空格後接名詞 computer → 所有格關係代名詞 whose"},
-{type:'question',num:9,qtype:"關係代名詞（主詞）",star:false,part6:false,sentence:"We went to the new restaurant <u>______</u> was advertised on the radio.",zh:"我們去了那家在廣播上被宣傳的新餐廳。",options:["it","who","where","which"],answer:3,key:"先行詞是事物 restaurant + 缺主詞 → which"},
-{type:'question',num:10,qtype:"介系詞 + which",star:true,part6:false,sentence:"The new building, for <u>______</u> a purchasing fund has been set aside, is modern and spacious.",zh:"那棟已經撥出採購基金的新建築，既現代又寬敞。",options:["which","that","whom","this"],answer:0,key:"介系詞後 + 有逗號 → 不能 that → which（代替事物 building）"},
-{type:'question',num:11,qtype:"非限定關係子句",star:false,part6:false,sentence:"Ms. Holloway, <u>______</u> has worked here for many years, has retired.",zh:"已經在這裡工作多年的 Holloway 女士退休了。",options:["which","she","that","who"],answer:3,key:"人 + 缺主詞 + 有逗號 → who（逗號後非限定子句不用 that）"}
+{type:'grammar',title:"雙篇 / 三篇解題策略",subtitle:"先搞清楚每份文件在講什麼",content:"<div class='g-question'>看到多份文件，先做什麼？</div><table class='g-table'><tr><th style='width:70px'>步驟</th><th>做什麼</th></tr><tr><td class='snum'>1</td><td>看每份文件的<b>標題或類型</b>（邀請信、規格表、履歷、投訴表…）</td></tr><tr><td class='snum'>2</td><td>快速抓<b>Who / What / When / Where / 關鍵數字</b></td></tr><tr><td class='snum'>3</td><td>看題目，判斷答案在<b>哪一份文件</b></td></tr><tr><td class='snum'>4</td><td>回原文找<b>直接文字證據</b>，不靠印象猜</td></tr></table><div class='g-highlight'>跨文件題陷阱：第一份文件要求 A，第二份文件確認做了 B——到底是帶 resume 還是附 letter of reference？</div>",ask:[["看到三份文件，你會先做什麼？","先看每份文件的標題或類型，再快速抓 Who/What/When/數字"],["NOT 題和推論題哪個更需要跨文件比對？","NOT 題逐項核對；推論題常需跨文件，因為單一文件不夠"]]},
+{type:'article',label:"Part 7 · 165–167 推廣信",title:"New-IT Solutions",text:"<p><strong>Dear Customer:</strong></p><p>Do you want to cut costs but still be innovative? Cutting back on an already low IT budget is difficult and risky. Where do you make cuts that won't severely affect the business or leave you in an insurmountable hole as the economy starts to improve?</p><p>Learn how our solutions <b>Budget Control (BC)</b> and <b>Project Management (PM)</b> are helping the state of New York save money while focusing on the future. Their Director of Enterprise Governance stated: \"The New-IT solution provides a governance layer of process discipline, best practices, and predictive analysis to reduce risk and improve project success.\"</p><p>Learn more: www.bc.com/blog &nbsp;|&nbsp; Mitch Weinzimmer, mitch-w@new-it.com, 123-456-7890</p>",zh:"New-IT 公司推廣信：推廣 Budget Control 和 Project Management，以紐約州政府為成功案例。",theme:"商業服務推廣信 / 銷售信"},
+{type:'question',num:165,qtype:"文章類型",star:false,part6:false,sentence:"What type of letter is this?",zh:"這是一封什麼類型的信？",options:["A request letter","A sales letter","A reference letter","A resignation letter"],answer:1,key:"cut costs + introduce solutions + Learn more = 推廣信 → sales letter"},
+{type:'question',num:166,qtype:"NOT 題",star:true,part6:false,sentence:"What is NOT mentioned about the New-IT company?",zh:"以下哪一項沒有在文章中提到？",options:["It assists clients with budgeting.","It provides project management solutions.","New York state government is a successful case.","It is going to celebrate its 12th anniversary."],answer:3,key:"A=Budget Control ✓ / B=Project Management ✓ / C=state of New York ✓ / D=12th anniversary 完全沒提到"},
+{type:'question',num:167,qtype:"單字同義",star:false,part6:false,sentence:"The word \"predictive\" is closest in meaning to",zh:"predictive 最接近哪一個意思？",options:["complicated","foreboding","complete","practical"],answer:1,key:"predictive ← predict（預測）→ foreboding（有預感的；預兆性的）最接近「預測未來」的概念"},
+{type:'article',label:"Part 7 · 168–171 徵才廣告",title:"CNC: Bilingual Customer Service Representative",text:"<p><strong>BILINGUAL CUSTOMER SERVICE REPRESENTATIVES WANTED!</strong></p><p>CNC (Computer Network Company) — an international organization well established as a full-service network consulting company, has grown steadily in the computer network industry for the past <b>15 years</b>.</p><p>Currently, we have openings in Clean City, NJ at our call center. You will trouble-shoot and resolve testing application issues via the telephone. Typical calls are from <b>Japanese-speaking</b> people looking to learn about a network integration system. Training will be provided.</p><p>Requirements: <b>Bilingual in JAPANESE & ENGLISH (written and spoken)</b></p><p>This opportunity is <b>3rd shift: 7 p.m.–5 a.m. Monday–Friday</b>. Full time or part time available.</p>",zh:"CNC 徵求日英雙語客服代表。電話客服夜班（7pm-5am，週一到週五）。公司已成立 15 年。",theme:"徵才廣告"},
+{type:'question',num:168,qtype:"目的題",star:false,part6:false,sentence:"Why is this advertisement posted?",zh:"這則廣告為什麼刊登？",options:["To recruit customer service representatives","To present the results of a customer survey","To announce a marketing meeting","To promote a newly launched product"],answer:0,key:"BILINGUAL CUSTOMER SERVICE REPRESENTATIVES WANTED → 招募客服代表"},
+{type:'question',num:169,qtype:"細節題",star:false,part6:false,sentence:"What can be said about the position?",zh:"關於這個職位，下列哪一項正確？",options:["It requires applicants to be able to speak two languages.","It requires applicants to relocate to Japan for two years.","It requires applicants to sign a one-year contract.","It requires applicants to work from 8 a.m. to 5 p.m."],answer:0,key:"Bilingual in JAPANESE & ENGLISH (written and spoken) = 需要使用兩種語言"},
+{type:'question',num:170,qtype:"NOT 職責",star:true,part6:false,sentence:"What is NOT part of the service representative's duties?",zh:"以下哪一項不是客服代表的工作內容？",options:["Resolving customers' problems via the phone","Teaching basic Japanese grammar rules","Working from 7 p.m. to 5 a.m.","Assisting Japanese-speaking customers"],answer:1,key:"文章沒有「教日文」的職責。日文是服務語言，不是教學內容"},
+{type:'question',num:171,qtype:"事實判斷",star:false,part6:false,sentence:"What is true about the CNC Company?",zh:"關於 CNC 公司，下列哪一項正確？",options:["The company specializes in drug-testing.","The company will be relocated to New Jersey.","The company is recruiting only Japanese employees.","The company is 15 years old."],answer:3,key:"has grown steadily in the industry for the past 15 years → 公司 15 年"},
+{type:'article',label:"Part 7 · 172–175 活動邀請",title:"Mayor's Breakfast Series",text:"<p>The Mayor's Breakfast Series is an important forum for issues vital to Garden City's prosperity and quality of life. Focusing on economic development, transportation, and the environment, it appeals to business leaders looking to network and stay informed. <span class=\"art-ins\">[1]</span></p><p>The breakfast is held at Garden-City City Hall, including a buffet breakfast followed by a presentation. Mayor Phil Dave updates attendees on recent city hall issues and initiatives. <span class=\"art-ins\">[2]</span></p><p><b>Upcoming: May 19th</b> | Speaker: <b>Anny Lord, CEO, CTI Telecommunications</b> | Location: No. 354 East Avenue</p><p>Agenda: Registration 7:15 am | Buffet 7:30–8:30 am | Presentation 8:30–9:30 am | Ticket: USD$40</p><p><span class=\"art-ins\">[3]</span> The deadline to register is the Friday prior to the event. No tickets will be issued at registration upon arrival. Cancellations must be made in writing at least 48 business hours prior. <span class=\"art-ins\">[4]</span> Please call May Sharp at 123-3739-3737 ext. 111.</p>",zh:"市長早餐論壇邀請函，有議程、報名截止（前一週五）和取消規定。句子插入：[3]。",theme:"活動邀請函（含句子插入題）"},
+{type:'question',num:172,qtype:"單字同義",star:false,part6:false,sentence:"The word \"vital\" in paragraph 1 is closest in meaning to",zh:"第一段的 vital 最接近哪一個意思？",options:["different","prominent","significant","professional"],answer:2,key:"vital = 至關重要的 → significant（重要的；重大的）"},
+{type:'question',num:173,qtype:"主旨題",star:false,part6:false,sentence:"What is the main purpose of this meeting?",zh:"這場會議的主要目的為何？",options:["To prepare for a product launch event","To analyze a financial report","To discuss a business proposal with managers","To exchange ideas with the Mayor"],answer:3,key:"Mayor's Breakfast = 市長主持的城市議題論壇 → 與市長交流想法"},
+{type:'question',num:174,qtype:"時間計算",star:false,part6:false,sentence:"How long will the breakfast last?",zh:"早餐將持續多久？",options:["Thirty minutes","One hour","One and a half hours","Fifteen minutes"],answer:1,key:"Buffet Breakfast: 7:30–8:30 = 一小時（不是整場活動 7:15–9:30）"},
+{type:'question',num:175,qtype:"句子插入",star:true,part6:false,sentence:"In which position does \"Pre-registration is required.\" best belong?",zh:"\"需要事先報名\" 最適合放在哪一個位置？",options:["[1]","[2]","[3]","[4]"],answer:2,key:"[3] 後面接 deadline to register 和 no tickets at registration desk → 報名規則段落開頭"},
+{type:'article',label:"Part 7 · 176–180 | 文件一：商展邀請函",title:"2020 ITC Annual Meeting — Invitation to Exhibit",text:"<p><b>Dear Mayor:</b></p><p>On behalf of the Executive Council of the ITC (IT Community), you are cordially invited to exhibit at the <b>2020 ITC Annual Meeting in Chicago, IL</b>. More than <b>3,000 IT managers</b> will be participating.</p><p>The commercial event on <b>September 21–23</b> will provide your company with the opportunity to: showcase products/services to IT managers; develop new sales contacts in the IT industry; build relationships with current and potential customers.</p><p>ITC provides in the exhibit hall: Complimentary breakfasts and lunches | Internet café | \"Case of the Day\"</p><p>Sincerely, <b>Jenny Miller, PR Manager, ITC</b></p>",zh:"ITC 邀請企業在 Chicago 設攤。3,000+ IT 主管參與。展期 9/21–23。",theme:"⬛ 雙篇 — 文件一：商展邀請函"},
+{type:'article',label:"Part 7 · 176–180 | 文件二：攤位規格表",title:"2020 Annual Meeting — Exhibit Information",text:"<p>International Convention Center | Commercial Exhibit Hall | <b>September 21–23, 2020</b></p><p><b>Standard Booth (US$2,500) Includes:</b></p><ul style=\"padding-left:20px;line-height:2\"><li>A 10' x 10' booth space</li><li>Back wall drape, sidewall dividers, company name sign</li><li>A 50-word company description in the meeting program book</li><li>Listing on the ARRS website + link to company website</li><li>Two (2) one-day guest passes (upon request)</li><li>24-hour security</li></ul><p><b>Exhibitor Installation:</b> Sunday Sept 19, 8am–4:30pm | Monday Sept 20, 8am–4:30pm</p><p><b>Exhibit Dismantle:</b> Friday Sept 24, 1pm–6pm</p>",zh:"標準攤位 $2,500 含多項服務（無軟體贈品）。布展 9/19+9/20（兩天）。撤展 9/24。",theme:"⬛ 雙篇 — 文件二：攤位規格資訊"},
+{type:'question',num:176,qtype:"地點細節",star:false,part6:false,sentence:"Where will the trade show be held?",zh:"這場商展將在哪裡舉行？",options:["Italy","Japan","U.S.A.","Brazil"],answer:2,key:"Chicago, IL = Chicago, Illinois = 美國"},
+{type:'question',num:177,qtype:"數字細節",star:false,part6:false,sentence:"Approximately how many attendees are expected?",zh:"大約有多少參加者預計參加？",options:["Close to 1,000","More than 3,000","Around 2,500","Less than 2,200"],answer:1,key:"More than 3,000 IT managers will be participating（原文直接寫）"},
+{type:'question',num:178,qtype:"設攤好處",star:false,part6:false,sentence:"What benefit can exhibitors enjoy?",zh:"參展商設攤可以享有什麼好處？",options:["Increase customer satisfaction","Establish a relationship with ITC","Develop new sales contacts with potential customers","Promote new products to business partners"],answer:2,key:"develop new sales contacts in the IT industry + potential customers → C"},
+{type:'question',num:179,qtype:"NOT 攤位",star:true,part6:false,sentence:"What item is NOT included in a standard booth?",zh:"標準攤位不包含哪一項？",options:["A 10'×10' booth space","A company introduction in the event program","A free web-design software package","Two free passes to the exhibition"],answer:2,key:"website listing ≠ web-design software。清單沒有軟體贈品"},
+{type:'question',num:180,qtype:"時間計算",star:false,part6:false,sentence:"How much time do exhibitors have to install their booths?",zh:"參展商有多少時間布置攤位？",options:["2 days","3 days","1 day","4 days"],answer:0,key:"Exhibitor Installation: Sunday 9/19 + Monday 9/20 = 兩天（不是展覽日 9/21–23）"},
+{type:'article',label:"Part 7 · 181–185 | 文件一：FSU MBA 說明會邀請",title:"FSU Online MBA Webinar Invitation",text:"<p>Dear Mr. Madison,</p><p>Mark your calendar for our upcoming Online MBA Webinar! Spend your lunch break with our Dean and webinar panel learning the ins and outs of our award-winning program.</p><p>The <b>Biz Master</b> recognizes FSU's MBA program as <b>first in the world</b> for preparing students for social and environmental stewardship.</p><p>The session will cover: highlights from our Dean on why this graduate degree is unique | tips and admissions information | interactive Q&A session.</p><p><b>Friday, October 7th at 12 noon</b> | Reply to: info@fsu.edu</p><p>Sincerely, May Adams, Recruiting Specialist | 1-800-3274-3203</p>",zh:"FSU 邀請 Mr. Madison 參加 MBA 說明會（10/7 正午）。內容：學位特色/申請資訊/Q&A。",theme:"⬛ 雙篇 — 文件一：MBA 說明會邀請信"},
+{type:'article',label:"Part 7 · 181–185 | 文件二：Mark Madison 的回覆",title:"Re: Online MBA Webinar (Mark Madison)",text:"<p>Dear Ms. Adams,</p><p>I was attracted to your webinar information in the email. Specifically, I would like to know some further information:</p><ol style=\"padding-left:20px;line-height:2.2\"><li>How long will the webinar last? <em>(duration)</em></li><li>In order to participate in the webinar, what kinds of computer equipment do you recommend? <em>(hardware)</em></li><li>Could you please send me the agenda of the webinar? So I know what MBA topics will be covered. <em>(topic list)</em></li></ol><p>I would be most appreciative if you could find the time to answer my questions. <b>I expect that I shall register soon.</b></p><p>Sincerely yours, Mark Madison</p>",zh:"Mark 詢問三件事：①時長 ②電腦設備 ③議程主題。他可能即將報名。",theme:"⬛ 雙篇 — 文件二：回覆信"},
+{type:'question',num:181,qtype:"目的題",star:false,part6:false,sentence:"What is the purpose of this FSU online webinar?",zh:"這場 FSU 說明會的目的為何？",options:["To let prospective students learn more about their MBA programs","To ask students to register for classes as soon as possible","To invite students to attend a luncheon","To inform existing students of a new MBA course"],answer:0,key:"說明學位特色 + 申請資訊 + Q&A → 讓潛在學生了解 MBA"},
+{type:'question',num:182,qtype:"單字同義",star:false,part6:false,sentence:"The word \"emphasize\" is closest in meaning to",zh:"emphasize 最接近哪一個意思？",options:["encourage","implement","stress","found"],answer:2,key:"emphasize = stress（強調）兩者都是動詞，意思相同"},
+{type:'question',num:183,qtype:"NOT 議題",star:true,part6:false,sentence:"What topic will NOT be discussed at the webinar?",zh:"以下哪個主題不會在說明會討論？",options:["Highlights on why FSU's degree is special","Information on how to apply","Tips on how to score better on TOEFL exam","Answers to questions that students have"],answer:2,key:"說明會有：學位特色/申請資訊/Q&A。TOEFL 考試技巧完全沒有提到"},
+{type:'question',num:184,qtype:"寫信目的",star:false,part6:false,sentence:"Why does Mark Madison write the letter?",zh:"Mark Madison 為什麼寫這封信？",options:["To ask May Adams for additional information","To apologize to May Adams for his no-show","To inform May Adams of a new event","To request a copy of his transcript"],answer:0,key:"I would like to know some further information → 詢問更多資訊"},
+{type:'question',num:185,qtype:"NOT 詢問",star:true,part6:false,sentence:"What information does Mark NOT seek in his letter?",zh:"Mark 在信中沒有詢問哪一項資訊？",options:["The duration of the webinar","The hardware requirement","The topic list of this event","The attendance rate of this activity"],answer:3,key:"Mark 詢問：①時長 ②設備 ③議程。參加率（attendance rate）完全沒問"},
+{type:'article',label:"Part 7 · 186–190 | 文件一：面試邀請信",title:"Interview Invitation — George Sherman → Doris Andrews",text:"<p>Dear Ms. Andrews, As you know, our company is looking for talented individuals. We are pleased to inform you that we are considering you for the position of <b>Product Manager</b>. Please come to our office on <b>March 25, 2020 at 10 a.m.</b> for testing and a preliminary interview.</p><p>Look for <b>Ms. Grace Richardson</b> (specialist in my department). Please bring your <b>resume and a portfolio</b> of your past work.</p><p>If you cannot make it, please call my secretary, <b>Ms. Wendy Garfield</b>, at 123-348-5487 to reschedule.</p><p>Respectfully yours, George Sherman, Director of HR Department</p>",zh:"HR 主管 George 邀請 Doris 面試 Product Manager。3/25 早上 10 點。無法出席 → 聯絡秘書 Wendy Garfield。",theme:"⬛⬛ 三篇 — 文件一：面試邀請信"},
+{type:'article',label:"Part 7 · 186–190 | 文件二+三：回覆信 & 履歷",title:"Doris Andrews: Reply + Resume",text:"<p><b>[回覆信 — Doris → George]</b></p><p>I confirm our meeting on Monday, March 25, 2020 at 10 a.m. Your secretary Wendy Garfield called me and asked me to confirm by letter. I was also informed to send a copy of my most recent <b>letter of reference</b>, which I have attached.</p><p>Contact: (236) 4638-4274</p><hr style=\"border:none;border-top:1px solid rgba(255,255,255,.1);margin:12px 0\"><p><b>[履歷 — Doris Andrews]</b></p><p>Job Target: <b>Product Manager</b> | Capabilities: manage revenue, communicate with all business levels, manage under pressure</p><p>Achievements: 110% of annual objectives 2018 & 2019 | Managed 90 new customers | <b>Outstanding sales awards</b></p><p>Experience: 2016–Now Pacific Advertising Co. (CA) | 2013–16 Account Executive, IL | 2010–13 Dept. Manager, NY</p><p>Education: B.S. Business (Sales & Marketing), New York State College</p>",zh:"Doris 確認出席並附上推薦信（不是履歷）。履歷顯示多年經驗和銷售獎項，現在在加州工作。",theme:"⬛⬛ 三篇 — 文件二＋三"},
+{type:'question',num:186,qtype:"寫信目的",star:false,part6:false,sentence:"Why does George Sherman write the letter?",zh:"George Sherman 為什麼寫這封信？",options:["To seek suggestions about a project","To ensure staff know the opening of a new branch office","To invite a candidate to an interview","To announce the opening of the company"],answer:2,key:"we would like you to come for testing and a preliminary interview → 邀請面試"},
+{type:'question',num:187,qtype:"職位查詢",star:false,part6:false,sentence:"What position is Doris Andrews seeking?",zh:"Doris 正在申請哪一個職位？",options:["Product manager","HR specialist","Marketing manager","Technical support engineer"],answer:0,key:"三份文件一致：product manager（文件一+文件二+履歷 Job Target）"},
+{type:'question',num:188,qtype:"條件細節",star:false,part6:false,sentence:"What should Doris do if she can't make it on March 25?",zh:"如果 Doris 無法出席，應該怎麼做？",options:["Call Ms. Grace Richardson","Call Wendy Garfield","Call George Sherman","Call a sales manager"],answer:1,key:"If you cannot make it → call my secretary, Ms. Wendy Garfield"},
+{type:'question',num:189,qtype:"跨文件判斷",star:true,part6:false,sentence:"What document is also sent with Doris's letter?",zh:"Doris 的信中附上了什麼文件？",options:["A business plan","A reference letter from her previous boss","Her business card","Her curriculum vitae"],answer:1,key:"文件一要她帶 resume；文件二 Doris 說她 attach 的是 letter of reference（推薦信）— 兩者不同！"},
+{type:'question',num:190,qtype:"NOT 事實",star:true,part6:false,sentence:"What is NOT true about Doris Andrews?",zh:"以下哪一項不正確？",options:["She has known Mr. Sherman for a long time.","She has several years of work experience.","She won some sales awards in the past.","If she gets the new job, she will move to New York."],answer:3,key:"履歷中 NY 是 2010–2013 的舊工作地點。文章沒有說新工作在 NY 或她會搬家"},
+{type:'article',label:"Part 7 · 191–195 | 文件一+二：停車場資訊 & 投訴",title:"Super-Safe Parking + Complaint",text:"<p><b>[文件一：Super-Safe Airport Parking — 服務介紹]</b></p><p>When parking at <b>Detroit International Airport</b>, Super-Safe Parking has many advantages. Benefits: Guaranteed reservations | Self-parking | Short-term or long-term | Open 7 days | <b>FREE shuttle to/from airport</b> | 24-hour security | Complimentary luggage assistance | Friendly staff</p><hr style=\"border:none;border-top:1px solid rgba(255,255,255,.1);margin:12px 0\"><p><b>[文件二：Linda Johnson 投訴表]</b></p><p>My husband and I were upset about not being told we had to pick our car up by <b>11 p.m.</b> We went at 11:30 p.m. and were charged an <b>additional $10</b>. The parking attendant said your sign indicates 11 p.m., but we never saw any signs like that. While $10 isn't much, it left us with a bad taste in our mouths about your service.</p>",zh:"Super-Safe 是 Detroit 機場附近停車場。Linda 投訴：晚了 30 分取車被多收 $10，且未被告知截止時間。",theme:"⬛⬛ 三篇 — 文件一+二"},
+{type:'article',label:"Part 7 · 191–195 | 文件三：客服回覆信",title:"Super-Safe: Reply from John Lucas",text:"<p>Dear Ms. Linda Johnson,</p><p>Thank you for your feedback to notify us of the difficulties you and your husband have been experiencing with our service.</p><p>I have discussed with the Manager at the parking lot and we have decided to make a <b>complete refund of the extra fee</b> you've paid. We'd like to use this opportunity to tell you we are sorry for the inconvenience you've experienced.</p><p>It is also obvious from this incident that our parking attendants require <b>adequate training</b> for servicing customers.</p><p>For any other questions, please feel free to contact me directly at 438-583-5838.</p><p>Best regards, <b>John Lucas, Customer Service Manager</b></p>",zh:"John Lucas 道歉，決定全額退還多收的 $10，並承認停車場人員需要更好的顧客服務訓練。",theme:"⬛⬛ 三篇 — 文件三：回覆信"},
+{type:'question',num:191,qtype:"公司識別",star:false,part6:false,sentence:"What is Super-Safe?",zh:"Super-Safe 是什麼？",options:["A local government department","A car dealer in New Jersey","A parking lot near the airport in Detroit","A resource conservation group"],answer:2,key:"Super-Safe Airport Parking + Detroit International Airport → Detroit 機場附近停車場"},
+{type:'question',num:192,qtype:"NOT 好處",star:false,part6:false,sentence:"What is NOT mentioned as a benefit of Super-Safe?",zh:"以下哪一項沒有被提到是 Super-Safe 的優點？",options:["It's open seven days a week.","It provides shuttle service at no cost.","It offers gifts to customers from other states.","Customers can choose to park their cars there short-term."],answer:2,key:"complimentary luggage assistance（免費行李協助）≠ gifts to out-of-state customers"},
+{type:'question',num:193,qtype:"聯絡原因",star:false,part6:false,sentence:"Why did Linda Johnson contact Super-Safe?",zh:"Linda Johnson 為什麼聯絡 Super-Safe？",options:["To thank them for placing an order","To file a complaint of bad parking experience","To discuss partnership opportunities","To request a donation for her company"],answer:1,key:"upset + charged additional $10 + never saw signs + bad taste = 投訴不良服務"},
+{type:'question',num:194,qtype:"主要抱怨",star:true,part6:false,sentence:"What is Linda Johnson's main concern?",zh:"Linda Johnson 最主要的抱怨是什麼？",options:["Her car was stolen.","The parking lot is too far away from the airport.","Parking lot signs should clearly indicate pick-up hours.","More parking lot attendants should be hired."],answer:2,key:"核心問題：not being told about 11pm pickup / never saw any signs → 取車時間標示不清"},
+{type:'question',num:195,qtype:"後續行動",star:true,part6:false,sentence:"What will John Lucas do next most likely?",zh:"John Lucas 接下來最可能會做什麼？",options:["Meet Linda Johnson in person.","Offer Linda Johnson a 10% off voucher.","Return $10 to Linda Johnson.","Drive Linda Johnson to the airport."],answer:2,key:"complete refund of the extra fee = 退還 Linda 多付的 $10"},
+{type:'article',label:"Part 7 · 196–200 | 文件一+二：廣播節目表 & 節目介紹",title:"Good Radio: Schedule + Program Descriptions",text:"<p><b>[文件一：節目時間表]</b></p><table><tr><th>Time</th><th>Mon</th><th>Wed</th><th>Fri</th><th>Sat</th><th>Sun</th></tr><tr><td>8am</td><td></td><td>Jerry Smith</td><td></td><td></td><td><b>Larry Good</b></td></tr><tr><td>2pm</td><td></td><td><b>Tiffany Cole</b></td><td></td><td>Steven Ford</td><td>Jerry Smith</td></tr><tr><td>6pm</td><td><b>Linda Smith</b></td><td></td><td><b>Linda Smith</b></td><td></td><td></td></tr><tr><td>8pm</td><td></td><td>Eva McCarthy</td><td></td><td></td><td></td></tr></table><p><b>[文件二：節目介紹]</b><br><b>News News</b> (Tiffany Cole): 跨越國界的重要故事<br><b>Our World</b> (Eva McCarthy): <b>music, interviews, and stories</b><br><b>Health Channel</b> (Linda Smith): cope with <b>stress</b>, stay healthy physically &amp; mentally<br><b>Best Performance</b> (Larry Good): achieve greater results, <b>fulfill their goals</b></p>",zh:"節目表 + 四個節目介紹。Tiffany=News News(Wed 2pm) / Eva=Our World / Linda=Health Channel / Larry=Best Performance(Sun 8am)。",theme:"⬛⬛ 三篇 — 文件一+二"},
+{type:'article',label:"Part 7 · 196–200 | 文件三：聽眾回饋",title:"Audience Feedback — Laura Hart",text:"<p>I've stressed out for many years, working long hours, nonstop, even feeling guilty whenever I have to call in sick. I just went on and on, only to finally collapse.</p><p>After listening to your program, I have realized the importance of treating myself in a healthier way and start to take time off, use my annual leave, and rest when I'm at home. I've learned from the host that \"Work is important, but <b>my health is everything</b>.\"</p><p>I now just put my life and my health first. I enjoy listening to your program very much, and all I want is <b>thank you!</b></p><p style=\"text-align:right;color:rgba(255,255,255,.5);margin-top:8px\">— Laura Hart</p>",zh:"Laura 長期壓力大，聽了節目後學會照顧健康（rest/take time off/health is everything）。最後說 thank you。",theme:"⬛⬛ 三篇 — 文件三：聽眾回饋"},
+{type:'question',num:196,qtype:"跨文件細節",star:false,part6:false,sentence:"What is true about Tiffany Cole?",zh:"關於 Tiffany Cole，下列哪一項正確？",options:["She is the host of an afternoon program in a radio station.","She is the manager of the radio station.","She is a health expert.","She has been working in the radio station for two years."],answer:0,key:"文件二：Tiffany Cole = News News host → 文件一：Wednesday 2pm = 下午節目"},
+{type:'question',num:197,qtype:"節目配對",star:true,part6:false,sentence:"If a person wants to learn about achieving goals, when should he turn on the radio?",zh:"想學習達成目標，應該什麼時候收聽？",options:["Tuesday evening","Wednesday afternoon","Sunday morning","Friday evening"],answer:2,key:"①achieve goals → Best Performance → Larry Good ②文件一：Larry Good = Sunday 8am = Sunday morning"},
+{type:'question',num:198,qtype:"節目內容",star:false,part6:false,sentence:"What can be heard in the \"Our World\" program?",zh:"在 Our World 節目可以聽到什麼？",options:["Technology developments","Business strategies","Local News","Music"],answer:3,key:"Our World description: a lively blend of music, interviews, and stories → Music 直接出現"},
+{type:'question',num:199,qtype:"訊息目的",star:false,part6:false,sentence:"What's the purpose of Laura Hart's message?",zh:"Laura Hart 這封訊息的目的為何？",options:["To propose a plan","To show her appreciation","To file a complaint","To make some suggestions"],answer:1,key:"\"all I want is thank you\" → 表達感謝（show appreciation）"},
+{type:'question',num:200,qtype:"三篇配對",star:true,part6:false,sentence:"Which program does Laura Hart listen to most likely?",zh:"Laura Hart 最可能收聽哪一個節目？",options:["Best Performance","Our World","News News","Health Channel"],answer:3,key:"Laura：stressed out / healthier / take time off / health is everything → Health Channel（cope with stress / stay healthy）"}
 ];
+const TOTAL = 50;
 
-const TOTAL = SLIDES.length;
-let current=0, revealed=false, zhVisible=false;
-let itemStep=0, askStep=0;
-
+let current=0,revealed=false,zhVisible=false,itemStep=0,askStep=0;
 function applyZh(){document.querySelectorAll('.zh-target').forEach(el=>el.classList.toggle('zh-hidden',!zhVisible))}
 function toggleZh(){zhVisible=!zhVisible;applyZh();const b=document.getElementById('zh-btn');b.textContent=zhVisible?'中文 ON':'中文 OFF';b.classList.toggle('on',zhVisible)}
 function showBtn(id,show){document.getElementById(id).classList.toggle('hidden',!show)}
 function setText(id,t){const el=document.getElementById(id);if(el)el.textContent=t}
-
 function render(){
   const s=SLIDES[current];
-  revealed=false; itemStep=0; askStep=0;
+  revealed=false;itemStep=0;askStep=0;
   document.getElementById('progress-text').textContent=(current+1)+' / '+TOTAL;
   document.getElementById('progress-bar').style.width=Math.round((current+1)/TOTAL*100)+'%';
   document.getElementById('prev-btn').disabled=current===0;
   document.getElementById('next-btn').disabled=current===TOTAL-1;
-  const labels={grammar:'文法觀念',multi:'課堂練習',correction:'改錯練習',question:'練習題'};
-  setText('slide-type-label', labels[s.type]||'');
-  showBtn('reveal-btn', s.type==='question');
-  showBtn('next-item-btn', s.type==='multi'||s.type==='correction');
-  showBtn('ask-btn', s.type==='grammar' && s.ask && s.ask.length>0);
-  showBtn('zh-btn', s.type==='question');
+  const labels={grammar:'閱讀策略',multi:'課堂練習',correction:'改錯練習',article:'閱讀文章',question:'練習題'};
+  setText('slide-type-label',labels[s.type]||'');
+  showBtn('reveal-btn',s.type==='question');
+  showBtn('next-item-btn',false);
+  showBtn('ask-btn',s.type==='grammar'&&s.ask&&s.ask.length>0);
+  showBtn('zh-btn',s.type==='question'||s.type==='article');
   const el=document.getElementById('slide-content');
-
   if(s.type==='grammar'){
     const hasAsk=s.ask&&s.ask.length>0;
-    el.innerHTML=`
-      <div class="gram-label">Lesson 06 · 關係子句 &amp; 名詞子句</div>
-      <div class="gram-title">${s.title}</div>
-      <div class="gram-sub">${s.subtitle}</div>
-      ${s.content}
-      ${hasAsk?`<div id="ask-panel" style="display:none">
-        <div class="ask-progress" id="ask-prog"></div>
-        <div class="ask-q" id="ask-q"></div>
-        <div class="ask-a" id="ask-a"></div>
-      </div>`:''}
-    `;
+    el.innerHTML=`<div class="gram-label">Lesson 06 · Part 7 閱讀策略（165–200）</div><div class="gram-title">${s.title}</div><div class="gram-sub">${s.subtitle}</div>${s.content}${hasAsk?`<div id="ask-panel" style="display:none"><div class="ask-progress" id="ask-prog"></div><div class="ask-q" id="ask-q"></div><div class="ask-a" id="ask-a"></div></div>`:''}`;
     if(hasAsk) document.getElementById('ask-btn').textContent='❓ 問學生 ('+s.ask.length+')';
-  }
-  else if(s.type==='multi'){
-    const rows=s.items.map((it,i)=>`
-      <div class="multi-item" id="mi-${i}">
-        <span class="item-num">${i+1}</span>
-        <div><div class="item-q">${it[0]}</div><div class="item-a" id="ma-${i}">${it[1].split('\u3000')[0]}<span class="item-note"> — ${it[1].split('\u3000')[1]||''}</span></div></div>
-      </div>`).join('');
-    el.innerHTML=`
-      <div class="multi-header">
-        <div class="multi-title">${s.title}</div>
-        <div class="multi-instr">${s.instruction}</div>
-        <div class="multi-progress" id="multi-prog">0 / ${s.items.length} 已揭曉</div>
-      </div>
-      <div class="multi-items">${rows}</div>`;
-    document.getElementById('next-item-btn').textContent='揭曉 1/'+ s.items.length +' ▶';
-  }
-  else if(s.type==='correction'){
-    const rows=s.items.map((it,i)=>`
-      <div class="corr-item" id="ci-${i}">
-        <div class="corr-wrong">${it[0]}</div>
-        <div class="corr-right" id="cr-${i}">${it[1]}</div>
-        <div class="corr-reason" id="cn-${i}">${it[2]}</div>
-      </div>`).join('');
-    el.innerHTML=`
-      <div class="multi-header">
-        <div class="multi-title">${s.title}</div>
-        <div class="multi-instr">${s.instruction}</div>
-        <div class="multi-progress" id="multi-prog">0 / ${s.items.length} 已改正</div>
-      </div>
-      ${rows}`;
-    document.getElementById('next-item-btn').textContent='改正 1/'+s.items.length+' ▶';
-  }
-  else{
-    const wide=s.options.some(o=>o.length>28);
+  } else if(s.type==='article'){
+    el.innerHTML=`<div class="art-label">${s.label}</div><div class="art-title">${s.title}</div><div class="art-theme">${s.theme}</div><div class="art-text">${s.text}</div><div class="art-zh zh-target">${s.zh}</div>`;
+  } else {
     const opts=s.options.map((o,i)=>`<div class="q-opt" id="opt-${i}"><span class="q-opt-lbl">${String.fromCharCode(65+i)}</span>${o}</div>`).join('');
-    el.innerHTML=`
-      <div class="q-header">
-        <span class="q-num">${s.num}</span>
-        <span class="q-type-tag">${s.qtype}</span>
-        ${s.star?'<span class="q-star">⭐ 重點題</span>':''}
-        ${s.part6?'<span class="q-p6">Part 6</span>':''}
-      </div>
-      <div class="q-sentence">${s.sentence}</div>
-      <div class="q-zh zh-target">${s.zh}</div>
-      <div class="q-opts ${wide?'wide':''}">${opts}</div>
-      <div class="key-reveal" id="key-reveal">
-        <strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong>
-        &nbsp;—&nbsp; ${s.key}
-      </div>`;
+    el.innerHTML=`<div class="q-header"><span class="q-num">${s.num}</span><span class="q-type-tag">${s.qtype}</span>${s.star?'<span class="q-star">⭐ 重點題</span>':''}${s.part6?'<span class="q-p6">Part 6</span>':''}</div><div class="q-sentence">${s.sentence}</div><div class="q-zh zh-target">${s.zh}</div><div class="q-opts">${opts}</div><div class="key-reveal" id="key-reveal"><strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong> &nbsp;—&nbsp; ${s.key}</div>`;
   }
   setTimeout(applyZh,0);
   resetRevealBtn();
 }
-
-function resetRevealBtn(){
-  const b=document.getElementById('reveal-btn');
-  b.textContent='揭曉答案 ▼';b.style.background='';b.style.color='';
-}
-
+function resetRevealBtn(){const b=document.getElementById('reveal-btn');b.textContent='揭曉答案 ▼';b.style.background='';b.style.color='';}
 function reveal(){
   const s=SLIDES[current];
   const b=document.getElementById('reveal-btn');
   if(!revealed){
     revealed=true;
-    s.options.forEach((_,i)=>{
-      const el=document.getElementById('opt-'+i);
-      if(i===s.answer) el.classList.add('correct');
-      else el.classList.add('dimmed');
-    });
+    s.options.forEach((_,i)=>{const el=document.getElementById('opt-'+i);if(i===s.answer)el.classList.add('correct');else el.classList.add('dimmed');});
     document.getElementById('key-reveal').classList.add('show');
     b.textContent='隱藏答案 ▲';b.style.background='rgba(5,150,105,.25)';b.style.color='#34D399';
   } else {
     revealed=false;
-    s.options.forEach((_,i)=>{
-      const el=document.getElementById('opt-'+i);
-      el.classList.remove('correct','dimmed');
-    });
+    s.options.forEach((_,i)=>{const el=document.getElementById('opt-'+i);el.classList.remove('correct','dimmed');});
     document.getElementById('key-reveal').classList.remove('show');
     resetRevealBtn();
   }
 }
-
-function nextItem(){
-  const s=SLIDES[current];
-  const b=document.getElementById('next-item-btn');
-  if(s.type==='multi'){
-    if(itemStep<s.items.length){
-      document.getElementById('ma-'+itemStep).classList.add('show');
-      document.getElementById('mi-'+itemStep).classList.add('revealed');
-      itemStep++;
-      const prog=document.getElementById('multi-prog');
-      if(prog) prog.textContent=itemStep+' / '+s.items.length+' 已揭曉';
-      b.textContent=itemStep<s.items.length?'揭曉 '+(itemStep+1)+'/'+s.items.length+' ▶':'完成 ✓';
-      if(itemStep>=s.items.length){b.style.background='rgba(5,150,105,.2)';b.style.color='#34D399';}
-    }
-  } else if(s.type==='correction'){
-    if(itemStep<s.items.length){
-      document.getElementById('cr-'+itemStep).classList.add('show');
-      document.getElementById('cn-'+itemStep).classList.add('show');
-      document.getElementById('ci-'+itemStep).classList.add('revealed');
-      itemStep++;
-      const prog=document.getElementById('multi-prog');
-      if(prog) prog.textContent=itemStep+' / '+s.items.length+' 已改正';
-      b.textContent=itemStep<s.items.length?'改正 '+(itemStep+1)+'/'+s.items.length+' ▶':'完成 ✓';
-      if(itemStep>=s.items.length){b.style.background='rgba(5,150,105,.2)';b.style.color='#34D399';}
-    }
-  }
-}
-
 function nextAsk(){
-  const s=SLIDES[current];
-  const panel=document.getElementById('ask-panel');
-  const b=document.getElementById('ask-btn');
-  if(!panel) return;
-  if(askStep===0) panel.style.display='block';
+  const s=SLIDES[current];const panel=document.getElementById('ask-panel');const b=document.getElementById('ask-btn');
+  if(!panel)return;if(askStep===0)panel.style.display='block';
   if(askStep<s.ask.length){
-    const [q,a]=s.ask[askStep];
-    document.getElementById('ask-q').textContent=q;
-    document.getElementById('ask-a').textContent=a;
-    document.getElementById('ask-a').classList.remove('show');
-    document.getElementById('ask-prog').textContent='問題 '+(askStep+1)+' / '+s.ask.length;
+    const[q,a]=s.ask[askStep];
+    document.getElementById('ask-q').textContent=q;document.getElementById('ask-a').textContent=a;
+    document.getElementById('ask-a').classList.remove('show');document.getElementById('ask-prog').textContent='問題 '+(askStep+1)+' / '+s.ask.length;
     const oldStep=askStep;
-    b.onclick=function(){
-      const aa=document.getElementById('ask-a');
-      if(!aa.classList.contains('show')){
-        aa.classList.add('show');
-        b.onclick=function(){askStep=oldStep+1;nextAsk()};
-      }
-    };
+    b.onclick=function(){const aa=document.getElementById('ask-a');if(!aa.classList.contains('show')){aa.classList.add('show');b.onclick=function(){askStep=oldStep+1;nextAsk();}}};
     askStep++;
-  } else {
-    panel.style.display='none';
-    askStep=0;
-    b.textContent='❓ 問學生 ('+s.ask.length+')';
-    b.onclick=nextAsk;
-  }
+  } else {panel.style.display='none';askStep=0;b.textContent='❓ 問學生 ('+s.ask.length+')';b.onclick=nextAsk;}
 }
-
-function navigate(dir){
-  current=Math.max(0,Math.min(TOTAL-1,current+dir));
-  render();
-  document.getElementById('slide-area').scrollTop=0;
-}
-
+function navigate(dir){current=Math.max(0,Math.min(TOTAL-1,current+dir));render();document.getElementById('slide-area').scrollTop=0;}
 document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();navigate(1)}
   else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();navigate(-1)}
-  else if(e.key===' '||e.key==='Enter'){
-    e.preventDefault();
-    const s=SLIDES[current];
-    if(s.type==='question') reveal();
-    else if(s.type==='multi'||s.type==='correction') nextItem();
-    else if(s.type==='grammar'&&s.ask&&s.ask.length>0) document.getElementById('ask-btn').click();
-  }
+  else if(e.key===' '||e.key==='Enter'){e.preventDefault();const s=SLIDES[current];if(s.type==='question')reveal();else if(s.type==='grammar'&&s.ask&&s.ask.length>0)document.getElementById('ask-btn').click();}
 });
-
 render();
 </script>
 </body>
