@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>老師講義 | TOEIC Lesson 05</title>
+<title>老師講義 | TOEIC Lesson 05 Concept Edition</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -100,7 +100,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 <body>
 
 <div id="topbar">
-  <div class="logo">🎓 <span>老師</span> Lesson 05 · 關係子句 &amp; 名詞子句</div>
+  <div class="logo">🎓 <span>老師</span> Lesson 05 · 子句概念 / 關係子句 / 名詞子句</div>
   <div class="ppill">現在：<span id="csec">課程總覽</span></div>
   <div class="timer-wrap">
     <span class="timer-label">上課時間</span>
@@ -113,6 +113,13 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 <nav id="sidebar">
   <div class="sbh">課程總覽</div>
   <a class="sbl active" onclick="goTo('s-overview')">課程定位 &amp; 流程</a>
+  <div class="sbh">觀念打底</div>
+  <a class="sbl" onclick="goTo('s-foundation')">英文句子地圖 <span class="t">6m</span></a>
+  <a class="sbl" onclick="goTo('s-clause')">什麼是子句 <span class="t">8m</span></a>
+  <a class="sbl" onclick="goTo('s-subordinate')">主句 vs 從句 <span class="t">6m</span></a>
+  <a class="sbl" onclick="goTo('s-relative-why')">為什麼要關係子句 <span class="t">8m</span></a>
+  <a class="sbl" onclick="goTo('s-formation')">兩句合併形成過程 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('s-antecedent')">先行詞與句子解剖 <span class="t">8m</span></a>
   <div class="sbh">文法理論</div>
   <a class="sbl" onclick="goTo('s-open')">開場：判斷系統 <span class="t">5m</span></a>
   <a class="sbl" onclick="goTo('s-rule1')">Rule 1 關係子句 vs 名詞子句 <span class="t">10m</span></a>
@@ -148,25 +155,129 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 <div class="ls" id="s-overview">
 <div class="sh"><div class="sn">0</div><div class="st">課程定位 &amp; 上課流程</div></div>
 <div class="block"><div class="bh gn"><span class="d"></span>本堂目標</div><div class="bb">
-<div class="goal2"><p>本堂主題：<strong>關係代名詞（who / whom / whose / which / that）、關係副詞（where / when / why）、名詞子句（that / whether / 疑問詞子句）</strong>。TOEIC Part 5 常把這十幾個字放在同一題選項裡，學生如果只靠中文翻譯，非常容易選錯。今天核心是建立一套判斷系統：<em>先看空格後面是缺東西的子句，還是完整句子。</em>這是關係子句和名詞子句最重要的分界。</p></div>
+<div class="goal2"><p>本堂主題：<strong>關係代名詞（who / whom / whose / which / that）、關係副詞（where / when / why）、名詞子句（that / whether / 疑問詞子句）</strong>。這份新版不是只帶學生背 TOEIC 解題規則，而是先建立真正的文法概念：<em>什麼是句子、什麼是子句、為什麼英文要把一個子句塞進另一個句子裡。</em>概念打底後，再進入原本的 TOEIC 判斷系統：空格後面是缺成分，還是完整句子。</p></div>
 </div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>建議上課流程（共 ~90 分鐘）</div><div class="bb">
 <table class="tmtable">
 <tr><th>時間</th><th>內容</th><th>重點提示</th></tr>
-<tr><td>0–5 min</td><td>開場：建立判斷系統</td><td>先讓學生知道「一個問題判斷所有題」</td></tr>
-<tr><td>5–40 min</td><td>Rule 1–5 關係子句系列</td><td>每條規則都要先問學生再公布</td></tr>
-<tr><td>40–55 min</td><td>Rule 6–10 名詞子句系列</td><td>重點在 that / whether；reason 陷阱一定要講</td></tr>
-<tr><td>55–65 min</td><td>TOEIC 陷阱整理 + 收尾</td><td>讓學生自己說出每個陷阱是什麼</td></tr>
-<tr><td>65–90 min</td><td>Part 5 練習題 1–11</td><td>每題先問「空格前有沒有名詞？後面完整嗎？」</td></tr>
+<tr><td>0–5 min</td><td>開場：先說今天不是背十個字</td><td>降低學生焦慮，建立「看結構」的學習方式</td></tr>
+<tr><td>5–35 min</td><td>觀念打底：Sentence / Clause / Main clause / Subordinate clause</td><td>讓學生知道關係子句、名詞子句只是從句的一種</td></tr>
+<tr><td>35–55 min</td><td>關係子句形成過程：兩句合併、避免重複、先行詞</td><td>先理解 who / whom 不是憑空出現，而是代替前面的名詞</td></tr>
+<tr><td>55–90 min</td><td>Rule 1–5 關係子句系列</td><td>把概念轉成 TOEIC 判斷：缺主詞、缺受詞、所有格、時間地點理由</td></tr>
+<tr><td>90–115 min</td><td>Rule 6–10 名詞子句系列 + 陷阱整理</td><td>重點在 that / whether；reason is that 一定要講</td></tr>
+<tr><td>115–140 min</td><td>Part 5 練習題 1–11</td><td>每題先問「空格前有沒有名詞？後面完整嗎？」</td></tr>
 </table>
 <div class="tip mt12"><p><strong>建議拆法：</strong>第一次教關係子句（Rule 1–5）+ 部分練習；第二次教名詞子句（Rule 6–10）+ 陷阱 + 剩餘練習題。</p></div>
 </div></div>
 </div>
 
+
+<div class="ls" id="s-foundation">
+<div class="sh"><div class="sn">1A</div><div class="st">觀念打底｜英文句子地圖</div><div class="stm">⏱ 6 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>老師逐字稿：先建立全貌</div><div class="bb">
+<div class="script">今天我先不要你背 who、whom、which、that。<br><br>你先把英文句子的地圖看懂。英文不是一堆單字排在一起而已，它有層級。最大的是 <em>sentence 句子</em>，句子裡面可以放 <em>clause 子句</em>，子句裡面又會有主詞、動詞、受詞。<br><br>所以我們今天真正要學的，不是十個連接詞，而是：<strong>一個句子裡面，為什麼可以再塞進另一個小句子？</strong></div>
+<div class="formula">Sentence 句子 → Clause 子句 → Subject 主詞 + Verb 動詞</div>
+<div class="tip mt12"><p><strong>老師提醒：</strong>這裡不要急著進入 TOEIC 題目。先讓學生知道「子句」不是抽象名詞，而是有主詞和動詞的一小塊句子。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>板書建議</div><div class="bb">
+<div class="formula">The employee is absent. → 一個完整句子</div>
+<div class="formula mt12">who submitted the report → 有動詞，但不能自己站著</div>
+<div class="ask mt12"><p>問學生：這兩個都有動詞，為什麼第一個可以自己當一句話，第二個不行？</p><div class="al">引導答案</div><p class="ap">因為 who submitted the report 是拿來修飾前面名詞的從句，它需要依附在另一個句子裡。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-clause">
+<div class="sh"><div class="sn">1B</div><div class="st">觀念打底｜什麼是 Clause 子句？</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>老師逐字稿：子句不是看長短</div><div class="bb">
+<div class="script">子句 clause 的判斷，不是看它長不長，也不是看它有幾個單字。<br><br>最基本就是看：<em>它裡面有沒有主詞加動詞？</em><br><br>例如 <code>the sales report</code> 只有名詞，沒有動詞，所以它不是子句，是片語。<br><br>但是 <code>the report was approved</code> 有主詞 the report，也有動詞 was approved，所以它是一個子句。</div>
+<table class="tbl mt12">
+<tr><th>英文</th><th>分析</th><th>判斷</th></tr>
+<tr><td><code>the sales report</code></td><td>只有名詞，沒有動詞</td><td>片語 phrase</td></tr>
+<tr><td><code>the report was approved</code></td><td>the report + was approved</td><td>子句 clause</td></tr>
+<tr><td><code>because the report was late</code></td><td>the report + was</td><td>子句，但不能自己當完整句</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>問學生</div><div class="bb">
+<div class="ask"><p><code>because I was tired</code> 算不算子句？為什麼？</p><div class="al">答案</div><p class="ap">算。因為它有 I + was。可是 because 讓它變成不能獨立的從句。</p></div>
+<div class="corr mt12"><p>如果學生說「不是，因為它不是完整句」，要糾正：完整句和子句不一樣。子句只要有 S+V；但子句不一定能自己獨立成句。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-subordinate">
+<div class="sh"><div class="sn">1C</div><div class="st">觀念打底｜主句 vs 從句</div><div class="stm">⏱ 6 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>老師逐字稿：可以自己站著嗎？</div><div class="bb">
+<div class="script">接下來我們把 clause 分成兩種。<br><br>第一種叫 main clause 主句，它可以自己站著。例如 <code>I know the answer.</code>，意思完整。<br><br>第二種叫 subordinate clause 從句。它也有主詞和動詞，可是它需要依附主句。例如 <code>because I was tired</code>、<code>who submitted the report</code>。你單獨講這些，對方會覺得你話沒講完。</div>
+<table class="tbl mt12">
+<tr><th>類型</th><th>定義</th><th>例子</th></tr>
+<tr><td>主句 main clause</td><td>可以自己成句</td><td><code>The employee is absent.</code></td></tr>
+<tr><td>從句 subordinate clause</td><td>需要依附另一個句子</td><td><code>who submitted the report</code></td></tr>
+</table>
+<div class="tip mt12"><p><strong>銜接語：</strong>關係子句和名詞子句其實都屬於從句，只是它們在大句子裡做的工作不同。</p></div>
+</div></div>
+<div class="block"><div class="bh gn"><span class="d"></span>從句三大家族</div><div class="bb">
+<table class="tbl">
+<tr><th>從句</th><th>工作</th><th>例子</th></tr>
+<tr><td>關係子句 Relative clause</td><td>修飾名詞，像形容詞</td><td><code>The employee who submitted the report</code></td></tr>
+<tr><td>名詞子句 Noun clause</td><td>整塊當名詞</td><td><code>I know that he is right.</code></td></tr>
+<tr><td>副詞子句 Adverb clause</td><td>說明時間、原因、條件</td><td><code>Because it rained, we stayed home.</code></td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="ls" id="s-relative-why">
+<div class="sh"><div class="sn">1D</div><div class="st">觀念打底｜為什麼英文需要關係子句？</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>老師逐字稿：先不要講規則，先講需求</div><div class="bb">
+<div class="script">我先不要跟你講「關係代名詞」這個名字。你只要想一個很生活的問題：<br><br>如果我有兩句話：<br><code>The girl is my friend.</code><br><code>She is wearing a red dress.</code><br><br>這兩句都在講同一個人，對不對？She 其實就是 the girl。英文不喜歡一直重複同一個名詞，所以它會把第二句黏回第一句，變成：<br><br><code>The girl who is wearing a red dress is my friend.</code><br><br>所以 who 的功能不是只有「誰」。在這裡，who 是用來代替前面的 the girl，並且開始一個修飾 the girl 的小句子。</div>
+<div class="formula">The girl is my friend. + She is wearing a red dress.</div>
+<div class="formula mt12">→ The girl <strong>who is wearing a red dress</strong> is my friend.</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>問學生</div><div class="bb">
+<div class="ask"><p>問學生：who 在這句裡代表誰？<br><code>The girl who is wearing a red dress is my friend.</code></p><div class="al">答案</div><p class="ap">代表前面的 The girl。</p></div>
+<div class="ask mt16"><p>問學生：<code>who is wearing a red dress</code> 是在補充誰的資訊？</p><div class="al">答案</div><p class="ap">補充 The girl，告訴你是哪一個女生。</p></div>
+<div class="goal2 mt12"><p>這一段的目標是讓學生理解：關係子句的本質是「把第二句拿來修飾第一句裡的名詞」。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-formation">
+<div class="sh"><div class="sn">1E</div><div class="st">觀念打底｜關係子句的形成過程</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>老師逐字稿：兩句合併</div><div class="bb">
+<div class="script">現在我們看關係子句是怎麼長出來的。不要背公式，我們一步一步合併。<br><br>第一句：<code>The woman is our new client.</code><br>第二句：<code>We met the woman yesterday.</code><br><br>兩句都在講 the woman。第二句裡的 the woman 是被 met 的人，也就是受詞。合併時，我們把第二句裡重複的 the woman 拿掉，換成關係代名詞 whom，然後貼到第一句的 the woman 後面。</div>
+<table class="tbl mt12">
+<tr><th>步驟</th><th>句子</th><th>老師要講什麼</th></tr>
+<tr><td>1</td><td><code>The woman is our new client.</code><br><code>We met the woman yesterday.</code></td><td>先找重複名詞：the woman</td></tr>
+<tr><td>2</td><td><code>We met ___ yesterday.</code></td><td>第二句缺受詞</td></tr>
+<tr><td>3</td><td><code>The woman whom we met yesterday is our new client.</code></td><td>whom 代替被 met 的人</td></tr>
+</table>
+<div class="tip mt12"><p><strong>教學重點：</strong>學生常覺得 whom 很抽象。用形成過程講，他會知道 whom 其實就是原本第二句裡的受詞。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>答錯時糾正</div><div class="bb">
+<div class="corr"><p>如果學生問「口語不是都用 who 嗎？」可以回答：口語很多人會用 who，但 TOEIC 文法題遇到介系詞後或正式受格位置，仍然要會判斷 whom。這堂課先以考試標準為主。</p></div>
+<div class="ask mt12"><p>問學生：<code>We met the woman yesterday.</code> 裡面 the woman 是主詞還是受詞？</p><div class="al">答案</div><p class="ap">受詞，因為是被 met 的對象。所以合併後是 whom。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-antecedent">
+<div class="sh"><div class="sn">1F</div><div class="st">觀念打底｜先行詞與句子解剖</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>老師逐字稿：先行詞是被修飾的名詞</div><div class="bb">
+<div class="script">接下來要認識一個文法名詞：先行詞。<br><br>先行詞就是關係代名詞前面那個被修飾的名詞。<br><br>例如 <code>The employee who submitted the report is absent.</code> 裡面，The employee 是先行詞，who submitted the report 是拿來修飾 employee 的。<br><br>你可以先把中間那一塊括起來：<code>The employee (who submitted the report) is absent.</code>。這樣你會看到，真正的主句骨架其實是 <code>The employee is absent.</code></div>
+<table class="tbl mt12">
+<tr><th>部分</th><th>功能</th><th>老師說法</th></tr>
+<tr><td><code>The employee</code></td><td>先行詞</td><td>被後面子句修飾的名詞</td></tr>
+<tr><td><code>who</code></td><td>關係代名詞</td><td>代替 employee，並開始子句</td></tr>
+<tr><td><code>submitted the report</code></td><td>子句內容</td><td>說明是哪一位 employee</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh gn"><span class="d"></span>關係子句 vs 名詞子句的括號法</div><div class="bb">
+<div class="es">關係子句：<code>The employee (who submitted the report) is absent.</code> → 括號拿掉，主句仍完整。</div>
+<div class="es mt12">名詞子句：<code>I know (that the meeting was canceled).</code> → 括號整塊是 know 的受詞。</div>
+<div class="tip mt12"><p><strong>收束到 TOEIC：</strong>從這裡開始回到原本 Rule 1。之後每一題都問：空格前有沒有先行詞？後面子句缺不缺成分？</p></div>
+</div></div>
+</div>
+
 <div class="ls" id="s-open">
-<div class="sh"><div class="sn">1</div><div class="st">開場：建立判斷系統</div><div class="stm">⏱ 5 min</div></div>
+<div class="sh"><div class="sn">2</div><div class="st">正式進入 TOEIC：建立判斷系統</div><div class="stm">⏱ 5 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>開場逐字稿</div><div class="bb">
-<div class="script">今天的主題看起來很多：who、whom、which、that、where、when、why、what、whether、how。<br><br>但是你不用一次背十個字。今天你只要先學會一個判斷系統。<br><br><em>每一題先問：空格後面是一個缺東西的子句，還是一個完整句子？</em><br><br>如果它缺主詞、受詞、所有格，通常是在考<strong>關係代名詞</strong>。<br>如果它本身已經完整，而整塊句子只是放進另一個句子裡當一件事，通常是在考<strong>名詞子句</strong>。</div>
+<div class="script">剛剛我們已經知道：關係子句是在修飾前面的名詞；名詞子句是整塊當一個名詞。<br><br>現在開始把概念轉成 TOEIC 解題。題目不會問你定義，它會挖一個空格，然後給你 who、which、that、whether 這些選項。<br><br>所以每一題先問：<em>空格後面是一個缺東西的子句，還是一個完整句子？</em><br><br>如果它缺主詞、受詞、所有格，通常是在考<strong>關係代名詞</strong>。<br>如果它本身已經完整，而整塊句子只是放進另一個句子裡當一件事，通常是在考<strong>名詞子句</strong>。</div>
 <div class="block" style="margin:0"><div class="bh am"><span class="d"></span>板書核心：兩步判斷法</div><div class="bb">
 <div class="formula">空格前有名詞 → 後面在修飾名詞 → 關係子句</div>
 <div class="formula mt12">動詞後 / be 後 + 完整句子 → 整塊當名詞 → 名詞子句</div>
@@ -180,7 +291,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule1">
-<div class="sh"><div class="sn">2</div><div class="st">Rule 1｜關係子句 vs 名詞子句</div><div class="stm">⏱ 10 min</div></div>
+<div class="sh"><div class="sn">3</div><div class="st">Rule 1｜關係子句 vs 名詞子句</div><div class="stm">⏱ 10 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>A. 關係子句：修飾名詞</div><div class="bb">
 <div class="formula">名詞 + 關係代名詞／副詞 + 子句</div>
 <div class="es">The employee <strong>who submitted the report</strong> is absent today. → 修飾 employee（哪一位員工）</div>
@@ -200,7 +311,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule2">
-<div class="sh"><div class="sn">3</div><div class="st">Rule 2｜who vs whom：先看空格後有沒有主詞</div><div class="stm">⏱ 10 min</div></div>
+<div class="sh"><div class="sn">4</div><div class="st">Rule 2｜who vs whom：先看空格後有沒有主詞</div><div class="stm">⏱ 10 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
 <div class="script">看到 who 和 whom，不要先背誰是誰。直接看空格後面。<br><em>空格後面立刻出現動詞，缺主詞，用 who；空格後面已有主詞，缺的是受詞，用 whom。</em></div>
 <table class="tbl mt12">
@@ -218,7 +329,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule3">
-<div class="sh"><div class="sn">4</div><div class="st">Rule 3｜whose：所有格關係代名詞</div><div class="stm">⏱ 5 min</div></div>
+<div class="sh"><div class="sn">5</div><div class="st">Rule 3｜whose：所有格關係代名詞</div><div class="stm">⏱ 5 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>核心公式</div><div class="bb">
 <div class="formula">人或事物 + whose + 名詞</div>
 <div class="es">The engineer <strong>whose computer</strong> is being repaired is working from home. → whose 後接名詞 computer</div>
@@ -232,7 +343,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule4">
-<div class="sh"><div class="sn">5</div><div class="st">Rule 4｜which / that：事物的關係代名詞</div><div class="stm">⏱ 10 min</div></div>
+<div class="sh"><div class="sn">6</div><div class="st">Rule 4｜which / that：事物的關係代名詞</div><div class="stm">⏱ 10 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>which 和 that 的基本用法</div><div class="bb">
 <div class="es">The report <strong>which contains</strong> sales figures is confidential. → which 代替事物 report</div>
 <div class="es mt12">The proposal <strong>that we discussed</strong> was approved. → that 也可代替事物（限定用法）</div>
@@ -251,7 +362,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule5">
-<div class="sh"><div class="sn">6</div><div class="st">Rule 5｜where / when / why：關係副詞</div><div class="stm">⏱ 8 min</div></div>
+<div class="sh"><div class="sn">7</div><div class="st">Rule 5｜where / when / why：關係副詞</div><div class="stm">⏱ 8 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>先行詞類型對應表</div><div class="bb">
 <table class="tbl">
 <tr><th>先行詞類型</th><th>關係副詞</th><th>可改寫成</th><th>例子</th></tr>
@@ -270,7 +381,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule6">
-<div class="sh"><div class="sn">7</div><div class="st">Rule 6｜how 的重要陷阱</div><div class="stm">⏱ 5 min</div></div>
+<div class="sh"><div class="sn">8</div><div class="st">Rule 6｜how 的重要陷阱</div><div class="stm">⏱ 5 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>the way how 是錯的</div><div class="bb">
 <div class="script">how 本身已經帶有「方式」的概念，所以不要同時說 the way how。</div>
 <div class="tp mt12"><div class="tw">the way how the system works</div><div class="tr">how the system works</div></div>
@@ -280,7 +391,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule7">
-<div class="sh"><div class="sn">8</div><div class="st">Rule 7｜what：本身包含先行詞</div><div class="stm">⏱ 5 min</div></div>
+<div class="sh"><div class="sn">9</div><div class="st">Rule 7｜what：本身包含先行詞</div><div class="stm">⏱ 5 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>what = the thing that</div><div class="bb">
 <div class="formula">what = the thing that（不需要另外加先行詞）</div>
 <div class="es">What I need now is your advice. = The thing that I need now is your advice.</div>
@@ -294,7 +405,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule8">
-<div class="sh"><div class="sn">9</div><div class="st">Rule 8｜that 名詞子句的三種位置</div><div class="stm">⏱ 10 min</div></div>
+<div class="sh"><div class="sn">10</div><div class="st">Rule 8｜that 名詞子句的三種位置</div><div class="stm">⏱ 10 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>A. 當受詞（最常考）</div><div class="bb">
 <div class="formula">動詞 + that + 完整句子</div>
 <div class="es">The manager confirmed <strong>that the meeting had been canceled.</strong></div>
@@ -314,7 +425,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule9">
-<div class="sh"><div class="sn">10</div><div class="st">Rule 9｜The reason is that（不是 because）</div><div class="stm">⏱ 5 min</div></div>
+<div class="sh"><div class="sn">11</div><div class="st">Rule 9｜The reason is that（不是 because）</div><div class="stm">⏱ 5 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>最高頻 TOEIC 陷阱</div><div class="bb">
 <div class="script">看到 reason，先不要直接反射選 because。如果句型是「The reason is <code>______</code> S + V」，最安全答案通常是 that。</div>
 <div class="tp mt12"><div class="tw">The reason is because the weather was terrible.</div><div class="tr">The reason is that the weather was terrible.</div></div>
@@ -324,7 +435,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-rule10">
-<div class="sh"><div class="sn">11</div><div class="st">Rule 10｜whether / if：是否</div><div class="stm">⏱ 5 min</div></div>
+<div class="sh"><div class="sn">12</div><div class="st">Rule 10｜whether / if：是否</div><div class="stm">⏱ 5 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>基本用法</div><div class="bb">
 <div class="es">I do not know <strong>whether</strong> the meeting will be canceled. （我不知道會議是否取消）</div>
 <div class="es mt12">I do not know <strong>if</strong> the meeting will be canceled. （受詞子句中 whether / if 可互換）</div>
@@ -333,7 +444,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-traps">
-<div class="sh"><div class="sn">12</div><div class="st">TOEIC 六大陷阱整理</div><div class="stm">⏱ 10 min</div></div>
+<div class="sh"><div class="sn">13</div><div class="st">TOEIC 六大陷阱整理</div><div class="stm">⏱ 10 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>六大陷阱速查</div><div class="bb">
 <div class="tp"><div class="tw">The woman who we met → 後面有主詞 we</div><div class="tr">The woman whom we met ✓（受格）</div></div>
 <div class="tp mt12"><div class="tw">The building, that was renovated...</div><div class="tr">The building, which was renovated... ✓（逗號後用 which）</div></div>
@@ -345,7 +456,7 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 </div>
 
 <div class="ls" id="s-close">
-<div class="sh"><div class="sn">13</div><div class="st">收尾總結</div><div class="stm">⏱ 5 min</div></div>
+<div class="sh"><div class="sn">14</div><div class="st">收尾總結</div><div class="stm">⏱ 5 min</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>收尾逐字稿</div><div class="bb">
 <div class="script">今天學了很多，但最重要的是那個判斷系統，我們再走一次。<br><br><strong>第一步：空格前有沒有名詞？</strong>有名詞 → 先考慮關係子句（who / which / that / where / when / whose）。<br><br><strong>第二步：空格後的子句完整嗎？</strong>不完整（缺主詞/受詞/所有格）→ 關係代名詞；完整 + 後面整塊是名詞 → 名詞子句（that / whether / who / which）。<br><br><strong>記住三個 that 的限制：</strong>有逗號、有介系詞前置、所有格位置 → 不能用 that，改 which / whom。<br><br><strong>記住兩個陷阱：</strong>the reason is that（不是 because）；what 不能前面再加 the thing。</div>
 <div class="goal2 mt12"><p><strong>本堂學生要帶走：</strong></p><ul>
@@ -714,7 +825,13 @@ function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.query
 function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
 const allSecs=[
   {id:'s-overview',label:'課程總覽'},
-  {id:'s-open',label:'開場：判斷系統'},
+  {id:'s-foundation',label:'英文句子地圖'},
+  {id:'s-clause',label:'什麼是子句'},
+  {id:'s-subordinate',label:'主句 vs 從句'},
+  {id:'s-relative-why',label:'為什麼要關係子句'},
+  {id:'s-formation',label:'兩句合併'},
+  {id:'s-antecedent',label:'先行詞與句子解剖'},
+  {id:'s-open',label:'TOEIC 判斷系統'},
   {id:'s-rule1',label:'Rule1 關係子句vs名詞子句'},
   {id:'s-rule2',label:'Rule2 who/whom'},
   {id:'s-rule3',label:'Rule3 whose'},
