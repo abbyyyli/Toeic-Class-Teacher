@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 07 上課投影版</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--amber:#F59E0B;--green:#059669;--green-lt:#D1FAE5;--green-dk:#064E3B;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--gray-400:#94A3B8}
+html,body{height:100%;overflow:hidden}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:white;display:flex;flex-direction:column}
+#topbar{height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.top-badge{background:var(--amber);color:var(--navy);font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;font-family:Inter,sans-serif;letter-spacing:.5px}
+.top-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.7);margin-left:12px}
+.top-right{display:flex;align-items:center;gap:16px}
+#progress-text{font-family:"JetBrains Mono",monospace;font-size:13px;color:rgba(255,255,255,.45)}
+.pbwrap{width:140px;height:4px;background:rgba(255,255,255,.1);border-radius:2px}
+#progress-bar{height:100%;background:var(--amber);border-radius:2px;transition:width .3s}
+#slide-area{flex:1;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:28px 40px 16px}
+.slide{width:100%;max-width:940px;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+#bottombar{height:64px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.07)}
+.nav-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:white;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.nav-btn:hover{background:rgba(255,255,255,.14)}
+.nav-btn:disabled{opacity:.25;cursor:default}
+.center-btns{display:flex;align-items:center;gap:10px;flex-direction:column}
+#slide-type-label{font-size:11px;color:rgba(255,255,255,.3);font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:1px}
+.action-row{display:flex;gap:8px}
+.action-btn{border:none;border-radius:10px;padding:9px 22px;font-size:14px;font-weight:800;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.action-btn.hidden{display:none}
+#reveal-btn{background:var(--amber);color:var(--navy)}
+#reveal-btn:hover{background:#FBBF24}
+#next-item-btn{background:rgba(14,165,233,.2);color:#38BDF8;border:1px solid rgba(14,165,233,.3)}
+#next-item-btn:hover{background:rgba(14,165,233,.3)}
+#ask-btn{background:rgba(245,158,11,.15);color:var(--amber);border:1px solid rgba(245,158,11,.25)}
+#ask-btn:hover{background:rgba(245,158,11,.25)}
+.zh-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.45);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.zh-btn.on{background:rgba(14,165,233,.15);border-color:rgba(14,165,233,.4);color:#38BDF8}
+.zh-hidden{display:none!important}
+.gram-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);margin-bottom:8px}
+.gram-title{font-size:28px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:5px}
+.gram-sub{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:20px}
+.g-question{font-size:19px;font-weight:700;background:rgba(245,158,11,.12);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:18px}
+.g-highlight{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.18);border-radius:8px;padding:11px 15px;font-size:13px;color:rgba(255,255,255,.8);margin-bottom:12px}
+.g-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:14px}
+.g-table th,.g-table td{padding:9px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+.g-table th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.35);font-weight:700}
+.cell-em{font-family:"JetBrains Mono",monospace;color:var(--amber);font-weight:700;font-size:14px}
+.g-table .snum{font-family:"JetBrains Mono",monospace;font-weight:800;color:var(--navy);background:var(--amber);text-align:center;border-radius:6px;width:36px}
+#ask-panel{background:rgba(245,158,11,.08);border:1.5px solid rgba(245,158,11,.2);border-radius:12px;padding:16px 20px;margin-top:16px}
+.ask-progress{font-size:11px;color:rgba(255,255,255,.35);font-family:"JetBrains Mono",monospace;margin-bottom:10px}
+.ask-q{font-size:16px;font-weight:700;color:white;margin-bottom:10px}
+.ask-a{display:none;background:rgba(5,150,105,.15);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px;color:#34D399;font-weight:700}
+.ask-a.show{display:block}
+.art-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--sky);margin-bottom:10px}
+.art-title{font-size:22px;font-weight:800;font-family:Inter,sans-serif;margin-bottom:5px}
+.art-theme{font-size:13px;color:rgba(255,255,255,.35);margin-bottom:16px}
+.art-text{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:20px 22px;font-size:14px;line-height:1.9;color:rgba(255,255,255,.85);margin-bottom:12px}
+.art-text p{margin-bottom:10px}.art-text p:last-child{margin-bottom:0}
+.art-blank{color:var(--amber);font-weight:800;background:rgba(245,158,11,.12);padding:1px 7px;border-radius:4px}
+.art-ins{background:rgba(124,58,237,.18);color:#A78BFA;font-weight:800;padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px}
+.art-zh{font-size:12px;color:rgba(255,255,255,.3);line-height:1.8}
+.art-doc{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--amber);margin-bottom:8px;padding:3px 10px;background:rgba(245,158,11,.1);border-radius:6px;display:inline-block}
+.art-text table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+.art-text table th,.art-text table td{padding:5px 8px;border:1px solid rgba(255,255,255,.1);text-align:left}
+.art-text table th{background:rgba(255,255,255,.07);font-weight:700;font-size:11px}
+.q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.q-num{font-family:Inter,sans-serif;font-size:13px;font-weight:800;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:6px}
+.q-type-tag{font-size:12px;font-weight:700;background:rgba(14,165,233,.15);color:var(--sky);padding:4px 12px;border-radius:6px}
+.q-star{font-size:12px;font-weight:700;background:rgba(245,158,11,.15);color:var(--amber);padding:4px 10px;border-radius:6px}
+.q-p6{font-size:12px;font-weight:700;background:rgba(124,58,237,.15);color:#A78BFA;padding:4px 10px;border-radius:6px}
+.q-sentence{font-size:19px;font-weight:600;line-height:1.8;background:rgba(255,255,255,.04);border-left:3px solid var(--amber);border-radius:0 12px 12px 0;padding:16px 20px;margin-bottom:10px}
+.q-sentence u{text-decoration:none;background:rgba(245,158,11,.2);padding:0 8px;border-radius:4px;color:var(--amber);font-weight:800}
+.q-zh{font-size:13px;color:rgba(255,255,255,.35);margin-bottom:18px;line-height:1.6}
+.q-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.q-opt{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 16px;font-size:14px;font-weight:600;cursor:default;display:flex;align-items:center;gap:10px;transition:.15s}
+.q-opt-lbl{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;font-family:Inter,sans-serif}
+.q-opt.correct{background:rgba(5,150,105,.2);border-color:rgba(5,150,105,.5);color:#34D399}
+.q-opt.correct .q-opt-lbl{background:var(--green);color:white}
+.q-opt.dimmed{opacity:.3}
+.key-reveal{background:rgba(245,158,11,.1);border:1.5px solid rgba(245,158,11,.25);border-radius:10px;padding:14px 18px;font-size:14px;display:none;margin-top:8px;color:rgba(255,255,255,.9)}
+.key-reveal.show{display:block}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div style="display:flex;align-items:center">
+    <span class="top-badge">上課投影</span>
+    <span class="top-title">Lesson 07 · Ch.5 形容詞與比較 + Part 5（101–130）</span>
+  </div>
+  <div class="top-right">
+    <span id="progress-text">1 / 43</span>
+    <div class="pbwrap"><div id="progress-bar" style="width:2%"></div></div>
+  </div>
+</div>
+<div id="slide-area"><div class="slide" id="slide-content"></div></div>
+<div id="bottombar">
+  <button class="nav-btn" id="prev-btn" onclick="navigate(-1)" disabled>← 上一頁</button>
+  <div class="center-btns">
+    <span id="slide-type-label"></span>
+    <div class="action-row">
+      <button class="zh-btn" id="zh-btn" onclick="toggleZh()">中文 OFF</button>
+      <button class="action-btn hidden" id="ask-btn" onclick="nextAsk()">❓ 問學生</button>
+      <button class="action-btn hidden" id="next-item-btn" onclick="">下一題 ▶</button>
+      <button class="action-btn hidden" id="reveal-btn" onclick="reveal()">揭曉答案 ▼</button>
+    </div>
+  </div>
+  <button class="nav-btn" id="next-btn" onclick="navigate(1)">下一頁 →</button>
+</div>
+<script>
+const SLIDES = [
+{"type": "grammar", "title": "形容詞的四個位置", "subtitle": "先判斷空格在句子裡做什麼", "content": "<div class='g-question'>看到空格要放形容詞還是副詞？先看它的位置。</div><table class='g-table'><tr><th style='width:120px'>位置</th><th>結構</th><th>例</th></tr><tr><td class='snum'>1</td><td>名詞前 Adj+N</td><td>a <b>reliable</b> employee</td></tr><tr><td class='snum'>2</td><td>be 動詞後</td><td>The employee is <b>reliable</b>.</td></tr><tr><td class='snum'>3</td><td>連綴動詞後 seem/look/remain</td><td>The plan sounds <b>practical</b>.</td></tr><tr><td class='snum'>4</td><td>受詞補語</td><td>found the report <b>useful</b></td></tr></table><div class='g-highlight'>常見錯誤：The manager is <s>carefully</s> → careful；needs an <s>efficiently</s> system → efficient。be / seem 後面用形容詞，不是副詞。</div>", "ask": [["空格在名詞前面、或在 be / seem / remain 後面，通常要什麼詞性？", "形容詞（不是副詞）"], ["The assistant seems capable. capable 修飾誰？", "修飾主詞 assistant，是主詞補語"]]},
+{"type": "grammar", "title": "原級 / 比較級 / 最高級", "subtitle": "三層概念與判斷線索", "content": "<div class='g-question'>怎麼判斷要用哪一層？看句子有沒有比較線索。</div><table class='g-table'><tr><th style='width:110px'>形式</th><th>用途</th><th>判斷線索</th></tr><tr><td class='snum'>原</td><td>單純描述</td><td>無 than / 範圍 / as…as</td></tr><tr><td class='snum'>比</td><td>兩者比較</td><td>常見 <b>than</b></td></tr><tr><td class='snum'>最</td><td>範圍內最</td><td><b>the</b> + 最高級 + in/of/among</td></tr></table><div class='g-highlight'>有 than → 比較級；有 in the city / of the three / among all → 最高級。</div>", "ask": [["看到 than 第一個反應是什麼？", "往前找比較級，並確認在比哪兩個東西"], ["This is ___ solution of the three. → 用哪一層？", "最高級 the most practical（of the three 是範圍）"]]},
+{"type": "grammar", "title": "字形變化：-er/-est vs more/most", "subtitle": "短加字尾、長用 more/most", "content": "<table class='g-table'><tr><th>類型</th><th>比較級</th><th>最高級</th></tr><tr><td>短（fast, large, easy, big）</td><td>faster / larger / easier / bigger</td><td>fastest / largest / easiest / biggest</td></tr><tr><td>長（important, efficient, reliable）</td><td>more important…</td><td>the most important…</td></tr></table><div class='g-highlight'>兩種比較級不可混用：<s>more easier</s> → easier；<s>more expensiver</s> → more expensive。</div>", "ask": [["important 的比較級怎麼說？", "more important（長形容詞不加 -er）"], ["more easier 錯在哪？", "easier 已是比較級，前面不能再加 more"]]},
+{"type": "grammar", "title": "不規則變化 + far / late 辨析", "subtitle": "TOEIC 必背", "content": "<table class='g-table'><tr><th>原級</th><th>比較級</th><th>最高級</th></tr><tr><td>good / well</td><td>better</td><td>best</td></tr><tr><td>bad</td><td>worse</td><td>worst</td></tr><tr><td>many / much</td><td>more</td><td>most</td></tr><tr><td>little</td><td>less</td><td>least</td></tr><tr><td>far</td><td>farther（距離）/ further（進一步）</td><td>farthest / furthest</td></tr></table><div class='g-highlight'>TOEIC 最常考：<b>further information / further assistance / further discussion</b>（抽象「進一步」，不是 farther）。better 已是比較級 → 不說 more better。</div>", "ask": [["We have ___ time than expected. (little/less/least)", "less（有 than 是比較級，little→less）"], ["「進一步的資訊」用 farther 還是 further？", "further information"]]},
+{"type": "grammar", "title": "比較級 + than", "subtitle": "含程度副詞", "content": "<div class='g-question'>A + be/V + 比較級 + than + B</div><table class='g-table'><tr><th style='width:150px'>程度副詞</th><th>用法</th></tr><tr><td>much / far / even / slightly / significantly</td><td>放<b>比較級</b>前，表差距大小</td></tr><tr><td>very</td><td>只修飾<b>原級</b>（very good）</td></tr></table><div class='g-highlight'>陷阱：<s>very better</s> → much/far better；<s>very more expensive</s> → far more expensive。</div>", "ask": [["much larger 和 slightly higher 差別？", "差距大小：much 大很多、slightly 稍微高"], ["very better 對嗎？", "錯，比較級前用 much / far，不用 very"]]},
+{"type": "grammar", "title": "最高級：the + 最高級 + 範圍", "subtitle": "one of the most + 複數", "content": "<div class='g-question'>the + 最高級 + N + in / of / among + 範圍</div><table class='g-table'><tr><th>結構</th><th>例</th></tr><tr><td>the + 最高級</td><td>the most reliable supplier in the company</td></tr><tr><td>one of the 最高級 + <b>複數</b></td><td>one of the most efficient <b>managers</b></td></tr></table><div class='g-highlight'>找「範圍」判斷最高級：in the company / of the three / among all applicants / on the list。</div>", "ask": [["one of the most efficient ___ ：manager 還是 managers？", "managers（one of the 後接複數）"], ["看到 of the three 用哪一層？", "最高級"]]},
+{"type": "grammar", "title": "as … as 同等比較", "subtitle": "中間放原級", "content": "<div class='g-question'>as + 形容詞/副詞<b>原級</b> + as ＝ 和……一樣……</div><table class='g-table'><tr><th>狀態</th><th>The room is as <b>large</b> as that one.</th></tr><tr><td>動作</td><td>She responds as <b>quickly</b> as her supervisor.</td></tr></table><div class='g-highlight'>陷阱：<s>as more durable as</s> → as durable as；<s>as larger as</s> → as large as。not as…as ＝ 不如（＝ more … than 反寫）。</div>", "ask": [["as ___ as 中間放原級還是比較級？", "原級"], ["not as durable as ＝ ？", "不如……耐用"]]},
+{"type": "grammar", "title": "倍數比較", "subtitle": "twice / three times as … as", "content": "<div class='g-question'>倍數 + as + 原級 + as</div><table class='g-table'><tr><th>可數</th><th>as <b>many</b> orders as</th></tr><tr><td>不可數</td><td>as <b>much</b> time as</td></tr></table><div class='g-highlight'>中間仍是原級：<s>twice as larger as</s> → twice as large as。常見：twice / three times / half / double。</div>", "ask": [["twice as large as 中間為何不是 larger？", "倍數比較中間放原級"], ["as ___ orders as：many 還是 much？", "many（orders 可數）"]]},
+{"type": "grammar", "title": "特殊比較片語", "subtitle": "fewer/less · no…than · prior to", "content": "<table class='g-table'><tr><th>片語</th><th>意思</th></tr><tr><td>fewer + 可數 / less + 不可數</td><td>能數→fewer，不能數→less</td></tr><tr><td>no later than</td><td>不晚於（最晚在…前）</td></tr><tr><td>no more than / no fewer than</td><td>不超過 / 至少</td></tr><tr><td><b>prior / senior / superior / inferior</b> + to</td><td>接 to，<b>不接 than</b></td></tr></table><div class='g-highlight'>TOEIC 最常考 <b>prior to</b>（在……之前）：<s>prior than</s> / <s>more prior to</s> 都錯。</div>", "ask": [["fewer 還是 less time？", "less（time 不可數）"], ["prior 後面接 to 還是 than？", "to（prior to）"]]},
+{"type": "grammar", "title": "絕對形容詞", "subtitle": "本身已是最終狀態，不加 more/most", "content": "<table class='g-table'><tr><th>字</th><th>錯</th><th>對</th></tr><tr><td>unique</td><td>more unique</td><td>truly unique</td></tr><tr><td>perfect</td><td>most perfect</td><td>nearly perfect</td></tr><tr><td>complete</td><td>more complete</td><td>almost complete</td></tr></table><div class='g-highlight'>要修飾程度用 nearly / virtually / absolutely / truly / completely，不用 more / most。</div>", "ask": [["more unique 對嗎？", "錯，unique 是絕對形容詞，用 truly unique"]]},
+{"type": "grammar", "title": "比較對象一致", "subtitle": "that of / those of", "content": "<div class='g-question'>單數 → that of ｜ 複數 → those of</div><div class='g-highlight'>不能拿 price 跟 company 比。<s>higher than that company</s> → higher than <b>that of</b> the other company。<s>better than the old plan</s> → better than <b>those of</b> the old plan（benefits 複數）。</div>", "ask": [["delivery time is shorter than ___：the competitors / that of our competitors？", "that of our competitors（time 單數）"], ["benefits 比較後面用 that of 還是 those of？", "those of（複數）"]]},
+{"type": "grammar", "title": "more than 的兩種意思", "subtitle": "數字 vs 禮貌表達", "content": "<table class='g-table'><tr><th>用法</th><th>意思</th></tr><tr><td>more than + 數字</td><td>超過（more than 500 employees）</td></tr><tr><td>more than + happy/willing</td><td>非常樂意（more than happy to help）</td></tr></table><div class='g-highlight'>商業書信常見 <b>more than happy to</b> / <b>more than willing to</b> ＝ 非常樂意，不是比較。</div>", "ask": [["more than happy 是在比較嗎？", "不是，是「非常樂意」的固定禮貌說法"]]},
+{"type": "grammar", "title": "Part 5 解題六步驟", "subtitle": "每題開始前先跑一遍", "content": "<table class='g-table'><tr><th style='width:70px'>步驟</th><th>問自己</th></tr><tr><td class='snum'>1</td><td>主詞是誰？（主詞動詞一致）</td></tr><tr><td class='snum'>2</td><td>動詞在哪？（時態、語態）</td></tr><tr><td class='snum'>3</td><td>空格前後是什麼詞性？</td></tr><tr><td class='snum'>4</td><td>有沒有比較線索？（than / as…as / 範圍）</td></tr><tr><td class='snum'>5</td><td>有沒有固定搭配？（prior to / when it comes to）</td></tr><tr><td class='snum'>6</td><td>語意對嗎？</td></tr></table><div class='g-highlight'>先結構、再搭配、最後語意——不要一看到選項就急著翻譯。</div>", "ask": [["Part 5 第一步先看什麼？", "主詞是誰（判斷主詞動詞一致）"], ["看到 than / as…as 屬於哪一步？", "Step 4 比較線索"]]},
+{"type": "question", "num": 101, "qtype": "時態", "star": true, "part6": false, "sentence": "Mr. Marco was leaving for Chicago but <u>______</u> make a last-minute cancellation.", "zh": "Marco 先生原本正要前往芝加哥，但是他不得不臨時取消。", "options": ["has to", "had to", "have to", "having to"], "answer": 1, "key": "had to + V = 不得不（過去式）。was leaving 和 had to 時態一致（過去式）。　｜　其他：A has to：現在式第三人稱，時態不符。C have to：現在式，時態不符。D having to：V-ing 不能單獨作謂語動詞。"},
+{"type": "question", "num": 102, "qtype": "主詞動詞一致", "star": false, "part6": false, "sentence": "Whether a team member <u>______</u> the official title of \"project manager\" or not, he or she is often called upon to lead projects.", "zh": "無論一位團隊成員是否擁有「專案經理」的正式頭銜，他/她有時都被要求領導專案。", "options": ["holds", "held", "holding", "hold"], "answer": 0, "key": "主詞 a team member 是單數，現在一般事實 → 第三人稱單數 holds。　｜　其他：B held：過去式，句子說的是一般情況不是過去。C holding：V-ing 不能單獨作謂語。D hold：原形，主詞單數現在式要加 s。"},
+{"type": "question", "num": 103, "qtype": "固定片語", "star": true, "part6": false, "sentence": "Drivers in North America may think that bigger is better <u>______</u> it comes to their automobiles.", "zh": "北美的駕駛可能認為，談到他們的汽車時，越大越好。", "options": ["if", "although", "when", "however"], "answer": 2, "key": "when it comes to + 名詞/V-ing = 談到……；就……而言。　｜　其他：A if：如果，這裡不是條件假設。B although：雖然，語意不合。D however：然而，副詞不能放在這個位置。"},
+{"type": "question", "num": 104, "qtype": "名詞語意", "star": false, "part6": false, "sentence": "Please send us <u>______</u> on any textile that your company produces and a current price list.", "zh": "請寄給我們貴公司所生產的任何紡織品相關資訊，以及目前的價格表。", "options": ["attachment", "agreement", "information", "document"], "answer": 2, "key": "information on + 主題 = 關於……的資訊。這是 TOEIC 商業書信的高頻搭配。　｜　其他：A attachment：附件，通常指 email 中的附加檔案，不搭配 on。B agreement：協議，語意不符。D document：文件，也不搭配 on。"},
+{"type": "question", "num": 105, "qtype": "副詞位置", "star": false, "part6": false, "sentence": "People with public email addresses <u>______</u> receive hundreds of spam messages every day.", "zh": "使用公開電子郵件地址的人，常常每天收到數百封垃圾郵件。", "options": ["not likely", "impossible", "often", "seldom"], "answer": 2, "key": "often = 常常，副詞，修飾動詞，表示「常常收到垃圾郵件」，語意最合理。　｜　其他：A not likely / B impossible：形容詞，不能直接修飾動詞 receive。D seldom：偶爾，語意相反（有公開 email 應是常常收到，不是偶爾）。"},
+{"type": "question", "num": 106, "qtype": "連接詞", "star": true, "part6": false, "sentence": "Please join now <u>______</u> take advantage of this limited offer to new members.", "zh": "請現在加入，並利用這項提供給新會員的限時優惠。", "options": ["or", "but", "and", "if"], "answer": 2, "key": "祈使句 + and + V = 請做 A，（這樣）也可以做 B。and 連接兩個並列的行動。　｜　其他：A or：祈使句 + or + V = 如果你不做 A，就會有不好的結果。B but：但是，語意相反。D if：如果，改變了句子邏輯。"},
+{"type": "question", "num": 107, "qtype": "動詞字義", "star": false, "part6": false, "sentence": "Spam filters are the common technology used to <u>______</u> spam.", "zh": "垃圾郵件過濾器是用來對抗垃圾郵件的常見技術。", "options": ["destroy", "combat", "damage", "organize"], "answer": 1, "key": "combat spam = 對抗、打擊垃圾郵件。combat + 問題/犯罪/疾病/spam 是固定搭配。　｜　其他：A destroy：摧毀，垃圾郵件過濾器不是摧毀而是阻擋。C damage：損害，不能說 damage spam。D organize：整理，不合語意。"},
+{"type": "question", "num": 108, "qtype": "同等比較", "star": true, "part6": false, "sentence": "The content of a blog can be <u>______</u> an email created by a writer for friends and family to view on-line.", "zh": "部落格的內容可以像作者寫給朋友和家人在線上閱讀的電子郵件一樣非正式。", "options": ["such informal as", "informal as like", "like informal", "as informal as"], "answer": 3, "key": "as + 形容詞原級 + as = 和……一樣……。所以是 as informal as an email。　｜　其他：A such informal as：such 通常接名詞片語，不這樣用。B informal as like：結構錯誤。C like informal：like 後接名詞，不接形容詞。"},
+{"type": "question", "num": 109, "qtype": "現在完成式", "star": true, "part6": false, "sentence": "Reality television <u>______</u> the viewing habits of American television watchers.", "zh": "實境電視已經改變了美國電視觀眾的收視習慣。", "options": ["have change", "had changing", "has changed", "have changing"], "answer": 2, "key": "Reality television 是單數概念 → has。現在完成式：has + p.p. → has changed。　｜　其他：A have change：兩個錯誤，主詞單數不用 have，且現在完成式需要 p.p.。B had changing：had + V-ing 不是完成式結構。D have changing：同樣錯誤。"},
+{"type": "question", "num": 110, "qtype": "介系詞搭配", "star": false, "part6": false, "sentence": "I would be happy to discuss any questions you may have <u>______</u> the agreement.", "zh": "我很樂意討論您對這份協議可能有的任何問題。", "options": ["of", "about", "such as", "for"], "answer": 1, "key": "questions about + 名詞 = 關於……的問題，是高頻固定搭配。　｜　其他：A of：question of 是正式用法表示「……的問題」，不如 about 自然。C such as：例如，後面通常列舉。D for：question for someone 是「給某人的問題」，agreement 是主題不是對象。"},
+{"type": "question", "num": 111, "qtype": "代名詞指涉", "star": true, "part6": false, "sentence": "Our company would like to adopt a new system this year and use <u>______</u> to change the way the whole organization works.", "zh": "我們公司今年想採用一套新系統，並利用它來改變整個組織的運作方式。", "options": ["this", "those", "them", "it"], "answer": 3, "key": "a new system 是單數不可數事物 → 用 it 代替。　｜　其他：A this：指示代名詞，通常指剛剛提到的事，但後面 use this to change 不如 use it 自然。B those：複數。C them：複數。"},
+{"type": "question", "num": 112, "qtype": "相似字辨析", "star": false, "part6": false, "sentence": "Everyone passed the sales training course <u>______</u> one new employee.", "zh": "除了某位新員工以外，每個人都通過了銷售訓練課程。", "options": ["except", "accept", "expect", "express"], "answer": 0, "key": "except = 除了……以外（介系詞）。Everyone passed except one new employee。　｜　其他：B accept：接受（動詞）。C expect：期待（動詞）。D express：表達（動詞）。三者都是動詞，不能放在這個位置。"},
+{"type": "question", "num": 113, "qtype": "動詞搭配", "star": true, "part6": false, "sentence": "Would it be possible for you to <u>______</u> a meeting and a plant tour for us on Friday of next week?", "zh": "請問您是否可以為我們安排下週五的一場會議和工廠參觀？", "options": ["promote", "schedule", "adjourn", "write"], "answer": 1, "key": "schedule a meeting = 安排會議。schedule 當動詞用，是 TOEIC 商業情境最高頻的字之一。　｜　其他：A promote：升遷；推廣，不搭配 meeting。C adjourn：（會議）休會，已有會議時才能說 adjourn。D write：寫，不能說 write a meeting。"},
+{"type": "question", "num": 114, "qtype": "原因連接詞", "star": true, "part6": false, "sentence": "I have to cancel the meeting that we set up for next Friday <u>______</u> we've got some trouble at our factory.", "zh": "我必須取消我們安排在下週五的會議，因為我們工廠出了點問題。", "options": ["as", "if", "because of", "so"], "answer": 0, "key": "as + 完整子句 = 因為（= because）。取消會議的原因是工廠有問題。　｜　其他：B if：如果，是條件，但工廠有問題是已發生的事實。C because of + 名詞，後面接完整句要用 because/as/since。D so：表示結果，邏輯反了。"},
+{"type": "question", "num": 115, "qtype": "介系詞搭配", "star": false, "part6": false, "sentence": "Experienced managers always analyze an issue <u>______</u> different perspectives.", "zh": "有經驗的經理總是從不同角度分析問題。", "options": ["to", "for", "from", "of"], "answer": 2, "key": "from different perspectives = 從不同觀點。from + perspective 是固定搭配。　｜　其他：A to：方向，to perspectives 不自然。B for：為了，for perspectives 不合語意。D of：perspective of someone 是某人的觀點，但這裡要表達「從……角度」用 from。"},
+{"type": "question", "num": 116, "qtype": "詞性判斷", "star": true, "part6": false, "sentence": "We accept your kind invitation with great <u>______</u>.", "zh": "我們非常愉快地接受您的盛情邀請。", "options": ["pleasure", "please", "pleased", "pleasant"], "answer": 0, "key": "with great pleasure = 非常樂意地；很榮幸地。pleasure 是名詞，符合 with + great + 名詞的結構。　｜　其他：B please：動詞或禮貌副詞，不能接在 great 後。C pleased：形容詞（be pleased to V），不接在 with great 後。D pleasant：形容詞（令人愉快的），with great pleasant 不正確。"},
+{"type": "question", "num": 117, "qtype": "詞性判斷", "star": true, "part6": false, "sentence": "I would like to do something to get you back on track, so we return to the more <u>______</u> process we had before.", "zh": "我想做點事情讓你回到正軌，這樣我們就能回到之前較有效率的流程。", "options": ["effectiveness", "effective", "effect", "effectively"], "answer": 1, "key": "process（名詞）前需要形容詞。effective 是形容詞，more effective process = 更有效的流程。　｜　其他：A effectiveness：名詞，不能直接修飾名詞。C effect：名詞或動詞，不能修飾名詞。D effectively：副詞，修飾動詞，不能說 effectively process。"},
+{"type": "question", "num": 118, "qtype": "詞性判斷", "star": true, "part6": false, "sentence": "After reviewing your <u>______</u>, we are pleased to offer you the sales manager position.", "zh": "在審閱您的申請資料後，我們很高興提供您銷售經理的職位。", "options": ["application", "applied", "applying", "apply"], "answer": 0, "key": "your 後面接名詞。application 是名詞，review your application = 審閱你的申請，符合求職情境。　｜　其他：B applied：過去式或過去分詞（動詞/形容詞）。C applying：V-ing，不能直接接在 your 後。D apply：動詞原形，不能接在 your 後。"},
+{"type": "question", "num": 119, "qtype": "名詞搭配", "star": false, "part6": false, "sentence": "If we're honest with ourselves, we're often aware of some of the areas in our lives that need <u>______</u>.", "zh": "如果我們誠實面對自己，我們常常會意識到生活中有些方面需要改善。", "options": ["advantage", "encouragement", "improvement", "benefit"], "answer": 2, "key": "need improvement = 需要改善。need + 名詞（V-ing 也可）是固定搭配。　｜　其他：A advantage：need 不能直接接 advantage。B encouragement：鼓勵，need encouragement 可以，但語意不如 improvement 合。D benefit：好處，不搭配 need + benefit 表示「需要改善」。"},
+{"type": "question", "num": 120, "qtype": "商業信件動詞", "star": true, "part6": false, "sentence": "This letter is to <u>______</u> our recent conversation about the business opportunities in Taiwan.", "zh": "這封信是為了確認我們最近關於台灣商業機會的談話內容。", "options": ["confirm", "notify", "inform", "reserve"], "answer": 0, "key": "confirm = 確認（之前討論/對話的內容）。This letter is to confirm = 這封信是為了確認……，是商業書信的標準開場。　｜　其他：B notify：通知（新的資訊），不是確認已有的對話。C inform：告知（新事項），也不是確認已有的對話。D reserve：預訂，語意完全不符。"},
+{"type": "question", "num": 121, "qtype": "形容詞語意", "star": false, "part6": false, "sentence": "Your business and goodwill are <u>______</u> to us.", "zh": "您的業務往來與好意對我們非常重要。", "options": ["flexible", "interesting", "important", "competent"], "answer": 2, "key": "important to someone = 對某人重要。Your business and goodwill are important to us 是商業信件的標準表達。　｜　其他：A flexible：有彈性的，business 本身不是 flexible。B interesting：有趣的，商業信件不這樣說。D competent：有能力的，通常形容人，不形容 business and goodwill。"},
+{"type": "question", "num": 122, "qtype": "固定配對", "star": true, "part6": false, "sentence": "Jerry not only attends university, <u>______</u> also has a part-time job.", "zh": "Jerry 不僅上大學，還有一份兼職工作。", "options": ["furthermore", "but", "and then", "as well"], "answer": 1, "key": "not only A but also B。看到 not only，直接找 but also。　｜　其他：A furthermore：連接獨立句，不是 not only 的固定搭配。C and then：表示時間順序。D as well：放句尾，不放在 not only 後面補成固定句型。"},
+{"type": "question", "num": 123, "qtype": "被動語態", "star": true, "part6": false, "sentence": "I would like to be <u>______</u> for your marketing specialist position.", "zh": "我希望能被考慮錄取貴公司的行銷專員職位。", "options": ["considers", "considered", "consideration", "considering"], "answer": 1, "key": "would like to be + p.p.（被動）。consider 的過去分詞是 considered。be considered for a position = 被考慮擔任某職位。　｜　其他：A considers：現在式，be 後面不能接現在式。C consideration：名詞，be 後面若要被動需要 p.p. 不是名詞。D considering：V-ing，不構成被動語態。"},
+{"type": "question", "num": 124, "qtype": "主詞動詞一致", "star": false, "part6": false, "sentence": "Your suggestions for next month's sales seminar <u>______</u> much appreciated.", "zh": "非常感謝您對下個月銷售研討會提出的建議。", "options": ["was", "are", "has been", "is"], "answer": 1, "key": "核心主詞是 suggestions（複數）。介系詞片語 for next month's sales seminar 括起來，不影響主詞。複數主詞用 are。　｜　其他：A was：過去式單數，suggestions 是複數。C has been：單數現在完成式，複數要用 have been（選項中沒有）。D is：單數現在式，不符合複數主詞。"},
+{"type": "question", "num": 125, "qtype": "詞性判斷", "star": false, "part6": false, "sentence": "Thank you for your kind <u>______</u> with this matter.", "zh": "感謝您在這件事情上的協助。", "options": ["assist", "assistant", "assistance", "assisted"], "answer": 2, "key": "your kind + 名詞。assistance = 協助（名詞）。Thank you for your assistance 是商業信件標準感謝句。　｜　其他：A assist：動詞（協助），your kind assist 不成立。B assistant：名詞，但意思是「助理」，不是「協助」。D assisted：過去式/過去分詞（動詞），不能接在 your kind 後面。"},
+{"type": "question", "num": 126, "qtype": "形容詞語意", "star": true, "part6": false, "sentence": "We are making this <u>______</u> offer to our special members.", "zh": "我們正向特別會員提供這項前所未有的優惠。", "options": ["unprecedented", "undocumented", "unimportant", "unreliable"], "answer": 0, "key": "unprecedented offer = 前所未有的優惠。給特別會員的優惠一定是正面吸引力，unprecedented（前所未有的）最符合商業促銷語氣。　｜　其他：B undocumented：未記錄的，和 offer 不搭。C unimportant：不重要的，公司不會說提供不重要的優惠。D unreliable：不可靠的，和 offer 不搭。"},
+{"type": "question", "num": 127, "qtype": "平行結構", "star": true, "part6": false, "sentence": "I am writing to introduce myself and <u>______</u> about openings for a technical support engineer.", "zh": "我寫信是為了自我介紹，並詢問技術支援工程師的職缺。", "options": ["inquiring", "inquire", "inquiry", "inquired"], "answer": 1, "key": "to introduce and inquire（平行，都是原形動詞）。and 前後形式一致，introduce 是原形，所以選 inquire。　｜　其他：A inquiring：V-ing，和 introduce 不平行。C inquiry：名詞（詢問），and 後面需要動詞，不是名詞。D inquired：過去式，和 introduce（原形）不平行。"},
+{"type": "question", "num": 128, "qtype": "介系詞 + V-ing", "star": true, "part6": false, "sentence": "Thank you so much for <u>______</u> to share your experience with our sales representatives.", "zh": "非常感謝您同意與我們的業務代表分享您的經驗。", "options": ["agreeing", "believing", "delivering", "arranging"], "answer": 0, "key": "for + V-ing（介系詞後動詞用 V-ing）。agree to share = 同意分享。所以 for agreeing to share = 因為（你）同意分享。　｜　其他：B believing：believe 不接 to share 表示「相信去分享」。C delivering：deliver to share 不自然。D arranging：arrange to share 語意上是「安排分享」，不如 agree to share 精確（本句是感謝對方願意）。"},
+{"type": "question", "num": 129, "qtype": "形容詞辨析", "star": true, "part6": false, "sentence": "We look forward to a mutually <u>______</u> business relationship.", "zh": "我們期待建立一段雙方都滿意的商業關係。", "options": ["satisfy", "satisfied", "satisfying", "satisfaction"], "answer": 2, "key": "relationship 是事物，令人滿意 → satisfying（事物讓人感到滿意）。satisfied 描述人（感到滿意的）。　｜　其他：A satisfy：動詞（使滿意），不能修飾名詞。B satisfied：形容詞，但描述人（customers are satisfied），不描述事物。D satisfaction：名詞（滿意度），不能放在 business relationship 前當形容詞。"},
+{"type": "question", "num": 130, "qtype": "動詞搭配", "star": false, "part6": false, "sentence": "This is a note to remind you that we haven't <u>______</u> our copy of the partnership agreement.", "zh": "這張便條是要提醒您，我們尚未收到我們那份合作協議。", "options": ["received", "retrieved", "regained", "reacted"], "answer": 0, "key": "receive a copy = 收到一份副本。haven't received our copy = 尚未收到我們那份副本。　｜　其他：B retrieved：取回（自己去找回來），不是別人寄給你。C regained：重新獲得（失去後奪回），語意不合。D reacted：反應，react 後面通常接 to，不直接接 our copy。"}
+];
+const TOTAL = 43;
+
+let current=0,revealed=false,zhVisible=false,itemStep=0,askStep=0;
+function applyZh(){document.querySelectorAll('.zh-target').forEach(el=>el.classList.toggle('zh-hidden',!zhVisible))}
+function toggleZh(){zhVisible=!zhVisible;applyZh();const b=document.getElementById('zh-btn');b.textContent=zhVisible?'中文 ON':'中文 OFF';b.classList.toggle('on',zhVisible)}
+function showBtn(id,show){document.getElementById(id).classList.toggle('hidden',!show)}
+function setText(id,t){const el=document.getElementById(id);if(el)el.textContent=t}
+function render(){
+  const s=SLIDES[current];
+  revealed=false;itemStep=0;askStep=0;
+  document.getElementById('progress-text').textContent=(current+1)+' / '+TOTAL;
+  document.getElementById('progress-bar').style.width=Math.round((current+1)/TOTAL*100)+'%';
+  document.getElementById('prev-btn').disabled=current===0;
+  document.getElementById('next-btn').disabled=current===TOTAL-1;
+  const labels={grammar:'文法講解',multi:'課堂練習',correction:'改錯練習',article:'閱讀文章',question:'Part 5 練習題'};
+  setText('slide-type-label',labels[s.type]||'');
+  showBtn('reveal-btn',s.type==='question');
+  showBtn('next-item-btn',false);
+  showBtn('ask-btn',(s.type==='grammar'||s.type==='article')&&s.ask&&s.ask.length>0);
+  showBtn('zh-btn',s.type==='question'||s.type==='article');
+  const el=document.getElementById('slide-content');
+  if(s.type==='grammar'){
+    const hasAsk=s.ask&&s.ask.length>0;
+    el.innerHTML=`<div class="gram-label">Lesson 07 · Ch.5 形容詞與比較結構</div><div class="gram-title">${s.title}</div><div class="gram-sub">${s.subtitle}</div>${s.content}${hasAsk?`<div id="ask-panel" style="display:none"><div class="ask-progress" id="ask-prog"></div><div class="ask-q" id="ask-q"></div><div class="ask-a" id="ask-a"></div></div>`:''}`;
+    if(hasAsk) document.getElementById('ask-btn').textContent='❓ 問學生 ('+s.ask.length+')';
+  } else if(s.type==='article'){
+    const hasArtAsk=s.ask&&s.ask.length>0;
+    el.innerHTML=`<div class="art-label">${s.label}</div><div class="art-title">${s.title}</div><div class="art-theme">${s.theme}</div><div class="art-text">${s.text}</div><div class="art-zh zh-target">${s.zh}</div>${hasArtAsk?`<div id="ask-panel" style="display:none"><div class="ask-progress" id="ask-prog"></div><div class="ask-q" id="ask-q"></div><div class="ask-a" id="ask-a"></div></div>`:''}`;
+    if(hasArtAsk) document.getElementById('ask-btn').textContent='❓ 問學生 ('+s.ask.length+')';
+  } else {
+    const opts=s.options.map((o,i)=>`<div class="q-opt" id="opt-${i}"><span class="q-opt-lbl">${String.fromCharCode(65+i)}</span>${o}</div>`).join('');
+    el.innerHTML=`<div class="q-header"><span class="q-num">${s.num}</span><span class="q-type-tag">${s.qtype}</span>${s.star?'<span class="q-star">⭐ 重點題</span>':''}${s.part6?'<span class="q-p6">Part 6</span>':''}</div><div class="q-sentence">${s.sentence}</div><div class="q-zh zh-target">${s.zh}</div><div class="q-opts">${opts}</div><div class="key-reveal" id="key-reveal"><strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong> &nbsp;—&nbsp; ${s.key}</div>`;
+  }
+  setTimeout(applyZh,0);
+  resetRevealBtn();
+}
+function resetRevealBtn(){const b=document.getElementById('reveal-btn');b.textContent='揭曉答案 ▼';b.style.background='';b.style.color='';}
+function reveal(){
+  const s=SLIDES[current];
+  const b=document.getElementById('reveal-btn');
+  if(!revealed){
+    revealed=true;
+    s.options.forEach((_,i)=>{const el=document.getElementById('opt-'+i);if(i===s.answer)el.classList.add('correct');else el.classList.add('dimmed');});
+    document.getElementById('key-reveal').classList.add('show');
+    b.textContent='隱藏答案 ▲';b.style.background='rgba(5,150,105,.25)';b.style.color='#34D399';
+  } else {
+    revealed=false;
+    s.options.forEach((_,i)=>{const el=document.getElementById('opt-'+i);el.classList.remove('correct','dimmed');});
+    document.getElementById('key-reveal').classList.remove('show');
+    resetRevealBtn();
+  }
+}
+function nextAsk(){
+  const s=SLIDES[current];const panel=document.getElementById('ask-panel');const b=document.getElementById('ask-btn');
+  if(!panel)return;if(askStep===0)panel.style.display='block';
+  if(askStep<s.ask.length){
+    const[q,a]=s.ask[askStep];
+    document.getElementById('ask-q').textContent=q;document.getElementById('ask-a').textContent=a;
+    document.getElementById('ask-a').classList.remove('show');document.getElementById('ask-prog').textContent='問題 '+(askStep+1)+' / '+s.ask.length;
+    const oldStep=askStep;
+    b.onclick=function(){const aa=document.getElementById('ask-a');if(!aa.classList.contains('show')){aa.classList.add('show');b.onclick=function(){askStep=oldStep+1;nextAsk();}}};
+    askStep++;
+  } else {panel.style.display='none';askStep=0;b.textContent='❓ 問學生 ('+s.ask.length+')';b.onclick=nextAsk;}
+}
+function navigate(dir){current=Math.max(0,Math.min(TOTAL-1,current+dir));render();document.getElementById('slide-area').scrollTop=0;}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();navigate(1)}
+  else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();navigate(-1)}
+  else if(e.key===' '||e.key==='Enter'){e.preventDefault();const s=SLIDES[current];if(s.type==='question')reveal();else if((s.type==='grammar'||s.type==='article')&&s.ask&&s.ask.length>0)document.getElementById('ask-btn').click();}
+});
+render();
+</script>
+</body>
+</html>
