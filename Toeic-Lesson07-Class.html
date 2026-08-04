@@ -65,6 +65,28 @@ body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:
 .art-text table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
 .art-text table th,.art-text table td{padding:5px 8px;border:1px solid rgba(255,255,255,.1);text-align:left}
 .art-text table th{background:rgba(255,255,255,.07);font-weight:700;font-size:11px}
+
+.multi-header{margin-bottom:18px}
+.multi-title{font-size:24px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:4px}
+.multi-instr{font-size:14px;color:rgba(255,255,255,.4)}
+.multi-progress{font-size:12px;color:var(--amber);font-family:"JetBrains Mono",monospace;margin-top:4px}
+.multi-items{display:flex;flex-direction:column;gap:10px}
+.multi-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:14px}
+.multi-item.revealed{border-color:rgba(5,150,105,.3);background:rgba(5,150,105,.06)}
+.item-num{font-family:"JetBrains Mono",monospace;font-size:12px;color:rgba(255,255,255,.3);width:22px;flex-shrink:0;padding-top:2px}
+.item-q{font-size:15px;font-weight:600;color:white;line-height:1.5}
+.item-a{font-size:13px;color:#34D399;margin-top:6px;display:none;padding-top:6px;border-top:1px solid rgba(5,150,105,.2)}
+.item-a.show{display:block}
+.item-note{font-size:12px;color:rgba(52,211,153,.7);margin-top:3px}
+.corr-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.corr-item.revealed{border-color:rgba(5,150,105,.25)}
+.corr-wrong{font-family:"JetBrains Mono",monospace;font-size:14px;color:#FC8181;background:rgba(220,38,38,.08);padding:7px 12px;border-radius:6px;margin-bottom:8px}
+.corr-wrong::before{content:"❌ "}
+.corr-right{font-family:"JetBrains Mono",monospace;font-size:14px;color:#34D399;background:rgba(5,150,105,.1);padding:7px 12px;border-radius:6px;display:none}
+.corr-right.show{display:block}
+.corr-right::before{content:"✅ "}
+.corr-reason{font-size:12px;color:rgba(255,255,255,.4);margin-top:6px;display:none}
+.corr-reason.show{display:block}
 .q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
 .q-num{font-family:Inter,sans-serif;font-size:13px;font-weight:800;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:6px}
 .q-type-tag{font-size:12px;font-weight:700;background:rgba(14,165,233,.15);color:var(--sky);padding:4px 12px;border-radius:6px}
@@ -90,7 +112,7 @@ body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:
     <span class="top-title">Lesson 07 · Ch.5 形容詞與比較 + Part 5（101–130）</span>
   </div>
   <div class="top-right">
-    <span id="progress-text">1 / 43</span>
+    <span id="progress-text">1 / 45</span>
     <div class="pbwrap"><div id="progress-bar" style="width:2%"></div></div>
   </div>
 </div>
@@ -102,7 +124,7 @@ body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:
     <div class="action-row">
       <button class="zh-btn" id="zh-btn" onclick="toggleZh()">中文 OFF</button>
       <button class="action-btn hidden" id="ask-btn" onclick="nextAsk()">❓ 問學生</button>
-      <button class="action-btn hidden" id="next-item-btn" onclick="">下一題 ▶</button>
+      <button class="action-btn hidden" id="next-item-btn" onclick="nextItem()">下一題 ▶</button>
       <button class="action-btn hidden" id="reveal-btn" onclick="reveal()">揭曉答案 ▼</button>
     </div>
   </div>
@@ -122,6 +144,8 @@ const SLIDES = [
 {"type": "grammar", "title": "絕對形容詞", "subtitle": "本身已是最終狀態，不加 more/most", "content": "<table class='g-table'><tr><th>字</th><th>錯</th><th>對</th></tr><tr><td>unique</td><td>more unique</td><td>truly unique</td></tr><tr><td>perfect</td><td>most perfect</td><td>nearly perfect</td></tr><tr><td>complete</td><td>more complete</td><td>almost complete</td></tr></table><div class='g-highlight'>要修飾程度用 nearly / virtually / absolutely / truly / completely，不用 more / most。</div>", "ask": [["more unique 對嗎？", "錯，unique 是絕對形容詞，用 truly unique"]]},
 {"type": "grammar", "title": "比較對象一致", "subtitle": "that of / those of", "content": "<div class='g-question'>單數 → that of ｜ 複數 → those of</div><div class='g-highlight'>不能拿 price 跟 company 比。<s>higher than that company</s> → higher than <b>that of</b> the other company。<s>better than the old plan</s> → better than <b>those of</b> the old plan（benefits 複數）。</div>", "ask": [["delivery time is shorter than ___：the competitors / that of our competitors？", "that of our competitors（time 單數）"], ["benefits 比較後面用 that of 還是 those of？", "those of（複數）"]]},
 {"type": "grammar", "title": "more than 的兩種意思", "subtitle": "數字 vs 禮貌表達", "content": "<table class='g-table'><tr><th>用法</th><th>意思</th></tr><tr><td>more than + 數字</td><td>超過（more than 500 employees）</td></tr><tr><td>more than + happy/willing</td><td>非常樂意（more than happy to help）</td></tr></table><div class='g-highlight'>商業書信常見 <b>more than happy to</b> / <b>more than willing to</b> ＝ 非常樂意，不是比較。</div>", "ask": [["more than happy 是在比較嗎？", "不是，是「非常樂意」的固定禮貌說法"]]},
+{"type":"multi","title":"Practice A：先找比較線索","instruction":"不要只說答案。先指出句中的線索，再說應該使用哪個結構。","items":[["The delivery service is ______ than it was last year.","faster　句中有 than，表示兩者比較，所以使用比較級 faster。"],["Ms. Wang is one of the most experienced ______ in the department.","managers　one of the most + 形容詞 + 複數名詞，所以使用複數 managers。"],["The updated software is as ______ as the previous version.","reliable　as + 形容詞原級 + as，所以使用原級 reliable，不能用 more reliable。"],["The automated system requires ______ employees and ______ time.","fewer employees / less time　employees 是可數名詞，用 fewer；time 是不可數名詞，用 less。"],["The cost of this service is lower than ______ of the premium plan.","that　比較的是單數名詞 cost，所以用 that 代替，避免重複。"],["Please complete the registration prior ______ attending the workshop.","to　固定搭配是 prior to + 名詞／V-ing，不能用 prior than。"]]},
+{"type":"correction","title":"Practice B：比較結構改錯","instruction":"每題先說錯在哪裡，再說完整的正確句子。","items":[["The revised schedule is more easier to understand.","The revised schedule is easier to understand.","easier 本身已經是比較級，不能再加 more。"],["This is one of the most popular product in our store.","This is one of the most popular products in our store.","one of the 後面要接複數名詞 products。"],["The virtual meeting was as more productive as the face-to-face meeting.","The virtual meeting was as productive as the face-to-face meeting.","as ... as 中間放形容詞原級，不放比較級。"],["Please submit all expense reports prior than Friday.","Please submit all expense reports prior to Friday.","固定搭配是 prior to，不是 prior than。"],["The new branch needs less employees than the main office.","The new branch needs fewer employees than the main office.","employees 是可數複數名詞，所以用 fewer。"],["The benefits of this plan are better than that of the previous plan.","The benefits of this plan are better than those of the previous plan.","比較的是複數名詞 benefits，所以用 those，不用 that。"]]},
 {"type": "grammar", "title": "Part 5 解題六步驟", "subtitle": "每題開始前先跑一遍", "content": "<table class='g-table'><tr><th style='width:70px'>步驟</th><th>問自己</th></tr><tr><td class='snum'>1</td><td>主詞是誰？（主詞動詞一致）</td></tr><tr><td class='snum'>2</td><td>動詞在哪？（時態、語態）</td></tr><tr><td class='snum'>3</td><td>空格前後是什麼詞性？</td></tr><tr><td class='snum'>4</td><td>有沒有比較線索？（than / as…as / 範圍）</td></tr><tr><td class='snum'>5</td><td>有沒有固定搭配？（prior to / when it comes to）</td></tr><tr><td class='snum'>6</td><td>語意對嗎？</td></tr></table><div class='g-highlight'>先結構、再搭配、最後語意——不要一看到選項就急著翻譯。</div>", "ask": [["Part 5 第一步先看什麼？", "主詞是誰（判斷主詞動詞一致）"], ["看到 than / as…as 屬於哪一步？", "Step 4 比較線索"]]},
 {"type": "question", "num": 101, "qtype": "時態", "star": true, "part6": false, "sentence": "Mr. Marco was leaving for Chicago but <u>______</u> make a last-minute cancellation.", "zh": "Marco 先生原本正要前往芝加哥，但是他不得不臨時取消。", "options": ["has to", "had to", "have to", "having to"], "answer": 1, "key": "had to + V = 不得不（過去式）。was leaving 和 had to 時態一致（過去式）。　｜　其他：A has to：現在式第三人稱，時態不符。C have to：現在式，時態不符。D having to：V-ing 不能單獨作謂語動詞。"},
 {"type": "question", "num": 102, "qtype": "主詞動詞一致", "star": false, "part6": false, "sentence": "Whether a team member <u>______</u> the official title of \"project manager\" or not, he or she is often called upon to lead projects.", "zh": "無論一位團隊成員是否擁有「專案經理」的正式頭銜，他/她有時都被要求領導專案。", "options": ["holds", "held", "holding", "hold"], "answer": 0, "key": "主詞 a team member 是單數，現在一般事實 → 第三人稱單數 holds。　｜　其他：B held：過去式，句子說的是一般情況不是過去。C holding：V-ing 不能單獨作謂語。D hold：原形，主詞單數現在式要加 s。"},
@@ -154,7 +178,7 @@ const SLIDES = [
 {"type": "question", "num": 129, "qtype": "形容詞辨析", "star": true, "part6": false, "sentence": "We look forward to a mutually <u>______</u> business relationship.", "zh": "我們期待建立一段雙方都滿意的商業關係。", "options": ["satisfy", "satisfied", "satisfying", "satisfaction"], "answer": 2, "key": "relationship 是事物，令人滿意 → satisfying（事物讓人感到滿意）。satisfied 描述人（感到滿意的）。　｜　其他：A satisfy：動詞（使滿意），不能修飾名詞。B satisfied：形容詞，但描述人（customers are satisfied），不描述事物。D satisfaction：名詞（滿意度），不能放在 business relationship 前當形容詞。"},
 {"type": "question", "num": 130, "qtype": "動詞搭配", "star": false, "part6": false, "sentence": "This is a note to remind you that we haven't <u>______</u> our copy of the partnership agreement.", "zh": "這張便條是要提醒您，我們尚未收到我們那份合作協議。", "options": ["received", "retrieved", "regained", "reacted"], "answer": 0, "key": "receive a copy = 收到一份副本。haven't received our copy = 尚未收到我們那份副本。　｜　其他：B retrieved：取回（自己去找回來），不是別人寄給你。C regained：重新獲得（失去後奪回），語意不合。D reacted：反應，react 後面通常接 to，不直接接 our copy。"}
 ];
-const TOTAL = 43;
+const TOTAL = SLIDES.length;
 
 let current=0,revealed=false,zhVisible=false,itemStep=0,askStep=0;
 function applyZh(){document.querySelectorAll('.zh-target').forEach(el=>el.classList.toggle('zh-hidden',!zhVisible))}
@@ -171,7 +195,9 @@ function render(){
   const labels={grammar:'文法講解',multi:'課堂練習',correction:'改錯練習',article:'閱讀文章',question:'Part 5 練習題'};
   setText('slide-type-label',labels[s.type]||'');
   showBtn('reveal-btn',s.type==='question');
-  showBtn('next-item-btn',false);
+  showBtn('next-item-btn',s.type==='multi'||s.type==='correction');
+  const nextItemBtn=document.getElementById('next-item-btn');
+  nextItemBtn.style.background='';nextItemBtn.style.color='';
   showBtn('ask-btn',(s.type==='grammar'||s.type==='article')&&s.ask&&s.ask.length>0);
   showBtn('zh-btn',s.type==='question'||s.type==='article');
   const el=document.getElementById('slide-content');
@@ -183,6 +209,17 @@ function render(){
     const hasArtAsk=s.ask&&s.ask.length>0;
     el.innerHTML=`<div class="art-label">${s.label}</div><div class="art-title">${s.title}</div><div class="art-theme">${s.theme}</div><div class="art-text">${s.text}</div><div class="art-zh zh-target">${s.zh}</div>${hasArtAsk?`<div id="ask-panel" style="display:none"><div class="ask-progress" id="ask-prog"></div><div class="ask-q" id="ask-q"></div><div class="ask-a" id="ask-a"></div></div>`:''}`;
     if(hasArtAsk) document.getElementById('ask-btn').textContent='❓ 問學生 ('+s.ask.length+')';
+  } else if(s.type==='multi'){
+    const rows=s.items.map((it,i)=>{
+      const parts=it[1].split('　');
+      return `<div class="multi-item" id="mi-${i}"><span class="item-num">${i+1}</span><div><div class="item-q">${it[0]}</div><div class="item-a" id="ma-${i}">${parts[0]}<span class="item-note"> — ${parts.slice(1).join('　')}</span></div></div></div>`;
+    }).join('');
+    el.innerHTML=`<div class="multi-header"><div class="multi-title">${s.title}</div><div class="multi-instr">${s.instruction}</div><div class="multi-progress" id="multi-prog">0 / ${s.items.length} 已揭曉</div></div><div class="multi-items">${rows}</div>`;
+    nextItemBtn.textContent='揭曉 1/'+s.items.length+' ▶';
+  } else if(s.type==='correction'){
+    const rows=s.items.map((it,i)=>`<div class="corr-item" id="ci-${i}"><div class="corr-wrong">${it[0]}</div><div class="corr-right" id="cr-${i}">${it[1]}</div><div class="corr-reason" id="cn-${i}">${it[2]}</div></div>`).join('');
+    el.innerHTML=`<div class="multi-header"><div class="multi-title">${s.title}</div><div class="multi-instr">${s.instruction}</div><div class="multi-progress" id="multi-prog">0 / ${s.items.length} 已改正</div></div>${rows}`;
+    nextItemBtn.textContent='改正 1/'+s.items.length+' ▶';
   } else {
     const opts=s.options.map((o,i)=>`<div class="q-opt" id="opt-${i}"><span class="q-opt-lbl">${String.fromCharCode(65+i)}</span>${o}</div>`).join('');
     el.innerHTML=`<div class="q-header"><span class="q-num">${s.num}</span><span class="q-type-tag">${s.qtype}</span>${s.star?'<span class="q-star">⭐ 重點題</span>':''}${s.part6?'<span class="q-p6">Part 6</span>':''}</div><div class="q-sentence">${s.sentence}</div><div class="q-zh zh-target">${s.zh}</div><div class="q-opts">${opts}</div><div class="key-reveal" id="key-reveal"><strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong> &nbsp;—&nbsp; ${s.key}</div>`;
@@ -206,6 +243,32 @@ function reveal(){
     resetRevealBtn();
   }
 }
+function nextItem(){
+  const s=SLIDES[current];
+  const b=document.getElementById('next-item-btn');
+  if(s.type==='multi'){
+    if(itemStep<s.items.length){
+      document.getElementById('ma-'+itemStep).classList.add('show');
+      document.getElementById('mi-'+itemStep).classList.add('revealed');
+      itemStep++;
+      const prog=document.getElementById('multi-prog');
+      if(prog)prog.textContent=itemStep+' / '+s.items.length+' 已揭曉';
+      b.textContent=itemStep<s.items.length?'揭曉 '+(itemStep+1)+'/'+s.items.length+' ▶':'完成 ✓';
+      if(itemStep>=s.items.length){b.style.background='rgba(5,150,105,.2)';b.style.color='#34D399';}
+    }
+  }else if(s.type==='correction'){
+    if(itemStep<s.items.length){
+      document.getElementById('cr-'+itemStep).classList.add('show');
+      document.getElementById('cn-'+itemStep).classList.add('show');
+      document.getElementById('ci-'+itemStep).classList.add('revealed');
+      itemStep++;
+      const prog=document.getElementById('multi-prog');
+      if(prog)prog.textContent=itemStep+' / '+s.items.length+' 已改正';
+      b.textContent=itemStep<s.items.length?'改正 '+(itemStep+1)+'/'+s.items.length+' ▶':'完成 ✓';
+      if(itemStep>=s.items.length){b.style.background='rgba(5,150,105,.2)';b.style.color='#34D399';}
+    }
+  }
+}
 function nextAsk(){
   const s=SLIDES[current];const panel=document.getElementById('ask-panel');const b=document.getElementById('ask-btn');
   if(!panel)return;if(askStep===0)panel.style.display='block';
@@ -222,7 +285,7 @@ function navigate(dir){current=Math.max(0,Math.min(TOTAL-1,current+dir));render(
 document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();navigate(1)}
   else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();navigate(-1)}
-  else if(e.key===' '||e.key==='Enter'){e.preventDefault();const s=SLIDES[current];if(s.type==='question')reveal();else if((s.type==='grammar'||s.type==='article')&&s.ask&&s.ask.length>0)document.getElementById('ask-btn').click();}
+  else if(e.key===' '||e.key==='Enter'){e.preventDefault();const s=SLIDES[current];if(s.type==='question')reveal();else if(s.type==='multi'||s.type==='correction')nextItem();else if((s.type==='grammar'||s.type==='article')&&s.ask&&s.ask.length>0)document.getElementById('ask-btn').click();}
 });
 render();
 </script>
