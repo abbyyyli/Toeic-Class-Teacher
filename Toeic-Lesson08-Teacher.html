@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老師講義 | TOEIC Lesson 08</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--navy2:#1E3A5F;--white:#fff;--bg:#F0F4F8;--card:#fff;--amber:#F59E0B;--amber-lt:#FEF3C7;--amber-dk:#92400E;--green:#059669;--green-lt:#D1FAE5;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--purple-lt:#EDE9FE;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;--sidebar-w:230px;--r:10px}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:var(--gray-800);font-size:14px;line-height:1.7}
+#topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);color:white;height:52px;display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.logo{font-weight:800;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.logo span{background:var(--amber);color:var(--navy);padding:2px 8px;border-radius:5px;font-size:12px}
+.timer-wrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.timer-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px}
+#timer{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--amber);min-width:60px}
+.tbtn{background:rgba(255,255,255,.1);border:none;color:white;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;margin-left:4px;font-family:"Noto Sans TC",sans-serif}
+.tbtn:hover{background:rgba(255,255,255,.2)}
+.ppill{background:rgba(255,255,255,.1);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+#csec{color:var(--amber);font-weight:700}
+#layout{display:flex;margin-top:52px;min-height:calc(100vh - 52px)}
+#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--navy);position:fixed;top:52px;left:0;bottom:0;overflow-y:auto;padding:16px 0;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
+.sbh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);padding:10px 16px 4px}
+.sbl{display:block;padding:6px 16px;color:rgba(255,255,255,.65);font-size:12px;text-decoration:none;cursor:pointer;border-left:3px solid transparent;transition:.15s}
+.sbl:hover{color:white;background:rgba(255,255,255,.07)}
+.sbl.active{color:var(--amber);border-left-color:var(--amber);background:rgba(245,158,11,.08)}
+.t{font-size:10px;color:rgba(255,255,255,.3);float:right;font-family:"JetBrains Mono",monospace}
+#main{margin-left:var(--sidebar-w);flex:1;padding:28px 32px 80px}
+.ls{margin-bottom:40px}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gray-200)}
+.sn{width:36px;height:36px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;font-family:"Inter",sans-serif}
+.st{font-size:20px;font-weight:800;color:var(--navy)}
+.stm{margin-left:auto;background:var(--navy);color:var(--amber);font-size:11px;font-weight:700;font-family:"JetBrains Mono",monospace;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.block{background:var(--card);border-radius:var(--r);margin-bottom:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.bh{background:var(--gray-100);padding:10px 18px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-600);border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:8px}
+.bh .d{width:8px;height:8px;border-radius:50%;background:var(--gray-400)}
+.bh.dk{background:var(--navy);color:white;border:none}.bh.dk .d{background:var(--amber)}
+.bh.am{background:var(--amber-lt);color:var(--amber-dk);border-bottom-color:#FDE68A}.bh.am .d{background:var(--amber)}
+.bh.gn{background:var(--green-lt);color:var(--green);border-bottom-color:#A7F3D0}.bh.gn .d{background:var(--green)}
+.bb{padding:18px}
+.script{background:#0F172A;color:#E2E8F0;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.9;position:relative;margin:12px 0}
+.script::before{content:"📢 說";position:absolute;top:-10px;left:14px;background:var(--sky);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.script em{color:var(--amber);font-style:normal;font-weight:600}
+.script strong{color:white}
+.ask{background:var(--amber-lt);border:1.5px solid #FDE68A;border-radius:8px;padding:14px 18px;margin:10px 0;position:relative}
+.ask::before{content:"❓ 問學生";position:absolute;top:-10px;left:14px;background:var(--amber);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.ask p{color:var(--amber-dk);font-weight:600;font-size:14px;margin-top:2px}
+.ask .al{font-size:11px;color:var(--amber-dk);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:8px 0 3px;border-top:1px solid #FDE68A;padding-top:8px}
+.ask .ap{color:var(--green);font-weight:700;font-size:14px}
+.corr{background:var(--red-lt);border:1.5px solid #FECACA;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.corr::before{content:"⚠️ 陷阱";position:absolute;top:-10px;left:14px;background:var(--red);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.corr p{color:#991B1B;font-size:13px;margin-top:4px;line-height:1.7}
+.tip{background:var(--purple-lt);border:1.5px solid #DDD6FE;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.tip::before{content:"💡 重點";position:absolute;top:-10px;left:14px;background:var(--purple);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.tip p{color:#4C1D95;font-size:13px;margin-top:4px;line-height:1.7}
+.goal2{background:var(--green-lt);border:1.5px solid #A7F3D0;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.goal2::before{content:"✅ 重點帶走";position:absolute;top:-10px;left:14px;background:var(--green);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.goal2 p,.goal2 li{color:#064E3B;font-size:13px;margin-top:4px;line-height:1.8}
+.goal2 ul{padding-left:18px;margin-top:6px}
+.formula{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:700;color:var(--navy);background:var(--gray-100);border-radius:8px;padding:12px 16px;border-left:3px solid var(--amber);margin:10px 0}
+.es{background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 14px;margin:6px 0;font-size:14px;font-weight:500}
+.tp{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:4px 0}
+.tw{background:var(--red-lt);padding:8px 12px;font-size:13px;color:#991B1B;border-radius:6px 0 0 6px;border:1px solid #FECACA}
+.tr{background:var(--green-lt);padding:8px 12px;font-size:13px;color:#064E3B;border-radius:0 6px 6px 0;border:1px solid #A7F3D0;font-weight:600}
+.tw::before{content:"✗ ";font-weight:700}
+.tr::before{content:"✓ ";font-weight:700}
+.qb{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:20px}
+.qh{display:flex;align-items:center;gap:10px;padding:12px 18px;background:var(--gray-100);border-bottom:1px solid var(--gray-200);flex-wrap:wrap}
+.qn{background:var(--navy);color:white;font-weight:700;font-size:12px;padding:3px 10px;border-radius:6px;font-family:"Inter",sans-serif}
+.qt{background:var(--sky-lt);color:var(--sky);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qs{background:var(--amber-lt);color:var(--amber-dk);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qbody{padding:20px}
+.qsen{font-size:15px;font-weight:500;background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:6px;line-height:1.8}
+.qsen .bl{background:var(--amber-lt);color:var(--amber-dk);padding:0 8px;border-radius:4px;font-weight:700}
+.qzh{font-size:12px;color:var(--gray-400);margin-bottom:14px}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.qo{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;display:flex;align-items:center;gap:8px}
+.qo.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.ol{width:22px;height:22px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:"Inter",sans-serif}
+.qo.ok .ol{background:var(--green);color:white}
+.qtc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.gtl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-400);margin-bottom:8px}
+.vg{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.vw{font-family:"JetBrains Mono",monospace;color:var(--navy);font-weight:600}
+.vd{color:var(--gray-600)}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tbl th,.tbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
+.tbl th{background:var(--gray-100);font-weight:700;font-size:12px}
+.tmtable{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tmtable th,.tmtable td{border:1px solid var(--gray-200);padding:10px 12px;text-align:left;vertical-align:top}
+.tmtable th{background:var(--navy);color:white;font-size:12px}
+.tmtable td:first-child{font-family:"JetBrains Mono",monospace;font-weight:700;background:var(--amber-lt);color:var(--amber-dk);white-space:nowrap}
+.mt12{margin-top:12px}.mt16{margin-top:16px}
+code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:12px;color:var(--navy)}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div class="logo">🎓 <span>老師</span> Lesson 08 · Part 5 文法題 101–130</div>
+  <div class="ppill">現在：<span id="csec">Part 5 解題系統</span></div>
+  <div class="timer-wrap">
+    <span class="timer-label">上課時間</span>
+    <span id="timer">00:00</span>
+    <button class="tbtn" onclick="toggleTimer()">▶ 開始</button>
+    <button class="tbtn" onclick="resetTimer()">↺</button>
+  </div>
+</div>
+<div id="layout">
+<nav id="sidebar">
+  <div class="sbh">Part 5 · 101–130</div>
+  <a class="sbl active" onclick="goTo('s-part5-intro')">解題系統</a>
+  <a class="sbl" onclick="goTo('q101')">101 had to ⭐</a>
+  <a class="sbl" onclick="goTo('q102')">102 holds</a>
+  <a class="sbl" onclick="goTo('q103')">103 when it comes to ⭐</a>
+  <a class="sbl" onclick="goTo('q104')">104 information</a>
+  <a class="sbl" onclick="goTo('q105')">105 often</a>
+  <a class="sbl" onclick="goTo('q106')">106 and ⭐</a>
+  <a class="sbl" onclick="goTo('q107')">107 combat</a>
+  <a class="sbl" onclick="goTo('q108')">108 as informal as ⭐</a>
+  <a class="sbl" onclick="goTo('q109')">109 has changed ⭐</a>
+  <a class="sbl" onclick="goTo('q110')">110 about</a>
+  <a class="sbl" onclick="goTo('q111')">111 it ⭐</a>
+  <a class="sbl" onclick="goTo('q112')">112 except</a>
+  <a class="sbl" onclick="goTo('q113')">113 schedule ⭐</a>
+  <a class="sbl" onclick="goTo('q114')">114 as ⭐</a>
+  <a class="sbl" onclick="goTo('q115')">115 from</a>
+  <a class="sbl" onclick="goTo('q116')">116 pleasure ⭐</a>
+  <a class="sbl" onclick="goTo('q117')">117 effective ⭐</a>
+  <a class="sbl" onclick="goTo('q118')">118 application ⭐</a>
+  <a class="sbl" onclick="goTo('q119')">119 improvement</a>
+  <a class="sbl" onclick="goTo('q120')">120 confirm ⭐</a>
+  <a class="sbl" onclick="goTo('q121')">121–130 Part 5 continued</a>
+  <a class="sbl" onclick="goTo('q121')">121 important</a>
+  <a class="sbl" onclick="goTo('q122')">122 but (not only...but also) ⭐</a>
+  <a class="sbl" onclick="goTo('q123')">123 considered ⭐</a>
+  <a class="sbl" onclick="goTo('q124')">124 are</a>
+  <a class="sbl" onclick="goTo('q125')">125 assistance</a>
+  <a class="sbl" onclick="goTo('q126')">126 unprecedented ⭐</a>
+  <a class="sbl" onclick="goTo('q127')">127 inquire ⭐</a>
+  <a class="sbl" onclick="goTo('q128')">128 agreeing ⭐</a>
+  <a class="sbl" onclick="goTo('q129')">129 satisfying ⭐</a>
+  <a class="sbl" onclick="goTo('q130')">130 received</a>
+  <div class="sbh">收尾</div>
+  <a class="sbl" onclick="goTo('s-summary')">總整理 &amp; 解答表</a>
+</nav>
+<main id="main">
+
+<div class="ls" id="s-part5-intro">
+<div class="sh"><div class="sn">▶</div><div class="st">Part 5 文法題 101–130｜解題系統</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>Part 5 解題六步驟</div><div class="bb">
+<div class="script">每一題在開始之前，先把這六步驟在腦子裡跑一遍。</div>
+<table class="tbl mt12">
+<tr><th>步驟</th><th>問題</th><th>目的</th></tr>
+<tr><td>Step 1</td><td>主詞是誰？</td><td>確認主詞，判斷主詞動詞一致</td></tr>
+<tr><td>Step 2</td><td>動詞在哪？</td><td>確認時態、語態、完整性</td></tr>
+<tr><td>Step 3</td><td>空格前後是什麼詞性？</td><td>判斷需要的詞性</td></tr>
+<tr><td>Step 4</td><td>有沒有比較線索？（than / as...as / 範圍）</td><td>今天特別注意比較句型</td></tr>
+<tr><td>Step 5</td><td>有沒有固定搭配？</td><td>when it comes to / prior to / with great pleasure</td></tr>
+<tr><td>Step 6</td><td>語意對嗎？</td><td>最後用語意確認</td></tr>
+</table></div></div>
+</div>
+<div class="qb" id="q101">
+<div class="qh"><span class="qn">101</span><span class="qt">時態</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Mr. Marco was leaving for Chicago but <span class="bl">______</span> make a last-minute cancellation.</div>
+<div class="qzh">Marco 先生原本正要前往芝加哥，但是他不得不臨時取消。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>has to</div>
+<div class="qo ok"><span class="ol">B</span>had to</div>
+<div class="qo "><span class="ol">C</span>have to</div>
+<div class="qo "><span class="ol">D</span>having to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前半句 was leaving 是過去進行式，表示過去發生的事。空格後面有原形動詞 make，需要填「助動詞」表示不得不。過去式是哪個？</p><div class="al">答案</div><p class="ap">had to + V = 不得不（過去式）。was leaving 和 had to 時態一致（過去式）。</p></div>
+<div class="corr mt12"><p>A has to：現在式第三人稱，時態不符。C have to：現在式，時態不符。D having to：V-ing 不能單獨作謂語動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">had to + V</span><span class="vd">不得不（過去式）</span>
+<span class="vw">have to + V</span><span class="vd">不得不（現在式）</span>
+<span class="vw">be leaving for</span><span class="vd">正要前往</span>
+<span class="vw">last-minute</span><span class="vd">臨時的；最後一刻的</span>
+<span class="vw">make a cancellation</span><span class="vd">取消</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q102">
+<div class="qh"><span class="qn">102</span><span class="qt">主詞動詞一致</span></div>
+<div class="qbody">
+<div class="qsen">Whether a team member <span class="bl">______</span> the official title of "project manager" or not, he or she is often called upon to lead projects.</div>
+<div class="qzh">無論一位團隊成員是否擁有「專案經理」的正式頭銜，他/她有時都被要求領導專案。</div>
+<div class="qopts"><div class="qo ok"><span class="ol">A</span>holds</div>
+<div class="qo "><span class="ol">B</span>held</div>
+<div class="qo "><span class="ol">C</span>holding</div>
+<div class="qo "><span class="ol">D</span>hold</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>先找 whether 子句裡的主詞。主詞是 a team member 還是 team members？是單數還是複數？現在一般事實用什麼時態？</p><div class="al">答案</div><p class="ap">主詞 a team member 是單數，現在一般事實 → 第三人稱單數 holds。</p></div>
+<div class="corr mt12"><p>B held：過去式，句子說的是一般情況不是過去。C holding：V-ing 不能單獨作謂語。D hold：原形，主詞單數現在式要加 s。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">whether...or not</span><span class="vd">無論是否……</span>
+<span class="vw">official title</span><span class="vd">正式頭銜</span>
+<span class="vw">be called upon to V</span><span class="vd">被要求做……</span>
+<span class="vw">hold a title</span><span class="vd">擁有某個頭銜</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q103">
+<div class="qh"><span class="qn">103</span><span class="qt">固定片語</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Drivers in North America may think that bigger is better <span class="bl">______</span> it comes to their automobiles.</div>
+<div class="qzh">北美的駕駛可能認為，談到他們的汽車時，越大越好。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>if</div>
+<div class="qo "><span class="ol">B</span>although</div>
+<div class="qo ok"><span class="ol">C</span>when</div>
+<div class="qo "><span class="ol">D</span>however</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看空格後面：it comes to their automobiles。你有沒有見過什麼固定片語包含 it comes to？</p><div class="al">答案</div><p class="ap">when it comes to + 名詞/V-ing = 談到……；就……而言。</p></div>
+<div class="corr mt12"><p>A if：如果，這裡不是條件假設。B although：雖然，語意不合。D however：然而，副詞不能放在這個位置。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">when it comes to + N</span><span class="vd">談到……；就……而言</span>
+<span class="vw">it comes to</span><span class="vd">固定片語，不要逐字翻</span>
+<span class="vw">automobile</span><span class="vd">汽車</span>
+<span class="vw">bigger is better</span><span class="vd">越大越好</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q104">
+<div class="qh"><span class="qn">104</span><span class="qt">名詞語意</span></div>
+<div class="qbody">
+<div class="qsen">Please send us <span class="bl">______</span> on any textile that your company produces and a current price list.</div>
+<div class="qzh">請寄給我們貴公司所生產的任何紡織品相關資訊，以及目前的價格表。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>attachment</div>
+<div class="qo "><span class="ol">B</span>agreement</div>
+<div class="qo ok"><span class="ol">C</span>information</div>
+<div class="qo "><span class="ol">D</span>document</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 on any textile，表示「關於紡織品的什麼」。四個選項中哪一個和 on 搭配最自然，表示「關於……的資訊」？</p><div class="al">答案</div><p class="ap">information on + 主題 = 關於……的資訊。這是 TOEIC 商業書信的高頻搭配。</p></div>
+<div class="corr mt12"><p>A attachment：附件，通常指 email 中的附加檔案，不搭配 on。B agreement：協議，語意不符。D document：文件，也不搭配 on。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">information on/about + N</span><span class="vd">關於……的資訊</span>
+<span class="vw">textile</span><span class="vd">紡織品</span>
+<span class="vw">price list</span><span class="vd">價格表</span>
+<span class="vw">send us information</span><span class="vd">寄給我們資訊</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q105">
+<div class="qh"><span class="qn">105</span><span class="qt">副詞位置</span></div>
+<div class="qbody">
+<div class="qsen">People with public email addresses <span class="bl">______</span> receive hundreds of spam messages every day.</div>
+<div class="qzh">使用公開電子郵件地址的人，常常每天收到數百封垃圾郵件。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>not likely</div>
+<div class="qo "><span class="ol">B</span>impossible</div>
+<div class="qo ok"><span class="ol">C</span>often</div>
+<div class="qo "><span class="ol">D</span>seldom</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格在 receive 前面（助動詞和主要動詞之間的位置），需要什麼詞性？四個選項的語意哪個最合理？</p><div class="al">答案</div><p class="ap">often = 常常，副詞，修飾動詞，表示「常常收到垃圾郵件」，語意最合理。</p></div>
+<div class="corr mt12"><p>A not likely / B impossible：形容詞，不能直接修飾動詞 receive。D seldom：偶爾，語意相反（有公開 email 應是常常收到，不是偶爾）。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">often</span><span class="vd">常常（頻率副詞，放動詞前）</span>
+<span class="vw">spam message</span><span class="vd">垃圾郵件</span>
+<span class="vw">public email address</span><span class="vd">公開電子郵件地址</span>
+<span class="vw">seldom</span><span class="vd">偶爾（頻率低）</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q106">
+<div class="qh"><span class="qn">106</span><span class="qt">連接詞</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Please join now <span class="bl">______</span> take advantage of this limited offer to new members.</div>
+<div class="qzh">請現在加入，並利用這項提供給新會員的限時優惠。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>or</div>
+<div class="qo "><span class="ol">B</span>but</div>
+<div class="qo ok"><span class="ol">C</span>and</div>
+<div class="qo "><span class="ol">D</span>if</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前半是 Please join now，是祈使句。後半是 take advantage of...，也是原形動詞。兩個行動是同一方向（加入然後享受優惠），還是相反方向？</p><div class="al">答案</div><p class="ap">祈使句 + and + V = 請做 A，（這樣）也可以做 B。and 連接兩個並列的行動。</p></div>
+<div class="corr mt12"><p>A or：祈使句 + or + V = 如果你不做 A，就會有不好的結果。B but：但是，語意相反。D if：如果，改變了句子邏輯。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">祈使句 + and + V</span><span class="vd">請做 A，然後也做 B</span>
+<span class="vw">take advantage of</span><span class="vd">利用；好好把握</span>
+<span class="vw">limited offer</span><span class="vd">限時優惠</span>
+<span class="vw">new members</span><span class="vd">新會員</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q107">
+<div class="qh"><span class="qn">107</span><span class="qt">動詞字義</span></div>
+<div class="qbody">
+<div class="qsen">Spam filters are the common technology used to <span class="bl">______</span> spam.</div>
+<div class="qzh">垃圾郵件過濾器是用來對抗垃圾郵件的常見技術。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>destroy</div>
+<div class="qo ok"><span class="ol">B</span>combat</div>
+<div class="qo "><span class="ol">C</span>damage</div>
+<div class="qo "><span class="ol">D</span>organize</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞是 Spam filters（垃圾郵件過濾器）。它的用途是什麼動作？哪個動詞最適合搭配 spam？</p><div class="al">答案</div><p class="ap">combat spam = 對抗、打擊垃圾郵件。combat + 問題/犯罪/疾病/spam 是固定搭配。</p></div>
+<div class="corr mt12"><p>A destroy：摧毀，垃圾郵件過濾器不是摧毀而是阻擋。C damage：損害，不能說 damage spam。D organize：整理，不合語意。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">combat + 問題</span><span class="vd">打擊；對抗（可接 spam/crime/disease）</span>
+<span class="vw">spam filter</span><span class="vd">垃圾郵件過濾器</span>
+<span class="vw">used to + V</span><span class="vd">用來做……的</span>
+<span class="vw">common technology</span><span class="vd">常見技術</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q108">
+<div class="qh"><span class="qn">108</span><span class="qt">同等比較</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The content of a blog can be <span class="bl">______</span> an email created by a writer for friends and family to view on-line.</div>
+<div class="qzh">部落格的內容可以像作者寫給朋友和家人在線上閱讀的電子郵件一樣非正式。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>such informal as</div>
+<div class="qo "><span class="ol">B</span>informal as like</div>
+<div class="qo "><span class="ol">C</span>like informal</div>
+<div class="qo ok"><span class="ol">D</span>as informal as</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>can be 後面要放補語（形容詞），後面有 an email，表示這裡是在比較 blog 和 email 的正式程度。「和……一樣……」的英文結構是？</p><div class="al">答案</div><p class="ap">as + 形容詞原級 + as = 和……一樣……。所以是 as informal as an email。</p></div>
+<div class="corr mt12"><p>A such informal as：such 通常接名詞片語，不這樣用。B informal as like：結構錯誤。C like informal：like 後接名詞，不接形容詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">as + adj. + as</span><span class="vd">和……一樣……（as...as 中間原級）</span>
+<span class="vw">informal</span><span class="vd">非正式的</span>
+<span class="vw">such + adj. + N</span><span class="vd">如此……的（such + 形容詞 + 名詞）</span>
+<span class="vw">blog content</span><span class="vd">部落格內容</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q109">
+<div class="qh"><span class="qn">109</span><span class="qt">現在完成式</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Reality television <span class="bl">______</span> the viewing habits of American television watchers.</div>
+<div class="qzh">實境電視已經改變了美國電視觀眾的收視習慣。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>have change</div>
+<div class="qo "><span class="ol">B</span>had changing</div>
+<div class="qo ok"><span class="ol">C</span>has changed</div>
+<div class="qo "><span class="ol">D</span>have changing</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞 Reality television 是單數還是複數？表示「已經改變」用哪個時態？有哪個選項既是現在完成式又主詞動詞一致？</p><div class="al">答案</div><p class="ap">Reality television 是單數概念 → has。現在完成式：has + p.p. → has changed。</p></div>
+<div class="corr mt12"><p>A have change：兩個錯誤，主詞單數不用 have，且現在完成式需要 p.p.。B had changing：had + V-ing 不是完成式結構。D have changing：同樣錯誤。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">has/have + p.p.</span><span class="vd">現在完成式（表示已經發生的影響）</span>
+<span class="vw">Reality television</span><span class="vd">實境電視（單數概念）</span>
+<span class="vw">viewing habits</span><span class="vd">收視習慣</span>
+<span class="vw">change → changed</span><span class="vd">change 的過去分詞</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q110">
+<div class="qh"><span class="qn">110</span><span class="qt">介系詞搭配</span></div>
+<div class="qbody">
+<div class="qsen">I would be happy to discuss any questions you may have <span class="bl">______</span> the agreement.</div>
+<div class="qzh">我很樂意討論您對這份協議可能有的任何問題。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>of</div>
+<div class="qo ok"><span class="ol">B</span>about</div>
+<div class="qo "><span class="ol">C</span>such as</div>
+<div class="qo "><span class="ol">D</span>for</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前是 questions，空格後是 the agreement（協議）。「關於協議的問題」，questions 後面要接哪個介系詞？</p><div class="al">答案</div><p class="ap">questions about + 名詞 = 關於……的問題，是高頻固定搭配。</p></div>
+<div class="corr mt12"><p>A of：question of 是正式用法表示「……的問題」，不如 about 自然。C such as：例如，後面通常列舉。D for：question for someone 是「給某人的問題」，agreement 是主題不是對象。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">questions about + N</span><span class="vd">關於……的問題</span>
+<span class="vw">be happy to + V</span><span class="vd">很樂意做……</span>
+<span class="vw">agreement</span><span class="vd">協議；合約</span>
+<span class="vw">discuss</span><span class="vd">討論</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q111">
+<div class="qh"><span class="qn">111</span><span class="qt">代名詞指涉</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Our company would like to adopt a new system this year and use <span class="bl">______</span> to change the way the whole organization works.</div>
+<div class="qzh">我們公司今年想採用一套新系統，並利用它來改變整個組織的運作方式。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>this</div>
+<div class="qo "><span class="ol">B</span>those</div>
+<div class="qo "><span class="ol">C</span>them</div>
+<div class="qo ok"><span class="ol">D</span>it</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格代替的是哪個名詞？a new system 是單數還是複數？是事物還是人？</p><div class="al">答案</div><p class="ap">a new system 是單數不可數事物 → 用 it 代替。</p></div>
+<div class="corr mt12"><p>A this：指示代名詞，通常指剛剛提到的事，但後面 use this to change 不如 use it 自然。B those：複數。C them：複數。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">代名詞指涉</span><span class="vd">it = 單數事物；they/them = 複數</span>
+<span class="vw">adopt a new system</span><span class="vd">採用新系統</span>
+<span class="vw">change the way + 子句</span><span class="vd">改變……的方式</span>
+<span class="vw">organization</span><span class="vd">組織</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q112">
+<div class="qh"><span class="qn">112</span><span class="qt">相似字辨析</span></div>
+<div class="qbody">
+<div class="qsen">Everyone passed the sales training course <span class="bl">______</span> one new employee.</div>
+<div class="qzh">除了某位新員工以外，每個人都通過了銷售訓練課程。</div>
+<div class="qopts"><div class="qo ok"><span class="ol">A</span>except</div>
+<div class="qo "><span class="ol">B</span>accept</div>
+<div class="qo "><span class="ol">C</span>expect</div>
+<div class="qo "><span class="ol">D</span>express</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>四個字長得很像。「除了某人以外，所有人都……」用哪個字？</p><div class="al">答案</div><p class="ap">except = 除了……以外（介系詞）。Everyone passed except one new employee。</p></div>
+<div class="corr mt12"><p>B accept：接受（動詞）。C expect：期待（動詞）。D express：表達（動詞）。三者都是動詞，不能放在這個位置。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">except + N/代名詞</span><span class="vd">除了……以外</span>
+<span class="vw">accept</span><span class="vd">接受</span>
+<span class="vw">expect</span><span class="vd">期待；預期</span>
+<span class="vw">express</span><span class="vd">表達；快速的</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q113">
+<div class="qh"><span class="qn">113</span><span class="qt">動詞搭配</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Would it be possible for you to <span class="bl">______</span> a meeting and a plant tour for us on Friday of next week?</div>
+<div class="qzh">請問您是否可以為我們安排下週五的一場會議和工廠參觀？</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>promote</div>
+<div class="qo ok"><span class="ol">B</span>schedule</div>
+<div class="qo "><span class="ol">C</span>adjourn</div>
+<div class="qo "><span class="ol">D</span>write</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 a meeting and a plant tour。「安排會議」和「安排參觀」，哪個動詞最搭配？</p><div class="al">答案</div><p class="ap">schedule a meeting = 安排會議。schedule 當動詞用，是 TOEIC 商業情境最高頻的字之一。</p></div>
+<div class="corr mt12"><p>A promote：升遷；推廣，不搭配 meeting。C adjourn：（會議）休會，已有會議時才能說 adjourn。D write：寫，不能說 write a meeting。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">schedule + 活動/會議</span><span class="vd">安排……</span>
+<span class="vw">plant tour</span><span class="vd">工廠參觀</span>
+<span class="vw">Would it be possible to + V</span><span class="vd">請問是否可以……</span>
+<span class="vw">adjourn</span><span class="vd">（會議）休會、延期</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q114">
+<div class="qh"><span class="qn">114</span><span class="qt">原因連接詞</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">I have to cancel the meeting that we set up for next Friday <span class="bl">______</span> we've got some trouble at our factory.</div>
+<div class="qzh">我必須取消我們安排在下週五的會議，因為我們工廠出了點問題。</div>
+<div class="qopts"><div class="qo ok"><span class="ol">A</span>as</div>
+<div class="qo "><span class="ol">B</span>if</div>
+<div class="qo "><span class="ol">C</span>because of</div>
+<div class="qo "><span class="ol">D</span>so</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 we've got some trouble，是完整子句（有主詞 we，有動詞 have got）。前後句的邏輯是「原因」還是「結果」？需要哪種連接詞？</p><div class="al">答案</div><p class="ap">as + 完整子句 = 因為（= because）。取消會議的原因是工廠有問題。</p></div>
+<div class="corr mt12"><p>B if：如果，是條件，但工廠有問題是已發生的事實。C because of + 名詞，後面接完整句要用 because/as/since。D so：表示結果，邏輯反了。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">as + S + V</span><span class="vd">因為（= because，正式用語）</span>
+<span class="vw">because of + 名詞</span><span class="vd">因為（接名詞）</span>
+<span class="vw">cancel a meeting</span><span class="vd">取消會議</span>
+<span class="vw">set up a meeting</span><span class="vd">安排會議</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q115">
+<div class="qh"><span class="qn">115</span><span class="qt">介系詞搭配</span></div>
+<div class="qbody">
+<div class="qsen">Experienced managers always analyze an issue <span class="bl">______</span> different perspectives.</div>
+<div class="qzh">有經驗的經理總是從不同角度分析問題。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>to</div>
+<div class="qo "><span class="ol">B</span>for</div>
+<div class="qo ok"><span class="ol">C</span>from</div>
+<div class="qo "><span class="ol">D</span>of</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 different perspectives（不同角度）。「從不同角度分析」，perspective 前面要用哪個介系詞？</p><div class="al">答案</div><p class="ap">from different perspectives = 從不同觀點。from + perspective 是固定搭配。</p></div>
+<div class="corr mt12"><p>A to：方向，to perspectives 不自然。B for：為了，for perspectives 不合語意。D of：perspective of someone 是某人的觀點，但這裡要表達「從……角度」用 from。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">from different perspectives</span><span class="vd">從不同角度</span>
+<span class="vw">analyze an issue</span><span class="vd">分析問題</span>
+<span class="vw">perspective</span><span class="vd">觀點；角度</span>
+<span class="vw">experienced</span><span class="vd">有經驗的</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q116">
+<div class="qh"><span class="qn">116</span><span class="qt">詞性判斷</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">We accept your kind invitation with great <span class="bl">______</span>.</div>
+<div class="qzh">我們非常愉快地接受您的盛情邀請。</div>
+<div class="qopts"><div class="qo ok"><span class="ol">A</span>pleasure</div>
+<div class="qo "><span class="ol">B</span>please</div>
+<div class="qo "><span class="ol">C</span>pleased</div>
+<div class="qo "><span class="ol">D</span>pleasant</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 with great。with 是介系詞，great 是形容詞。介系詞後面要接什麼詞性？四個選項哪個是名詞？</p><div class="al">答案</div><p class="ap">with great pleasure = 非常樂意地；很榮幸地。pleasure 是名詞，符合 with + great + 名詞的結構。</p></div>
+<div class="corr mt12"><p>B please：動詞或禮貌副詞，不能接在 great 後。C pleased：形容詞（be pleased to V），不接在 with great 後。D pleasant：形容詞（令人愉快的），with great pleasant 不正確。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">with great pleasure</span><span class="vd">非常樂意地；很榮幸地（固定表達）</span>
+<span class="vw">pleasure</span><span class="vd">愉快；榮幸（名詞）</span>
+<span class="vw">please</span><span class="vd">取悅；請（動詞/副詞）</span>
+<span class="vw">pleased</span><span class="vd">感到高興的（形容詞）</span>
+<span class="vw">pleasant</span><span class="vd">令人愉快的（形容詞）</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q117">
+<div class="qh"><span class="qn">117</span><span class="qt">詞性判斷</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">I would like to do something to get you back on track, so we return to the more <span class="bl">______</span> process we had before.</div>
+<div class="qzh">我想做點事情讓你回到正軌，這樣我們就能回到之前較有效率的流程。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>effectiveness</div>
+<div class="qo ok"><span class="ol">B</span>effective</div>
+<div class="qo "><span class="ol">C</span>effect</div>
+<div class="qo "><span class="ol">D</span>effectively</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 process，是名詞。前面有 more（比較級修飾詞）。修飾名詞需要什麼詞性？</p><div class="al">答案</div><p class="ap">process（名詞）前需要形容詞。effective 是形容詞，more effective process = 更有效的流程。</p></div>
+<div class="corr mt12"><p>A effectiveness：名詞，不能直接修飾名詞。C effect：名詞或動詞，不能修飾名詞。D effectively：副詞，修飾動詞，不能說 effectively process。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">effective + N</span><span class="vd">有效的……（形容詞）</span>
+<span class="vw">effectiveness</span><span class="vd">有效性（名詞）</span>
+<span class="vw">effectively</span><span class="vd">有效地（副詞）</span>
+<span class="vw">effect</span><span class="vd">效果；影響（名詞）</span>
+<span class="vw">get back on track</span><span class="vd">回到正軌</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q118">
+<div class="qh"><span class="qn">118</span><span class="qt">詞性判斷</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">After reviewing your <span class="bl">______</span>, we are pleased to offer you the sales manager position.</div>
+<div class="qzh">在審閱您的申請資料後，我們很高興提供您銷售經理的職位。</div>
+<div class="qopts"><div class="qo ok"><span class="ol">A</span>application</div>
+<div class="qo "><span class="ol">B</span>applied</div>
+<div class="qo "><span class="ol">C</span>applying</div>
+<div class="qo "><span class="ol">D</span>apply</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 your，是所有格形容詞。所有格後面要接什麼詞性？四個選項哪個是名詞？</p><div class="al">答案</div><p class="ap">your 後面接名詞。application 是名詞，review your application = 審閱你的申請，符合求職情境。</p></div>
+<div class="corr mt12"><p>B applied：過去式或過去分詞（動詞/形容詞）。C applying：V-ing，不能直接接在 your 後。D apply：動詞原形，不能接在 your 後。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">application</span><span class="vd">申請；申請書（名詞）</span>
+<span class="vw">review an application</span><span class="vd">審閱申請</span>
+<span class="vw">be pleased to + V</span><span class="vd">很高興……</span>
+<span class="vw">offer someone a position</span><span class="vd">提供某人職位</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q119">
+<div class="qh"><span class="qn">119</span><span class="qt">名詞搭配</span></div>
+<div class="qbody">
+<div class="qsen">If we're honest with ourselves, we're often aware of some of the areas in our lives that need <span class="bl">______</span>.</div>
+<div class="qzh">如果我們誠實面對自己，我們常常會意識到生活中有些方面需要改善。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>advantage</div>
+<div class="qo "><span class="ol">B</span>encouragement</div>
+<div class="qo ok"><span class="ol">C</span>improvement</div>
+<div class="qo "><span class="ol">D</span>benefit</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 need，後面沒有介系詞。「某些方面需要改善」，哪個名詞和 need 搭配最自然？</p><div class="al">答案</div><p class="ap">need improvement = 需要改善。need + 名詞（V-ing 也可）是固定搭配。</p></div>
+<div class="corr mt12"><p>A advantage：need 不能直接接 advantage。B encouragement：鼓勵，need encouragement 可以，但語意不如 improvement 合。D benefit：好處，不搭配 need + benefit 表示「需要改善」。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">need improvement</span><span class="vd">需要改善</span>
+<span class="vw">be aware of</span><span class="vd">意識到；知道</span>
+<span class="vw">honest with oneself</span><span class="vd">對自己誠實</span>
+<span class="vw">area</span><span class="vd">方面；領域</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q120">
+<div class="qh"><span class="qn">120</span><span class="qt">商業信件動詞</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">This letter is to <span class="bl">______</span> our recent conversation about the business opportunities in Taiwan.</div>
+<div class="qzh">這封信是為了確認我們最近關於台灣商業機會的談話內容。</div>
+<div class="qopts"><div class="qo ok"><span class="ol">A</span>confirm</div>
+<div class="qo "><span class="ol">B</span>notify</div>
+<div class="qo "><span class="ol">C</span>inform</div>
+<div class="qo "><span class="ol">D</span>reserve</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這是一封商業信件的開頭句。This letter is to ______，說明寫信的目的。後面提到 our recent conversation，表示是在確認之前的對話內容。哪個動詞最符合？</p><div class="al">答案</div><p class="ap">confirm = 確認（之前討論/對話的內容）。This letter is to confirm = 這封信是為了確認……，是商業書信的標準開場。</p></div>
+<div class="corr mt12"><p>B notify：通知（新的資訊），不是確認已有的對話。C inform：告知（新事項），也不是確認已有的對話。D reserve：預訂，語意完全不符。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">This letter is to confirm...</span><span class="vd">這封信是為了確認……（商業信件開場句）</span>
+<span class="vw">confirm + 名詞</span><span class="vd">確認……</span>
+<span class="vw">notify someone of</span><span class="vd">通知某人……</span>
+<span class="vw">reserve</span><span class="vd">預訂；保留</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q121">
+<div class="qh"><span class="qn">121</span><span class="qt">形容詞語意</span></div>
+<div class="qbody">
+<div class="qsen">Your business and goodwill are <span class="bl">______</span> to us.</div>
+<div class="qzh">您的業務往來與好意對我們非常重要。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>flexible</div>
+<div class="qo "><span class="ol">B</span>interesting</div>
+<div class="qo ok"><span class="ol">C</span>important</div>
+<div class="qo "><span class="ol">D</span>competent</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格在 are 後面，需要形容詞。空格後有 to us，哪個形容詞搭配「to us」最自然？</p><div class="al">答案</div><p class="ap">important to someone = 對某人重要。Your business and goodwill are important to us 是商業信件的標準表達。</p></div>
+<div class="corr mt12"><p>A flexible：有彈性的，business 本身不是 flexible。B interesting：有趣的，商業信件不這樣說。D competent：有能力的，通常形容人，不形容 business and goodwill。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">important to + 人</span><span class="vd">對……重要</span>
+<span class="vw">business and goodwill</span><span class="vd">業務往來與善意</span>
+<span class="vw">goodwill</span><span class="vd">善意；商譽</span>
+<span class="vw">flexible</span><span class="vd">有彈性的（常接 schedule / policy）</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q122">
+<div class="qh"><span class="qn">122</span><span class="qt">固定配對</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Jerry not only attends university, <span class="bl">______</span> also has a part-time job.</div>
+<div class="qzh">Jerry 不僅上大學，還有一份兼職工作。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>furthermore</div>
+<div class="qo ok"><span class="ol">B</span>but</div>
+<div class="qo "><span class="ol">C</span>and then</div>
+<div class="qo "><span class="ol">D</span>as well</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>一看到 not only，你的反應應該是？後面要找哪個詞？</p><div class="al">答案</div><p class="ap">not only A but also B。看到 not only，直接找 but also。</p></div>
+<div class="corr mt12"><p>A furthermore：連接獨立句，不是 not only 的固定搭配。C and then：表示時間順序。D as well：放句尾，不放在 not only 後面補成固定句型。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">not only A but also B</span><span class="vd">不但……而且……</span>
+<span class="vw">part-time job</span><span class="vd">兼職工作</span>
+<span class="vw">full-time</span><span class="vd">全職的</span>
+<span class="vw">attend university</span><span class="vd">就讀大學</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q123">
+<div class="qh"><span class="qn">123</span><span class="qt">被動語態</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">I would like to be <span class="bl">______</span> for your marketing specialist position.</div>
+<div class="qzh">我希望能被考慮錄取貴公司的行銷專員職位。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>considers</div>
+<div class="qo ok"><span class="ol">B</span>considered</div>
+<div class="qo "><span class="ol">C</span>consideration</div>
+<div class="qo "><span class="ol">D</span>considering</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前是 would like to be。be 後面如果是「被……」，需要什麼形式？</p><div class="al">答案</div><p class="ap">would like to be + p.p.（被動）。consider 的過去分詞是 considered。be considered for a position = 被考慮擔任某職位。</p></div>
+<div class="corr mt12"><p>A considers：現在式，be 後面不能接現在式。C consideration：名詞，be 後面若要被動需要 p.p. 不是名詞。D considering：V-ing，不構成被動語態。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">be considered for + 職位</span><span class="vd">被考慮擔任……</span>
+<span class="vw">would like to be + p.p.</span><span class="vd">希望被……</span>
+<span class="vw">marketing specialist</span><span class="vd">行銷專員</span>
+<span class="vw">position</span><span class="vd">職位</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q124">
+<div class="qh"><span class="qn">124</span><span class="qt">主詞動詞一致</span></div>
+<div class="qbody">
+<div class="qsen">Your suggestions for next month's sales seminar <span class="bl">______</span> much appreciated.</div>
+<div class="qzh">非常感謝您對下個月銷售研討會提出的建議。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>was</div>
+<div class="qo ok"><span class="ol">B</span>are</div>
+<div class="qo "><span class="ol">C</span>has been</div>
+<div class="qo "><span class="ol">D</span>is</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>先找主詞的核心字。Your suggestions for next month's sales seminar，主詞核心是哪個字？它是單數還是複數？</p><div class="al">答案</div><p class="ap">核心主詞是 suggestions（複數）。介系詞片語 for next month's sales seminar 括起來，不影響主詞。複數主詞用 are。</p></div>
+<div class="corr mt12"><p>A was：過去式單數，suggestions 是複數。C has been：單數現在完成式，複數要用 have been（選項中沒有）。D is：單數現在式，不符合複數主詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">be appreciated</span><span class="vd">受到感謝；被重視</span>
+<span class="vw">much appreciated</span><span class="vd">非常感謝</span>
+<span class="vw">suggestions for + 事</span><span class="vd">關於……的建議</span>
+<span class="vw">sales seminar</span><span class="vd">銷售研討會</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q125">
+<div class="qh"><span class="qn">125</span><span class="qt">詞性判斷</span></div>
+<div class="qbody">
+<div class="qsen">Thank you for your kind <span class="bl">______</span> with this matter.</div>
+<div class="qzh">感謝您在這件事情上的協助。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>assist</div>
+<div class="qo "><span class="ol">B</span>assistant</div>
+<div class="qo ok"><span class="ol">C</span>assistance</div>
+<div class="qo "><span class="ol">D</span>assisted</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前是 your kind。your 是所有格，kind 是形容詞。後面要接什麼詞性？四個選項哪個是「協助」的名詞？</p><div class="al">答案</div><p class="ap">your kind + 名詞。assistance = 協助（名詞）。Thank you for your assistance 是商業信件標準感謝句。</p></div>
+<div class="corr mt12"><p>A assist：動詞（協助），your kind assist 不成立。B assistant：名詞，但意思是「助理」，不是「協助」。D assisted：過去式/過去分詞（動詞），不能接在 your kind 後面。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">Thank you for your assistance</span><span class="vd">感謝您的協助（商業信件固定句型）</span>
+<span class="vw">assistance</span><span class="vd">協助（名詞）</span>
+<span class="vw">assist</span><span class="vd">協助（動詞）</span>
+<span class="vw">assistant</span><span class="vd">助理（名詞）</span>
+<span class="vw">with this matter</span><span class="vd">關於這件事</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q126">
+<div class="qh"><span class="qn">126</span><span class="qt">形容詞語意</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">We are making this <span class="bl">______</span> offer to our special members.</div>
+<div class="qzh">我們正向特別會員提供這項前所未有的優惠。</div>
+<div class="qopts"><div class="qo ok"><span class="ol">A</span>unprecedented</div>
+<div class="qo "><span class="ol">B</span>undocumented</div>
+<div class="qo "><span class="ol">C</span>unimportant</div>
+<div class="qo "><span class="ol">D</span>unreliable</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>四個選項都是形容詞（un- 字首），詞性一樣，這題比的是語意。給 special members 的 offer，應該是正面的還是負面的？</p><div class="al">答案</div><p class="ap">unprecedented offer = 前所未有的優惠。給特別會員的優惠一定是正面吸引力，unprecedented（前所未有的）最符合商業促銷語氣。</p></div>
+<div class="corr mt12"><p>B undocumented：未記錄的，和 offer 不搭。C unimportant：不重要的，公司不會說提供不重要的優惠。D unreliable：不可靠的，和 offer 不搭。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">unprecedented</span><span class="vd">前所未有的</span>
+<span class="vw">offer（名詞）</span><span class="vd">優惠；提議</span>
+<span class="vw">special members</span><span class="vd">特別會員</span>
+<span class="vw">undocumented</span><span class="vd">未記錄的</span>
+<span class="vw">unreliable</span><span class="vd">不可靠的</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q127">
+<div class="qh"><span class="qn">127</span><span class="qt">平行結構</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">I am writing to introduce myself and <span class="bl">______</span> about openings for a technical support engineer.</div>
+<div class="qzh">我寫信是為了自我介紹，並詢問技術支援工程師的職缺。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>inquiring</div>
+<div class="qo ok"><span class="ol">B</span>inquire</div>
+<div class="qo "><span class="ol">C</span>inquiry</div>
+<div class="qo "><span class="ol">D</span>inquired</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>句子說 I am writing to introduce myself and ______。to 後面第一個動詞是 introduce（原形）。and 前後要保持平行，第二個動詞要用什麼形式？</p><div class="al">答案</div><p class="ap">to introduce and inquire（平行，都是原形動詞）。and 前後形式一致，introduce 是原形，所以選 inquire。</p></div>
+<div class="corr mt12"><p>A inquiring：V-ing，和 introduce 不平行。C inquiry：名詞（詢問），and 後面需要動詞，不是名詞。D inquired：過去式，和 introduce（原形）不平行。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">平行結構（to V and V）</span><span class="vd">to introduce and inquire（and 前後都用原形）</span>
+<span class="vw">inquire about</span><span class="vd">詢問……</span>
+<span class="vw">opening</span><span class="vd">職缺</span>
+<span class="vw">technical support engineer</span><span class="vd">技術支援工程師</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q128">
+<div class="qh"><span class="qn">128</span><span class="qt">介系詞 + V-ing</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Thank you so much for <span class="bl">______</span> to share your experience with our sales representatives.</div>
+<div class="qzh">非常感謝您同意與我們的業務代表分享您的經驗。</div>
+<div class="qopts"><div class="qo ok"><span class="ol">A</span>agreeing</div>
+<div class="qo "><span class="ol">B</span>believing</div>
+<div class="qo "><span class="ol">C</span>delivering</div>
+<div class="qo "><span class="ol">D</span>arranging</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前是介系詞 for。介系詞後面如果接動詞，要用什麼形式？再看空格後面是 to share，哪個動詞可以搭配 to share？</p><div class="al">答案</div><p class="ap">for + V-ing（介系詞後動詞用 V-ing）。agree to share = 同意分享。所以 for agreeing to share = 因為（你）同意分享。</p></div>
+<div class="corr mt12"><p>B believing：believe 不接 to share 表示「相信去分享」。C delivering：deliver to share 不自然。D arranging：arrange to share 語意上是「安排分享」，不如 agree to share 精確（本句是感謝對方願意）。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">for + V-ing</span><span class="vd">介系詞後動詞用 V-ing</span>
+<span class="vw">agree to + V</span><span class="vd">同意做……</span>
+<span class="vw">Thank you for + V-ing</span><span class="vd">感謝您……</span>
+<span class="vw">sales representative</span><span class="vd">業務代表</span>
+<span class="vw">share experience with</span><span class="vd">與……分享經驗</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q129">
+<div class="qh"><span class="qn">129</span><span class="qt">形容詞辨析</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">We look forward to a mutually <span class="bl">______</span> business relationship.</div>
+<div class="qzh">我們期待建立一段雙方都滿意的商業關係。</div>
+<div class="qopts"><div class="qo "><span class="ol">A</span>satisfy</div>
+<div class="qo "><span class="ol">B</span>satisfied</div>
+<div class="qo ok"><span class="ol">C</span>satisfying</div>
+<div class="qo "><span class="ol">D</span>satisfaction</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格修飾名詞 relationship。satisfied 和 satisfying 都是形容詞，差別在哪裡？relationship 是「讓雙方滿意的事」還是「感到滿意的人」？</p><div class="al">答案</div><p class="ap">relationship 是事物，令人滿意 → satisfying（事物讓人感到滿意）。satisfied 描述人（感到滿意的）。</p></div>
+<div class="corr mt12"><p>A satisfy：動詞（使滿意），不能修飾名詞。B satisfied：形容詞，但描述人（customers are satisfied），不描述事物。D satisfaction：名詞（滿意度），不能放在 business relationship 前當形容詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">satisfying</span><span class="vd">令人滿意的（修飾事物）</span>
+<span class="vw">satisfied</span><span class="vd">感到滿意的（修飾人）</span>
+<span class="vw">look forward to + N</span><span class="vd">期待……</span>
+<span class="vw">mutually</span><span class="vd">相互地；雙方都</span>
+<span class="vw">business relationship</span><span class="vd">商業關係</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="qb" id="q130">
+<div class="qh"><span class="qn">130</span><span class="qt">動詞搭配</span></div>
+<div class="qbody">
+<div class="qsen">This is a note to remind you that we haven't <span class="bl">______</span> our copy of the partnership agreement.</div>
+<div class="qzh">這張便條是要提醒您，我們尚未收到我們那份合作協議。</div>
+<div class="qopts"><div class="qo ok"><span class="ol">A</span>received</div>
+<div class="qo "><span class="ol">B</span>retrieved</div>
+<div class="qo "><span class="ol">C</span>regained</div>
+<div class="qo "><span class="ol">D</span>reacted</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>haven't 後面需要過去分詞（現在完成式）。看受詞：our copy of the partnership agreement。沒有「收到」文件，要用哪個動詞？</p><div class="al">答案</div><p class="ap">receive a copy = 收到一份副本。haven't received our copy = 尚未收到我們那份副本。</p></div>
+<div class="corr mt12"><p>B retrieved：取回（自己去找回來），不是別人寄給你。C regained：重新獲得（失去後奪回），語意不合。D reacted：反應，react 後面通常接 to，不直接接 our copy。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">haven't + p.p.</span><span class="vd">現在完成式否定</span>
+<span class="vw">receive a copy of</span><span class="vd">收到一份……副本</span>
+<span class="vw">partnership agreement</span><span class="vd">合作協議</span>
+<span class="vw">remind someone that</span><span class="vd">提醒某人……</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-summary">
+<div class="sh"><div class="sn">✓</div><div class="st">101–130 總整理 &amp; 速查</div><div class="stm">⏱ </div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>101–130 考點速查表</div><div class="bb">
+<table class="tmtable">
+<tr><th>題號</th><th>答案</th><th>核心考點</th><th>必記重點</th></tr>
+<tr><td>101</td><td>B. had to</td><td>時態</td><td>was leaving（過去）→ had to（過去式）</td></tr>
+<tr><td>102</td><td>A. holds</td><td>主詞動詞一致</td><td>a team member（單數）→ holds</td></tr>
+<tr><td>103</td><td>C. when</td><td>固定片語</td><td>when it comes to + N = 談到……</td></tr>
+<tr><td>104</td><td>C. information</td><td>名詞語意</td><td>information on + 主題</td></tr>
+<tr><td>105</td><td>C. often</td><td>副詞位置</td><td>often 放在動詞前，修飾動詞</td></tr>
+<tr><td>106</td><td>C. and</td><td>連接詞</td><td>祈使句 + and + V（並列行動）</td></tr>
+<tr><td>107</td><td>B. combat</td><td>動詞字義</td><td>combat + 問題/犯罪/spam</td></tr>
+<tr><td>108</td><td>D. as informal as</td><td>同等比較</td><td>as...as 中間放原級</td></tr>
+<tr><td>109</td><td>C. has changed</td><td>現在完成式</td><td>Reality television 單數 → has changed</td></tr>
+<tr><td>110</td><td>B. about</td><td>介系詞搭配</td><td>questions about + 名詞</td></tr>
+<tr><td>111</td><td>D. it</td><td>代名詞指涉</td><td>a new system（單數事物）→ it</td></tr>
+<tr><td>112</td><td>A. except</td><td>相似字辨析</td><td>except / accept / expect / express</td></tr>
+<tr><td>113</td><td>B. schedule</td><td>動詞搭配</td><td>schedule a meeting / event</td></tr>
+<tr><td>114</td><td>A. as</td><td>原因連接詞</td><td>as + 完整子句 = because</td></tr>
+<tr><td>115</td><td>C. from</td><td>介系詞搭配</td><td>from different perspectives</td></tr>
+<tr><td>116</td><td>A. pleasure</td><td>詞性判斷</td><td>with great + 名詞 → pleasure</td></tr>
+<tr><td>117</td><td>B. effective</td><td>詞性判斷</td><td>名詞前需要形容詞 → effective</td></tr>
+<tr><td>118</td><td>A. application</td><td>詞性判斷</td><td>your + 名詞 → application</td></tr>
+<tr><td>119</td><td>C. improvement</td><td>名詞搭配</td><td>need improvement</td></tr>
+<tr><td>120</td><td>A. confirm</td><td>商業信件動詞</td><td>This letter is to confirm...</td></tr>
+</table></div></div><div class="block"><div class="bh gn"><span class="d"></span>Chapter 5 比較結構重點整理</div><div class="bb">
+<div class="goal2"><ul>
+<li><strong>than</strong> 出現 → 找比較級（-er 或 more + adj.）</li>
+<li><strong>the + 最高級 + in/of/among</strong> → 找範圍，用最高級</li>
+<li><strong>as ___ as</strong> → 中間放原級，不放比較級</li>
+<li><strong>prior / senior / superior / inferior</strong> → 後面接 to，不接 than</li>
+<li><strong>fewer + 可數</strong>；<strong>less + 不可數</strong>；<strong>less than + 數字</strong></li>
+<li><strong>比較對象一致</strong>：單數名詞 → that of；複數名詞 → those of</li>
+<li><strong>more than happy/willing to</strong> = 非常樂意（固定表達）</li>
+</ul></div></div></div>
+</div>
+</main>
+</div>
+<script>
+let sec=0,running=false,iv=null;
+function pad(n){return n.toString().padStart(2,'0')}
+function upd(){const m=Math.floor(sec/60),s=sec%60;document.getElementById('timer').textContent=pad(m)+':'+pad(s)}
+function toggleTimer(){
+  if(running){clearInterval(iv);running=false;document.querySelector('.tbtn').textContent='▶ 開始'}
+  else{iv=setInterval(()=>{sec++;upd()},1000);running=true;document.querySelector('.tbtn').textContent='⏸ 暫停'}
+}
+function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.querySelector('.tbtn').textContent='▶ 開始'}
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+const allSecs=[
+  {id:'s-overview',label:'課程定位'},
+  {id:'s-open',label:'Chapter 5 開場'},
+  {id:'s-adj',label:'形容詞位置'},
+  {id:'s-forms',label:'三層概念'},
+  {id:'s-spell',label:'字形變化'},
+  {id:'s-irr',label:'不規則變化'},
+  {id:'s-comp',label:'比較級 + than'},
+  {id:'s-super',label:'最高級'},
+  {id:'s-as',label:'as...as'},
+  {id:'s-multi',label:'倍數比較'},
+  {id:'s-special',label:'特殊比較片語'},
+  {id:'s-abs',label:'絕對形容詞'},
+  {id:'s-consist',label:'比較對象一致'},
+  {id:'s-adv',label:'副詞比較'},
+  {id:'s-prac',label:'快練習'},
+  {id:'s-part5-intro',label:'Part 5 解題系統'},
+  {id:'q101',label:'101'},{id:'q102',label:'102'},{id:'q103',label:'103'},
+  {id:'q104',label:'104'},{id:'q105',label:'105'},{id:'q106',label:'106'},
+  {id:'q107',label:'107'},{id:'q108',label:'108'},{id:'q109',label:'109'},
+  {id:'q110',label:'110'},{id:'q111',label:'111'},{id:'q112',label:'112'},
+  {id:'q113',label:'113'},{id:'q114',label:'114'},{id:'q115',label:'115'},
+  {id:'q116',label:'116'},{id:'q117',label:'117'},{id:'q118',label:'118'},
+  {id:'q119',label:'119'},{id:'q120',label:'120'},,
+  {id:'q121',label:'121'},{id:'q122',label:'122'},{id:'q123',label:'123'},
+  {id:'q124',label:'124'},{id:'q125',label:'125'},{id:'q126',label:'126'},
+  {id:'q127',label:'127'},{id:'q128',label:'128'},{id:'q129',label:'129'},
+  {id:'q130',label:'130'},
+  {id:'s-summary',label:'總整理'},
+];
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      const s=allSecs.find(x=>x.id===id);
+      if(s){
+        document.querySelectorAll('.sbl').forEach(l=>l.classList.remove('active'));
+        const lk=document.querySelector('.sbl[onclick*="'+id+'"]');
+        if(lk)lk.classList.add('active');
+        document.getElementById('csec').textContent=s.label;
+      }
+    }
+  });
+},{threshold:0.2,rootMargin:'-60px 0px -65% 0px'});
+allSecs.forEach(s=>{const el=document.getElementById(s.id);if(el)obs.observe(el)});
+</script>
+</body>
+</html>
