@@ -208,7 +208,7 @@ function render(){
     nextItemBtn.textContent='改正 1/'+s.items.length+' ▶';
   } else {
     const opts=s.options.map((o,i)=>`<div class="q-opt" id="opt-${i}"><span class="q-opt-lbl">${String.fromCharCode(65+i)}</span>${o}</div>`).join('');
-    el.innerHTML=`<div class="q-header"><span class="q-num">${s.num}</span><span class="q-type-tag">${s.qtype}</span>${s.star?'<span class="q-star">⭐ 重點題</span>':''}${s.part6?'<span class="q-p6">Part 6</span>':''}</div><div class="q-sentence">${s.sentence}</div><div class="q-zh zh-target">${s.zh}</div><div class="q-opts">${opts}</div><div class="key-reveal" id="key-reveal"><strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong> &nbsp;—&nbsp; ${s.key}</div>`;
+    el.innerHTML=`<div class="q-header"><span class="q-num">${s.num}</span><span class="q-type-tag">${s.qtype}</span>${s.star?'<span class="q-star">⭐ 重點題</span>':''}${s.part6?'<span class="q-p6">Part 6</span>':''}</div><div class="q-sentence">${s.sentence}</div><div class="q-zh zh-target">${s.zh}</div><div class="q-opts">${opts}</div><div class="key-reveal" id="key-reveal"><strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong></div>`;
   }
   setTimeout(applyZh,0);
   resetRevealBtn();
