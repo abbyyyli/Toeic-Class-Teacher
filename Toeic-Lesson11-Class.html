@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 11 上課投影版</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--amber:#F59E0B;--green:#059669;--green-lt:#D1FAE5;--green-dk:#064E3B;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--gray-400:#94A3B8}
+html,body{height:100%;overflow:hidden}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:white;display:flex;flex-direction:column}
+
+#topbar{height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.top-badge{background:var(--amber);color:var(--navy);font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;font-family:Inter,sans-serif;letter-spacing:.5px}
+.top-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.7);margin-left:12px}
+.top-right{display:flex;align-items:center;gap:16px}
+#progress-text{font-family:"JetBrains Mono",monospace;font-size:13px;color:rgba(255,255,255,.45)}
+.pbwrap{width:140px;height:4px;background:rgba(255,255,255,.1);border-radius:2px}
+#progress-bar{height:100%;background:var(--amber);border-radius:2px;transition:width .3s}
+
+#slide-area{flex:1;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:28px 40px 16px}
+.slide{width:100%;max-width:940px;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+#bottombar{height:64px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.07)}
+.nav-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:white;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.nav-btn:hover{background:rgba(255,255,255,.14)}
+.nav-btn:disabled{opacity:.25;cursor:default}
+.center-btns{display:flex;align-items:center;gap:10px;flex-direction:column}
+#slide-type-label{font-size:11px;color:rgba(255,255,255,.3);font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:1px}
+.action-row{display:flex;gap:8px}
+.action-btn{border:none;border-radius:10px;padding:9px 22px;font-size:14px;font-weight:800;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.action-btn.hidden{display:none}
+#reveal-btn{background:var(--amber);color:var(--navy)}
+#reveal-btn:hover{background:#FBBF24}
+#next-item-btn{background:rgba(14,165,233,.2);color:#38BDF8;border:1px solid rgba(14,165,233,.3)}
+#next-item-btn:hover{background:rgba(14,165,233,.3)}
+#ask-btn{background:rgba(245,158,11,.15);color:var(--amber);border:1px solid rgba(245,158,11,.25)}
+#ask-btn:hover{background:rgba(245,158,11,.25)}
+.zh-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.45);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.zh-btn.on{background:rgba(14,165,233,.15);border-color:rgba(14,165,233,.4);color:#38BDF8}
+.zh-hidden{display:none!important}
+
+.gram-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);margin-bottom:8px}
+.gram-title{font-size:28px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:5px}
+.gram-sub{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:20px}
+.g-question{font-size:19px;font-weight:700;background:rgba(245,158,11,.12);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:18px}
+.g-highlight{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.18);border-radius:8px;padding:11px 15px;font-size:13px;color:rgba(255,255,255,.8)}
+.g-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:14px}
+.g-table th,.g-table td{padding:9px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+.g-table th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.35);font-weight:700}
+.cell-em{font-family:"JetBrains Mono",monospace;color:var(--amber);font-weight:700;font-size:14px}
+.g-table .snum{font-family:"JetBrains Mono",monospace;font-weight:800;color:var(--navy);background:var(--amber);text-align:center;border-radius:6px;width:36px}
+.g-formula{font-family:"JetBrains Mono",monospace;background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.2);border-radius:8px;padding:11px 15px;font-size:14px;color:#38BDF8;margin-bottom:14px}
+.g-ex-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:4px 16px;margin-bottom:14px}
+.g-ex{font-size:14px;line-height:1.7;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+.g-ex:last-child{border-bottom:none}
+.g-ex b{color:var(--amber);font-weight:700}
+.g-ex .zh2{display:block;font-size:12px;color:rgba(255,255,255,.35);margin-top:2px}
+.g-wrong-right{background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.15);border-radius:8px;padding:10px 15px;margin-bottom:14px;font-size:13px}
+.g-wrong-right .gw{color:#F87171;text-decoration:line-through;display:block;margin-bottom:4px}
+.g-wrong-right .gr{color:#34D399;display:block;font-weight:700}
+.g-note{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:11px 15px;font-size:13px;color:rgba(255,255,255,.8);margin-bottom:14px}
+.g-sub{font-size:12px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+
+#ask-panel{background:rgba(245,158,11,.08);border:1.5px solid rgba(245,158,11,.2);border-radius:12px;padding:16px 20px;margin-top:16px}
+.ask-progress{font-size:11px;color:rgba(255,255,255,.35);font-family:"JetBrains Mono",monospace;margin-bottom:10px}
+.ask-q{font-size:16px;font-weight:700;color:white;margin-bottom:10px}
+.ask-a{display:none;background:rgba(5,150,105,.15);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px;color:#34D399;font-weight:700}
+.ask-a.show{display:block}
+
+/* QUESTION */
+.q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.q-num{font-family:Inter,sans-serif;font-size:13px;font-weight:800;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:6px}
+.q-type-tag{font-size:12px;font-weight:700;background:rgba(14,165,233,.15);color:var(--sky);padding:4px 12px;border-radius:6px}
+.q-star{font-size:12px;font-weight:700;background:rgba(245,158,11,.15);color:var(--amber);padding:4px 10px;border-radius:6px}
+.q-p6{font-size:12px;font-weight:700;background:rgba(124,58,237,.15);color:#A78BFA;padding:4px 10px;border-radius:6px}
+.q-sentence{font-size:17px;font-weight:500;line-height:1.9;background:rgba(255,255,255,.05);border-left:3px solid rgba(255,255,255,.2);border-radius:0 10px 10px 0;padding:13px 17px;margin-bottom:5px}
+.q-sentence u{text-decoration:none;background:rgba(245,158,11,.18);color:var(--amber);font-weight:700;padding:0 6px;border-radius:4px}
+.q-zh{font-size:12px;color:rgba(255,255,255,.3);margin-bottom:16px;padding-left:2px}
+.q-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:0}
+.q-opts.wide{grid-template-columns:1fr}
+.q-opt{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 15px;font-size:14px;transition:all .2s}
+.q-opt-lbl{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:Inter,sans-serif}
+.q-opt.correct{background:rgba(5,150,105,.16);border-color:var(--green)}
+.q-opt.correct .q-opt-lbl{background:var(--green);color:white}
+.q-opt.dimmed{opacity:.28}
+.key-reveal{display:none;background:rgba(245,158,11,.08);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:11px 17px;font-size:14px;color:rgba(255,255,255,.85);margin-top:12px}
+.key-reveal.show{display:block}
+.key-reveal strong{color:var(--amber)}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <div style="display:flex;align-items:center">
+    <span class="top-badge">上課投影</span>
+    <span class="top-title">Lesson 11 · Chapter 7 動詞與時態 Verb &amp; Tense</span>
+  </div>
+  <div class="top-right">
+    <span id="progress-text">1 / 1</span>
+    <div class="pbwrap"><div id="progress-bar" style="width:2%"></div></div>
+  </div>
+</div>
+
+<div id="slide-area"><div class="slide" id="slide-content"></div></div>
+
+<div id="bottombar">
+  <button class="nav-btn" id="prev-btn" onclick="navigate(-1)" disabled>← 上一頁</button>
+  <div class="center-btns">
+    <span id="slide-type-label"></span>
+    <div class="action-row">
+      <button class="zh-btn" id="zh-btn" onclick="toggleZh()">中文 OFF</button>
+      <button class="action-btn hidden" id="ask-btn" onclick="nextAsk()">❓ 問學生</button>
+      <button class="action-btn hidden" id="next-item-btn" onclick="nextItem()">下一題 ▶</button>
+      <button class="action-btn hidden" id="reveal-btn" onclick="reveal()">揭曉答案 ▼</button>
+    </div>
+  </div>
+  <button class="nav-btn" id="next-btn" onclick="navigate(1)">下一頁 →</button>
+</div>
+
+<script>
+const SLIDES =
+[
+ {
+  "type": "grammar",
+  "title": "動詞形式基礎：動詞三態",
+  "subtitle": "先打穩地基，後面五大時態家族才學得快",
+  "content": "<div class='g-formula'>原形 → 過去式 → 過去分詞（三態）</div><table class='g-table'><tr><th>原形</th><th>過去式</th><th>過去分詞</th></tr><tr><td class='cell-em'>work</td><td>worked</td><td>worked</td></tr><tr><td class='cell-em'>write</td><td>wrote</td><td>written</td></tr><tr><td class='cell-em'>find</td><td>found</td><td>found</td></tr><tr><td class='cell-em'>found</td><td>founded</td><td>founded</td></tr></table><div class='g-note'>find 是「找到」，過去式 found；found 是「創立」，過去式與過去分詞是 founded——found 可能是 find 的過去式，也可能是另一個動詞 found 的原形，要看句意。</div>",
+  "ask": [
+   [
+    "find 的過去式跟 found（創立）的原形長得一樣，怎麼分？",
+    "看句意：找東西用 find/found/found；創立公司用 found/founded/founded"
+   ]
+  ]
+ },
+ {
+  "type": "grammar",
+  "title": "規則與不規則動詞變化",
+  "subtitle": "四種規則變化 ＋ 三大類不規則動詞",
+  "content": "<table class='g-table'><tr><th>類型</th><th>規則</th><th>例字</th></tr><tr><td class='snum'>1</td><td>一般加 -ed</td><td>listen→listened</td></tr><tr><td class='snum'>2</td><td>字尾有e只加-d</td><td>hope→hoped</td></tr><tr><td class='snum'>3</td><td>子音+y去y加-ied</td><td>study→studied</td></tr><tr><td class='snum'>4</td><td>短母音+子音重複字尾</td><td>stop→stopped</td></tr></table><div class='g-wrong-right'><span class='gw'>三態都不同：begin-began-begun／三態都一樣：cost-cost-cost／過去式=過去分詞：find-found-found</span><span class='gr'>看到 have/has/had 或 be 動詞，後面多半要過去分詞，不是過去式</span></div><div class='g-ex-box'><div class='g-ex'>We have already <b>sent</b> the invitation.<span class='zh2'>完成式：sent 是過去分詞</span></div><div class='g-ex'>The package was <b>sent</b> yesterday.<span class='zh2'>被動：同一個 sent，關鍵看前面是 have 還是 be</span></div></div>",
+  "ask": [
+   [
+    "She wrote the report yesterday，跟 The report was written by her，同一個動詞為什麼形式不同？",
+    "wrote 是過去式（主動過去）；written 是過去分詞（被動）"
+   ]
+  ]
+ },
+ {
+  "type": "grammar",
+  "title": "動詞字尾詞性 ＋ 易混淆動詞",
+  "subtitle": "本節最重要的收尾：五組長得像但意思不同的動詞",
+  "content": "<table class='g-table'><tr><th>字尾</th><th>意思</th><th>例字</th></tr><tr><td class='cell-em'>-ate</td><td>常見動詞字尾</td><td>communicate, celebrate</td></tr><tr><td class='cell-em'>-en</td><td>使……變得</td><td>strengthen, weaken</td></tr><tr><td class='cell-em'>-fy / -ize</td><td>使……化</td><td>simplify, customize</td></tr></table><table class='g-table'><tr><th>單字</th><th>三態</th><th>及物/不及物</th></tr><tr><td class='cell-em'>rise</td><td>rise/rose/risen</td><td>不及物</td></tr><tr><td class='cell-em'>raise</td><td>raise/raised/raised</td><td>及物</td></tr><tr><td class='cell-em'>lie</td><td>lie/lay/lain</td><td>不及物</td></tr><tr><td class='cell-em'>lay</td><td>lay/laid/laid</td><td>及物</td></tr></table><div class='g-note'>Sales <b>rose</b> last year.（sales 自己上升，不接受詞）vs. The company <b>raised</b> the price.（company 提高某物，一定要有受詞）。做題時問：後面有沒有被提高的東西？有受詞用 raise/lay/found；沒有受詞、主詞自己動作用 rise/lie/fall。這個判斷法在被動語態那一節還會再用到——只有及物動詞才能變被動。</div>",
+  "ask": [
+   [
+    "Sales ______ last year（上升），該選 rose 還是 raised？",
+    "rose——sales 自己上升，不及物，沒有受詞"
+   ]
+  ]
+ },
+ {
+  "type": "question",
+  "num": "1-1",
+  "qtype": "動詞字尾變化",
+  "star": false,
+  "part6": false,
+  "sentence": "During the meeting, the CEO mentioned that our company must ______ in order to meet the competition.",
+  "zh": "在會議中，執行長提到我們公司必須國際化，以迎向競爭。",
+  "options": [
+   "international",
+   "internationalize",
+   "internationalized",
+   "internationalism"
+  ],
+  "answer": 1,
+  "key": "答案：internationalize（B）　A international：形容詞，不能放在 must 後當主要動詞。C internationalized：過去式或過去分詞，must 後不能接 p.p.。D internationalism：名詞，國際主義，不是動詞。"
+ },
+ {
+  "type": "question",
+  "num": "1-2",
+  "qtype": "have to + 原形",
+  "star": false,
+  "part6": false,
+  "sentence": "Before taking further actions, we ______ to determine our promotional goals first.",
+  "zh": "在採取進一步行動之前，我們必須先決定促銷目標。",
+  "options": [
+   "might",
+   "have",
+   "will",
+   "should"
+  ],
+  "answer": 1,
+  "key": "答案：have（B）　A might to determine：might 後面不能接 to。C will to determine：will 後面不能接 to。D should to determine：should 後面不能接 to。"
+ },
+ {
+  "type": "question",
+  "num": "1-3",
+  "qtype": "被動語態・found",
+  "star": true,
+  "part6": false,
+  "sentence": "The university was ______ by Dr. Peters in 1988.",
+  "zh": "這所大學是 Peters 博士在 1988 年創立的。",
+  "options": [
+   "find",
+   "found",
+   "founds",
+   "founded"
+  ],
+  "answer": 3,
+  "key": "答案：founded（D）　A find：找到，且是原形，不合 was。B found：可以是 find 的過去式，但這裡不是找到大學，而是創立大學。C founds：現在式第三人稱單數，不合 was。"
+ },
+ {
+  "type": "question",
+  "num": "1-4",
+  "qtype": "rise vs. raise",
+  "star": false,
+  "part6": false,
+  "sentence": "The moon ______ an hour after sunset.",
+  "zh": "月亮在日落後一小時升起。",
+  "options": [
+   "raised",
+   "raise",
+   "rose",
+   "rising"
+  ],
+  "answer": 2,
+  "key": "答案：rose（C）　A raised：raise 是及物動詞，後面需要受詞，意思是提高某物。B raise：原形，不合過去語境，也需受詞。D rising：V-ing，缺少 be 動詞。"
+ },
+ {
+  "type": "question",
+  "num": "1-5",
+  "qtype": "被動語態・founded",
+  "star": true,
+  "part6": false,
+  "sentence": "The bank of Barclays, which ______ in 1690, is the oldest company in the United Kingdom.",
+  "zh": "Barclays 銀行創立於 1690 年，是英國歷史最悠久的公司。",
+  "options": [
+   "found",
+   "was found",
+   "was finding",
+   "was founded"
+  ],
+  "answer": 3,
+  "key": "答案：was founded（D）　A found：可能是 find 的過去式，但這裡不是找到銀行。B was found：意思變成被找到，不是被創立。C was finding：過去進行式，且主詞 bank 不會正在尋找。"
+ },
+ {
+  "type": "question",
+  "num": "1-6",
+  "qtype": "rise / raise・主詞動詞一致",
+  "star": false,
+  "part6": false,
+  "sentence": "The number of registered users ______ every month.",
+  "zh": "註冊使用者的數量每個月都上升。",
+  "options": [
+   "rise",
+   "rises",
+   "raise",
+   "raises"
+  ],
+  "answer": 1,
+  "key": "答案：rises（B）　A rise：主詞單數，要加 s。C raise：raise 後面要有受詞，例如 raise prices。D raises：雖有 s，但 raise 是及物動詞，句中沒有受詞。"
+ },
+ {
+  "type": "question",
+  "num": "1-7",
+  "qtype": "raise an issue",
+  "star": false,
+  "part6": false,
+  "sentence": "The supervisor ______ the issue during yesterday's staff meeting.",
+  "zh": "主管在昨天的員工會議中提出了這個議題。",
+  "options": [
+   "rose",
+   "raised",
+   "risen",
+   "rising"
+  ],
+  "answer": 1,
+  "key": "答案：raised（B）　A rose：rise 是不及物動詞，不能直接接 issue。C risen：過去分詞，缺少 has/had。D rising：不是完整動詞。"
+ },
+ {
+  "type": "question",
+  "num": "1-8",
+  "qtype": "find / found・被動",
+  "star": false,
+  "part6": false,
+  "sentence": "The company was ______ by two engineers in 1995.",
+  "zh": "這家公司於 1995 年由兩位工程師創立。",
+  "options": [
+   "find",
+   "found",
+   "founded",
+   "finding"
+  ],
+  "answer": 2,
+  "key": "答案：founded（C）　A find：原形，不合 was + p.p.。B found：如果是 find 的過去式，意思是找到，不合語意；如果要表達創立，p.p. 是 founded。D finding：不是被動語態。"
+ },
+ {
+  "type": "question",
+  "num": "1-9",
+  "qtype": "lie / lay",
+  "star": false,
+  "part6": false,
+  "sentence": "The manager ______ the documents on the desk before leaving the office.",
+  "zh": "經理離開辦公室前，把文件放在桌上。",
+  "options": [
+   "lied",
+   "laid",
+   "lain",
+   "lay"
+  ],
+  "answer": 1,
+  "key": "答案：laid（B）　A lied：說謊，不合語意。C lain：躺下的過去分詞，不能接 the documents。D lay：可以是 lie「躺下」的過去式，但本句要表示放置，應用 laid。"
+ },
+ {
+  "type": "question",
+  "num": "1-10",
+  "qtype": "-en 動詞・enable A to V",
+  "star": false,
+  "part6": false,
+  "sentence": "The new policy ______ employees to work from home twice a week.",
+  "zh": "新政策讓員工每週可以在家工作兩次。",
+  "options": [
+   "enables",
+   "enable",
+   "enabling",
+   "has enable"
+  ],
+  "answer": 0,
+  "key": "答案：enables（A）　B enable：主詞單數，應加 s。C enabling：不是完整主要動詞。D has enable：完成式要 has enabled。"
+ },
+ {
+  "type": "question",
+  "num": "1-11",
+  "qtype": "-ize 動詞・plan to V",
+  "star": false,
+  "part6": false,
+  "sentence": "The company plans to ______ its services to meet local customer needs.",
+  "zh": "公司計畫客製化其服務，以符合當地顧客需求。",
+  "options": [
+   "customization",
+   "customize",
+   "customized",
+   "customizable"
+  ],
+  "answer": 1,
+  "key": "答案：customize（B）　A customization：名詞，不能接在 to 後當動詞。C customized：過去式/p.p.，不符合 plan to + V。D customizable：形容詞，可客製化的，不是動詞。"
+ },
+ {
+  "type": "question",
+  "num": "1-12",
+  "qtype": "-en 動詞・to V",
+  "star": false,
+  "part6": false,
+  "sentence": "The training session was designed to ______ communication between departments.",
+  "zh": "這場訓練課程是為了加強部門之間的溝通。",
+  "options": [
+   "strength",
+   "strengthen",
+   "strong",
+   "strongly"
+  ],
+  "answer": 1,
+  "key": "答案：strengthen（B）　A strength：名詞，力量。C strong：形容詞，強壯的。D strongly：副詞，強烈地。"
+ },
+ {
+  "type": "question",
+  "num": "1-13",
+  "qtype": "-ify 動詞・過去式",
+  "star": false,
+  "part6": false,
+  "sentence": "The HR manager ______ all applicants by email yesterday.",
+  "zh": "人資經理昨天用電子郵件通知了所有申請者。",
+  "options": [
+   "notification",
+   "notified",
+   "notifying",
+   "notify"
+  ],
+  "answer": 1,
+  "key": "答案：notified（B）　A notification：名詞，通知。C notifying：V-ing，不能單獨作主要動詞。D notify：原形，不符合 yesterday。"
+ },
+ {
+  "type": "grammar",
+  "title": "簡單式家族：現在／過去／未來",
+  "subtitle": "三個簡單式公式完全對稱，差別在動詞形式和時間線索",
+  "content": "<div class='g-formula'>現在簡單式：V/Vs　　過去簡單式：Ved/V2　　未來簡單式：will+V</div><table class='g-table'><tr><th>時態</th><th>核心意思</th><th>常見線索</th></tr><tr><td>現在簡單式</td><td>習慣、事實、固定安排</td><td>always, every day, usually</td></tr><tr><td>過去簡單式</td><td>過去發生並結束</td><td>yesterday, ago, last year</td></tr><tr><td>未來簡單式</td><td>將會發生</td><td>tomorrow, next week</td></tr></table><div class='g-note'>做題第一步永遠一樣：先找時間線索，再看主詞決定要不要加 s，最後檢查動詞形式對不對。</div>",
+  "ask": [
+   [
+    "看到 always/usually/every day，想哪個時態？",
+    "現在簡單式（習慣或常態）"
+   ]
+  ]
+ },
+ {
+  "type": "grammar",
+  "title": "現在簡單式：狀態動詞不用進行式",
+  "subtitle": "know/own/see/like 這類動詞通常不用 V-ing",
+  "content": "<table class='g-table'><tr><th>類別</th><th>動詞</th></tr><tr><td>理解/知道</td><td>know, understand, believe</td></tr><tr><td>擁有/需要/喜好</td><td>own, belong, need, want, like</td></tr><tr><td>感官</td><td>see, hear, smell, taste</td></tr></table><div class='g-wrong-right'><span class='gw'>I am understanding your points. / This laptop is belonging to Jack.</span><span class='gr'>I understand your points. / This laptop belongs to Jack.</span></div><div class='g-note'>有些狀態動詞換意思時可以用進行式：I'm seeing a client tomorrow.（see＝會面）She is having lunch with a client.（have＝進行動作）判斷方法是看動詞當下的意思，不是死背清單。</div>",
+  "ask": [
+   [
+    "understand 可以用 am understanding 嗎？",
+    "不行，understand 是狀態動詞，一般不用進行式"
+   ]
+  ]
+ },
+ {
+  "type": "grammar",
+  "title": "過去簡單式 ＋ 未來簡單式：五種未來表達",
+  "subtitle": "ago 與 for 的差別；if/when 子句用現在式表未來",
+  "content": "<table class='g-table'><tr><th>方式</th><th>用法</th><th>例句</th></tr><tr><td class='cell-em'>will</td><td>預測、承諾、決心</td><td>I will always support you.</td></tr><tr><td class='cell-em'>be going to</td><td>計畫或有跡象</td><td>It is going to rain.</td></tr><tr><td class='cell-em'>現在進行式</td><td>已安排的個人行程</td><td>I'm flying to Tokyo next week.</td></tr><tr><td class='cell-em'>現在簡單式</td><td>時刻表</td><td>The train leaves at 8:30.</td></tr></table><div class='g-formula'>when/if/before/after/until + 現在式，主句用未來式</div><div class='g-wrong-right'><span class='gw'>If I will see Mr. Chen, I will ask him to call you.</span><span class='gr'>If I see Mr. Chen, I will ask him to call you.</span></div>",
+  "ask": [
+   [
+    "If I ______ Mr. Chen, I will ask him to call you. 該用 see 還是 will see？",
+    "see——if 子句用現在式代替未來"
+   ]
+  ]
+ },
+ {
+  "type": "question",
+  "num": "2-1",
+  "qtype": "現在簡單式",
+  "star": false,
+  "part6": false,
+  "sentence": "Jerry always ______ for work at 8 a.m.",
+  "zh": "Jerry 通常早上八點出發去上班。",
+  "options": [
+   "leaves",
+   "leave",
+   "left",
+   "leaving"
+  ],
+  "answer": 0,
+  "key": "答案：leaves（A）— Jerry leaves for work at 8 a.m.　B leave：主詞單數要加 s。C left：過去式，不符合 always 的習慣語氣。D leaving：缺 be 動詞，不能單獨當主要動詞。"
+ },
+ {
+  "type": "question",
+  "num": "2-2",
+  "qtype": "未來簡單式",
+  "star": false,
+  "part6": false,
+  "sentence": "Some managers ______ fly to Japan for a conference tomorrow.",
+  "zh": "一些經理明天將飛往日本參加研討會。",
+  "options": [
+   "was going to",
+   "did",
+   "used to",
+   "will"
+  ],
+  "answer": 3,
+  "key": "答案：will（D）— will + 原形動詞 = 將會……　A was going to：was 是過去式，且主詞 managers 複數應是 are going to。B did：語意是過去強調，不符合 tomorrow。C used to：過去習慣，現在不一定如此，不符合 tomorrow。"
+ },
+ {
+  "type": "question",
+  "num": "2-3",
+  "qtype": "現在簡單式",
+  "star": false,
+  "part6": false,
+  "sentence": "Customer service ______ always one of our priorities.",
+  "zh": "客戶服務一直是我們的重點之一。",
+  "options": [
+   "is",
+   "will",
+   "have been",
+   "was"
+  ],
+  "answer": 0,
+  "key": "答案：is（A）　B will：未來，語意不如現在事實自然。C have been：主詞應是 has been；且本句只是一般事實。D was：過去式，表示以前是，現在不一定，不合 always 的長期語氣。"
+ },
+ {
+  "type": "question",
+  "num": "2-4",
+  "qtype": "過去簡單式疑問句",
+  "star": false,
+  "part6": false,
+  "sentence": "______ anyone call me yesterday?",
+  "zh": "昨天有人打電話給我嗎？",
+  "options": [
+   "Had",
+   "Do",
+   "Does",
+   "Did"
+  ],
+  "answer": 3,
+  "key": "答案：Did（D）　A Had：通常用於過去完成式，需要 had + p.p.。B Do：現在式，不合 yesterday。C Does：現在式第三人稱單數，不合 anyone call me yesterday。"
+ },
+ {
+  "type": "question",
+  "num": "2-5",
+  "qtype": "未來式・時間子句",
+  "star": false,
+  "part6": false,
+  "sentence": "You ______ report to Mr. Johnson after you join the sales team.",
+  "zh": "你加入業務團隊後，將向 Johnson 先生報告進度。",
+  "options": [
+   "might be",
+   "were",
+   "will",
+   "should have"
+  ],
+  "answer": 2,
+  "key": "答案：will（C）　A might be report：might be 後面不能直接接 report。B were report：結構錯誤。D should have report：should have 後面要 p.p.，且語意是過去本來應該，不合句意。"
+ },
+ {
+  "type": "question",
+  "num": "2-6",
+  "qtype": "未來簡單式",
+  "star": false,
+  "part6": false,
+  "sentence": "The employee promises his supervisor that he probably ______ the assignment by five o'clock tomorrow afternoon.",
+  "zh": "這名員工向主管承諾，他大概會在明天下午五點前完成工作。",
+  "options": [
+   "finishes",
+   "is finishing",
+   "will finish",
+   "had finished"
+  ],
+  "answer": 2,
+  "key": "答案：will finish（C）　A finishes：現在簡單式，不能表達明天下午前會完成。B is finishing：現在進行式，表正在完成，不合 by five tomorrow。D had finished：過去完成式，表過去某時間之前已完成，不合未來。"
+ },
+ {
+  "type": "question",
+  "num": "2-7",
+  "qtype": "過去簡單式・when",
+  "star": false,
+  "part6": false,
+  "sentence": "When Allen ______ to read the technical manual, he failed to understand all of it.",
+  "zh": "當 Allen 試著閱讀技術手冊時，他無法理解全部內容。",
+  "options": [
+   "tries",
+   "tried",
+   "has tried",
+   "had been tried"
+  ],
+  "answer": 1,
+  "key": "答案：tried（B）　A tries：現在式，和 failed 不一致。C has tried：現在完成式，不搭配過去主句 failed。D had been tried：被動，且 try 不適合這樣被動使用於 Allen。"
+ },
+ {
+  "type": "question",
+  "num": "2-8",
+  "qtype": "過去簡單式・明確過去時間",
+  "star": false,
+  "part6": false,
+  "sentence": "Sally ______ the CPA exam a month ago.",
+  "zh": "Sally 一個月前通過了會計師考試。",
+  "options": [
+   "was passing",
+   "is passing",
+   "has passed",
+   "passed"
+  ],
+  "answer": 3,
+  "key": "答案：passed（D）　A was passing：過去進行式，表當時正在通過，不自然。B is passing：現在進行式，不合 ago。C has passed：現在完成式不能和明確過去時間 a month ago 搭配。"
+ },
+ {
+  "type": "question",
+  "num": "2-9",
+  "qtype": "現在簡單式・主詞動詞一致",
+  "star": false,
+  "part6": false,
+  "sentence": "The marketing team ______ a new campaign every spring.",
+  "zh": "行銷團隊每年春天都會推出新的活動。",
+  "options": [
+   "launch",
+   "launches",
+   "launched",
+   "launching"
+  ],
+  "answer": 1,
+  "key": "答案：launches（B）　A launch：主詞單數應加 s。C launched：過去式，但 every spring 表示例行性，不是單一過去事件。D launching：V-ing 不能單獨當主要動詞，需要 be 動詞。"
+ },
+ {
+  "type": "question",
+  "num": "2-10",
+  "qtype": "現在簡單式",
+  "star": false,
+  "part6": false,
+  "sentence": "Our company ______ customer feedback carefully before making major changes.",
+  "zh": "我們公司在做重大改變之前，會仔細分析顧客回饋。",
+  "options": [
+   "analyze",
+   "analyzes",
+   "analyzing",
+   "has analyze"
+  ],
+  "answer": 1,
+  "key": "答案：analyzes（B）　A analyze：主詞單數，現在簡單式要加 s。C analyzing：少了 be 動詞，不能單獨作主要動詞。D has analyze：現在完成式應該是 has analyzed。"
+ },
+ {
+  "type": "question",
+  "num": "2-11",
+  "qtype": "過去簡單式・不規則動詞",
+  "star": false,
+  "part6": false,
+  "sentence": "The assistant ______ the package to the wrong department yesterday.",
+  "zh": "助理昨天把包裹送到錯誤的部門。",
+  "options": [
+   "send",
+   "sends",
+   "sent",
+   "sending"
+  ],
+  "answer": 2,
+  "key": "答案：sent（C）　A send：原形，不符合 yesterday。B sends：現在簡單式第三人稱單數，不符合 yesterday。D sending：V-ing 不能單獨作主要動詞。"
+ },
+ {
+  "type": "question",
+  "num": "2-12",
+  "qtype": "未來簡單式",
+  "star": false,
+  "part6": false,
+  "sentence": "The factory ______ its production capacity next year.",
+  "zh": "這間工廠明年將擴大產能。",
+  "options": [
+   "expands",
+   "expanded",
+   "will expand",
+   "has expanded"
+  ],
+  "answer": 2,
+  "key": "答案：will expand（C）　A expands：現在簡單式，不符合 next year。B expanded：過去式。D has expanded：現在完成式，表示到現在已經擴張。"
+ },
+ {
+  "type": "question",
+  "num": "2-13",
+  "qtype": "if 條件句用現在式表未來",
+  "star": false,
+  "part6": false,
+  "sentence": "Please notify us if the delivery date ______.",
+  "zh": "如果交貨日期有變，請通知我們。",
+  "options": [
+   "changes",
+   "changed",
+   "changing",
+   "will change"
+  ],
+  "answer": 0,
+  "key": "答案：changes（A）　B changed：過去式，不合語意。C changing：不是完整動詞。D will change：條件副詞子句中通常不用 will。"
+ },
+ {
+  "type": "question",
+  "num": "2-14",
+  "qtype": "主詞動詞一致・複數",
+  "star": false,
+  "part6": false,
+  "sentence": "The new safety rules ______ to all employees starting next Monday.",
+  "zh": "新的安全規則從下週一開始適用於所有員工。",
+  "options": [
+   "apply",
+   "applies",
+   "applied",
+   "applying"
+  ],
+  "answer": 0,
+  "key": "答案：apply（A）　B applies：單數主詞才用。C applied：過去式，不符合 starting next Monday。D applying：不是完整動詞。"
+ },
+ {
+  "type": "question",
+  "num": "2-15",
+  "qtype": "過去簡單式・明確過去時間",
+  "star": false,
+  "part6": false,
+  "sentence": "The company ______ its headquarters to Singapore in 2018.",
+  "zh": "這家公司在 2018 年將總部遷到新加坡。",
+  "options": [
+   "move",
+   "moves",
+   "moved",
+   "has moved"
+  ],
+  "answer": 2,
+  "key": "答案：moved（C）　A move：原形，不合主詞與時態。B moves：現在簡單式，不合 in 2018。D has moved：現在完成式通常不和明確過去時間 in 2018 搭配。"
+ },
+ {
+  "type": "question",
+  "num": "2-16",
+  "qtype": "現在簡單式・複數主詞",
+  "star": false,
+  "part6": false,
+  "sentence": "The lights in the conference room ______ automatically when no one is inside.",
+  "zh": "會議室裡的燈在沒有人時會自動關閉。",
+  "options": [
+   "turn off",
+   "turns off",
+   "turning off",
+   "turned off"
+  ],
+  "answer": 0,
+  "key": "答案：turn off（A）　B turns off：單數主詞才用。C turning off：不是完整動詞。D turned off：過去式，不符合一般功能描述。"
+ },
+ {
+  "type": "grammar",
+  "title": "進行式家族：現在／過去／未來",
+  "subtitle": "公式跟簡單式一樣對稱，都是 be + V-ing",
+  "content": "<div class='g-formula'>現在進行式：am/is/are+V-ing　過去進行式：was/were+V-ing　未來進行式：will be+V-ing</div><table class='g-table'><tr><th>時態</th><th>核心意思</th><th>常見線索</th></tr><tr><td>現在進行式</td><td>正在做；未來安排</td><td>now, right now, this week</td></tr><tr><td>過去進行式</td><td>過去某時正在做</td><td>when, while, at 8 yesterday</td></tr><tr><td>未來進行式</td><td>未來某時正在做</td><td>at this time tomorrow</td></tr></table><div class='g-ex-box'><div class='g-ex'>He <b>was typing</b> a letter when I arrived.<span class='zh2'>過去某一刻正在做，常搭配 when</span></div><div class='g-ex'>My husband was watching TV <b>while</b> I was doing the household chores.<span class='zh2'>while 表示兩個動作同時進行</span></div><div class='g-ex'>We will be enjoying sunshine in Florida by this time next week.<span class='zh2'>未來某一段期間正在進行的動作</span></div></div><div class='g-note'>get/turn/go/grow 用進行式常表示逐漸變化：His hair is going gray. The economy is improving.</div>",
+  "ask": [
+   [
+    "長動作用過去進行式，短動作用過去簡單式：I was watching TV ______ the phone rang. 該選什麼時態？",
+    "rang（過去簡單式）——短動作打斷長動作"
+   ]
+  ]
+ },
+ {
+  "type": "question",
+  "num": "3-1",
+  "qtype": "現在進行式",
+  "star": false,
+  "part6": false,
+  "sentence": "All reporters ______ to interview the company president.",
+  "zh": "所有記者都正在等著訪問公司總裁。",
+  "options": [
+   "waiting",
+   "been waiting",
+   "are waiting",
+   "was waited"
+  ],
+  "answer": 2,
+  "key": "答案：are waiting（C）　A waiting：缺少 be 動詞。B been waiting：前面需要 have/has，例如 have been waiting。D was waited：was 是單數過去，且 waited 被動語意不合。"
+ },
+ {
+  "type": "question",
+  "num": "3-2",
+  "qtype": "過去進行式",
+  "star": false,
+  "part6": false,
+  "sentence": "What ______ you doing at 10 o'clock this morning?",
+  "zh": "今天早上十點你正在做什麼？",
+  "options": [
+   "was",
+   "did",
+   "were",
+   "should"
+  ],
+  "answer": 2,
+  "key": "答案：were（C）　A was：you 通常搭配 were。B did：did 後面要接原形 do，不是 doing。D should：should 後面也接原形 do，不是 doing。"
+ },
+ {
+  "type": "question",
+  "num": "3-3",
+  "qtype": "未來進行式",
+  "star": false,
+  "part6": false,
+  "sentence": "We will be ______ in Linda's office when you come this afternoon.",
+  "zh": "你今天下午來的時候，我們會正在 Linda 的辦公室討論。",
+  "options": [
+   "discussing",
+   "discussed",
+   "discuss",
+   "discusses"
+  ],
+  "answer": 0,
+  "key": "答案：discussing（A）　B discussed：過去分詞，會變成被動，不合句意。C discuss：原形，will be 後不直接接原形。D discusses：第三人稱單數，不合 will be。"
+ },
+ {
+  "type": "question",
+  "num": "3-4",
+  "qtype": "過去進行式・while",
+  "star": false,
+  "part6": false,
+  "sentence": "While we ______ a briefing yesterday afternoon, the electricity suddenly went out.",
+  "zh": "昨天下午當我們正在做簡報時，電突然停了。",
+  "options": [
+   "will do",
+   "did",
+   "were doing",
+   "have done"
+  ],
+  "answer": 2,
+  "key": "答案：were doing（C）　A will do：未來，不合 yesterday。B did：過去簡單式，但 while 後面更適合過去進行式表背景動作。D have done：現在完成式不能搭配 yesterday afternoon 這種明確過去時間。"
+ },
+ {
+  "type": "question",
+  "num": "3-5",
+  "qtype": "過去進行式",
+  "star": false,
+  "part6": false,
+  "sentence": "Ms. Lin ______ a report when the manager called her.",
+  "zh": "經理打電話給林女士時，她正在寫報告。",
+  "options": [
+   "writes",
+   "wrote",
+   "was writing",
+   "has written"
+  ],
+  "answer": 2,
+  "key": "答案：was writing（C）　A writes：現在簡單式，不符合 called。B wrote：只表示寫了，沒有正在進行的感覺。D has written：現在完成式，不和 when the manager called her 搭配。"
+ },
+ {
+  "type": "question",
+  "num": "3-6",
+  "qtype": "未來進行式",
+  "star": false,
+  "part6": false,
+  "sentence": "We ______ the new software at this time tomorrow.",
+  "zh": "明天這個時候，我們將正在安裝新的軟體。",
+  "options": [
+   "install",
+   "installed",
+   "will be installing",
+   "have installed"
+  ],
+  "answer": 2,
+  "key": "答案：will be installing（C）　A install：現在簡單式，不符合 tomorrow 的時間點。B installed：過去式，不符合 tomorrow。D have installed：現在完成式，表示到現在已經完成，不符合 at this time tomorrow。"
+ },
+ {
+  "type": "question",
+  "num": "3-7",
+  "qtype": "過去進行式・背景動作",
+  "star": false,
+  "part6": false,
+  "sentence": "The CEO ______ in Tokyo when the announcement was made.",
+  "zh": "公告發布時，執行長正在東京出差。",
+  "options": [
+   "is traveling",
+   "travels",
+   "was traveling",
+   "has traveled"
+  ],
+  "answer": 2,
+  "key": "答案：was traveling（C）　A is traveling：現在進行式，不符合 was made。B travels：現在簡單式，表示習慣。D has traveled：現在完成式，不表示當時正在進行。"
+ },
+ {
+  "type": "grammar",
+  "title": "完成式家族：連到某個時間點",
+  "subtitle": "全課份量最重、最容易搞混的一節",
+  "content": "<div class='g-formula'>現在完成式：have/has+p.p.　過去完成式：had+p.p.　未來完成式：will have+p.p.</div><table class='g-table'><tr><th>時態</th><th>連到哪個時間點</th><th>常見線索</th></tr><tr><td>現在完成式</td><td>過去→現在</td><td>already, just, ever, since, for</td></tr><tr><td>過去完成式</td><td>過去→更早之前的過去</td><td>before+過去式, when+過去式</td></tr><tr><td>未來完成式</td><td>未來→到那之前</td><td>by Friday, before you come back</td></tr></table><div class='g-note'>看穿完成式的訣竅：先找「連到哪個時間點」，那個時間點決定用現在完成、過去完成，還是未來完成——三個是同一套邏輯，只是基準時間不同。</div>",
+  "ask": [
+   [
+    "完成式的核心不是中文的「已經」，是什麼？",
+    "連到某一個時間點（現在/過去某時/未來某時）"
+   ]
+  ]
+ },
+ {
+  "type": "grammar",
+  "title": "現在完成式：三大功能",
+  "subtitle": "結果／經驗／持續——搭配 since 與 for",
+  "content": "<table class='g-table'><tr><th>功能</th><th>例句</th></tr><tr><td>結果</td><td>We have completed the project.（現在完成，可以交付）</td></tr><tr><td>經驗</td><td>Have you ever worked with international clients?</td></tr><tr><td>持續</td><td>She has worked here for five years.</td></tr></table><div class='g-ex-box'><div class='g-ex'>Jack has lived in Taiwan <b>since</b> 1998.<span class='zh2'>since + 開始時間點</span></div><div class='g-ex'>Mr. Chen has collected coins <b>for</b> ten years.<span class='zh2'>for + 期間長度</span></div></div><div class='g-note'>現在完成式 vs. 現在完成進行式：I have written three reports today.（重點是成果）vs. I have been writing reports all day.（重點是動作持續，帶辛苦/持續感）</div>",
+  "ask": [
+   [
+    "since 後面接開始時間點，for 後面接什麼？",
+    "期間長度（例如 for three years）"
+   ]
+  ]
+ },
+ {
+  "type": "grammar",
+  "title": "過去完成式：比另一個過去更早",
+  "subtitle": "不是「很久以前」，而是過去的過去",
+  "content": "<div class='g-ex-box'><div class='g-ex'>When I arrived at the office, the meeting <b>had already started</b>.<span class='zh2'>會議先開始（更早）→ 我後到</span></div><div class='g-ex'>We <b>had hoped</b> to launch the product in June, but production was delayed.<span class='zh2'>had hoped/expected/intended＝原本想，但沒實現</span></div><div class='g-ex'>John had studied for three hours when his mother asked him to go out.<span class='zh2'>had p.p. + for：到過去某時間為止已持續多久</span></div></div><div class='g-note'>很多學生以為只要是很久以前就用 had p.p.，這是錯的——過去完成式是強調「更早」。看到 before、after、when，而且選項有 had p.p.，就要注意事件順序。</div>",
+  "ask": [
+   [
+    "We had hoped to launch in June, but... 這句暗示計畫後來怎麼了？",
+    "沒有實現（had hoped 常表示原本想但沒發生）"
+   ]
+  ]
+ },
+ {
+  "type": "grammar",
+  "title": "未來完成式 ＋ 完成進行式",
+  "subtitle": "到未來某時間前已完成；完成進行強調持續",
+  "content": "<div class='g-formula'>will have + p.p. ／ by + 未來時間</div><div class='g-ex-box'><div class='g-ex'>By next Friday, we <b>will have completed</b> the project.<span class='zh2'>到未來某時間點前已經完成</span></div><div class='g-ex'>We will have been married for ten years by 2020.<span class='zh2'>未來完成進行：到未來某時已持續多久</span></div></div><div class='g-highlight'>十二時態的九種主動形式全部學完了（3簡單+3進行+3完成）。最後一塊拼圖是「主詞是不是接受動作」——被動語態，它會跟前面九種時態全部結合。</div>",
+  "ask": [
+   [
+    "未來完成式常搭配哪個介系詞片語？",
+    "by（by Friday, by this time tomorrow）"
+   ]
+  ]
+ },
+ {
+  "type": "question",
+  "num": "4-1",
+  "qtype": "現在完成進行式",
+  "star": true,
+  "part6": false,
+  "sentence": "Ms. Anderson ______ working as the Head of Engineering for 3 years.",
+  "zh": "Anderson 女士擔任工程部主管已經三年了。",
+  "options": [
+   "was",
+   "has been",
+   "will be",
+   "have to"
+  ],
+  "answer": 1,
+  "key": "答案：has been（B）— has been working for 3 years = 已經持續工作三年。　A was working：過去某時正在工作，不強調持續到現在。C will be working：未來將正在工作，不符合 for 3 years。D have to：必須，語意不合，且後面要接原形 work，不是 working。"
+ },
+ {
+  "type": "question",
+  "num": "4-2",
+  "qtype": "現在完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "We have ______ new lines of business training videos.",
+  "zh": "我們已經新增了幾條新的商業訓練影片系列。",
+  "options": [
+   "added",
+   "had",
+   "adding",
+   "add"
+  ],
+  "answer": 0,
+  "key": "答案：added（A）　B had：have had 可以成立，但語意不自然，不是新增。C adding：have adding 結構錯。D add：have 後面不能直接接原形作完成式。"
+ },
+ {
+  "type": "question",
+  "num": "4-3",
+  "qtype": "過去完成式①",
+  "star": false,
+  "part6": false,
+  "sentence": "I ______ worked in the software industry for 15 years before I changed my career.",
+  "zh": "在我轉換職涯之前，我已經在軟體產業工作了十五年。",
+  "options": [
+   "will be",
+   "had",
+   "was",
+   "had been to"
+  ],
+  "answer": 1,
+  "key": "答案：had（B）　A will be：未來，不合 before I changed。C was worked：被動或錯誤結構，不合句意。D had been to：去過某地，不可接 worked。"
+ },
+ {
+  "type": "question",
+  "num": "4-4",
+  "qtype": "過去完成式②",
+  "star": false,
+  "part6": false,
+  "sentence": "The meeting didn't start until all sales representatives had ______.",
+  "zh": "直到所有業務代表都到場，會議才開始。",
+  "options": [
+   "arrives",
+   "arrived",
+   "arriving",
+   "arrival"
+  ],
+  "answer": 1,
+  "key": "答案：arrived（B）　A arrives：現在式第三人稱單數。C arriving：V-ing，不合 had + p.p.。D arrival：名詞，不合 had 後面需要動詞分詞。"
+ },
+ {
+  "type": "question",
+  "num": "4-5",
+  "qtype": "未來完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "Before you come back, I shall have ______ the report already.",
+  "zh": "在你回來之前，我應該已經完成報告了。",
+  "options": [
+   "finished",
+   "finishing",
+   "finish",
+   "finishes"
+  ],
+  "answer": 0,
+  "key": "答案：finished（A）　B finishing：V-ing，不合完成式。C finish：原形，不合 have + p.p.。D finishes：現在式第三人稱單數，不合 shall have。"
+ },
+ {
+  "type": "question",
+  "num": "4-6",
+  "qtype": "現在完成式・since",
+  "star": true,
+  "part6": false,
+  "sentence": "Since 1995, John Smiths ______ a financial consulting firm.",
+  "zh": "自 1995 年以來，John Smith 一直擁有一家財務顧問公司。",
+  "options": [
+   "owns",
+   "owned",
+   "has owned",
+   "has been owning"
+  ],
+  "answer": 2,
+  "key": "答案：has owned（C）　A owns：現在簡單式，沒有表達從 1995 持續到現在。B owned：過去式，表示過去擁有，現在不一定。D has been owning：own 是狀態動詞，通常不用進行式。"
+ },
+ {
+  "type": "question",
+  "num": "4-7",
+  "qtype": "現在完成式・rise",
+  "star": false,
+  "part6": false,
+  "sentence": "Clothing sales at specialized clothing retailers ______ for the past three years.",
+  "zh": "過去三年以來，專門服飾零售商的服飾銷售已經上升。",
+  "options": [
+   "have been raising",
+   "rose",
+   "are rising",
+   "have risen"
+  ],
+  "answer": 3,
+  "key": "答案：have risen（D）　A have been raising：raise 是及物動詞，後面要有受詞；sales 不是去提高別的東西。B rose：過去式，不能清楚表達持續到現在。C are rising：現在進行式，不如現在完成式搭配 for the past three years。"
+ },
+ {
+  "type": "question",
+  "num": "4-8",
+  "qtype": "過去完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "I ______ seats for the entire marketing team before I heard that Mr. Derby and his assistant would not be attending the conference.",
+  "zh": "在我聽說 Derby 先生和他的助理不會參加會議之前，我已經為整個行銷團隊訂好了座位。",
+  "options": [
+   "have booked",
+   "had booked",
+   "booked",
+   "will have booked"
+  ],
+  "answer": 1,
+  "key": "答案：had booked（B）　A have booked：現在完成式，和 before I heard 的過去時間不搭。C booked：過去簡單式可以描述過去，但不能清楚表達比 heard 更早。D will have booked：未來完成式，不合 heard。"
+ },
+ {
+  "type": "question",
+  "num": "4-9",
+  "qtype": "過去完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "The client ______ the contract before the meeting started.",
+  "zh": "在會議開始之前，客戶已經簽了合約。",
+  "options": [
+   "signs",
+   "signed",
+   "had signed",
+   "has signing"
+  ],
+  "answer": 2,
+  "key": "答案：had signed（C）　A signs：現在簡單式，不符合過去時間。B signed：也是過去式，但沒有清楚表達「在會議開始之前已經完成」。D has signing：結構錯誤，現在完成式是 has signed。"
+ },
+ {
+  "type": "question",
+  "num": "4-10",
+  "qtype": "未來完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "By the end of next month, the company ______ the new training program.",
+  "zh": "到下個月底之前，公司將已經完成新的訓練計畫。",
+  "options": [
+   "completes",
+   "completed",
+   "will complete",
+   "will have completed"
+  ],
+  "answer": 3,
+  "key": "答案：will have completed（D）　A completes：現在簡單式，不符合未來完成概念。B completed：過去式，不符合 next month。C will complete：只表示將會完成，沒有強調「到某時間前已經完成」。"
+ },
+ {
+  "type": "question",
+  "num": "4-11",
+  "qtype": "現在完成式・since",
+  "star": false,
+  "part6": false,
+  "sentence": "The company ______ three new branches since 2020.",
+  "zh": "自 2020 年以來，這家公司已經開設了三間新分店。",
+  "options": [
+   "opened",
+   "has opened",
+   "opens",
+   "opening"
+  ],
+  "answer": 1,
+  "key": "答案：has opened（B）　A opened：過去式只表示過去發生，沒有延續到現在的感覺。C opens：現在簡單式，表示例行，不合 since 2020。D opening：V-ing 不能單獨作主要動詞。"
+ },
+ {
+  "type": "question",
+  "num": "4-12",
+  "qtype": "現在完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "The number of online orders ______ steadily over the past five years.",
+  "zh": "過去五年來，線上訂單數量已穩定增加。",
+  "options": [
+   "increases",
+   "increased",
+   "has increased",
+   "increasing"
+  ],
+  "answer": 2,
+  "key": "答案：has increased（C）　A increases：現在簡單式，表示一般事實，不強調過去到現在的變化。B increased：過去式，沒有連到現在。D increasing：少了 be 動詞。"
+ },
+ {
+  "type": "question",
+  "num": "4-13",
+  "qtype": "過去完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "The technician ______ the problem before the system crashed again.",
+  "zh": "系統再次當機之前，技術人員已經找出問題。",
+  "options": [
+   "identifies",
+   "had identified",
+   "has identifying",
+   "will identify"
+  ],
+  "answer": 1,
+  "key": "答案：had identified（B）　A identifies：現在式，不合過去語境。C has identifying：結構錯誤。D will identify：未來式，不合 before the system crashed。"
+ },
+ {
+  "type": "question",
+  "num": "4-14",
+  "qtype": "現在完成式・since",
+  "star": false,
+  "part6": false,
+  "sentence": "The sales figures ______ significantly since the new manager joined the team.",
+  "zh": "自從新經理加入團隊後，銷售數字已顯著改善。",
+  "options": [
+   "improve",
+   "improved",
+   "have improved",
+   "improving"
+  ],
+  "answer": 2,
+  "key": "答案：have improved（C）　A improve：現在簡單式，不強調從過去到現在。B improved：過去式，沒有延續到現在。D improving：缺少 be 動詞。"
+ },
+ {
+  "type": "question",
+  "num": "4-15",
+  "qtype": "過去完成式・by the time",
+  "star": true,
+  "part6": false,
+  "sentence": "The presentation ______ for an hour by the time the director arrived.",
+  "zh": "在主管抵達時，簡報已經持續了一個小時。",
+  "options": [
+   "has lasted",
+   "lasted",
+   "had lasted",
+   "will last"
+  ],
+  "answer": 2,
+  "key": "答案：had lasted（C）　A has lasted：現在完成式，用於到現在為止。B lasted：過去式，沒有強調到 arrived 之前已持續一小時。D will last：未來式，不合 arrived。"
+ },
+ {
+  "type": "question",
+  "num": "4-16",
+  "qtype": "過去完成進行式",
+  "star": true,
+  "part6": false,
+  "sentence": "The employees ______ the new procedure for two weeks before the final version was approved.",
+  "zh": "在最終版本被核准之前，員工們已經測試新流程兩週了。",
+  "options": [
+   "tested",
+   "have tested",
+   "had been testing",
+   "will test"
+  ],
+  "answer": 2,
+  "key": "答案：had been testing（C）　A tested：只表示過去測試，不強調持續兩週到某個時間點。B have tested：現在完成式，連到現在，不符合 was approved。D will test：未來式，不合過去語境。"
+ },
+ {
+  "type": "grammar",
+  "title": "被動語態：疊加在九種時態上",
+  "subtitle": "不是第十種時態，而是主動/被動的判斷層",
+  "content": "<div class='g-formula'>be 動詞 + 過去分詞（p.p.）</div><table class='g-table'><tr><th>時態</th><th>被動</th></tr><tr><td>過去簡單</td><td>The company <b class='cell-em'>was established</b> by Mr. Chen.</td></tr><tr><td>現在進行</td><td>The chair <b class='cell-em'>is being fixed</b> by Jack.</td></tr><tr><td>現在完成</td><td>Part of the task <b class='cell-em'>has been finished</b> by her.</td></tr><tr><td>過去完成</td><td>A decision <b class='cell-em'>had been made</b> by managers.</td></tr></table><div class='g-note'>不是看到中文「被」才用被動，而是問：主詞是不是動作的接受者？做題時看兩層：第一時態，第二主被動。</div>",
+  "ask": [
+   [
+    "被動語態的公式是什麼？",
+    "be 動詞 + 過去分詞，並隨時態一起變化"
+   ]
+  ]
+ },
+ {
+  "type": "grammar",
+  "title": "被動語態的陷阱與固定句型",
+  "subtitle": "只有及物動詞才能正常變被動；be scheduled/expected/required to V",
+  "content": "<div class='g-wrong-right'><span class='gw'>The accident was happened yesterday. / Sales were risen last year.</span><span class='gr'>The accident happened yesterday. / Sales rose last year.</span></div><div class='g-note'>happen、occur、arrive、rise、fall、take place 是不及物動詞，通常不能用被動——回到第一節易混淆動詞的及物/不及物判斷。</div><table class='g-table'><tr><th>句型</th><th>例句</th></tr><tr><td class='cell-em'>be scheduled to V</td><td>The train is scheduled to arrive at 8:30.</td></tr><tr><td class='cell-em'>be required to V</td><td>Employees are required to attend the training.</td></tr></table><div class='g-highlight'>看到 be ______ to V，要想到可能是 scheduled/expected/required/asked/allowed/encouraged/advised，這些句型長得像被動，但後面接 to V。</div>",
+  "ask": [
+   [
+    "The meeting ______ take place at 3 p.m.（happen類不及物動詞），能不能用被動 was taken place？",
+    "不能，happen/occur/take place 是不及物動詞"
+   ]
+  ]
+ },
+ {
+  "type": "grammar",
+  "title": "V-ing vs. p.p. 當形容詞",
+  "subtitle": "東西造成感覺用 V-ing；人感受到感覺用 p.p.",
+  "content": "<table class='g-table'><tr><th>V-ing（令人）</th><th>p.p.（感到）</th></tr><tr><td class='cell-em'>interesting</td><td>interested</td></tr><tr><td class='cell-em'>confusing</td><td>confused</td></tr><tr><td class='cell-em'>disappointing</td><td>disappointed</td></tr></table><div class='g-ex-box'><div class='g-ex'>The presentation was <b>interesting</b>.<span class='zh2'>簡報讓人覺得有趣</span></div><div class='g-ex'>The audience was <b>interested</b> in the presentation.<span class='zh2'>觀眾感到有興趣</span></div></div><div class='g-note'>這跟被動語態的 p.p. 是同一個過去分詞，只是這裡當形容詞用，不是描述「被做了什麼」。</div>",
+  "ask": [
+   [
+    "形容「東西讓人覺得無聊」該用 boring 還是 bored？",
+    "boring（東西造成的感覺用 V-ing）"
+   ]
+  ]
+ },
+ {
+  "type": "question",
+  "num": "5-1",
+  "qtype": "被動語態・不規則動詞",
+  "star": false,
+  "part6": false,
+  "sentence": "All employees were ______ by the company reorganization.",
+  "zh": "所有員工都受到公司重組的影響。",
+  "options": [
+   "hitting",
+   "hit",
+   "hits",
+   "being hit"
+  ],
+  "answer": 1,
+  "key": "答案：hit（B）　A hitting：V-ing，不是被動需要的 p.p.。C hits：現在式第三人稱單數，不合 were。D being hit：were being hit 是過去進行被動，表當時正在被影響，但本句是一般敘述結果，不需要進行式。"
+ },
+ {
+  "type": "question",
+  "num": "5-2",
+  "qtype": "被動語態①",
+  "star": false,
+  "part6": false,
+  "sentence": "Most business letters ______ typed on stationery with a letterhead.",
+  "zh": "大部分商業書信都會打在有公司抬頭的信紙上。",
+  "options": [
+   "should",
+   "are",
+   "was",
+   "will"
+  ],
+  "answer": 1,
+  "key": "答案：are（B）　A should typed：should 後面若被動要 should be typed。C was typed：主詞是複數 letters，不能用 was。D will typed：未來被動要 will be typed。"
+ },
+ {
+  "type": "question",
+  "num": "5-3",
+  "qtype": "被動語態②",
+  "star": false,
+  "part6": false,
+  "sentence": "Mr. Chen's wallet was ______ yesterday.",
+  "zh": "陳先生的皮夾昨天被偷了。",
+  "options": [
+   "steals",
+   "stolen",
+   "steal",
+   "stealing"
+  ],
+  "answer": 1,
+  "key": "答案：stolen（B）　A steals：現在式第三人稱單數。C steal：原形，不合 was。D stealing：V-ing，不是被動需要的 p.p.。"
+ },
+ {
+  "type": "question",
+  "num": "5-4",
+  "qtype": "過去被動語態",
+  "star": false,
+  "part6": false,
+  "sentence": "The report ______ by the finance department last Friday.",
+  "zh": "這份報告上週五由財務部門準備完成。",
+  "options": [
+   "prepared",
+   "was prepared",
+   "has prepared",
+   "preparing"
+  ],
+  "answer": 1,
+  "key": "答案：was prepared（B）　A prepared：主動語態，變成報告準備別人，不合理。C has prepared：主動完成式，主詞 report 不會準備。D preparing：不是完整動詞。"
+ },
+ {
+  "type": "question",
+  "num": "5-5",
+  "qtype": "未來被動語態",
+  "star": false,
+  "part6": false,
+  "sentence": "Several employees ______ to the new branch office next month.",
+  "zh": "幾位員工下個月將被調到新的分公司。",
+  "options": [
+   "transfer",
+   "transferred",
+   "will be transferred",
+   "have transferred"
+  ],
+  "answer": 2,
+  "key": "答案：will be transferred（C）　A transfer：主動，表示員工自己轉移，不是公司調派。B transferred：過去式，不符合 next month。D have transferred：現在完成式，不符合 next month，也偏主動。"
+ },
+ {
+  "type": "question",
+  "num": "5-6",
+  "qtype": "助動詞被動",
+  "star": false,
+  "part6": false,
+  "sentence": "The proposal ______ carefully before it is submitted to the board.",
+  "zh": "這份提案在提交給董事會前應該被仔細審閱。",
+  "options": [
+   "should review",
+   "should be reviewed",
+   "should reviewing",
+   "should reviewed"
+  ],
+  "answer": 1,
+  "key": "答案：should be reviewed（B）　A should review：主動，變成提案審閱別人，不合理。C should reviewing：should 後面不能接 V-ing。D should reviewed：少了 be，不能形成被動。"
+ },
+ {
+  "type": "grammar",
+  "title": "動詞題解題系統：六步驟",
+  "subtitle": "把五大家族串成一套流程",
+  "content": "<table class='g-table'><tr><th style='width:60px'>Step</th><th>問題</th></tr><tr><td class='snum'>1</td><td>找主詞：單數還是複數？</td></tr><tr><td class='snum'>2</td><td>找時間線索：過去/未來/完成式/過去進行</td></tr><tr><td class='snum'>3</td><td>空格前有沒有助動詞？後面形式被鎖定</td></tr><tr><td class='snum'>4</td><td>判斷主動或被動</td></tr><tr><td class='snum'>5</td><td>判斷簡單／進行／完成／完成進行</td></tr><tr><td class='snum'>6</td><td>檢查固定搭配：be scheduled to / suggest that + 原形</td></tr></table><div class='g-highlight'>看到動詞題，先不要慌，也不要先翻整句中文，照這個流程跑，它其實就是把前面五節的判斷順序串起來而已。</div>",
+  "ask": [
+   [
+    "動詞題第一步該做什麼？",
+    "找主詞，判斷單複數"
+   ]
+  ]
+ },
+ {
+  "type": "question",
+  "num": "示範題1",
+  "qtype": "解題示範",
+  "star": false,
+  "part6": false,
+  "sentence": "The new software ______ by the IT department last week.",
+  "zh": "這套新軟體上週由 IT 部門安裝。",
+  "options": [
+   "installs",
+   "installed",
+   "was installed",
+   "has installed"
+  ],
+  "answer": 2,
+  "key": "答案：was installed（C）　Step1 主詞 software 不會自己安裝，是被 IT department 安裝。Step2 時間線索 last week，過去。Step3 主詞接受動作要被動。過去被動是 was/were + p.p.，software 單數，所以 was installed。"
+ },
+ {
+  "type": "question",
+  "num": "示範題2",
+  "qtype": "解題示範",
+  "star": false,
+  "part6": false,
+  "sentence": "The company ______ its customer service system over the past two years.",
+  "zh": "這間公司在過去兩年間改善了顧客服務系統。",
+  "options": [
+   "improves",
+   "improved",
+   "has improved",
+   "was improved"
+  ],
+  "answer": 2,
+  "key": "答案：has improved（C）　主詞 company 是主動改善系統。時間線索 over the past two years，從過去兩年到現在，用現在完成式。company 單數，所以 has improved。"
+ },
+ {
+  "type": "question",
+  "num": "示範題3",
+  "qtype": "解題示範",
+  "star": false,
+  "part6": false,
+  "sentence": "All employees are required ______ the safety training before Friday.",
+  "zh": "所有員工被要求在星期五前完成安全訓練。",
+  "options": [
+   "complete",
+   "completing",
+   "to complete",
+   "completed"
+  ],
+  "answer": 2,
+  "key": "答案：to complete（C）　這題不是時態，而是被動固定句型：be required to + V，被要求做某事。"
+ },
+ {
+  "type": "grammar",
+  "title": "總複習：30 題混合抽測",
+  "subtitle": "刻意打散順序，不按章節出題",
+  "content": "<div class='g-note'>前面五個家族的練習題，都排在剛學完那個時態的後面，學生其實不用真的判斷時態——只要知道「現在在第幾節」就能猜對方向。真正的考試不會告訴你這題考什麼，所以接下來 30 題刻意打散順序，把 5 大家族的題目混在一起，讓學生從頭練習完整的判斷流程：先找時間線索、再看主詞、再判斷主動被動，而不是照著章節標題回答。</div><div class='g-highlight'>這 30 題是從前面 58 題中挑選、重新編號、打散順序，不是新題目，內容與解析完全相同——用意是測試學生「脫離章節提示後還記不記得判斷邏輯」。</div>"
+ },
+ {
+  "type": "question",
+  "num": "複習1",
+  "qtype": "現在簡單式",
+  "star": false,
+  "part6": false,
+  "sentence": "Customer service ______ always one of our priorities.",
+  "zh": "客戶服務一直是我們的重點之一。",
+  "options": [
+   "is",
+   "will",
+   "have been",
+   "was"
+  ],
+  "answer": 0,
+  "key": "答案：is（A）　B will：未來，語意不如現在事實自然。C have been：主詞應是 has been；且本句只是一般事實。D was：過去式，表示以前是，現在不一定，不合 always 的長期語氣。"
+ },
+ {
+  "type": "question",
+  "num": "複習2",
+  "qtype": "現在完成進行式",
+  "star": true,
+  "part6": false,
+  "sentence": "Ms. Anderson ______ working as the Head of Engineering for 3 years.",
+  "zh": "Anderson 女士擔任工程部主管已經三年了。",
+  "options": [
+   "was",
+   "has been",
+   "will be",
+   "have to"
+  ],
+  "answer": 1,
+  "key": "答案：has been（B）— has been working for 3 years = 已經持續工作三年。　A was working：過去某時正在工作，不強調持續到現在。C will be working：未來將正在工作，不符合 for 3 years。D have to：必須，語意不合，且後面要接原形 work，不是 working。"
+ },
+ {
+  "type": "question",
+  "num": "複習3",
+  "qtype": "lie / lay",
+  "star": false,
+  "part6": false,
+  "sentence": "The manager ______ the documents on the desk before leaving the office.",
+  "zh": "經理離開辦公室前，把文件放在桌上。",
+  "options": [
+   "lied",
+   "laid",
+   "lain",
+   "lay"
+  ],
+  "answer": 1,
+  "key": "答案：laid（B）　A lied：說謊，不合語意。C lain：躺下的過去分詞，不能接 the documents。D lay：可以是 lie「躺下」的過去式，但本句要表示放置，應用 laid。"
+ },
+ {
+  "type": "question",
+  "num": "複習4",
+  "qtype": "過去進行式",
+  "star": false,
+  "part6": false,
+  "sentence": "Ms. Lin ______ a report when the manager called her.",
+  "zh": "經理打電話給林女士時，她正在寫報告。",
+  "options": [
+   "writes",
+   "wrote",
+   "was writing",
+   "has written"
+  ],
+  "answer": 2,
+  "key": "答案：was writing（C）　A writes：現在簡單式，不符合 called。B wrote：只表示寫了，沒有正在進行的感覺。D has written：現在完成式，不和 when the manager called her 搭配。"
+ },
+ {
+  "type": "question",
+  "num": "複習5",
+  "qtype": "被動語態・不規則動詞",
+  "star": false,
+  "part6": false,
+  "sentence": "All employees were ______ by the company reorganization.",
+  "zh": "所有員工都受到公司重組的影響。",
+  "options": [
+   "hitting",
+   "hit",
+   "hits",
+   "being hit"
+  ],
+  "answer": 1,
+  "key": "答案：hit（B）　A hitting：V-ing，不是被動需要的 p.p.。C hits：現在式第三人稱單數，不合 were。D being hit：were being hit 是過去進行被動，表當時正在被影響，但本句是一般敘述結果，不需要進行式。"
+ },
+ {
+  "type": "question",
+  "num": "複習6",
+  "qtype": "過去簡單式・when",
+  "star": false,
+  "part6": false,
+  "sentence": "When Allen ______ to read the technical manual, he failed to understand all of it.",
+  "zh": "當 Allen 試著閱讀技術手冊時，他無法理解全部內容。",
+  "options": [
+   "tries",
+   "tried",
+   "has tried",
+   "had been tried"
+  ],
+  "answer": 1,
+  "key": "答案：tried（B）　A tries：現在式，和 failed 不一致。C has tried：現在完成式，不搭配過去主句 failed。D had been tried：被動，且 try 不適合這樣被動使用於 Allen。"
+ },
+ {
+  "type": "question",
+  "num": "複習7",
+  "qtype": "過去完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "The client ______ the contract before the meeting started.",
+  "zh": "在會議開始之前，客戶已經簽了合約。",
+  "options": [
+   "signs",
+   "signed",
+   "had signed",
+   "has signing"
+  ],
+  "answer": 2,
+  "key": "答案：had signed（C）　A signs：現在簡單式，不符合過去時間。B signed：也是過去式，但沒有清楚表達「在會議開始之前已經完成」。D has signing：結構錯誤，現在完成式是 has signed。"
+ },
+ {
+  "type": "question",
+  "num": "複習8",
+  "qtype": "動詞字尾變化",
+  "star": false,
+  "part6": false,
+  "sentence": "During the meeting, the CEO mentioned that our company must ______ in order to meet the competition.",
+  "zh": "在會議中，執行長提到我們公司必須國際化，以迎向競爭。",
+  "options": [
+   "international",
+   "internationalize",
+   "internationalized",
+   "internationalism"
+  ],
+  "answer": 1,
+  "key": "答案：internationalize（B）　A international：形容詞，不能放在 must 後當主要動詞。C internationalized：過去式或過去分詞，must 後不能接 p.p.。D internationalism：名詞，國際主義，不是動詞。"
+ },
+ {
+  "type": "question",
+  "num": "複習9",
+  "qtype": "現在進行式",
+  "star": false,
+  "part6": false,
+  "sentence": "All reporters ______ to interview the company president.",
+  "zh": "所有記者都正在等著訪問公司總裁。",
+  "options": [
+   "waiting",
+   "been waiting",
+   "are waiting",
+   "was waited"
+  ],
+  "answer": 2,
+  "key": "答案：are waiting（C）　A waiting：缺少 be 動詞。B been waiting：前面需要 have/has，例如 have been waiting。D was waited：was 是單數過去，且 waited 被動語意不合。"
+ },
+ {
+  "type": "question",
+  "num": "複習10",
+  "qtype": "現在簡單式",
+  "star": false,
+  "part6": false,
+  "sentence": "Jerry always ______ for work at 8 a.m.",
+  "zh": "Jerry 通常早上八點出發去上班。",
+  "options": [
+   "leaves",
+   "leave",
+   "left",
+   "leaving"
+  ],
+  "answer": 0,
+  "key": "答案：leaves（A）— Jerry leaves for work at 8 a.m.　B leave：主詞單數要加 s。C left：過去式，不符合 always 的習慣語氣。D leaving：缺 be 動詞，不能單獨當主要動詞。"
+ },
+ {
+  "type": "question",
+  "num": "複習11",
+  "qtype": "過去完成式①",
+  "star": false,
+  "part6": false,
+  "sentence": "I ______ worked in the software industry for 15 years before I changed my career.",
+  "zh": "在我轉換職涯之前，我已經在軟體產業工作了十五年。",
+  "options": [
+   "will be",
+   "had",
+   "was",
+   "had been to"
+  ],
+  "answer": 1,
+  "key": "答案：had（B）　A will be：未來，不合 before I changed。C was worked：被動或錯誤結構，不合句意。D had been to：去過某地，不可接 worked。"
+ },
+ {
+  "type": "question",
+  "num": "複習12",
+  "qtype": "raise an issue",
+  "star": false,
+  "part6": false,
+  "sentence": "The supervisor ______ the issue during yesterday's staff meeting.",
+  "zh": "主管在昨天的員工會議中提出了這個議題。",
+  "options": [
+   "rose",
+   "raised",
+   "risen",
+   "rising"
+  ],
+  "answer": 1,
+  "key": "答案：raised（B）　A rose：rise 是不及物動詞，不能直接接 issue。C risen：過去分詞，缺少 has/had。D rising：不是完整動詞。"
+ },
+ {
+  "type": "question",
+  "num": "複習13",
+  "qtype": "未來被動語態",
+  "star": false,
+  "part6": false,
+  "sentence": "Several employees ______ to the new branch office next month.",
+  "zh": "幾位員工下個月將被調到新的分公司。",
+  "options": [
+   "transfer",
+   "transferred",
+   "will be transferred",
+   "have transferred"
+  ],
+  "answer": 2,
+  "key": "答案：will be transferred（C）　A transfer：主動，表示員工自己轉移，不是公司調派。B transferred：過去式，不符合 next month。D have transferred：現在完成式，不符合 next month，也偏主動。"
+ },
+ {
+  "type": "question",
+  "num": "複習14",
+  "qtype": "現在簡單式・主詞動詞一致",
+  "star": false,
+  "part6": false,
+  "sentence": "The marketing team ______ a new campaign every spring.",
+  "zh": "行銷團隊每年春天都會推出新的活動。",
+  "options": [
+   "launch",
+   "launches",
+   "launched",
+   "launching"
+  ],
+  "answer": 1,
+  "key": "答案：launches（B）　A launch：主詞單數應加 s。C launched：過去式，但 every spring 表示例行性，不是單一過去事件。D launching：V-ing 不能單獨當主要動詞，需要 be 動詞。"
+ },
+ {
+  "type": "question",
+  "num": "複習15",
+  "qtype": "現在完成式・rise",
+  "star": false,
+  "part6": false,
+  "sentence": "Clothing sales at specialized clothing retailers ______ for the past three years.",
+  "zh": "過去三年以來，專門服飾零售商的服飾銷售已經上升。",
+  "options": [
+   "have been raising",
+   "rose",
+   "are rising",
+   "have risen"
+  ],
+  "answer": 3,
+  "key": "答案：have risen（D）　A have been raising：raise 是及物動詞，後面要有受詞；sales 不是去提高別的東西。B rose：過去式，不能清楚表達持續到現在。C are rising：現在進行式，不如現在完成式搭配 for the past three years。"
+ },
+ {
+  "type": "question",
+  "num": "複習16",
+  "qtype": "被動語態・founded",
+  "star": true,
+  "part6": false,
+  "sentence": "The bank of Barclays, which ______ in 1690, is the oldest company in the United Kingdom.",
+  "zh": "Barclays 銀行創立於 1690 年，是英國歷史最悠久的公司。",
+  "options": [
+   "found",
+   "was found",
+   "was finding",
+   "was founded"
+  ],
+  "answer": 3,
+  "key": "答案：was founded（D）　A found：可能是 find 的過去式，但這裡不是找到銀行。B was found：意思變成被找到，不是被創立。C was finding：過去進行式，且主詞 bank 不會正在尋找。"
+ },
+ {
+  "type": "question",
+  "num": "複習17",
+  "qtype": "過去進行式・背景動作",
+  "star": false,
+  "part6": false,
+  "sentence": "The CEO ______ in Tokyo when the announcement was made.",
+  "zh": "公告發布時，執行長正在東京出差。",
+  "options": [
+   "is traveling",
+   "travels",
+   "was traveling",
+   "has traveled"
+  ],
+  "answer": 2,
+  "key": "答案：was traveling（C）　A is traveling：現在進行式，不符合 was made。B travels：現在簡單式，表示習慣。D has traveled：現在完成式，不表示當時正在進行。"
+ },
+ {
+  "type": "question",
+  "num": "複習18",
+  "qtype": "if 條件句用現在式表未來",
+  "star": false,
+  "part6": false,
+  "sentence": "Please notify us if the delivery date ______.",
+  "zh": "如果交貨日期有變，請通知我們。",
+  "options": [
+   "changes",
+   "changed",
+   "changing",
+   "will change"
+  ],
+  "answer": 0,
+  "key": "答案：changes（A）　B changed：過去式，不合語意。C changing：不是完整動詞。D will change：條件副詞子句中通常不用 will。"
+ },
+ {
+  "type": "question",
+  "num": "複習19",
+  "qtype": "未來完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "Before you come back, I shall have ______ the report already.",
+  "zh": "在你回來之前，我應該已經完成報告了。",
+  "options": [
+   "finished",
+   "finishing",
+   "finish",
+   "finishes"
+  ],
+  "answer": 0,
+  "key": "答案：finished（A）　B finishing：V-ing，不合完成式。C finish：原形，不合 have + p.p.。D finishes：現在式第三人稱單數，不合 shall have。"
+ },
+ {
+  "type": "question",
+  "num": "複習20",
+  "qtype": "-ize 動詞・plan to V",
+  "star": false,
+  "part6": false,
+  "sentence": "The company plans to ______ its services to meet local customer needs.",
+  "zh": "公司計畫客製化其服務，以符合當地顧客需求。",
+  "options": [
+   "customization",
+   "customize",
+   "customized",
+   "customizable"
+  ],
+  "answer": 1,
+  "key": "答案：customize（B）　A customization：名詞，不能接在 to 後當動詞。C customized：過去式/p.p.，不符合 plan to + V。D customizable：形容詞，可客製化的，不是動詞。"
+ },
+ {
+  "type": "question",
+  "num": "複習21",
+  "qtype": "被動語態②",
+  "star": false,
+  "part6": false,
+  "sentence": "Mr. Chen's wallet was ______ yesterday.",
+  "zh": "陳先生的皮夾昨天被偷了。",
+  "options": [
+   "steals",
+   "stolen",
+   "steal",
+   "stealing"
+  ],
+  "answer": 1,
+  "key": "答案：stolen（B）　A steals：現在式第三人稱單數。C steal：原形，不合 was。D stealing：V-ing，不是被動需要的 p.p.。"
+ },
+ {
+  "type": "question",
+  "num": "複習22",
+  "qtype": "過去簡單式・明確過去時間",
+  "star": false,
+  "part6": false,
+  "sentence": "The company ______ its headquarters to Singapore in 2018.",
+  "zh": "這家公司在 2018 年將總部遷到新加坡。",
+  "options": [
+   "move",
+   "moves",
+   "moved",
+   "has moved"
+  ],
+  "answer": 2,
+  "key": "答案：moved（C）　A move：原形，不合主詞與時態。B moves：現在簡單式，不合 in 2018。D has moved：現在完成式通常不和明確過去時間 in 2018 搭配。"
+ },
+ {
+  "type": "question",
+  "num": "複習23",
+  "qtype": "現在完成式・since",
+  "star": false,
+  "part6": false,
+  "sentence": "The company ______ three new branches since 2020.",
+  "zh": "自 2020 年以來，這家公司已經開設了三間新分店。",
+  "options": [
+   "opened",
+   "has opened",
+   "opens",
+   "opening"
+  ],
+  "answer": 1,
+  "key": "答案：has opened（B）　A opened：過去式只表示過去發生，沒有延續到現在的感覺。C opens：現在簡單式，表示例行，不合 since 2020。D opening：V-ing 不能單獨作主要動詞。"
+ },
+ {
+  "type": "question",
+  "num": "複習24",
+  "qtype": "-ify 動詞・過去式",
+  "star": false,
+  "part6": false,
+  "sentence": "The HR manager ______ all applicants by email yesterday.",
+  "zh": "人資經理昨天用電子郵件通知了所有申請者。",
+  "options": [
+   "notification",
+   "notified",
+   "notifying",
+   "notify"
+  ],
+  "answer": 1,
+  "key": "答案：notified（B）　A notification：名詞，通知。C notifying：V-ing，不能單獨作主要動詞。D notify：原形，不符合 yesterday。"
+ },
+ {
+  "type": "question",
+  "num": "複習25",
+  "qtype": "未來進行式",
+  "star": false,
+  "part6": false,
+  "sentence": "We will be ______ in Linda's office when you come this afternoon.",
+  "zh": "你今天下午來的時候，我們會正在 Linda 的辦公室討論。",
+  "options": [
+   "discussing",
+   "discussed",
+   "discuss",
+   "discusses"
+  ],
+  "answer": 0,
+  "key": "答案：discussing（A）　B discussed：過去分詞，會變成被動，不合句意。C discuss：原形，will be 後不直接接原形。D discusses：第三人稱單數，不合 will be。"
+ },
+ {
+  "type": "question",
+  "num": "複習26",
+  "qtype": "未來式・時間子句",
+  "star": false,
+  "part6": false,
+  "sentence": "You ______ report to Mr. Johnson after you join the sales team.",
+  "zh": "你加入業務團隊後，將向 Johnson 先生報告進度。",
+  "options": [
+   "might be",
+   "were",
+   "will",
+   "should have"
+  ],
+  "answer": 2,
+  "key": "答案：will（C）　A might be report：might be 後面不能直接接 report。B were report：結構錯誤。D should have report：should have 後面要 p.p.，且語意是過去本來應該，不合句意。"
+ },
+ {
+  "type": "question",
+  "num": "複習27",
+  "qtype": "過去完成進行式",
+  "star": true,
+  "part6": false,
+  "sentence": "The employees ______ the new procedure for two weeks before the final version was approved.",
+  "zh": "在最終版本被核准之前，員工們已經測試新流程兩週了。",
+  "options": [
+   "tested",
+   "have tested",
+   "had been testing",
+   "will test"
+  ],
+  "answer": 2,
+  "key": "答案：had been testing（C）　A tested：只表示過去測試，不強調持續兩週到某個時間點。B have tested：現在完成式，連到現在，不符合 was approved。D will test：未來式，不合過去語境。"
+ },
+ {
+  "type": "question",
+  "num": "複習28",
+  "qtype": "被動語態・found",
+  "star": true,
+  "part6": false,
+  "sentence": "The university was ______ by Dr. Peters in 1988.",
+  "zh": "這所大學是 Peters 博士在 1988 年創立的。",
+  "options": [
+   "find",
+   "found",
+   "founds",
+   "founded"
+  ],
+  "answer": 3,
+  "key": "答案：founded（D）　A find：找到，且是原形，不合 was。B found：可以是 find 的過去式，但這裡不是找到大學，而是創立大學。C founds：現在式第三人稱單數，不合 was。"
+ },
+ {
+  "type": "question",
+  "num": "複習29",
+  "qtype": "現在完成式",
+  "star": false,
+  "part6": false,
+  "sentence": "We have ______ new lines of business training videos.",
+  "zh": "我們已經新增了幾條新的商業訓練影片系列。",
+  "options": [
+   "added",
+   "had",
+   "adding",
+   "add"
+  ],
+  "answer": 0,
+  "key": "答案：added（A）　B had：have had 可以成立，但語意不自然，不是新增。C adding：have adding 結構錯。D add：have 後面不能直接接原形作完成式。"
+ },
+ {
+  "type": "question",
+  "num": "複習30",
+  "qtype": "過去簡單式・不規則動詞",
+  "star": false,
+  "part6": false,
+  "sentence": "The assistant ______ the package to the wrong department yesterday.",
+  "zh": "助理昨天把包裹送到錯誤的部門。",
+  "options": [
+   "send",
+   "sends",
+   "sent",
+   "sending"
+  ],
+  "answer": 2,
+  "key": "答案：sent（C）　A send：原形，不符合 yesterday。B sends：現在簡單式第三人稱單數，不符合 yesterday。D sending：V-ing 不能單獨作主要動詞。"
+ }
+];
+const TOTAL = SLIDES.length;
+let current=0, revealed=false, zhVisible=false;
+let askStep=0;
+
+function applyZh(){document.querySelectorAll('.zh-target').forEach(el=>el.classList.toggle('zh-hidden',!zhVisible))}
+function toggleZh(){zhVisible=!zhVisible;applyZh();const b=document.getElementById('zh-btn');b.textContent=zhVisible?'中文 ON':'中文 OFF';b.classList.toggle('on',zhVisible)}
+
+function showBtn(id,show){document.getElementById(id).classList.toggle('hidden',!show)}
+function setText(id,t){const el=document.getElementById(id);if(el)el.textContent=t}
+
+function render(){
+  const s=SLIDES[current];
+  revealed=false; askStep=0;
+  document.getElementById('progress-text').textContent=(current+1)+' / '+TOTAL;
+  document.getElementById('progress-bar').style.width=Math.round((current+1)/TOTAL*100)+'%';
+  document.getElementById('prev-btn').disabled=current===0;
+  document.getElementById('next-btn').disabled=current===TOTAL-1;
+  const labels={grammar:'文法教學',article:'閱讀文章',question:'練習題'};
+  setText('slide-type-label', labels[s.type]||'');
+  showBtn('reveal-btn', s.type==='question');
+  showBtn('next-item-btn', false);
+  showBtn('ask-btn', s.type==='grammar' && s.ask && s.ask.length>0);
+  showBtn('zh-btn', s.type==='question'||s.type==='article');
+  const el=document.getElementById('slide-content');
+
+  if(s.type==='grammar'){
+    const hasAsk=s.ask&&s.ask.length>0;
+    el.innerHTML=`
+      <div class="gram-label">Lesson 11 · Chapter 7 動詞與時態</div>
+      <div class="gram-title">${s.title}</div>
+      <div class="gram-sub">${s.subtitle}</div>
+      ${s.content}
+      ${hasAsk?`<div id="ask-panel" style="display:none">
+        <div class="ask-progress" id="ask-prog"></div>
+        <div class="ask-q" id="ask-q"></div>
+        <div class="ask-a" id="ask-a"></div>
+      </div>`:''}
+    `;
+    if(hasAsk) document.getElementById('ask-btn').textContent='❓ 問學生 ('+s.ask.length+')';
+  }
+  else{
+    const wide = s.options.some(o=>o.length>28);
+    const opts=s.options.map((o,i)=>`<div class="q-opt" id="opt-${i}"><span class="q-opt-lbl">${String.fromCharCode(65+i)}</span>${o}</div>`).join('');
+    el.innerHTML=`
+      <div class="q-header">
+        <span class="q-num">${s.num}</span>
+        <span class="q-type-tag">${s.qtype}</span>
+        ${s.star?'<span class="q-star">⭐ 重點題</span>':''}
+        ${s.part6?'<span class="q-p6">Part 6</span>':''}
+      </div>
+      <div class="q-sentence">${s.sentence}</div>
+      <div class="q-zh zh-target">${s.zh}</div>
+      <div class="q-opts ${wide?'wide':''}">${opts}</div>
+      <div class="key-reveal" id="key-reveal">
+        <strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong>
+        &nbsp;—&nbsp; ${s.key}
+      </div>`;
+  }
+  setTimeout(applyZh,0);
+  resetRevealBtn();
+}
+
+function resetRevealBtn(){
+  const b=document.getElementById('reveal-btn');
+  b.textContent='揭曉答案 ▼';b.style.background='';b.style.color='';
+}
+
+function reveal(){
+  const s=SLIDES[current];
+  const b=document.getElementById('reveal-btn');
+  if(!revealed){
+    revealed=true;
+    s.options.forEach((_,i)=>{
+      const el=document.getElementById('opt-'+i);
+      if(i===s.answer) el.classList.add('correct');
+      else el.classList.add('dimmed');
+    });
+    document.getElementById('key-reveal').classList.add('show');
+    b.textContent='隱藏答案 ▲';b.style.background='rgba(5,150,105,.25)';b.style.color='#34D399';
+  } else {
+    revealed=false;
+    s.options.forEach((_,i)=>{
+      const el=document.getElementById('opt-'+i);
+      el.classList.remove('correct','dimmed');
+    });
+    document.getElementById('key-reveal').classList.remove('show');
+    resetRevealBtn();
+  }
+}
+
+function nextItem(){ /* unused in Lesson 11 */ }
+
+function nextAsk(){
+  const s=SLIDES[current];
+  const panel=document.getElementById('ask-panel');
+  const b=document.getElementById('ask-btn');
+  if(!panel) return;
+  if(askStep===0) panel.style.display='block';
+  if(askStep<s.ask.length){
+    const [q,a]=s.ask[askStep];
+    document.getElementById('ask-q').textContent=q;
+    document.getElementById('ask-a').textContent=a;
+    document.getElementById('ask-a').classList.remove('show');
+    document.getElementById('ask-prog').textContent='問題 '+(askStep+1)+' / '+s.ask.length;
+    const oldStep=askStep;
+    b.onclick=function(){
+      const aa=document.getElementById('ask-a');
+      if(!aa.classList.contains('show')){
+        aa.classList.add('show');
+        b.onclick=function(){askStep=oldStep+1;nextAsk()};
+      }
+    };
+    askStep++;
+  } else {
+    panel.style.display='none';
+    askStep=0;
+    b.textContent='❓ 問學生 ('+s.ask.length+')';
+    b.onclick=nextAsk;
+  }
+}
+
+function navigate(dir){
+  current=Math.max(0,Math.min(TOTAL-1,current+dir));
+  render();
+  document.getElementById('slide-area').scrollTop=0;
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();navigate(1)}
+  else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();navigate(-1)}
+  else if(e.key===' '||e.key==='Enter'){
+    e.preventDefault();
+    const s=SLIDES[current];
+    if(s.type==='question') reveal();
+    else if(s.type==='grammar'&&s.ask&&s.ask.length>0) document.getElementById('ask-btn').click();
+  }
+});
+
+render();
+</script>
+</body>
+</html>

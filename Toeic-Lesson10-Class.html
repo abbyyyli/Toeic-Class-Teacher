@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 10 上課投影版</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--amber:#F59E0B;--green:#059669;--green-lt:#D1FAE5;--green-dk:#064E3B;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--gray-400:#94A3B8}
+html,body{height:100%;overflow:hidden}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:white;display:flex;flex-direction:column}
+
+#topbar{height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+.top-badge{background:var(--amber);color:var(--navy);font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;font-family:Inter,sans-serif;letter-spacing:.5px}
+.top-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.7);margin-left:12px}
+.top-right{display:flex;align-items:center;gap:16px}
+#progress-text{font-family:"JetBrains Mono",monospace;font-size:13px;color:rgba(255,255,255,.45)}
+.pbwrap{width:140px;height:4px;background:rgba(255,255,255,.1);border-radius:2px}
+#progress-bar{height:100%;background:var(--amber);border-radius:2px;transition:width .3s}
+
+#slide-area{flex:1;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:28px 40px 16px}
+.slide{width:100%;max-width:940px;animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+#bottombar{height:64px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.07)}
+.nav-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:white;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.nav-btn:hover{background:rgba(255,255,255,.14)}
+.nav-btn:disabled{opacity:.25;cursor:default}
+.center-btns{display:flex;align-items:center;gap:10px;flex-direction:column}
+#slide-type-label{font-size:11px;color:rgba(255,255,255,.3);font-family:"JetBrains Mono",monospace;text-transform:uppercase;letter-spacing:1px}
+.action-row{display:flex;gap:8px}
+.action-btn{border:none;border-radius:10px;padding:9px 22px;font-size:14px;font-weight:800;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.action-btn.hidden{display:none}
+#reveal-btn{background:var(--amber);color:var(--navy)}
+#reveal-btn:hover{background:#FBBF24}
+#next-item-btn{background:rgba(14,165,233,.2);color:#38BDF8;border:1px solid rgba(14,165,233,.3)}
+#next-item-btn:hover{background:rgba(14,165,233,.3)}
+#ask-btn{background:rgba(245,158,11,.15);color:var(--amber);border:1px solid rgba(245,158,11,.25)}
+#ask-btn:hover{background:rgba(245,158,11,.25)}
+.zh-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.45);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:"Noto Sans TC",sans-serif;transition:all .15s}
+.zh-btn.on{background:rgba(14,165,233,.15);border-color:rgba(14,165,233,.4);color:#38BDF8}
+.zh-hidden{display:none!important}
+
+.gram-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--amber);margin-bottom:8px}
+.gram-title{font-size:28px;font-weight:900;font-family:Inter,sans-serif;margin-bottom:5px}
+.gram-sub{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:20px}
+.g-question{font-size:19px;font-weight:700;background:rgba(245,158,11,.12);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:18px}
+.g-highlight{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.18);border-radius:8px;padding:11px 15px;font-size:13px;color:rgba(255,255,255,.8)}
+.g-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:14px}
+.g-table th,.g-table td{padding:9px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06)}
+.g-table th{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.35);font-weight:700}
+.cell-em{font-family:"JetBrains Mono",monospace;color:var(--amber);font-weight:700;font-size:14px}
+.g-table .snum{font-family:"JetBrains Mono",monospace;font-weight:800;color:var(--navy);background:var(--amber);text-align:center;border-radius:6px;width:36px}
+.g-formula{font-family:"JetBrains Mono",monospace;background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.2);border-radius:8px;padding:11px 15px;font-size:14px;color:#38BDF8;margin-bottom:14px}
+.g-ex-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:4px 16px;margin-bottom:14px}
+.g-ex{font-size:14px;line-height:1.7;padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+.g-ex:last-child{border-bottom:none}
+.g-ex b{color:var(--amber);font-weight:700}
+.g-ex .zh2{display:block;font-size:12px;color:rgba(255,255,255,.35);margin-top:2px}
+.g-wrong-right{background:rgba(220,38,38,.06);border:1px solid rgba(220,38,38,.15);border-radius:8px;padding:10px 15px;margin-bottom:14px;font-size:13px}
+.g-wrong-right .gw{color:#F87171;text-decoration:line-through;display:block;margin-bottom:4px}
+.g-wrong-right .gr{color:#34D399;display:block;font-weight:700}
+.g-note{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:11px 15px;font-size:13px;color:rgba(255,255,255,.8);margin-bottom:14px}
+.g-sub{font-size:12px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+
+#ask-panel{background:rgba(245,158,11,.08);border:1.5px solid rgba(245,158,11,.2);border-radius:12px;padding:16px 20px;margin-top:16px}
+.ask-progress{font-size:11px;color:rgba(255,255,255,.35);font-family:"JetBrains Mono",monospace;margin-bottom:10px}
+.ask-q{font-size:16px;font-weight:700;color:white;margin-bottom:10px}
+.ask-a{display:none;background:rgba(5,150,105,.15);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:10px 14px;font-size:15px;color:#34D399;font-weight:700}
+.ask-a.show{display:block}
+
+/* ARTICLE */
+.art-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--sky);margin-bottom:10px}
+.art-title{font-size:22px;font-weight:800;font-family:Inter,sans-serif;margin-bottom:5px}
+.art-theme{font-size:13px;color:rgba(255,255,255,.35);margin-bottom:16px}
+.art-text{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:20px 22px;font-size:15px;line-height:2.1;color:rgba(255,255,255,.85);margin-bottom:12px}
+.art-text p{margin-bottom:12px}
+.art-text p:last-child{margin-bottom:0}
+.art-blank{color:var(--amber);font-weight:800;background:rgba(245,158,11,.12);padding:1px 7px;border-radius:4px}
+.art-ins{background:rgba(124,58,237,.18);color:#A78BFA;font-weight:800;padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px}
+.art-chat{display:flex;gap:10px;margin-bottom:10px;font-size:14px}
+.art-chat b{color:var(--sky);min-width:50px;flex-shrink:0}
+.art-zh{font-size:12px;color:rgba(255,255,255,.3);line-height:1.8}
+
+/* QUESTION */
+.q-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.q-num{font-family:Inter,sans-serif;font-size:13px;font-weight:800;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:6px}
+.q-type-tag{font-size:12px;font-weight:700;background:rgba(14,165,233,.15);color:var(--sky);padding:4px 12px;border-radius:6px}
+.q-star{font-size:12px;font-weight:700;background:rgba(245,158,11,.15);color:var(--amber);padding:4px 10px;border-radius:6px}
+.q-p6{font-size:12px;font-weight:700;background:rgba(124,58,237,.15);color:#A78BFA;padding:4px 10px;border-radius:6px}
+.q-sentence{font-size:17px;font-weight:500;line-height:1.9;background:rgba(255,255,255,.05);border-left:3px solid rgba(255,255,255,.2);border-radius:0 10px 10px 0;padding:13px 17px;margin-bottom:5px}
+.q-sentence u{text-decoration:none;background:rgba(245,158,11,.18);color:var(--amber);font-weight:700;padding:0 6px;border-radius:4px}
+.q-zh{font-size:12px;color:rgba(255,255,255,.3);margin-bottom:16px;padding-left:2px}
+.q-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:0}
+.q-opts.wide{grid-template-columns:1fr}
+.q-opt{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 15px;font-size:14px;transition:all .2s}
+.q-opt-lbl{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;font-family:Inter,sans-serif}
+.q-opt.correct{background:rgba(5,150,105,.16);border-color:var(--green)}
+.q-opt.correct .q-opt-lbl{background:var(--green);color:white}
+.q-opt.dimmed{opacity:.28}
+.key-reveal{display:none;background:rgba(245,158,11,.08);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:11px 17px;font-size:14px;color:rgba(255,255,255,.85);margin-top:12px}
+.key-reveal.show{display:block}
+.key-reveal strong{color:var(--amber)}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <div style="display:flex;align-items:center">
+    <span class="top-badge">上課投影</span>
+    <span class="top-title">Lesson 10 · Chapter 6 助動詞 Auxiliary Verbs</span>
+  </div>
+  <div class="top-right">
+    <span id="progress-text">1 / 66</span>
+    <div class="pbwrap"><div id="progress-bar" style="width:2%"></div></div>
+  </div>
+</div>
+
+<div id="slide-area"><div class="slide" id="slide-content"></div></div>
+
+<div id="bottombar">
+  <button class="nav-btn" id="prev-btn" onclick="navigate(-1)" disabled>← 上一頁</button>
+  <div class="center-btns">
+    <span id="slide-type-label"></span>
+    <div class="action-row">
+      <button class="zh-btn" id="zh-btn" onclick="toggleZh()">中文 OFF</button>
+      <button class="action-btn hidden" id="ask-btn" onclick="nextAsk()">❓ 問學生</button>
+      <button class="action-btn hidden" id="next-item-btn" onclick="nextItem()">下一題 ▶</button>
+      <button class="action-btn hidden" id="reveal-btn" onclick="reveal()">揭曉答案 ▼</button>
+    </div>
+  </div>
+  <button class="nav-btn" id="next-btn" onclick="navigate(1)">下一頁 →</button>
+</div>
+
+<script>
+const SLIDES = [
+{
+"type": "grammar",
+"title": "助動詞基本系統",
+"subtitle": "助動詞不是動作，而是語氣",
+"content": "<div class='g-formula'>主詞 + 助動詞（語氣） + 原形動詞（真正動作）</div><div class='g-ex-box'><div class='g-ex'>The employee <b>should</b> <i>report</i> the problem.<span class='zh2'>should 是語氣（應該），report 才是真正動作（回報）。</span></div></div><table class='g-table'><tr><th style='width:70px'>規則</th><th>內容</th></tr><tr><td class='snum'>1</td><td>can / could / may / might / must / should / shall / will / would + 原形動詞</td></tr></table><div class='g-ex-box'><div class='g-ex'>I <b>can</b> finish the project on time.<span class='zh2'>我可以準時完成專案。</span></div><div class='g-ex'>She <b>should</b> attend the meeting.<span class='zh2'>她應該參加會議。</span></div><div class='g-ex'>They <b>might</b> arrive late.<span class='zh2'>他們可能會晚到。</span></div><div class='g-ex'>The manager <b>will</b> review the report tomorrow.<span class='zh2'>經理明天會審閱報告。</span></div></div><div class='g-wrong-right'><span class='gw'>should to finish / can helps / may is late</span><span class='gr'>should finish / can help / may be late — 助動詞後面不加 to，也不因主詞變化</span></div>",
+"ask": [
+[
+"助動詞不是主要動作，那真正的動作在哪裡？",
+"在助動詞後面的原形動詞，例如 should report 裡的 report"
+],
+[
+"He can 後面接哪一種動詞形式？",
+"原形動詞，例如 can finish，不是 can finishes"
+]
+]
+},
+{
+"type": "grammar",
+"title": "核心規則：不變化 ＋ 特殊組合",
+"subtitle": "情態助動詞本身不因主詞變化",
+"content": "<div class='g-wrong-right'><span class='gw'>He cans finish the work. / She mays come later. / The manager shoulds review the report.</span><span class='gr'>He can finish the work. / She may come later. / The manager should review the report.</span></div><div class='g-note'>can、may、should、must 這些情態助動詞本身不加 s，就算主詞是 he、she、the manager 也一樣。要注意的是 have to，因為它比較像一般動詞片語，所以會有 has to、had to 的變化。</div><table class='g-table'><tr><th style='width:170px'>結構</th><th>後面接什麼</th><th>意思</th></tr><tr><td class='cell-em'>have to / has to / had to + V</td><td>原形動詞</td><td>必須；不得不</td></tr><tr><td class='cell-em'>ought to + V</td><td>原形動詞</td><td>應該</td></tr><tr><td class='cell-em'>had better + V（不加to）</td><td>原形動詞</td><td>最好；不然可能有後果</td></tr></table>",
+"ask": [
+[
+"have to 和 ought to 裡面都有 to，所以後面接原形動詞；那 had better 後面加不加 to？",
+"不加。You had better leave now.（不是 had better to leave）"
+]
+]
+},
+{
+"type": "grammar",
+"title": "六大語氣分類",
+"subtitle": "先問語氣，再選助動詞",
+"content": "<table class='g-table'><tr><th>功能</th><th>常見助動詞 / 結構</th></tr><tr><td>能力 / 可能</td><td>can, could, may, might</td></tr><tr><td>客氣請求</td><td>May I, Could I, Would you, Could you, Can you</td></tr><tr><td>必須 / 義務</td><td>must, have to, have got to</td></tr><tr><td>禁止</td><td>must not</td></tr><tr><td>建議</td><td>should, ought to, had better, could</td></tr><tr><td>偏好</td><td>would rather, prefer</td></tr></table><div class='g-note'>今天不要把助動詞當成一堆孤立單字，要放進語氣分類。問可不可以 → can / could / may；請別人做事 → Would you / Could you；規定必須 → must / have to；建議 → should / ought to / had better；偏好 → would rather。</div>",
+"ask": [
+[
+"請別人做事，最常想到哪兩個助動詞？",
+"Would you / Could you"
+],
+[
+"規定、必須，最常想到哪個？",
+"must / have to"
+]
+]
+},
+{
+"type": "grammar",
+"title": "深化觀念：助動詞控制語氣",
+"subtitle": "動作不變，語氣一變態度全變",
+"content": "<div class='g-note'>助動詞不是在描述動作本身，而是在描述說話者對這個動作的態度。真正的動作都是 submit the report，改變的是前面的助動詞，助動詞一變，語氣就變。</div><table class='g-table'><tr><th>句子</th><th>語氣</th></tr><tr><td>You <b class='cell-em'>can</b> submit the report.</td><td>能力或允許</td></tr><tr><td>You <b class='cell-em'>must</b> submit the report.</td><td>強制</td></tr><tr><td>You <b class='cell-em'>should</b> submit the report.</td><td>建議</td></tr><tr><td>You <b class='cell-em'>may</b> submit the report.</td><td>可以／可能性</td></tr><tr><td>You <b class='cell-em'>might</b> submit the report.</td><td>可能，但不確定</td></tr><tr><td>You <b class='cell-em'>had better</b> submit the report.</td><td>強烈建議，帶一點警告</td></tr></table><div class='g-highlight'>這就是為什麼 TOEIC 很愛考助動詞：商務英文裡語氣很重要。助動詞決定整句話的禮貌與準確度。</div>",
+"ask": [
+[
+"同樣是 submit the report，must 和 should 的語氣差別在哪？",
+"must 是強制、一定要做；should 只是建議"
+]
+]
+},
+{
+"type": "grammar",
+"title": "客氣要求 1：請求自己可不可以做",
+"subtitle": "May I / Could I / Can I + V...?",
+"content": "<div class='g-formula'>May I / Could I / Can I + V...?</div><table class='g-table'><tr><th style='width:170px'>句型</th><th>禮貌感</th></tr><tr><td class='cell-em'>May I...?</td><td>最正式、最禮貌</td></tr><tr><td class='cell-em'>Could I...?</td><td>禮貌、自然</td></tr><tr><td class='cell-em'>Can I...?</td><td>較口語、較直接</td></tr></table><div class='g-ex-box'><div class='g-ex'>May I borrow this novel for a week?<span class='zh2'>我可以借這本小說一個星期嗎？</span></div><div class='g-ex'>Could I borrow your car for two days, please?<span class='zh2'>我可以借你的車兩天嗎？</span></div></div><div class='g-note'>May I 是最正式的，商業場合、正式場合、想要很有禮貌時可以用。如果題目出現 please、business meeting、customer、agenda，通常要選禮貌一點的 Would / Could / May。</div>",
+"ask": [
+[
+"商務email裡想很有禮貌地問「我可以借用會議室嗎」，用哪個最正式？",
+"May I use the meeting room?"
+]
+]
+},
+{
+"type": "grammar",
+"title": "客氣要求 2：請別人幫你做",
+"subtitle": "Would you / Could you / Can you + V, please?",
+"content": "<div class='g-formula'>Would you / Could you / Will you + V, please?　　Can you + V?</div><div class='g-ex-box'><div class='g-ex'>Would you give me a ride home, please?<span class='zh2'>你可以載我回家嗎？</span></div><div class='g-ex'>Could you pass around the meeting agenda?<span class='zh2'>你可以把會議議程傳給大家嗎？</span></div></div><div class='g-note'>Would you 和 Could you 都很常見也很禮貌；Can you 比較直接但不算錯；Will you 語氣較直接，通常加 please 比較自然。考題若問 ______ you send a meeting invitation to all members, please? 後面有 you、有 please，而且是請對方做事，Would you 最自然。</div>",
+"ask": [
+[
+"______ you send a meeting invitation to all members, please? 該選哪個？",
+"Would（禮貌請求對方做事，加 please）"
+]
+]
+},
+{
+"type": "grammar",
+"title": "客氣要求 3：核心差別＋常見陷阱",
+"subtitle": "誰做動作是關鍵，May you 不成立",
+"content": "<table class='g-table'><tr><th>句子</th><th>誰做動作？</th></tr><tr><td>May I open the window?</td><td>我做</td></tr><tr><td>Would you open the window?</td><td>你做（請你）</td></tr></table><div class='g-wrong-right'><span class='gw'>May you send me the report?</span><span class='gr'>Could you send me the report? / Would you send me the report?</span></div><div class='g-note'>May I 是「我可不可以」；但請對方做事時不說 May you，要說 Could you 或 Would you。另外要分清楚：Do you...? 是問事實（一般問句），Would you...? 才是禮貌請求，意思完全不同。</div>",
+"ask": [
+[
+"______ you send me the report? 主詞是 you，動作是 send，這是請你寄，還是問我可不可以？",
+"請你寄 → 不能用 May，要用 Would 或 Could"
+]
+]
+},
+{
+"type": "grammar",
+"title": "Would you mind...? 1：我做",
+"subtitle": "Would you mind if + S + 過去式？",
+"content": "<div class='g-formula'>Would you mind if + S + 過去式...?　　= 你介意我……嗎？</div><div class='g-ex-box'><div class='g-ex'>Would you mind if I sat with you here?<span class='zh2'>你介意我坐在你旁邊嗎？</span></div><div class='g-ex'>Would you mind if I turned on the air conditioner?<span class='zh2'>你介意我開冷氣嗎？</span></div><div class='g-ex'>Would you mind if I left early today?<span class='zh2'>你介意我今天早點離開嗎？</span></div></div><div class='g-note'>if 後面常用過去式，但意思不是過去，而是問現在或未來——英文用過去式只是讓語氣變委婉，這是禮貌距離，不是時間過去。</div>",
+"ask": [
+[
+"Would you mind if I sat here? 這裡的 sat 是過去式，代表過去發生的事嗎？",
+"不是，只是語氣委婉（禮貌距離），問的是現在/未來"
+]
+]
+},
+{
+"type": "grammar",
+"title": "Would you mind...? 2：你做",
+"subtitle": "Would you mind + V-ing？",
+"content": "<div class='g-formula'>Would you mind + V-ing...?　　= 你介意做……嗎？（其實是客氣請你幫忙）</div><div class='g-ex-box'><div class='g-ex'>Would you mind closing the door?<span class='zh2'>你介意把門關上嗎？</span></div><div class='g-ex'>Would you mind repeating your question, please?<span class='zh2'>你介意再說一次你的問題嗎？</span></div></div><div class='g-wrong-right'><span class='gw'>Would you mind close the door? / Would you mind to close the door?</span><span class='gr'>Would you mind closing the door?</span></div><div class='g-note'>mind 後面直接接動詞時，一定要用 V-ing，不接原形也不接 to V。</div>",
+"ask": [
+[
+"Would you mind closing the door? 這句誰關門？",
+"你（請你幫忙關門）"
+]
+]
+},
+{
+"type": "grammar",
+"title": "Would you mind...? 3：比較＋回答陷阱",
+"subtitle": "No＝不介意，Yes＝介意",
+"content": "<table class='g-table'><tr><th>句型</th><th>誰做動作？</th><th>例句</th></tr><tr><td>Would you mind if I closed the window?</td><td>我做</td><td>我關窗，你介意嗎？</td></tr><tr><td>Would you mind closing the window?</td><td>你做</td><td>你可以幫我關窗嗎？</td></tr></table><table class='g-table'><tr><th>回答</th><th>意思</th></tr><tr><td>No, not at all.</td><td>不會，我不介意。你可以做。</td></tr><tr><td>Yes, I do.</td><td>會，我介意。請不要做。</td></tr></table><div class='g-note'>中文學生很容易搞錯：對方問「你介意嗎？」你說 No 不是拒絕，而是「不介意」；你說 Yes 反而是「介意」。這在口說和閱讀都很重要。</div>",
+"ask": [
+[
+"對方問 Would you mind...? 你回答 No，代表介意還是不介意？",
+"不介意"
+]
+]
+},
+{
+"type": "grammar",
+"title": "描述必須性 1",
+"subtitle": "must / have to / have got to",
+"content": "<div class='g-ex-box'><div class='g-ex'>All candidates <b>must</b> submit an application.<span class='zh2'>所有候選人都必須提交申請書。</span></div><div class='g-ex'>I <b>have to</b> finish the sales report by this Friday.<span class='zh2'>我必須在本週五前完成銷售報告。</span></div><div class='g-ex'>I <b>have got to</b> visit a customer tomorrow morning.<span class='zh2'>我明天早上必須拜訪一位客戶。</span></div></div><table class='g-table'><tr><th>助動詞</th><th>常見語感</th></tr><tr><td>must</td><td>說話者認為很必要；規定、命令、強烈要求</td></tr><tr><td>have to</td><td>外在情況造成的必要；不得不</td></tr><tr><td>have got to</td><td>口語的 have to</td></tr></table><div class='g-note'>正式規定／公告／公司政策 → must 很常見；個人情況造成不得不 → have to 很自然。</div>",
+"ask": [
+[
+"公司公告「所有員工必須配戴識別證」，用哪個語感最自然？",
+"must（正式規定/公告）"
+]
+]
+},
+{
+"type": "grammar",
+"title": "描述必須性 2：本章最重要陷阱",
+"subtitle": "must not（禁止）≠ don't have to（不需要）",
+"content": "<table class='g-table'><tr><th style='width:200px'>結構</th><th>意思</th></tr><tr><td class='cell-em'>must not + V</td><td>禁止；不准</td></tr><tr><td class='cell-em'>don't have to + V</td><td>不需要；不必</td></tr></table><div class='g-ex-box'><div class='g-ex'>You <b>must not</b> share company information.<span class='zh2'>你不可以分享公司資訊。（禁止）</span></div><div class='g-ex'>You <b>don't have to</b> worry.<span class='zh2'>你不需要擔心。（沒有必要，不是禁止你擔心）</span></div></div><div class='g-highlight'><strong>本章最重要陷阱：</strong>You must not leave. = 你不准離開（禁止）。You don't have to leave. = 你不用離開（沒有必要）。中文都可能翻成「不必」，但英文意思差很多！</div>",
+"ask": [
+[
+"公司規定：你不可以把密碼告訴別人，用哪個？",
+"must not（禁止）"
+],
+[
+"不用今天交報告，明天也可以，用哪個？",
+"don't have to（沒有必要）"
+]
+]
+},
+{
+"type": "grammar",
+"title": "描述必須性 3：原形動詞＋被動",
+"subtitle": "must 後面不加 to／必須性的被動語態",
+"content": "<div class='g-wrong-right'><span class='gw'>All candidates must to submit an application.</span><span class='gr'>All candidates must submit an application.</span></div><div class='g-formula'>must / should / ought to + be + p.p.</div><div class='g-ex-box'><div class='g-ex'>The report <b>must be submitted</b> by Friday.<span class='zh2'>報告必須在星期五前提交。</span></div><div class='g-ex'>The action <b>should be taken</b> immediately.<span class='zh2'>這項行動應該立刻被採取。</span></div></div><div class='g-note'>如果主詞是事情不是人，而且後面有被動意思，就會出現助動詞加被動：should be taken、must be submitted、ought to be reviewed。</div>",
+"ask": [
+[
+"主詞是 the report（被提交的東西），should submit 還是 should be submitted？",
+"should be submitted（被動）"
+]
+]
+},
+{
+"type": "grammar",
+"title": "建議 1：should / ought to",
+"subtitle": "一般建議，ought 後面一定要接 to",
+"content": "<div class='g-ex-box'><div class='g-ex'>You <b>should</b> listen to suggestions from your supervisors.<span class='zh2'>你應該聽主管給你的建議。</span></div><div class='g-ex'>You <b>ought to</b> follow the company's policies.<span class='zh2'>你應該遵守公司的規定。</span></div></div><table class='g-table'><tr><th>題型</th><th>答案</th><th>原因</th></tr><tr><td>Customers ought ______ the service center.</td><td>to call</td><td>ought 後面要有 to</td></tr><tr><td>Customers ______ to call the service center.</td><td>ought</td><td>後面已有 to call，should 不能再加 to</td></tr></table><div class='g-note'>TOEIC 不是問 ought 是什麼意思，而是問你有沒有看到後面的 to。</div>",
+"ask": [
+[
+"ought 後面一定要接什麼？",
+"to（ought to + 原形動詞）"
+]
+]
+},
+{
+"type": "grammar",
+"title": "建議 2：had better ／ could",
+"subtitle": "強烈建議 vs 溫和建議",
+"content": "<div class='g-formula'>had better + 原形動詞　　= 最好……，不然可能有不好的結果</div><div class='g-ex-box'><div class='g-ex'>You had better get moving if you want to catch the train.<span class='zh2'>如果你想趕上火車，最好趕快動身。</span></div></div><div class='g-wrong-right'><span class='gw'>You had better to leave now.</span><span class='gr'>You had better leave now.</span></div><div class='g-note'>had better 看起來像過去式 had，但它是固定片語，後面直接接原形動詞，不接 to。語氣比 should 強：You should leave now.（應該）vs You had better leave now.（最好，不然可能有問題）</div><div class='g-ex-box'><div class='g-ex'>You <b>could</b> ask your supervisor to provide more sales leads.<span class='zh2'>你可以要求主管提供更多客戶名單。（比 should 更柔和）</span></div></div>",
+"ask": [
+[
+"You should ask... 和 You could ask... 哪個語氣比較柔和？",
+"could（委婉建議），should 是比較直接的應該"
+]
+]
+},
+{
+"type": "grammar",
+"title": "建議 3：suggest that + 原形",
+"subtitle": "TOEIC 高頻考點",
+"content": "<div class='g-formula'>suggest that + S + 原形動詞（不論主詞單複數）</div><div class='g-ex-box'><div class='g-ex'>I suggest that George <b>establish</b> his own consulting firm.<span class='zh2'>我建議 George 成立自己的顧問公司。</span></div><div class='g-ex'>Mr. Chen suggests that Jack <b>take</b> more advanced training courses.<span class='zh2'>Chen 先生建議 Jack 修更多進階訓練課程。</span></div></div><div class='g-note'>即使主詞是 George、Jack，動詞也不是 establishes、takes，而是 establish、take。同類動詞：recommend, request, require, insist, demand。若 that 子句是被動，用 be + p.p.：The client requested that the order <b>be delivered</b> by Friday.</div>",
+"ask": [
+[
+"I suggest that George ______ his own firm. 該填 establish 還是 establishes？",
+"establish（suggest that 後面用原形，不因主詞變化）"
+]
+]
+},
+{
+"type": "grammar",
+"title": "建議 4：should have + p.p.",
+"subtitle": "過去應該做但沒做（責備/後悔）",
+"content": "<div class='g-formula'>should have + p.p.　　= 本來應該做，但實際上沒有做</div><div class='g-ex-box'><div class='g-ex'>The employee should have reported the problem sooner.<span class='zh2'>這名員工本來應該更早回報問題。</span></div><div class='g-ex'>You should not have told my secrets.<span class='zh2'>你本來不應該說出我的秘密。</span></div></div><div class='g-note'>should + V 是現在或未來的建議；should have + p.p. 是回頭看過去，表示「當時應該做，但沒有做」，帶有責備或後悔。You should report the problem.（現在/未來）vs You should have reported the problem.（當時應該已經回報，但你沒有）。</div>",
+"ask": [
+[
+"should have reported 和 should report 差別在哪？",
+"should have reported 是過去該做沒做；should report 是現在/未來的建議"
+]
+]
+},
+{
+"type": "grammar",
+"title": "建議 5：could / must / may-might have + p.p.",
+"subtitle": "過去式助動詞的三種推測",
+"content": "<div class='g-formula'>could have + p.p. = 本來可以；may/might have + p.p. = 過去可能已經；must have + p.p. = 一定已經</div><div class='g-ex-box'><div class='g-ex'>The IT Department could have helped him.<span class='zh2'>資訊部門本來可以幫助他。（可惜沒有）</span></div><div class='g-ex'>She must have left already.<span class='zh2'>她一定已經離開了。（推測，不是必須）</span></div><div class='g-ex'>The customer may have received the wrong item.<span class='zh2'>顧客可能已經收到錯的商品。</span></div><div class='g-ex'>The assistant might have sent the file to the wrong address.<span class='zh2'>助理可能把檔案寄到錯的地址了。（might 比 may 更不確定）</span></div></div><div class='g-highlight'>must have left 不是「必須離開」，是「一定已經離開」，是在推測過去，不要翻成必須！</div>",
+"ask": [
+[
+"She must have left already. 這是必須離開，還是推測她已經離開？",
+"推測：她一定已經離開了"
+]
+]
+},
+{
+"type": "grammar",
+"title": "描述偏好 1：would rather V than V",
+"subtitle": "寧願做 A，而不願做 B",
+"content": "<div class='g-formula'>would rather + 原形動詞 + than + 原形動詞</div><div class='g-ex-box'><div class='g-ex'>I would rather visit customers than stay in the office.<span class='zh2'>我寧願拜訪客戶，也不願待在辦公室。</span></div><div class='g-ex'>I'd rather be lying on a beach in Guam than sitting at home now.<span class='zh2'>我現在寧願躺在關島的海灘上，也不想坐在家裡。</span></div></div><div class='g-note'>would rather 後面直接接原形動詞，不加 to：would rather visit，不是 would rather to visit。</div>",
+"ask": [
+[
+"would rather 後面加 to 嗎？",
+"不加，would rather visit，不是 would rather to visit"
+]
+]
+},
+{
+"type": "grammar",
+"title": "描述偏好 2：prefer 三種用法",
+"subtitle": "prefer N to N ／ V-ing to V-ing ／ to V rather than V",
+"content": "<table class='g-table'><tr><th>用法</th><th>例句</th></tr><tr><td class='cell-em'>prefer N to N</td><td>I prefer coffee to tea.</td></tr><tr><td class='cell-em'>prefer V-ing to V-ing</td><td>I prefer reading novels to painting pictures.</td></tr><tr><td class='cell-em'>prefer to V rather than V</td><td>I prefer to visit customers rather than join the meeting.</td></tr></table><div class='g-note'>prefer A to B 的 to 是介系詞，後面接動詞要用 V-ing；prefer to V rather than V 的第一個 to 是不定詞，後面用原形。</div><div class='g-ex-box'><div class='g-ex'>I would rather visit customers than join the meeting. = I prefer to visit customers rather than join the meeting. = I prefer visiting customers to joining the meeting.<span class='zh2'>三句意思相同，結構不同。</span></div></div>",
+"ask": [
+[
+"prefer reading to painting，這裡的 to 是介系詞還是不定詞？",
+"介系詞，所以後面用 V-ing"
+]
+]
+},
+{
+"type": "grammar",
+"title": "助動詞解題五步驟",
+"subtitle": "Part 5 應用系統 + 速查表",
+"content": "<table class='g-table'><tr><th style='width:70px'>步驟</th><th>問題</th></tr><tr><td class='snum'>1</td><td>空格後面是什麼？原形動詞可能是 can/should/must/will/had better</td></tr><tr><td class='snum'>2</td><td>句子是請求、允許、必要、建議、偏好，還是可能？</td></tr><tr><td class='snum'>3</td><td>有沒有固定句型？（Would you mind/suggest that/would rather...）</td></tr><tr><td class='snum'>4</td><td>注意否定意思：must not=禁止；don't have to=不需要</td></tr><tr><td class='snum'>5</td><td>主詞是事情要注意被動：should be taken / must be submitted</td></tr></table><table class='g-table'><tr><th>固定句型</th><th>必背</th></tr><tr><td>Would you mind + V-ing?</td><td>請你做某事</td></tr><tr><td>Would you mind if + S + 過去式?</td><td>你介意我做某事嗎</td></tr><tr><td>suggest that + S + V原</td><td>建議某人做某事</td></tr><tr><td>should/could/must/may-might have + p.p.</td><td>過去語氣四兄弟</td></tr></table><div class='g-highlight'><strong>教學提醒：</strong>不要用「中文一對一翻譯」教，因為「可以」可能是 can/may/could；「應該」可能是 should/ought to/had better；「不必」可能讓學生誤選 must not。核心是：語氣 → 結構 → 動詞形式 → 固定搭配 → 語意確認。</div>",
+"ask": [
+[
+"做助動詞題，第一步該問自己什麼？",
+"空格後面是什麼形式（原形/to V/V-ing/have+p.p.）"
+]
+]
+},
+{
+"type": "question",
+"num": "PV1",
+"qtype": "Would you mind + V-ing",
+"star": false,
+"part6": false,
+"sentence": "______ you mind handing me that piece of paper?",
+"zh": "你介意把那張紙遞給我嗎？",
+"options": [
+"Would",
+"Can",
+"Will",
+"Shall"
+],
+"answer": 0,
+"key": "Would you mind + V-ing? 是非常客氣的請求，handing 是 V-ing。Can/Will/Shall you mind 都不成立。"
+},
+{
+"type": "question",
+"num": "PV2",
+"qtype": "suggest that + 原形",
+"star": true,
+"part6": false,
+"sentence": "I suggest that George ______ his own consulting firm.",
+"zh": "我建議 George 成立自己的顧問公司。",
+"options": [
+"to establish",
+"establishing",
+"establish",
+"establishes"
+],
+"answer": 2,
+"key": "suggest that 後面用原形動詞，即使主詞是 George 也不加 s。to V/V-ing/加s 都不符合此句型。"
+},
+{
+"type": "question",
+"num": "PV3",
+"qtype": "may 表可能性",
+"star": false,
+"part6": false,
+"sentence": "A bad decision ______ easily lead to project failure.",
+"zh": "一個錯誤的決定可能很容易導致專案失敗。",
+"options": [
+"does",
+"may",
+"shall",
+"must"
+],
+"answer": 1,
+"key": "壞決定不一定導致失敗，是「有可能」，用 may。does 太肯定，shall 不自然，must 太絕對。"
+},
+{
+"type": "question",
+"num": "TB1",
+"qtype": "客氣要求",
+"star": false,
+"part6": false,
+"sentence": "______ you send a meeting invitation to all members, please?",
+"zh": "你可以寄會議邀請給所有成員嗎？",
+"options": [
+"May",
+"Must",
+"Would",
+"Do"
+],
+"answer": 2,
+"key": "請對方做事，加 please，語氣禮貌，用 Would you。May you 不自然，Must you 語氣怪，Do you 是問事實。"
+},
+{
+"type": "question",
+"num": "TB2",
+"qtype": "請求幫忙",
+"star": false,
+"part6": false,
+"sentence": "______ you make all meeting attendees a copy of this agenda, please?",
+"zh": "你可以為所有與會者影印一份議程嗎？",
+"options": [
+"Can",
+"Should",
+"Must",
+"Do"
+],
+"answer": 0,
+"key": "請對方幫忙做事，加 please，用 Can you。Should/Must/Do 都不符合請求語氣。"
+},
+{
+"type": "question",
+"num": "TB3",
+"qtype": "Would you mind + V-ing",
+"star": false,
+"part6": false,
+"sentence": "Would you mind ______ 10 minutes discussing the market research issue?",
+"zh": "你介意花 10 分鐘討論市場研究的問題嗎？",
+"options": [
+"to spend",
+"spending",
+"spends",
+"spent"
+],
+"answer": 1,
+"key": "mind 後面接 V-ing，所以是 spending，不是 to spend/spends/spent。"
+},
+{
+"type": "question",
+"num": "TB4",
+"qtype": "must 表必要性",
+"star": false,
+"part6": false,
+"sentence": "All beings ______ have oxygen in order to survive.",
+"zh": "所有生物都必須有氧氣才能存活。",
+"options": [
+"may",
+"will",
+"must",
+"better"
+],
+"answer": 2,
+"key": "生存的必要條件用 must。may 太弱，will 不表必要，better 要搭配 had 才成立。"
+},
+{
+"type": "question",
+"num": "TB5",
+"qtype": "should 表建議",
+"star": false,
+"part6": false,
+"sentence": "As a sales representative, you ______ make as many cold calls as possible.",
+"zh": "身為業務代表，你應該盡可能多打陌生開發電話。",
+"options": [
+"does",
+"should",
+"may",
+"are"
+],
+"answer": 1,
+"key": "職場建議用 should。does/are 結構錯誤，may 太弱只表可能。"
+},
+{
+"type": "question",
+"num": "TB6",
+"qtype": "suggest that + 原形",
+"star": true,
+"part6": false,
+"sentence": "Mr. Chen suggests that Jack ______ more advanced training courses.",
+"zh": "Chen 先生建議 Jack 修更多進階訓練課程。",
+"options": [
+"take",
+"taking",
+"took",
+"to take"
+],
+"answer": 0,
+"key": "suggest that 後面用原形動詞 take，即使 Jack 是第三人稱單數也不加 s。"
+},
+{
+"type": "question",
+"num": "TB7",
+"qtype": "should 混合陷阱",
+"star": false,
+"part6": false,
+"sentence": "The current strategy is not working, so I think we ______ try a different approach.",
+"zh": "目前的策略沒有效，所以我認為我們應該嘗試不同的方法。",
+"options": [
+"should",
+"must to",
+"should better",
+"ought need"
+],
+"answer": 0,
+"key": "should 後面直接接 try。must to／should better／ought need 都是錯誤組合，助動詞後面不能疊加 to 或混用。"
+},
+{
+"type": "question",
+"num": "TB8",
+"qtype": "would rather V than V",
+"star": false,
+"part6": false,
+"sentence": "Jackie would ______ solve the problem by himself than consult his supervisor for advice.",
+"zh": "Jackie 寧願自己解決問題，也不願向主管請教。",
+"options": [
+"rather",
+"prefer",
+"than",
+"rather to"
+],
+"answer": 0,
+"key": "would + rather + V + than + V，rather 後面直接接原形動詞 solve，不加 to。"
+},
+{
+"type": "question",
+"num": "TB9",
+"qtype": "prefer to V rather than V",
+"star": false,
+"part6": false,
+"sentence": "I prefer to read novels ______ paint pictures.",
+"zh": "我比較喜歡讀小說，而不是畫畫。",
+"options": [
+"to",
+"rather than",
+"however",
+"for"
+],
+"answer": 1,
+"key": "prefer to read 已用 to V，後面接 rather than + 原形動詞 paint。"
+},
+{
+"type": "question",
+"num": "Q1",
+"qtype": "should not have + p.p.",
+"star": false,
+"part6": false,
+"sentence": "I ______ told you my innermost secrets.",
+"zh": "我本來不應該告訴你我內心最深處的秘密。",
+"options": [
+"shouldn't have",
+"would need to",
+"must",
+"may"
+],
+"answer": 0,
+"key": "表達「本來不應該做，但做了」用 shouldn't have + p.p.。would need to/must/may 後面都要接原形 tell，不能接 told。"
+},
+{
+"type": "question",
+"num": "Q2",
+"qtype": "had better",
+"star": false,
+"part6": false,
+"sentence": "You ______ get up immediately, otherwise you will miss the flight.",
+"zh": "你最好立刻起床，不然你會錯過班機。",
+"options": [
+"may",
+"had better",
+"can",
+"are"
+],
+"answer": 1,
+"key": "otherwise 暗示壞結果，帶警告語氣用 had better。may 太弱，can 不是警告，are 不能直接接 get up。"
+},
+{
+"type": "question",
+"num": "Q3",
+"qtype": "should 表建議",
+"star": false,
+"part6": false,
+"sentence": "I think you ______ learn more vocabulary words if you want to write well.",
+"zh": "我認為如果你想寫得好，你應該學更多單字。",
+"options": [
+"had",
+"may",
+"should",
+"are"
+],
+"answer": 2,
+"key": "給建議用 should learn。had/are 結構錯誤，may 太弱。"
+},
+{
+"type": "question",
+"num": "Q4",
+"qtype": "May I 請求允許",
+"star": false,
+"part6": false,
+"sentence": "I left my wallet in the office. ______ I borrow $100 from you, please?",
+"zh": "我把錢包留在辦公室了。我可以跟你借 100 美元嗎？",
+"options": [
+"Must",
+"Should",
+"May",
+"Will"
+],
+"answer": 2,
+"key": "請求允許用 May I。Must I 變成必須借嗎，Should I 問應不應該，Will I 是未來式不是請求。"
+},
+{
+"type": "question",
+"num": "Q5",
+"qtype": "現在進行式（非助動詞陷阱）",
+"star": false,
+"part6": false,
+"sentence": "He ______ currently working as a sales representative at a software company.",
+"zh": "他目前正在一家軟體公司擔任業務代表。",
+"options": [
+"will be",
+"was",
+"has to",
+"is"
+],
+"answer": 3,
+"key": "currently working 是現在進行式，用 is working。will be 是未來進行，was 是過去進行，has to working 結構錯。"
+},
+{
+"type": "question",
+"num": "Q6",
+"qtype": "should + 原形",
+"star": false,
+"part6": false,
+"sentence": "All the departments ______ carefully define their goals for the company before the monthly meeting next week.",
+"zh": "所有部門都應該在下週月會前仔細定義公司目標。",
+"options": [
+"had",
+"should",
+"used",
+"have"
+],
+"answer": 1,
+"key": "空格後 carefully define 是原形動詞，表示應該做的事，用 should。"
+},
+{
+"type": "question",
+"num": "Q7",
+"qtype": "should + 原形（主動非被動）",
+"star": false,
+"part6": false,
+"sentence": "Any passenger who fails to locate his or her luggage should ______ it to the Customs service office.",
+"zh": "任何找不到行李的乘客都應向海關服務處申報。",
+"options": [
+"be reported",
+"to report",
+"report",
+"have reported"
+],
+"answer": 2,
+"key": "should 後面直接接原形動詞，乘客是主動回報，不是被回報，用 report。"
+},
+{
+"type": "question",
+"num": "Q8",
+"qtype": "ought to（看後面的to）",
+"star": true,
+"part6": false,
+"sentence": "Customers who would like to file complaints ______ to phone our customer service center, where our consultants will be pleased to help them.",
+"zh": "想要投訴的顧客應該打電話給我們的客服中心。",
+"options": [
+"should",
+"might",
+"ought",
+"can"
+],
+"answer": 2,
+"key": "空格後已有 to phone，should 後不能接 to，只有 ought 能和後面的 to 組成 ought to phone。"
+},
+{
+"type": "question",
+"num": "Q9",
+"qtype": "時態一致 could",
+"star": false,
+"part6": false,
+"sentence": "The director of the Personnel Department told the employee he would have seniority and ______ ask for more vacation time.",
+"zh": "人事部門主管告訴那位員工，他會有年資，而且可以要求更多休假時間。",
+"options": [
+"could",
+"could have",
+"can",
+"will"
+],
+"answer": 0,
+"key": "前面是過去式 told，過去轉述中 can 常變 could。could have asked 語意不對，can/will 時態不一致。"
+},
+{
+"type": "question",
+"num": "Q10",
+"qtype": "must 表強烈必要",
+"star": false,
+"part6": false,
+"sentence": "I ______ insist on a revision of next year's budget before the annual sales meeting on Thursday.",
+"zh": "我必須堅持在星期四年度銷售會議前修訂明年的預算。",
+"options": [
+"could",
+"must",
+"may",
+"have"
+],
+"answer": 1,
+"key": "insist on 堅持，語氣很強，用 must。could/may 太弱，have 後面要 have to insist。"
+},
+{
+"type": "question",
+"num": "Q11",
+"qtype": "will 表未來",
+"star": false,
+"part6": false,
+"sentence": "The new software installed today ______ make our firm more productive in the future.",
+"zh": "今天安裝的新軟體將會讓我們公司未來更有生產力。",
+"options": [
+"will",
+"will have",
+"might have",
+"had to"
+],
+"answer": 0,
+"key": "in the future 未來的結果用 will make。will have make 結構錯，might have made 時間不合，had to make 與未來不合。"
+},
+{
+"type": "question",
+"num": "Q12",
+"qtype": "should be + p.p.（被動）",
+"star": true,
+"part6": false,
+"sentence": "The board members could not agree on what action ______ taken.",
+"zh": "董事會成員無法同意應該採取什麼行動。",
+"options": [
+"would have been",
+"ought to have",
+"should be",
+"had to"
+],
+"answer": 2,
+"key": "action 是被採取，要用被動 be taken，前面表應該用 should，合起來 should be taken。"
+},
+{
+"type": "question",
+"num": "Q13",
+"qtype": "could have + p.p.",
+"star": true,
+"part6": false,
+"sentence": "The employee should have reported the problem sooner then so that the IT Department ______ helped him.",
+"zh": "那名員工本來應該更早回報問題，這樣資訊部門本來就可以幫助他。",
+"options": [
+"could have",
+"ought to",
+"can",
+"must"
+],
+"answer": 0,
+"key": "前面 should have reported 是過去沒做到的事，後面 helped 是過去分詞，表達「本來可以幫忙」用 could have helped。"
+},
+{
+"type": "question",
+"num": "新增1",
+"qtype": "must 表規定",
+"star": false,
+"part6": false,
+"sentence": "All visitors ______ wear identification badges while inside the facility.",
+"zh": "所有訪客在設施內都必須佩戴識別證。",
+"options": [
+"may",
+"must",
+"would",
+"can"
+],
+"answer": 1,
+"key": "設施規定、義務、必須用 must。may 太弱，would 不表規定，can 只表能力或允許。"
+},
+{
+"type": "question",
+"num": "新增2",
+"qtype": "don't have to",
+"star": true,
+"part6": false,
+"sentence": "You ______ submit the form today; tomorrow morning is also acceptable.",
+"zh": "你不需要今天提交表格；明天早上也可以。",
+"options": [
+"must not",
+"don't have to",
+"had better not",
+"couldn't"
+],
+"answer": 1,
+"key": "後面說明天也可以，不是禁止，是沒有必要，用 don't have to。must not 是禁止，語氣不合。"
+},
+{
+"type": "question",
+"num": "新增3",
+"qtype": "Would you mind + V-ing",
+"star": false,
+"part6": false,
+"sentence": "Would you mind ______ the projector before the presentation begins?",
+"zh": "你介意在簡報開始前檢查一下投影機嗎？",
+"options": [
+"check",
+"to check",
+"checking",
+"checked"
+],
+"answer": 2,
+"key": "mind 後面接 V-ing，所以是 checking。"
+},
+{
+"type": "question",
+"num": "新增4",
+"qtype": "suggest that + 原形",
+"star": false,
+"part6": false,
+"sentence": "The manager suggested that the team ______ the proposal before sending it to the client.",
+"zh": "經理建議團隊在寄給客戶前修改提案。",
+"options": [
+"revises",
+"revise",
+"revising",
+"to revise"
+],
+"answer": 1,
+"key": "suggested that 後面用原形動詞 revise，即使主詞是 the team 也不加 s。"
+},
+{
+"type": "question",
+"num": "新增5",
+"qtype": "must not（禁止）",
+"star": true,
+"part6": false,
+"sentence": "Employees ______ share confidential information with people outside the company.",
+"zh": "員工不得與公司外部人士分享機密資訊。",
+"options": [
+"don't have to",
+"must not",
+"may",
+"would rather"
+],
+"answer": 1,
+"key": "機密資訊外洩是禁止行為，用 must not。don't have to 是不需要，語意相反。"
+},
+{
+"type": "question",
+"num": "新增6",
+"qtype": "had better",
+"star": false,
+"part6": false,
+"sentence": "If you want to avoid traffic, you ______ leave the office before 5 p.m.",
+"zh": "如果你想避開交通，你最好下午五點前離開辦公室。",
+"options": [
+"had better",
+"ought",
+"may to",
+"should to"
+],
+"answer": 0,
+"key": "「最好……不然……」語氣用 had better，後面直接接 leave，不加 to。may to/should to 都錯誤加了 to。"
+},
+{
+"type": "question",
+"num": "新增7",
+"qtype": "might have + p.p.",
+"star": false,
+"part6": false,
+"sentence": "Ms. Parker ______ have missed the email because she replied to every other message.",
+"zh": "Parker 女士可能漏看了那封電子郵件，因為她回覆了其他每一封訊息。",
+"options": [
+"must",
+"might",
+"should",
+"will"
+],
+"answer": 1,
+"key": "這是推測，不是一定，用 might have missed。must have 太強，should have 語意不合，will have 時態不合。"
+},
+{
+"type": "question",
+"num": "新增8",
+"qtype": "should be + p.p.（被動）",
+"star": false,
+"part6": false,
+"sentence": "The documents should ______ by the legal department before they are sent to the client.",
+"zh": "這些文件在寄給客戶前應該由法務部門審閱。",
+"options": [
+"review",
+"reviewed",
+"be reviewed",
+"reviewing"
+],
+"answer": 2,
+"key": "文件是被審閱，用被動 should be reviewed。"
+},
+{
+"type": "question",
+"num": "新增9",
+"qtype": "would rather V than V",
+"star": false,
+"part6": false,
+"sentence": "I would rather ______ the supplier directly than wait for another email.",
+"zh": "我寧願直接聯絡供應商，也不想再等另一封電子郵件。",
+"options": [
+"contact",
+"to contact",
+"contacting",
+"contacted"
+],
+"answer": 0,
+"key": "would rather 後面直接接原形動詞 contact，與後面 than wait 形成平行結構。"
+},
+{
+"type": "question",
+"num": "新增10",
+"qtype": "prefer V-ing to V-ing",
+"star": false,
+"part6": false,
+"sentence": "We prefer ______ online meetings to traveling for short discussions.",
+"zh": "比起為了短暫討論而出差，我們比較喜歡舉行線上會議。",
+"options": [
+"hold",
+"holding",
+"to hold",
+"held"
+],
+"answer": 1,
+"key": "後面 to traveling 的 to 是介系詞，prefer 前面的動作也要用 V-ing：holding。"
+},
+{
+"type": "question",
+"num": "新增11",
+"qtype": "May I 請求允許",
+"star": false,
+"part6": false,
+"sentence": "______ I ask you a few questions about your order?",
+"zh": "我可以問您幾個關於訂單的問題嗎？",
+"options": [
+"May",
+"Would",
+"Should",
+"Must"
+],
+"answer": 0,
+"key": "問「我可不可以」，正式禮貌用 May I。"
+},
+{
+"type": "question",
+"num": "新增12",
+"qtype": "should have + p.p.",
+"star": false,
+"part6": false,
+"sentence": "The technician ______ have checked the machine more carefully before restarting it.",
+"zh": "技術人員本來應該在重新啟動機器前更仔細地檢查它。",
+"options": [
+"had",
+"should have",
+"must",
+"can"
+],
+"answer": 1,
+"key": "本來應該做但沒做好，用 should have checked。（教學提醒：此題選項已調整避免與 should have 重疊爭議）"
+},
+{
+"type": "question",
+"num": "新增13",
+"qtype": "may 表可能性",
+"star": false,
+"part6": false,
+"sentence": "The company ______ increase its advertising budget next quarter if sales continue to decline.",
+"zh": "如果銷售持續下降，公司下季可能會增加廣告預算。",
+"options": [
+"may",
+"does",
+"has",
+"was"
+],
+"answer": 0,
+"key": "if 子句暗示不確定，用 may increase。does/has/was 結構或語氣都不合。"
+},
+{
+"type": "question",
+"num": "新增14",
+"qtype": "Would you mind if + 過去式",
+"star": false,
+"part6": false,
+"sentence": "Would you mind if I ______ this seat?",
+"zh": "你介意我坐這個位子嗎？",
+"options": [
+"take",
+"took",
+"taking",
+"to take"
+],
+"answer": 1,
+"key": "Would you mind if I... 正式用過去式表委婉，用 took，不是真的過去時間。"
+},
+{
+"type": "question",
+"num": "新增15",
+"qtype": "ought to + V",
+"star": false,
+"part6": false,
+"sentence": "Applicants ought ______ all required documents before the deadline.",
+"zh": "申請者應該在截止日前提交所有必需文件。",
+"options": [
+"submit",
+"submitting",
+"to submit",
+"submitted"
+],
+"answer": 2,
+"key": "ought 後面一定要接 to，再接原形動詞：ought to submit。"
+},
+{
+"type": "question",
+"num": "新增16",
+"qtype": "might 不確定推測",
+"star": false,
+"part6": false,
+"sentence": "The shipment ______ arrive tomorrow, but the exact time has not been confirmed.",
+"zh": "這批貨可能明天抵達，但確切時間尚未確認。",
+"options": [
+"must",
+"might",
+"should not",
+"had better"
+],
+"answer": 1,
+"key": "確切時間未確認，代表不是一定，用 might arrive。"
+},
+{
+"type": "question",
+"num": "新增17",
+"qtype": "don't have to",
+"star": false,
+"part6": false,
+"sentence": "You ______ call the client now; I already sent her the updated schedule.",
+"zh": "你不用現在打給客戶；我已經寄給她更新後的時程了。",
+"options": [
+"must not",
+"don't have to",
+"may not",
+"had better not"
+],
+"answer": 1,
+"key": "已經處理好了，沒有必要打電話，用 don't have to，不是禁止。"
+},
+{
+"type": "question",
+"num": "新增18",
+"qtype": "request that + 被動原形",
+"star": true,
+"part6": false,
+"sentence": "The CEO requested that the final report ______ by noon.",
+"zh": "執行長要求最終報告在中午前提交。",
+"options": [
+"is submitted",
+"be submitted",
+"submits",
+"submitting"
+],
+"answer": 1,
+"key": "requested that 後面用原形，report 是被提交，用被動原形 be submitted。"
+},
+{
+"type": "question",
+"num": "新增19",
+"qtype": "prefer V-ing to V-ing",
+"star": false,
+"part6": false,
+"sentence": "I prefer working with a small team ______ managing a large department.",
+"zh": "比起管理大型部門，我比較喜歡和小團隊合作。",
+"options": [
+"rather than",
+"to",
+"than",
+"for"
+],
+"answer": 1,
+"key": "prefer working...to managing...，這裡的 to 是介系詞，不是不定詞。"
+},
+{
+"type": "question",
+"num": "新增20",
+"qtype": "must be + p.p.（被動）",
+"star": false,
+"part6": false,
+"sentence": "The staff ______ be trained before the new system is introduced next month.",
+"zh": "在新系統下個月導入之前，員工必須接受訓練。",
+"options": [
+"can to",
+"must",
+"must to",
+"having to"
+],
+"answer": 1,
+"key": "staff 是被訓練，前面要選可以直接接 be 的助動詞 must be trained。can to/must to 都錯誤加了 to。"
+}
+];
+const TOTAL = SLIDES.length;
+let current=0, revealed=false, zhVisible=false;
+let askStep=0;
+
+function applyZh(){document.querySelectorAll('.zh-target').forEach(el=>el.classList.toggle('zh-hidden',!zhVisible))}
+function toggleZh(){zhVisible=!zhVisible;applyZh();const b=document.getElementById('zh-btn');b.textContent=zhVisible?'中文 ON':'中文 OFF';b.classList.toggle('on',zhVisible)}
+
+function showBtn(id,show){document.getElementById(id).classList.toggle('hidden',!show)}
+function setText(id,t){const el=document.getElementById(id);if(el)el.textContent=t}
+
+function render(){
+  const s=SLIDES[current];
+  revealed=false; askStep=0;
+  document.getElementById('progress-text').textContent=(current+1)+' / '+TOTAL;
+  document.getElementById('progress-bar').style.width=Math.round((current+1)/TOTAL*100)+'%';
+  document.getElementById('prev-btn').disabled=current===0;
+  document.getElementById('next-btn').disabled=current===TOTAL-1;
+  const labels={grammar:'文法教學',article:'閱讀文章',question:'練習題'};
+  setText('slide-type-label', labels[s.type]||'');
+  showBtn('reveal-btn', s.type==='question');
+  showBtn('next-item-btn', false);
+  showBtn('ask-btn', s.type==='grammar' && s.ask && s.ask.length>0);
+  showBtn('zh-btn', s.type==='question'||s.type==='article');
+  const el=document.getElementById('slide-content');
+
+  if(s.type==='grammar'){
+    const hasAsk=s.ask&&s.ask.length>0;
+    el.innerHTML=`
+      <div class="gram-label">Lesson 10 · Chapter 6 助動詞</div>
+      <div class="gram-title">${s.title}</div>
+      <div class="gram-sub">${s.subtitle}</div>
+      ${s.content}
+      ${hasAsk?`<div id="ask-panel" style="display:none">
+        <div class="ask-progress" id="ask-prog"></div>
+        <div class="ask-q" id="ask-q"></div>
+        <div class="ask-a" id="ask-a"></div>
+      </div>`:''}
+    `;
+    if(hasAsk) document.getElementById('ask-btn').textContent='❓ 問學生 ('+s.ask.length+')';
+  }
+  else if(s.type==='article'){
+    el.innerHTML=`
+      <div class="art-label">${s.label}</div>
+      <div class="art-title">閱讀文章</div>
+      <div class="art-theme">📌 主題：${s.theme}</div>
+      <div class="art-text">${s.text}</div>
+      <div class="art-zh zh-target">${s.zh}</div>`;
+  }
+  else{
+    const wide = s.options.some(o=>o.length>28);
+    const opts=s.options.map((o,i)=>`<div class="q-opt" id="opt-${i}"><span class="q-opt-lbl">${String.fromCharCode(65+i)}</span>${o}</div>`).join('');
+    el.innerHTML=`
+      <div class="q-header">
+        <span class="q-num">${s.num}</span>
+        ${s.star?'<span class="q-star">⭐ 重點題</span>':''}
+        ${s.part6?'<span class="q-p6">Part 6</span>':''}
+      </div>
+      <div class="q-sentence">${s.sentence}</div>
+      <div class="q-zh zh-target">${s.zh}</div>
+      <div class="q-opts ${wide?'wide':''}">${opts}</div>
+      <div class="key-reveal" id="key-reveal">
+        <strong>答案 ${String.fromCharCode(65+s.answer)}：${s.options[s.answer]}</strong>
+        &nbsp;—&nbsp; ${s.key}
+      </div>`;
+  }
+  setTimeout(applyZh,0);
+  resetRevealBtn();
+}
+
+function resetRevealBtn(){
+  const b=document.getElementById('reveal-btn');
+  b.textContent='揭曉答案 ▼';b.style.background='';b.style.color='';
+}
+
+function reveal(){
+  const s=SLIDES[current];
+  const b=document.getElementById('reveal-btn');
+  if(!revealed){
+    revealed=true;
+    s.options.forEach((_,i)=>{
+      const el=document.getElementById('opt-'+i);
+      if(i===s.answer) el.classList.add('correct');
+      else el.classList.add('dimmed');
+    });
+    document.getElementById('key-reveal').classList.add('show');
+    b.textContent='隱藏答案 ▲';b.style.background='rgba(5,150,105,.25)';b.style.color='#34D399';
+  } else {
+    revealed=false;
+    s.options.forEach((_,i)=>{
+      const el=document.getElementById('opt-'+i);
+      el.classList.remove('correct','dimmed');
+    });
+    document.getElementById('key-reveal').classList.remove('show');
+    resetRevealBtn();
+  }
+}
+
+function nextItem(){ /* unused in Lesson 10 (no multi/correction slides) */ }
+
+function nextAsk(){
+  const s=SLIDES[current];
+  const panel=document.getElementById('ask-panel');
+  const b=document.getElementById('ask-btn');
+  if(!panel) return;
+  if(askStep===0) panel.style.display='block';
+  if(askStep<s.ask.length){
+    const [q,a]=s.ask[askStep];
+    document.getElementById('ask-q').textContent=q;
+    document.getElementById('ask-a').textContent=a;
+    document.getElementById('ask-a').classList.remove('show');
+    document.getElementById('ask-prog').textContent='問題 '+(askStep+1)+' / '+s.ask.length;
+    const oldStep=askStep;
+    b.onclick=function(){
+      const aa=document.getElementById('ask-a');
+      if(!aa.classList.contains('show')){
+        aa.classList.add('show');
+        b.onclick=function(){askStep=oldStep+1;nextAsk()};
+      }
+    };
+    askStep++;
+  } else {
+    panel.style.display='none';
+    askStep=0;
+    b.textContent='❓ 問學生 ('+s.ask.length+')';
+    b.onclick=nextAsk;
+  }
+}
+
+function navigate(dir){
+  current=Math.max(0,Math.min(TOTAL-1,current+dir));
+  render();
+  document.getElementById('slide-area').scrollTop=0;
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();navigate(1)}
+  else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();navigate(-1)}
+  else if(e.key===' '||e.key==='Enter'){
+    e.preventDefault();
+    const s=SLIDES[current];
+    if(s.type==='question') reveal();
+    else if(s.type==='grammar'&&s.ask&&s.ask.length>0) document.getElementById('ask-btn').click();
+  }
+});
+
+render();
+</script>
+</body>
+</html>

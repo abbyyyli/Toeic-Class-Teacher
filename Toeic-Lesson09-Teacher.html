@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>老師講義 | TOEIC Lesson 09</title>
-<!-- Lesson 09：Part 6/7 閱讀策略，131–164（16題Part6 + 18題Part7，共34題，11篇文章）。Part 5 本堂未涵蓋。 -->
+<title>老師講義 | TOEIC Lesson 09 · Part 7 閱讀 165–200</title>
+<!-- Lesson 09（修正版）：Part 7 閱讀策略，165–200（8篇文章，36題）。原131–164內容重複，改用此份。 -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -112,11 +112,12 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 .lstbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
 .lstbl th,.lstbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
 .lstbl th{background:var(--gray-100);font-weight:700;font-size:12px;width:150px}
+.docbox{background:var(--gray-100);border-left:3px solid var(--sky);border-radius:0 8px 8px 0;padding:8px 14px;margin:14px 0 4px;font-size:12px;font-weight:700;color:var(--navy2);letter-spacing:.3px}
 </style>
 </head>
 <body>
 <div id="topbar">
-  <div class="logo">🎓 <span>老師</span> Lesson 09 · Part 6/7 閱讀策略 131–164</div>
+  <div class="logo">🎓 <span>老師</span> Lesson 09 · Part 7 閱讀 165–200</div>
   <div class="ppill">現在：<span id="csec">課程總覽</span></div>
   <div class="timer-wrap">
     <span class="timer-label">上課時間</span>
@@ -129,64 +130,67 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 <nav id="sidebar">
   <div class="sbh">課程總覽</div>
   <a class="sbl active" onclick="goTo('s-overview')">課程定位 &amp; 流程</a>
-  <div class="sbh">閱讀策略導論</div>
-  <a class="sbl" onclick="goTo('s-reading-intro')">Part6/7 解題完整流程 <span class="t">10m</span></a>
-  <div class="sbh">Part 6 · 131–134 領導力短文</div>
-  <a class="sbl" onclick="goTo('p6-131-v')">文章先導 · 情感領導</a>
-  <a class="sbl" onclick="goTo('q131')">131 also 副詞位置 ⭐</a>
-  <a class="sbl" onclick="goTo('q132')">132 need to be + p.p.</a>
-  <a class="sbl" onclick="goTo('q133')">133 if they are inspired ⭐</a>
-  <a class="sbl" onclick="goTo('q134')">134 when 子句</a>
-  <div class="sbh">Part 6 · 135–138 顧客關係管理</div>
-  <a class="sbl" onclick="goTo('p6-135-v')">文章先導 · 顧客導向</a>
-  <a class="sbl" onclick="goTo('q135')">135 關係子句 links ⭐</a>
-  <a class="sbl" onclick="goTo('q136')">136 平行結構 profitability</a>
-  <a class="sbl" onclick="goTo('q137')">137 excel at ⭐</a>
-  <a class="sbl" onclick="goTo('q138')">138 provide sb with sth</a>
-  <div class="sbh">Part 6 · 139–142 Email</div>
-  <a class="sbl" onclick="goTo('p6-139-v')">文章先導 · 報告問題</a>
-  <a class="sbl" onclick="goTo('q139')">139 several</a>
-  <a class="sbl" onclick="goTo('q140')">140 another look ⭐</a>
-  <a class="sbl" onclick="goTo('q141')">141 version</a>
-  <a class="sbl" onclick="goTo('q142')">142 邏輯銜接</a>
-  <div class="sbh">Part 6 · 143–146</div>
-  <a class="sbl" onclick="goTo('p6-143-v')">文章先導 · 產品開發</a>
-  <a class="sbl" onclick="goTo('q143')">143 more than ⭐</a>
-  <a class="sbl" onclick="goTo('q144')">144 競爭市場</a>
-  <a class="sbl" onclick="goTo('q145')">145 importance of</a>
-  <a class="sbl" onclick="goTo('q146')">146 figure out</a>
-  <div class="sbh">Part 7 · 147–148 房地產廣告</div>
-  <a class="sbl" onclick="goTo('p7-147-v')">文章先導</a>
-  <a class="sbl" onclick="goTo('q147')">147 廣告目的</a>
-  <a class="sbl" onclick="goTo('q148')">148 entire 同義</a>
-  <div class="sbh">Part 7 · 149–150 訊息對話</div>
-  <a class="sbl" onclick="goTo('p7-149-v')">文章先導</a>
-  <a class="sbl" onclick="goTo('q149')">149 對話主旨</a>
-  <a class="sbl" onclick="goTo('q150')">150 說話目的</a>
-  <div class="sbh">Part 7 · 151–153 新聞</div>
-  <a class="sbl" onclick="goTo('p7-151-v')">文章先導</a>
-  <a class="sbl" onclick="goTo('q151')">151 銷售變化</a>
-  <a class="sbl" onclick="goTo('q152')">152 引述推論 ⭐</a>
-  <a class="sbl" onclick="goTo('q153')">153 房價推論</a>
-  <div class="sbh">Part 7 · 154–156 活動資訊</div>
-  <a class="sbl" onclick="goTo('p7-154-v')">文章先導</a>
-  <a class="sbl" onclick="goTo('q154')">154 活動目的</a>
-  <a class="sbl" onclick="goTo('q155')">155 NOT題 ⭐</a>
-  <a class="sbl" onclick="goTo('q156')">156 grant 同義</a>
-  <div class="sbh">Part 7 · 157–158 徵才廣告</div>
-  <a class="sbl" onclick="goTo('p7-157-v')">文章先導</a>
-  <a class="sbl" onclick="goTo('q157')">157 推論</a>
-  <a class="sbl" onclick="goTo('q158')">158 NOT題</a>
-  <div class="sbh">Part 7 · 159–161 飯店介紹</div>
-  <a class="sbl" onclick="goTo('p7-159-v')">文章先導</a>
-  <a class="sbl" onclick="goTo('q159')">159 文章目的</a>
-  <a class="sbl" onclick="goTo('q160')">160 graceful 同義</a>
-  <a class="sbl" onclick="goTo('q161')">161 NOT題</a>
-  <div class="sbh">Part 7 · 162–164 雜誌訂閱</div>
-  <a class="sbl" onclick="goTo('p7-162-v')">文章先導</a>
-  <a class="sbl" onclick="goTo('q162')">162 頻率細節</a>
-  <a class="sbl" onclick="goTo('q163')">163 優惠細節</a>
-  <a class="sbl" onclick="goTo('q164')">164 句子插入 ⭐</a>
+
+  <div class="sbh">Part 7 · 165–167 餐廳廣告</div>
+  <a class="sbl" onclick="goTo('p7-165-v')">文章先導 · Bob's Pizza House <span class="t">6m</span></a>
+  <a class="sbl" onclick="goTo('q165')">165 特色同義改寫</a>
+  <a class="sbl" onclick="goTo('q166')">166 besides 定位</a>
+  <a class="sbl" onclick="goTo('q167')">167 NOT題 ⭐</a>
+
+  <div class="sbh">Part 7 · 168–171 交通公告</div>
+  <a class="sbl" onclick="goTo('p7-168-v')">文章先導 · Metro Yellow Line <span class="t">6m</span></a>
+  <a class="sbl" onclick="goTo('q168')">168 目的題</a>
+  <a class="sbl" onclick="goTo('q169')">169 單字 unaffected ⭐</a>
+  <a class="sbl" onclick="goTo('q170')">170 替代方案</a>
+  <a class="sbl" onclick="goTo('q171')">171 Red Line 細節</a>
+
+  <div class="sbh">Part 7 · 172–175 徵才廣告</div>
+  <a class="sbl" onclick="goTo('p7-172-v')">文章先導 · Tech Support Engineer <span class="t">6m</span></a>
+  <a class="sbl" onclick="goTo('q172')">172 地點定位</a>
+  <a class="sbl" onclick="goTo('q173')">173 NOT題（支援方式）</a>
+  <a class="sbl" onclick="goTo('q174')">174 NOT題（工作職責）⭐</a>
+  <a class="sbl" onclick="goTo('q175')">175 句子插入 ⭐</a>
+
+  <div class="sbh">Part 7 · 176–180 VIP 會員（雙篇）</div>
+  <a class="sbl" onclick="goTo('p7-176-v')">文章先導 · Happy Cruise VIP Club <span class="t">7m</span></a>
+  <a class="sbl" onclick="goTo('q176')">176 目的題</a>
+  <a class="sbl" onclick="goTo('q177')">177 單字 improvement</a>
+  <a class="sbl" onclick="goTo('q178')">178 推論 · 非會員 ⭐</a>
+  <a class="sbl" onclick="goTo('q179')">179 人物推論</a>
+  <a class="sbl" onclick="goTo('q180')">180 NOT題</a>
+
+  <div class="sbh">Part 7 · 181–185 商務邀約（雙篇）</div>
+  <a class="sbl" onclick="goTo('p7-181-v')">文章先導 · Carol &amp; Ian <span class="t">7m</span></a>
+  <a class="sbl" onclick="goTo('q181')">181 細節（5/7）</a>
+  <a class="sbl" onclick="goTo('q182')">182 人物關係</a>
+  <a class="sbl" onclick="goTo('q183')">183 日期推理</a>
+  <a class="sbl" onclick="goTo('q184')">184 推論 · schedule tight ⭐</a>
+  <a class="sbl" onclick="goTo('q185')">185 討論主題</a>
+
+  <div class="sbh">Part 7 · 186–190 MBA 招生（三篇）</div>
+  <a class="sbl" onclick="goTo('p7-186-v')">文章先導 · Cale Business School <span class="t">8m</span></a>
+  <a class="sbl" onclick="goTo('q186')">186 目的題</a>
+  <a class="sbl" onclick="goTo('q187')">187 NOT題 ⭐</a>
+  <a class="sbl" onclick="goTo('q188')">188 推論 · 工作職責 ⭐</a>
+  <a class="sbl" onclick="goTo('q189')">189 申請截止日</a>
+  <a class="sbl" onclick="goTo('q190')">190 選修課趨勢</a>
+
+  <div class="sbh">Part 7 · 191–195 Webinar（三篇）</div>
+  <a class="sbl" onclick="goTo('p7-191-v')">文章先導 · Employee Management <span class="t">8m</span></a>
+  <a class="sbl" onclick="goTo('q191')">191 對象推論</a>
+  <a class="sbl" onclick="goTo('q192')">192 人物定位</a>
+  <a class="sbl" onclick="goTo('q193')">193 報名方式</a>
+  <a class="sbl" onclick="goTo('q194')">194 請求內容</a>
+  <a class="sbl" onclick="goTo('q195')">195 時間表推理 ⭐</a>
+
+  <div class="sbh">Part 7 · 196–200 瑜伽課程（三篇）</div>
+  <a class="sbl" onclick="goTo('p7-196-v')">文章先導 · Kenny's Yoga House <span class="t">8m</span></a>
+  <a class="sbl" onclick="goTo('q196')">196 目的題</a>
+  <a class="sbl" onclick="goTo('q197')">197 人物推論</a>
+  <a class="sbl" onclick="goTo('q198')">198 現在完成式線索</a>
+  <a class="sbl" onclick="goTo('q199')">199 最適合課程</a>
+  <a class="sbl" onclick="goTo('q200')">200 表格計算 ⭐</a>
+
   <div class="sbh">收尾</div>
   <a class="sbl" onclick="goTo('s-summary')">總整理 &amp; 解答表</a>
 </nav>
@@ -195,1234 +199,1242 @@ code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1
 <div class="sh"><div class="sn">0</div><div class="st">課程定位 &amp; 上課流程</div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>Lesson Info</div><div class="bb">
 <table class="lstbl">
-<tr><th>Lesson Number</th><td>09</td></tr>
-<tr><th>Grammar Topic</th><td>Part 6 段落文法整合：被動語態（need to be + p.p.）、關係子句主謂一致（system that links）、平行結構（名詞/動詞平行）、慣用介系詞搭配（excel at V-ing／provide sb with sth）、條件與時間子句（only if / when）</td></tr>
+<tr><th>Lesson Number</th><td>09（修正版）</td></tr>
+<tr><th>Grammar Topic</th><td>本堂為純 Part 7 閱讀策略課，無獨立文法主題；透過解題自然複習被動語態、現在完成式、固定介系詞搭配、同義改寫等文法點</td></tr>
 <tr><th>Part 5 Questions</th><td>None（本堂未涵蓋）</td></tr>
-<tr><th>Part 6 / Part 7 Questions</th><td>131–164（Part 6：131–146；Part 7：147–164）</td></tr>
+<tr><th>Part 6 / Part 7 Questions</th><td>165–200（全部為 Part 7，共 36 題，8 篇文章：3 篇單篇、2 篇雙篇、3 篇三篇）</td></tr>
 </table>
 </div></div>
 <div class="block"><div class="bh gn"><span class="d"></span>本堂目標</div><div class="bb">
-<div class="goal2"><p>本堂沒有全新的獨立文法課，完全聚焦在<strong>閱讀解題策略</strong>：先抓文章大意、再看空格/題目、回文章找證據，不是逐字翻譯、不是憑印象猜答案。範圍是 Part 6（131–146）+ Part 7（147–164），共 11 篇文章、34 題。前四篇 Part 6 文章（領導力、顧客關係、Email、產品開發）會帶到被動語態、關係子句、平行結構、介系詞固定搭配等重點文法，透過解題自然複習。</p></div>
+<div class="goal2"><p>原本規劃的 131–164 內容經確認為重複教材，本堂改用 165–200 作為正式內容。這一組難度比 131–164 更高，因為雙篇、三篇文章的比例大幅提高（8 篇文章中有 5 篇是雙篇或三篇），題型也更集中在 <strong>NOT 題、推論題、人物關係題、跨文件整合題</strong>。教學重點不是逐字翻譯，而是：先判斷文章類型、抓 Who/What/When/Why、題目問什麼就回文章找證據，多篇文件則要看清楚「誰寫給誰、為什麼寫」。</p></div>
 </div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>⚠️ 份量提醒：建議拆成 2–3 次上課</div><div class="bb">
-<div class="tip"><p><strong>11 篇文章、34 題，份量非常大。</strong>建議拆法：<br>第一次：閱讀策略導論 + Part 6 全部（131–146，4篇16題）<br>第二次：Part 7 前半（147–156，4篇13題）<br>第三次：Part 7 後半（157–164，3篇13題）+ 總複習</p></div>
+<div class="block"><div class="bh dk"><span class="d"></span>⚠️ 份量提醒：建議拆成 3 次上課</div><div class="bb">
+<div class="tip"><p><strong>8 篇文章、36 題，且多篇是雙篇/三篇文件，份量比上一組更重。</strong>建議拆法：<br>第一次：單篇文章（165–175，3篇11題）<br>第二次：雙篇文件（176–185，2篇10題）<br>第三次：三篇文件（186–200，3篇15題）</p></div>
 </div></div>
 <div class="block"><div class="bh dk"><span class="d"></span>文章類型總覽</div><div class="bb">
 <table class="tmtable">
 <tr><th>題號</th><th>文章類型</th><th>題數</th></tr>
-<tr><td>131–134</td><td>商業文章（情感領導 vs 理性領導）</td><td>4</td></tr>
-<tr><td>135–138</td><td>商業文章（顧客關係與內部品質）</td><td>4</td></tr>
-<tr><td>139–142</td><td>Email（專案報告問題）</td><td>4</td></tr>
-<tr><td>143–146</td><td>商業文章（新產品開發）</td><td>4</td></tr>
-<tr><td>147–148</td><td>廣告（辦公室出租）</td><td>2</td></tr>
-<tr><td>149–150</td><td>簡訊對話（行銷報告討論）</td><td>2</td></tr>
-<tr><td>151–153</td><td>新聞（房市銷售）</td><td>3</td></tr>
-<tr><td>154–156</td><td>活動資訊（綠色生活節）</td><td>3</td></tr>
-<tr><td>157–158</td><td>廣告（徵才）</td><td>2</td></tr>
-<tr><td>159–161</td><td>介紹文（飯店）</td><td>3</td></tr>
-<tr><td>162–164</td><td>廣告（雜誌訂閱，含句子插入題）</td><td>3</td></tr>
+<tr><td>165–167</td><td>單篇：餐廳廣告（含優惠券限制）</td><td>3</td></tr>
+<tr><td>168–171</td><td>單篇：交通公告（地鐵停駛）</td><td>4</td></tr>
+<tr><td>172–175</td><td>單篇：徵才廣告（含句子插入題）</td><td>4</td></tr>
+<tr><td>176–180</td><td>雙篇：會員方案宣傳 + 顧客詢問信</td><td>5</td></tr>
+<tr><td>181–185</td><td>雙篇：商務邀約信 + 回覆信</td><td>5</td></tr>
+<tr><td>186–190</td><td>三篇：MBA 招生信 + 學生詢問信 + 課程介紹回覆</td><td>5</td></tr>
+<tr><td>191–195</td><td>三篇：活動邀請 + 報名表 + 議程回覆</td><td>5</td></tr>
+<tr><td>196–200</td><td>三篇：課程廣告 + 報名詢問信 + 價目表</td><td>5</td></tr>
 </table>
 </div></div>
 </div>
-
-<div class="ls" id="s-reading-intro">
-<div class="sh"><div class="sn">1</div><div class="st">Part 6/7 閱讀策略：先讀懂文章，再解題</div><div class="stm">⏱ 10 min</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>開場逐字稿</div><div class="bb">
-<div class="script">Part 6 跟 Part 5 最大不同是：Part 5 通常一句話就能解，但 Part 6 很多題要看上下文。<br><br>所以我們的順序是：<em>第一，先看文章類型。第二，先讀大意，不要先填空。第三，回到空格前後看文法。第四，填入後再讀一次，看文意是否順。</em><br><br>今天前兩篇文章（領導力、顧客關係）會遇到比較抽象的商業詞彙，不要被單字嚇到——先抓整段在講什麼「態度」或「做法」，再處理空格。</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>Part 6 解題四步驟</div><div class="bb">
-<table class="tbl steptbl">
-<tr><th style="width:60px">步驟</th><th>做什麼</th></tr>
-<tr><td class="snum">1</td><td>先看文章類型（Great leaders don't lead... → 領導力短文；Dear Lily → Email）</td></tr>
-<tr><td class="snum">2</td><td>先把整段大意讀過一次，不要急著填空</td></tr>
-<tr><td class="snum">3</td><td>看空格前後：詞性、固定搭配、單複數、連接詞、文意邏輯、句子插入</td></tr>
-<tr><td class="snum">4</td><td>填進去後再讀一次，問自己「整句自然嗎？接得上前後文嗎？這句是在補充、轉折，還是說原因？」</td></tr>
-</table>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>Part 7 解題三步驟</div><div class="bb">
-<table class="tbl steptbl">
-<tr><th style="width:60px">步驟</th><th>做什麼</th></tr>
-<tr><td class="snum">1</td><td>先看標題與格式（Property Details → 出租廣告；Graphics Designer → 徵才廣告；Grand Hotel → 飯店介紹）</td></tr>
-<tr><td class="snum">2</td><td>先抓四個資訊：Who（誰）、What（發生什麼事/提供什麼）、When（什麼時候）、Why（原因/目的/結果）</td></tr>
-<tr><td class="snum">3</td><td>題目問什麼，再回文章找答案——TOEIC 閱讀不是靠印象選，每一題都要在文章裡找到證據</td></tr>
-</table>
-<div class="tip mt12"><p><strong>五種 Part 7 題型應對方式：</strong>目的題看整篇在做什麼；細節題回文章找原句；NOT 題逐項核對找沒出現的；推論題只能根據文章推、不可自己加戲；單字題一定回原句看語境。</p></div>
-</div></div>
+<div class="ls" id="p7-165-v">
+<div class="sh"><div class="sn">7A</div><div class="st">Part 7 · 165–167 文章先導</div><div class="stm">⏱ 6 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（餐廳廣告）</div><div class="bb">
+<div class="p7box"><h4>🍕 Bob's Pizza House</h4>
+<p>Zero Trans Fat? You bet! At Bob's Pizza House we use only the best ingredients such as extra virgin olive oil. Our cheese pizza also has the lowest saturated fat, lowest total fat, or lowest caloric content of any major pizza chain! Bob's Pizza House is family owned and operated, and has been serving the best pizza and sandwiches for over 20 years. We still use our special blend of 100% cheese and sauce is made from fresh tomatoes and imported cheese.</p>
+<p>Pizza (3 Sizes and 15 Toppings), 6 Salads and Much More!</p>
+<p>Address: 4732 Don Drive, New Town, MI 12345 　Hours: Monday–Friday 11 a.m.–10 p.m.; Saturday 10 a.m.–11 p.m.; Sunday 3 p.m.–10 p.m. 　Phone: 737-eat-pizza</p>
+<p><b>20% Off Voucher Restrictions</b><br>✓ FOR PICKUP ORDERS ONLY<br>✓ Mention this voucher when placing your order<br>✓ Vouchers are not redeemable for cash<br>✓ No change issued for the unused portion<br>✓ Limit 1 certificate per person per visit<br>✓ Cannot be combined with any other coupons or specials</p>
 </div>
-<div class="ls" id="p6-131-v">
-<div class="sh"><div class="sn">6A</div><div class="st">Part 6 · 131–134 文章先導</div><div class="stm">⏱ 6 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章</div><div class="bb">
-<div class="artbox">Great leaders don't lead simply with their rational intellects, they lead <span class="abl">---131---</span> with their emotions, souls, passion, and intuition. Consider some of the roles that need to be <span class="abl">---132---</span> with heart. What about when you really need your staff to stretch targets outstandingly? Employees only do this <span class="abl">---133---</span>; and inspiration comes <span class="abl">---134---</span> employees feel not only challenged but believed-in, respected, and encouraged.</div>
 </div></div>
-<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
-<div class="script">這篇文章第一句就先給核心對比：<code>Great leaders don't lead simply with their rational intellects</code>——偉大的領導者不只是靠理性和智力。接著 <code>they lead also with their emotions, souls, passion, and intuition</code>，補充另一種領導方式：情感、靈魂、熱情、直覺。所以 131 的空格一定要能表達「也」。<br><br>第二句 <code>Consider some of the roles that need to be approached with heart</code>：角色需要被用心面對，因為前面是 <code>need to be</code>，所以 132 要用過去分詞形成被動。<br><br>第三句在問：如果你真的需要員工把目標拉高，而且表現出色，怎麼辦？最後一句就是答案：<code>Employees only do this if they are inspired</code>——員工只有在被激勵時才會這樣做；<code>inspiration comes when employees feel challenged, believed-in, respected, and encouraged</code>。<br><br><em>這篇的主軸不是「規定員工」，而是「用情感和激勵領導員工」。</em></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講（Step1+2：先判斷類型，再抓大意）</div><div class="bb">
+<div class="script">這篇不是一般故事，也不是新聞，它是一篇餐廳宣傳文，後面附一張優惠券規則。這種文章在 Part 7 很常見，題目通常會問三種東西：<em>第一，這間店有什麼特色；第二，店裡賣什麼；第三，優惠券怎麼用。</em><br><br>大意：Bob's Pizza House 強調使用高品質食材，例如特級初榨橄欖油，也主打低反式脂肪、低飽和脂肪、低總脂肪與低熱量。文章說明這是家族經營，已經供應披薩和三明治超過二十年。最後的優惠券規則提醒顧客：這張 20% off voucher 只限自取訂單使用，不能換現金，也不能和其他優惠合併使用，而且每人每次限用一張。<br><br>看到 <code>Voucher Restrictions</code>，要先提醒學生：這一段通常會出 NOT 題，因為限制條件很多，考試喜歡問哪一個不能做、哪一個沒有提到。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>完整中文翻譯</div><div class="bb">
+<div class="script">零反式脂肪？沒錯！在 Bob's Pizza House，我們只使用最好的食材，例如特級初榨橄欖油。我們的起司披薩也擁有所有主要披薩連鎖店中最低的飽和脂肪、最低的總脂肪，或最低的熱量！Bob's Pizza House 是家族擁有並經營的餐廳，二十多年來持續供應最棒的披薩與三明治。我們仍然使用自家特調的 100% 起司，醬汁則是用新鮮番茄與進口起司製成。<br><br>披薩（3 種尺寸、15 種配料）、6 種沙拉，還有更多選擇！<br><br>地址：4732 Don Drive, New Town, MI 12345　營業時間：週一至週五上午 11 點至晚上 10 點；週六上午 10 點至晚上 11 點；週日下午 3 點至晚上 10 點　電話：737-eat-pizza<br><br><strong>20% 折扣券使用限制</strong><br>僅限自取訂單使用<br>下單時請告知使用此折扣券<br>折扣券不得兌換現金<br>未使用的差額不予找零<br>每人每次到店限用一張<br>不得與其他優惠券或特價活動合併使用</div>
 </div></div>
 <div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
 <table class="tbl">
 <tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
-<tr><td>rational intellect</td><td>理性智慧</td><td>Leadership requires more than rational intellect.</td></tr>
-<tr><td>emotion / passion / intuition</td><td>情感 / 熱情 / 直覺</td><td>Good leaders understand employees' emotions.</td></tr>
-<tr><td>inspiration (n.) / inspired (adj.)</td><td>激勵 / 受到激勵的</td><td>Inspiration comes when employees feel respected.</td></tr>
-<tr><td>not simply A, also B</td><td>不是只有 A，也有 B</td><td>simply 在此不是「簡單地」，而是「只是、僅僅」。</td></tr>
-<tr><td>need to be + p.p.</td><td>需要被……（被動）</td><td>The report needs to be revised.</td></tr>
-<tr><td>only if</td><td>只有在……才（比 if 更強）</td><td>Employees only perform well if they are motivated.</td></tr>
-<tr><td>when + S + V</td><td>當……時（時間副詞子句）</td><td>Motivation increases when employees feel respected.</td></tr>
+<tr><td>ingredient</td><td>食材；原料</td><td>The restaurant uses fresh ingredients every day.</td></tr>
+<tr><td>extra virgin olive oil</td><td>特級初榨橄欖油</td><td>The salad is made with extra virgin olive oil.</td></tr>
+<tr><td>saturated fat / caloric content</td><td>飽和脂肪 / 熱量含量</td><td>This product contains less saturated fat.</td></tr>
+<tr><td>family owned and operated</td><td>家族擁有並經營的</td><td>The hotel is family owned and operated.</td></tr>
+<tr><td>voucher</td><td>優惠券；抵用券</td><td>You can use this voucher for your next purchase.</td></tr>
+<tr><td>redeemable for cash</td><td>可兌換現金的</td><td>This coupon is not redeemable for cash.</td></tr>
+<tr><td>be combined with</td><td>與……合併使用</td><td>This offer cannot be combined with other discounts.</td></tr>
+<tr><td>pickup（自取）vs. delivery（外送）vs. dine-in（內用）</td><td>三種取餐方式</td><td>—</td></tr>
 </table>
 </div></div>
 </div>
 
-<div class="qb" id="q131">
-<div class="qh"><span class="qn">131</span><span class="qt">副詞位置</span><span class="qs">⭐ 重點題</span></div>
+<div class="qb" id="q165">
+<div class="qh"><span class="qn">165</span><span class="qt">細節題・同義改寫</span></div>
 <div class="qbody">
-<div class="qsen">Great leaders don't lead simply with their rational intellects, they lead <span class="bl">---131---</span> with their emotions, souls, passion, and intuition.</div>
-<div class="qzh">偉大的領導者不只是用理性智慧來領導，他們 ______ 用情感、靈魂、熱情和直覺來領導。</div>
-<div class="qopts">
-<div class="qo ok"><span class="ol">A</span>also</div>
-<div class="qo"><span class="ol">B</span>and</div>
-<div class="qo"><span class="ol">C</span>too</div>
-<div class="qo"><span class="ol">D</span>but also</div>
-</div>
+<div class="qsen">What is special about Bob's Pizza House?</div>
+<div class="qzh">Bob's Pizza House 有什麼特別之處？</div>
+<div class="q4o">A. They open 12 hours a day on weekdays.</div>
+<div class="q4o">B. They are the cheapest restaurant in New Town.</div>
+<div class="q4o ok">C. They select high-quality ingredients to use.</div>
+<div class="q4o">D. They have branches in other states.</div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>前半句 don't lead simply with rational intellects＝不只用理性智慧領導。後半句 lead ______ with emotions 要表達「也用情感領導」，哪個副詞最自然？</p><div class="al">答案</div><p class="ap">also（A）— they lead also with their emotions</p></div>
-<div class="corr mt12"><p>B and：連接詞，若要用需接完整平行結構，但原句已有 they lead，不能再放 and。C too：通常放句尾（..., too.），放在 lead 和 with 中間不自然。D but also：需搭配 not only，原句是 don't lead simply，不是 not only，且結構不完整。</p></div>
+<div class="ask"><p>這題問 What is special，不要自己想「披薩店可能便宜、可能很多分店」，要回文章找作者真正強調的地方。原文說 <code>use only the best ingredients</code>，哪個選項是這句的同義改寫？</p><div class="al">答案</div><p class="ap">They select high-quality ingredients to use.（C）— select high-quality ingredients = 挑選高品質食材</p></div>
+<div class="corr mt12"><p>A：營業時間 Monday–Friday 11 a.m.–10 p.m. 是 11 小時，不是 12 小時，時間題要真的算，不要用猜的。B：文章強調的是 lowest saturated fat / lowest total fat / lowest caloric content（低脂低熱量），不是 lowest price，TOEIC 常用 cheapest 這種選項騙人。D：文章沒有提到 branches 或 other states。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">simply</span><span class="vd">只是；僅僅（非「簡單地」）</span>
-<span class="vw">rational intellect</span><span class="vd">理性智慧</span>
-<span class="vw">also</span><span class="vd">也；此外</span>
-<span class="vw">not simply A, also B</span><span class="vd">不只是 A，也 B</span>
+<span class="vw">select</span><span class="vd">挑選；選擇</span>
+<span class="vw">high-quality</span><span class="vd">高品質的</span>
 </div>
 </div>
 </div>
 </div></div>
 
-<div class="qb" id="q132">
-<div class="qh"><span class="qn">132</span><span class="qt">被動語態</span></div>
+<div class="qb" id="q166">
+<div class="qh"><span class="qn">166</span><span class="qt">細節定位・besides</span></div>
 <div class="qbody">
-<div class="qsen">Consider some of the roles that need to be <span class="bl">---132---</span> with heart.</div>
-<div class="qzh">想一想有些角色是需要用心去 ______ 的。</div>
+<div class="qsen">What is also served in this restaurant besides pizza?</div>
+<div class="qzh">這家餐廳除了披薩以外，還提供什麼？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>approach</div>
-<div class="qo ok"><span class="ol">B</span>approached</div>
-<div class="qo"><span class="ol">C</span>approaching</div>
-<div class="qo"><span class="ol">D</span>approaches</div>
+<div class="qo"><span class="ol">A</span>Ice cream</div>
+<div class="qo ok"><span class="ol">B</span>Sandwiches</div>
+<div class="qo"><span class="ol">C</span>Beer</div>
+<div class="qo"><span class="ol">D</span>French fries</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>看到 need to be ______，通常後面要接過去分詞形成被動：need to be done＝需要被做。主詞 roles 是被人面對，不是自己面對，所以要被動。</p><div class="al">答案</div><p class="ap">approached（B）— roles need to be approached with heart</p></div>
-<div class="corr mt12"><p>A approach 原形動詞，be 後面不能直接接原形構成被動；C approaching 是 V-ing，語意會變成「需要正在接近」；D approaches 是三單或名詞複數，不符合 be + p.p. 結構。</p></div>
+<div class="ask"><p>題目關鍵字 besides = 除了……之外，還有……。回文章找 pizza 附近還有什麼食物：<code>has been serving the best pizza and sandwiches for over 20 years</code>。</p><div class="al">答案</div><p class="ap">Sandwiches（B）— pizza and sandwiches 直接對應</p></div>
+<div class="corr mt12"><p>A 冰淇淋、C 啤酒、D 薯條，文章都沒有提到。這題很適合訓練定位：題目問 besides pizza，就回文章找 pizza，不要把自己平常去披薩店會看到的東西加進來。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">role</span><span class="vd">角色；職責</span>
-<span class="vw">approach (v.)</span><span class="vd">處理；面對</span>
-<span class="vw">with heart</span><span class="vd">用心地；帶著真誠</span>
-<span class="vw">need to be + p.p.</span><span class="vd">需要被……</span>
+<span class="vw">besides</span><span class="vd">除了……之外</span>
+<span class="vw">serve</span><span class="vd">供應；服務</span>
 </div>
 </div>
 </div>
 </div></div>
 
-<div class="qb" id="q133">
-<div class="qh"><span class="qn">133</span><span class="qt">上下文邏輯</span><span class="qs">⭐ 重點題</span></div>
+<div class="qb" id="q167">
+<div class="qh"><span class="qn">167</span><span class="qt">NOT題・優惠券限制</span><span class="qs">⭐ 重點題</span></div>
 <div class="qbody">
-<div class="qsen">Employees only do this <span class="bl">---133---</span>; and inspiration comes when employees feel not only challenged but believed-in, respected, and encouraged.</div>
-<div class="qzh">員工只有 ______ 才會這樣做；而當員工不只感到被挑戰，也感到被信任、被尊重、被鼓勵時，激勵就會產生。</div>
-<div class="q4o">A. since they are sad（因為他們很難過）</div>
-<div class="q4o ok">B. if they are inspired（如果他們受到激勵）</div>
-<div class="q4o">C. so they succeed（所以他們成功）</div>
-<div class="q4o">D. but they fail（但他們失敗）</div>
+<div class="qsen">Which is NOT true about using the voucher?</div>
+<div class="qzh">關於使用這張優惠券，下列哪一項是不正確的？</div>
+<div class="q4o">A. The voucher is for pick-up orders only.</div>
+<div class="q4o ok">B. A customer can use up to three vouchers at a time.</div>
+<div class="q4o">C. The voucher is not redeemable for cash.</div>
+<div class="q4o">D. The voucher cannot be combined with other specials.</div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>前一句問：當你真的需要員工出色地挑戰更高目標時，該怎麼辦？後面又出現 inspiration comes...，主題是 inspiration。哪個選項與 inspiration 同字族呼應？</p><div class="al">答案</div><p class="ap">if they are inspired（B）— inspired 和 inspiration 是同一字族，是上下文的明顯線索。</p></div>
-<div class="corr mt12"><p>A since they are sad：因為難過才出色挑戰目標，語意不合理；C so they succeed：沒有解釋「在什麼條件下」員工會這樣做；D but they fail：語意完全不順。</p></div>
+<div class="ask"><p>看到 NOT true，一定先停下來——這題不是找文章有提到的，而是找和文章不符合的。回 Voucher Restrictions 逐項核對：關鍵句是 <code>Limit 1 certificate per person per visit</code>，意思是每人每次限用一張。</p><div class="al">答案</div><p class="ap">A customer can use up to three vouchers at a time.（B）— 原文是限用一張，不是三張，跟原文相反。</p></div>
+<div class="corr mt12"><p>A：原文有 FOR PICKUP ORDERS ONLY，正確敘述。C：原文有 not redeemable for cash，正確敘述。D：原文有 Cannot be combined with any other coupons or specials，正確敘述。優惠券題的陷阱通常在小字規則，看到 limit 1 就知道一次只能一張。</p></div>
 </div>
 <div>
 <div class="gtl">生詞 &amp; 搭配</div>
 <div class="vg">
-<span class="vw">stretch targets</span><span class="vd">挑戰更高目標</span>
-<span class="vw">inspired</span><span class="vd">受到激勵的</span>
-<span class="vw">only ... if</span><span class="vd">只有在……時才</span>
-<span class="vw">同字族線索</span><span class="vd">inspired ↔ inspiration</span>
+<span class="vw">at a time</span><span class="vd">一次；同時</span>
+<span class="vw">certificate</span><span class="vd">證明書；憑證（此處指優惠憑證）</span>
+<span class="vw">per person per visit</span><span class="vd">每人每次到訪</span>
 </div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q134">
-<div class="qh"><span class="qn">134</span><span class="qt">時間副詞子句</span></div>
-<div class="qbody">
-<div class="qsen">Employees only do this if they are inspired; and inspiration comes <span class="bl">---134---</span> employees feel not only challenged but believed-in, respected, and encouraged.</div>
-<div class="qzh">而 ______ 員工不只感到被挑戰，也感到被信任、被尊重、被鼓勵時，激勵就會產生。</div>
-<div class="qopts">
-<div class="qo"><span class="ol">A</span>what</div>
-<div class="qo"><span class="ol">B</span>how</div>
-<div class="qo"><span class="ol">C</span>who</div>
-<div class="qo ok"><span class="ol">D</span>when</div>
+<div class="ls" id="p7-168-v">
+<div class="sh"><div class="sn">7B</div><div class="st">Part 7 · 168–171 文章先導</div><div class="stm">⏱ 6 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（交通公告）</div><div class="bb">
+<div class="p7box"><h4>🚇 Metro Yellow Line shuts down for 3-day work</h4>
+<p>Construction on the Metro Yellow Line will lead to the shutdown of weekend service for three consecutive days beginning at 10 p.m. Friday. The shutdown will affect stations at Garden Square and Spring Road. To assist passengers affected by the shutdowns, free shuttle buses will be provided during regular Yellow Line hours. The buses will connect the Garden Square, Spring Road, and Greenfield stations to the Green Line. Greenfield station Red Line service will be unaffected. Regular service is scheduled to resume at 4 a.m. Monday.</p>
 </div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>空格後面是完整子句 employees feel...。前面是 inspiration comes。激勵什麼時候產生？</p><div class="al">答案</div><p class="ap">when（D）— when employees feel... 當員工感到……的時候，激勵就會產生。</p></div>
-<div class="corr mt12"><p>A what 引導名詞子句，意思是「什麼」，不符句型；B how＝如何，這裡不是問方法；C who 指人，語法不通。</p></div>
-</div>
-<div>
-<div class="gtl">生詞 &amp; 搭配</div>
-<div class="vg">
-<span class="vw">challenged</span><span class="vd">受到挑戰的</span>
-<span class="vw">believed-in</span><span class="vd">被信任的</span>
-<span class="vw">respected</span><span class="vd">被尊重的</span>
-<span class="vw">when + S + V</span><span class="vd">當……時</span>
-</div>
-</div>
-</div>
-</div></div>
-<div class="ls" id="p6-135-v">
-<div class="sh"><div class="sn">6B</div><div class="st">Part 6 · 135–138 文章先導</div><div class="stm">⏱ 6 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章</div><div class="bb">
-<div class="artbox">Maintaining customer relationships is only part of an overall business system that <span class="abl">---135---</span> internal quality to customer experiences, satisfaction, loyalty, and <span class="abl">---136---</span>. This is not an easy undertaking. It simply cannot be the short-term "project of the quarter." To be customer-oriented, organizations must excel <span class="abl">---137---</span> understanding their customers thoroughly and providing them <span class="abl">---138---</span>.</div>
 </div></div>
 <div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
-<div class="script">先找主詞動詞：<code>Maintaining customer relationships is only part of an overall business system...</code> 主詞是「維持顧客關係」，動詞是 is。作者說：維持顧客關係只是整體企業系統的一部分。<br><br>接著 that 後面修飾 system：這個系統做什麼？它把內部品質連結到顧客體驗、滿意度、忠誠度、獲利能力，所以 135 要用單數動詞（system 是單數）。136 是並列名詞串列的最後一個，前面 experiences、satisfaction、loyalty 都是名詞，136 也要名詞。<br><br>第二、三句說：這不是容易的任務，不能只是短期「本季專案」——意思是顧客導向不是短期活動，而是長期系統。<br><br>最後一句：要成為顧客導向，組織必須擅長兩件事：<em>第一，徹底理解顧客；第二，提供顧客創新的產品與服務。</em></div>
+<div class="script">交通公告的閱讀順序很固定：<em>第一，發生什麼事；第二，什麼時候開始；第三，哪些地方受影響；第四，有什麼替代方式；第五，什麼時候恢復。</em><br><br>大意：Metro Yellow Line 因為施工，從星期五晚上十點開始，週末服務暫停三天。受影響車站是 Garden Square 和 Spring Road。官方會在 Yellow Line 平常營運時間提供免費接駁公車，把 Garden Square、Spring Road 和 Greenfield 車站連接到 Green Line。Greenfield 車站的 Red Line 服務不受影響，正常服務預計星期一凌晨四點恢復。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>完整中文翻譯</div><div class="bb">
+<div class="script"><strong>Metro 黃線因三天施工而停駛</strong><br><br>黃線的施工工程將導致週末服務連續停駛三天，自週五晚上 10 點開始。停駛將影響 Garden Square 站與 Spring Road 站。為協助受停駛影響的乘客，官方將在黃線平常營運時段提供免費接駁公車。這些公車會將 Garden Square、Spring Road 與 Greenfield 三站連接到綠線。Greenfield 站的紅線服務將不受影響。正常服務預計於週一凌晨 4 點恢復。</div>
 </div></div>
 <div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
 <table class="tbl">
 <tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
-<tr><td>maintain customer relationships</td><td>維持顧客關係</td><td>Companies must maintain good relationships with customers.</td></tr>
-<tr><td>link A to B</td><td>把 A 連結到 B</td><td>Research links employee satisfaction to productivity.</td></tr>
-<tr><td>satisfaction / loyalty / profitability</td><td>滿意度 / 忠誠度 / 獲利能力</td><td>Customer loyalty can improve long-term profitability.</td></tr>
-<tr><td>undertaking</td><td>任務；工作</td><td>Launching a new product is a major undertaking.</td></tr>
-<tr><td>excel at + N / V-ing</td><td>擅長……</td><td>The company excels at customer service.</td></tr>
-<tr><td>provide sb with sth</td><td>提供某人某物</td><td>The company provides customers with high-quality services.</td></tr>
-<tr><td>關係子句：system that links...</td><td>system 單數 → 動詞 links（主謂一致）</td><td>—</td></tr>
+<tr><td>construction</td><td>施工；建設工程</td><td>Road construction caused heavy traffic.</td></tr>
+<tr><td>lead to + N/V-ing</td><td>導致……</td><td>The heavy rain led to delays.</td></tr>
+<tr><td>shutdown / consecutive</td><td>停止運作 / 連續的</td><td>The store will be closed for three consecutive days.</td></tr>
+<tr><td>affect</td><td>影響</td><td>The schedule change will affect many passengers.</td></tr>
+<tr><td>shuttle bus</td><td>接駁公車</td><td>A free shuttle bus runs between the hotel and the airport.</td></tr>
+<tr><td>unaffected</td><td>不受影響的</td><td>The Red Line service will remain unaffected.</td></tr>
+<tr><td>resume</td><td>恢復；重新開始</td><td>Regular service will resume on Monday.</td></tr>
 </table>
 </div></div>
 </div>
 
-<div class="qb" id="q135">
-<div class="qh"><span class="qn">135</span><span class="qt">關係子句 + 主謂一致</span><span class="qs">⭐ 重點題</span></div>
+<div class="qb" id="q168">
+<div class="qh"><span class="qn">168</span><span class="qt">目的題</span></div>
 <div class="qbody">
-<div class="qsen">Maintaining customer relationships is only part of an overall business system that <span class="bl">---135---</span> internal quality to customer experiences, satisfaction, loyalty, and profitability.</div>
-<div class="qzh">維持顧客關係只是整體企業系統的一部分，而這個系統 ______ 內部品質到顧客體驗、滿意度、忠誠度與獲利能力。</div>
+<div class="qsen">What is the purpose of this announcement?</div>
+<div class="qzh">這則公告的目的為何？</div>
+<div class="q4o ok">A. To inform people of a construction work</div>
+<div class="q4o">B. To announce the opening of a new Metro line</div>
+<div class="q4o">C. To invite people to the grand opening of a company</div>
+<div class="q4o">D. To warn people of a hurricane</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>目的題先看標題和第一句。標題說 <code>Metro Yellow Line shuts down for 3-day work</code>，第一句說 <code>Construction ... will lead to the shutdown</code>。整篇都在通知民眾 Yellow Line 因施工而停駛，以及替代交通方式。</p><div class="al">答案</div><p class="ap">To inform people of a construction work（A）</p></div>
+<div class="corr mt12"><p>B：文章是 shutdown，不是 opening，方向相反。C：文章沒有公司、開幕或邀請。D：文章沒有天氣災害。目的題不要被 Metro line 迷惑，它不是介紹新線，而是通知施工造成停駛。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">inform sb of sth</span><span class="vd">通知某人某事</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q169">
+<div class="qh"><span class="qn">169</span><span class="qt">單字同義題・un- 字首</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The word "unaffected" in line 6 is closest in meaning to</div>
+<div class="qzh">第六行的 unaffected 最接近哪一個意思？</div>
 <div class="qopts">
-<div class="qo"><span class="ol">A</span>link</div>
-<div class="qo"><span class="ol">B</span>linked</div>
-<div class="qo ok"><span class="ol">C</span>links</div>
-<div class="qo"><span class="ol">D</span>linking</div>
+<div class="qo"><span class="ol">A</span>Unfamiliar</div>
+<div class="qo ok"><span class="ol">B</span>Unconcerned</div>
+<div class="qo"><span class="ol">C</span>Troubled</div>
+<div class="qo"><span class="ol">D</span>Unpopular</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>that 代替前面的 an overall business system，在子句中當主詞。system 是單數，現在式動詞要怎麼變？固定搭配 link A to B 是什麼意思？</p><div class="al">答案</div><p class="ap">links（C）— system links internal quality to...，把 A 連結到 B。</p></div>
-<div class="corr mt12"><p>A link 是原形動詞，只有主詞是複數 systems 才可用；B linked 是過去式/過去分詞，若要被動需搭配 is linked to，但這裡直接接受詞 internal quality，需要主動動詞；D linking 是現在分詞，不能直接當關係子句的主要動詞。</p></div>
+<div class="ask"><p>原句：<code>Greenfield station Red Line service will be unaffected</code>。unaffected 的標準意思是 not affected＝不受影響的，這裡是說 Greenfield 站的 Red Line 服務不會受到 Yellow Line 施工停駛影響。</p><div class="al">答案</div><p class="ap">Unconcerned（B）— 四個選項中最接近「沒有被這件事影響」</p></div>
+<div class="corr mt12"><p>A unfamiliar（不熟悉的）、C troubled（困擾的，幾乎相反）、D unpopular（不受歡迎的）都與「服務是否受影響」無關。</p></div>
 </div>
 <div>
-<div class="gtl">生詞 &amp; 搭配</div>
-<div class="vg">
-<span class="vw">link A to B</span><span class="vd">將 A 連結到 B</span>
-<span class="vw">internal quality</span><span class="vd">內部品質</span>
-<span class="vw">that 代替 system</span><span class="vd">單數 → 動詞加 s</span>
-</div>
+<div class="gtl">老師特別提醒</div>
+<div class="tip" style="margin:0"><p>這題要教得精準一點：unaffected 最標準的意思不是 unconcerned。unaffected 是「不受影響」；unconcerned 平常最常翻成「不擔心、不關心」。但在這四個選項裡，unconcerned 可以勉強表示「沒有被這件事情牽涉、不受影響」，所以是最佳答案。考試選 B，但不要把 unaffected = unconcerned 當成固定同義字死背。</p></div>
 </div>
 </div>
 </div></div>
 
-<div class="qb" id="q136">
-<div class="qh"><span class="qn">136</span><span class="qt">平行結構</span></div>
+<div class="qb" id="q170">
+<div class="qh"><span class="qn">170</span><span class="qt">細節題・替代方案</span></div>
 <div class="qbody">
-<div class="qsen">...customer experiences, satisfaction, loyalty, and <span class="bl">---136---</span>.</div>
-<div class="qzh">……顧客體驗、滿意度、忠誠度，以及 ______。</div>
-<div class="qopts">
-<div class="qo"><span class="ol">A</span>profitable</div>
-<div class="qo ok"><span class="ol">B</span>profitability</div>
-<div class="qo"><span class="ol">C</span>profiting</div>
-<div class="qo"><span class="ol">D</span>beneficial</div>
-</div>
+<div class="qsen">What else can people do if they want to go to Garden Square?</div>
+<div class="qzh">如果人們想去 Garden Square，還可以怎麼做？</div>
+<div class="q4o">A. Take a plane</div>
+<div class="q4o">B. Take the Red Line instead</div>
+<div class="q4o">C. Wait until the following week</div>
+<div class="q4o ok">D. Take free shuttle buses</div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>experiences、satisfaction、loyalty 都是名詞，這是 A, B, C, and D 平行結構。D 要跟前面三個詞性一致，所以要選什麼詞性？</p><div class="al">答案</div><p class="ap">profitability（B）— 獲利能力，名詞，符合平行結構且語意通順。</p></div>
-<div class="corr mt12"><p>A profitable 是形容詞（有利可圖的）；C profiting 是 V-ing，不能和名詞並列；D beneficial 是形容詞（有益的），三者都不是名詞。</p></div>
-</div>
-<div>
-<div class="gtl">生詞 &amp; 搭配</div>
-<div class="vg">
-<span class="vw">profitability (n.)</span><span class="vd">獲利能力</span>
-<span class="vw">profitable (adj.)</span><span class="vd">有利可圖的</span>
-<span class="vw">平行結構</span><span class="vd">A, B, C, and D 詞性一致</span>
-</div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q137">
-<div class="qh"><span class="qn">137</span><span class="qt">介系詞固定搭配</span><span class="qs">⭐ 重點題</span></div>
-<div class="qbody">
-<div class="qsen">To be customer-oriented, organizations must excel <span class="bl">---137---</span> understanding their customers thoroughly...</div>
-<div class="qzh">若要以顧客為導向，組織必須 ______ 徹底了解顧客……</div>
-<div class="qopts">
-<div class="qo ok"><span class="ol">A</span>at</div>
-<div class="qo"><span class="ol">B</span>for</div>
-<div class="qo"><span class="ol">C</span>in</div>
-<div class="qo"><span class="ol">D</span>under</div>
-</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>excel 後面的固定搭配是什麼？後面接的 understanding 是動名詞，哪個介系詞最自然接動名詞？</p><div class="al">答案</div><p class="ap">at（A）— excel at + N / V-ing＝擅長……</p></div>
-<div class="corr mt12"><p>B excel for 不是標準搭配；C excel in 有時可表示「在某領域表現優秀」，但接 V-ing 時 TOEIC 更常考、更自然的是 excel at；D excel under 完全不自然。</p></div>
-</div>
-<div>
-<div class="gtl">生詞 &amp; 搭配</div>
-<div class="vg">
-<span class="vw">excel at + V-ing</span><span class="vd">擅長做某事</span>
-<span class="vw">customer-oriented</span><span class="vd">以顧客為導向的</span>
-<span class="vw">thoroughly</span><span class="vd">徹底地</span>
-</div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q138">
-<div class="qh"><span class="qn">138</span><span class="qt">上下文語意</span></div>
-<div class="qbody">
-<div class="qsen">...organizations must excel at understanding their customers thoroughly and providing them <span class="bl">---138---</span>.</div>
-<div class="qzh">……組織必須擅長徹底了解顧客，並提供他們 ______。</div>
-<div class="q4o ok">A. with innovative products and services（創新的產品與服務）</div>
-<div class="q4o">B. with job opportunities（工作機會）</div>
-<div class="q4o">C. with useful ideas（有用的想法）</div>
-<div class="q4o">D. with constructive criticism（建設性批評）</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>固定句型 provide sb with sth。四個選項文法上都通，要看語境：them 指 customers，文章主題是 customer-oriented organization，公司該提供顧客什麼？</p><div class="al">答案</div><p class="ap">with innovative products and services（A）— 最符合顧客導向公司的語境。</p></div>
-<div class="corr mt12"><p>B job opportunities 是給求職者的，不是顧客；C useful ideas 太籠統，不如 products and services 直接；D constructive criticism（建設性批評）不會是公司提供給顧客的東西。</p></div>
-</div>
-<div>
-<div class="gtl">生詞 &amp; 搭配</div>
-<div class="vg">
-<span class="vw">provide sb with sth</span><span class="vd">提供某人某物</span>
-<span class="vw">innovative</span><span class="vd">創新的</span>
-<span class="vw">products and services</span><span class="vd">產品與服務</span>
-</div>
-</div>
-</div>
-</div></div>
-<div class="ls" id="p6-139-v">
-<div class="sh"><div class="sn">6C</div><div class="st">Part 6 · 139–142 文章先導</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章（Email）</div><div class="bb">
-<div class="artbox">Dear Lily,<br><br>I am sorry to tell you that it seems there are <span class="abl">---139---</span> problems in the project report you sent me yesterday. Could you have <span class="abl">---140---</span> look at the data from the survey? We need to have a correct <span class="abl">---141---</span> of the report next Wednesday. This is urgent. We don't have much time as <span class="abl">---142---</span>. Please do call me if you need any further information.<br><br>Best wishes,<br>John</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
-<div class="script">John 寫信給 Lily，說她昨天寄出的專案報告似乎有問題。他請 Lily 再檢查一次問卷調查資料，因為下週三前需要一份正確版本的報告。這件事很緊急，因為專案必須在一週內完成。<br><br><em>先抓住這個主軸：報告有問題 → 要重新檢查 → 時間很趕。</em>等一下解題會快很多。</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
-<table class="tbl">
-<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
-<tr><td>I am sorry to tell you that...</td><td>很抱歉要告訴你……（委婉告知壞消息）</td><td>I am sorry to tell you that your application was not approved.</td></tr>
-<tr><td>There are + 複數名詞</td><td>有……（複數）</td><td>There are several problems in this report.</td></tr>
-<tr><td>have another look at</td><td>再看一次；重新檢查</td><td>Could you have another look at this contract?</td></tr>
-<tr><td>a version of + 名詞</td><td>……的一個版本</td><td>Please send me the final version of the proposal.</td></tr>
-<tr><td>urgent</td><td>緊急的</td><td>This is an urgent request.</td></tr>
-<tr><td>as = because</td><td>因為（連接詞）</td><td>We canceled the event as the weather was bad.</td></tr>
-<tr><td>has to be completed</td><td>必須被完成（被動）</td><td>The project has to be completed within a week.</td></tr>
-<tr><td>Please do + 原形動詞</td><td>請務必……（do 加強語氣）</td><td>Please do let me know if you have any questions.</td></tr>
-</table>
-</div></div>
-</div>
-
-<div class="qb" id="q139">
-<div class="qh"><span class="qn">139</span><span class="qt">數量詞 + 複數可數</span></div>
-<div class="qbody">
-<div class="qsen">There are <span class="bl">---139---</span> problems in the project report.</div>
-<div class="qzh">專案報告裡似乎有幾個問題。</div>
-<div class="qopts">
-<div class="qo"><span class="ol">A</span>any</div>
-<div class="qo"><span class="ol">B</span>another</div>
-<div class="qo ok"><span class="ol">C</span>several</div>
-<div class="qo"><span class="ol">D</span>little</div>
-</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>先看空格後面：problems 是可數還是不可數？單數還是複數？</p><div class="al">答案</div><p class="ap">可數複數 → several problems = 幾個問題（C）最合理</p></div>
-<div class="corr mt12"><p>A any 常見於否定句/問句，這裡是肯定句不能選；B another 後面接單數可數名詞，不能接 problems（複數）；D little 修飾不可數名詞，不能修飾複數的 problems。</p></div>
+<div class="ask"><p>Garden Square 是受影響車站之一。原文：<code>To assist passengers affected by the shutdowns, free shuttle buses will be provided during regular Yellow Line hours.</code></p><div class="al">答案</div><p class="ap">Take free shuttle buses（D）</p></div>
+<div class="corr mt12"><p>A 文章沒有飛機資訊。B 文章只說 Greenfield station 的 Red Line 不受影響，但沒有說 Red Line 可以直接帶乘客到 Garden Square，不能過度推論。C 原文說 regular service is scheduled to resume at 4 a.m. Monday，不需要等到下週。交通公告題常問替代方案，看到 affected passengers，就往後找官方提供什麼幫助。</p></div>
 </div>
 <div>
 <div class="gtl">生詞</div>
-<div class="vg">
-<span class="vw">several + 複數可數</span><span class="vd">幾個</span>
-<span class="vw">problem</span><span class="vd">問題</span>
-</div>
+<div class="vg"><span class="vw">assist</span><span class="vd">協助</span></div>
 </div>
 </div>
 </div></div>
 
-<div class="qb" id="q140">
-<div class="qh"><span class="qn">140</span><span class="qt">固定搭配 another</span><span class="qs">⭐ 重點題</span></div>
+<div class="qb" id="q171">
+<div class="qh"><span class="qn">171</span><span class="qt">細節題・Red Line</span></div>
 <div class="qbody">
-<div class="qsen">Could you have <span class="bl">---140---</span> look at the data from the survey?</div>
-<div class="qzh">你可以再看一次這份調查資料嗎？</div>
-<div class="qopts">
-<div class="qo ok"><span class="ol">A</span>another</div>
-<div class="qo"><span class="ol">B</span>the other</div>
-<div class="qo"><span class="ol">C</span>others</div>
-<div class="qo"><span class="ol">D</span>other</div>
-</div>
+<div class="qsen">What is true about the Metro Red Line?</div>
+<div class="qzh">關於 Metro Red Line，下列哪一項正確？</div>
+<div class="q4o">A. It is pretty close to the Garden Square.</div>
+<div class="q4o ok">B. Its service will not be affected.</div>
+<div class="q4o">C. It will also be closed the following week.</div>
+<div class="q4o">D. It is the longest line of all Metro services.</div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>have ______ look at 是固定搭配。look 在這裡是單數名詞，哪個選項可以接單數可數名詞？</p><div class="al">答案</div><p class="ap">have another look at = 再看一次……（A）</p></div>
-<div class="formula mt12">have another look at + 名詞 = 再看一次、重新檢查</div>
-<div class="corr mt12"><p>B the other 是兩者中的另一個，這裡不是在兩個 look 中選一個；C others 後面不能再接名詞；D other 後面通常接複數或不可數名詞，look 是單數，不能用 other。</p></div>
+<div class="ask"><p>原文只有一句提到 Red Line：<code>Greenfield station Red Line service will be unaffected.</code> will be unaffected＝將不受影響。</p><div class="al">答案</div><p class="ap">Its service will not be affected.（B）</p></div>
+<div class="corr mt12"><p>A 文章沒有說距離。C 原文說不受影響，和這個選項相反。D 文章沒有比較長度。這題定位很直接：題目問 Red Line，文章只出現一次 Red Line，所以那一句就是答案來源。</p></div>
 </div>
 <div>
 <div class="gtl">生詞</div>
-<div class="vg">
-<span class="vw">data</span><span class="vd">資料；數據</span>
-<span class="vw">survey</span><span class="vd">調查；問卷</span>
-<span class="vw">have another look at</span><span class="vd">再看一次；重新檢查</span>
-</div>
+<div class="vg"><span class="vw">be unaffected</span><span class="vd">不受影響</span></div>
 </div>
 </div>
 </div></div>
-
-<div class="qb" id="q141">
-<div class="qh"><span class="qn">141</span><span class="qt">名詞搭配 — 報告版本</span></div>
-<div class="qbody">
-<div class="qsen">We need to have a correct <span class="bl">---141---</span> of the report next Wednesday.</div>
-<div class="qzh">我們下週三需要有一份正確版本的報告。</div>
-<div class="qopts">
-<div class="qo"><span class="ol">A</span>answer</div>
-<div class="qo"><span class="ol">B</span>plan</div>
-<div class="qo ok"><span class="ol">C</span>version</div>
-<div class="qo"><span class="ol">D</span>test</div>
-</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>四個選項都是名詞，不是詞性題，要看搭配。報告可以有不同版本，哪個字最自然？</p><div class="al">答案</div><p class="ap">a version of the report = 報告的一個版本（C）</p></div>
-<div class="corr mt12"><p>A answer 常搭配 answer a question；B plan 是在制定計畫，這裡是在修改報告；D test 是測驗/測試，不會用來表示報告版本。</p></div>
-</div>
-<div>
-<div class="gtl">生詞</div>
-<div class="vg">
-<span class="vw">version</span><span class="vd">版本</span>
-<span class="vw">final / revised / latest version</span><span class="vd">最終／修訂／最新版本</span>
-</div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q142">
-<div class="qh"><span class="qn">142</span><span class="qt">前後邏輯題</span></div>
-<div class="qbody">
-<div class="qsen">We don't have much time as <span class="bl">---142---</span>.</div>
-<div class="qzh">我們沒有很多時間，因為這個專案必須在一週內完成。</div>
-<div class="q4o">A. the project is not that important</div>
-<div class="q4o">B. the project is extremely ambitious</div>
-<div class="q4o">C. the project has been assigned to Mr. Chen</div>
-<div class="q4o ok">D. the project has to be completed within a week</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>這題不是文法題，是邏輯題。前面說「我們時間不多」，as = because，後面應該接「為什麼時間不多」最直接的原因。</p><div class="al">答案</div><p class="ap">專案必須在一週內完成（D）— 最直接的時間緊急原因</p></div>
-<div class="corr mt12"><p>A 如果專案不重要，通常不會那麼急，邏輯相反；B「規模有企圖心」不一定代表時間少；C 分配給誰跟時間不夠沒有直接關係。</p></div>
-</div>
-<div>
-<div class="gtl">生詞</div>
-<div class="vg">
-<span class="vw">complete</span><span class="vd">完成</span>
-<span class="vw">within a week</span><span class="vd">在一週內</span>
-</div>
-</div>
-</div>
-</div></div>
-
-<div class="ls" id="p6-143-v">
-<div class="sh"><div class="sn">6D</div><div class="st">Part 6 · 143–146 文章先導</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章（商業文章）</div><div class="bb">
-<div class="artbox">In new product development, it takes more <span class="abl">---143---</span> the accepted basics of high quality, low cost, and differentiation to succeed in today's <span class="abl">---144---</span>. The new rules also emphasize the <span class="abl">---145---</span> of speed and flexibility as these are key components in delivering new products to market. Therefore, nowadays companies are trying to <span class="abl">---146---</span> how to move faster than their competitors.</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
-<div class="script">在現代產品開發中，要成功不能只靠高品質、低成本和產品差異化這些基本原則。公司還必須重視速度與彈性，因為這些因素對於把新產品快速推出市場很重要。因此，現在很多公司都在想辦法如何比競爭對手更快行動。<br><br><em>主軸：基本原則還不夠 → 速度/彈性更重要 → 比對手快。</em></div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
-<table class="tbl">
-<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
-<tr><td>It takes more than A to B</td><td>要做到 B，光靠 A 還不夠</td><td>It takes more than talent to succeed.</td></tr>
-<tr><td>differentiation</td><td>差異化</td><td>product differentiation</td></tr>
-<tr><td>competitive world markets</td><td>競爭激烈的全球市場</td><td>The company operates in a highly competitive market.</td></tr>
-<tr><td>emphasize the importance of</td><td>強調……的重要性</td><td>The manager emphasized the importance of teamwork.</td></tr>
-<tr><td>deliver products to market</td><td>把產品推出市場</td><td>—</td></tr>
-<tr><td>figure out how to + V</td><td>想出如何做某事</td><td>We need to figure out how to improve customer service.</td></tr>
-</table>
-</div></div>
-</div>
-
-<div class="qb" id="q143">
-<div class="qh"><span class="qn">143</span><span class="qt">固定搭配 more than</span><span class="qs">⭐ 重點題</span></div>
-<div class="qbody">
-<div class="qsen">It takes more <span class="bl">---143---</span> the accepted basics of high quality, low cost, and differentiation to succeed.</div>
-<div class="qzh">要成功，所需要的不只是高品質、低成本和差異化這些基本原則。</div>
-<div class="qopts">
-<div class="qo"><span class="ol">A</span>then</div>
-<div class="qo"><span class="ol">B</span>to</div>
-<div class="qo ok"><span class="ol">C</span>than</div>
-<div class="qo"><span class="ol">D</span>from</div>
-</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>看到 more ______，第一個要想到什麼固定搭配？</p><div class="al">答案</div><p class="ap">more than = 不只是、光靠……還不夠（C）</p></div>
-<div class="formula mt12">It takes more than A to B = 要做到 B，不只是需要 A</div>
-<div class="corr mt12"><p>A then 是然後、那時候，和比較無關；B more to 不符合固定結構；D more from 表示「從……得到更多」，不符合本句。</p></div>
-</div>
-<div>
-<div class="gtl">生詞</div>
-<div class="vg">
-<span class="vw">accepted basics</span><span class="vd">被普遍接受的基本原則</span>
-<span class="vw">differentiation</span><span class="vd">差異化</span>
-</div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q144">
-<div class="qh"><span class="qn">144</span><span class="qt">語境判斷</span></div>
-<div class="qbody">
-<div class="qsen">To succeed in today's <span class="bl">---144---</span>.</div>
-<div class="qzh">要在今日競爭激烈的全球市場中成功。</div>
-<div class="q4o">A. natural environments</div>
-<div class="q4o">B. famous graduate schools</div>
-<div class="q4o ok">C. competitive world markets</div>
-<div class="q4o">D. easy atmosphere</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>看整段主題：product development、speed、flexibility、competitors、move faster——這是哪一種文章？</p><div class="al">答案</div><p class="ap">商業競爭文章 → competitive world markets（C）最合理</p></div>
-<div class="corr mt12"><p>A 自然環境和產品開發、競爭對手無關；B 知名研究所完全不符合商業市場文章；D 輕鬆的氣氛不符合公司競爭、產品開發的語境。</p></div>
-</div>
-<div>
-<div class="gtl">生詞</div>
-<div class="vg">
-<span class="vw">competitive</span><span class="vd">競爭激烈的</span>
-<span class="vw">world markets</span><span class="vd">全球市場</span>
-</div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q145">
-<div class="qh"><span class="qn">145</span><span class="qt">固定搭配 importance of</span></div>
-<div class="qbody">
-<div class="qsen">The new rules also emphasize the <span class="bl">---145---</span> of speed and flexibility.</div>
-<div class="qzh">這些新規則也強調速度和彈性的重要性。</div>
-<div class="qopts">
-<div class="qo ok"><span class="ol">A</span>importance</div>
-<div class="qo"><span class="ol">B</span>appearance</div>
-<div class="qo"><span class="ol">C</span>development</div>
-<div class="qo"><span class="ol">D</span>achievement</div>
-</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>emphasize the ______ of speed and flexibility，emphasize 後面最常見搭配是什麼？</p><div class="al">答案</div><p class="ap">emphasize the importance of = 強調……的重要性（A）</p></div>
-<div class="corr mt12"><p>B appearance（外表）、C development（發展）、D achievement（成就）都不符合「強調速度和彈性的重要性」的語意。</p></div>
-</div>
-<div>
-<div class="gtl">生詞</div>
-<div class="vg">
-<span class="vw">importance</span><span class="vd">重要性</span>
-<span class="vw">the importance of + N/V-ing</span><span class="vd">……的重要性</span>
-</div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q146">
-<div class="qh"><span class="qn">146</span><span class="qt">動詞片語搭配</span></div>
-<div class="qbody">
-<div class="qsen">Nowadays companies are trying to <span class="bl">---146---</span> how to move faster than their competitors.</div>
-<div class="qzh">現在公司正試著想出如何比競爭對手更快行動的方法。</div>
-<div class="qopts">
-<div class="qo"><span class="ol">A</span>apply for</div>
-<div class="qo ok"><span class="ol">B</span>figure out</div>
-<div class="qo"><span class="ol">C</span>devote to</div>
-<div class="qo"><span class="ol">D</span>speed up</div>
-</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>空格後面是 how to move faster，需要一個可以接「how to + 原形動詞」的動詞片語。</p><div class="al">答案</div><p class="ap">figure out how to V = 想出如何……（B）</p></div>
-<div class="corr mt12"><p>A apply for 後面接名詞，不能接 how to V；C devote to 是 devote A to B 的結構，不能直接接 how to move faster；D speed up 後面已經有 move faster，重複不自然。</p></div>
-</div>
-<div>
-<div class="gtl">生詞</div>
-<div class="vg">
-<span class="vw">figure out</span><span class="vd">想出；弄清楚</span>
-<span class="vw">figure out how to V</span><span class="vd">想出如何做……</span>
-</div>
-</div>
-</div>
-</div></div>
-
-
-
-<div class="ls" id="p7-147-v">
-<div class="sh"><div class="sn">7A</div><div class="st">Part 7 · 147–148 文章先導</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章（廣告）</div><div class="bb">
-<div class="p7box"><h4>📄 Property Details</h4>
-<p>3723 Cedar Lane, Teaneck, NJ 45837</p>
-<p>For Rent: 2000 sq. ft. office building, 2 miles north of Teaneck. Can be divided into two businesses (USD$700/month for one office, USD$800/month for larger office with kitchen) or will rent the entire building for $1500/month. Large parking lot. Call (123) 2848-3828 to schedule a visit.</p>
-<p>Updated: 01-05</p>
-</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>文章大意先講（Step1+2：先看類型，再抓大意）</div><div class="bb">
-<div class="script">先看開頭格式：地址 + Property Details 標題 + For Rent。一看到 <code>For Rent</code> 就先知道：<em>這是辦公大樓出租廣告。</em><br><br>大意：這棟辦公大樓 2,000 平方英尺，位於 Teaneck 北方兩英里。可以分成兩間辦公空間出租，也可以整棟出租。有大型停車場，要打電話預約參觀。</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
-<table class="tbl">
-<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
-<tr><td>for rent</td><td>出租</td><td>There is an apartment for rent near the station.</td></tr>
-<tr><td>sq. ft. (square feet)</td><td>平方英尺</td><td>—</td></tr>
-<tr><td>can be divided into</td><td>可以被分成（被動）</td><td>The room can be divided into two smaller rooms.</td></tr>
-<tr><td>the entire building</td><td>整棟建築</td><td>—</td></tr>
-<tr><td>schedule a visit</td><td>安排參觀時間</td><td>—</td></tr>
-</table>
-</div></div>
-</div>
-
-<div class="qb" id="q147">
-<div class="qh"><span class="qn">147</span><span class="qt">目的題</span></div>
-<div class="qbody">
-<div class="qsen">What is the purpose of this advertisement?</div>
-<div class="qzh">這則廣告的目的為何？</div>
-<div class="q4o">A. To promote a newly developed product</div>
-<div class="q4o ok">B. To release office-leasing information</div>
-<div class="q4o">C. To recruit new security guards</div>
-<div class="q4o">D. To explain how the property can be used</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導（Step1 先看類型）</div>
-<div class="ask"><p>整篇出現 For Rent，後面提供辦公室大小、地點、租金、是否可分租、停車場、聯絡電話——這些全都是哪一類資訊？</p><div class="al">答案</div><p class="ap">招租資訊 → office-leasing information（B）</p></div>
-<div class="corr mt12"><p>A 文章沒有產品；C 文章沒有職缺；D 文章有提到可分租/整棟出租，但主要目的不是「解釋用途」，而是「出租」。</p></div>
-</div>
-<div>
-<div class="gtl">生詞</div>
-<div class="vg"><span class="vw">office leasing</span><span class="vd">辦公室租賃</span></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q148">
-<div class="qh"><span class="qn">148</span><span class="qt">單字同義題</span></div>
-<div class="qbody">
-<div class="qsen">The word "entire" in line 3 is closest in meaning to</div>
-<div class="qzh">第三行的 entire 最接近哪一個意思？</div>
-<div class="qopts">
-<div class="qo"><span class="ol">A</span>immediate</div>
-<div class="qo"><span class="ol">B</span>worth</div>
-<div class="qo ok"><span class="ol">C</span>whole</div>
-<div class="qo"><span class="ol">D</span>tired</div>
-</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導（單字題回原句看語境）</div>
-<div class="ask"><p>回到原句：rent the entire building——整棟建築出租。entire building 最接近哪個字？</p><div class="al">答案</div><p class="ap">entire = whole（C），整個的、全部的</p></div>
-<div class="corr mt12"><p>A immediate（立刻的）、B worth（值得的）、D tired（疲倦的）都不符合修飾 building 的語境。</p></div>
-</div>
-<div>
-<div class="gtl">生詞</div>
-<div class="vg"><span class="vw">entire = whole</span><span class="vd">整個的；全部的</span></div>
-</div>
-</div>
-</div></div>
-
-<div class="ls" id="p7-149-v">
-<div class="sh"><div class="sn">7B</div><div class="st">Part 7 · 149–150 文章先導</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章（簡訊對話）</div><div class="bb">
-<div class="p7box"><h4>💬 簡訊對話</h4>
-<div class="chatline"><b>Anna</b><span>Hey, Leo. We are supposed to write a marketing report, right? But I'm not sure what we should do.</span></div>
-<div class="chatline"><b>Leo</b><span>Yes, and what we should do is to choose a product or service and compare two companies that produce it.</span></div>
-<div class="chatline"><b>Anna</b><span>All right, I see. Then I plan to do instant coffee. There are so many brands on the market now, and I think I will find tons of articles on the Internet.</span></div>
-<div class="chatline"><b>Leo</b><span>Good idea. Maybe you can also mention something like herbal tea? People think it's healthier, right?</span></div>
-<div class="chatline"><b>Anna</b><span>Exactly. I'll cover that part as well. Thank you for your help.</span></div>
-<div class="chatline"><b>Leo</b><span>Sure, no problem at all. If you need further assistance, just send me a message.</span></div>
-</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>文章大意先講（Step2：先抓 Who/What）</div><div class="bb">
-<div class="script">Who：Anna 和 Leo。What：他們要寫一份行銷報告，要選一項產品或服務，比較兩家生產該產品的公司。Anna 決定做即溶咖啡，Leo 建議她也可以加入花草茶這個相關內容。<br><br><em>先抓住：這是同學討論作業內容，不是在聊天喝飲料。</em></div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
-<table class="tbl">
-<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
-<tr><td>be supposed to + V</td><td>應該……；理應……</td><td>We are supposed to submit the report by Friday.</td></tr>
-<tr><td>What S + V is...</td><td>……做的事是……</td><td>What he needs is more experience.</td></tr>
-<tr><td>so many + 複數可數</td><td>這麼多……</td><td>There are so many choices.</td></tr>
-<tr><td>cover（涵蓋/討論）</td><td>涵蓋；討論；處理</td><td>The report covers several important topics.</td></tr>
-</table>
-</div></div>
-</div>
-
-<div class="qb" id="q149">
-<div class="qh"><span class="qn">149</span><span class="qt">主旨題</span></div>
-<div class="qbody">
-<div class="qsen">What are Anna and Leo discussing via Messenger?</div>
-<div class="qzh">Anna 和 Leo 正透過 Messenger 討論什麼？</div>
-<div class="q4o ok">A. What to include in their marketing report</div>
-<div class="q4o">B. The sales of their instant coffee</div>
-<div class="q4o">C. A new product they are going to launch</div>
-<div class="q4o">D. Market expansion in Japan</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>第一句直接說 We are supposed to write a marketing report，後面一直在討論選什麼產品、比較哪兩家公司。這些對話內容圍繞在什麼主題？</p><div class="al">答案</div><p class="ap">討論行銷報告要放什麼內容（A）</p></div>
-<div class="corr mt12"><p>B 文章沒有談銷售數字；C 他們是在選報告主題，不是在推出產品；D 文章沒有提到日本。</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒</div>
-<div class="ask" style="background:var(--sky-lt);border-color:#BAE6FD"><p>主旨題不要只看其中一個字，例如 instant coffee，要看整段對話一直在做什麼。</p><div class="al">提醒學生</div><p class="ap">這裡不是討論咖啡銷售，而是在討論報告內容。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q150">
-<div class="qh"><span class="qn">150</span><span class="qt">說話目的題</span></div>
-<div class="qbody">
-<div class="qsen">Why does Leo mention, "Maybe you can also mention something like herbal tea"?</div>
-<div class="qzh">Leo 為什麼提到「也許你也可以提到像花草茶之類的東西」？</div>
-<div class="q4o">A. To invite Anna to drink something together</div>
-<div class="q4o">B. To make sure if Anna has some tea</div>
-<div class="q4o ok">C. To suggest that Anna include another related topic</div>
-<div class="q4o">D. To remind Anna to prepare tea for a meeting</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>前面 Anna 說她要寫 instant coffee。Leo 接著說 Maybe you can also mention something like herbal tea，這是在邀請喝茶，還是在給報告內容建議？</p><div class="al">答案</div><p class="ap">給報告內容建議，建議加入相關主題（C）</p></div>
-<div class="corr mt12"><p>A 沒有邀請語氣，也沒有 let's drink tea；B 完全沒有問 Anna 有沒有茶；D 文章沒有會議，也沒有泡茶情境。</p></div>
-</div>
-<div>
-<div class="gtl">生詞</div>
-<div class="vg"><span class="vw">herbal tea</span><span class="vd">花草茶</span><span class="vw">mention</span><span class="vd">提到</span><span class="vw">related</span><span class="vd">相關的</span></div>
-</div>
-</div>
-</div></div>
-
-
-<div class="ls" id="p7-151-v">
-<div class="sh"><div class="sn">7C</div><div class="st">Part 7 · 151–153 文章先導</div><div class="stm">⏱ 6 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章（新聞）</div><div class="bb">
-<div class="p7box"><h4>📰 Home sales down 13% in July</h4>
-<p>Local home sales in July fell to the lowest level since 2016, even as average prices closed in on an all-time high, according to statistics released Monday.</p>
-<p>Members of the Springfield Real Estate Board sold 922 homes last month, a decrease of 13% from the 1,059 homes that changed hands a year earlier. However, a local official said the drop-off was not entirely unexpected. "The market was forecasted to slow down in 2017 as a result of recent mortgage changes, and indeed it has," said Kim Timberland, the manager of the Springfield Real Estate Board, in a statement.</p>
-<p>Condominium sales did not decrease as sharply as the broader market, falling 8%. Two-story homes took the greatest drop in sales, falling 19%. The drop-off in sales did not pull down the average home price. Average prices increased 1% year over year.</p>
+<div class="ls" id="p7-172-v">
+<div class="sh"><div class="sn">7C</div><div class="st">Part 7 · 172–175 文章先導</div><div class="stm">⏱ 6 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（徵才廣告，含句子插入）</div><div class="bb">
+<div class="p7box"><h4>💻 Tech Support Engineer</h4>
+<p>Location: India, Bangalore　Talent Area: Technical Support　Preferred Education: Master's Degree</p>
+<p><b>Position Summary</b><br>The Technical Support Engineer is responsible for responding to and resolving complex customer problems via phone, e-mail and remote access for Strata products. <span class="insmark">[1]</span></p>
+<p><b>Responsibilities</b><br>The primary duties for this position include but are not limited to:</p>
+<p><i>Technology Proficiency</i><br>✓ Provide technical assistance to customers on Strata products via phone, e-mail or remote access.<br>✓ Publish articles in our in-house knowledge base. <span class="insmark">[2]</span><br>✓ Able to learn a wide variety of technologies at a rapid pace.</p>
+<p><i>Teamwork</i><br>✓ Achieve and maintain targeted call statistics, such as number of calls answered, number of cases closed or issues resolved, along with other established goals.<br>✓ Along with the Technical Manager, set realistic personal training and product certification goals.</p>
+<p><b>Qualifications and Requirements</b><br>✓ Minimum of 2-year experience in a Tech Support environment.<br>✓ Solid knowledge of network security concepts, networking technology, and troubleshooting tools.<br>✓ Strong understanding for application remote access technologies. <span class="insmark">[3]</span></p>
+<p>This position will require you to work on night shifts with potential for extended coverage. Click HERE to apply. <span class="insmark">[4]</span></p>
 </div>
 </div></div>
 <div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
-<div class="script">七月當地房屋銷售量下降了 13%，是自 2016 年以來最低。不過平均房價沒有下降，反而比去年同期上升 1%。市場放緩其實不完全令人意外，因為近期房貸政策改變後，市場原本就被預測會減速。<br><br><em>抓住關鍵對比：銷售量下降 vs. 房價不降反升。</em>這是這篇文章最重要的張力。</div>
+<div class="script">這篇是 job advertisement，也就是徵才廣告。徵才廣告有固定讀法：<em>先看職稱，再看地點，再看工作內容，最後看資格要求</em>，不要從第一個字慢慢翻到最後，會太慢。<br><br>職稱是技術支援工程師。地點 <code>Location: India, Bangalore</code>——地點題通常直接在文章最上方。<code>Preferred Education: Master's Degree</code>，preferred 是偏好的，不一定是絕對必須，TOEIC 很喜歡考 required 和 preferred 的差異。<br><br>工作摘要：這個職位負責透過電話、Email 和遠端存取處理 Strata 產品的複雜顧客問題。<code>include but are not limited to</code> 是工作說明常見句，意思是「包含但不限於」。<code>Publish articles in our in-house knowledge base</code> 不是 blog，in-house knowledge base 是公司內部知識庫，給內部或支援團隊使用，不是對外寫部落格。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>完整中文翻譯</div><div class="bb">
+<div class="script"><strong>技術支援工程師</strong><br>地點：印度班加羅爾　專業領域：技術支援　偏好學歷：碩士學位<br><br><strong>職務摘要</strong><br>技術支援工程師負責透過電話、電子郵件與遠端存取，回應並解決 Strata 產品的複雜顧客問題。<br><br><strong>工作職責</strong><br>本職位的主要職責包含但不限於：<br><br><em>技術能力</em><br>透過電話、電子郵件或遠端存取，為顧客提供 Strata 產品的技術協助。<br>在公司內部知識庫發表文章。<br>能夠快速學習各種不同的技術。<br><br><em>團隊合作</em><br>達成並維持既定的通話統計目標，例如已接聽電話數、已結案案件數或已解決問題數，以及其他既定目標。<br>與技術經理一同設定切合實際的個人訓練與產品認證目標。<br><br><strong>資格與要求</strong><br>至少兩年技術支援相關工作經驗。<br>熟悉網路安全概念、網路技術與故障排除工具。<br>對遠端存取應用技術有深入了解。<br><br>本職位需輪值夜班，且可能需要延長支援時段。點擊此處申請。</div>
 </div></div>
 <div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
 <table class="tbl">
-<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
-<tr><td>fall to the lowest level</td><td>降到最低水準</td><td>Sales fell to the lowest level in five years.</td></tr>
-<tr><td>all-time high</td><td>歷史新高</td><td>The company's stock price reached an all-time high.</td></tr>
-<tr><td>a decrease of + 數字</td><td>下降了……</td><td>The company reported a decrease of 10% in sales.</td></tr>
-<tr><td>change hands</td><td>易手；被買賣；換主人</td><td>More than 500 homes changed hands last month.</td></tr>
-<tr><td>not entirely unexpected</td><td>並不是完全出乎意料</td><td>—</td></tr>
-<tr><td>be forecasted to + V</td><td>被預測將……</td><td>Sales are forecasted to increase next year.</td></tr>
-<tr><td>as a result of</td><td>因為；由於</td><td>The event was canceled as a result of heavy rain.</td></tr>
-<tr><td>not as ... as</td><td>沒有像……那麼……</td><td>—</td></tr>
-<tr><td>pull down</td><td>拉低；使下降</td><td>Lower demand may pull down prices.</td></tr>
-<tr><td>year over year</td><td>與去年同期相比</td><td>Sales increased 5% year over year.</td></tr>
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>be responsible for + V-ing</td><td>負責做……</td><td>She is responsible for training new employees.</td></tr>
+<tr><td>respond to / resolve</td><td>回應 / 解決</td><td>The technician resolved the issue by phone.</td></tr>
+<tr><td>remote access</td><td>遠端存取</td><td>The engineer fixed the computer through remote access.</td></tr>
+<tr><td>in-house knowledge base</td><td>公司內部知識庫</td><td>Employees can search the knowledge base for solutions.</td></tr>
+<tr><td>at a rapid pace</td><td>以快速的速度</td><td>Technology changes at a rapid pace.</td></tr>
+<tr><td>troubleshooting tools</td><td>故障排除工具</td><td>Support engineers use troubleshooting tools to identify problems.</td></tr>
+<tr><td>night shift</td><td>夜班</td><td>This position requires night shifts.</td></tr>
+<tr><td>verbal / written communication skills</td><td>口語 / 書面溝通能力</td><td>The job requires strong verbal communication skills.</td></tr>
 </table>
 </div></div>
 </div>
 
-<div class="qb" id="q151">
-<div class="qh"><span class="qn">151</span><span class="qt">標題細節題</span></div>
+<div class="qb" id="q172">
+<div class="qh"><span class="qn">172</span><span class="qt">地點定位題</span></div>
 <div class="qbody">
-<div class="qsen">What has happened to the home sales in July?</div>
-<div class="qzh">七月的房屋銷售發生了什麼變化？</div>
-<div class="q4o">A. It decreased by 30%.</div>
-<div class="q4o ok">B. It dropped by 13%.</div>
-<div class="q4o">C. It increased by 13%.</div>
-<div class="q4o">D. It surged to its record high.</div>
+<div class="qsen">Which city does this position based in?</div>
+<div class="qzh">這份工作位於哪一個城市？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>Madrid</div>
+<div class="qo ok"><span class="ol">B</span>Bangalore</div>
+<div class="qo"><span class="ol">C</span>Taipei</div>
+<div class="qo"><span class="ol">D</span>San Diego</div>
+</div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>標題直接說 Home sales down 13% in July，第二段也再寫 a decrease of 13%。</p><div class="al">答案</div><p class="ap">下降 13%（B）</p></div>
-<div class="corr mt12"><p>A 文章沒有 30%；C 文章是下降，不是增加；D 文章說銷售量是 2016 年以來最低，不是創新高（創新高的是房價，不是銷售量）。</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>新聞標題通常直接給主旨數字，看到 down 13% 就先鎖定答案方向。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q152">
-<div class="qh"><span class="qn">152</span><span class="qt">引述推論題</span><span class="qs">⭐ 重點題</span></div>
-<div class="qbody">
-<div class="qsen">According to the article, what has Kim Timberland suggested?</div>
-<div class="qzh">根據文章，Kim Timberland 表示了什麼？</div>
-<div class="q4o">A. The drop-off was totally unexpected.</div>
-<div class="q4o">B. People did not expect that the market would slow down at all.</div>
-<div class="q4o ok">C. People predicted the situation would happen anyway.</div>
-<div class="q4o">D. The drop-off shocked many analysts.</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>回文章找 Kim Timberland 的話：The drop-off was not entirely unexpected，以及 The market was forecasted to slow down。這兩句都表示什麼？</p><div class="al">答案</div><p class="ap">市場變慢早就被預期（C）</p></div>
-<div class="corr mt12"><p>A/B 原文是 <code>not entirely unexpected</code>，意思相反（不是完全出乎意料）；D 文章沒有提到分析師震驚。</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒：陷阱在哪裡</div>
-<div class="corr" style="margin:0"><p>陷阱是 not entirely unexpected。不要只看到 unexpected 就以為是意外，前面有 not，意思是「不是完全沒料到」。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q153">
-<div class="qh"><span class="qn">153</span><span class="qt">推論題</span></div>
-<div class="qbody">
-<div class="qsen">According to the article, what can be inferred about the average home price?</div>
-<div class="qzh">根據文章，可以推論平均房價如何？</div>
-<div class="q4o">A. It was seriously affected.</div>
-<div class="q4o">B. It increased over 10%.</div>
-<div class="q4o ok">C. It edged higher a little as well.</div>
-<div class="q4o">D. It fell by 8%.</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>文章最後一句：Average prices increased 1% year over year。1% 是大幅還是小幅增加？</p><div class="al">答案</div><p class="ap">小幅上升（edge higher）→ C</p></div>
-<div class="corr mt12"><p>A 文章說銷售下降沒有拉低房價，不能說受嚴重影響；B 是上升 1%，不是超過 10%；D 8% 是 condominium sales 的下降，不是房價。</p></div>
+<div class="ask"><p>文章最上方寫 <code>Location: India, Bangalore</code>。地點題通常不用讀全文，先找 Location 就好。</p><div class="al">答案</div><p class="ap">Bangalore（B）</p></div>
+<div class="corr mt12"><p>A Madrid、C Taipei、D San Diego，文章都沒有提到。</p></div>
 </div>
 <div>
 <div class="gtl">生詞</div>
-<div class="vg"><span class="vw">edge higher</span><span class="vd">緩慢、小幅上升</span></div>
+<div class="vg"><span class="vw">be based in</span><span class="vd">總部/職位設於……</span></div>
 </div>
 </div>
 </div></div>
 
-<div class="ls" id="p7-154-v">
-<div class="sh"><div class="sn">7D</div><div class="st">Part 7 · 154–156 文章先導</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章（活動資訊）</div><div class="bb">
-<div class="p7box"><h4>🌱 University Town Green Festival</h4>
-<p>Saturday, July 15th, 10:00 a.m.　Jasper Hall, University Town</p>
-<p>The east region's largest and most trusted green living event is bringing the University Town green community together at the Green Festival for the third time. Join us for leaders in the environmental community, an organic pavilion, a Green Kids' Zone and a unique marketplace of more than 300 eco-friendly businesses.</p>
-<p>Local nonprofits are invited to enter Community Green Grants contest for the chance to win a $1,000 grant or a $500 runner-up prize.</p>
-</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
-<div class="script">這是一場 Green Festival，環保生活活動。有環保社群領袖、有機展區、兒童綠色區，還有超過 300 家環保企業的市集。當地非營利組織也可以參加獎助金比賽。<br><br><em>核心字一直出現：green living、environmental community、eco-friendly——這是在推廣環保意識，不是單純市集賣東西。</em></div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
-<table class="tbl">
-<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
-<tr><td>green living</td><td>綠色生活；環保生活方式</td><td>—</td></tr>
-<tr><td>bring A together</td><td>讓 A 聚在一起</td><td>The event brings local businesses together.</td></tr>
-<tr><td>organic pavilion</td><td>有機展區</td><td>—</td></tr>
-<tr><td>eco-friendly</td><td>環保的</td><td>—</td></tr>
-<tr><td>be invited to + V</td><td>被邀請做……</td><td>Local businesses are invited to participate.</td></tr>
-<tr><td>for the chance to + V</td><td>為了有機會……</td><td>—</td></tr>
-</table>
-</div></div>
-</div>
-
-<div class="qb" id="q154">
-<div class="qh"><span class="qn">154</span><span class="qt">目的題</span></div>
+<div class="qb" id="q173">
+<div class="qh"><span class="qn">173</span><span class="qt">NOT題・支援方式</span></div>
 <div class="qbody">
-<div class="qsen">What is the purpose of the event?</div>
-<div class="qzh">這個活動的目的為何？</div>
-<div class="q4o ok">A. To raise awareness of green environment</div>
-<div class="q4o">B. To inform students of new training courses</div>
-<div class="q4o">C. To attract new customers to purchase products</div>
-<div class="q4o">D. To announce a new policy to the public</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>文章反覆出現 green living、environmental community、organic、eco-friendly。整個活動的目的是什麼？</p><div class="al">答案</div><p class="ap">提升環保意識（A）</p></div>
-<div class="corr mt12"><p>B 文章沒有課程；C 雖然活動有市集，但整體目的不是單純賣東西；D 文章沒有政策。</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>目的題要看整篇，不要只看到 marketplace 就選賣東西。文章最核心的字是 green living 和 eco-friendly。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q155">
-<div class="qh"><span class="qn">155</span><span class="qt">NOT題</span><span class="qs">⭐ 重點題</span></div>
-<div class="qbody">
-<div class="qsen">What is NOT mentioned as one of this event's features?</div>
-<div class="qzh">以下哪一項沒有被提到是這個活動的特色？</div>
-<div class="q4o">A. It is the biggest event in the east region.</div>
-<div class="q4o ok">B. The event will last for the whole week.</div>
-<div class="q4o">C. Leaders in the community will also participate.</div>
-<div class="q4o">D. A contest will take place in the event.</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導（NOT題要逐項回文章核對）</div>
-<div class="ask"><p>逐項核對：A「The east region's largest」有提到；C「leaders in the environmental community」有提到；D「Community Green Grants contest」有提到。B 呢？</p><div class="al">答案</div><p class="ap">文章只寫 Saturday, July 15th，沒有說活動持續一整週 → B 是答案</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>NOT 題一定要用排除法：A、C、D 都能回文章畫到證據，只有 B 完全沒有寫，所以選 B。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q156">
-<div class="qh"><span class="qn">156</span><span class="qt">單字同義題</span></div>
-<div class="qbody">
-<div class="qsen">The word "grant" in the last line is closest in meaning to</div>
-<div class="qzh">最後一行的 grant 最接近哪一個意思？</div>
+<div class="qsen">Which of the following is NOT mentioned as a way to provide support to customers?</div>
+<div class="qzh">下列哪一項沒有被提到是提供顧客支援的方式？</div>
 <div class="qopts">
-<div class="qo ok"><span class="ol">A</span>subsidy</div>
-<div class="qo"><span class="ol">B</span>brand</div>
-<div class="qo"><span class="ol">C</span>profit</div>
-<div class="qo"><span class="ol">D</span>innovation</div>
+<div class="qo"><span class="ol">A</span>Via phone</div>
+<div class="qo"><span class="ol">B</span>Via e-mail</div>
+<div class="qo"><span class="ol">C</span>Via remote access</div>
+<div class="qo ok"><span class="ol">D</span>Via blog</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>看 grant 前後：win a $1,000 grant，這是一筆可以贏得的錢，而且對象是 nonprofit。grant 是哪種錢？</p><div class="al">答案</div><p class="ap">補助金、資助金 → subsidy（A）</p></div>
+<div class="ask"><p>題目問 way to provide support to customers，回文章找支援客戶的方式：<code>via phone, e-mail and remote access</code>。</p><div class="al">答案</div><p class="ap">Via blog（D）— 文章沒有提到 blog</p></div>
+<div class="corr mt12"><p>A、B、C 原文都有。這題很容易被 <code>Publish articles in our in-house knowledge base</code> 騙——文章說的是公司內部知識庫，不是 blog。題目問 provide support to customers，所以只能看 phone、e-mail、remote access。</p></div>
 </div>
 <div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>grant 是 TOEIC 常見字：前面有金額、後面是 nonprofit 或 organization，通常就是補助金。</p></div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">via</span><span class="vd">透過；經由</span></div>
 </div>
 </div>
 </div></div>
 
-
-<div class="ls" id="p7-157-v">
-<div class="sh"><div class="sn">7E</div><div class="st">Part 7 · 157–158 文章先導</div><div class="stm">⏱ 4 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章（徵才廣告）</div><div class="bb">
-<div class="p7box"><h4>💼 Graphics Designer — Goleta City, GA</h4>
-<p><b>About the Job</b><br>Max Services is recruiting an entry-level Graphics Designer for a reputable company in Goleta City. Candidates must have a one-year minimum experience working with graphics and creating specific designs. Candidates should have experience working with graphic software as well as Microsoft Office programs. Position is 1st shift. There are never any fees to applicants or employees.</p>
-<p>To apply for this position, or to view other current openings, please visit www.max-services.net. Please include an updated resume with your application.</p>
-</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
-<div class="script">Max Services 正在替 Goleta City 一家信譽良好的公司招募初階平面設計師。應徵者至少需要一年平面設計經驗，也要熟悉平面設計軟體和 Microsoft Office。申請要附上更新過的履歷。<br><br><em>注意：graphic software（平面設計軟體）≠ computer programs（電腦程式），這是 158 題的陷阱。</em></div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
-<table class="tbl">
-<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
-<tr><td>recruit</td><td>招募；徵才</td><td>—</td></tr>
-<tr><td>entry-level</td><td>初階的；入門級的</td><td>—</td></tr>
-<tr><td>reputable</td><td>信譽良好的</td><td>She works for a reputable company.</td></tr>
-<tr><td>A as well as B</td><td>A 以及 B</td><td>Applicants should know Excel as well as Word.</td></tr>
-<tr><td>updated resume</td><td>更新過的履歷</td><td>—</td></tr>
-</table>
-</div></div>
-</div>
-
-<div class="qb" id="q157">
-<div class="qh"><span class="qn">157</span><span class="qt">推論題</span></div>
+<div class="qb" id="q174">
+<div class="qh"><span class="qn">174</span><span class="qt">NOT題・工作職責</span><span class="qs">⭐ 重點題</span></div>
 <div class="qbody">
-<div class="qsen">According to the article, what can be inferred about the Max Services company?</div>
-<div class="qzh">根據文章，可以推論 Max Services 公司如何？</div>
-<div class="q4o">A. Its website is currently under construction.</div>
-<div class="q4o">B. It is a rather old company.</div>
-<div class="q4o ok">C. It is now hiring.</div>
-<div class="q4o">D. It is located in Asia.</div>
+<div class="qsen">What is NOT mentioned as a responsibility of this position?</div>
+<div class="qzh">下列哪一項沒有被提到是這份工作的職責？</div>
+<div class="q4o">A. Write articles for internal use</div>
+<div class="q4o">B. Assist customers with their technical problems</div>
+<div class="q4o">C. Acquire new technology knowledge quickly</div>
+<div class="q4o ok">D. Work closely with CEO to develop business plans</div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導</div>
-<div class="ask"><p>第一句直接說 Max Services is recruiting，is recruiting 是什麼意思？</p><div class="al">答案</div><p class="ap">正在徵人 → It is now hiring（C）</p></div>
-<div class="corr mt12"><p>A 文章叫人去網站申請，沒說網站施工；B 文章沒有公司成立多久的資訊；D 文章提到 Goleta City, GA，沒有亞洲資訊。</p></div>
+<div class="ask"><p>回 Responsibilities 區塊逐項核對：Provide technical assistance to customers（協助顧客技術問題）、Publish articles in our in-house knowledge base（撰寫內部文章）、learn a wide variety of technologies at a rapid pace（快速學習新技術）。有沒有提到 CEO 或 business plans？</p><div class="al">答案</div><p class="ap">Work closely with CEO to develop business plans（D）— 文章提到的是 Technical Manager，不是 CEO；而且是設定 training and certification goals，不是 business plans。</p></div>
+<div class="corr mt12"><p>A、B、C 都能在原文找到對應句。NOT 題不要看到類似就選：CEO 和 Technical Manager 是完全不同的人，business plans 和 training goals 也不是同一件事。</p></div>
 </div>
 <div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>推論題不一定是原文完全一樣的句子，但 recruiting 就是徵人，所以可以推得它目前正在 hiring。</p></div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">acquire</span><span class="vd">取得；習得</span>
+<span class="vw">internal use</span><span class="vd">內部使用</span>
+</div>
 </div>
 </div>
 </div></div>
 
-<div class="qb" id="q158">
-<div class="qh"><span class="qn">158</span><span class="qt">NOT題</span></div>
+<div class="qb" id="q175">
+<div class="qh"><span class="qn">175</span><span class="qt">句子插入題</span><span class="qs">⭐ 重點題</span></div>
 <div class="qbody">
-<div class="qsen">Which of the following is NOT a requirement of the job?</div>
-<div class="qzh">以下哪一項不是這份工作的要求？</div>
-<div class="q4o">A. Applicants should possess at least one year of experience.</div>
-<div class="q4o">B. Applicants should be familiar with graphical software applications.</div>
-<div class="q4o">C. Applicants need to know how to use MS Office programs.</div>
-<div class="q4o ok">D. Applicants must have experience designing computer programs.</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>逐項回文章找：一年經驗有提到、graphic software 有提到、Microsoft Office 有提到。「設計電腦程式」呢？</p><div class="al">答案</div><p class="ap">文章沒有提到設計電腦程式 → D 是答案</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒：陷阱在哪裡</div>
-<div class="corr" style="margin:0"><p>graphic software 是平面設計軟體，不是 computer programs。看到 program 不要馬上以為是寫程式，要看前面到底在講什麼。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="ls" id="p7-159-v">
-<div class="sh"><div class="sn">7F</div><div class="st">Part 7 · 159–161 文章先導</div><div class="stm">⏱ 5 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章（飯店介紹）</div><div class="bb">
-<div class="p7box"><h4>🏨 Grand Hotel</h4>
-<p>Grand Hotel is located at the border of New Jersey and New York. From the very beginning, the hotel targets customers for business and leisure purposes. With the advantage of convenient transportation, Grand Hotel also offers luxury rooms, hospitable services, and completely furnished business facilities. Today, Grand Hotel has become the first choice for the local and international business travelers. Grand Hotel owns 150 comfortable guest rooms with simple and graceful designs. Some of our services are listed below:</p>
-<p><b>Business Center</b> — The Business Center on the first floor opens 24 hours and is fully equipped with business facilities that allow guests to manage their business without leaving the hotel.</p>
-<p><b>Fitness Center</b> — The Grand Fitness Club offers free fitness equipment for guests to enjoy the exercise and to release stress.</p>
-<p><b>Wireless Internet Access</b> — Hotel guests may access to the Internet in the public area by using laptops equipped with a wireless network card.</p>
-<p><b>Laundry Service</b> — Hotel guests can fill in the laundry list in the room and our hotel staff will take care of the washing and ironing. The finished clothing shall be returned the same day.</p>
-<p>Cab Service ／ Airplane Ticket Reservation ／ Airport Transfer Service ／ And more!</p>
-</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
-<div class="script">Grand Hotel 位於 New Jersey 和 New York 的交界，主要服務商務與休閒旅客。文章介紹飯店賣點與服務：商務中心、健身中心、無線網路、洗衣服務、計程車服務、機票訂位、機場接送。<br><br><em>整篇是條列式服務介紹——這篇文章長，但結構很規律，每個小標題就是一項服務。</em></div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
-<table class="tbl">
-<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
-<tr><td>at the border of A and B</td><td>在 A 和 B 的交界</td><td>—</td></tr>
-<tr><td>with the advantage of</td><td>因為有……的優勢</td><td>—</td></tr>
-<tr><td>hospitable</td><td>好客的；熱情接待的</td><td>—</td></tr>
-<tr><td>be fully equipped with</td><td>配備齊全的……</td><td>The office is fully equipped with computers.</td></tr>
-<tr><td>without + V-ing</td><td>不必……</td><td>—</td></tr>
-<tr><td>take care of</td><td>處理；負責；照顧</td><td>—</td></tr>
-</table>
-</div></div>
-</div>
-
-<div class="qb" id="q159">
-<div class="qh"><span class="qn">159</span><span class="qt">目的題</span></div>
-<div class="qbody">
-<div class="qsen">What's the purpose of this introduction?</div>
-<div class="qzh">這篇介紹的目的為何？</div>
-<div class="q4o">A. To encourage foreign investments</div>
-<div class="q4o">B. To fill a vacancy for a hotel manager</div>
-<div class="q4o ok">C. To promote unique selling points of a hotel</div>
-<div class="q4o">D. To explain how to release stress</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>文章介紹地點、交通、客房、商務中心、健身中心、網路、洗衣、機場接送。這是在做什麼？</p><div class="al">答案</div><p class="ap">宣傳飯店的獨特賣點（C）</p></div>
-<div class="corr mt12"><p>A 文章沒有投資內容；B 沒有徵才資訊；D 只在健身中心部分提到 release stress，不是全文主旨。</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>主旨題不要因為看到 fitness center 就以為文章是在教紓壓。它列出很多飯店服務，整篇是在宣傳飯店。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q160">
-<div class="qh"><span class="qn">160</span><span class="qt">單字同義題</span></div>
-<div class="qbody">
-<div class="qsen">The word "graceful" in line 6 is closest in meaning to</div>
-<div class="qzh">第六行的 graceful 最接近哪一個意思？</div>
-<div class="qopts">
-<div class="qo"><span class="ol">A</span>pitiful</div>
-<div class="qo"><span class="ol">B</span>thorough</div>
-<div class="qo"><span class="ol">C</span>detailed</div>
-<div class="qo ok"><span class="ol">D</span>beautiful</div>
-</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>原文：simple and graceful designs，這是在形容房間設計。graceful 在這裡是優雅、美麗、有品味的，最接近哪個字？</p><div class="al">答案</div><p class="ap">beautiful（D）</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>單字題要看它修飾什麼。graceful designs 是優雅的設計，最接近 beautiful，不是 detailed（詳細的）。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q161">
-<div class="qh"><span class="qn">161</span><span class="qt">NOT題</span></div>
-<div class="qbody">
-<div class="qsen">What is NOT mentioned as a service in the hotel?</div>
-<div class="qzh">以下哪一項沒有被提到是飯店服務？</div>
-<div class="q4o ok">A. Movie theaters</div>
-<div class="q4o">B. Workout facilities</div>
-<div class="q4o">C. Business amenities</div>
-<div class="q4o">D. Taxi to and from the airport</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>逐項回文章找：Workout facilities → Fitness Center 有；Business amenities → Business Center 有；Taxi → Cab Service / Airport Transfer Service 有。Movie theaters 呢？</p><div class="al">答案</div><p class="ap">文章沒有提到電影院 → A 是答案</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>NOT 題核心就是回文章找。不要憑記憶，一個一個畫：健身有、商務有、機場接送有，只有電影院沒有。</p></div>
-</div>
-</div>
-</div></div>
-
-
-<div class="ls" id="p7-162-v">
-<div class="sh"><div class="sn">7G</div><div class="st">Part 7 · 162–164 文章先導</div><div class="stm">⏱ 6 min</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>完整文章（雜誌訂閱廣告，含句子插入）</div><div class="bb">
-<div class="p7box"><h4>📖 The Art of Business Management — 12 Month Subscription</h4>
-<p>The Art of Business Management is the leading business management magazine examining the trends and opportunities shaping Singapore business. <span class="insmark">[1]</span> Keep up to date on the world of business with The Art of Business Management subscription which includes a monthly magazine delivered to your door. <span class="insmark">[2]</span></p>
-<p>For a limited time, The Art of Business Management is offering subscribers an exclusive 50% saving on a 12-month subscription. Your subscription includes:</p>
-<p>✓ The Art of Business Management magazine delivered to your door each month <span class="insmark">[3]</span><br>✓ Daily news and analysis on the nation's top entrepreneurs and business personalities on our website<br>✓ Weekly newsletters providing you insights into what business news you need to know</p>
-<p>To get your finger on the business pulse with a The Art of Business Management subscription, you can take up this offer before November 15. <span class="insmark">[4]</span> Subscribe today at www.the-art-of-biz-mgmt.com.</p>
-</div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
-<div class="script">這是商業管理雜誌的一年期訂閱廣告。訂閱者每月收到雜誌、網站可讀每日商業新聞分析、每週電子報。限時訂閱一年享五折優惠，必須 11 月 15 日前申請。<br><br><em>注意三個時間頻率不要搞混：雜誌是 monthly，電子報是 weekly，新聞分析在網站上是 daily。</em></div>
-</div></div>
-<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
-<table class="tbl">
-<tr><th>單字/句型</th><th>中文</th><th>例句</th></tr>
-<tr><td>keep up to date on/with</td><td>掌握……的最新資訊</td><td>I read the news to keep up to date on current events.</td></tr>
-<tr><td>for a limited time</td><td>限時</td><td>—</td></tr>
-<tr><td>take up an offer</td><td>接受優惠；採用方案</td><td>Customers can take up this offer before Friday.</td></tr>
-<tr><td>get one's finger on the pulse</td><td>掌握最新趨勢與動態</td><td>—</td></tr>
-</table>
-</div></div>
-</div>
-
-<div class="qb" id="q162">
-<div class="qh"><span class="qn">162</span><span class="qt">細節題</span></div>
-<div class="qbody">
-<div class="qsen">How often does the magazine come out?</div>
-<div class="qzh">這本雜誌多久出刊一次？</div>
-<div class="qopts">
-<div class="qo"><span class="ol">A</span>Per week</div>
-<div class="qo ok"><span class="ol">B</span>Per month</div>
-<div class="qo"><span class="ol">C</span>Every other month</div>
-<div class="qo"><span class="ol">D</span>Twice a month</div>
-</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>文章明確寫 a monthly magazine、delivered to your door each month。</p><div class="al">答案</div><p class="ap">monthly = 每月一次（B）</p></div>
-<div class="corr mt12"><p>A weekly 是電子報，不是雜誌；C/D 文章沒有這樣說。</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒：陷阱在哪裡</div>
-<div class="corr" style="margin:0"><p>不要把 weekly newsletters 看成雜誌。雜誌是 monthly，電子報才是 weekly。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q163">
-<div class="qh"><span class="qn">163</span><span class="qt">細節題</span></div>
-<div class="qbody">
-<div class="qsen">What benefit can subscribers enjoy if they subscribe to the magazine by 11/15?</div>
-<div class="qzh">如果讀者在 11 月 15 日前訂閱，可以享有什麼好處？</div>
-<div class="q4o">A. Subscribers can get two extra issues.</div>
-<div class="q4o ok">B. Subscribers will receive a 50% off discount.</div>
-<div class="q4o">C. Subscribers can get a watch as a gift.</div>
-<div class="q4o">D. Subscribers will receive free daily newsletters.</div>
-<div class="qtc">
-<div>
-<div class="gtl">解題引導</div>
-<div class="ask"><p>文章說 For a limited time...an exclusive 50% saving，而最後說 take up this offer before November 15。在期限前訂閱的優惠是什麼？</p><div class="al">答案</div><p class="ap">五折優惠（B）</p></div>
-<div class="corr mt12"><p>A/C 文章沒有提到；D daily news 是網站新聞，電子報是 weekly，且問的是期限前的特別優惠，重點是五折。</p></div>
-</div>
-<div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>這題問的是 by 11/15 的優惠，不是問訂閱內容。看到日期，就回去找 offer 和 saving。</p></div>
-</div>
-</div>
-</div></div>
-
-<div class="qb" id="q164">
-<div class="qh"><span class="qn">164</span><span class="qt">句子插入題</span><span class="qs">⭐ 重點題</span></div>
-<div class="qbody">
-<div class="qsen">In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong? <br>"So why wait?"</div>
-<div class="qzh">「那還等什麼呢？」這句話最適合放在哪一個位置？</div>
+<div class="qsen">In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong?<br>"Should have excellent verbal and written communication skills."</div>
+<div class="qzh">「應具備優秀的口語與書面溝通能力。」最適合放在哪一個位置？</div>
 <div class="qopts">
 <div class="qo"><span class="ol">A</span>[1]</div>
 <div class="qo"><span class="ol">B</span>[2]</div>
-<div class="qo"><span class="ol">C</span>[3]</div>
-<div class="qo ok"><span class="ol">D</span>[4]</div>
+<div class="qo ok"><span class="ol">C</span>[3]</div>
+<div class="qo"><span class="ol">D</span>[4]</div>
 </div>
 <div class="qtc">
 <div>
 <div class="gtl">解題引導（句子插入題：先看句子的功能）</div>
-<div class="ask"><p>"So why wait?" 是一句廣告中的催促行動句，意思是「既然有這麼好的優惠，還等什麼？」這種句子最適合放在優惠資訊之後、行動呼籲之前。[4] 前面剛說 11月15日前可接受優惠，後面要說 Subscribe today，中間放這句最自然嗎？</p><div class="al">答案</div><p class="ap">[4]（D）</p></div>
-<div class="corr mt12"><p>[1] 還在介紹雜誌內容，太早催促不自然；[2] 還沒講到五折優惠，語氣不夠有力；[3] 在條列內容中間，會把資訊切斷。</p></div>
+<div class="ask"><p>這句在描述應徵者的資格或能力要求，所以最適合放在 Qualifications and Requirements 區塊。[3] 前後都是資格條件：Minimum of 2-year experience、Solid knowledge of network security concepts、Strong understanding for application remote access technologies。</p><div class="al">答案</div><p class="ap">[3]（C）</p></div>
+<div class="corr mt12"><p>[1] 還在 Position Summary，是在總述工作內容，不是列資格條件。[2] 在 Technology Proficiency，前後是職責與技能執行內容，放溝通能力不是最自然。[4] 已經是結尾申請動作（Click HERE to apply），太晚。句子插入題最重要的是功能：這句是資格要求，不是工作摘要，也不是申請方式，所以要放在 Qualifications and Requirements。</p></div>
 </div>
 <div>
-<div class="gtl">教學提醒</div>
-<div class="tip" style="margin:0"><p>句子插入題一定先問：這句話在做什麼？So why wait? 是催促讀者立刻行動，所以放在 deadline 後面、Subscribe today 前面最合理。</p></div>
+<div class="gtl">生詞</div>
+<div class="vg">
+<span class="vw">verbal</span><span class="vd">口頭的</span>
+<span class="vw">written</span><span class="vd">書面的</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="p7-176-v">
+<div class="sh"><div class="sn">7D</div><div class="st">Part 7 · 176–180 文章先導（雙篇）</div><div class="stm">⏱ 7 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（會員方案宣傳＋詢問信）</div><div class="bb">
+<div class="docbox">📄 第一篇｜Happy Cruise VIP Club 宣傳文</div>
+<div class="p7box">
+<p>At Happy Cruise, you're more than just a VIP. Now there's a way to get more just for having fun on board Happy Cruise.</p>
+<p>Happy Cruise is introducing the VIP Club. It's Happy Cruise's way of recognizing our guests who keep coming back by offering you great benefits that are sure to take your next cruise to the next level. If you are a member of our previous Happy Guest recognition program, login to your current Happy-Cruise.com account. We've made some improvements you're sure to love. We've also changed the way you'll get points. Now it's as easy as earning a point for every day you have fun on a Happy Cruise.</p>
+<p>If you've never cruised with Happy Cruise before, you can become a VIP Club member even before you've booked to start taking advantage of great benefits, special offers, and more.</p>
+<p>Ready to get the lowdown on how it all works? Visit our website www.happy-cruise.com to learn more.</p>
+</div>
+<div class="docbox">✉️ 第二篇｜Karen Marco 的詢問信</div>
+<div class="p7box">
+<p>Dear Sir,</p>
+<p>Please send me more information on your VIP Club membership program. I would specifically like to know:<br>1. Requirements and other information on VIP Club membership application.<br>2. The application fee for such VIP Club program.<br>3. The benefits for VIP Club members.</p>
+<p>Also, would you send me any brochures you might have, and application forms for the VIP Club please?</p>
+<p>Thank you.<br>Karen Marco</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">這組是雙篇文章。第一篇是公司主動宣傳會員方案，第二篇是讀者寫信詢問更多資料。雙篇文章要注意：<em>第一篇提供背景，第二篇通常提供人物目的或缺少的資訊。</em><br><br>Happy Cruise 推出 VIP Club，用來回饋常搭乘的顧客，讓會員獲得福利、優惠與點數制度。舊的 Happy Guest 會員可以登入原本帳號，而從未搭過 Happy Cruise 的新顧客，也可以在訂船之前加入 VIP Club。<br><br>Karen Marco 看到這個會員方案後，寫信詢問申請條件、申請費用、會員福利，並希望取得手冊與申請表。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>完整中文翻譯</div><div class="bb">
+<div class="script"><strong>第一篇｜VIP Club 宣傳文</strong><br>在 Happy Cruise，您不只是一位貴賓。現在有一種方式，讓您只要在 Happy Cruise 上盡情享樂，就能獲得更多回饋。<br><br>Happy Cruise 隆重推出 VIP Club。這是 Happy Cruise 用來回饋持續回流顧客的方式，提供絕佳福利，讓您的下一趟郵輪之旅更上一層樓。如果您是先前 Happy Guest 回饋方案的會員，請登入您現有的 Happy-Cruise.com 帳號。我們做了一些您一定會喜歡的改進，也改變了累積點數的方式。現在只要在 Happy Cruise 上開心度過的每一天，都能輕鬆獲得一點。<br><br>如果您從未搭乘過 Happy Cruise，您也可以在訂船之前就成為 VIP Club 會員，提前享有絕佳福利、特別優惠等等。<br><br>準備好了解一切如何運作了嗎？請造訪我們的網站 www.happy-cruise.com 以了解更多資訊。<br><br><strong>第二篇｜Karen Marco 的詢問信</strong><br>敬啟者：<br>請寄給我更多關於貴公司 VIP Club 會員方案的資訊。我特別想了解以下幾點：一、VIP Club 會員申請的資格與其他相關資訊。二、此 VIP Club 方案的申請費用。三、VIP Club 會員可享有的福利。<br>另外，也請寄給我任何相關的宣傳手冊，以及 VIP Club 的申請表格，謝謝。<br>感謝您。<br>Karen Marco</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>recognize</td><td>認可；表揚；辨識</td><td>The company recognizes loyal customers with special benefits.</td></tr>
+<tr><td>benefit</td><td>福利；好處</td><td>Members can enjoy many benefits.</td></tr>
+<tr><td>take A to the next level</td><td>讓 A 提升到更高層次</td><td>The new software takes productivity to the next level.</td></tr>
+<tr><td>improvement</td><td>改善；改進</td><td>The company made several improvements to its service.</td></tr>
+<tr><td>application fee</td><td>申請費</td><td>The application fee must be paid online.</td></tr>
+<tr><td>brochure</td><td>宣傳手冊；簡介</td><td>Please send me a brochure about your program.</td></tr>
+<tr><td>potential customer</td><td>潛在顧客</td><td>The company wants to attract potential customers.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q176">
+<div class="qh"><span class="qn">176</span><span class="qt">目的題</span></div>
+<div class="qbody">
+<div class="qsen">What's the purpose of the first article?</div>
+<div class="qzh">第一篇文章的目的為何？</div>
+<div class="q4o">A. To promote a new product line</div>
+<div class="q4o">B. To collect opinions from existing customers</div>
+<div class="q4o ok">C. To recruit new VIP Club members</div>
+<div class="q4o">D. To encourage people to travel around the world</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一篇文章一直重複：introducing the VIP Club、become a VIP Club member、benefits、special offers、Visit our website to learn more。目的題要看重複出現的核心字。</p><div class="al">答案</div><p class="ap">To recruit new VIP Club members（C）</p></div>
+<div class="corr mt12"><p>A VIP Club 是會員制度，不是 product line。B 文章沒有 survey、feedback、opinion。D 雖然公司是 cruise，但文章重點不是旅遊世界，而是會員方案。這篇反覆出現 VIP Club、member、benefits，所以答案一定跟會員招募有關。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">recruit</span><span class="vd">招募</span></div>
 </div>
 </div>
 </div></div>
 
+<div class="qb" id="q177">
+<div class="qh"><span class="qn">177</span><span class="qt">單字同義題・字根 improve</span></div>
+<div class="qbody">
+<div class="qsen">In the first article, the word "improvement" in paragraph 2 line 4, is closest in meaning to</div>
+<div class="qzh">第一篇第二段第四行的 improvement 最接近哪一個意思？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>progression</div>
+<div class="qo"><span class="ol">B</span>aggression</div>
+<div class="qo"><span class="ol">C</span>unity</div>
+<div class="qo"><span class="ol">D</span>communication</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>improvement 來自 improve（改善；進步）。四個選項裡哪一個最接近「改善、進展」？</p><div class="al">答案</div><p class="ap">progression（A）— 進展；進步，最接近 improvement</p></div>
+<div class="corr mt12"><p>B aggression（攻擊性；侵略）字尾長得像，但意思完全不同。C unity（團結）、D communication（溝通）都和 improvement 無關。單字題可以用字根：improvement 裡面有 improve，就是變好；progression 裡面有 progress，也是往前進，所以 A 最接近。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">improvement</span><span class="vd">改善；改進</span></div>
+</div>
+</div>
+</div></div>
 
+<div class="qb" id="q178">
+<div class="qh"><span class="qn">178</span><span class="qt">推論題・跨句整合</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What should non-members do if they would like to enjoy some specials?</div>
+<div class="qzh">非會員如果想享有特別優惠，應該做什麼？</div>
+<div class="q4o ok">A. Apply for the VIP Club program online</div>
+<div class="q4o">B. Arrange a meeting with a sales rep</div>
+<div class="q4o">C. Call the customer service department</div>
+<div class="q4o">D. Visit Happy Cruise in person</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>題目問 non-members，還不是會員的人。原文：<code>If you've never cruised with Happy Cruise before, you can become a VIP Club member even before you've booked...</code>，後面又說 <code>Visit our website www.happy-cruise.com to learn more.</code></p><div class="al">答案</div><p class="ap">Apply for the VIP Club program online（A）</p></div>
+<div class="corr mt12"><p>B 文章沒有 sales representative。C 文章沒有提供客服電話，也沒有說要打電話。D 文章提供網站，不是要求親自到場。這題的關鍵是 non-members：非會員想享有優惠，就要 become a VIP Club member，文章最後導向網站，所以選 A。</p></div>
+</div>
+<div>
+<div class="gtl">老師特別提醒</div>
+<div class="tip" style="margin:0"><p>這題要講得保守一點：原文沒有逐字說 Apply online，但它說你可以 become a VIP Club member，又叫你 Visit our website to learn more。選項裡只有 A 最接近這個動作，所以這題是合理推論，不是原文照抄。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q179">
+<div class="qh"><span class="qn">179</span><span class="qt">人物推論題</span></div>
+<div class="qbody">
+<div class="qsen">Who is most likely Karen Marco?</div>
+<div class="qzh">Karen Marco 最可能是誰？</div>
+<div class="q4o">A. A job candidate</div>
+<div class="q4o ok">B. A potential customer</div>
+<div class="q4o">C. A travel guide</div>
+<div class="q4o">D. An event organizer</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Karen 寫信詢問 VIP Club membership program、membership application、application fee、benefits、brochures、application forms，表示她對會員方案有興趣，但尚未加入。</p><div class="al">答案</div><p class="ap">A potential customer（B）— 潛在顧客</p></div>
+<div class="corr mt12"><p>A 她沒有投履歷，也沒有問職缺。C 文章沒有導遊身分。D 文章沒有活動籌辦內容。人物推論題不是亂猜身份，而是看這個人在做什麼：Karen 問申請條件、費用、福利，表示她可能要加入，所以是 potential customer。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">potential</span><span class="vd">潛在的；可能的</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q180">
+<div class="qh"><span class="qn">180</span><span class="qt">NOT題・列表比對</span></div>
+<div class="qbody">
+<div class="qsen">According to the letter, what is Karen Marco NOT requesting?</div>
+<div class="qzh">根據這封信，Karen Marco 沒有要求哪一項資訊？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>Membership requirements</div>
+<div class="qo"><span class="ol">B</span>Application fees</div>
+<div class="qo"><span class="ol">C</span>VIP Club benefits</div>
+<div class="qo ok"><span class="ol">D</span>The application deadline</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Karen 明確列出三項：1. Requirements、2. Application fee、3. Benefits。她也另外要求 brochures 和 application forms，但沒有問截止日。</p><div class="al">答案</div><p class="ap">The application deadline（D）— 原文沒有提到</p></div>
+<div class="corr mt12"><p>A、B、C 原文第 1、2、3 點都有。NOT 題最穩的方法就是把原文的編號 1、2、3 對應選項：A、B、C 都有，只有 D 沒有。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">deadline</span><span class="vd">截止日期</span></div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="p7-181-v">
+<div class="sh"><div class="sn">7E</div><div class="st">Part 7 · 181–185 文章先導（雙篇）</div><div class="stm">⏱ 7 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（商務邀約信＋回覆信）</div><div class="bb">
+<div class="docbox">✉️ 第一封｜Carol Li 寄給 Ian Berger</div>
+<div class="p7box">
+<p>From: Carol Li　To: Ian Berger　Subject: Dinner meeting</p>
+<p>Dear Ian,</p>
+<p>Since you will come to Taipei for the Sales Success seminar on May 7th, it is our pleasure to invite you to a dinner meeting to discuss the status of our partnership. The dinner meeting will take place at 7 p.m. on May 7th after the seminar at the Coral Reef Hotel in Taipei.</p>
+<p>Please confirm if this arrangement is convenient for you. I am looking forward to meeting you here in Taipei.</p>
+<p>Sincerely,<br>Carol Li<br>Marketing Manager<br>Best Software Inc.</p>
+</div>
+<div class="docbox">✉️ 第二封｜Ian Berger 回覆 Carol Li</div>
+<div class="p7box">
+<p>Dear Carol,</p>
+<p>Hope you are doing well.</p>
+<p>Regarding the upcoming Sales Success event (on May 7th) — I'm sorry to say that my schedule is very tight that week. I must leave for Japan immediately after the Sales Success seminar. However, I will be arriving in Taipei on Monday afternoon May 6th. If it is convenient for you, I would like to meet that evening for dinner.</p>
+<p>I hope that we'll have a chance to have a general discussion about marketing opportunities and building business following the event. If Monday evening is not possible, I look forward to meeting you next time I'm in Taiwan.</p>
+<p>Regards,<br>Ian Berger<br>Office 123-4737-5837</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">這組是兩封商務信。第一封是邀請，第二封是回覆。雙信件題最重要的是：<em>誰邀請誰、原本時間是什麼、對方接受還是改時間、真正想討論什麼。</em><br><br>Carol 邀請 Ian 在 5 月 7 日 Sales Success seminar 結束後，一起在台北 Coral Reef Hotel 參加晚餐會議，討論雙方合作關係的現況。Ian 回信表示那週行程很滿，5 月 7 日研討會後必須立刻前往日本，因此無法參加原本安排的晚餐；不過他會在 5 月 6 日星期一下午抵達台北，希望能改約當天晚上吃飯，討論未來行銷機會與商業合作。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>完整中文翻譯</div><div class="bb">
+<div class="script"><strong>第一封｜Carol Li 寄給 Ian Berger</strong><br>寄件人：Carol Li　收件人：Ian Berger　主旨：晚餐會議<br><br>親愛的 Ian：<br>既然您將於 5 月 7 日來台北參加 Sales Success 研討會，我們很榮幸邀請您參加一場晚餐會議，討論我們雙方合作關係的現況。晚餐會議將於研討會結束後，5 月 7 日晚上 7 點，在台北的 Coral Reef Hotel 舉行。<br>請確認此安排是否方便您出席。期待在台北與您見面。<br>Carol Li 敬上<br>行銷經理<br>Best Software Inc.<br><br><strong>第二封｜Ian Berger 回覆 Carol Li</strong><br>親愛的 Carol：<br>希望您一切安好。<br>關於即將到來的 Sales Success 活動（5 月 7 日）——很抱歉，我那個星期的行程非常緊湊。研討會結束後，我必須立刻啟程前往日本。不過，我會在 5 月 6 日星期一下午抵達台北。如果您方便的話，我想在當天晚上與您共進晚餐。<br>希望屆時我們有機會針對活動之後的行銷機會與業務拓展做個大致的討論。如果週一晚上不方便，那麼期待下次我到台灣時能與您見面。<br>Ian Berger 敬上<br>辦公室電話 123-4737-5837</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>Since = 既然、因為</td><td>（非「自從」）</td><td>Since you will come to Taipei...</td></tr>
+<tr><td>It is our pleasure to + V</td><td>我們很榮幸做……</td><td>It is our pleasure to invite you to the meeting.</td></tr>
+<tr><td>status / partnership</td><td>狀態；現況 / 合作關係</td><td>Please update me on the project status.</td></tr>
+<tr><td>confirm</td><td>確認</td><td>Please confirm your attendance.</td></tr>
+<tr><td>schedule is tight</td><td>行程很滿；時間很緊</td><td>My schedule is tight this week.</td></tr>
+<tr><td>leave for + 地點</td><td>出發前往某地</td><td>She will leave for Japan tomorrow.</td></tr>
+<tr><td>marketing opportunities</td><td>行銷機會</td><td>We discussed new marketing opportunities.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q181">
+<div class="qh"><span class="qn">181</span><span class="qt">細節題・日期定位</span></div>
+<div class="qbody">
+<div class="qsen">According to the first letter, what will happen on May 7th?</div>
+<div class="qzh">根據第一封信，5 月 7 日會發生什麼事？</div>
+<div class="q4o">A. A partnership meeting will be held in Best Software Inc.</div>
+<div class="q4o">B. Carol will fly to Japan for a conference.</div>
+<div class="q4o ok">C. The Sales Success seminar will take place.</div>
+<div class="q4o">D. Carol and Ian will have lunch together.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一封信說：<code>Since you will come to Taipei for the Sales Success seminar on May 7th...</code></p><div class="al">答案</div><p class="ap">The Sales Success seminar will take place.（C）</p></div>
+<div class="corr mt12"><p>A 晚餐會議地點是 Coral Reef Hotel，不是在 Best Software Inc.。B 是 Ian 研討會後要去日本，不是 Carol。D 原文是 dinner meeting，不是 lunch。日期題要把人物和活動分清楚：May 7 是 Sales Success seminar，不是 Carol 去日本，也不是午餐。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">take place</span><span class="vd">舉行；發生</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q182">
+<div class="qh"><span class="qn">182</span><span class="qt">人物關係推論</span></div>
+<div class="qbody">
+<div class="qsen">What is most likely the relationship between Carol and Ian?</div>
+<div class="qzh">Carol 和 Ian 最可能是什麼關係？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>Close friends</div>
+<div class="qo"><span class="ol">B</span>Colleagues</div>
+<div class="qo ok"><span class="ol">C</span>Business partners</div>
+<div class="qo"><span class="ol">D</span>Relatives</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一封信說：<code>to discuss the status of our partnership</code>。partnership = 合作關係。</p><div class="al">答案</div><p class="ap">Business partners（C）</p></div>
+<div class="corr mt12"><p>A 信件內容正式，討論 partnership，不像私人朋友。B 他們可能有合作，但不是同一家公司內部同事，文章最明確的線索是 partnership。D 文章沒有家庭關係。人物關係題要找最明確的關係詞：這裡直接出現 partnership，所以答案是 business partners。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">partnership</span><span class="vd">合作關係；夥伴關係</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q183">
+<div class="qh"><span class="qn">183</span><span class="qt">日期推理題</span></div>
+<div class="qbody">
+<div class="qsen">What day will the Sales Success seminar be held?</div>
+<div class="qzh">Sales Success 研討會將在星期幾舉行？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>Monday</div>
+<div class="qo ok"><span class="ol">B</span>Tuesday</div>
+<div class="qo"><span class="ol">C</span>Wednesday</div>
+<div class="qo"><span class="ol">D</span>Friday</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>文章沒有直接寫 Tuesday，但第二封信說：<code>I will be arriving in Taipei on Monday afternoon May 6th.</code> 所以 May 6 = Monday，May 7 = Tuesday。</p><div class="al">答案</div><p class="ap">Tuesday（B）</p></div>
+<div class="corr mt12"><p>這題不是直接定位，而是日期推理。看到 May 6 是 Monday，就往後推一天，May 7 是 Tuesday。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">日期推理</span><span class="vd">跨句整合線索</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q184">
+<div class="qh"><span class="qn">184</span><span class="qt">推論題・同義改寫</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">From the second article, what can be inferred about Ian Berger?</div>
+<div class="qzh">根據第二封信，可以推論 Ian Berger 如何？</div>
+<div class="q4o">A. He has been living in Taipei for quite a long time.</div>
+<div class="q4o ok">B. His schedule is pretty full already.</div>
+<div class="q4o">C. He wants to have dinner with Carol on May 7th.</div>
+<div class="q4o">D. He will come to Taipei from Japan.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Ian 說：<code>my schedule is very tight that week</code>。schedule is very tight = 行程很滿。</p><div class="al">答案</div><p class="ap">His schedule is pretty full already.（B）— pretty full 是同義改寫</p></div>
+<div class="corr mt12"><p>A 原文說他會 arrive in Taipei，表示他是抵達，不是長住。C 他 5 月 7 日研討會後要立刻去日本，所以他希望改約 May 6 晚上，不是 May 7。D 原文是他研討會後 leave for Japan，也就是從台北去日本，不是從日本來台北。推論題不是自己想像，而是抓原文：my schedule is very tight 就等於 schedule is pretty full。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">schedule is tight</span><span class="vd">行程很滿</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q185">
+<div class="qh"><span class="qn">185</span><span class="qt">細節題・討論主題</span></div>
+<div class="qbody">
+<div class="qsen">What does Ian want to talk to Carol about?</div>
+<div class="qzh">Ian 想和 Carol 討論什麼？</div>
+<div class="q4o">A. Demand generation campaigns</div>
+<div class="q4o">B. Visiting schedules in Japan</div>
+<div class="q4o">C. Best Software Inc.'s business hours</div>
+<div class="q4o ok">D. New marketing and business opportunities</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Ian 在第二封信最後說：<code>a general discussion about marketing opportunities and building business</code>。</p><div class="al">答案</div><p class="ap">New marketing and business opportunities（D）</p></div>
+<div class="corr mt12"><p>A 文章沒有這個具體行銷術語。B Japan 是 Ian 的下一站，不是討論主題。C 文章沒有提到營業時間。這題抓最後一段的名詞就好：marketing opportunities and building business，選項 D 是最接近的改寫。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">building business</span><span class="vd">建立／拓展商業合作</span></div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="p7-186-v">
+<div class="sh"><div class="sn">7F</div><div class="st">Part 7 · 186–190 文章先導（三篇）</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（招生信＋學生詢問信＋課程介紹回覆）</div><div class="bb">
+<div class="docbox">📄 第一封｜Cale Business School MBA 課程宣傳信</div>
+<div class="p7box">
+<p>Dear Ms. Walt,</p>
+<p>It's time to transform your career with a one-year International MBA from Cale Business School this Fall semester. Application volume will increase before the June 15th deadline and submitting your application now can help provide you with the best possible opportunity for acceptance.</p>
+<p>A one-year MBA is a serious investment in time and money. In addition, it's a condensed program, so it is certainly more challenging than a traditional MBA. Our students return to the workforce more quickly and recoup their investment in just over two years. International MBA graduates see an average increase in pre-MBA salary of 120%.</p>
+<p>Don't wait to transform your career. Contact us for more information.</p>
+<p>Sincerely,<br>Jerry Swift<br>Consultant</p>
+</div>
+<div class="docbox">✉️ 第二封｜Linda Walt 的回覆</div>
+<div class="p7box">
+<p>Dear Mr. Swift,</p>
+<p>Thank you for the one-year International MBA information. I am writing to request more details of your program for September 2019 session. I believe that this one-year program will be a solid step toward the obtainment of my ambition in business. After graduating from City University, I've worked as a marketing specialist at ABC company which allows me to gain a deeper insight of marketing processes. Therefore, I am especially interested in learning more about some marketing elective courses your school offers. I would appreciate it if you could provide more details about courses related to online marketing.</p>
+<p>Sincerely,<br>Linda Walt</p>
+</div>
+<div class="docbox">📋 第三封｜Cale Business School 回覆課程介紹</div>
+<div class="p7box">
+<p>Dear Ms. Walt,</p>
+<p>At Cale Business School, we offer ample marketing electives in addition to the required courses. Some specific marketing electives include:</p>
+<p><b>Digital Marketing</b> — Successful marketing campaigns tend to combine online and offline elements to better reach the target audience. The digital marketing course examines the full range of digital marketing activities. This course will include social media, podcasts, and how the online and offline worlds can be connected. Students will also explore how the growth of technology will lead to new opportunities.</p>
+<p><b>Marketing Research and Analytics</b> — All good marketing campaigns begin with thorough market research and end with effective analysis. Marketing people always wonder whether marketing campaigns have reached the target market. What lessons can be learned for other campaigns? This course will cover how to undertake marketing research and how to use the information gathered to help improve decision-making for marketing.</p>
+<p><b>Customer Acquisition through Online Marketing</b> — In this course, students will learn directly from real-world online marketing professionals and create a digital marketing strategy. The purpose of this course is to allow students to have a better understanding of how to plan for and launch a website from scratch and learn to use mobile advertising and web analytics to attract more customers.</p>
+<p>Should you need further information, please visit our website at www.int-mba.com/course/marketing or call me at 998-382-4778.</p>
+<p>Sincerely,<br>Jerry Swift<br>Consultant</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">這一組是三篇文件。第一封是學校寄給潛在學生的招生信，第二封是學生回信問課程細節，第三封是學校針對她的需求介紹課程。這種三篇文件題，不要每篇分開背，要看它們之間的關係。<br><br>第一封是 Cale Business School 寄給 Linda Walt 的招生宣傳信，鼓勵她申請一年制 International MBA，強調課程雖然密集且比傳統 MBA 更有挑戰性，但學生可以更快回到職場，畢業生薪資平均增加。<br><br>第二封中，Linda 表示自己在 ABC 公司擔任 marketing specialist，對行銷流程有更深入的理解，也特別想了解學校提供的行銷選修課，尤其是 online marketing 相關課程。<br><br>第三封回覆 Linda，介紹學校有許多行銷選修課，包括 Digital Marketing、Marketing Research and Analytics，以及 Customer Acquisition through Online Marketing，這些課程都和現代行銷趨勢、數位工具、資料分析與顧客開發有關。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>完整中文翻譯</div><div class="bb">
+<div class="script"><strong>第一封｜Cale Business School MBA 課程宣傳信</strong><br>親愛的 Walt 女士：<br>現在正是透過 Cale Business School 今年秋季班一年制國際 MBA 課程，轉變您職涯的最佳時機。申請人數將於 6 月 15 日截止日前逐漸增加，現在就提交申請，能為您爭取最好的錄取機會。<br>一年制 MBA 是一項時間與金錢上的重大投資。此外，這是一個密集課程，因此確實比傳統 MBA 更具挑戰性。我們的學生能更快重返職場，並在短短兩年多內回收投資。國際 MBA 畢業生的薪資相較就讀前平均增加 120%。<br>別再等待，現在就開始轉變您的職涯。歡迎聯繫我們以取得更多資訊。<br>Jerry Swift 敬上　顧問<br><br><strong>第二封｜Linda Walt 的回覆</strong><br>親愛的 Swift 先生：<br>感謝您提供一年制國際 MBA 的相關資訊。我寫這封信是想進一步了解貴校 2019 年 9 月班的課程細節。我相信這個一年制課程將是我實現商業抱負的重要一步。自 City University 畢業後，我一直在 ABC 公司擔任行銷專員，這讓我對行銷流程有更深入的認識。因此，我特別想進一步了解貴校提供的行銷選修課程，尤其希望您能提供更多與線上行銷相關課程的詳細資訊。<br>Linda Walt 敬上<br><br><strong>第三封｜Cale Business School 回覆課程介紹</strong><br>親愛的 Walt 女士：<br>在 Cale Business School，除了必修課程之外，我們還提供豐富的行銷選修課程。以下是幾門具體的行銷選修課：<br><br><em>數位行銷</em>——成功的行銷活動通常會結合線上與線下元素，以更有效地觸及目標受眾。本課程將檢視數位行銷活動的完整範疇，內容包含社群媒體、Podcast，以及如何將線上與線下世界串連起來。學生也將探討科技的成長將如何帶來新的機會。<br><em>行銷研究與分析</em>——所有優秀的行銷活動都始於徹底的市場研究，並以有效的分析作結。行銷人員總是想知道：行銷活動是否確實觸及了目標市場？從其他活動中可以學到什麼經驗？本課程將涵蓋如何進行行銷研究，以及如何運用蒐集到的資訊來協助改善行銷決策。<br><em>透過線上行銷開發顧客</em>——在這門課中，學生將直接向真實世界的線上行銷專業人士學習，並擬定一套數位行銷策略。本課程的目的是讓學生更了解如何從零開始規劃並架設網站，並學會運用行動廣告與網站數據分析來吸引更多顧客。<br><br>如需進一步資訊，歡迎造訪我們的網站 www.int-mba.com/course/marketing，或致電 998-382-4778 與我聯繫。<br>Jerry Swift 敬上　顧問</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>transform one's career</td><td>改變／轉型某人的職涯</td><td>The MBA program can help students transform their careers.</td></tr>
+<tr><td>application volume / deadline / acceptance</td><td>申請數量 / 截止日期 / 錄取</td><td>Submitting early may improve your chance of acceptance.</td></tr>
+<tr><td>condensed program</td><td>密集課程；濃縮課程</td><td>This is a condensed program that lasts only one year.</td></tr>
+<tr><td>recoup one's investment</td><td>回收投資</td><td>Graduates can recoup their investment within two years.</td></tr>
+<tr><td>elective course</td><td>選修課</td><td>Students can choose several elective courses.</td></tr>
+<tr><td>target audience</td><td>目標受眾</td><td>The campaign is designed to reach the target audience.</td></tr>
+<tr><td>web analytics</td><td>網站數據分析</td><td>Marketers use web analytics to understand customer behavior.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q186">
+<div class="qh"><span class="qn">186</span><span class="qt">目的題・招生信</span></div>
+<div class="qbody">
+<div class="qsen">What is the purpose of the first letter?</div>
+<div class="qzh">第一封信的目的為何？</div>
+<div class="q4o ok">A. To attract potential students</div>
+<div class="q4o">B. To recruit new professors</div>
+<div class="q4o">C. To announce a company policy</div>
+<div class="q4o">D. To launch new products</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一封信提到 International MBA、application、deadline、acceptance、salary increase、transform your career，這些都是招生宣傳信的訊號。</p><div class="al">答案</div><p class="ap">To attract potential students（A）</p></div>
+<div class="corr mt12"><p>B 沒有 professor、teaching position 或 faculty opening。C 這是學校招生信，不是公司政策公告。D MBA program 不是商品上市。看到 MBA、application、deadline、acceptance，就要想到招生信，目的不是賣產品，而是吸引潛在學生。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">attract</span><span class="vd">吸引</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q187">
+<div class="qh"><span class="qn">187</span><span class="qt">NOT題・反義判斷</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What is NOT true about the program offered by the Cale Business School?</div>
+<div class="qzh">關於 Cale Business School 提供的課程，下列哪一項不正確？</div>
+<div class="q4o">A. It's a one-year condensed program.</div>
+<div class="q4o">B. It's for students with work experience.</div>
+<div class="q4o ok">C. The degree is easy to obtain.</div>
+<div class="q4o">D. Graduates usually get higher paychecks.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>原文說：<code>it's a condensed program, so it is certainly more challenging than a traditional MBA</code>——密集課程，而且比傳統 MBA 更有挑戰性。</p><div class="al">答案</div><p class="ap">The degree is easy to obtain.（C）— 與原文 more challenging 直接相反</p></div>
+<div class="corr mt12"><p>A 原文有 one-year International MBA condensed program，正確敘述。B 原文沒有明說「必須有工作經驗」，但提到 students return to the workforce more quickly，Linda 本人也有工作經驗，所以這句不是最明顯錯誤。D 原文說 graduates see an average increase in pre-MBA salary of 120%，正確敘述。NOT 題找最明確矛盾：文章說 challenging，選項說 easy，這就是最直接的反義陷阱。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">obtain</span><span class="vd">取得；獲得</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q188">
+<div class="qh"><span class="qn">188</span><span class="qt">推論題・合理推論</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What can be inferred from these letters about Linda Walt's job duty in the company?</div>
+<div class="qzh">從這些信件可以推論 Linda Walt 在公司中的工作職責為何？</div>
+<div class="q4o">A. She supervises five subordinates.</div>
+<div class="q4o ok">B. She is responsible for doing digital marketing.</div>
+<div class="q4o">C. She wears two hats in the company.</div>
+<div class="q4o">D. She will help promote the MBA program.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Linda 說 <code>I've worked as a marketing specialist at ABC company</code>，又說 <code>I am especially interested in ... courses related to online marketing</code>。第三封信也針對她的需求介紹 Digital Marketing、Online Marketing、mobile advertising、web analytics。</p><div class="al">答案</div><p class="ap">She is responsible for doing digital marketing.（B）</p></div>
+<div class="corr mt12"><p>A 文章沒有提到 subordinate 或管理人數。C wear two hats = 一人擔任兩種角色，文章沒有這個資訊。D 她是潛在學生，不是學校行銷人員。推論題可以推，但不能亂推：這題推論依據是 marketing specialist 加上 online marketing interest，所以 B 最合理。</p></div>
+</div>
+<div>
+<div class="gtl">老師特別提醒</div>
+<div class="tip" style="margin:0"><p>這題不能講成原文直接寫 She is responsible for digital marketing，原文沒有那句。正確教法是：根據她是 marketing specialist，而且主動詢問 online marketing courses，我們合理推論她工作可能與 digital marketing 有關。</p></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q189">
+<div class="qh"><span class="qn">189</span><span class="qt">細節題・申請截止日</span></div>
+<div class="qbody">
+<div class="qsen">What does Linda Walt need to do if she wants to apply for the program?</div>
+<div class="qzh">如果 Linda Walt 想申請這個課程，她需要做什麼？</div>
+<div class="q4o">A. Visit City University in person</div>
+<div class="q4o">B. Prepare some reference letters</div>
+<div class="q4o ok">C. Submit her application by June 15th</div>
+<div class="q4o">D. Call Jerry for an interview</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一封信說：<code>Application volume will increase before the June 15th deadline</code>，以及 <code>submitting your application now can help...</code></p><div class="al">答案</div><p class="ap">Submit her application by June 15th（C）</p></div>
+<div class="corr mt12"><p>A City University 是 Linda 畢業的學校，不是申請 Cale Business School 的步驟。B 文章沒有提到 reference letters。D 文章只說 contact us for more information，沒有說要打電話面試。申請題找 application 和 deadline：這題 June 15th deadline 很明確，所以答案是 C。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">deadline</span><span class="vd">截止日期</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q190">
+<div class="qh"><span class="qn">190</span><span class="qt">整合題・課程與市場趨勢</span></div>
+<div class="qbody">
+<div class="qsen">What is true about the school's elective courses?</div>
+<div class="qzh">關於這間學校的選修課，下列哪一項正確？</div>
+<div class="q4o">A. Only female students can register.</div>
+<div class="q4o">B. They are about traditional marketing methods.</div>
+<div class="q4o">C. They are not popular at all.</div>
+<div class="q4o ok">D. They connect to the market trends well.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第三封信介紹的選修課包括 Digital Marketing、Marketing Research and Analytics、Customer Acquisition through Online Marketing，內容提到 social media、podcasts、market research、web analytics、mobile advertising、digital marketing strategy，這些都和現代市場趨勢相關。</p><div class="al">答案</div><p class="ap">They connect to the market trends well.（D）</p></div>
+<div class="corr mt12"><p>A 文章沒有性別限制。B 文章強調 digital marketing、online marketing、social media、web analytics，不是只講傳統行銷。C 文章沒有提到受不受歡迎。這題要看課程內容：只要看到 social media、online marketing、web analytics、mobile advertising，就知道這些課程跟現代市場趨勢有關。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">market trends</span><span class="vd">市場趨勢</span></div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="p7-191-v">
+<div class="sh"><div class="sn">7G</div><div class="st">Part 7 · 191–195 文章先導（三篇）</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（活動邀請＋報名表＋議程回覆）</div><div class="bb">
+<div class="docbox">📢 第一份｜活動邀請</div>
+<div class="p7box">
+<p>Join the Employee Management webinar!</p>
+<p>Organizations face a mission-critical challenge: Overcoming the geographic, linguistic, and structural silos that divide global enterprises. To explore how Employee Management systems can create efficient operations across an organization, join Better HR Consulting George Billfold, Consulting Director, to learn how an integrated system can help to:</p>
+<p>✓ Enable visibility across your entire global workforce<br>✓ Protect your company from the financial consequences of noncompliance<br>✓ Make informed decisions based on your workforce and enterprise data</p>
+<p>Register now for the session at 10 a.m. on August 23rd. Link: www.Better-HR.com/webinar</p>
+</div>
+<div class="docbox">📝 第二份｜Paul Chang 的報名表</div>
+<div class="p7box">
+<p>Registration is required to attend this event. Please register now.</p>
+<p>First Name: Paul　Last Name: Chang　Company: TTIC Manufacturing　E-mail: paul-c@ttic.com<br>Employee Size by Range: 500–800　Phone Number: (123) 5738-5832<br>Street Address 1: 7478 Industry Road　City: Hong Kong　Postal Code: 54839　Country: China<br>Job Title: HR Manager</p>
+<p><b>Comments:</b><br>Hello there,<br>I'd like to register for this webinar and wonder if it's all right for you to send me the agenda of this event please. As I'll need to attend another meeting at 11:10, I might not be able to listen to all sessions.<br>Thank you.</p>
+</div>
+<div class="docbox">🗓️ 第三份｜活動議程回覆</div>
+<div class="p7box">
+<p>Dear Mr. Paul Chang,</p>
+<p>Thank you for the event registration. Please refer to the following webinar agenda that you have requested.</p>
+<table class="tbl" style="margin:10px 0"><tr><th>Time</th><th>Topic</th><th>Speaker</th></tr>
+<tr><td>10:00 a.m.–10:10 a.m.</td><td>Opening</td><td>—</td></tr>
+<tr><td>10:10 a.m.–11:00 a.m.</td><td>Creating a performance management system</td><td>George Billfold, Consulting Director, Better HR Consulting</td></tr>
+<tr><td>11:00 a.m.–11:40 a.m.</td><td>Creating performance improvement strategies</td><td>—</td></tr>
+<tr><td>11:40 a.m.–11:50 a.m.</td><td>Q/A discussion</td><td>—</td></tr>
+</table>
+<p>If you have any other questions or need further information, please feel free to contact me at 492-482-2668 or email Kenny.Hart@online-event.net.</p>
+<p>Kenny Hart<br>Coordinator</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">這組是三篇文件：第一篇是活動邀請，第二篇是報名表，第三篇是議程回覆。多文件題的重點是把人物需求和活動時間表連起來。<br><br>Better HR Consulting 舉辦一場 Employee Management 線上研討會，主題是如何透過員工管理系統改善全球企業的營運效率，克服地理、語言和組織結構造成的隔閡。<br><br>Paul Chang 是 TTIC Manufacturing 的 HR Manager，他報名參加這場 webinar，並要求主辦方寄給他活動議程，因為他 11:10 有另一場會議，可能無法聽完整場。Kenny Hart 回信提供議程。<br><br>議程表題一定要畫時間線：10:10 到 11:00 是 Creating a performance management system，11:00 到 11:40 是 Creating performance improvement strategies。Paul 11:10 要去另一場會議，所以他最可能完整聽完的是 10:10 到 11:00 那場。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>完整中文翻譯</div><div class="bb">
+<div class="script"><strong>第一份｜活動邀請</strong><br>歡迎參加「員工管理」線上研討會！<br>企業組織面臨一項攸關成敗的挑戰：克服地理、語言與組織結構上的隔閡，這些隔閡正分裂著全球企業。想了解員工管理系統如何協助整個組織創造更有效率的營運方式，歡迎加入 Better HR Consulting 顧問總監 George Billfold 的講座，了解一套整合系統如何協助您：掌握全球員工的整體動態、保護公司免於因不合規而產生的財務風險、根據員工與企業數據做出更有根據的決策。<br>現在就報名參加 8 月 23 日上午 10 點的場次。連結：www.Better-HR.com/webinar<br><br><strong>第二份｜Paul Chang 的報名表</strong><br>參加本活動須先完成報名，請立即報名。<br>名字：Paul　姓氏：Chang　公司：TTIC Manufacturing　電子郵件：paul-c@ttic.com　員工人數範圍：500–800　電話：(123) 5738-5832　地址一：7478 Industry Road　城市：香港　郵遞區號：54839　國家：中國　職稱：人資經理<br>留言：您好，我想報名參加這場線上研討會，不知是否方便寄給我本次活動的議程呢？由於我 11:10 還需要出席另一場會議，可能無法聽完所有場次。謝謝。<br><br><strong>第三份｜活動議程回覆</strong><br>親愛的 Paul Chang 先生：<br>感謝您報名參加本次活動。以下為您所要求的線上研討會議程。<br>10:00–10:10　開場｜10:10–11:00　建立績效管理系統（講者：George Billfold，顧問總監）｜11:00–11:40　擬定績效改善策略｜11:40–11:50　問答討論<br>如有任何其他問題或需要進一步資訊，歡迎致電 492-482-2668，或寄信至 Kenny.Hart@online-event.net 與我聯繫。<br>Kenny Hart　活動協調人</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>webinar</td><td>線上研討會</td><td>The webinar will begin at 10 a.m.</td></tr>
+<tr><td>mission-critical</td><td>極其重要的；攸關任務成敗的</td><td>Data security is a mission-critical issue.</td></tr>
+<tr><td>silo</td><td>資訊孤島；部門隔閡</td><td>The new system helps break down silos between departments.</td></tr>
+<tr><td>workforce / noncompliance</td><td>全體員工 / 不合規</td><td>Noncompliance may lead to financial penalties.</td></tr>
+<tr><td>make informed decisions</td><td>做出有根據的決策</td><td>Managers use data to make informed decisions.</td></tr>
+<tr><td>agenda</td><td>議程</td><td>Please send me the meeting agenda.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q191">
+<div class="qh"><span class="qn">191</span><span class="qt">對象推論</span></div>
+<div class="qbody">
+<div class="qsen">Who are invited to join the seminar?</div>
+<div class="qzh">誰被邀請參加這場研討會？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>Sales representatives</div>
+<div class="qo ok"><span class="ol">B</span>Managers</div>
+<div class="qo"><span class="ol">C</span>Engineers</div>
+<div class="qo"><span class="ol">D</span>Investors</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這場 webinar 主題是 Employee Management systems，內容包括 global workforce、efficient operations、enterprise data、informed decisions；報名者 Paul 的職稱是 HR Manager。</p><div class="al">答案</div><p class="ap">Managers（B）</p></div>
+<div class="corr mt12"><p>A 文章不是銷售技巧或客戶開發主題。C 文章不是技術工程研討會。D 文章沒有投資內容。這題不是只靠一個字，而是看整體主題：Employee Management、workforce、enterprise data 都是管理者和 HR 會關心的東西。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">workforce</span><span class="vd">全體員工</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q192">
+<div class="qh"><span class="qn">192</span><span class="qt">人物定位</span></div>
+<div class="qbody">
+<div class="qsen">Who is George Billfold?</div>
+<div class="qzh">George Billfold 是誰？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>An HR expert</div>
+<div class="qo"><span class="ol">B</span>An event coordinator</div>
+<div class="qo"><span class="ol">C</span>A pundit</div>
+<div class="qo"><span class="ol">D</span>A university professor</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>原文說：<code>Better HR Consulting George Billfold, Consulting Director</code>，他是 Better HR Consulting 的 Consulting Director，主講 Employee Management 系統。</p><div class="al">答案</div><p class="ap">An HR expert（A）</p></div>
+<div class="corr mt12"><p>B Coordinator 是 Kenny Hart，不是 George。C 文章沒有用這種身份描述他。D 文章沒有 university 或 professor。人物題很容易把名字混在一起：George 是 Consulting Director 和主講人；Kenny 是 Coordinator。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">consulting director</span><span class="vd">顧問總監</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q193">
+<div class="qh"><span class="qn">193</span><span class="qt">細節題・報名方式</span></div>
+<div class="qbody">
+<div class="qsen">How does Paul Chang register for the webinar?</div>
+<div class="qzh">Paul Chang 如何報名這場線上研討會？</div>
+<div class="q4o">A. Call the speaker directly</div>
+<div class="q4o">B. Walk into Mr. Billfold's office</div>
+<div class="q4o ok">C. Click on the webinar link to register online</div>
+<div class="q4o">D. Write Kenny an email</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一份文件寫：<code>Register now for the session... Link: www.Better-HR.com/webinar</code></p><div class="al">答案</div><p class="ap">Click on the webinar link to register online（C）</p></div>
+<div class="corr mt12"><p>A 文章沒有說打給 George 報名。B 這是 webinar，不是現場報名。D Kenny 是後續聯絡人，不是主要報名方式。題目問 how，就找 Register now 附近，看到 Link，就知道是線上報名。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">register</span><span class="vd">報名；註冊</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q194">
+<div class="qh"><span class="qn">194</span><span class="qt">細節題・請求內容</span></div>
+<div class="qbody">
+<div class="qsen">What is Paul Chang requesting?</div>
+<div class="qzh">Paul Chang 正在要求什麼？</div>
+<div class="q4o">A. George Billfold's extension</div>
+<div class="q4o">B. The presentation PPT file</div>
+<div class="q4o">C. A registration form</div>
+<div class="q4o ok">D. The event agenda</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Paul 在 Comments 中寫：<code>send me the agenda of this event please</code></p><div class="al">答案</div><p class="ap">The event agenda（D）</p></div>
+<div class="corr mt12"><p>A 文章沒有要求分機。B 文章沒有提到 PPT。C Paul 已經在填報名表了，不是要求報名表。請求題要看 I'd like to、wonder if、could you 這些句型後面接什麼，Paul 要的是 agenda。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">agenda</span><span class="vd">議程</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q195">
+<div class="qh"><span class="qn">195</span><span class="qt">時間表題・完整參與推理</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">What session might Paul Chang be able to listen to?</div>
+<div class="qzh">Paul Chang 可能能夠聽到哪一場？</div>
+<div class="q4o ok">A. Creating a performance management system</div>
+<div class="q4o">B. Q/A discussion</div>
+<div class="q4o">C. Empowering employees</div>
+<div class="q4o">D. Creating performance improvement strategies</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Paul 說 <code>I'll need to attend another meeting at 11:10</code>。議程：10:00–10:10 Opening；10:10–11:00 Creating a performance management system；11:00–11:40 Creating performance improvement strategies；11:40–11:50 Q/A discussion。他可以完整聽完哪一場？</p><div class="al">答案</div><p class="ap">Creating a performance management system（A）— 10:10–11:00，11:10 前可完整聽完</p></div>
+<div class="corr mt12"><p>B 11:40–11:50，他已經離開。C 議程沒有這個 session。D 11:00–11:40，他 11:10 要去別的會議，無法完整聽完。時間表題一定要畫出人物限制時間：Paul 的限制是 11:10，所以找 11:10 前能完整結束的 session。</p></div>
+</div>
+<div>
+<div class="gtl">老師特別提醒</div>
+<div class="tip" style="margin:0"><p>有學生可能會問：他 11:00 到 11:10 不是也可以聽一點 Creating performance improvement strategies 嗎？可以，但題目問 might be able to listen to，考試通常要選他最可能完整聽到的場次。11:00–11:40 他不能完整聽完，所以最佳答案是 A。</p></div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="p7-196-v">
+<div class="sh"><div class="sn">7H</div><div class="st">Part 7 · 196–200 文章先導（三篇）</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>完整文章（課程廣告＋詢問信＋價目表）</div><div class="bb">
+<div class="docbox">🧘 第一份｜Kenny's Yoga House 廣告</div>
+<div class="p7box">
+<p>Here at Kenny's Yoga House, we have a range of different yoga classes for all levels. Whether you've never experienced yoga before, or you're a seasoned veteran — we will have a class to suit you. If you require further information about any of the classes, please do not hesitate to get in touch by e-mailing us at info@kenny-yoga.com or call us on 123-456-7890.</p>
+<p><b>Special course for beginners</b><br>This 3-week beginner course with Kenny is the perfect opportunity to find out more about yoga. During the course Kenny will introduce you to the basic poses with an emphasis on understanding how your body works, what limits you and how to progress safely. Kenny encourages you to go beyond what a pose looks like to look within to notice what it feels like for you. He will also introduce you to meditation and breathing practice in week 2. Whether you are looking to ease general aches and pains, wanting to be more flexible, or dealing with stress and anxiety, then this course is just right for you!</p>
+</div>
+<div class="docbox">✉️ 第二份｜Jenny Jones 的詢問信</div>
+<div class="p7box">
+<p>Dear Sir/Madam,</p>
+<p>I'm writing to register for the 3-week beginner class. As I've never practiced yoga before, I would very much like to try and see what benefits yoga practice could bring. In addition, I would be grateful if you could provide me with the membership types in your yoga house. I would also like some information concerning the cost of your courses please.</p>
+<p>I am looking forward to your reply. Thank you very much.</p>
+<p>Faithfully,<br>Jenny Jones</p>
+</div>
+<div class="docbox">📋 第三份｜Kenny's Yoga House 回覆與價目表</div>
+<div class="p7box">
+<p>Dear Ms. Jones,</p>
+<p>This is to confirm your registration for the 3-week yoga course. More details will be sent to you within a week. In addition, please refer to the following membership types and fees that you have requested.</p>
+<table class="tbl" style="margin:10px 0"><tr><th>Class</th><th>Price (USD)</th><th>Comments</th></tr>
+<tr><td>Drop In – Day</td><td>$12</td><td>—</td></tr>
+<tr><td>Drop In – Night</td><td>$15</td><td>—</td></tr>
+<tr><td>Drop In – Lunch time</td><td>$10</td><td>—</td></tr>
+<tr><td>30 Days</td><td>$50</td><td>Introductory offer for new clients, experience 30 days of yoga.</td></tr>
+<tr><td>10 Class Card</td><td>$100</td><td>—</td></tr>
+<tr><td>5 Class Card</td><td>$50</td><td>—</td></tr>
+<tr><td>Platinum Membership</td><td>$50/month</td><td>Unlimited Classes at anytime; with free workshop per month</td></tr>
+<tr><td>Gold Membership</td><td>$45/month</td><td>Unlimited Daytime class all up to 4 p.m. including weekends</td></tr>
+<tr><td>Ashtanga Only Membership</td><td>$35/month</td><td>All Ashtanga classes</td></tr>
+<tr><td>Private Session</td><td>$35/hour</td><td>Plus $10 per additional person</td></tr>
+</table>
+<p>Should you need further information, please feel free to inform me.</p>
+<p>Sincerely,<br>Jerry Cole<br>Kenny's Yoga House</p>
+</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>文章大意先講</div><div class="bb">
+<div class="script">這組是三篇文件：第一篇是瑜伽教室廣告，第二篇是 Jenny 的報名信，第三篇是價目表。這種題目常考三件事：文章目的、人物身份、價格計算。<br><br>Kenny's Yoga House 提供不同程度的瑜伽課程，特別介紹三週初學者課程，內容包括基本瑜伽姿勢、身體覺察、安全進步方式、冥想和呼吸練習。Jenny Jones 寫信報名三週初學者課程，表示自己從未練過瑜伽，也想了解會員種類與課程費用。Kenny's Yoga House 回信確認報名，並提供價目表。<br><br>費用題最容易錯在計算規則：Private Session 是 $35/hour，plus $10 per additional person，看到這句要先想「誰是基本價？誰是額外的人？」兩人不是 $35 × 2，而是 $35 + $10。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>完整中文翻譯</div><div class="bb">
+<div class="script"><strong>第一份｜Kenny's Yoga House 廣告</strong><br>在 Kenny's Yoga House，我們提供各種適合不同程度學員的瑜伽課程。無論您從未接觸過瑜伽，還是已經是經驗豐富的老手——我們都有適合您的課程。若您想進一步了解任何課程的資訊，歡迎隨時透過電子郵件 info@kenny-yoga.com 或撥打電話 123-456-7890 與我們聯繫。<br><br><em>初學者專屬課程</em><br>這堂為期三週、由 Kenny 親自授課的初學者課程，是深入認識瑜伽的絕佳機會。課程中 Kenny 將帶您認識基本體位法，並著重於理解身體如何運作、身體的限制在哪裡，以及如何安全地循序漸進。Kenny 鼓勵學員不要只在意體位法「看起來」的樣子，而是要向內覺察自己「感受到」什麼。他也會在第二週帶入冥想與呼吸練習。無論您是想舒緩一般的痠痛、希望變得更柔軟，還是想處理壓力與焦慮，這堂課都非常適合您！<br><br><strong>第二份｜Jenny Jones 的詢問信</strong><br>敬啟者：<br>我寫這封信是想報名三週初學者課程。由於我從未練過瑜伽，我非常想嘗試看看瑜伽練習能帶來什麼樣的好處。此外，也懇請您提供貴瑜伽教室的會員種類資訊。另外也想請教課程的費用相關資訊。<br>期待您的回覆，非常感謝。<br>Jenny Jones 敬上<br><br><strong>第三份｜Kenny's Yoga House 回覆與價目表</strong><br>親愛的 Jones 女士：<br>特此確認您已完成三週瑜伽課程的報名。詳細資訊將於一週內另行寄送給您。此外，以下為您所要求的會員種類與費用（詳見講義價目表）。<br>如需任何進一步資訊，歡迎隨時通知我。<br>Jerry Cole 敬上　Kenny's Yoga House</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心單字與句型先教</div><div class="bb">
+<table class="tbl">
+<tr><th>單字/片語</th><th>中文</th><th>例句</th></tr>
+<tr><td>a range of / for all levels</td><td>一系列的 / 適合所有程度</td><td>The center offers a range of fitness classes.</td></tr>
+<tr><td>seasoned veteran</td><td>經驗豐富的老手</td><td>The workshop is useful for beginners and seasoned veterans.</td></tr>
+<tr><td>with an emphasis on</td><td>著重於……</td><td>The course teaches writing with an emphasis on grammar.</td></tr>
+<tr><td>aches and pains</td><td>痠痛；小疼痛</td><td>Yoga can help ease aches and pains.</td></tr>
+<tr><td>introductory offer</td><td>入門優惠；新客戶優惠</td><td>The gym has an introductory offer for new clients.</td></tr>
+<tr><td>per hour / additional person</td><td>每小時 / 額外一人</td><td>A private lesson costs $35 plus $10 per additional person.</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="qb" id="q196">
+<div class="qh"><span class="qn">196</span><span class="qt">目的題</span></div>
+<div class="qbody">
+<div class="qsen">What is the purpose of the first article?</div>
+<div class="qzh">第一篇文章的目的為何？</div>
+<div class="q4o">A. To promote new products</div>
+<div class="q4o">B. To sell yoga books</div>
+<div class="q4o ok">C. To attract new yoga members</div>
+<div class="q4o">D. To recruit yoga teachers</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>第一篇文章介紹 yoga classes for all levels、beginner course、benefits of yoga、contact information，這是在做什麼？</p><div class="al">答案</div><p class="ap">To attract new yoga members（C）</p></div>
+<div class="corr mt12"><p>A 文章沒有商品。B 文章沒有書籍。D 文章沒有職缺。目的題要看文章功能：它介紹課程、說適合誰、提供聯絡方式，所以是吸引人報名，不是賣書，也不是徵老師。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">attract</span><span class="vd">吸引</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q197">
+<div class="qh"><span class="qn">197</span><span class="qt">人物推論題</span></div>
+<div class="qbody">
+<div class="qsen">Who is Kenny most likely?</div>
+<div class="qzh">Kenny 最可能是誰？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>A yoga teacher</div>
+<div class="qo"><span class="ol">B</span>A university student</div>
+<div class="qo"><span class="ol">C</span>An engineer</div>
+<div class="qo"><span class="ol">D</span>An office worker</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>原文：<code>Kenny will introduce you to the basic poses...</code>、<code>He will also introduce you to meditation and breathing practice...</code>。Kenny 會教基本姿勢、冥想、呼吸練習。</p><div class="al">答案</div><p class="ap">A yoga teacher（A）</p></div>
+<div class="corr mt12"><p>B、C、D 文章都沒有對應身分資訊。人物推論題要看他做什麼：Kenny 會教 pose、meditation、breathing practice，所以他最可能是 yoga teacher。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">pose</span><span class="vd">姿勢；瑜伽體位</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q198">
+<div class="qh"><span class="qn">198</span><span class="qt">細節題・現在完成式線索</span></div>
+<div class="qbody">
+<div class="qsen">What is true about Jenny Jones?</div>
+<div class="qzh">關於 Jenny Jones，下列哪一項正確？</div>
+<div class="q4o">A. She's Kenny's best friend.</div>
+<div class="q4o">B. She has been practicing yoga for a long time.</div>
+<div class="q4o">C. She would like to purchase the 10-class card.</div>
+<div class="q4o ok">D. She just starts to learn yoga.</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Jenny 說：<code>I've never practiced yoga before.</code> have never practiced = 從未練習過，表示她不是練很久的人，而是瑜伽初學者，現在正準備開始學。</p><div class="al">答案</div><p class="ap">She just starts to learn yoga.（D）</p></div>
+<div class="corr mt12"><p>A 文章沒有私人關係。B 和 I've never practiced yoga before 相反。C 她只詢問會員種類與價格，沒有說要買 10 Class Card。never 是強烈否定：I've never practiced yoga before 表示她完全沒經驗，所以 D 最接近。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">have never practiced</span><span class="vd">從未練習過（現在完成式）</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q199">
+<div class="qh"><span class="qn">199</span><span class="qt">推論題・表格資訊</span></div>
+<div class="qbody">
+<div class="qsen">According to the table, what type of class would be most suitable for Jenny?</div>
+<div class="qzh">根據表格，哪一種課程最適合 Jenny？</div>
+<div class="q4o">A. Private Session</div>
+<div class="q4o ok">B. 30 Days</div>
+<div class="q4o">C. Gold Membership</div>
+<div class="q4o">D. Ashtanga Only Membership</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Jenny 是完全初學者，而且是新客戶。表格中 30 Days 的說明是：<code>Introductory offer for new clients, experience 30 days of yoga.</code> introductory offer = 入門優惠，for new clients = 給新客戶。</p><div class="al">答案</div><p class="ap">30 Days（B）</p></div>
+<div class="corr mt12"><p>A Private Session 也可能適合初學者，但表格沒有說它是給新客戶的入門方案，而且價格較高，不是最佳答案。C Gold Membership 是長期會員方案，適合已經知道自己會固定上課的人，Jenny 是剛開始，不是最佳。D 文章沒有說 Jenny 想學 Ashtanga。most suitable 問的是最適合，不是可不可以：Jenny 是新手，所以要找表格裡 for new clients 的方案。</p></div>
+</div>
+<div>
+<div class="gtl">生詞</div>
+<div class="vg"><span class="vw">suitable</span><span class="vd">適合的</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="q200">
+<div class="qh"><span class="qn">200</span><span class="qt">表格計算題</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">If two friends want to take a private lesson together, how much do they have to pay per hour?</div>
+<div class="qzh">如果兩位朋友想一起上私人課，每小時需要付多少錢？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>$40</div>
+<div class="qo"><span class="ol">B</span>$15</div>
+<div class="qo ok"><span class="ol">C</span>$45</div>
+<div class="qo"><span class="ol">D</span>$35</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>表格中 Private Session：<code>$35/hour　Plus $10 per additional person</code>。第一位基本價格 $35，第二位是 additional person，加 $10。兩人一起上是多少？</p><div class="al">答案</div><p class="ap">$35 + $10 = $45（C）</p></div>
+<div class="corr mt12"><p>A $40 不是加 $5。B $15 是 Drop In – Night 的價格，不是 private lesson。D $35 是一個人上私人課的價格，不是兩個人。</p></div>
+</div>
+<div>
+<div class="gtl">老師特別提醒</div>
+<div class="tip" style="margin:0"><p>這題不要把 $35 乘以 2。additional person 是額外多出來的人，不是每個人都重新算 $35。兩個人一起是基本價 $35 加第二個人的 $10，所以總共 $45。費用題最容易錯在計算規則，看到 plus $10 per additional person，要先想：誰是基本價？誰是額外的人？</p></div>
+</div>
+</div>
+</div></div>
 <div class="ls" id="s-summary">
 <div class="sh"><div class="sn">✓</div><div class="st">總整理 &amp; 解答表</div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>Part 6（131–146）考點速查</div><div class="bb">
+<div class="block"><div class="bh dk"><span class="d"></span>老師收尾逐字稿</div><div class="bb">
+<div class="script">今天這一組 Part 7，我們不只是做答案，而是在練閱讀邏輯。Part 7 的重點不是把文章全部翻譯完，而是快速判斷文章類型、抓關鍵字、看題目問什麼，再回文章找證據。<br><br><em>第一</em>，目的題看文章功能，不要只抓一個看得懂的字，要問自己：這篇文章要讀者做什麼？<br><em>第二</em>，NOT 題一定逐項核對，不要憑印象，A、B、C、D 一個一個回原文找證據。<br><em>第三</em>，同義改寫是 Part 7 核心，TOEIC 答案常常不是原文一模一樣，而是意思一樣，讀文章時要練習把英文換句話說。<br><em>第四</em>，推論題不能自己加戲，推論一定要能回文章指出線索。<br><em>第五</em>，時間表題要畫出時間線，把開始時間、結束時間、人物限制時間畫出來，答案就會很清楚。<br><br><strong>今天這一組雙篇、三篇文件比例很高，多篇文件題最重要的是：誰寫給誰、為什麼寫、彼此之間補充了什麼資訊。</strong></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>Part 7（165–200）考點速查</div><div class="bb">
 <table class="tbl">
 <tr><th>題號</th><th>答案</th><th>考點</th></tr>
-<tr><td>131</td><td>A also</td><td>副詞位置（not simply... also...）</td></tr>
-<tr><td>132</td><td>B approached</td><td>被動語態 need to be + p.p.</td></tr>
-<tr><td>133</td><td>B if they are inspired</td><td>上下文邏輯（同字族 inspired/inspiration）</td></tr>
-<tr><td>134</td><td>D when</td><td>時間副詞子句 inspiration comes when...</td></tr>
-<tr><td>135</td><td>C links</td><td>關係子句 + 主謂一致（system 單數）</td></tr>
-<tr><td>136</td><td>B profitability</td><td>平行結構（名詞並列）</td></tr>
-<tr><td>137</td><td>A at</td><td>固定搭配 excel at V-ing</td></tr>
-<tr><td>138</td><td>A with innovative products and services</td><td>provide sb with sth + 上下文語意</td></tr>
-<tr><td>139</td><td>C several</td><td>數量詞 + 複數可數名詞</td></tr>
-<tr><td>140</td><td>A another</td><td>固定搭配 have another look at</td></tr>
-<tr><td>141</td><td>C version</td><td>名詞搭配 a version of</td></tr>
-<tr><td>142</td><td>D 整句（has to be completed within a week）</td><td>前後邏輯（as = because）</td></tr>
-<tr><td>143</td><td>C than</td><td>固定搭配 more than</td></tr>
-<tr><td>144</td><td>C competitive world markets</td><td>語境判斷</td></tr>
-<tr><td>145</td><td>A importance</td><td>固定搭配 emphasize the importance of</td></tr>
-<tr><td>146</td><td>B figure out</td><td>動詞片語 figure out how to V</td></tr>
+<tr><td>165</td><td>C high-quality ingredients</td><td>細節題・同義改寫</td></tr>
+<tr><td>166</td><td>B Sandwiches</td><td>細節定位（besides）</td></tr>
+<tr><td>167</td><td>B 一次限一張</td><td>NOT題（優惠券限制陷阱）</td></tr>
+<tr><td>168</td><td>A 通知施工</td><td>目的題</td></tr>
+<tr><td>169</td><td>B Unconcerned</td><td>單字同義（unaffected）</td></tr>
+<tr><td>170</td><td>D 免費接駁公車</td><td>細節題（替代方案）</td></tr>
+<tr><td>171</td><td>B 不受影響</td><td>細節題（Red Line）</td></tr>
+<tr><td>172</td><td>B Bangalore</td><td>地點定位題</td></tr>
+<tr><td>173</td><td>D Via blog</td><td>NOT題（支援方式，blog陷阱）</td></tr>
+<tr><td>174</td><td>D CEO/business plans</td><td>NOT題（工作職責陷阱）</td></tr>
+<tr><td>175</td><td>C [3]</td><td>句子插入題</td></tr>
+<tr><td>176</td><td>C 招募會員</td><td>目的題</td></tr>
+<tr><td>177</td><td>A progression</td><td>單字同義（improvement）</td></tr>
+<tr><td>178</td><td>A 線上申請</td><td>推論題（非會員）</td></tr>
+<tr><td>179</td><td>B potential customer</td><td>人物推論題</td></tr>
+<tr><td>180</td><td>D 申請截止日</td><td>NOT題（列表比對）</td></tr>
+<tr><td>181</td><td>C 研討會將舉行</td><td>細節題（日期定位）</td></tr>
+<tr><td>182</td><td>C business partners</td><td>人物關係推論</td></tr>
+<tr><td>183</td><td>B Tuesday</td><td>日期推理題</td></tr>
+<tr><td>184</td><td>B schedule 很滿</td><td>推論題（同義改寫）</td></tr>
+<tr><td>185</td><td>D 行銷與商業機會</td><td>細節題（討論主題）</td></tr>
+<tr><td>186</td><td>A 吸引潛在學生</td><td>目的題（招生信）</td></tr>
+<tr><td>187</td><td>C 學位容易取得</td><td>NOT題（反義陷阱）</td></tr>
+<tr><td>188</td><td>B digital marketing</td><td>推論題（工作職責）</td></tr>
+<tr><td>189</td><td>C 6/15前送出申請</td><td>細節題（截止日）</td></tr>
+<tr><td>190</td><td>D 連結市場趨勢</td><td>整合題</td></tr>
+<tr><td>191</td><td>B Managers</td><td>對象推論</td></tr>
+<tr><td>192</td><td>A HR expert</td><td>人物定位</td></tr>
+<tr><td>193</td><td>C 線上點連結報名</td><td>細節題（報名方式）</td></tr>
+<tr><td>194</td><td>D 議程</td><td>細節題（請求內容）</td></tr>
+<tr><td>195</td><td>A 10:10–11:00 場次</td><td>時間表題（完整參與推理）</td></tr>
+<tr><td>196</td><td>C 吸引新會員</td><td>目的題</td></tr>
+<tr><td>197</td><td>A yoga teacher</td><td>人物推論題</td></tr>
+<tr><td>198</td><td>D 剛開始學瑜伽</td><td>細節題（現在完成式線索）</td></tr>
+<tr><td>199</td><td>B 30 Days</td><td>推論題（表格資訊）</td></tr>
+<tr><td>200</td><td>C $45</td><td>表格計算題（陷阱：非×2）</td></tr>
 </table>
 </div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>Part 7（147–164）考點速查</div><div class="bb">
+<div class="block"><div class="bh dk"><span class="d"></span>本堂必記單字與片語</div><div class="bb">
 <table class="tbl">
-<tr><th>題號</th><th>答案</th><th>考點</th></tr>
-<tr><td>147</td><td>B office-leasing information</td><td>目的題</td></tr>
-<tr><td>148</td><td>C whole</td><td>單字同義（entire）</td></tr>
-<tr><td>149</td><td>A 報告內容</td><td>主旨題</td></tr>
-<tr><td>150</td><td>C 建議加入主題</td><td>說話目的題</td></tr>
-<tr><td>151</td><td>B dropped by 13%</td><td>標題細節題</td></tr>
-<tr><td>152</td><td>C 早被預測</td><td>引述推論題（not entirely unexpected 陷阱）</td></tr>
-<tr><td>153</td><td>C edged higher</td><td>推論題</td></tr>
-<tr><td>154</td><td>A raise awareness</td><td>目的題</td></tr>
-<tr><td>155</td><td>B 整週</td><td>NOT題</td></tr>
-<tr><td>156</td><td>A subsidy</td><td>單字同義（grant）</td></tr>
-<tr><td>157</td><td>C now hiring</td><td>推論題</td></tr>
-<tr><td>158</td><td>D 設計程式</td><td>NOT題（graphics software≠computer programs 陷阱）</td></tr>
-<tr><td>159</td><td>C 宣傳賣點</td><td>目的題</td></tr>
-<tr><td>160</td><td>D beautiful</td><td>單字同義（graceful）</td></tr>
-<tr><td>161</td><td>A 電影院</td><td>NOT題</td></tr>
-<tr><td>162</td><td>B Per month</td><td>細節題</td></tr>
-<tr><td>163</td><td>B 50% off</td><td>細節題</td></tr>
-<tr><td>164</td><td>D [4]</td><td>句子插入題</td></tr>
+<tr><th>主題</th><th>單字/片語</th></tr>
+<tr><td>餐廳／優惠券</td><td>high-quality ingredients・family owned and operated・redeemable for cash・be combined with・per person per visit</td></tr>
+<tr><td>交通公告</td><td>construction・lead to・shutdown・consecutive days・shuttle bus・unaffected・resume service</td></tr>
+<tr><td>徵才廣告</td><td>be responsible for + V-ing・remote access・in-house knowledge base・at a rapid pace・qualifications and requirements・verbal and written communication skills</td></tr>
+<tr><td>會員方案／商務信</td><td>recognize loyal guests・benefits・application fee・brochure・potential customer・schedule is tight・leave for + 地點・business partnership</td></tr>
+<tr><td>MBA／行銷</td><td>transform one's career・application deadline・condensed program・challenging・recoup investment・elective course・target audience・web analytics</td></tr>
+<tr><td>Webinar／HR</td><td>mission-critical・silo・workforce・noncompliance・make informed decisions・agenda・performance management system</td></tr>
+<tr><td>瑜伽／價目表</td><td>a range of・seasoned veteran・with an emphasis on・meditation・breathing practice・introductory offer・additional person</td></tr>
 </table>
 </div></div>
-<div class="block"><div class="bh dk"><span class="d"></span>本堂必教文法與片語（131–142）</div><div class="bb">
-<table class="tbl">
-<tr><th>句型/文法</th><th>意思</th><th>例句</th></tr>
-<tr><td>not simply A, also B</td><td>不是只有 A，也有 B</td><td>They don't lead simply with logic, they also lead with empathy.</td></tr>
-<tr><td>need to be + p.p.</td><td>需要被……</td><td>The issue needs to be handled carefully.</td></tr>
-<tr><td>only ... if</td><td>只有在……才會</td><td>People only change if they understand the reason.</td></tr>
-<tr><td>inspiration comes when...</td><td>當……時，激勵就會產生</td><td>Productivity improves when teams communicate clearly.</td></tr>
-<tr><td>system that links A to B</td><td>把 A 連結到 B 的系統（關係子句+主謂一致）</td><td>A good system links quality to customer satisfaction.</td></tr>
-<tr><td>excel at + N / V-ing</td><td>擅長……</td><td>She excels at solving complex problems.</td></tr>
-<tr><td>provide sb with sth</td><td>提供某人某物</td><td>Our goal is to provide clients with innovative solutions.</td></tr>
-<tr><td>have another look at</td><td>再看一次；重新檢查</td><td>Could you have another look at this file?</td></tr>
-<tr><td>as = because</td><td>因為（連接詞）</td><td>We don't have much time as the deadline is close.</td></tr>
-</table>
-<div class="goal2 mt16"><p><strong>本堂最容易錯的地方：</strong>① also / too / but also 的位置差異（131）；② need to be 後面一定接過去分詞，不是原形或現在分詞（132）；③ Part 6 句子選擇題要抓「同字族線索」，例如 inspired 呼應 inspiration（133）；④ 關係子句的動詞單複數要看先行詞，不是看離動詞最近的名詞（135）；⑤ 平行結構中，最後一項詞性要跟前面一致，不要只看中文語感（136）。</p></div>
+<div class="block"><div class="bh am"><span class="d"></span>給老師的上課建議</div><div class="bb">
+<div class="goal2"><p>這組 165–200 比 131–164 難在雙篇、三篇文件的比例大幅提高，建議上課時每篇文章先花時間帶學生判斷「這是誰寫給誰、為什麼寫」，再進入題目。NOT 題和推論題是這組的重災區，可以讓學生練習用手指或螢光筆在文章上逐項畫出選項對應的句子，養成「回文章找證據」而不是「憑印象作答」的習慣。時間表題（195）和計算題（200）則需要提醒學生把數字和限制條件實際寫下來，不要用感覺估算。</p></div>
 </div></div>
 <div class="block"><div class="bh am"><span class="d"></span>下一堂預告</div><div class="bb">
-<div class="tip"><p>Lesson 09 涵蓋 131–164（共 34 題）的完整 Part 6/7 閱讀策略複習，並帶入被動語態、關係子句、平行結構、介系詞固定搭配等重點文法。下一堂可視進度安排 Part 5 新文法主題，或延伸到 Part 7 雙篇／三篇閱讀。</p></div>
+<div class="tip"><p>Lesson 09（修正版）涵蓋 165–200（共 36 題）的 Part 7 閱讀策略複習，聚焦單篇、雙篇、三篇文件的解題方法。下一堂可視進度安排新的 Part 5 文法主題，或繼續延伸更多雙篇／三篇閱讀練習。</p></div>
 </div></div>
 </div>
 </main>
@@ -1439,29 +1451,22 @@ function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.query
 function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
 const allSecs=[
   {id:'s-overview',label:'課程總覽'},
-  {id:'s-reading-intro',label:'Part6/7解題策略'},
-  {id:'p6-131-v',label:'131-134文章先導'},
-  {id:'q131',label:'131'},{id:'q132',label:'132'},{id:'q133',label:'133'},{id:'q134',label:'134'},
-  {id:'p6-135-v',label:'135-138文章先導'},
-  {id:'q135',label:'135'},{id:'q136',label:'136'},{id:'q137',label:'137'},{id:'q138',label:'138'},
-  {id:'p6-139-v',label:'139-142文章先導'},
-  {id:'q139',label:'139'},{id:'q140',label:'140'},{id:'q141',label:'141'},{id:'q142',label:'142'},
-  {id:'p6-143-v',label:'143-146文章先導'},
-  {id:'q143',label:'143'},{id:'q144',label:'144'},{id:'q145',label:'145'},{id:'q146',label:'146'},
-  {id:'p7-147-v',label:'147-148文章先導'},
-  {id:'q147',label:'147'},{id:'q148',label:'148'},
-  {id:'p7-149-v',label:'149-150文章先導'},
-  {id:'q149',label:'149'},{id:'q150',label:'150'},
-  {id:'p7-151-v',label:'151-153文章先導'},
-  {id:'q151',label:'151'},{id:'q152',label:'152'},{id:'q153',label:'153'},
-  {id:'p7-154-v',label:'154-156文章先導'},
-  {id:'q154',label:'154'},{id:'q155',label:'155'},{id:'q156',label:'156'},
-  {id:'p7-157-v',label:'157-158文章先導'},
-  {id:'q157',label:'157'},{id:'q158',label:'158'},
-  {id:'p7-159-v',label:'159-161文章先導'},
-  {id:'q159',label:'159'},{id:'q160',label:'160'},{id:'q161',label:'161'},
-  {id:'p7-162-v',label:'162-164文章先導'},
-  {id:'q162',label:'162'},{id:'q163',label:'163'},{id:'q164',label:'164'},
+  {id:'p7-165-v',label:'165-167文章先導'},
+  {id:'q165',label:'165'},{id:'q166',label:'166'},{id:'q167',label:'167'},
+  {id:'p7-168-v',label:'168-171文章先導'},
+  {id:'q168',label:'168'},{id:'q169',label:'169'},{id:'q170',label:'170'},{id:'q171',label:'171'},
+  {id:'p7-172-v',label:'172-175文章先導'},
+  {id:'q172',label:'172'},{id:'q173',label:'173'},{id:'q174',label:'174'},{id:'q175',label:'175'},
+  {id:'p7-176-v',label:'176-180文章先導'},
+  {id:'q176',label:'176'},{id:'q177',label:'177'},{id:'q178',label:'178'},{id:'q179',label:'179'},{id:'q180',label:'180'},
+  {id:'p7-181-v',label:'181-185文章先導'},
+  {id:'q181',label:'181'},{id:'q182',label:'182'},{id:'q183',label:'183'},{id:'q184',label:'184'},{id:'q185',label:'185'},
+  {id:'p7-186-v',label:'186-190文章先導'},
+  {id:'q186',label:'186'},{id:'q187',label:'187'},{id:'q188',label:'188'},{id:'q189',label:'189'},{id:'q190',label:'190'},
+  {id:'p7-191-v',label:'191-195文章先導'},
+  {id:'q191',label:'191'},{id:'q192',label:'192'},{id:'q193',label:'193'},{id:'q194',label:'194'},{id:'q195',label:'195'},
+  {id:'p7-196-v',label:'196-200文章先導'},
+  {id:'q196',label:'196'},{id:'q197',label:'197'},{id:'q198',label:'198'},{id:'q199',label:'199'},{id:'q200',label:'200'},
   {id:'s-summary',label:'總整理'},
 ];
 const obs=new IntersectionObserver((entries)=>{

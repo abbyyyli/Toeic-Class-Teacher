@@ -1,0 +1,3039 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老師講義 | TOEIC Lesson 11 · Chapter 7 動詞與時態</title>
+<!-- Lesson 11：文法專章 Chapter 7 Verb & Tense。非 Part6/7 閱讀課，共 58 題獨立文法練習題。 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--navy2:#1E3A5F;--white:#fff;--bg:#F0F4F8;--card:#fff;--amber:#F59E0B;--amber-lt:#FEF3C7;--amber-dk:#92400E;--green:#059669;--green-lt:#D1FAE5;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--purple-lt:#EDE9FE;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;--sidebar-w:230px;--r:10px}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:var(--gray-800);font-size:14px;line-height:1.7}
+#topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);color:white;height:52px;display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.logo{font-weight:800;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.logo span{background:var(--amber);color:var(--navy);padding:2px 8px;border-radius:5px;font-size:12px}
+.timer-wrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.timer-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px}
+#timer{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--amber);min-width:60px}
+.tbtn{background:rgba(255,255,255,.1);border:none;color:white;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;margin-left:4px;font-family:"Noto Sans TC",sans-serif}
+.tbtn:hover{background:rgba(255,255,255,.2)}
+.ppill{background:rgba(255,255,255,.1);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+#csec{color:var(--amber);font-weight:700}
+#layout{display:flex;margin-top:52px;min-height:calc(100vh - 52px)}
+#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--navy);position:fixed;top:52px;left:0;bottom:0;overflow-y:auto;padding:16px 0;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
+.sbh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);padding:10px 16px 4px}
+.sbl{display:block;padding:6px 16px;color:rgba(255,255,255,.65);font-size:12px;text-decoration:none;cursor:pointer;border-left:3px solid transparent;transition:.15s}
+.sbl:hover{color:white;background:rgba(255,255,255,.07)}
+.sbl.active{color:var(--amber);border-left-color:var(--amber);background:rgba(245,158,11,.08)}
+.t{font-size:10px;color:rgba(255,255,255,.3);float:right;font-family:"JetBrains Mono",monospace}
+#main{margin-left:var(--sidebar-w);flex:1;padding:28px 32px 80px}
+.ls{margin-bottom:40px}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gray-200)}
+.sn{width:36px;height:36px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;font-family:"Inter",sans-serif}
+.st{font-size:20px;font-weight:800;color:var(--navy)}
+.stm{margin-left:auto;background:var(--navy);color:var(--amber);font-size:11px;font-weight:700;font-family:"JetBrains Mono",monospace;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.block{background:var(--card);border-radius:var(--r);margin-bottom:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.bh{background:var(--gray-100);padding:10px 18px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-600);border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:8px}
+.bh .d{width:8px;height:8px;border-radius:50%;background:var(--gray-400)}
+.bh.dk{background:var(--navy);color:white;border:none}.bh.dk .d{background:var(--amber)}
+.bh.am{background:var(--amber-lt);color:var(--amber-dk);border-bottom-color:#FDE68A}.bh.am .d{background:var(--amber)}
+.bh.gn{background:var(--green-lt);color:var(--green);border-bottom-color:#A7F3D0}.bh.gn .d{background:var(--green)}
+.bb{padding:18px}
+.script{background:#0F172A;color:#E2E8F0;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.9;position:relative;margin:12px 0}
+.script::before{content:"📢 說";position:absolute;top:-10px;left:14px;background:var(--sky);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.script em{color:var(--amber);font-style:normal;font-weight:600}
+.script strong{color:white}.script code{background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px;color:#7DD3FC}
+.ask{background:var(--amber-lt);border:1.5px solid #FDE68A;border-radius:8px;padding:14px 18px;margin:10px 0;position:relative}
+.ask::before{content:"❓ 問學生";position:absolute;top:-10px;left:14px;background:var(--amber);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.ask p{color:var(--amber-dk);font-weight:600;font-size:14px;margin-top:2px}
+.ask .al{font-size:11px;color:var(--amber-dk);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:8px 0 3px;border-top:1px solid #FDE68A;padding-top:8px}
+.ask .ap{color:var(--green);font-weight:700;font-size:14px}
+.corr{background:var(--red-lt);border:1.5px solid #FECACA;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.corr::before{content:"⚠️ 答錯時";position:absolute;top:-10px;left:14px;background:var(--red);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.corr p{color:#991B1B;font-size:13px;margin-top:4px;line-height:1.7}
+.tip{background:var(--purple-lt);border:1.5px solid #DDD6FE;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.tip::before{content:"💡 重點";position:absolute;top:-10px;left:14px;background:var(--purple);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.tip p{color:#4C1D95;font-size:13px;margin-top:4px;line-height:1.7}
+.goal2{background:var(--green-lt);border:1.5px solid #A7F3D0;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.goal2::before{content:"✅ 重點帶走";position:absolute;top:-10px;left:14px;background:var(--green);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.goal2 p,.goal2 li{color:#064E3B;font-size:13px;margin-top:4px;line-height:1.8}
+.goal2 ul{padding-left:18px;margin-top:6px}
+.formula{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:700;color:var(--navy);background:var(--gray-100);border-radius:8px;padding:12px 16px;border-left:3px solid var(--amber);margin:10px 0}
+.es{background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 14px;margin:6px 0;font-size:14px;font-weight:500}
+.qb{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:20px}
+.qh{display:flex;align-items:center;gap:10px;padding:12px 18px;background:var(--gray-100);border-bottom:1px solid var(--gray-200);flex-wrap:wrap}
+.qn{background:var(--navy);color:white;font-weight:700;font-size:12px;padding:3px 10px;border-radius:6px;font-family:"Inter",sans-serif}
+.qt{background:var(--sky-lt);color:var(--sky);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qs{background:var(--amber-lt);color:var(--amber-dk);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qbody{padding:20px}
+.qsen{font-size:15px;font-weight:500;background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:6px;line-height:1.8}
+.qsen .bl{background:var(--amber-lt);color:var(--amber-dk);padding:0 6px;border-radius:4px;font-weight:700}
+.qzh{font-size:12px;color:var(--gray-400);margin-bottom:14px}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.qo{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;display:flex;align-items:center;gap:8px}
+.qo.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.ol{width:22px;height:22px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:"Inter",sans-serif}
+.qo.ok .ol{background:var(--green);color:white}
+.qtc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.gtl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-400);margin-bottom:8px}
+.vg{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.vw{font-family:"JetBrains Mono",monospace;color:var(--navy);font-weight:600}
+.vd{color:var(--gray-600)}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tbl th,.tbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
+.tbl th{background:var(--gray-100);font-weight:700;font-size:12px}
+.tmtable{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tmtable th,.tmtable td{border:1px solid var(--gray-200);padding:10px 12px;text-align:left;vertical-align:top}
+.tmtable th{background:var(--navy);color:white;font-size:12px}
+.tmtable td:first-child{font-family:"JetBrains Mono",monospace;font-weight:700;background:var(--amber-lt);color:var(--amber-dk);white-space:nowrap}
+.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}
+code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:12px;color:var(--navy)}
+.lstbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+.lstbl th,.lstbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
+.lstbl th{background:var(--gray-100);font-weight:700;font-size:12px;width:150px}
+.tw{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--red);background:var(--red-lt);padding:6px 10px;border-radius:6px;display:block;margin:4px 0}
+.tw::before{content:"❌ "}
+.trx{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--green);background:var(--green-lt);padding:6px 10px;border-radius:6px;display:block;margin:4px 0}
+.trx::before{content:"✅ "}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div class="logo">🎓 <span>老師</span> Lesson 11 · Chapter 7 動詞與時態 Verb &amp; Tense</div>
+  <div class="ppill">現在：<span id="csec">課程總覽</span></div>
+  <div class="timer-wrap">
+    <span class="timer-label">上課時間</span>
+    <span id="timer">00:00</span>
+    <button class="tbtn" onclick="toggleTimer()">▶ 開始</button>
+    <button class="tbtn" onclick="resetTimer()">↺</button>
+  </div>
+</div>
+<div id="layout">
+<nav id="sidebar">
+  <div class="sbh">課程總覽</div>
+  <a class="sbl active" onclick="goTo('s-overview')">課程定位 &amp; 流程</a>
+
+  <div class="sbh">1 · 動詞形式基礎</div>
+  <a class="sbl" onclick="goTo('s-basic')">三態／規則不規則／詞性／易混淆 <span class="t">18m</span></a>
+  <a class="sbl" onclick="goTo('qpr2')">1-1 internationalize</a>
+  <a class="sbl" onclick="goTo('qpr3')">1-2 have to</a>
+  <a class="sbl" onclick="goTo('qpr4')">1-3 founded</a>
+  <a class="sbl" onclick="goTo('qpr5')">1-4 rise/raise</a>
+  <a class="sbl" onclick="goTo('qrv8')">1-5 被動 founded</a>
+  <a class="sbl" onclick="goTo('qnw21')">1-6 rise/raise</a>
+  <a class="sbl" onclick="goTo('qnw22')">1-7 raise an issue</a>
+  <a class="sbl" onclick="goTo('qnw23')">1-8 found/founded</a>
+  <a class="sbl" onclick="goTo('qnw24')">1-9 lie/lay</a>
+  <a class="sbl" onclick="goTo('qnw25')">1-10 -en動詞</a>
+  <a class="sbl" onclick="goTo('qnw26')">1-11 -ize動詞</a>
+  <a class="sbl" onclick="goTo('qnw27')">1-12 -en動詞</a>
+  <a class="sbl" onclick="goTo('qnw28')">1-13 -ify動詞</a>
+
+  <div class="sbh">2 · 簡單式家族（現在/過去/未來）</div>
+  <a class="sbl" onclick="goTo('s-simple')">三態比較 + 時間線 <span class="t">20m</span></a>
+  <a class="sbl" onclick="goTo('qpv1')">2-1 現在簡單式</a>
+  <a class="sbl" onclick="goTo('qpv2')">2-2 未來簡單式</a>
+  <a class="sbl" onclick="goTo('qpr6')">2-3 現在簡單式</a>
+  <a class="sbl" onclick="goTo('qpr7')">2-4 過去簡單式</a>
+  <a class="sbl" onclick="goTo('qpr8')">2-5 未來簡單式</a>
+  <a class="sbl" onclick="goTo('qrv2')">2-6 未來簡單式</a>
+  <a class="sbl" onclick="goTo('qrv4')">2-7 過去簡單式</a>
+  <a class="sbl" onclick="goTo('qrv5')">2-8 過去簡單式</a>
+  <a class="sbl" onclick="goTo('qnw1')">2-9 現在簡單式</a>
+  <a class="sbl" onclick="goTo('qnw2')">2-10 現在簡單式</a>
+  <a class="sbl" onclick="goTo('qnw3')">2-11 過去簡單式</a>
+  <a class="sbl" onclick="goTo('qnw11')">2-12 未來簡單式</a>
+  <a class="sbl" onclick="goTo('qnw12')">2-13 條件句</a>
+  <a class="sbl" onclick="goTo('qnw16')">2-14 主詞動詞一致</a>
+  <a class="sbl" onclick="goTo('qnw19')">2-15 過去簡單式</a>
+  <a class="sbl" onclick="goTo('qnw20')">2-16 現在簡單式</a>
+
+  <div class="sbh">3 · 進行式家族（現在/過去/未來）</div>
+  <a class="sbl" onclick="goTo('s-continuous')">三態比較 + 時間線 <span class="t">10m</span></a>
+  <a class="sbl" onclick="goTo('qpr9')">3-1 現在進行式</a>
+  <a class="sbl" onclick="goTo('qpr10')">3-2 過去進行式</a>
+  <a class="sbl" onclick="goTo('qpr11')">3-3 未來進行式</a>
+  <a class="sbl" onclick="goTo('qrv1')">3-4 過去進行式</a>
+  <a class="sbl" onclick="goTo('qnw6')">3-5 過去進行式</a>
+  <a class="sbl" onclick="goTo('qnw7')">3-6 未來進行式</a>
+  <a class="sbl" onclick="goTo('qnw13')">3-7 過去進行式</a>
+
+  <div class="sbh">4 · 完成式家族（現在/過去/未來）</div>
+  <a class="sbl" onclick="goTo('s-perfect')">三態比較 + 完成進行 <span class="t">22m</span></a>
+  <a class="sbl" onclick="goTo('qpv3')">4-1 現在完成進行 ⭐</a>
+  <a class="sbl" onclick="goTo('qpr12')">4-2 現在完成式</a>
+  <a class="sbl" onclick="goTo('qpr13')">4-3 過去完成式①</a>
+  <a class="sbl" onclick="goTo('qpr14')">4-4 過去完成式②</a>
+  <a class="sbl" onclick="goTo('qpr15')">4-5 未來完成式</a>
+  <a class="sbl" onclick="goTo('qrv3')">4-6 現在完成式</a>
+  <a class="sbl" onclick="goTo('qrv6')">4-7 現在完成式 rise</a>
+  <a class="sbl" onclick="goTo('qrv7')">4-8 過去完成式</a>
+  <a class="sbl" onclick="goTo('qnw4')">4-9 過去完成式</a>
+  <a class="sbl" onclick="goTo('qnw5')">4-10 未來完成式</a>
+  <a class="sbl" onclick="goTo('qnw8')">4-11 現在完成式</a>
+  <a class="sbl" onclick="goTo('qnw9')">4-12 現在完成式</a>
+  <a class="sbl" onclick="goTo('qnw14')">4-13 過去完成式</a>
+  <a class="sbl" onclick="goTo('qnw15')">4-14 現在完成式</a>
+  <a class="sbl" onclick="goTo('qnw17')">4-15 過去完成式</a>
+  <a class="sbl" onclick="goTo('qnw30')">4-16 過去完成進行 ⭐</a>
+
+  <div class="sbh">5 · 被動語態與分詞形容詞</div>
+  <a class="sbl" onclick="goTo('s-passive')">be+p.p. / V-ing vs p.p. <span class="t">18m</span></a>
+  <a class="sbl" onclick="goTo('qpr1')">5-1 hit 被動</a>
+  <a class="sbl" onclick="goTo('qpr16')">5-2 被動語態①</a>
+  <a class="sbl" onclick="goTo('qpr17')">5-3 被動語態②</a>
+  <a class="sbl" onclick="goTo('qnw10')">5-4 過去被動</a>
+  <a class="sbl" onclick="goTo('qnw18')">5-5 未來被動</a>
+  <a class="sbl" onclick="goTo('qnw29')">5-6 助動詞被動</a>
+
+  <div class="sbh">6 · 解題系統</div>
+  <a class="sbl" onclick="goTo('s-strategy')">動詞題六步驟 + 示範題</a>
+
+  <div class="sbh">7 · 總複習（混合抽測）</div>
+  <a class="sbl" onclick="goTo('s-review')">30 題混合抽測，不按章節順序 <span class="t">25m</span></a>
+  <a class="sbl" onclick="goTo('rev1')">複習1 現在簡單式</a>
+  <a class="sbl" onclick="goTo('rev2')">複習2 現在完成進行式</a>
+  <a class="sbl" onclick="goTo('rev3')">複習3 lie / lay</a>
+  <a class="sbl" onclick="goTo('rev4')">複習4 過去進行式</a>
+  <a class="sbl" onclick="goTo('rev5')">複習5 被動語態・不規則動詞</a>
+  <a class="sbl" onclick="goTo('rev6')">複習6 過去簡單式・when</a>
+  <a class="sbl" onclick="goTo('rev7')">複習7 過去完成式</a>
+  <a class="sbl" onclick="goTo('rev8')">複習8 動詞字尾變化</a>
+  <a class="sbl" onclick="goTo('rev9')">複習9 現在進行式</a>
+  <a class="sbl" onclick="goTo('rev10')">複習10 現在簡單式</a>
+  <a class="sbl" onclick="goTo('rev11')">複習11 過去完成式①</a>
+  <a class="sbl" onclick="goTo('rev12')">複習12 raise an issue</a>
+  <a class="sbl" onclick="goTo('rev13')">複習13 未來被動語態</a>
+  <a class="sbl" onclick="goTo('rev14')">複習14 現在簡單式・主詞動詞一致</a>
+  <a class="sbl" onclick="goTo('rev15')">複習15 現在完成式・rise</a>
+  <a class="sbl" onclick="goTo('rev16')">複習16 被動語態・founded</a>
+  <a class="sbl" onclick="goTo('rev17')">複習17 過去進行式・背景動作</a>
+  <a class="sbl" onclick="goTo('rev18')">複習18 if 條件句用現在式表未來</a>
+  <a class="sbl" onclick="goTo('rev19')">複習19 未來完成式</a>
+  <a class="sbl" onclick="goTo('rev20')">複習20 -ize 動詞・plan to V</a>
+  <a class="sbl" onclick="goTo('rev21')">複習21 被動語態②</a>
+  <a class="sbl" onclick="goTo('rev22')">複習22 過去簡單式・明確過去時間</a>
+  <a class="sbl" onclick="goTo('rev23')">複習23 現在完成式・since</a>
+  <a class="sbl" onclick="goTo('rev24')">複習24 -ify 動詞・過去式</a>
+  <a class="sbl" onclick="goTo('rev25')">複習25 未來進行式</a>
+  <a class="sbl" onclick="goTo('rev26')">複習26 未來式・時間子句</a>
+  <a class="sbl" onclick="goTo('rev27')">複習27 過去完成進行式</a>
+  <a class="sbl" onclick="goTo('rev28')">複習28 被動語態・found</a>
+  <a class="sbl" onclick="goTo('rev29')">複習29 現在完成式</a>
+  <a class="sbl" onclick="goTo('rev30')">複習30 過去簡單式・不規則動詞</a>
+
+  <div class="sbh">總整理</div>
+  <a class="sbl" onclick="goTo('s-summary')">速查表 &amp; 常見錯誤</a>
+</nav>
+<main id="main">
+<div class="ls" id="s-overview">
+<div class="sh"><div class="sn">0</div><div class="st">課程定位 &amp; 上課流程</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>Lesson Info</div><div class="bb">
+<table class="lstbl">
+<tr><th>Lesson Number</th><td>11</td></tr>
+<tr><th>Grammar Topic</th><td>Chapter 7 動詞與時態 Verb &amp; Tense — 動詞三態、規則/不規則動詞變化、動詞字尾詞性變化、易混淆動詞（bid/find-found/fall-fell/rise-raise/lie-lay/shine）、十二時態系統（簡單/進行/完成/完成進行 × 現在/過去/未來）、被動語態</td></tr>
+<tr><th>Part 5 Questions</th><td>本章 58 題獨立文法練習題（Preview Test ×3、練習題 ×17、CH7 總複習 ×8、新增練習題 ×30），另設「總複習」30 題混合抽測（從 58 題中挑選、打散順序，非新題）</td></tr>
+<tr><th>Part 6 / Part 7 Questions</th><td>None（本堂為純文法專章，無閱讀文章）</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh gn"><span class="d"></span>本堂目標</div><div class="bb">
+<div class="goal2"><p>時態不是背十二個公式，而是建立判斷系統：<strong>時間點在哪裡 → 動作狀態是什麼 → 主詞是做動作還是接受動作</strong>。學生要學會看到動詞空格，先問這三個問題，再決定用哪個時態、加不加 s、要不要被動，而不是靠中文翻譯硬解。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>⚠️ 份量提醒：建議拆成 3 次上課</div><div class="bb">
+<div class="tip"><p><strong>5 大時態家族 + 58 題練習，份量非常大，但每個家族都是「學完馬上練」，不用擔心找不到對應練習題。</strong>建議拆法：<br>第一次：家族 1 動詞形式基礎（13題）＋家族 2 簡單式家族（16題）<br>第二次：家族 3 進行式家族（7題）＋家族 4 完成式家族（16題，份量最重）<br>第三次：家族 5 被動語態與分詞形容詞（6題）＋解題系統總複習</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>五大時態家族總覽</div><div class="bb">
+<div class="script">這堂課的設計邏輯：不是把 12 個時態當成 12 個孤立公式背，而是分成 5 個家族，每個家族內部先比較，學完立刻寫該家族的練習題，再進下一個家族。</div>
+<table class="tmtable">
+<tr><th>家族</th><th>內容</th><th>練習題數</th></tr>
+<tr><td>1 · 動詞形式基礎</td><td>動詞三態、規則/不規則動詞四型、-ate/-en/-fy/-ize 詞性字尾、六組易混淆動詞（find/found、rise/raise、lie/lay…）</td><td>13 題</td></tr>
+<tr><td>2 · 簡單式家族</td><td>現在／過去／未來簡單式放在同一條時間線比較，含狀態動詞、used to、if/when 子句用現在式表未來</td><td>16 題</td></tr>
+<tr><td>3 · 進行式家族</td><td>現在／過去／未來進行式比較，含未來安排、漸進變化、while 兩動作同時</td><td>7 題</td></tr>
+<tr><td>4 · 完成式家族</td><td>現在／過去／未來完成式比較（全課最重），含 since/for、had hoped 型態、完成進行式</td><td>16 題</td></tr>
+<tr><td>5 · 被動語態與分詞形容詞</td><td>被動如何疊加在九種時態上、及物/不及物限制、固定句型、interesting/interested 分詞當形容詞</td><td>6 題</td></tr>
+<tr><td>6 · 解題系統</td><td>把五大家族串成動詞題六步驟 + 3 題示範</td><td>—</td></tr>
+<tr><td>7 · 總複習</td><td>從 58 題中挑選、打散順序混合抽測，測試學生脫離章節提示後的判斷能力</td><td>30 題</td></tr>
+</table>
+</div></div>
+</div>
+<div class="ls" id="s-basic">
+<div class="sh"><div class="sn">1</div><div class="st">動詞形式基礎：三態、規則/不規則、詞性、易混淆動詞</div><div class="stm">⏱ 18 min</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>開場逐字稿：為什麼要先學這一節</div><div class="bb">
+<div class="script">今天我們上 Chapter 7：動詞與時態。這一章在 Part 5 非常重要，因為題目常考你能不能看出動作是現在、過去、未來，還是已經完成、正在進行、被動發生。<br><br>但時態不是叫你背十二個公式而已。很多學生背完現在簡單式、過去簡單式、未來簡單式、現在完成式、過去完成式，做題還是錯，因為沒有先問：<strong>這個句子到底在講哪一個時間？這個動作是一次發生、正在發生、已經完成，還是持續到現在？</strong><br><br>在進入時態系統之前，我們要先把「動詞形式」這個地基打好——三態是什麼、規則和不規則怎麼變、字尾怎麼決定詞性、哪些動詞長得像但意思完全不同。這一節打穩了，後面五大時態家族才學得快。</div>
+<div class="formula">1. 時間點在哪裡？（now / yesterday / tomorrow / since 1995 / for three years / by Friday）<br>2. 動作狀態是什麼？（習慣？正在做？已完成？持續？比另一個過去更早？）<br>3. 主詞是做動作，還是被動接受動作？</div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>本章總覽｜動詞題六大類考點</div><div class="bb">
+<table class="tbl"><tr><th>類型</th><th>代表考點</th></tr>
+<tr><td>動詞三態</td><td>leave / left / left；found / founded</td></tr>
+<tr><td>規則與不規則變化</td><td>asked / stopped / studied</td></tr>
+<tr><td>動詞字尾變化</td><td>indicate / indication / indicative / indicator</td></tr>
+<tr><td>易混淆動詞</td><td>rise / raise；lie / lay；find / found</td></tr>
+<tr><td>時態判斷</td><td>present / past / future / perfect / progressive</td></tr>
+<tr><td>被動語態</td><td>be + p.p.</td></tr>
+</table>
+<div class="script">TOEIC 的動詞題通常會把字形、時態、主被動、句意全部放在一起考。例如：The bank of Barclays, which ______ in 1690, is the oldest company in the United Kingdom. 要同時知道：第一，這是過去時間 1690 年；第二，銀行是被創立，不是自己創立；第三，found 當「創立」時過去分詞是 founded。所以答案是 was founded。這題同時用到「時態＋被動＋易混淆動詞」三個知識點，這正是這一節要先打穩的三塊地基之一。</div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>1-1｜動詞三態是什麼？</div><div class="bb">
+<div class="script">英文動詞有三個重要的樣子，叫動詞三態：原形（現在簡單式或助動詞後面用）、過去式（講過去發生的動作）、過去分詞（常用在完成式和被動語態）。</div>
+<table class="tbl"><tr><th>原形</th><th>過去式</th><th>過去分詞</th></tr>
+<tr><td>work</td><td>worked</td><td>worked</td></tr>
+<tr><td>write</td><td>wrote</td><td>written</td></tr>
+<tr><td>find</td><td>found</td><td>found</td></tr>
+<tr><td>found</td><td>founded</td><td>founded</td></tr>
+</table>
+<div class="corr"><p>find 是「找到」，過去式 found；found 是「創立」，過去式與過去分詞是 founded。found 可能是 find 的過去式，也可能是另一個動詞 found 的原形，要看句意。</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>1-2｜規則動詞：四種變化型</div><div class="bb">
+<table class="tbl"><tr><th>類型</th><th>規則</th><th>例字</th></tr>
+<tr><td>類型 1</td><td>一般情況加 -ed</td><td>listen→listened, start→started, offer→offered</td></tr>
+<tr><td>類型 2</td><td>字尾已有 e，只加 -d</td><td>hope→hoped, close→closed, participate→participated</td></tr>
+<tr><td>類型 3</td><td>子音+y，去 y 加 -ied</td><td>study→studied, notify→notified, satisfy→satisfied</td></tr>
+<tr><td>類型 4</td><td>短母音+子音，重複字尾再加 -ed</td><td>stop→stopped, drop→dropped, plan→planned</td></tr>
+</table>
+<div class="script">The presentation lasted for an hour. My flight landed at 6 p.m. yesterday. Please notify us of any changes.（notify 商業英文很常見，意思是通知）</div>
+<div class="ask"><p>看到 yesterday，你會想什麼時態？</p><div class="al">答案</div><p class="ap">過去式。yesterday、last year、ago、in 2012 都是過去時間線索——這條線索在下一節「簡單式家族」會反覆用到。</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>1-3｜不規則動詞：三大類</div><div class="bb">
+<div class="gtl mt12">第一類｜三態都一樣</div>
+<table class="tbl"><tr><th>原形</th><th>過去式</th><th>過去分詞</th><th>中文</th></tr>
+<tr><td>cost</td><td>cost</td><td>cost</td><td>花費</td></tr>
+<tr><td>hit</td><td>hit</td><td>hit</td><td>打擊</td></tr>
+<tr><td>hurt</td><td>hurt</td><td>hurt</td><td>傷害</td></tr>
+</table>
+<div class="script">這類最容易看錯，因為現在、過去、過去分詞長得都一樣。All employees were hit by the company reorganization. 這裡 hit 是過去分詞，因為前面有 were——這句其實已經在預告下一節被動語態的判斷邏輯。</div>
+<div class="gtl mt12">第二類｜過去式和過去分詞一樣</div>
+<table class="tbl"><tr><th>原形</th><th>過去式</th><th>過去分詞</th></tr>
+<tr><td>buy</td><td>bought</td><td>bought</td></tr>
+<tr><td>find</td><td>found</td><td>found</td></tr>
+<tr><td>send</td><td>sent</td><td>sent</td></tr>
+</table>
+<div class="script">We have already sent the invitation.（完成式）vs. The package was sent yesterday.（被動）同一個 sent，關鍵不是看 sent，而是看前面是 have 還是 be 動詞。</div>
+<div class="gtl mt12">第三類｜三態都不同</div>
+<table class="tbl"><tr><th>原形</th><th>過去式</th><th>過去分詞</th></tr>
+<tr><td>begin</td><td>began</td><td>begun</td></tr>
+<tr><td>rise</td><td>rose</td><td>risen</td></tr>
+<tr><td>write</td><td>wrote</td><td>written</td></tr>
+</table>
+<div class="tip"><p>這類要特別小心，很多學生會把過去式拿去當過去分詞用。She wrote the report yesterday.（過去式）The report was written by her.（被動）I have written the report.（完成式）看到 have/has/had 或 be 動詞，後面多半要過去分詞，不是過去式。</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>1-4｜動詞字尾變化｜Part of Speech</div><div class="bb">
+<div class="script">TOEIC Part 5 很愛考同一個字根的不同詞性。indicate 這個字可能變成 indicate（動詞）、indication（名詞）、indicative（形容詞）、indicator（名詞，指標）。看到選項很像時，不要先翻中文，要先問：空格需要什麼詞性？</div>
+<table class="tbl"><tr><th>單字</th><th>詞性</th><th>例句</th></tr>
+<tr><td>indicate</td><td>動詞</td><td>The survey indicated that most customers were satisfied.</td></tr>
+<tr><td>indication</td><td>名詞</td><td>There was no indication that he would resign.</td></tr>
+<tr><td>indicative</td><td>形容詞</td><td>Her expression was indicative of disappointment.</td></tr>
+<tr><td>indicator</td><td>名詞</td><td>Sales growth is a good indicator of recovery.</td></tr>
+</table>
+<table class="tbl mt12"><tr><th>字尾</th><th>意思</th><th>例字</th></tr>
+<tr><td>-ate</td><td>常見動詞字尾</td><td>communicate 溝通, celebrate 慶祝, differentiate 區分</td></tr>
+<tr><td>-en</td><td>使……變得……</td><td>strengthen 強化, weaken 弱化, darken 變暗</td></tr>
+<tr><td>-fy</td><td>使……化</td><td>simplify 簡化, classify 分類, intensify 增強</td></tr>
+<tr><td>-ize</td><td>使……化</td><td>customize 客製化, emphasize 強調, stabilize 使穩定</td></tr>
+</table>
+<div class="tip"><p>The company must internationalize in order to meet the competition.（in order to 後面要原形動詞）We can customize the application to better fulfill your needs.</p></div>
+</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>1-5｜易混淆的動詞：本節最重要的收尾</div><div class="bb">
+<table class="tbl"><tr><th>單字</th><th>三態</th><th>及物/不及物</th><th>中文</th></tr>
+<tr><td>find</td><td>find / found / found</td><td>及物</td><td>找到</td></tr>
+<tr><td>found</td><td>found / founded / founded</td><td>及物</td><td>創立；建立</td></tr>
+<tr><td>fall</td><td>fall / fell / fallen</td><td>不及物</td><td>落下；下降</td></tr>
+<tr><td>rise</td><td>rise / rose / risen</td><td>不及物</td><td>上升；升起</td></tr>
+<tr><td>raise</td><td>raise / raised / raised</td><td>及物</td><td>提高；舉起；籌募</td></tr>
+<tr><td>lie</td><td>lie / lay / lain</td><td>不及物</td><td>躺；位於</td></tr>
+<tr><td>lay</td><td>lay / laid / laid</td><td>及物</td><td>放置</td></tr>
+<tr><td>shine（發光）</td><td>shine / shone / shone</td><td>不及物</td><td>發光</td></tr>
+<tr><td>shine（擦亮）</td><td>shine / shined / shined</td><td>及物</td><td>擦亮</td></tr>
+</table>
+<div class="script">只要句子在講公司、學校、組織創立，通常是 found/founded，不是 find。I can't find the report. The company was founded in 2001. Sales rose last year.（sales 自己上升，不接受詞）vs. The company raised the price.（company 提高某物，一定要有受詞）He laid a book on the desk.（放置，一定要有受詞）</div>
+<div class="ask"><p>做題時問：後面有沒有被提高的東西？</p><div class="al">答案</div><p class="ap">有受詞用 raise/lay/found；沒有受詞、主詞自己動作用 rise/lie/fall。這個「有沒有受詞」的判斷法，等一下在被動語態那一節還會再用到——因為只有及物動詞才能變被動。</p></div>
+</div></div>
+
+<div class="block"><div class="bh gn"><span class="d"></span>小結：從這裡走向時態系統</div><div class="bb">
+<div class="goal2"><p>現在你已經有動詞的三種形式、規則/不規則變化、字尾詞性、以及五組最容易搞混的動詞。接下來六大時態家族要考的動詞形式，全部都是從今天這一節延伸出去的——簡單式用原形/第三人稱單數，完成式和被動用過去分詞，進行式用 V-ing。先做下面 13 題，確認這一節的形式判斷都抓穩了，再進入下一節的簡單式家族。</p></div>
+</div></div>
+</div>
+<div class="block" style="margin-top:4px"><div class="bh dk"><span class="d"></span>文法練習：動詞形式基礎（13 題）</div><div class="bb"><div class="script">學完三態、規則/不規則動詞、詞性變化、易混淆動詞，馬上練習下面 13 題，鞏固剛剛的判斷方式。</div></div></div>
+
+<div class="qb" id="qpr2">
+<div class="qh"><span class="qn">1-1</span><span class="qt">動詞字尾變化</span></div>
+<div class="qbody">
+<div class="qsen">During the meeting, the CEO mentioned that our company must <span class="bl">______</span> in order to meet the competition.</div>
+<div class="qzh">在會議中，執行長提到我們公司必須國際化，以迎向競爭。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>international</div>
+<div class="qo ok"><span class="ol">B</span>internationalize</div>
+<div class="qo"><span class="ol">C</span>internationalized</div>
+<div class="qo"><span class="ol">D</span>internationalism</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 must，must 後面一定接原形動詞。internationalize 是動詞原形，意思是國際化。</p><div class="al">答案</div><p class="ap">internationalize（B）</p></div>
+<div class="corr mt12"><p>A international：形容詞，不能放在 must 後當主要動詞。C internationalized：過去式或過去分詞，must 後不能接 p.p.。D internationalism：名詞，國際主義，不是動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">meet the competition</span><span class="vd">應付競爭；迎向競爭</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr3">
+<div class="qh"><span class="qn">1-2</span><span class="qt">have to + 原形</span></div>
+<div class="qbody">
+<div class="qsen">Before taking further actions, we <span class="bl">______</span> to determine our promotional goals first.</div>
+<div class="qzh">在採取進一步行動之前，我們必須先決定促銷目標。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>might</div>
+<div class="qo ok"><span class="ol">B</span>have</div>
+<div class="qo"><span class="ol">C</span>will</div>
+<div class="qo"><span class="ol">D</span>should</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面已經有 to determine，要找一個能和 to 組合的答案：have to determine = 必須決定。</p><div class="al">答案</div><p class="ap">have（B）</p></div>
+<div class="corr mt12"><p>A might to determine：might 後面不能接 to。C will to determine：will 後面不能接 to。D should to determine：should 後面不能接 to。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">determine</span><span class="vd">決定；確定</span>
+<span class="vw">promotional goal</span><span class="vd">促銷目標</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr4">
+<div class="qh"><span class="qn">1-3</span><span class="qt">被動語態・found</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The university was <span class="bl">______</span> by Dr. Peters in 1988.</div>
+<div class="qzh">這所大學是 Peters 博士在 1988 年創立的。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>find</div>
+<div class="qo"><span class="ol">B</span>found</div>
+<div class="qo"><span class="ol">C</span>founds</div>
+<div class="qo ok"><span class="ol">D</span>founded</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>大學不是自己創立自己，是被 Dr. Peters 創立，這是被動語態。創立是 found，過去分詞是 founded，所以是 was founded。</p><div class="al">答案</div><p class="ap">founded（D）</p></div>
+<div class="corr mt12"><p>A find：找到，且是原形，不合 was。B found：可以是 find 的過去式，但這裡不是找到大學，而是創立大學。C founds：現在式第三人稱單數，不合 was。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">found</span><span class="vd">創立；建立</span>
+<span class="vw">found a company / found a university</span><span class="vd">創立公司／大學</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr5">
+<div class="qh"><span class="qn">1-4</span><span class="qt">rise vs. raise</span></div>
+<div class="qbody">
+<div class="qsen">The moon <span class="bl">______</span> an hour after sunset.</div>
+<div class="qzh">月亮在日落後一小時升起。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>raised</div>
+<div class="qo"><span class="ol">B</span>raise</div>
+<div class="qo ok"><span class="ol">C</span>rose</div>
+<div class="qo"><span class="ol">D</span>rising</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>月亮是自己升起，不是被別人提高，所以用 rise，不用 raise。這句在講日落後一小時，是過去敘述，rise 的過去式是 rose。</p><div class="al">答案</div><p class="ap">rose（C）</p></div>
+<div class="corr mt12"><p>A raised：raise 是及物動詞，後面需要受詞，意思是提高某物。B raise：原形，不合過去語境，也需受詞。D rising：V-ing，缺少 be 動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">sunset</span><span class="vd">日落</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv8">
+<div class="qh"><span class="qn">1-5</span><span class="qt">被動語態・founded</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The bank of Barclays, which <span class="bl">______</span> in 1690, is the oldest company in the United Kingdom.</div>
+<div class="qzh">Barclays 銀行創立於 1690 年，是英國歷史最悠久的公司。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>found</div>
+<div class="qo"><span class="ol">B</span>was found</div>
+<div class="qo"><span class="ol">C</span>was finding</div>
+<div class="qo ok"><span class="ol">D</span>was founded</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>三個線索：in 1690 是過去時間；銀行不是自己創立自己，要被動；found 表示創立時，過去分詞是 founded。</p><div class="al">答案</div><p class="ap">was founded（D）</p></div>
+<div class="corr mt12"><p>A found：可能是 find 的過去式，但這裡不是找到銀行。B was found：意思變成被找到，不是被創立。C was finding：過去進行式，且主詞 bank 不會正在尋找。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">found a company</span><span class="vd">創立公司</span>
+<span class="vw">oldest company</span><span class="vd">最古老的公司</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw21">
+<div class="qh"><span class="qn">1-6</span><span class="qt">rise / raise・主詞動詞一致</span></div>
+<div class="qbody">
+<div class="qsen">The number of registered users <span class="bl">______</span> every month.</div>
+<div class="qzh">註冊使用者的數量每個月都上升。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>rise</div>
+<div class="qo ok"><span class="ol">B</span>rises</div>
+<div class="qo"><span class="ol">C</span>raise</div>
+<div class="qo"><span class="ol">D</span>raises</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞 The number of registered users 自己上升，用不及物動詞 rise，且 The number 是單數，rise 要加 s，變 rises。</p><div class="al">答案</div><p class="ap">rises（B）</p></div>
+<div class="corr mt12"><p>A rise：主詞單數，要加 s。C raise：raise 後面要有受詞，例如 raise prices。D raises：雖有 s，但 raise 是及物動詞，句中沒有受詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">registered user</span><span class="vd">註冊使用者</span>
+<span class="vw">rise / raise</span><span class="vd">上升（不及物）／提高（及物）</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw22">
+<div class="qh"><span class="qn">1-7</span><span class="qt">raise an issue</span></div>
+<div class="qbody">
+<div class="qsen">The supervisor <span class="bl">______</span> the issue during yesterday's staff meeting.</div>
+<div class="qzh">主管在昨天的員工會議中提出了這個議題。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>rose</div>
+<div class="qo ok"><span class="ol">B</span>raised</div>
+<div class="qo"><span class="ol">C</span>risen</div>
+<div class="qo"><span class="ol">D</span>rising</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 issue，要想到 raise an issue，提出議題，raise 是及物動詞，後面可以接 issue。時間是 yesterday's staff meeting，用過去式 raised。</p><div class="al">答案</div><p class="ap">raised（B）</p></div>
+<div class="corr mt12"><p>A rose：rise 是不及物動詞，不能直接接 issue。C risen：過去分詞，缺少 has/had。D rising：不是完整動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">raise an issue</span><span class="vd">提出議題</span>
+<span class="vw">staff meeting</span><span class="vd">員工會議</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw23">
+<div class="qh"><span class="qn">1-8</span><span class="qt">find / found・被動</span></div>
+<div class="qbody">
+<div class="qsen">The company was <span class="bl">______</span> by two engineers in 1995.</div>
+<div class="qzh">這家公司於 1995 年由兩位工程師創立。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>find</div>
+<div class="qo"><span class="ol">B</span>found</div>
+<div class="qo ok"><span class="ol">C</span>founded</div>
+<div class="qo"><span class="ol">D</span>finding</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>find 是找到，過去式是 found；found 也可以是動詞，意思是創立，過去式和過去分詞是 founded。公司是被創立，句子已有 was，後面要 p.p. founded。</p><div class="al">答案</div><p class="ap">founded（C）</p></div>
+<div class="corr mt12"><p>A find：原形，不合 was + p.p.。B found：如果是 find 的過去式，意思是找到，不合語意；如果要表達創立，p.p. 是 founded。D finding：不是被動語態。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">found a company</span><span class="vd">創立公司</span>
+<span class="vw">engineer</span><span class="vd">工程師</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw24">
+<div class="qh"><span class="qn">1-9</span><span class="qt">lie / lay</span></div>
+<div class="qbody">
+<div class="qsen">The manager <span class="bl">______</span> the documents on the desk before leaving the office.</div>
+<div class="qzh">經理離開辦公室前，把文件放在桌上。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>lied</div>
+<div class="qo ok"><span class="ol">B</span>laid</div>
+<div class="qo"><span class="ol">C</span>lain</div>
+<div class="qo"><span class="ol">D</span>lay</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>lie 有兩種：說謊（lied）和躺下（lay/lain）；lay 是放置，後面要接受詞。這裡後面有 the documents，要用 lay 的過去式 laid。</p><div class="al">答案</div><p class="ap">laid（B）</p></div>
+<div class="corr mt12"><p>A lied：說謊，不合語意。C lain：躺下的過去分詞，不能接 the documents。D lay：可以是 lie「躺下」的過去式，但本句要表示放置，應用 laid。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">document</span><span class="vd">文件</span>
+<span class="vw">lay — laid — laid</span><span class="vd">放置</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw25">
+<div class="qh"><span class="qn">1-10</span><span class="qt">-en 動詞・enable A to V</span></div>
+<div class="qbody">
+<div class="qsen">The new policy <span class="bl">______</span> employees to work from home twice a week.</div>
+<div class="qzh">新政策讓員工每週可以在家工作兩次。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>enables</div>
+<div class="qo"><span class="ol">B</span>enable</div>
+<div class="qo"><span class="ol">C</span>enabling</div>
+<div class="qo"><span class="ol">D</span>has enable</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>enable 是動詞，意思是使能夠。主詞 The new policy 單數，現在簡單式要加 s，變成 enables，enable someone to V 是重要搭配。</p><div class="al">答案</div><p class="ap">enables（A）</p></div>
+<div class="corr mt12"><p>B enable：主詞單數，應加 s。C enabling：不是完整主要動詞。D has enable：完成式要 has enabled。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">enable someone to V</span><span class="vd">使某人能夠……</span>
+<span class="vw">work from home</span><span class="vd">在家工作</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw26">
+<div class="qh"><span class="qn">1-11</span><span class="qt">-ize 動詞・plan to V</span></div>
+<div class="qbody">
+<div class="qsen">The company plans to <span class="bl">______</span> its services to meet local customer needs.</div>
+<div class="qzh">公司計畫客製化其服務，以符合當地顧客需求。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>customization</div>
+<div class="qo ok"><span class="ol">B</span>customize</div>
+<div class="qo"><span class="ol">C</span>customized</div>
+<div class="qo"><span class="ol">D</span>customizable</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 plans to，to 後面要接原形動詞。customize 是動詞原形，意思是客製化。</p><div class="al">答案</div><p class="ap">customize（B）</p></div>
+<div class="corr mt12"><p>A customization：名詞，不能接在 to 後當動詞。C customized：過去式/p.p.，不符合 plan to + V。D customizable：形容詞，可客製化的，不是動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">customize</span><span class="vd">客製化</span>
+<span class="vw">local customer needs</span><span class="vd">當地顧客需求</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw27">
+<div class="qh"><span class="qn">1-12</span><span class="qt">-en 動詞・to V</span></div>
+<div class="qbody">
+<div class="qsen">The training session was designed to <span class="bl">______</span> communication between departments.</div>
+<div class="qzh">這場訓練課程是為了加強部門之間的溝通。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>strength</div>
+<div class="qo ok"><span class="ol">B</span>strengthen</div>
+<div class="qo"><span class="ol">C</span>strong</div>
+<div class="qo"><span class="ol">D</span>strongly</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 to，表目的：was designed to...，to 後面需要原形動詞。strength 是名詞，strong 是形容詞，strongly 是副詞，真正的動詞是 strengthen。</p><div class="al">答案</div><p class="ap">strengthen（B）</p></div>
+<div class="corr mt12"><p>A strength：名詞，力量。C strong：形容詞，強壯的。D strongly：副詞，強烈地。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">strengthen</span><span class="vd">加強</span>
+<span class="vw">department</span><span class="vd">部門</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw28">
+<div class="qh"><span class="qn">1-13</span><span class="qt">-ify 動詞・過去式</span></div>
+<div class="qbody">
+<div class="qsen">The HR manager <span class="bl">______</span> all applicants by email yesterday.</div>
+<div class="qzh">人資經理昨天用電子郵件通知了所有申請者。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>notification</div>
+<div class="qo ok"><span class="ol">B</span>notified</div>
+<div class="qo"><span class="ol">C</span>notifying</div>
+<div class="qo"><span class="ol">D</span>notify</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>時間線索 yesterday，要用過去式。notify 是動詞，通知，過去式是 notified，y 要變 ied。</p><div class="al">答案</div><p class="ap">notified（B）</p></div>
+<div class="corr mt12"><p>A notification：名詞，通知。C notifying：V-ing，不能單獨作主要動詞。D notify：原形，不符合 yesterday。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">HR manager</span><span class="vd">人資經理</span>
+<span class="vw">notify someone by email</span><span class="vd">用電子郵件通知某人</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-simple">
+<div class="sh"><div class="sn">2</div><div class="st">簡單式家族：現在／過去／未來，放在同一條時間線上比較</div><div class="stm">⏱ 20 min</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>開場：三個簡單式其實是同一套邏輯</div><div class="bb">
+<div class="script">剛剛我們把動詞的形式地基打好了，現在要開始蓋房子。TOEIC 十二時態聽起來很多，但其實只有三個「家族」：簡單式、進行式、完成式，每個家族各有現在、過去、未來三個時間版本。今天先處理最基礎的簡單式家族。三個簡單式的公式結構完全對稱，差別只在動詞形式和時間線索，把它們放在一起看，比分開背有效率得多。</div>
+<div class="formula">現在簡單式：V / Vs　　過去簡單式：Ved / V2　　未來簡單式：will + V</div>
+<table class="tbl"><tr><th>時態</th><th>核心意思</th><th>常見時間線索</th><th>例句</th></tr>
+<tr><td>現在簡單式</td><td>習慣、事實、固定安排</td><td>always, every day, usually</td><td>Mr. Chen always comes to work on time.</td></tr>
+<tr><td>過去簡單式</td><td>過去發生並結束</td><td>yesterday, ago, last year, in 2012</td><td>I took the subway to work yesterday.</td></tr>
+<tr><td>未來簡單式</td><td>將會發生</td><td>tomorrow, next week, in the future</td><td>Mr. Chen will retire next month.</td></tr>
+</table>
+<div class="tip"><p>做題第一步永遠一樣：先找時間線索，再看主詞決定要不要加 s，最後檢查動詞形式對不對。這條流程在過去式、未來式都通用，只是關鍵字不同。</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>2-1｜現在簡單式：不是「現在正在」，是「穩定狀態」</div><div class="bb">
+<table class="tbl"><tr><th>用法</th><th>例句</th></tr>
+<tr><td>習慣或常態</td><td>Mr. Chen always comes to work on time.（看到 always/usually/often/every day 想現在簡單式）</td></tr>
+<tr><td>事實、真理、長期狀態</td><td>Customer service is always one of our priorities.（事實不用進行式）</td></tr>
+<tr><td>固定時刻表／已安排事件</td><td>The competition starts at 10 sharp. Mr. Jones leaves for Chicago tomorrow.（雖有 tomorrow 但講已安排的行程——這點在未來式那一節還會再遇到）</td></tr>
+<tr><td>do/does 加強語氣</td><td>He does study hard.（真的、確實）</td></tr>
+</table>
+<div class="gtl mt12">狀態動詞：通常不用進行式</div>
+<table class="tbl"><tr><th>類別</th><th>動詞</th></tr>
+<tr><td>理解/知道</td><td>know, understand, believe</td></tr>
+<tr><td>擁有/需要/喜好</td><td>own, belong, need, want, like, prefer</td></tr>
+<tr><td>感官</td><td>see, hear, smell, taste</td></tr>
+</table>
+<div class="corr"><p>I understand your points.（不是 I am understanding）This laptop belongs to Jack.（不是 is belonging）</p></div>
+<div class="tip"><p>有些狀態動詞換意思時可以用進行式：I'm seeing a client tomorrow.（see 這裡是「會面」）She is having lunch with a client.（have 這裡是「進行動作」）判斷方法是看動詞當下的意思，不是死背清單。</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>2-2｜過去簡單式：完成時間 vs. 未完成期間</div><div class="bb">
+<div class="formula">used to + V = 過去習慣，現在不一定如此</div>
+<div class="es">I used to work at a software company in Chicago.（暗示現在可能不在那裡工作）</div>
+<div class="es">She did try her best already.（did 後面接原形，不是 did tried）</div>
+<table class="tbl mt12"><tr><th>時間線索類型</th><th>常見字</th><th>用法</th></tr>
+<tr><td>完成時間（結束了）</td><td>yesterday, last week, two days ago, in 2020</td><td>用過去簡單式</td></tr>
+<tr><td>未完成期間（連到現在）</td><td>since 2020, for three years, over the past five years</td><td>常用現在完成式（下一節「完成式家族」細講）</td></tr>
+</table>
+<div class="corr"><p>I have already finished the report yesterday. ❌（yesterday 是明確過去時間，不能配現在完成式）→ I already finished the report yesterday. ✅</p></div>
+<div class="tip"><p>ago 和 for 的差別：three years ago = 三年前那個時間點（過去式）；for three years = 持續三年到現在（現在完成式）。這一組對比會在完成式家族再深化一次。</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>2-3｜未來簡單式：五種未來表達</div><div class="bb">
+<table class="tbl"><tr><th>方式</th><th>用法</th><th>例句</th></tr>
+<tr><td>will</td><td>預測、承諾、意願、決心</td><td>I will always support you. Jerry will not join our study group.</td></tr>
+<tr><td>be going to</td><td>計畫或有跡象即將發生</td><td>Look at those dark clouds. It is going to rain.</td></tr>
+<tr><td>現在進行式</td><td>已安排好的個人行程</td><td>I'm flying to Tokyo next week.（下一節「進行式家族」會再遇到這個用法）</td></tr>
+<tr><td>現在簡單式</td><td>時刻表、活動流程</td><td>The train leaves at 8:30.</td></tr>
+<tr><td>Shall I / we</td><td>詢問建議</td><td>Shall we go now?</td></tr>
+</table>
+<div class="formula">when / if / before / after / until / as soon as + 現在式，主句用未來式</div>
+<div class="es">If I see Mr. Chen, I will ask him to call you.（不是 If I will see）</div>
+<div class="corr"><p>中文學生容易看到「如果我將會看到」就想放 will，但英文在 if / when 這種時間或條件子句裡，用現在式代替未來。</p></div>
+</div></div>
+
+<div class="block"><div class="bh gn"><span class="d"></span>小結：從簡單式走向進行式</div><div class="bb">
+<div class="goal2"><p>三個簡單式的共同點是：它們描述的都是「整體事件」，不管動作進行的細節。下一節的進行式家族，會把鏡頭拉近，專門描述「動作正在進行的那個瞬間」——你會發現公式一樣是現在/過去/未來三版本，只是多了 be + V-ing。先做下面 16 題鞏固簡單式的判斷，再往下走。</p></div>
+</div></div>
+</div>
+<div class="block" style="margin-top:4px"><div class="bh dk"><span class="d"></span>文法練習：簡單式家族（16 題）</div><div class="bb"><div class="script">現在／過去／未來簡單式剛比較完，馬上練習下面 16 題，確認時間線索抓得準不準。</div></div></div>
+
+<div class="qb" id="qpv1">
+<div class="qh"><span class="qn">2-1</span><span class="qt">現在簡單式</span></div>
+<div class="qbody">
+<div class="qsen">Jerry always <span class="bl">______</span> for work at 8 a.m.</div>
+<div class="qzh">Jerry 通常早上八點出發去上班。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>leaves</div>
+<div class="qo"><span class="ol">B</span>leave</div>
+<div class="qo"><span class="ol">C</span>left</div>
+<div class="qo"><span class="ol">D</span>leaving</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 always，這是習慣，不是一次性動作，習慣用現在簡單式。主詞 Jerry 是第三人稱單數，動詞要加 s。</p><div class="al">答案</div><p class="ap">leaves（A）— Jerry leaves for work at 8 a.m.</p></div>
+<div class="corr mt12"><p>B leave：主詞單數要加 s。C left：過去式，不符合 always 的習慣語氣。D leaving：缺 be 動詞，不能單獨當主要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">leave for</span><span class="vd">動身前往</span>
+<span class="vw">leave for work / leave for Chicago</span><span class="vd">動身去上班／去芝加哥</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpv2">
+<div class="qh"><span class="qn">2-2</span><span class="qt">未來簡單式</span></div>
+<div class="qbody">
+<div class="qsen">Some managers <span class="bl">______</span> fly to Japan for a conference tomorrow.</div>
+<div class="qzh">一些經理明天將飛往日本參加研討會。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>was going to</div>
+<div class="qo"><span class="ol">B</span>did</div>
+<div class="qo"><span class="ol">C</span>used to</div>
+<div class="qo ok"><span class="ol">D</span>will</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>關鍵字是 tomorrow，看到 tomorrow 先想未來。空格後面是原形動詞 fly，前面可以放 will。</p><div class="al">答案</div><p class="ap">will（D）— will + 原形動詞 = 將會……</p></div>
+<div class="corr mt12"><p>A was going to：was 是過去式，且主詞 managers 複數應是 are going to。B did：語意是過去強調，不符合 tomorrow。C used to：過去習慣，現在不一定如此，不符合 tomorrow。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">conference</span><span class="vd">研討會；會議</span>
+<span class="vw">attend a conference</span><span class="vd">參加研討會</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr6">
+<div class="qh"><span class="qn">2-3</span><span class="qt">現在簡單式</span></div>
+<div class="qbody">
+<div class="qsen">Customer service <span class="bl">______</span> always one of our priorities.</div>
+<div class="qzh">客戶服務一直是我們的重點之一。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>is</div>
+<div class="qo"><span class="ol">B</span>will</div>
+<div class="qo"><span class="ol">C</span>have been</div>
+<div class="qo"><span class="ol">D</span>was</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這句不是在講過去或未來，而是公司長期的價值。Customer service 是單數概念，用 is。</p><div class="al">答案</div><p class="ap">is（A）</p></div>
+<div class="corr mt12"><p>B will：未來，語意不如現在事實自然。C have been：主詞應是 has been；且本句只是一般事實。D was：過去式，表示以前是，現在不一定，不合 always 的長期語氣。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">priority</span><span class="vd">優先事項；重點</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr7">
+<div class="qh"><span class="qn">2-4</span><span class="qt">過去簡單式疑問句</span></div>
+<div class="qbody">
+<div class="qsen"><span class="bl">______</span> anyone call me yesterday?</div>
+<div class="qzh">昨天有人打電話給我嗎？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>Had</div>
+<div class="qo"><span class="ol">B</span>Do</div>
+<div class="qo"><span class="ol">C</span>Does</div>
+<div class="qo ok"><span class="ol">D</span>Did</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 yesterday 先判斷是過去。一般動詞 call 的過去疑問句要用 Did + 主詞 + 原形動詞。</p><div class="al">答案</div><p class="ap">Did（D）</p></div>
+<div class="corr mt12"><p>A Had：通常用於過去完成式，需要 had + p.p.。B Do：現在式，不合 yesterday。C Does：現在式第三人稱單數，不合 anyone call me yesterday。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">yesterday</span><span class="vd">昨天</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr8">
+<div class="qh"><span class="qn">2-5</span><span class="qt">未來式・時間子句</span></div>
+<div class="qbody">
+<div class="qsen">You <span class="bl">______</span> report to Mr. Johnson after you join the sales team.</div>
+<div class="qzh">你加入業務團隊後，將向 Johnson 先生報告進度。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>might be</div>
+<div class="qo"><span class="ol">B</span>were</div>
+<div class="qo ok"><span class="ol">C</span>will</div>
+<div class="qo"><span class="ol">D</span>should have</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>after you join the sales team，after 後面用現在式 join，但整句是講加入之後會發生的事，主句用 will report。不要說 after you will join，時間子句裡用現在式。</p><div class="al">答案</div><p class="ap">will（C）</p></div>
+<div class="corr mt12"><p>A might be report：might be 後面不能直接接 report。B were report：結構錯誤。D should have report：should have 後面要 p.p.，且語意是過去本來應該，不合句意。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">report to someone</span><span class="vd">向某人報告；隸屬於某人</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv2">
+<div class="qh"><span class="qn">2-6</span><span class="qt">未來簡單式</span></div>
+<div class="qbody">
+<div class="qsen">The employee promises his supervisor that he probably <span class="bl">______</span> the assignment by five o'clock tomorrow afternoon.</div>
+<div class="qzh">這名員工向主管承諾，他大概會在明天下午五點前完成工作。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>finishes</div>
+<div class="qo"><span class="ol">B</span>is finishing</div>
+<div class="qo ok"><span class="ol">C</span>will finish</div>
+<div class="qo"><span class="ol">D</span>had finished</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>有 tomorrow afternoon，很清楚是未來。promise 後面接他未來會完成的事情，用 will finish。</p><div class="al">答案</div><p class="ap">will finish（C）</p></div>
+<div class="corr mt12"><p>A finishes：現在簡單式，不能表達明天下午前會完成。B is finishing：現在進行式，表正在完成，不合 by five tomorrow。D had finished：過去完成式，表過去某時間之前已完成，不合未來。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">assignment</span><span class="vd">任務；作業</span>
+<span class="vw">supervisor</span><span class="vd">主管</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv4">
+<div class="qh"><span class="qn">2-7</span><span class="qt">過去簡單式・when</span></div>
+<div class="qbody">
+<div class="qsen">When Allen <span class="bl">______</span> to read the technical manual, he failed to understand all of it.</div>
+<div class="qzh">當 Allen 試著閱讀技術手冊時，他無法理解全部內容。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>tries</div>
+<div class="qo ok"><span class="ol">B</span>tried</div>
+<div class="qo"><span class="ol">C</span>has tried</div>
+<div class="qo"><span class="ol">D</span>had been tried</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主句 he failed 是過去式，when 子句也描述同一段過去時間的動作，用 tried。這題不需要完成式，只是描述過去某次嘗試。</p><div class="al">答案</div><p class="ap">tried（B）</p></div>
+<div class="corr mt12"><p>A tries：現在式，和 failed 不一致。C has tried：現在完成式，不搭配過去主句 failed。D had been tried：被動，且 try 不適合這樣被動使用於 Allen。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">technical manual</span><span class="vd">技術手冊</span>
+<span class="vw">fail to + V</span><span class="vd">未能做某事</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv5">
+<div class="qh"><span class="qn">2-8</span><span class="qt">過去簡單式・明確過去時間</span></div>
+<div class="qbody">
+<div class="qsen">Sally <span class="bl">______</span> the CPA exam a month ago.</div>
+<div class="qzh">Sally 一個月前通過了會計師考試。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>was passing</div>
+<div class="qo"><span class="ol">B</span>is passing</div>
+<div class="qo"><span class="ol">C</span>has passed</div>
+<div class="qo ok"><span class="ol">D</span>passed</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>關鍵是 a month ago，ago 是非常明確的過去時間線索，用過去簡單式 passed。</p><div class="al">答案</div><p class="ap">passed（D）</p></div>
+<div class="corr mt12"><p>A was passing：過去進行式，表當時正在通過，不自然。B is passing：現在進行式，不合 ago。C has passed：現在完成式不能和明確過去時間 a month ago 搭配。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">CPA exam</span><span class="vd">會計師考試</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw1">
+<div class="qh"><span class="qn">2-9</span><span class="qt">現在簡單式・主詞動詞一致</span></div>
+<div class="qbody">
+<div class="qsen">The marketing team <span class="bl">______</span> a new campaign every spring.</div>
+<div class="qzh">行銷團隊每年春天都會推出新的活動。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>launch</div>
+<div class="qo ok"><span class="ol">B</span>launches</div>
+<div class="qo"><span class="ol">C</span>launched</div>
+<div class="qo"><span class="ol">D</span>launching</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>句尾 every spring 表示例行性動作，用現在簡單式。主詞 The marketing team 是單數集合名詞，動詞要加 s。</p><div class="al">答案</div><p class="ap">launches（B）</p></div>
+<div class="corr mt12"><p>A launch：主詞單數應加 s。C launched：過去式，但 every spring 表示例行性，不是單一過去事件。D launching：V-ing 不能單獨當主要動詞，需要 be 動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">marketing team</span><span class="vd">行銷團隊</span>
+<span class="vw">campaign</span><span class="vd">活動；行銷活動</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw2">
+<div class="qh"><span class="qn">2-10</span><span class="qt">現在簡單式</span></div>
+<div class="qbody">
+<div class="qsen">Our company <span class="bl">______</span> customer feedback carefully before making major changes.</div>
+<div class="qzh">我們公司在做重大改變之前，會仔細分析顧客回饋。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>analyze</div>
+<div class="qo ok"><span class="ol">B</span>analyzes</div>
+<div class="qo"><span class="ol">C</span>analyzing</div>
+<div class="qo"><span class="ol">D</span>has analyze</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞 Our company 是單數，句意是公司平常的作法，用現在簡單式，company 單數要加 s。</p><div class="al">答案</div><p class="ap">analyzes（B）</p></div>
+<div class="corr mt12"><p>A analyze：主詞單數，現在簡單式要加 s。C analyzing：少了 be 動詞，不能單獨作主要動詞。D has analyze：現在完成式應該是 has analyzed。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">customer feedback</span><span class="vd">顧客回饋</span>
+<span class="vw">major change</span><span class="vd">重大改變</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw3">
+<div class="qh"><span class="qn">2-11</span><span class="qt">過去簡單式・不規則動詞</span></div>
+<div class="qbody">
+<div class="qsen">The assistant <span class="bl">______</span> the package to the wrong department yesterday.</div>
+<div class="qzh">助理昨天把包裹送到錯誤的部門。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>send</div>
+<div class="qo"><span class="ol">B</span>sends</div>
+<div class="qo ok"><span class="ol">C</span>sent</div>
+<div class="qo"><span class="ol">D</span>sending</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>時間線索 yesterday，要用過去簡單式。send 的過去式不是 sended，是不規則動詞 sent。</p><div class="al">答案</div><p class="ap">sent（C）</p></div>
+<div class="corr mt12"><p>A send：原形，不符合 yesterday。B sends：現在簡單式第三人稱單數，不符合 yesterday。D sending：V-ing 不能單獨作主要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">assistant</span><span class="vd">助理</span>
+<span class="vw">department</span><span class="vd">部門</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw11">
+<div class="qh"><span class="qn">2-12</span><span class="qt">未來簡單式</span></div>
+<div class="qbody">
+<div class="qsen">The factory <span class="bl">______</span> its production capacity next year.</div>
+<div class="qzh">這間工廠明年將擴大產能。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>expands</div>
+<div class="qo"><span class="ol">B</span>expanded</div>
+<div class="qo ok"><span class="ol">C</span>will expand</div>
+<div class="qo"><span class="ol">D</span>has expanded</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>時間線索是 next year，明年的事情用未來式 will + 原形動詞。</p><div class="al">答案</div><p class="ap">will expand（C）</p></div>
+<div class="corr mt12"><p>A expands：現在簡單式，不符合 next year。B expanded：過去式。D has expanded：現在完成式，表示到現在已經擴張。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">factory</span><span class="vd">工廠</span>
+<span class="vw">production capacity</span><span class="vd">產能</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw12">
+<div class="qh"><span class="qn">2-13</span><span class="qt">if 條件句用現在式表未來</span></div>
+<div class="qbody">
+<div class="qsen">Please notify us if the delivery date <span class="bl">______</span>.</div>
+<div class="qzh">如果交貨日期有變，請通知我們。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>changes</div>
+<div class="qo"><span class="ol">B</span>changed</div>
+<div class="qo"><span class="ol">C</span>changing</div>
+<div class="qo"><span class="ol">D</span>will change</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>中文會想用 will change，但英文的 if 條件子句裡，通常用現在式表示未來，所以是 if the delivery date changes，不是 if...will change。</p><div class="al">答案</div><p class="ap">changes（A）</p></div>
+<div class="corr mt12"><p>B changed：過去式，不合語意。C changing：不是完整動詞。D will change：條件副詞子句中通常不用 will。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">notify</span><span class="vd">通知</span>
+<span class="vw">delivery date</span><span class="vd">交貨日期</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw16">
+<div class="qh"><span class="qn">2-14</span><span class="qt">主詞動詞一致・複數</span></div>
+<div class="qbody">
+<div class="qsen">The new safety rules <span class="bl">______</span> to all employees starting next Monday.</div>
+<div class="qzh">新的安全規則從下週一開始適用於所有員工。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>apply</div>
+<div class="qo"><span class="ol">B</span>applies</div>
+<div class="qo"><span class="ol">C</span>applied</div>
+<div class="qo"><span class="ol">D</span>applying</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>核心主詞是 rules，是複數，現在簡單式用 apply，不加 s。starting next Monday 是補充時間，這裡是在說規則適用的事實。</p><div class="al">答案</div><p class="ap">apply（A）</p></div>
+<div class="corr mt12"><p>B applies：單數主詞才用。C applied：過去式，不符合 starting next Monday。D applying：不是完整動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">safety rule</span><span class="vd">安全規則</span>
+<span class="vw">apply to</span><span class="vd">適用於</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw19">
+<div class="qh"><span class="qn">2-15</span><span class="qt">過去簡單式・明確過去時間</span></div>
+<div class="qbody">
+<div class="qsen">The company <span class="bl">______</span> its headquarters to Singapore in 2018.</div>
+<div class="qzh">這家公司在 2018 年將總部遷到新加坡。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>move</div>
+<div class="qo"><span class="ol">B</span>moves</div>
+<div class="qo ok"><span class="ol">C</span>moved</div>
+<div class="qo"><span class="ol">D</span>has moved</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>in 2018 是明確過去時間，通常用過去簡單式，move 的過去式是 moved。</p><div class="al">答案</div><p class="ap">moved（C）</p></div>
+<div class="corr mt12"><p>A move：原形，不合主詞與時態。B moves：現在簡單式，不合 in 2018。D has moved：現在完成式通常不和明確過去時間 in 2018 搭配。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">headquarters</span><span class="vd">總部</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw20">
+<div class="qh"><span class="qn">2-16</span><span class="qt">現在簡單式・複數主詞</span></div>
+<div class="qbody">
+<div class="qsen">The lights in the conference room <span class="bl">______</span> automatically when no one is inside.</div>
+<div class="qzh">會議室裡的燈在沒有人時會自動關閉。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>turn off</div>
+<div class="qo"><span class="ol">B</span>turns off</div>
+<div class="qo"><span class="ol">C</span>turning off</div>
+<div class="qo"><span class="ol">D</span>turned off</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>描述設備的一般功能，用現在簡單式。主詞 The lights 是複數，動詞用 turn off，不加 s。</p><div class="al">答案</div><p class="ap">turn off（A）</p></div>
+<div class="corr mt12"><p>B turns off：單數主詞才用。C turning off：不是完整動詞。D turned off：過去式，不符合一般功能描述。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">conference room</span><span class="vd">會議室</span>
+<span class="vw">automatically</span><span class="vd">自動地</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-continuous">
+<div class="sh"><div class="sn">3</div><div class="st">進行式家族：現在／過去／未來，鏡頭拉近看動作瞬間</div><div class="stm">⏱ 10 min</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>開場：公式跟簡單式一樣對稱</div><div class="bb">
+<div class="script">簡單式描述整體事件，進行式描述「正在進行的那個瞬間」。三個進行式的公式完全對稱，都是 be + V-ing，差別只在 be 動詞的時態。</div>
+<div class="formula">現在進行式：am/is/are + V-ing　　過去進行式：was/were + V-ing　　未來進行式：will be + V-ing</div>
+<table class="tbl"><tr><th>時態</th><th>核心意思</th><th>常見時間線索</th><th>例句</th></tr>
+<tr><td>現在進行式</td><td>現在正在做；未來安排</td><td>now, right now, this week</td><td>He is typing a letter right now.</td></tr>
+<tr><td>過去進行式</td><td>過去某時正在做</td><td>when, while, at 8 yesterday</td><td>He was typing a letter when I arrived.</td></tr>
+<tr><td>未來進行式</td><td>未來某時正在做</td><td>at this time tomorrow</td><td>You will be sleeping then.</td></tr>
+</table>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>3-1｜現在進行式：正在做 / 未來安排 / 漸進變化</div><div class="bb">
+<div class="es">He is typing a letter right now. Kids are doing homework assignments.</div>
+<div class="tip"><p>做題要看兩件事：主詞單複數決定 be 動詞，動作是否正在發生決定 V-ing。</p></div>
+<div class="es">I am flying to Tokyo to attend a conference next week.（這是上一節提過的「已安排未來」用法）</div>
+<div class="es">My mother thinks she is getting old. His hair is going gray. The economy is improving.</div>
+<div class="tip"><p>get / turn / go / grow 這些動詞用現在進行式時，常表示逐漸變化，不是正在做某個動作。</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>3-2｜過去進行式：過去某一刻正在做</div><div class="bb">
+<div class="es">He was typing a letter when I arrived. She was reading when the bell rang.</div>
+<div class="tip"><p>過去進行式強調過去某一個時間點動作正在進行，常搭配 when。長動作用過去進行式，短動作用過去簡單式：I was watching TV when the phone rang.</p></div>
+<div class="es">My husband was watching TV while I was doing the household chores.（while 表示兩個動作同時進行）</div>
+<div class="es">When I arrived at Tainan's house, the party was finishing.（finish/die/begin 這類動詞用過去進行式時，表示接近某個狀態）</div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>3-3｜未來進行式：未來某時正在做</div><div class="bb">
+<div class="es">Our flight will land at 5 a.m., and you probably will be sleeping then. What will you be doing tomorrow morning at 11?</div>
+<div class="es">We will be enjoying sunshine in Florida by this time next week.</div>
+<div class="tip"><p>強調未來某一段期間會在進行的動作，TOEIC 常在行程、安排、會議中出現。</p></div>
+</div></div>
+
+<div class="block"><div class="bh gn"><span class="d"></span>小結：從進行式走向完成式</div><div class="bb">
+<div class="goal2"><p>簡單式看整體事件，進行式看動作瞬間，下一節的完成式家族要處理的是最多學生會搞混的部分：「這個動作跟現在（或另一個過去時間點）有什麼關係」。先做下面 7 題確認進行式的判斷，再進入完成式家族——那是這堂課份量最重的一節。</p></div>
+</div></div>
+</div>
+<div class="block" style="margin-top:4px"><div class="bh dk"><span class="d"></span>文法練習：進行式家族（7 題）</div><div class="bb"><div class="script">進行式三態比較完，馬上練習下面 7 題。</div></div></div>
+
+<div class="qb" id="qpr9">
+<div class="qh"><span class="qn">3-1</span><span class="qt">現在進行式</span></div>
+<div class="qbody">
+<div class="qsen">All reporters <span class="bl">______</span> to interview the company president.</div>
+<div class="qzh">所有記者都正在等著訪問公司總裁。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>waiting</div>
+<div class="qo"><span class="ol">B</span>been waiting</div>
+<div class="qo ok"><span class="ol">C</span>are waiting</div>
+<div class="qo"><span class="ol">D</span>was waited</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞 All reporters 是複數，句意是記者們正在等待，用現在進行式 be + V-ing，複數主詞用 are。</p><div class="al">答案</div><p class="ap">are waiting（C）</p></div>
+<div class="corr mt12"><p>A waiting：缺少 be 動詞。B been waiting：前面需要 have/has，例如 have been waiting。D was waited：was 是單數過去，且 waited 被動語意不合。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">reporter</span><span class="vd">記者</span>
+<span class="vw">interview</span><span class="vd">訪問；面試</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr10">
+<div class="qh"><span class="qn">3-2</span><span class="qt">過去進行式</span></div>
+<div class="qbody">
+<div class="qsen">What <span class="bl">______</span> you doing at 10 o'clock this morning?</div>
+<div class="qzh">今天早上十點你正在做什麼？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>was</div>
+<div class="qo"><span class="ol">B</span>did</div>
+<div class="qo ok"><span class="ol">C</span>were</div>
+<div class="qo"><span class="ol">D</span>should</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>時間是 at 10 o'clock this morning，過去特定時間點。後面已有 doing，要用 be 動詞的過去式。主詞是 you，be 動詞用 were。</p><div class="al">答案</div><p class="ap">were（C）</p></div>
+<div class="corr mt12"><p>A was：you 通常搭配 were。B did：did 後面要接原形 do，不是 doing。D should：should 後面也接原形 do，不是 doing。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">at 10 o'clock this morning</span><span class="vd">今天早上十點</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr11">
+<div class="qh"><span class="qn">3-3</span><span class="qt">未來進行式</span></div>
+<div class="qbody">
+<div class="qsen">We will be <span class="bl">______</span> in Linda's office when you come this afternoon.</div>
+<div class="qzh">你今天下午來的時候，我們會正在 Linda 的辦公室討論。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>discussing</div>
+<div class="qo"><span class="ol">B</span>discussed</div>
+<div class="qo"><span class="ol">C</span>discuss</div>
+<div class="qo"><span class="ol">D</span>discusses</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 will be，後面要接 V-ing 才能形成未來進行式，表示未來某個時間點正在討論。</p><div class="al">答案</div><p class="ap">discussing（A）</p></div>
+<div class="corr mt12"><p>B discussed：過去分詞，會變成被動，不合句意。C discuss：原形，will be 後不直接接原形。D discusses：第三人稱單數，不合 will be。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">discuss</span><span class="vd">討論</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv1">
+<div class="qh"><span class="qn">3-4</span><span class="qt">過去進行式・while</span></div>
+<div class="qbody">
+<div class="qsen">While we <span class="bl">______</span> a briefing yesterday afternoon, the electricity suddenly went out.</div>
+<div class="qzh">昨天下午當我們正在做簡報時，電突然停了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>will do</div>
+<div class="qo"><span class="ol">B</span>did</div>
+<div class="qo ok"><span class="ol">C</span>were doing</div>
+<div class="qo"><span class="ol">D</span>have done</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 while，要想到兩件事同時發生，或一個動作正在進行時另一件事發生。yesterday afternoon 是過去時間，we ______ a briefing 是當時正在進行的背景動作，用 were doing，後面的 went out 是短動作。</p><div class="al">答案</div><p class="ap">were doing（C）</p></div>
+<div class="corr mt12"><p>A will do：未來，不合 yesterday。B did：過去簡單式，但 while 後面更適合過去進行式表背景動作。D have done：現在完成式不能搭配 yesterday afternoon 這種明確過去時間。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">briefing</span><span class="vd">簡報；簡短會議</span>
+<span class="vw">go out</span><span class="vd">熄滅；停止運作</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw6">
+<div class="qh"><span class="qn">3-5</span><span class="qt">過去進行式</span></div>
+<div class="qbody">
+<div class="qsen">Ms. Lin <span class="bl">______</span> a report when the manager called her.</div>
+<div class="qzh">經理打電話給林女士時，她正在寫報告。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>writes</div>
+<div class="qo"><span class="ol">B</span>wrote</div>
+<div class="qo ok"><span class="ol">C</span>was writing</div>
+<div class="qo"><span class="ol">D</span>has written</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>有兩個動作：Ms. Lin 正在寫報告（較長的背景動作），manager called her（較短的動作突然發生）。過去進行式 + when + 過去簡單式，用 was writing。</p><div class="al">答案</div><p class="ap">was writing（C）</p></div>
+<div class="corr mt12"><p>A writes：現在簡單式，不符合 called。B wrote：只表示寫了，沒有正在進行的感覺。D has written：現在完成式，不和 when the manager called her 搭配。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">write a report</span><span class="vd">寫報告</span>
+<span class="vw">call someone</span><span class="vd">打電話給某人</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw7">
+<div class="qh"><span class="qn">3-6</span><span class="qt">未來進行式</span></div>
+<div class="qbody">
+<div class="qsen">We <span class="bl">______</span> the new software at this time tomorrow.</div>
+<div class="qzh">明天這個時候，我們將正在安裝新的軟體。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>install</div>
+<div class="qo"><span class="ol">B</span>installed</div>
+<div class="qo ok"><span class="ol">C</span>will be installing</div>
+<div class="qo"><span class="ol">D</span>have installed</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>at this time tomorrow，表示明天這個時間點正在發生的動作，用未來進行式 will be + V-ing。</p><div class="al">答案</div><p class="ap">will be installing（C）</p></div>
+<div class="corr mt12"><p>A install：現在簡單式，不符合 tomorrow 的時間點。B installed：過去式，不符合 tomorrow。D have installed：現在完成式，表示到現在已經完成，不符合 at this time tomorrow。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">install software</span><span class="vd">安裝軟體</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw13">
+<div class="qh"><span class="qn">3-7</span><span class="qt">過去進行式・背景動作</span></div>
+<div class="qbody">
+<div class="qsen">The CEO <span class="bl">______</span> in Tokyo when the announcement was made.</div>
+<div class="qzh">公告發布時，執行長正在東京出差。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>is traveling</div>
+<div class="qo"><span class="ol">B</span>travels</div>
+<div class="qo ok"><span class="ol">C</span>was traveling</div>
+<div class="qo"><span class="ol">D</span>has traveled</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>when the announcement was made 是過去被動事件，CEO 當時正在東京出差，用過去進行式描述當時正在進行的背景動作。</p><div class="al">答案</div><p class="ap">was traveling（C）</p></div>
+<div class="corr mt12"><p>A is traveling：現在進行式，不符合 was made。B travels：現在簡單式，表示習慣。D has traveled：現在完成式，不表示當時正在進行。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">announcement</span><span class="vd">公告；宣布</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-perfect">
+<div class="sh"><div class="sn">4</div><div class="st">完成式家族：現在／過去／未來，全都圍繞一件事——「連到某個時間點」</div><div class="stm">⏱ 22 min</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>開場：完成式不是「已經」，是「連到某個時間點」</div><div class="bb">
+<div class="script">這是本堂份量最重、也最容易搞混的一節。三個完成式的核心不是中文的「已經」，而是：一個動作連到某一個時間點——現在完成式連到現在，過去完成式連到過去某個時間點，未來完成式連到未來某個時間點。公式完全對稱，只差 have 的時態。</div>
+<div class="formula">現在完成式：have/has + p.p.　　過去完成式：had + p.p.　　未來完成式：will have + p.p.</div>
+<table class="tbl"><tr><th>時態</th><th>連到哪個時間點</th><th>常見線索</th><th>例句</th></tr>
+<tr><td>現在完成式</td><td>過去 → 現在</td><td>already, just, ever, since, for</td><td>She has worked here for five years.</td></tr>
+<tr><td>過去完成式</td><td>過去 → 更早之前的過去</td><td>before + 過去式, when + 過去式</td><td>The meeting had already started when I arrived.</td></tr>
+<tr><td>未來完成式</td><td>未來 → 到那之前</td><td>by Friday, before you come back</td><td>We will have completed the project by Friday.</td></tr>
+</table>
+<div class="tip"><p>看穿完成式的訣竅：先找「連到哪個時間點」，那個時間點決定用現在完成、過去完成，還是未來完成——三個是同一套邏輯，只是基準時間不同。</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>4-1｜現在完成式：三大功能</div><div class="bb">
+<div class="script">I have lost my ID card.（重點不是哪一天弄丟，而是現在沒有身分證，有影響）The manager has approved the budget.（重點是現在核准了，可以執行）</div>
+<table class="tbl"><tr><th>功能</th><th>例句</th></tr>
+<tr><td>結果</td><td>We have completed the project.（重點是現在完成，可以交付）</td></tr>
+<tr><td>經驗</td><td>Have you ever worked with international clients?</td></tr>
+<tr><td>持續</td><td>She has worked here for five years.（從五年前到現在還在）</td></tr>
+</table>
+<div class="es">Jack has lived in Taiwan since 1998.（since + 開始時間點）Mr. Chen has collected coins for ten years.（for + 期間長度）</div>
+<div class="tip"><p>現在完成式 vs. 現在完成進行式：I have written three reports today.（重點是成果：三份報告）vs. I have been writing reports all day.（重點是動作持續，帶辛苦/持續感）</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>4-2｜過去完成式：不是「很久以前」，是「比另一個過去更早」</div><div class="bb">
+<div class="script">很多學生以為只要是很久以前就用 had p.p.，這是錯的。過去完成式是「過去的過去」——比另一個過去事件更早發生。</div>
+<div class="es">When I arrived at the office, the meeting had already started.（會議先開始 → 我後到，更早的那件事用 had started）</div>
+<div class="tip"><p>如果事件順序已經很清楚，有時候過去式也可以：I finished work and went home. 過去完成式通常用在需要強調「更早」的時候，看到 before、after、when，而且選項有 had p.p.，就要注意事件順序。</p></div>
+<div class="es">We had hoped to launch the product in June, but production was delayed.（had hoped/expected/intended 常表示「原本想，但沒實現」）</div>
+<div class="es">John had studied for three hours when his mother asked him to go out.（過去完成式 + for：到過去某時間為止已持續多久，對照現在完成式是持續到現在）</div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>4-3｜未來完成式：到未來某時間前已完成</div><div class="bb">
+<div class="formula">will have + p.p. ／ by + 未來時間</div>
+<div class="es">By next Friday, we will have completed the project. You will have arrived in Chicago by this time tomorrow.</div>
+<div class="tip"><p>未來完成式不是單純未來，而是「到未來某個時間點前已經完成」。常看到 by then、by Friday、by this time tomorrow、before you come back。</p></div>
+<div class="es">The meeting will have been adjourned.（未來完成被動）We will have been married for ten years by 2020.（未來完成進行：到未來某時已持續多久）</div>
+</div></div>
+
+<div class="block"><div class="bh gn"><span class="d"></span>小結：從完成式走向被動語態</div><div class="bb">
+<div class="goal2"><p>完成式家族學完，你已經掌握十二時態的全部九種主動形式（3 簡單 + 3 進行 + 3 完成）。最後一塊拼圖是「主詞是不是接受動作」——也就是被動語態，它會跟前面九種時態全部結合。先做下面 16 題把完成式的判斷練熟（這是全課最重的一節，值得多花時間），再進入被動語態。</p></div>
+</div></div>
+</div>
+<div class="block" style="margin-top:4px"><div class="bh dk"><span class="d"></span>文法練習：完成式家族（16 題，全課最重）</div><div class="bb"><div class="script">完成式三態是全課最容易搞混的部分，馬上練習下面 16 題，把「連到哪個時間點」的判斷練到穩。</div></div></div>
+
+<div class="qb" id="qpv3">
+<div class="qh"><span class="qn">4-1</span><span class="qt">現在完成進行式</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Ms. Anderson <span class="bl">______</span> working as the Head of Engineering for 3 years.</div>
+<div class="qzh">Anderson 女士擔任工程部主管已經三年了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>was</div>
+<div class="qo ok"><span class="ol">B</span>has been</div>
+<div class="qo"><span class="ol">C</span>will be</div>
+<div class="qo"><span class="ol">D</span>have to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 for 3 years，要問：這三年是過去某一段，還是從過去持續到現在？句意是她已經擔任這個職位三年，現在很可能還是，所以用現在完成進行式。主詞單數用 has。</p><div class="al">答案</div><p class="ap">has been（B）— has been working for 3 years = 已經持續工作三年。</p></div>
+<div class="corr mt12"><p>A was working：過去某時正在工作，不強調持續到現在。C will be working：未來將正在工作，不符合 for 3 years。D have to：必須，語意不合，且後面要接原形 work，不是 working。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">Head of Engineering</span><span class="vd">工程部主管</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr12">
+<div class="qh"><span class="qn">4-2</span><span class="qt">現在完成式</span></div>
+<div class="qbody">
+<div class="qsen">We have <span class="bl">______</span> new lines of business training videos.</div>
+<div class="qzh">我們已經新增了幾條新的商業訓練影片系列。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>added</div>
+<div class="qo"><span class="ol">B</span>had</div>
+<div class="qo"><span class="ol">C</span>adding</div>
+<div class="qo"><span class="ol">D</span>add</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面有 have，要想到完成式 have + p.p.，add 的過去分詞是 added。</p><div class="al">答案</div><p class="ap">added（A）</p></div>
+<div class="corr mt12"><p>B had：have had 可以成立，但語意不自然，不是新增。C adding：have adding 結構錯。D add：have 後面不能直接接原形作完成式。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">line of videos</span><span class="vd">影片系列</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr13">
+<div class="qh"><span class="qn">4-3</span><span class="qt">過去完成式①</span></div>
+<div class="qbody">
+<div class="qsen">I <span class="bl">______</span> worked in the software industry for 15 years before I changed my career.</div>
+<div class="qzh">在我轉換職涯之前，我已經在軟體產業工作了十五年。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>will be</div>
+<div class="qo ok"><span class="ol">B</span>had</div>
+<div class="qo"><span class="ol">C</span>was</div>
+<div class="qo"><span class="ol">D</span>had been to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>before I changed my career，changed 是過去式。在我轉職之前，工作十五年這件事更早發生且持續到那個過去時間點，用過去完成式 had worked。</p><div class="al">答案</div><p class="ap">had（B）</p></div>
+<div class="corr mt12"><p>A will be：未來，不合 before I changed。C was worked：被動或錯誤結構，不合句意。D had been to：去過某地，不可接 worked。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">software industry</span><span class="vd">軟體產業</span>
+<span class="vw">change one's career</span><span class="vd">轉換職涯</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr14">
+<div class="qh"><span class="qn">4-4</span><span class="qt">過去完成式②</span></div>
+<div class="qbody">
+<div class="qsen">The meeting didn't start until all sales representatives had <span class="bl">______</span>.</div>
+<div class="qzh">直到所有業務代表都到場，會議才開始。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>arrives</div>
+<div class="qo ok"><span class="ol">B</span>arrived</div>
+<div class="qo"><span class="ol">C</span>arriving</div>
+<div class="qo"><span class="ol">D</span>arrival</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 had，後面要過去分詞。arrive 是規則動詞，過去分詞是 arrived。</p><div class="al">答案</div><p class="ap">arrived（B）</p></div>
+<div class="corr mt12"><p>A arrives：現在式第三人稱單數。C arriving：V-ing，不合 had + p.p.。D arrival：名詞，不合 had 後面需要動詞分詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">sales representative</span><span class="vd">業務代表</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr15">
+<div class="qh"><span class="qn">4-5</span><span class="qt">未來完成式</span></div>
+<div class="qbody">
+<div class="qsen">Before you come back, I shall have <span class="bl">______</span> the report already.</div>
+<div class="qzh">在你回來之前，我應該已經完成報告了。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>finished</div>
+<div class="qo"><span class="ol">B</span>finishing</div>
+<div class="qo"><span class="ol">C</span>finish</div>
+<div class="qo"><span class="ol">D</span>finishes</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 shall have，have 後面要過去分詞，finish 的過去分詞是 finished。Before you come back 是未來時間點，主句用未來完成表示在那之前已完成。</p><div class="al">答案</div><p class="ap">finished（A）</p></div>
+<div class="corr mt12"><p>B finishing：V-ing，不合完成式。C finish：原形，不合 have + p.p.。D finishes：現在式第三人稱單數，不合 shall have。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">come back</span><span class="vd">回來</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv3">
+<div class="qh"><span class="qn">4-6</span><span class="qt">現在完成式・since</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Since 1995, John Smiths <span class="bl">______</span> a financial consulting firm.</div>
+<div class="qzh">自 1995 年以來，John Smith 一直擁有一家財務顧問公司。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>owns</div>
+<div class="qo"><span class="ol">B</span>owned</div>
+<div class="qo ok"><span class="ol">C</span>has owned</div>
+<div class="qo"><span class="ol">D</span>has been owning</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Since 1995，since 後面接起始時間，表示從 1995 到現在，用現在完成式。但 own 是狀態動詞，通常不用進行式，所以不是 has been owning，而是 has owned。</p><div class="al">答案</div><p class="ap">has owned（C）</p></div>
+<div class="corr mt12"><p>A owns：現在簡單式，沒有表達從 1995 持續到現在。B owned：過去式，表示過去擁有，現在不一定。D has been owning：own 是狀態動詞，通常不用進行式。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">financial consulting firm</span><span class="vd">財務顧問公司</span>
+<span class="vw">own</span><span class="vd">擁有</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv6">
+<div class="qh"><span class="qn">4-7</span><span class="qt">現在完成式・rise</span></div>
+<div class="qbody">
+<div class="qsen">Clothing sales at specialized clothing retailers <span class="bl">______</span> for the past three years.</div>
+<div class="qzh">過去三年以來，專門服飾零售商的服飾銷售已經上升。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>have been raising</div>
+<div class="qo"><span class="ol">B</span>rose</div>
+<div class="qo"><span class="ol">C</span>are rising</div>
+<div class="qo ok"><span class="ol">D</span>have risen</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>for the past three years，從過去三年到現在，用現在完成式。sales 是自己上升，用 rise 不用 raise，rise 的過去分詞是 risen，所以 have risen。</p><div class="al">答案</div><p class="ap">have risen（D）</p></div>
+<div class="corr mt12"><p>A have been raising：raise 是及物動詞，後面要有受詞；sales 不是去提高別的東西。B rose：過去式，不能清楚表達持續到現在。C are rising：現在進行式，不如現在完成式搭配 for the past three years。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">specialized retailer</span><span class="vd">專門零售商</span>
+<span class="vw">sales have risen</span><span class="vd">銷售已經上升</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv7">
+<div class="qh"><span class="qn">4-8</span><span class="qt">過去完成式</span></div>
+<div class="qbody">
+<div class="qsen">I <span class="bl">______</span> seats for the entire marketing team before I heard that Mr. Derby and his assistant would not be attending the conference.</div>
+<div class="qzh">在我聽說 Derby 先生和他的助理不會參加會議之前，我已經為整個行銷團隊訂好了座位。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>have booked</div>
+<div class="qo ok"><span class="ol">B</span>had booked</div>
+<div class="qo"><span class="ol">C</span>booked</div>
+<div class="qo"><span class="ol">D</span>will have booked</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>before I heard，heard 是過去式。訂位這個動作發生在 heard 之前，比另一個過去更早，用過去完成式 had booked。</p><div class="al">答案</div><p class="ap">had booked（B）</p></div>
+<div class="corr mt12"><p>A have booked：現在完成式，和 before I heard 的過去時間不搭。C booked：過去簡單式可以描述過去，但不能清楚表達比 heard 更早。D will have booked：未來完成式，不合 heard。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">book seats</span><span class="vd">訂座位</span>
+<span class="vw">attend a conference</span><span class="vd">參加研討會</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw4">
+<div class="qh"><span class="qn">4-9</span><span class="qt">過去完成式</span></div>
+<div class="qbody">
+<div class="qsen">The client <span class="bl">______</span> the contract before the meeting started.</div>
+<div class="qzh">在會議開始之前，客戶已經簽了合約。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>signs</div>
+<div class="qo"><span class="ol">B</span>signed</div>
+<div class="qo ok"><span class="ol">C</span>had signed</div>
+<div class="qo"><span class="ol">D</span>has signing</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>before the meeting started，meeting started 是過去事件。簽約發生在其之前，是過去的過去，用 had + p.p.，sign 的過去分詞是 signed。</p><div class="al">答案</div><p class="ap">had signed（C）</p></div>
+<div class="corr mt12"><p>A signs：現在簡單式，不符合過去時間。B signed：也是過去式，但沒有清楚表達「在會議開始之前已經完成」。D has signing：結構錯誤，現在完成式是 has signed。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">client</span><span class="vd">客戶</span>
+<span class="vw">contract</span><span class="vd">合約</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw5">
+<div class="qh"><span class="qn">4-10</span><span class="qt">未來完成式</span></div>
+<div class="qbody">
+<div class="qsen">By the end of next month, the company <span class="bl">______</span> the new training program.</div>
+<div class="qzh">到下個月底之前，公司將已經完成新的訓練計畫。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>completes</div>
+<div class="qo"><span class="ol">B</span>completed</div>
+<div class="qo"><span class="ol">C</span>will complete</div>
+<div class="qo ok"><span class="ol">D</span>will have completed</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>By the end of next month，by + 未來時間，常表示「到那個時間點為止已經完成」，用 will have + p.p.，complete 的 p.p. 是 completed。</p><div class="al">答案</div><p class="ap">will have completed（D）</p></div>
+<div class="corr mt12"><p>A completes：現在簡單式，不符合未來完成概念。B completed：過去式，不符合 next month。C will complete：只表示將會完成，沒有強調「到某時間前已經完成」。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">training program</span><span class="vd">訓練計畫</span>
+<span class="vw">by the end of</span><span class="vd">到……結束前</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw8">
+<div class="qh"><span class="qn">4-11</span><span class="qt">現在完成式・since</span></div>
+<div class="qbody">
+<div class="qsen">The company <span class="bl">______</span> three new branches since 2020.</div>
+<div class="qzh">自 2020 年以來，這家公司已經開設了三間新分店。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>opened</div>
+<div class="qo ok"><span class="ol">B</span>has opened</div>
+<div class="qo"><span class="ol">C</span>opens</div>
+<div class="qo"><span class="ol">D</span>opening</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>since 2020，從過去某個時間點到現在，用現在完成式。主詞 The company 單數，用 has + p.p.，open 的 p.p. 是 opened。</p><div class="al">答案</div><p class="ap">has opened（B）</p></div>
+<div class="corr mt12"><p>A opened：過去式只表示過去發生，沒有延續到現在的感覺。C opens：現在簡單式，表示例行，不合 since 2020。D opening：V-ing 不能單獨作主要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">branch</span><span class="vd">分店；分公司</span>
+<span class="vw">open a branch</span><span class="vd">開設分店</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw9">
+<div class="qh"><span class="qn">4-12</span><span class="qt">現在完成式</span></div>
+<div class="qbody">
+<div class="qsen">The number of online orders <span class="bl">______</span> steadily over the past five years.</div>
+<div class="qzh">過去五年來，線上訂單數量已穩定增加。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>increases</div>
+<div class="qo"><span class="ol">B</span>increased</div>
+<div class="qo ok"><span class="ol">C</span>has increased</div>
+<div class="qo"><span class="ol">D</span>increasing</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>over the past five years，從過去到現在的一段時間，用現在完成式。真正主詞是 The number，單數，用 has increased。</p><div class="al">答案</div><p class="ap">has increased（C）</p></div>
+<div class="corr mt12"><p>A increases：現在簡單式，表示一般事實，不強調過去到現在的變化。B increased：過去式，沒有連到現在。D increasing：少了 be 動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">online order</span><span class="vd">線上訂單</span>
+<span class="vw">steadily</span><span class="vd">穩定地</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw14">
+<div class="qh"><span class="qn">4-13</span><span class="qt">過去完成式</span></div>
+<div class="qbody">
+<div class="qsen">The technician <span class="bl">______</span> the problem before the system crashed again.</div>
+<div class="qzh">系統再次當機之前，技術人員已經找出問題。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>identifies</div>
+<div class="qo ok"><span class="ol">B</span>had identified</div>
+<div class="qo"><span class="ol">C</span>has identifying</div>
+<div class="qo"><span class="ol">D</span>will identify</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>before the system crashed again，crashed 是過去式。找出問題發生在 crashed 之前，是過去的過去，用 had + p.p.。</p><div class="al">答案</div><p class="ap">had identified（B）</p></div>
+<div class="corr mt12"><p>A identifies：現在式，不合過去語境。C has identifying：結構錯誤。D will identify：未來式，不合 before the system crashed。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">technician</span><span class="vd">技術人員</span>
+<span class="vw">crash</span><span class="vd">當機；崩潰</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw15">
+<div class="qh"><span class="qn">4-14</span><span class="qt">現在完成式・since</span></div>
+<div class="qbody">
+<div class="qsen">The sales figures <span class="bl">______</span> significantly since the new manager joined the team.</div>
+<div class="qzh">自從新經理加入團隊後，銷售數字已顯著改善。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>improve</div>
+<div class="qo"><span class="ol">B</span>improved</div>
+<div class="qo ok"><span class="ol">C</span>have improved</div>
+<div class="qo"><span class="ol">D</span>improving</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>since the new manager joined the team，since 後面是一個過去事件，主句通常用現在完成式。主詞 sales figures 複數，用 have improved。</p><div class="al">答案</div><p class="ap">have improved（C）</p></div>
+<div class="corr mt12"><p>A improve：現在簡單式，不強調從過去到現在。B improved：過去式，沒有延續到現在。D improving：缺少 be 動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">sales figures</span><span class="vd">銷售數字</span>
+<span class="vw">significantly</span><span class="vd">顯著地</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw17">
+<div class="qh"><span class="qn">4-15</span><span class="qt">過去完成式・by the time</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The presentation <span class="bl">______</span> for an hour by the time the director arrived.</div>
+<div class="qzh">在主管抵達時，簡報已經持續了一個小時。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>has lasted</div>
+<div class="qo"><span class="ol">B</span>lasted</div>
+<div class="qo ok"><span class="ol">C</span>had lasted</div>
+<div class="qo"><span class="ol">D</span>will last</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>by the time the director arrived，arrived 是過去事件。在主管抵達之前，簡報已經持續一小時，是過去時間點之前已經發生並持續的狀態，用 had lasted。</p><div class="al">答案</div><p class="ap">had lasted（C）</p></div>
+<div class="corr mt12"><p>A has lasted：現在完成式，用於到現在為止。B lasted：過去式，沒有強調到 arrived 之前已持續一小時。D will last：未來式，不合 arrived。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">presentation</span><span class="vd">簡報</span>
+<span class="vw">by the time</span><span class="vd">到……的時候</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw30">
+<div class="qh"><span class="qn">4-16</span><span class="qt">過去完成進行式</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The employees <span class="bl">______</span> the new procedure for two weeks before the final version was approved.</div>
+<div class="qzh">在最終版本被核准之前，員工們已經測試新流程兩週了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>tested</div>
+<div class="qo"><span class="ol">B</span>have tested</div>
+<div class="qo ok"><span class="ol">C</span>had been testing</div>
+<div class="qo"><span class="ol">D</span>will test</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>before the final version was approved 是過去事件。在這個過去事件之前，員工測試流程已經持續兩週，強調「過去某時間點之前一直在進行」，用過去完成進行式 had been + V-ing。</p><div class="al">答案</div><p class="ap">had been testing（C）</p></div>
+<div class="corr mt12"><p>A tested：只表示過去測試，不強調持續兩週到某個時間點。B have tested：現在完成式，連到現在，不符合 was approved。D will test：未來式，不合過去語境。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">procedure</span><span class="vd">程序；流程</span>
+<span class="vw">approve</span><span class="vd">核准</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-passive">
+<div class="sh"><div class="sn">5</div><div class="st">被動語態與分詞形容詞：時態系統的最後一塊拼圖</div><div class="stm">⏱ 18 min</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>開場：被動不是新時態，是九種時態的「疊加層」</div><div class="bb">
+<div class="script">前面三節學的九種時態（簡單×3、進行×3、完成×3）都是主詞自己做動作。被動語態不是第十種時態，而是疊加在這九種之上的一層判斷：主詞是做動作，還是接受動作？Mr. Chen established this company in 1987.（主動）vs. This company was established by Mr. Chen in 1987.（被動）</div>
+<div class="formula">be 動詞 + 過去分詞（p.p. 正是第一節「動詞形式基礎」教過的第三態）</div>
+<div class="corr"><p>不是看到中文「被」才用被動，而是問：主詞是不是動作的接受者？The report was written by John. The room was painted yellow.</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>5-1｜被動如何跟九種時態結合</div><div class="bb">
+<table class="tbl"><tr><th>時態</th><th>主動</th><th>被動</th></tr>
+<tr><td>現在簡單</td><td>Mr. Chen cleans the office.</td><td>The office is cleaned by Mr. Chen.</td></tr>
+<tr><td>過去簡單</td><td>Mr. Chen established the company.</td><td>The company was established by Mr. Chen.</td></tr>
+<tr><td>現在進行</td><td>Jack is fixing the chair.</td><td>The chair is being fixed by Jack.</td></tr>
+<tr><td>現在完成</td><td>She has finished part of the task.</td><td>Part of the task has been finished by her.</td></tr>
+<tr><td>過去完成</td><td>Managers had made a decision.</td><td>A decision had been made by managers.</td></tr>
+<tr><td>未來完成</td><td>The CEO will have promoted Linda.</td><td>Linda will have been promoted by the CEO.</td></tr>
+</table>
+<div class="tip"><p>被動會跟時態一起變：現在進行被動 is being fixed；現在完成被動 has been finished；過去完成被動 had been made；未來完成被動 will have been promoted。做題時要看兩層：第一時態，第二主被動——這正是前四節分別學過的東西加在一起。</p></div>
+</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>5-2｜陷阱：只有及物動詞才能正常變被動</div><div class="bb">
+<div class="script">被動語態有一個前提：原本的動詞通常要能接受詞，也就是及物動詞。approve the application → The application was approved. 但 happen、occur、arrive、rise、fall、take place 是不及物動詞（還記得第一節的 rise/fall 嗎？它們就是不及物動詞），通常不能用被動。</div>
+<div class="corr"><p>The accident was happened yesterday. ❌ / The meeting was taken place at 3 p.m. ❌ / Sales were risen last year. ❌<br>正確：The accident happened yesterday. / The meeting took place at 3 p.m. / Sales rose last year.</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>5-3｜TOEIC 常見被動固定句型 ＋ by vs. with</div><div class="bb">
+<table class="tbl"><tr><th>句型</th><th>例句</th></tr>
+<tr><td>be scheduled to + V</td><td>The train is scheduled to arrive at 8:30.</td></tr>
+<tr><td>be expected to + V</td><td>Sales are expected to increase next quarter.</td></tr>
+<tr><td>be required to + V</td><td>All employees are required to attend the training session.</td></tr>
+<tr><td>be asked / allowed / encouraged / advised to + V</td><td>Applicants are asked to submit a resume.</td></tr>
+</table>
+<div class="tip"><p>這些句型長得像被動，但後面接 to V。看到 be ______ to V，要想到可能是 scheduled/expected/required/asked/allowed/encouraged/advised。</p></div>
+<div class="es">The report was written by Mr. Chen.（by + 動作者）The form must be completed with a black pen.（with + 工具）The room was filled with customers.（with + 特徵/內容）</div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>5-4｜V-ing vs. p.p. 當形容詞</div><div class="bb">
+<table class="tbl"><tr><th>V-ing（令人）</th><th>p.p.（感到）</th></tr>
+<tr><td>interesting</td><td>interested</td></tr>
+<tr><td>confusing</td><td>confused</td></tr>
+<tr><td>disappointing</td><td>disappointed</td></tr>
+<tr><td>satisfying</td><td>satisfied</td></tr>
+</table>
+<div class="es">The presentation was interesting.（簡報讓人覺得有趣）vs. The audience was interested in the presentation.（觀眾感到有興趣）</div>
+<div class="tip"><p>判斷方法：東西造成感覺 → V-ing；人（或有感受的主詞，如 company/team）感受到感覺 → p.p.。這跟被動語態的 p.p. 是同一個過去分詞，只是這裡當形容詞用，不是描述「被做了什麼」。</p></div>
+</div></div>
+
+<div class="block"><div class="bh gn"><span class="d"></span>小結：五大家族全部集合</div><div class="bb">
+<div class="goal2"><p>到這裡，動詞形式、簡單式、進行式、完成式、被動語態五大家族全部學完了。先做下面 6 題把被動的判斷練熟，接著我們用一套六步驟解題系統，把五大家族串成一個做題流程。</p></div>
+</div></div>
+</div>
+<div class="block" style="margin-top:4px"><div class="bh dk"><span class="d"></span>文法練習：被動語態與分詞形容詞（6 題）</div><div class="bb"><div class="script">被動語態學完，馬上練習下面 6 題，注意主詞是不是動作接受者。</div></div></div>
+
+<div class="qb" id="qpr1">
+<div class="qh"><span class="qn">5-1</span><span class="qt">被動語態・不規則動詞</span></div>
+<div class="qbody">
+<div class="qsen">All employees were <span class="bl">______</span> by the company reorganization.</div>
+<div class="qzh">所有員工都受到公司重組的影響。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>hitting</div>
+<div class="qo ok"><span class="ol">B</span>hit</div>
+<div class="qo"><span class="ol">C</span>hits</div>
+<div class="qo"><span class="ol">D</span>being hit</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前面有 were，後面又有 by the company reorganization，這是被動語態的線索。被動是 be + p.p.，hit 的三態是 hit, hit, hit，過去分詞還是 hit。</p><div class="al">答案</div><p class="ap">hit（B）</p></div>
+<div class="corr mt12"><p>A hitting：V-ing，不是被動需要的 p.p.。C hits：現在式第三人稱單數，不合 were。D being hit：were being hit 是過去進行被動，表當時正在被影響，但本句是一般敘述結果，不需要進行式。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">reorganization</span><span class="vd">重組</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr16">
+<div class="qh"><span class="qn">5-2</span><span class="qt">被動語態①</span></div>
+<div class="qbody">
+<div class="qsen">Most business letters <span class="bl">______</span> typed on stationery with a letterhead.</div>
+<div class="qzh">大部分商業書信都會打在有公司抬頭的信紙上。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>should</div>
+<div class="qo ok"><span class="ol">B</span>are</div>
+<div class="qo"><span class="ol">C</span>was</div>
+<div class="qo"><span class="ol">D</span>will</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>信件不是自己打字，是被打出來，要被動。typed 是過去分詞，前面需要 be 動詞，letters 是複數，用 are。</p><div class="al">答案</div><p class="ap">are（B）</p></div>
+<div class="corr mt12"><p>A should typed：should 後面若被動要 should be typed。C was typed：主詞是複數 letters，不能用 was。D will typed：未來被動要 will be typed。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">stationery</span><span class="vd">信紙；文具</span>
+<span class="vw">letterhead</span><span class="vd">公司抬頭</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpr17">
+<div class="qh"><span class="qn">5-3</span><span class="qt">被動語態②</span></div>
+<div class="qbody">
+<div class="qsen">Mr. Chen's wallet was <span class="bl">______</span> yesterday.</div>
+<div class="qzh">陳先生的皮夾昨天被偷了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>steals</div>
+<div class="qo ok"><span class="ol">B</span>stolen</div>
+<div class="qo"><span class="ol">C</span>steal</div>
+<div class="qo"><span class="ol">D</span>stealing</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>wallet 是被偷，不是自己偷，要被動。was 後面接過去分詞，steal 的過去分詞是 stolen。</p><div class="al">答案</div><p class="ap">stolen（B）</p></div>
+<div class="corr mt12"><p>A steals：現在式第三人稱單數。C steal：原形，不合 was。D stealing：V-ing，不是被動需要的 p.p.。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">wallet</span><span class="vd">皮夾</span>
+<span class="vw">steal — stole — stolen</span><span class="vd">偷</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw10">
+<div class="qh"><span class="qn">5-4</span><span class="qt">過去被動語態</span></div>
+<div class="qbody">
+<div class="qsen">The report <span class="bl">______</span> by the finance department last Friday.</div>
+<div class="qzh">這份報告上週五由財務部門準備完成。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>prepared</div>
+<div class="qo ok"><span class="ol">B</span>was prepared</div>
+<div class="qo"><span class="ol">C</span>has prepared</div>
+<div class="qo"><span class="ol">D</span>preparing</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞 The report 不會自己準備，是被準備。後面有 by the finance department，是被動語態的重要線索。時間是 last Friday，用過去被動 was/were + p.p.，report 單數用 was prepared。</p><div class="al">答案</div><p class="ap">was prepared（B）</p></div>
+<div class="corr mt12"><p>A prepared：主動語態，變成報告準備別人，不合理。C has prepared：主動完成式，主詞 report 不會準備。D preparing：不是完整動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">finance department</span><span class="vd">財務部門</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw18">
+<div class="qh"><span class="qn">5-5</span><span class="qt">未來被動語態</span></div>
+<div class="qbody">
+<div class="qsen">Several employees <span class="bl">______</span> to the new branch office next month.</div>
+<div class="qzh">幾位員工下個月將被調到新的分公司。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>transfer</div>
+<div class="qo"><span class="ol">B</span>transferred</div>
+<div class="qo ok"><span class="ol">C</span>will be transferred</div>
+<div class="qo"><span class="ol">D</span>have transferred</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>員工是被公司調派，不是自己調職。時間是 next month，用未來被動 will be + p.p.，transfer 的 p.p. 是 transferred。</p><div class="al">答案</div><p class="ap">will be transferred（C）</p></div>
+<div class="corr mt12"><p>A transfer：主動，表示員工自己轉移，不是公司調派。B transferred：過去式，不符合 next month。D have transferred：現在完成式，不符合 next month，也偏主動。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">transfer</span><span class="vd">調派；轉移</span>
+<span class="vw">branch office</span><span class="vd">分公司</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw29">
+<div class="qh"><span class="qn">5-6</span><span class="qt">助動詞被動</span></div>
+<div class="qbody">
+<div class="qsen">The proposal <span class="bl">______</span> carefully before it is submitted to the board.</div>
+<div class="qzh">這份提案在提交給董事會前應該被仔細審閱。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>should review</div>
+<div class="qo ok"><span class="ol">B</span>should be reviewed</div>
+<div class="qo"><span class="ol">C</span>should reviewing</div>
+<div class="qo"><span class="ol">D</span>should reviewed</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>提案不會自己審閱，是被審閱。前面需要表示「應該」，用 should，should 後面接原形，被動的原形是 be reviewed。</p><div class="al">答案</div><p class="ap">should be reviewed（B）</p></div>
+<div class="corr mt12"><p>A should review：主動，變成提案審閱別人，不合理。C should reviewing：should 後面不能接 V-ing。D should reviewed：少了 be，不能形成被動。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">proposal</span><span class="vd">提案</span>
+<span class="vw">board</span><span class="vd">董事會</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-strategy">
+<div class="sh"><div class="sn">6</div><div class="st">Part 5 動詞題解題系統：把五大家族串成一套流程</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>動詞題六步驟</div><div class="bb">
+<div class="script">動詞形式、簡單式、進行式、完成式、被動語態，五大家族都學完了。看到動詞題，先不要慌，也不要先翻整句中文，照這個流程跑，它其實就是把前面五節的判斷順序串起來而已。</div>
+<table class="tbl"><tr><th style="width:70px">Step</th><th>問題</th></tr>
+<tr><td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--navy)">1</td><td>找主詞：是誰？單數還是複數？（決定加不加 s、is/are、was/were、has/have）</td></tr>
+<tr><td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--navy)">2</td><td>找時間線索：yesterday/ago → 過去；tomorrow/next week → 未來；since/for/over the past → 完成式；while/when + 過去 → 過去進行</td></tr>
+<tr><td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--navy)">3</td><td>看空格前有沒有助動詞（have/has/had/be/will/should…），有的話後面形式被鎖定</td></tr>
+<tr><td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--navy)">4</td><td>判斷主動或被動：主詞是做動作，還是接受動作？</td></tr>
+<tr><td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--navy)">5</td><td>判斷簡單／進行／完成／完成進行：一次動作？正在做？已完成連到現在？比另一個過去更早？</td></tr>
+<tr><td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--navy)">6</td><td>檢查固定搭配：be scheduled to / suggest that + 原形 / would rather + 原形 等</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>示範題 1</div><div class="bb">
+<div class="qsen">The new software <span class="bl">______</span> by the IT department last week.</div>
+<div class="qopts"><div class="qo"><span class="ol">A</span>installs</div><div class="qo"><span class="ol">B</span>installed</div><div class="qo ok"><span class="ol">C</span>was installed</div><div class="qo"><span class="ol">D</span>has installed</div></div>
+<div class="script">Step 1，主詞是 The new software，軟體不是自己安裝，是被 IT department 安裝。Step 2，時間線索是 last week，過去。Step 3，主詞接受動作，要被動。過去被動是 was/were + p.p.，software 單數，所以 was installed。答案 C。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>示範題 2</div><div class="bb">
+<div class="qsen">The company <span class="bl">______</span> its customer service system over the past two years.</div>
+<div class="qopts"><div class="qo"><span class="ol">A</span>improves</div><div class="qo"><span class="ol">B</span>improved</div><div class="qo ok"><span class="ol">C</span>has improved</div><div class="qo"><span class="ol">D</span>was improved</div></div>
+<div class="script">主詞 The company 是主動改善系統。時間線索是 over the past two years，從過去兩年到現在，用現在完成式。company 單數，所以 has improved。答案 C。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>示範題 3</div><div class="bb">
+<div class="qsen">All employees are required <span class="bl">______</span> the safety training before Friday.</div>
+<div class="qopts"><div class="qo"><span class="ol">A</span>complete</div><div class="qo"><span class="ol">B</span>completing</div><div class="qo ok"><span class="ol">C</span>to complete</div><div class="qo"><span class="ol">D</span>completed</div></div>
+<div class="script">這題不是時態，而是被動固定句型：be required to + V，被要求做某事。答案 C：to complete。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>學生最容易卡住的五個地方</div><div class="bb">
+<table class="tbl"><tr><th>錯誤</th><th>正確</th><th>原因</th></tr>
+<tr><td>I have already finished the report yesterday.</td><td>I already finished the report yesterday.</td><td>有明確過去時間 yesterday 不能用現在完成式</td></tr>
+<tr><td>Sales raised last year.</td><td>Sales rose last year.</td><td>sales 自己上升用 rise，不用 raise</td></tr>
+<tr><td>The missing file was found yesterday.（正確）／The company was found in 1995.（誤用）</td><td>The company was founded in 1995.</td><td>found = 創立，p.p. 是 founded；find 的 p.p. 才是 found</td></tr>
+<tr><td>The report written by Mr. Chen.</td><td>The report was written by Mr. Chen.</td><td>被動一定要 be + p.p.，不能只有 p.p.</td></tr>
+<tr><td>The meeting was happened yesterday.</td><td>The meeting happened yesterday.</td><td>happen 是不及物動詞，不能用被動</td></tr>
+</table>
+</div></div>
+</div>
+<div class="ls" id="s-review">
+<div class="sh"><div class="sn">7</div><div class="st">Chapter 7 總複習：30 題混合抽測</div><div class="stm">⏱ 25 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>為什麼要混合抽測</div><div class="bb">
+<div class="script">前面五個家族的練習題，都排在剛學完那個時態的後面，學生其實不用真的判斷時態——只要知道「現在在第幾節」就能猜對方向。真正的考試不會告訴你這題考什麼，所以這 30 題刻意打散順序，把 5 大家族的題目混在一起，讓學生從頭練習完整的判斷流程：先找時間線索、再看主詞、再判斷主動被動，而不是照著章節標題回答。</div>
+<div class="tip"><p>這 30 題是從前面 58 題中挑選、重新編號、打散順序，不是新題目，內容與解析完全相同——用意是測試學生「脫離章節提示後還記不記得判斷邏輯」。</p></div>
+</div></div>
+<div class="qb" id="rev1">
+<div class="qh"><span class="qn">複習1</span><span class="qt">現在簡單式</span></div>
+<div class="qbody">
+<div class="qsen">Customer service <span class="bl">______</span> always one of our priorities.</div>
+<div class="qzh">客戶服務一直是我們的重點之一。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>is</div>
+<div class="qo"><span class="ol">B</span>will</div>
+<div class="qo"><span class="ol">C</span>have been</div>
+<div class="qo"><span class="ol">D</span>was</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這句不是在講過去或未來，而是公司長期的價值。Customer service 是單數概念，用 is。</p><div class="al">答案</div><p class="ap">is（A）</p></div>
+<div class="corr mt12"><p>B will：未來，語意不如現在事實自然。C have been：主詞應是 has been；且本句只是一般事實。D was：過去式，表示以前是，現在不一定，不合 always 的長期語氣。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">priority</span><span class="vd">優先事項；重點</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev2">
+<div class="qh"><span class="qn">複習2</span><span class="qt">現在完成進行式</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Ms. Anderson <span class="bl">______</span> working as the Head of Engineering for 3 years.</div>
+<div class="qzh">Anderson 女士擔任工程部主管已經三年了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>was</div>
+<div class="qo ok"><span class="ol">B</span>has been</div>
+<div class="qo"><span class="ol">C</span>will be</div>
+<div class="qo"><span class="ol">D</span>have to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 for 3 years，要問：這三年是過去某一段，還是從過去持續到現在？句意是她已經擔任這個職位三年，現在很可能還是，所以用現在完成進行式。主詞單數用 has。</p><div class="al">答案</div><p class="ap">has been（B）— has been working for 3 years = 已經持續工作三年。</p></div>
+<div class="corr mt12"><p>A was working：過去某時正在工作，不強調持續到現在。C will be working：未來將正在工作，不符合 for 3 years。D have to：必須，語意不合，且後面要接原形 work，不是 working。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">Head of Engineering</span><span class="vd">工程部主管</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev3">
+<div class="qh"><span class="qn">複習3</span><span class="qt">lie / lay</span></div>
+<div class="qbody">
+<div class="qsen">The manager <span class="bl">______</span> the documents on the desk before leaving the office.</div>
+<div class="qzh">經理離開辦公室前，把文件放在桌上。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>lied</div>
+<div class="qo ok"><span class="ol">B</span>laid</div>
+<div class="qo"><span class="ol">C</span>lain</div>
+<div class="qo"><span class="ol">D</span>lay</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>lie 有兩種：說謊（lied）和躺下（lay/lain）；lay 是放置，後面要接受詞。這裡後面有 the documents，要用 lay 的過去式 laid。</p><div class="al">答案</div><p class="ap">laid（B）</p></div>
+<div class="corr mt12"><p>A lied：說謊，不合語意。C lain：躺下的過去分詞，不能接 the documents。D lay：可以是 lie「躺下」的過去式，但本句要表示放置，應用 laid。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">document</span><span class="vd">文件</span>
+<span class="vw">lay — laid — laid</span><span class="vd">放置</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev4">
+<div class="qh"><span class="qn">複習4</span><span class="qt">過去進行式</span></div>
+<div class="qbody">
+<div class="qsen">Ms. Lin <span class="bl">______</span> a report when the manager called her.</div>
+<div class="qzh">經理打電話給林女士時，她正在寫報告。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>writes</div>
+<div class="qo"><span class="ol">B</span>wrote</div>
+<div class="qo ok"><span class="ol">C</span>was writing</div>
+<div class="qo"><span class="ol">D</span>has written</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>有兩個動作：Ms. Lin 正在寫報告（較長的背景動作），manager called her（較短的動作突然發生）。過去進行式 + when + 過去簡單式，用 was writing。</p><div class="al">答案</div><p class="ap">was writing（C）</p></div>
+<div class="corr mt12"><p>A writes：現在簡單式，不符合 called。B wrote：只表示寫了，沒有正在進行的感覺。D has written：現在完成式，不和 when the manager called her 搭配。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">write a report</span><span class="vd">寫報告</span>
+<span class="vw">call someone</span><span class="vd">打電話給某人</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev5">
+<div class="qh"><span class="qn">複習5</span><span class="qt">被動語態・不規則動詞</span></div>
+<div class="qbody">
+<div class="qsen">All employees were <span class="bl">______</span> by the company reorganization.</div>
+<div class="qzh">所有員工都受到公司重組的影響。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>hitting</div>
+<div class="qo ok"><span class="ol">B</span>hit</div>
+<div class="qo"><span class="ol">C</span>hits</div>
+<div class="qo"><span class="ol">D</span>being hit</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前面有 were，後面又有 by the company reorganization，這是被動語態的線索。被動是 be + p.p.，hit 的三態是 hit, hit, hit，過去分詞還是 hit。</p><div class="al">答案</div><p class="ap">hit（B）</p></div>
+<div class="corr mt12"><p>A hitting：V-ing，不是被動需要的 p.p.。C hits：現在式第三人稱單數，不合 were。D being hit：were being hit 是過去進行被動，表當時正在被影響，但本句是一般敘述結果，不需要進行式。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">reorganization</span><span class="vd">重組</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev6">
+<div class="qh"><span class="qn">複習6</span><span class="qt">過去簡單式・when</span></div>
+<div class="qbody">
+<div class="qsen">When Allen <span class="bl">______</span> to read the technical manual, he failed to understand all of it.</div>
+<div class="qzh">當 Allen 試著閱讀技術手冊時，他無法理解全部內容。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>tries</div>
+<div class="qo ok"><span class="ol">B</span>tried</div>
+<div class="qo"><span class="ol">C</span>has tried</div>
+<div class="qo"><span class="ol">D</span>had been tried</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主句 he failed 是過去式，when 子句也描述同一段過去時間的動作，用 tried。這題不需要完成式，只是描述過去某次嘗試。</p><div class="al">答案</div><p class="ap">tried（B）</p></div>
+<div class="corr mt12"><p>A tries：現在式，和 failed 不一致。C has tried：現在完成式，不搭配過去主句 failed。D had been tried：被動，且 try 不適合這樣被動使用於 Allen。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">technical manual</span><span class="vd">技術手冊</span>
+<span class="vw">fail to + V</span><span class="vd">未能做某事</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev7">
+<div class="qh"><span class="qn">複習7</span><span class="qt">過去完成式</span></div>
+<div class="qbody">
+<div class="qsen">The client <span class="bl">______</span> the contract before the meeting started.</div>
+<div class="qzh">在會議開始之前，客戶已經簽了合約。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>signs</div>
+<div class="qo"><span class="ol">B</span>signed</div>
+<div class="qo ok"><span class="ol">C</span>had signed</div>
+<div class="qo"><span class="ol">D</span>has signing</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>before the meeting started，meeting started 是過去事件。簽約發生在其之前，是過去的過去，用 had + p.p.，sign 的過去分詞是 signed。</p><div class="al">答案</div><p class="ap">had signed（C）</p></div>
+<div class="corr mt12"><p>A signs：現在簡單式，不符合過去時間。B signed：也是過去式，但沒有清楚表達「在會議開始之前已經完成」。D has signing：結構錯誤，現在完成式是 has signed。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">client</span><span class="vd">客戶</span>
+<span class="vw">contract</span><span class="vd">合約</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev8">
+<div class="qh"><span class="qn">複習8</span><span class="qt">動詞字尾變化</span></div>
+<div class="qbody">
+<div class="qsen">During the meeting, the CEO mentioned that our company must <span class="bl">______</span> in order to meet the competition.</div>
+<div class="qzh">在會議中，執行長提到我們公司必須國際化，以迎向競爭。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>international</div>
+<div class="qo ok"><span class="ol">B</span>internationalize</div>
+<div class="qo"><span class="ol">C</span>internationalized</div>
+<div class="qo"><span class="ol">D</span>internationalism</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 must，must 後面一定接原形動詞。internationalize 是動詞原形，意思是國際化。</p><div class="al">答案</div><p class="ap">internationalize（B）</p></div>
+<div class="corr mt12"><p>A international：形容詞，不能放在 must 後當主要動詞。C internationalized：過去式或過去分詞，must 後不能接 p.p.。D internationalism：名詞，國際主義，不是動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">meet the competition</span><span class="vd">應付競爭；迎向競爭</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev9">
+<div class="qh"><span class="qn">複習9</span><span class="qt">現在進行式</span></div>
+<div class="qbody">
+<div class="qsen">All reporters <span class="bl">______</span> to interview the company president.</div>
+<div class="qzh">所有記者都正在等著訪問公司總裁。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>waiting</div>
+<div class="qo"><span class="ol">B</span>been waiting</div>
+<div class="qo ok"><span class="ol">C</span>are waiting</div>
+<div class="qo"><span class="ol">D</span>was waited</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞 All reporters 是複數，句意是記者們正在等待，用現在進行式 be + V-ing，複數主詞用 are。</p><div class="al">答案</div><p class="ap">are waiting（C）</p></div>
+<div class="corr mt12"><p>A waiting：缺少 be 動詞。B been waiting：前面需要 have/has，例如 have been waiting。D was waited：was 是單數過去，且 waited 被動語意不合。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">reporter</span><span class="vd">記者</span>
+<span class="vw">interview</span><span class="vd">訪問；面試</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev10">
+<div class="qh"><span class="qn">複習10</span><span class="qt">現在簡單式</span></div>
+<div class="qbody">
+<div class="qsen">Jerry always <span class="bl">______</span> for work at 8 a.m.</div>
+<div class="qzh">Jerry 通常早上八點出發去上班。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>leaves</div>
+<div class="qo"><span class="ol">B</span>leave</div>
+<div class="qo"><span class="ol">C</span>left</div>
+<div class="qo"><span class="ol">D</span>leaving</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 always，這是習慣，不是一次性動作，習慣用現在簡單式。主詞 Jerry 是第三人稱單數，動詞要加 s。</p><div class="al">答案</div><p class="ap">leaves（A）— Jerry leaves for work at 8 a.m.</p></div>
+<div class="corr mt12"><p>B leave：主詞單數要加 s。C left：過去式，不符合 always 的習慣語氣。D leaving：缺 be 動詞，不能單獨當主要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">leave for</span><span class="vd">動身前往</span>
+<span class="vw">leave for work / leave for Chicago</span><span class="vd">動身去上班／去芝加哥</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev11">
+<div class="qh"><span class="qn">複習11</span><span class="qt">過去完成式①</span></div>
+<div class="qbody">
+<div class="qsen">I <span class="bl">______</span> worked in the software industry for 15 years before I changed my career.</div>
+<div class="qzh">在我轉換職涯之前，我已經在軟體產業工作了十五年。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>will be</div>
+<div class="qo ok"><span class="ol">B</span>had</div>
+<div class="qo"><span class="ol">C</span>was</div>
+<div class="qo"><span class="ol">D</span>had been to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>before I changed my career，changed 是過去式。在我轉職之前，工作十五年這件事更早發生且持續到那個過去時間點，用過去完成式 had worked。</p><div class="al">答案</div><p class="ap">had（B）</p></div>
+<div class="corr mt12"><p>A will be：未來，不合 before I changed。C was worked：被動或錯誤結構，不合句意。D had been to：去過某地，不可接 worked。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">software industry</span><span class="vd">軟體產業</span>
+<span class="vw">change one's career</span><span class="vd">轉換職涯</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev12">
+<div class="qh"><span class="qn">複習12</span><span class="qt">raise an issue</span></div>
+<div class="qbody">
+<div class="qsen">The supervisor <span class="bl">______</span> the issue during yesterday's staff meeting.</div>
+<div class="qzh">主管在昨天的員工會議中提出了這個議題。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>rose</div>
+<div class="qo ok"><span class="ol">B</span>raised</div>
+<div class="qo"><span class="ol">C</span>risen</div>
+<div class="qo"><span class="ol">D</span>rising</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 issue，要想到 raise an issue，提出議題，raise 是及物動詞，後面可以接 issue。時間是 yesterday's staff meeting，用過去式 raised。</p><div class="al">答案</div><p class="ap">raised（B）</p></div>
+<div class="corr mt12"><p>A rose：rise 是不及物動詞，不能直接接 issue。C risen：過去分詞，缺少 has/had。D rising：不是完整動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">raise an issue</span><span class="vd">提出議題</span>
+<span class="vw">staff meeting</span><span class="vd">員工會議</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev13">
+<div class="qh"><span class="qn">複習13</span><span class="qt">未來被動語態</span></div>
+<div class="qbody">
+<div class="qsen">Several employees <span class="bl">______</span> to the new branch office next month.</div>
+<div class="qzh">幾位員工下個月將被調到新的分公司。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>transfer</div>
+<div class="qo"><span class="ol">B</span>transferred</div>
+<div class="qo ok"><span class="ol">C</span>will be transferred</div>
+<div class="qo"><span class="ol">D</span>have transferred</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>員工是被公司調派，不是自己調職。時間是 next month，用未來被動 will be + p.p.，transfer 的 p.p. 是 transferred。</p><div class="al">答案</div><p class="ap">will be transferred（C）</p></div>
+<div class="corr mt12"><p>A transfer：主動，表示員工自己轉移，不是公司調派。B transferred：過去式，不符合 next month。D have transferred：現在完成式，不符合 next month，也偏主動。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">transfer</span><span class="vd">調派；轉移</span>
+<span class="vw">branch office</span><span class="vd">分公司</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev14">
+<div class="qh"><span class="qn">複習14</span><span class="qt">現在簡單式・主詞動詞一致</span></div>
+<div class="qbody">
+<div class="qsen">The marketing team <span class="bl">______</span> a new campaign every spring.</div>
+<div class="qzh">行銷團隊每年春天都會推出新的活動。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>launch</div>
+<div class="qo ok"><span class="ol">B</span>launches</div>
+<div class="qo"><span class="ol">C</span>launched</div>
+<div class="qo"><span class="ol">D</span>launching</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>句尾 every spring 表示例行性動作，用現在簡單式。主詞 The marketing team 是單數集合名詞，動詞要加 s。</p><div class="al">答案</div><p class="ap">launches（B）</p></div>
+<div class="corr mt12"><p>A launch：主詞單數應加 s。C launched：過去式，但 every spring 表示例行性，不是單一過去事件。D launching：V-ing 不能單獨當主要動詞，需要 be 動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">marketing team</span><span class="vd">行銷團隊</span>
+<span class="vw">campaign</span><span class="vd">活動；行銷活動</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev15">
+<div class="qh"><span class="qn">複習15</span><span class="qt">現在完成式・rise</span></div>
+<div class="qbody">
+<div class="qsen">Clothing sales at specialized clothing retailers <span class="bl">______</span> for the past three years.</div>
+<div class="qzh">過去三年以來，專門服飾零售商的服飾銷售已經上升。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>have been raising</div>
+<div class="qo"><span class="ol">B</span>rose</div>
+<div class="qo"><span class="ol">C</span>are rising</div>
+<div class="qo ok"><span class="ol">D</span>have risen</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>for the past three years，從過去三年到現在，用現在完成式。sales 是自己上升，用 rise 不用 raise，rise 的過去分詞是 risen，所以 have risen。</p><div class="al">答案</div><p class="ap">have risen（D）</p></div>
+<div class="corr mt12"><p>A have been raising：raise 是及物動詞，後面要有受詞；sales 不是去提高別的東西。B rose：過去式，不能清楚表達持續到現在。C are rising：現在進行式，不如現在完成式搭配 for the past three years。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">specialized retailer</span><span class="vd">專門零售商</span>
+<span class="vw">sales have risen</span><span class="vd">銷售已經上升</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev16">
+<div class="qh"><span class="qn">複習16</span><span class="qt">被動語態・founded</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The bank of Barclays, which <span class="bl">______</span> in 1690, is the oldest company in the United Kingdom.</div>
+<div class="qzh">Barclays 銀行創立於 1690 年，是英國歷史最悠久的公司。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>found</div>
+<div class="qo"><span class="ol">B</span>was found</div>
+<div class="qo"><span class="ol">C</span>was finding</div>
+<div class="qo ok"><span class="ol">D</span>was founded</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>三個線索：in 1690 是過去時間；銀行不是自己創立自己，要被動；found 表示創立時，過去分詞是 founded。</p><div class="al">答案</div><p class="ap">was founded（D）</p></div>
+<div class="corr mt12"><p>A found：可能是 find 的過去式，但這裡不是找到銀行。B was found：意思變成被找到，不是被創立。C was finding：過去進行式，且主詞 bank 不會正在尋找。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">found a company</span><span class="vd">創立公司</span>
+<span class="vw">oldest company</span><span class="vd">最古老的公司</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev17">
+<div class="qh"><span class="qn">複習17</span><span class="qt">過去進行式・背景動作</span></div>
+<div class="qbody">
+<div class="qsen">The CEO <span class="bl">______</span> in Tokyo when the announcement was made.</div>
+<div class="qzh">公告發布時，執行長正在東京出差。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>is traveling</div>
+<div class="qo"><span class="ol">B</span>travels</div>
+<div class="qo ok"><span class="ol">C</span>was traveling</div>
+<div class="qo"><span class="ol">D</span>has traveled</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>when the announcement was made 是過去被動事件，CEO 當時正在東京出差，用過去進行式描述當時正在進行的背景動作。</p><div class="al">答案</div><p class="ap">was traveling（C）</p></div>
+<div class="corr mt12"><p>A is traveling：現在進行式，不符合 was made。B travels：現在簡單式，表示習慣。D has traveled：現在完成式，不表示當時正在進行。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">announcement</span><span class="vd">公告；宣布</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev18">
+<div class="qh"><span class="qn">複習18</span><span class="qt">if 條件句用現在式表未來</span></div>
+<div class="qbody">
+<div class="qsen">Please notify us if the delivery date <span class="bl">______</span>.</div>
+<div class="qzh">如果交貨日期有變，請通知我們。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>changes</div>
+<div class="qo"><span class="ol">B</span>changed</div>
+<div class="qo"><span class="ol">C</span>changing</div>
+<div class="qo"><span class="ol">D</span>will change</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>中文會想用 will change，但英文的 if 條件子句裡，通常用現在式表示未來，所以是 if the delivery date changes，不是 if...will change。</p><div class="al">答案</div><p class="ap">changes（A）</p></div>
+<div class="corr mt12"><p>B changed：過去式，不合語意。C changing：不是完整動詞。D will change：條件副詞子句中通常不用 will。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">notify</span><span class="vd">通知</span>
+<span class="vw">delivery date</span><span class="vd">交貨日期</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev19">
+<div class="qh"><span class="qn">複習19</span><span class="qt">未來完成式</span></div>
+<div class="qbody">
+<div class="qsen">Before you come back, I shall have <span class="bl">______</span> the report already.</div>
+<div class="qzh">在你回來之前，我應該已經完成報告了。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>finished</div>
+<div class="qo"><span class="ol">B</span>finishing</div>
+<div class="qo"><span class="ol">C</span>finish</div>
+<div class="qo"><span class="ol">D</span>finishes</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 shall have，have 後面要過去分詞，finish 的過去分詞是 finished。Before you come back 是未來時間點，主句用未來完成表示在那之前已完成。</p><div class="al">答案</div><p class="ap">finished（A）</p></div>
+<div class="corr mt12"><p>B finishing：V-ing，不合完成式。C finish：原形，不合 have + p.p.。D finishes：現在式第三人稱單數，不合 shall have。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">come back</span><span class="vd">回來</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev20">
+<div class="qh"><span class="qn">複習20</span><span class="qt">-ize 動詞・plan to V</span></div>
+<div class="qbody">
+<div class="qsen">The company plans to <span class="bl">______</span> its services to meet local customer needs.</div>
+<div class="qzh">公司計畫客製化其服務，以符合當地顧客需求。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>customization</div>
+<div class="qo ok"><span class="ol">B</span>customize</div>
+<div class="qo"><span class="ol">C</span>customized</div>
+<div class="qo"><span class="ol">D</span>customizable</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 plans to，to 後面要接原形動詞。customize 是動詞原形，意思是客製化。</p><div class="al">答案</div><p class="ap">customize（B）</p></div>
+<div class="corr mt12"><p>A customization：名詞，不能接在 to 後當動詞。C customized：過去式/p.p.，不符合 plan to + V。D customizable：形容詞，可客製化的，不是動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">customize</span><span class="vd">客製化</span>
+<span class="vw">local customer needs</span><span class="vd">當地顧客需求</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev21">
+<div class="qh"><span class="qn">複習21</span><span class="qt">被動語態②</span></div>
+<div class="qbody">
+<div class="qsen">Mr. Chen's wallet was <span class="bl">______</span> yesterday.</div>
+<div class="qzh">陳先生的皮夾昨天被偷了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>steals</div>
+<div class="qo ok"><span class="ol">B</span>stolen</div>
+<div class="qo"><span class="ol">C</span>steal</div>
+<div class="qo"><span class="ol">D</span>stealing</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>wallet 是被偷，不是自己偷，要被動。was 後面接過去分詞，steal 的過去分詞是 stolen。</p><div class="al">答案</div><p class="ap">stolen（B）</p></div>
+<div class="corr mt12"><p>A steals：現在式第三人稱單數。C steal：原形，不合 was。D stealing：V-ing，不是被動需要的 p.p.。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">wallet</span><span class="vd">皮夾</span>
+<span class="vw">steal — stole — stolen</span><span class="vd">偷</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev22">
+<div class="qh"><span class="qn">複習22</span><span class="qt">過去簡單式・明確過去時間</span></div>
+<div class="qbody">
+<div class="qsen">The company <span class="bl">______</span> its headquarters to Singapore in 2018.</div>
+<div class="qzh">這家公司在 2018 年將總部遷到新加坡。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>move</div>
+<div class="qo"><span class="ol">B</span>moves</div>
+<div class="qo ok"><span class="ol">C</span>moved</div>
+<div class="qo"><span class="ol">D</span>has moved</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>in 2018 是明確過去時間，通常用過去簡單式，move 的過去式是 moved。</p><div class="al">答案</div><p class="ap">moved（C）</p></div>
+<div class="corr mt12"><p>A move：原形，不合主詞與時態。B moves：現在簡單式，不合 in 2018。D has moved：現在完成式通常不和明確過去時間 in 2018 搭配。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">headquarters</span><span class="vd">總部</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev23">
+<div class="qh"><span class="qn">複習23</span><span class="qt">現在完成式・since</span></div>
+<div class="qbody">
+<div class="qsen">The company <span class="bl">______</span> three new branches since 2020.</div>
+<div class="qzh">自 2020 年以來，這家公司已經開設了三間新分店。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>opened</div>
+<div class="qo ok"><span class="ol">B</span>has opened</div>
+<div class="qo"><span class="ol">C</span>opens</div>
+<div class="qo"><span class="ol">D</span>opening</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>since 2020，從過去某個時間點到現在，用現在完成式。主詞 The company 單數，用 has + p.p.，open 的 p.p. 是 opened。</p><div class="al">答案</div><p class="ap">has opened（B）</p></div>
+<div class="corr mt12"><p>A opened：過去式只表示過去發生，沒有延續到現在的感覺。C opens：現在簡單式，表示例行，不合 since 2020。D opening：V-ing 不能單獨作主要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">branch</span><span class="vd">分店；分公司</span>
+<span class="vw">open a branch</span><span class="vd">開設分店</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev24">
+<div class="qh"><span class="qn">複習24</span><span class="qt">-ify 動詞・過去式</span></div>
+<div class="qbody">
+<div class="qsen">The HR manager <span class="bl">______</span> all applicants by email yesterday.</div>
+<div class="qzh">人資經理昨天用電子郵件通知了所有申請者。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>notification</div>
+<div class="qo ok"><span class="ol">B</span>notified</div>
+<div class="qo"><span class="ol">C</span>notifying</div>
+<div class="qo"><span class="ol">D</span>notify</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>時間線索 yesterday，要用過去式。notify 是動詞，通知，過去式是 notified，y 要變 ied。</p><div class="al">答案</div><p class="ap">notified（B）</p></div>
+<div class="corr mt12"><p>A notification：名詞，通知。C notifying：V-ing，不能單獨作主要動詞。D notify：原形，不符合 yesterday。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">HR manager</span><span class="vd">人資經理</span>
+<span class="vw">notify someone by email</span><span class="vd">用電子郵件通知某人</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev25">
+<div class="qh"><span class="qn">複習25</span><span class="qt">未來進行式</span></div>
+<div class="qbody">
+<div class="qsen">We will be <span class="bl">______</span> in Linda's office when you come this afternoon.</div>
+<div class="qzh">你今天下午來的時候，我們會正在 Linda 的辦公室討論。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>discussing</div>
+<div class="qo"><span class="ol">B</span>discussed</div>
+<div class="qo"><span class="ol">C</span>discuss</div>
+<div class="qo"><span class="ol">D</span>discusses</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面是 will be，後面要接 V-ing 才能形成未來進行式，表示未來某個時間點正在討論。</p><div class="al">答案</div><p class="ap">discussing（A）</p></div>
+<div class="corr mt12"><p>B discussed：過去分詞，會變成被動，不合句意。C discuss：原形，will be 後不直接接原形。D discusses：第三人稱單數，不合 will be。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">discuss</span><span class="vd">討論</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev26">
+<div class="qh"><span class="qn">複習26</span><span class="qt">未來式・時間子句</span></div>
+<div class="qbody">
+<div class="qsen">You <span class="bl">______</span> report to Mr. Johnson after you join the sales team.</div>
+<div class="qzh">你加入業務團隊後，將向 Johnson 先生報告進度。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>might be</div>
+<div class="qo"><span class="ol">B</span>were</div>
+<div class="qo ok"><span class="ol">C</span>will</div>
+<div class="qo"><span class="ol">D</span>should have</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>after you join the sales team，after 後面用現在式 join，但整句是講加入之後會發生的事，主句用 will report。不要說 after you will join，時間子句裡用現在式。</p><div class="al">答案</div><p class="ap">will（C）</p></div>
+<div class="corr mt12"><p>A might be report：might be 後面不能直接接 report。B were report：結構錯誤。D should have report：should have 後面要 p.p.，且語意是過去本來應該，不合句意。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">report to someone</span><span class="vd">向某人報告；隸屬於某人</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev27">
+<div class="qh"><span class="qn">複習27</span><span class="qt">過去完成進行式</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The employees <span class="bl">______</span> the new procedure for two weeks before the final version was approved.</div>
+<div class="qzh">在最終版本被核准之前，員工們已經測試新流程兩週了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>tested</div>
+<div class="qo"><span class="ol">B</span>have tested</div>
+<div class="qo ok"><span class="ol">C</span>had been testing</div>
+<div class="qo"><span class="ol">D</span>will test</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>before the final version was approved 是過去事件。在這個過去事件之前，員工測試流程已經持續兩週，強調「過去某時間點之前一直在進行」，用過去完成進行式 had been + V-ing。</p><div class="al">答案</div><p class="ap">had been testing（C）</p></div>
+<div class="corr mt12"><p>A tested：只表示過去測試，不強調持續兩週到某個時間點。B have tested：現在完成式，連到現在，不符合 was approved。D will test：未來式，不合過去語境。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">procedure</span><span class="vd">程序；流程</span>
+<span class="vw">approve</span><span class="vd">核准</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev28">
+<div class="qh"><span class="qn">複習28</span><span class="qt">被動語態・found</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The university was <span class="bl">______</span> by Dr. Peters in 1988.</div>
+<div class="qzh">這所大學是 Peters 博士在 1988 年創立的。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>find</div>
+<div class="qo"><span class="ol">B</span>found</div>
+<div class="qo"><span class="ol">C</span>founds</div>
+<div class="qo ok"><span class="ol">D</span>founded</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>大學不是自己創立自己，是被 Dr. Peters 創立，這是被動語態。創立是 found，過去分詞是 founded，所以是 was founded。</p><div class="al">答案</div><p class="ap">founded（D）</p></div>
+<div class="corr mt12"><p>A find：找到，且是原形，不合 was。B found：可以是 find 的過去式，但這裡不是找到大學，而是創立大學。C founds：現在式第三人稱單數，不合 was。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">found</span><span class="vd">創立；建立</span>
+<span class="vw">found a company / found a university</span><span class="vd">創立公司／大學</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev29">
+<div class="qh"><span class="qn">複習29</span><span class="qt">現在完成式</span></div>
+<div class="qbody">
+<div class="qsen">We have <span class="bl">______</span> new lines of business training videos.</div>
+<div class="qzh">我們已經新增了幾條新的商業訓練影片系列。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>added</div>
+<div class="qo"><span class="ol">B</span>had</div>
+<div class="qo"><span class="ol">C</span>adding</div>
+<div class="qo"><span class="ol">D</span>add</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格前面有 have，要想到完成式 have + p.p.，add 的過去分詞是 added。</p><div class="al">答案</div><p class="ap">added（A）</p></div>
+<div class="corr mt12"><p>B had：have had 可以成立，但語意不自然，不是新增。C adding：have adding 結構錯。D add：have 後面不能直接接原形作完成式。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">line of videos</span><span class="vd">影片系列</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="rev30">
+<div class="qh"><span class="qn">複習30</span><span class="qt">過去簡單式・不規則動詞</span></div>
+<div class="qbody">
+<div class="qsen">The assistant <span class="bl">______</span> the package to the wrong department yesterday.</div>
+<div class="qzh">助理昨天把包裹送到錯誤的部門。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>send</div>
+<div class="qo"><span class="ol">B</span>sends</div>
+<div class="qo ok"><span class="ol">C</span>sent</div>
+<div class="qo"><span class="ol">D</span>sending</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>時間線索 yesterday，要用過去簡單式。send 的過去式不是 sended，是不規則動詞 sent。</p><div class="al">答案</div><p class="ap">sent（C）</p></div>
+<div class="corr mt12"><p>A send：原形，不符合 yesterday。B sends：現在簡單式第三人稱單數，不符合 yesterday。D sending：V-ing 不能單獨作主要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">assistant</span><span class="vd">助理</span>
+<span class="vw">department</span><span class="vd">部門</span>
+</div>
+</div>
+</div>
+</div></div>
+
+</div>
+<div class="ls" id="s-summary">
+<div class="sh"><div class="sn">✓</div><div class="st">總整理 &amp; 速查表</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>老師收尾逐字稿</div><div class="bb">
+<div class="script">今天 Chapter 7 的重點不是把所有時態背完，而是建立判斷系統。<br><br>
+<em>第一</em>，看到動詞題，先找時間線索。yesterday、ago、last year → 過去簡單式；tomorrow、next week、in the future → 未來；since、for、over the past years → 完成式；while、when + 過去進行動作 → 過去進行式。<br>
+<em>第二</em>，判斷動作狀態。習慣或事實 → 現在簡單式；正在發生 → 進行式；已經完成且和現在有關 → 現在完成式；比另一個過去更早 → 過去完成式；到未來某時間前已完成 → 未來完成式。<br>
+<em>第三</em>，判斷主詞是做動作，還是接受動作。如果主詞接受動作，就用被動：be + p.p.。<br>
+<em>第四</em>，不規則動詞一定要分清楚：find/found/found 是找到；found/founded/founded 是創立；rise/rose/risen 是自己上升；raise/raised/raised 是提高某物；steal/stole/stolen 是偷；shine/shone/shone 是發光；shine/shined/shined 是擦亮。<br><br>
+<strong>Part 5 做題順序永遠是：先看時間，再看主詞，再看動詞形式，再看主動或被動，最後才用意思確認。</strong></div>
+</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>Chapter 7 必背時態速查表</div><div class="bb">
+<table class="tbl">
+<tr><th>時態</th><th>公式</th><th>核心意思</th><th>常見線索</th></tr>
+<tr><td>現在簡單式</td><td>V / Vs</td><td>習慣、事實、狀態</td><td>always, every day, usually</td></tr>
+<tr><td>過去簡單式</td><td>Ved / V2</td><td>過去發生並結束</td><td>yesterday, ago, last year, in 2012</td></tr>
+<tr><td>未來簡單式</td><td>will + V</td><td>將會發生</td><td>tomorrow, next week, in the future</td></tr>
+<tr><td>現在進行式</td><td>am/is/are + V-ing</td><td>現在正在做；未來安排</td><td>now, right now, this week</td></tr>
+<tr><td>過去進行式</td><td>was/were + V-ing</td><td>過去某時正在做</td><td>when, while, at 8 yesterday</td></tr>
+<tr><td>未來進行式</td><td>will be + V-ing</td><td>未來某時正在做</td><td>at this time tomorrow</td></tr>
+<tr><td>現在完成式</td><td>have/has + p.p.</td><td>已完成；經驗；持續到現在</td><td>already, just, ever, since, for</td></tr>
+<tr><td>過去完成式</td><td>had + p.p.</td><td>比另一個過去更早</td><td>before + past, when + past</td></tr>
+<tr><td>未來完成式</td><td>will have + p.p.</td><td>到未來某時前已完成</td><td>by Friday, before you come back</td></tr>
+<tr><td>被動語態</td><td>be + p.p.</td><td>被……</td><td>by, 主詞是物或接受者</td></tr>
+</table>
+</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>Chapter 7 常見錯誤速查表</div><div class="bb">
+<table class="tbl">
+<tr><th>錯誤</th><th>正確</th><th>原因</th></tr>
+<tr><td>Jerry leave at 8.</td><td>Jerry leaves at 8.</td><td>第三人稱單數現在式加 s</td></tr>
+<tr><td>He has went.</td><td>He has gone.</td><td>完成式用過去分詞</td></tr>
+<tr><td>I have seen him yesterday.</td><td>I saw him yesterday.</td><td>明確過去時間用過去式</td></tr>
+<tr><td>Since 1995, he owns the firm.</td><td>Since 1995, he has owned the firm.</td><td>since 要現在完成式</td></tr>
+<tr><td>Sales have been raising.</td><td>Sales have risen.</td><td>sales 自己上升，用 rise</td></tr>
+<tr><td>The company was found in 2001.</td><td>The company was founded in 2001.</td><td>found = 創立，p.p. 是 founded</td></tr>
+<tr><td>The report written by John.</td><td>The report was written by John.</td><td>被動要 be + p.p.</td></tr>
+<tr><td>I did tried.</td><td>I did try.</td><td>did 後接原形</td></tr>
+<tr><td>When he will return, I will call you.</td><td>When he returns, I will call you.</td><td>時間子句用現在式代替未來</td></tr>
+<tr><td>She is knowing the answer.</td><td>She knows the answer.</td><td>know 通常不用進行式</td></tr>
+<tr><td>The meeting was happened yesterday.</td><td>The meeting happened yesterday.</td><td>happen 是不及物動詞，不能用被動</td></tr>
+</table>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>給老師的上課建議</div><div class="bb">
+<div class="goal2"><p>這章內容很多，不適合逐條硬背，比較適合用「時間線」教。上課時可以一直問學生：時間在哪裡？這個動作有沒有持續到現在？這個動作是不是比另一個過去更早？主詞是做動作，還是被動接受動作？空格前面有 have/has/had/be 動詞嗎？這個動詞是不是不規則三態？這樣學生會從翻譯型解題，慢慢轉成結構型解題。</p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>下一堂預告</div><div class="bb">
+<div class="tip"><p>Lesson 11 涵蓋 Chapter 7 動詞與時態完整系統與 58 題練習，是純文法專章，份量很大，建議拆成 3 次上課消化。下一堂可視進度銜接新的文法章節，或搭配 Part 6/7 閱讀延伸「時態在閱讀中如何幫助判斷事件先後順序」。</p></div>
+</div></div>
+</div>
+</main>
+</div>
+<script>
+let sec=0,running=false,iv=null;
+function pad(n){return n.toString().padStart(2,'0')}
+function upd(){const m=Math.floor(sec/60),s=sec%60;document.getElementById('timer').textContent=pad(m)+':'+pad(s)}
+function toggleTimer(){
+  if(running){clearInterval(iv);running=false;document.querySelector('.tbtn').textContent='▶ 開始'}
+  else{iv=setInterval(()=>{sec++;upd()},1000);running=true;document.querySelector('.tbtn').textContent='⏸ 暫停'}
+}
+function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.querySelector('.tbtn').textContent='▶ 開始'}
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+const allSecs=[{id:'s-overview',label:'課程總覽'},{id:'s-basic',label:'1 動詞形式基礎'},{id:'qpr2',label:'1-1'},{id:'qpr3',label:'1-2'},{id:'qpr4',label:'1-3'},{id:'qpr5',label:'1-4'},{id:'qrv8',label:'1-5'},{id:'qnw21',label:'1-6'},{id:'qnw22',label:'1-7'},{id:'qnw23',label:'1-8'},{id:'qnw24',label:'1-9'},{id:'qnw25',label:'1-10'},{id:'qnw26',label:'1-11'},{id:'qnw27',label:'1-12'},{id:'qnw28',label:'1-13'},{id:'s-simple',label:'2 簡單式家族'},{id:'qpv1',label:'2-1'},{id:'qpv2',label:'2-2'},{id:'qpr6',label:'2-3'},{id:'qpr7',label:'2-4'},{id:'qpr8',label:'2-5'},{id:'qrv2',label:'2-6'},{id:'qrv4',label:'2-7'},{id:'qrv5',label:'2-8'},{id:'qnw1',label:'2-9'},{id:'qnw2',label:'2-10'},{id:'qnw3',label:'2-11'},{id:'qnw11',label:'2-12'},{id:'qnw12',label:'2-13'},{id:'qnw16',label:'2-14'},{id:'qnw19',label:'2-15'},{id:'qnw20',label:'2-16'},{id:'s-continuous',label:'3 進行式家族'},{id:'qpr9',label:'3-1'},{id:'qpr10',label:'3-2'},{id:'qpr11',label:'3-3'},{id:'qrv1',label:'3-4'},{id:'qnw6',label:'3-5'},{id:'qnw7',label:'3-6'},{id:'qnw13',label:'3-7'},{id:'s-perfect',label:'4 完成式家族'},{id:'qpv3',label:'4-1'},{id:'qpr12',label:'4-2'},{id:'qpr13',label:'4-3'},{id:'qpr14',label:'4-4'},{id:'qpr15',label:'4-5'},{id:'qrv3',label:'4-6'},{id:'qrv6',label:'4-7'},{id:'qrv7',label:'4-8'},{id:'qnw4',label:'4-9'},{id:'qnw5',label:'4-10'},{id:'qnw8',label:'4-11'},{id:'qnw9',label:'4-12'},{id:'qnw14',label:'4-13'},{id:'qnw15',label:'4-14'},{id:'qnw17',label:'4-15'},{id:'qnw30',label:'4-16'},{id:'s-passive',label:'5 被動與分詞形容詞'},{id:'qpr1',label:'5-1'},{id:'qpr16',label:'5-2'},{id:'qpr17',label:'5-3'},{id:'qnw10',label:'5-4'},{id:'qnw18',label:'5-5'},{id:'qnw29',label:'5-6'},{id:'s-strategy',label:'6 解題系統'},{id:'s-review',label:'7 總複習'},{id:'rev1',label:'複習1'},{id:'rev2',label:'複習2'},{id:'rev3',label:'複習3'},{id:'rev4',label:'複習4'},{id:'rev5',label:'複習5'},{id:'rev6',label:'複習6'},{id:'rev7',label:'複習7'},{id:'rev8',label:'複習8'},{id:'rev9',label:'複習9'},{id:'rev10',label:'複習10'},{id:'rev11',label:'複習11'},{id:'rev12',label:'複習12'},{id:'rev13',label:'複習13'},{id:'rev14',label:'複習14'},{id:'rev15',label:'複習15'},{id:'rev16',label:'複習16'},{id:'rev17',label:'複習17'},{id:'rev18',label:'複習18'},{id:'rev19',label:'複習19'},{id:'rev20',label:'複習20'},{id:'rev21',label:'複習21'},{id:'rev22',label:'複習22'},{id:'rev23',label:'複習23'},{id:'rev24',label:'複習24'},{id:'rev25',label:'複習25'},{id:'rev26',label:'複習26'},{id:'rev27',label:'複習27'},{id:'rev28',label:'複習28'},{id:'rev29',label:'複習29'},{id:'rev30',label:'複習30'},{id:'s-summary',label:'總整理'}];
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      const s=allSecs.find(x=>x.id===id);
+      if(s){
+        document.querySelectorAll('.sbl').forEach(l=>l.classList.remove('active'));
+        const lk=document.querySelector(`.sbl[onclick*="${id}"]`);
+        if(lk)lk.classList.add('active');
+        document.getElementById('csec').textContent=s.label;
+      }
+    }
+  });
+},{threshold:0.2,rootMargin:'-60px 0px -65% 0px'});
+allSecs.forEach(s=>{const el=document.getElementById(s.id);if(el)obs.observe(el)});
+</script>
+</body>
+</html>

@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老師講義 | TOEIC Lesson 10 · Chapter 6 助動詞</title>
+<!-- Lesson 10：文法專章 Chapter 6 Auxiliary Verbs。非 Part6/7 閱讀課，共 45 題獨立文法練習題。 -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0F172A;--navy2:#1E3A5F;--white:#fff;--bg:#F0F4F8;--card:#fff;--amber:#F59E0B;--amber-lt:#FEF3C7;--amber-dk:#92400E;--green:#059669;--green-lt:#D1FAE5;--red:#DC2626;--red-lt:#FEE2E2;--sky:#0EA5E9;--sky-lt:#E0F2FE;--purple:#7C3AED;--purple-lt:#EDE9FE;--gray-100:#F1F5F9;--gray-200:#E2E8F0;--gray-400:#94A3B8;--gray-600:#475569;--gray-800:#1E293B;--sidebar-w:230px;--r:10px}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--bg);color:var(--gray-800);font-size:14px;line-height:1.7}
+#topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--navy);color:white;height:52px;display:flex;align-items:center;padding:0 20px;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+.logo{font-weight:800;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.logo span{background:var(--amber);color:var(--navy);padding:2px 8px;border-radius:5px;font-size:12px}
+.timer-wrap{display:flex;align-items:center;gap:8px;margin-left:auto}
+.timer-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px}
+#timer{font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--amber);min-width:60px}
+.tbtn{background:rgba(255,255,255,.1);border:none;color:white;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;margin-left:4px;font-family:"Noto Sans TC",sans-serif}
+.tbtn:hover{background:rgba(255,255,255,.2)}
+.ppill{background:rgba(255,255,255,.1);border-radius:20px;padding:4px 14px;font-size:12px;white-space:nowrap}
+#csec{color:var(--amber);font-weight:700}
+#layout{display:flex;margin-top:52px;min-height:calc(100vh - 52px)}
+#sidebar{width:var(--sidebar-w);min-width:var(--sidebar-w);background:var(--navy);position:fixed;top:52px;left:0;bottom:0;overflow-y:auto;padding:16px 0;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
+.sbh{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.35);padding:10px 16px 4px}
+.sbl{display:block;padding:6px 16px;color:rgba(255,255,255,.65);font-size:12px;text-decoration:none;cursor:pointer;border-left:3px solid transparent;transition:.15s}
+.sbl:hover{color:white;background:rgba(255,255,255,.07)}
+.sbl.active{color:var(--amber);border-left-color:var(--amber);background:rgba(245,158,11,.08)}
+.t{font-size:10px;color:rgba(255,255,255,.3);float:right;font-family:"JetBrains Mono",monospace}
+#main{margin-left:var(--sidebar-w);flex:1;padding:28px 32px 80px}
+.ls{margin-bottom:40px}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gray-200)}
+.sn{width:36px;height:36px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;font-family:"Inter",sans-serif}
+.st{font-size:20px;font-weight:800;color:var(--navy)}
+.stm{margin-left:auto;background:var(--navy);color:var(--amber);font-size:11px;font-weight:700;font-family:"JetBrains Mono",monospace;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.block{background:var(--card);border-radius:var(--r);margin-bottom:16px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.bh{background:var(--gray-100);padding:10px 18px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-600);border-bottom:1px solid var(--gray-200);display:flex;align-items:center;gap:8px}
+.bh .d{width:8px;height:8px;border-radius:50%;background:var(--gray-400)}
+.bh.dk{background:var(--navy);color:white;border:none}.bh.dk .d{background:var(--amber)}
+.bh.am{background:var(--amber-lt);color:var(--amber-dk);border-bottom-color:#FDE68A}.bh.am .d{background:var(--amber)}
+.bh.gn{background:var(--green-lt);color:var(--green);border-bottom-color:#A7F3D0}.bh.gn .d{background:var(--green)}
+.bb{padding:18px}
+.script{background:#0F172A;color:#E2E8F0;border-radius:8px;padding:16px 20px;font-size:14px;line-height:1.9;position:relative;margin:12px 0}
+.script::before{content:"📢 說";position:absolute;top:-10px;left:14px;background:var(--sky);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.script em{color:var(--amber);font-style:normal;font-weight:600}
+.script strong{color:white}.script code{background:rgba(255,255,255,.1);padding:1px 6px;border-radius:4px;font-family:"JetBrains Mono",monospace;font-size:13px;color:#7DD3FC}
+.ask{background:var(--amber-lt);border:1.5px solid #FDE68A;border-radius:8px;padding:14px 18px;margin:10px 0;position:relative}
+.ask::before{content:"❓ 問學生";position:absolute;top:-10px;left:14px;background:var(--amber);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.ask p{color:var(--amber-dk);font-weight:600;font-size:14px;margin-top:2px}
+.ask .al{font-size:11px;color:var(--amber-dk);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:8px 0 3px;border-top:1px solid #FDE68A;padding-top:8px}
+.ask .ap{color:var(--green);font-weight:700;font-size:14px}
+.corr{background:var(--red-lt);border:1.5px solid #FECACA;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.corr::before{content:"⚠️ 答錯時";position:absolute;top:-10px;left:14px;background:var(--red);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.corr p{color:#991B1B;font-size:13px;margin-top:4px;line-height:1.7}
+.tip{background:var(--purple-lt);border:1.5px solid #DDD6FE;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.tip::before{content:"💡 重點";position:absolute;top:-10px;left:14px;background:var(--purple);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.tip p{color:#4C1D95;font-size:13px;margin-top:4px;line-height:1.7}
+.goal2{background:var(--green-lt);border:1.5px solid #A7F3D0;border-radius:8px;padding:12px 16px;margin:8px 0;position:relative}
+.goal2::before{content:"✅ 重點帶走";position:absolute;top:-10px;left:14px;background:var(--green);color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;font-family:"Inter",sans-serif}
+.goal2 p,.goal2 li{color:#064E3B;font-size:13px;margin-top:4px;line-height:1.8}
+.goal2 ul{padding-left:18px;margin-top:6px}
+.formula{font-family:"JetBrains Mono",monospace;font-size:15px;font-weight:700;color:var(--navy);background:var(--gray-100);border-radius:8px;padding:12px 16px;border-left:3px solid var(--amber);margin:10px 0}
+.es{background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:10px 14px;margin:6px 0;font-size:14px;font-weight:500}
+.qb{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07);margin-bottom:20px}
+.qh{display:flex;align-items:center;gap:10px;padding:12px 18px;background:var(--gray-100);border-bottom:1px solid var(--gray-200);flex-wrap:wrap}
+.qn{background:var(--navy);color:white;font-weight:700;font-size:12px;padding:3px 10px;border-radius:6px;font-family:"Inter",sans-serif}
+.qt{background:var(--sky-lt);color:var(--sky);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qs{background:var(--amber-lt);color:var(--amber-dk);font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
+.qbody{padding:20px}
+.qsen{font-size:15px;font-weight:500;background:var(--gray-100);border-left:3px solid var(--navy);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:6px;line-height:1.8}
+.qsen .bl{background:var(--amber-lt);color:var(--amber-dk);padding:0 6px;border-radius:4px;font-weight:700}
+.qzh{font-size:12px;color:var(--gray-400);margin-bottom:14px}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.qo{background:var(--gray-100);border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 14px;font-size:13px;display:flex;align-items:center;gap:8px}
+.qo.ok{background:var(--green-lt);border-color:var(--green);color:var(--green);font-weight:700}
+.ol{width:22px;height:22px;border-radius:50%;background:var(--gray-200);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:"Inter",sans-serif}
+.qo.ok .ol{background:var(--green);color:white}
+.qtc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.gtl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--gray-400);margin-bottom:8px}
+.vg{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.vw{font-family:"JetBrains Mono",monospace;color:var(--navy);font-weight:600}
+.vd{color:var(--gray-600)}
+.tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tbl th,.tbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
+.tbl th{background:var(--gray-100);font-weight:700;font-size:12px}
+.tmtable{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.tmtable th,.tmtable td{border:1px solid var(--gray-200);padding:10px 12px;text-align:left;vertical-align:top}
+.tmtable th{background:var(--navy);color:white;font-size:12px}
+.tmtable td:first-child{font-family:"JetBrains Mono",monospace;font-weight:700;background:var(--amber-lt);color:var(--amber-dk);white-space:nowrap}
+.mt12{margin-top:12px}.mt16{margin-top:16px}.mt20{margin-top:20px}
+code{font-family:"JetBrains Mono",monospace;background:var(--gray-100);padding:1px 5px;border-radius:3px;font-size:12px;color:var(--navy)}
+.lstbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+.lstbl th,.lstbl td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top}
+.lstbl th{background:var(--gray-100);font-weight:700;font-size:12px;width:150px}
+.tw{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--red);background:var(--red-lt);padding:6px 10px;border-radius:6px;display:block;margin:4px 0}
+.tw::before{content:"❌ "}
+.trx{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--green);background:var(--green-lt);padding:6px 10px;border-radius:6px;display:block;margin:4px 0}
+.trx::before{content:"✅ "}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div class="logo">🎓 <span>老師</span> Lesson 10 · Chapter 6 助動詞 Auxiliary Verbs</div>
+  <div class="ppill">現在：<span id="csec">課程總覽</span></div>
+  <div class="timer-wrap">
+    <span class="timer-label">上課時間</span>
+    <span id="timer">00:00</span>
+    <button class="tbtn" onclick="toggleTimer()">▶ 開始</button>
+    <button class="tbtn" onclick="resetTimer()">↺</button>
+  </div>
+</div>
+<div id="layout">
+<nav id="sidebar">
+  <div class="sbh">課程總覽</div>
+  <a class="sbl active" onclick="goTo('s-overview')">課程定位 &amp; 流程</a>
+  <div class="sbh">1 · 基本系統</div>
+  <a class="sbl" onclick="goTo('s-g1')">三大核心規則 <span class="t">8m</span></a>
+  <div class="sbh">2 · 語氣分類</div>
+  <a class="sbl" onclick="goTo('s-g2')">六大語氣 + 語氣本質 <span class="t">6m</span></a>
+  <div class="sbh">3 · 客氣要求</div>
+  <a class="sbl" onclick="goTo('s-g3')">Polite Requests <span class="t">8m</span></a>
+  <div class="sbh">4 · Would you mind</div>
+  <a class="sbl" onclick="goTo('s-g4')">請求允准句型 <span class="t">10m</span></a>
+  <div class="sbh">5 · 必須性</div>
+  <a class="sbl" onclick="goTo('s-g5')">Necessity <span class="t">8m</span></a>
+  <div class="sbh">6 · 建議</div>
+  <a class="sbl" onclick="goTo('s-g6')">Advice &amp; Suggestions <span class="t">12m</span></a>
+  <div class="sbh">7 · 偏好</div>
+  <a class="sbl" onclick="goTo('s-g7')">Preference <span class="t">6m</span></a>
+  <div class="sbh">8 · 解題系統</div>
+  <a class="sbl" onclick="goTo('s-strategy')">助動詞五步驟</a>
+  <div class="sbh">Preview Test</div>
+  <a class="sbl" onclick="goTo('qpv1')">PV1 Would you mind</a>
+  <a class="sbl" onclick="goTo('qpv2')">PV2 suggest that ⭐</a>
+  <a class="sbl" onclick="goTo('qpv3')">PV3 may 可能性</a>
+  <div class="sbh">課本練習（9題）</div>
+  <a class="sbl" onclick="goTo('qtb1')">TB1 Would you</a>
+  <a class="sbl" onclick="goTo('qtb2')">TB2 Can you</a>
+  <a class="sbl" onclick="goTo('qtb3')">TB3 mind+V-ing</a>
+  <a class="sbl" onclick="goTo('qtb4')">TB4 must 必要性</a>
+  <a class="sbl" onclick="goTo('qtb5')">TB5 should 建議</a>
+  <a class="sbl" onclick="goTo('qtb6')">TB6 suggest that ⭐</a>
+  <a class="sbl" onclick="goTo('qtb7')">TB7 should 混合陷阱</a>
+  <a class="sbl" onclick="goTo('qtb8')">TB8 would rather</a>
+  <a class="sbl" onclick="goTo('qtb9')">TB9 prefer to...rather than</a>
+  <div class="sbh">CH6 總複習 Q1–Q13</div>
+  <a class="sbl" onclick="goTo('qrv1')">Q1 shouldn't have</a>
+  <a class="sbl" onclick="goTo('qrv2')">Q2 had better</a>
+  <a class="sbl" onclick="goTo('qrv3')">Q3 should 建議</a>
+  <a class="sbl" onclick="goTo('qrv4')">Q4 May I</a>
+  <a class="sbl" onclick="goTo('qrv5')">Q5 現在進行式陷阱</a>
+  <a class="sbl" onclick="goTo('qrv6')">Q6 should</a>
+  <a class="sbl" onclick="goTo('qrv7')">Q7 should+原形</a>
+  <a class="sbl" onclick="goTo('qrv8')">Q8 ought to ⭐</a>
+  <a class="sbl" onclick="goTo('qrv9')">Q9 時態一致 could</a>
+  <a class="sbl" onclick="goTo('qrv10')">Q10 must 強烈</a>
+  <a class="sbl" onclick="goTo('qrv11')">Q11 will 未來</a>
+  <a class="sbl" onclick="goTo('qrv12')">Q12 should be+p.p. ⭐</a>
+  <a class="sbl" onclick="goTo('qrv13')">Q13 could have ⭐</a>
+  <div class="sbh">新增練習題 1–20</div>
+  <a class="sbl" onclick="goTo('qnw1')">NW1 must 規定</a>
+  <a class="sbl" onclick="goTo('qnw2')">NW2 don't have to ⭐</a>
+  <a class="sbl" onclick="goTo('qnw3')">NW3 mind+V-ing</a>
+  <a class="sbl" onclick="goTo('qnw4')">NW4 suggest that</a>
+  <a class="sbl" onclick="goTo('qnw5')">NW5 must not ⭐</a>
+  <a class="sbl" onclick="goTo('qnw6')">NW6 had better</a>
+  <a class="sbl" onclick="goTo('qnw7')">NW7 might have p.p.</a>
+  <a class="sbl" onclick="goTo('qnw8')">NW8 should be+p.p.</a>
+  <a class="sbl" onclick="goTo('qnw9')">NW9 would rather</a>
+  <a class="sbl" onclick="goTo('qnw10')">NW10 prefer V-ing to</a>
+  <a class="sbl" onclick="goTo('qnw11')">NW11 May I</a>
+  <a class="sbl" onclick="goTo('qnw12')">NW12 should have ⚠️</a>
+  <a class="sbl" onclick="goTo('qnw13')">NW13 may 可能性</a>
+  <a class="sbl" onclick="goTo('qnw14')">NW14 mind if+過去式</a>
+  <a class="sbl" onclick="goTo('qnw15')">NW15 ought to+V</a>
+  <a class="sbl" onclick="goTo('qnw16')">NW16 might 不確定</a>
+  <a class="sbl" onclick="goTo('qnw17')">NW17 don't have to</a>
+  <a class="sbl" onclick="goTo('qnw18')">NW18 request that+被動 ⭐</a>
+  <a class="sbl" onclick="goTo('qnw19')">NW19 prefer V-ing to</a>
+  <a class="sbl" onclick="goTo('qnw20')">NW20 must be+p.p.</a>
+  <div class="sbh">收尾</div>
+  <a class="sbl" onclick="goTo('s-summary')">總整理 &amp; 速查表</a>
+</nav>
+<main id="main">
+<div class="ls" id="s-overview">
+<div class="sh"><div class="sn">0</div><div class="st">課程定位 &amp; 上課流程</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>Lesson Info</div><div class="bb">
+<table class="lstbl">
+<tr><th>Lesson Number</th><td>10</td></tr>
+<tr><th>Grammar Topic</th><td>Chapter 6 助動詞 Auxiliary Verbs — 語氣系統：能力/可能、客氣請求、Would you mind、必須/義務、禁止、建議（含 should have / could have / must have / may-might have + p.p.）、偏好</td></tr>
+<tr><th>Part 5 Questions</th><td>本章 45 題獨立文法練習題（Preview Test ×3、課本練習 ×9、總複習 Q1–13、新增練習題 ×20）</td></tr>
+<tr><th>Part 6 / Part 7 Questions</th><td>None（本堂為純文法專章，無閱讀文章）</td></tr>
+</table>
+</div></div>
+<div class="block"><div class="bh gn"><span class="d"></span>本堂目標</div><div class="bb">
+<div class="goal2"><p>本堂的核心不是背 can / may / must / should 的中文意思，而是建立<strong>語氣系統</strong>：助動詞不是動作本身，而是說話者對動作的態度。學生要學會看到空格，先問「這句話的語氣是什麼」，再判斷選哪個助動詞、動詞要什麼形式。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>⚠️ 份量提醒：建議拆成 2–3 次上課</div><div class="bb">
+<div class="tip"><p><strong>8 個文法小節 + 45 題練習，份量很大。</strong>建議拆法：<br>第一次：基本系統 + 語氣分類 + 客氣要求 + Would you mind + Preview Test（3題）+ 課本練習（9題）<br>第二次：必須性 + 建議 + 偏好 + CH6 總複習 Q1–13<br>第三次：新增練習題 1–20 + 總整理</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>八大文法小節總覽</div><div class="bb">
+<table class="tmtable">
+<tr><th>小節</th><th>內容</th></tr>
+<tr><td>1</td><td>助動詞基本系統：後接原形動詞、本身不因主詞變化、have to/ought to/had better 特殊組合</td></tr>
+<tr><td>2</td><td>六大語氣分類 + 助動詞控制「說話者態度」的深化觀念</td></tr>
+<tr><td>3</td><td>客氣要求：May I / Could I / Can I（自己）、Would you / Could you / Can you（請別人）</td></tr>
+<tr><td>4</td><td>Would you mind if + 過去式（我做）／Would you mind + V-ing（你做）</td></tr>
+<tr><td>5</td><td>必須性：must / have to / have got to，must not（禁止）vs don't have to（不需要）</td></tr>
+<tr><td>6</td><td>建議：should / ought to / had better / could，suggest that + 原形，should/could/must/may-might have + p.p.</td></tr>
+<tr><td>7</td><td>偏好：would rather V than V / prefer N to N / prefer V-ing to V-ing / prefer to V rather than V</td></tr>
+<tr><td>8</td><td>助動詞解題五步驟（Part 5 應用系統）</td></tr>
+</table>
+</div></div>
+</div>
+
+<div class="ls" id="s-g1">
+<div class="sh"><div class="sn">1</div><div class="st">助動詞基本系統：先建立總表</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>開場逐字稿</div><div class="bb">
+<div class="script">今天我們上 Chapter 6：Auxiliary Verbs，中文叫助動詞。你以前可能把助動詞想成 can、will、must、should 這些單字，背中文意思就好。但 TOEIC 考助動詞，真正考的是三件事：<br><br><em>第一，助動詞後面的動詞形式</em>——can 後面接原形，是 can finish，不是 can finishes，也不是 can to finish。<br><em>第二，助動詞表達的語氣</em>——Can you、Could you、Would you、May I 的禮貌程度不同，TOEIC 很愛考商業場合哪個語氣最自然。<br><em>第三，助動詞和句意的關係</em>——must 必須、may 可能、should 應該、would rather 寧願。做題不能只看中文，要先問：這句話在表達可能、必須、建議、請求，還是偏好？<br><br><strong>助動詞不是主要動作，真正的動作通常在後面。助動詞的工作是告訴我們：說話者對這個動作的態度是什麼。</strong></div>
+<div class="formula">主詞 + 助動詞（語氣） + 原形動詞（真正動作）</div>
+<div class="es">The employee <strong>should</strong> <em>report</em> the problem. → should 是語氣（應該），report 才是真正動作（回報）。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心規則 1｜情態助動詞後面接原形動詞</div><div class="bb">
+<div class="formula">can / could / may / might / must / should / shall / will / would + 原形動詞</div>
+<table class="tbl"><tr><th>例句</th><th>中文</th></tr>
+<tr><td>I can finish the project on time.</td><td>我可以準時完成專案。</td></tr>
+<tr><td>She should attend the meeting.</td><td>她應該參加會議。</td></tr>
+<tr><td>They might arrive late.</td><td>他們可能會晚到。</td></tr>
+<tr><td>The manager will review the report tomorrow.</td><td>經理明天會審閱報告。</td></tr>
+</table>
+<div class="corr"><p>助動詞後面不加 to：不說 should to finish，不說 can helps，不說 may is late。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心規則 2｜情態助動詞本身不因主詞變化</div><div class="bb">
+<span class="tw">He cans finish the work. / She mays come later. / The manager shoulds review the report.</span>
+<span class="trx">He can finish the work. / She may come later. / The manager should review the report.</span>
+<div class="tip"><p>can、may、should、must 這些情態助動詞本身不加 s，就算主詞是 he、she、the manager 也一樣。要注意的是 <code>have to</code>，因為它比較像一般動詞片語，所以會有 has to、had to 的變化。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>核心規則 3｜have to / ought to / had better 特別組合</div><div class="bb">
+<table class="tbl">
+<tr><th>結構</th><th>後面接什麼</th><th>意思</th></tr>
+<tr><td>have to + V</td><td>原形動詞</td><td>必須；不得不</td></tr>
+<tr><td>has to + V</td><td>原形動詞</td><td>第三人稱單數的必須</td></tr>
+<tr><td>had to + V</td><td>原形動詞</td><td>過去不得不</td></tr>
+<tr><td>ought to + V</td><td>原形動詞</td><td>應該</td></tr>
+<tr><td>had better + V</td><td>原形動詞（不加 to）</td><td>最好；不然可能有後果</td></tr>
+</table>
+<div class="ask"><p>have to 和 ought to 裡面都有 to，所以後面接原形動詞；那 had better 後面加不加 to？</p><div class="al">答案</div><p class="ap">不加。You had better leave now.（不是 had better to leave）</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-g2">
+<div class="sh"><div class="sn">2</div><div class="st">六大語氣分類 + 語氣本質</div><div class="stm">⏱ 6 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>六大語氣分類表</div><div class="bb">
+<table class="tbl">
+<tr><th>功能</th><th>常見助動詞 / 結構</th></tr>
+<tr><td>能力 / 可能</td><td>can, could, may, might</td></tr>
+<tr><td>客氣請求</td><td>May I, Could I, Would you, Could you, Can you</td></tr>
+<tr><td>必須 / 義務</td><td>must, have to, have got to</td></tr>
+<tr><td>禁止</td><td>must not</td></tr>
+<tr><td>建議</td><td>should, ought to, had better, could</td></tr>
+<tr><td>偏好</td><td>would rather, prefer</td></tr>
+</table>
+<div class="script">今天不要把助動詞當成一堆孤立單字，要放進語氣分類。問可不可以 → can / could / may；請別人做事 → Would you / Could you；規定必須 → must / have to；建議 → should / ought to / had better；偏好 → would rather。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>深化觀念｜助動詞在控制「說話者的態度」</div><div class="bb">
+<div class="script">助動詞不是在描述動作本身，而是在描述說話者對這個動作的態度。真正的動作都是 <code>submit the report</code>，改變的是前面的助動詞，助動詞一變，語氣就變。</div>
+<table class="tbl">
+<tr><th>句子</th><th>語氣</th></tr>
+<tr><td>You can submit the report.</td><td>能力或允許</td></tr>
+<tr><td>You must submit the report.</td><td>強制</td></tr>
+<tr><td>You should submit the report.</td><td>建議</td></tr>
+<tr><td>You may submit the report.</td><td>可以／可能性</td></tr>
+<tr><td>You might submit the report.</td><td>可能，但不確定</td></tr>
+<tr><td>You had better submit the report.</td><td>強烈建議，帶一點警告</td></tr>
+</table>
+<div class="tip"><p>這就是為什麼 TOEIC 很愛考助動詞：商務英文裡語氣很重要。你是在命令對方、請求對方、建議對方，還是說一件事情可能發生？助動詞決定整句話的禮貌與準確度。</p></div>
+</div></div>
+</div>
+<div class="ls" id="s-g3">
+<div class="sh"><div class="sn">3</div><div class="st">客氣要求｜Polite Requests</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>3-1｜請求自己可不可以做某事</div><div class="bb">
+<div class="formula">May I / Could I / Can I + V...?</div>
+<table class="tbl">
+<tr><th>句型</th><th>禮貌感</th></tr>
+<tr><td>May I...?</td><td>最正式、最禮貌</td></tr>
+<tr><td>Could I...?</td><td>禮貌、自然</td></tr>
+<tr><td>Can I...?</td><td>較口語、較直接</td></tr>
+</table>
+<div class="es">May I borrow this novel for a week? 我可以借這本小說一個星期嗎？</div>
+<div class="es">Could I borrow your car for two days, please? 我可以借你的車兩天嗎？</div>
+<div class="script">May I 是最正式的，商業場合、正式場合、想要很有禮貌時可以用。Could I 很自然也很常用。Can I 沒有錯，但比較直接、口語。如果 TOEIC 題目出現 please、business meeting、customer、agenda，通常要選禮貌一點的 Would / Could / May。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>3-2｜請別人幫你做某事</div><div class="bb">
+<div class="formula">Would you / Could you / Will you + V, please?　　Can you + V?</div>
+<div class="es">Would you give me a ride home, please? 你可以載我回家嗎？</div>
+<div class="es">Could you pass around the meeting agenda? 你可以把會議議程傳給大家嗎？</div>
+<div class="script">Would you 和 Could you 都很常見也很禮貌；Can you 比較直接但不算錯；Will you 也可以用，但語氣較直接，通常加 please 比較自然。考題如果問 <code>______ you send a meeting invitation to all members, please?</code> 後面有 you、有 please，而且是請對方做事，Would you 最自然。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>3-3｜May I 和 Would you 的核心差別</div><div class="bb">
+<table class="tbl">
+<tr><th>句子</th><th>誰做動作？</th></tr>
+<tr><td>May I open the window?</td><td>我做</td></tr>
+<tr><td>Would you open the window?</td><td>你做（請你）</td></tr>
+</table>
+<div class="ask"><p>______ you send me the report? 主詞是 you，動作是 send，這是請你寄，還是問我可不可以？</p><div class="al">答案</div><p class="ap">請你寄 → 不能用 May，要用 Would 或 Could。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>3-4｜客氣要求常見陷阱</div><div class="bb">
+<span class="tw">May you send me the report?</span>
+<span class="trx">Could you send me the report? / Would you send me the report?</span>
+<div class="corr"><p>May I 是「我可不可以」；但請對方做事時不說 May you，要說 Could you 或 Would you。</p></div>
+<div class="tbl" style="margin-top:10px"></div>
+<table class="tbl">
+<tr><th>句子</th><th>功能</th></tr>
+<tr><td>Do you send a meeting invitation?</td><td>問對方是否做這件事（一般問句）</td></tr>
+<tr><td>Would you send a meeting invitation?</td><td>請對方做這件事（禮貌請求）</td></tr>
+</table>
+<div class="tip"><p>Do you 是問事實，Would you 是請求，意思完全不同。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-g4">
+<div class="sh"><div class="sn">4</div><div class="st">請求允准｜Would you mind...?</div><div class="stm">⏱ 10 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>本節重點：學生最容易搞錯「誰做動作」</div><div class="bb">
+<div class="script">這一節非常重要，因為學生很容易搞錯 Would you mind 句型裡到底是誰在做動作。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>4-1｜Would you mind if + 主詞 + 過去式？（我做）</div><div class="bb">
+<div class="formula">Would you mind if + S + 過去式...?　　= 你介意我……嗎？</div>
+<div class="es">Would you mind if I sat with you here? 你介意我坐在你旁邊嗎？</div>
+<div class="es">Would you mind if I turned on the air conditioner? 你介意我開冷氣嗎？</div>
+<div class="es">Would you mind if I left early today? 你介意我今天早點離開嗎？</div>
+<div class="script">這裡很特別：if 後面常用過去式，但意思不是過去，而是在問現在或未來——你介意我等一下這樣做嗎？英文用過去式只是讓語氣變委婉，不是真的在講過去。這是禮貌距離，不是時間過去。</div>
+<div class="tip"><p>口語中也有人用現在式（Would you mind if we sit with you here?），但 TOEIC 題目若選項同時有過去式和現在式，通常考正式語法，選過去式。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>4-2｜Would you mind + V-ing？（你做）</div><div class="bb">
+<div class="formula">Would you mind + V-ing...?　　= 你介意做……嗎？（其實是客氣請你幫忙）</div>
+<div class="es">Would you mind closing the door? 你介意把門關上嗎？</div>
+<div class="es">Would you mind repeating your question, please? 你介意再說一次你的問題嗎？</div>
+<span class="tw">Would you mind close the door? / Would you mind to close the door?</span>
+<span class="trx">Would you mind closing the door?</span>
+<div class="corr"><p>mind 後面直接接動詞時，一定要用 V-ing，不接原形也不接 to V。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>4-3｜兩個 Would you mind 的差別</div><div class="bb">
+<table class="tbl">
+<tr><th>句型</th><th>誰做動作？</th><th>例句</th></tr>
+<tr><td>Would you mind if I closed the window?</td><td>我做</td><td>我關窗，你介意嗎？</td></tr>
+<tr><td>Would you mind closing the window?</td><td>你做</td><td>你可以幫我關窗嗎？</td></tr>
+</table>
+<div class="ask"><p>我想開冷氣，要問對方介不介意我開，怎麼說？我想請對方開冷氣，又怎麼說？</p><div class="al">參考回答</div><p class="ap">Would you mind if I turned on the air conditioner? ／ Would you mind turning on the air conditioner?</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>4-4｜回答 Would you mind 的陷阱</div><div class="bb">
+<div class="es">Would you mind if I opened the window? 你介意我開窗嗎？</div>
+<table class="tbl">
+<tr><th>回答</th><th>意思</th></tr>
+<tr><td>No, not at all.</td><td>不會，我不介意。你可以開。</td></tr>
+<tr><td>Yes, I do.</td><td>會，我介意。請不要開。</td></tr>
+</table>
+<div class="corr"><p>中文學生很容易搞錯：對方問「你介意嗎？」你說 No 不是拒絕，而是「不介意」；你說 Yes 反而是「介意」。這在口說和閱讀都很重要。</p></div>
+</div></div>
+</div>
+<div class="ls" id="s-g5">
+<div class="sh"><div class="sn">5</div><div class="st">描述必須性｜Necessity</div><div class="stm">⏱ 8 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>5-1｜must / have to / have got to</div><div class="bb">
+<div class="es">All candidates must submit an application. 所有候選人都必須提交申請書。</div>
+<div class="es">I have to finish the sales report by this Friday. 我必須在本週五前完成銷售報告。</div>
+<div class="es">I have got to visit a customer tomorrow morning. 我明天早上必須拜訪一位客戶。</div>
+<div class="script">三個都可以表示「必須」。TOEIC 裡 must 常出現在規定、公告、正式要求；have to 比較一般、口語也常用；have got to 比較口語，意思也是必須。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>5-2｜must 和 have to 的細微差別</div><div class="bb">
+<table class="tbl">
+<tr><th>助動詞</th><th>常見語感</th></tr>
+<tr><td>must</td><td>說話者認為很必要；規定、命令、強烈要求</td></tr>
+<tr><td>have to</td><td>外在情況造成的必要；不得不</td></tr>
+<tr><td>have got to</td><td>口語的 have to</td></tr>
+</table>
+<div class="tip"><p>對 A2-B1 學生不需要分太細：正式規定/公告/公司政策 → must 很常見；個人情況造成不得不 → have to 很自然。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>5-3｜否定用法：must not ≠ don't have to（本章最重要陷阱）</div><div class="bb">
+<table class="tbl">
+<tr><th>結構</th><th>意思</th></tr>
+<tr><td>must not + V</td><td>禁止；不准</td></tr>
+<tr><td>don't have to + V</td><td>不需要；不必</td></tr>
+</table>
+<div class="es">You must not share company information. 你不可以分享公司資訊。（禁止）</div>
+<div class="es">You don't have to worry. 你不需要擔心。（沒有必要，不是禁止你擔心）</div>
+<div class="corr"><p>You must not leave. = 你不准離開。　　You don't have to leave. = 你不用離開。一個是禁止，一個是沒有必要——中文都可能翻成「不必」，但英文意思差很多。</p></div>
+<div class="ask"><p>公司規定：你不可以把密碼告訴別人，要用哪個？如果我說：你不用今天交報告，明天也可以，要用哪個？</p><div class="al">答案</div><p class="ap">前者 must not（禁止）；後者 don't have to（沒有必要）。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>5-4｜must + 原形動詞，不加 to</div><div class="bb">
+<span class="tw">All candidates must to submit an application.</span>
+<span class="trx">All candidates must submit an application.</span>
+<div class="tip"><p>must 後面直接接原形動詞，不加 to。should、can、may、might 也一樣。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>5-5｜必須性的被動語態</div><div class="bb">
+<div class="formula">must / should / ought to + be + p.p.</div>
+<div class="es">The report must be submitted by Friday. 報告必須在星期五前提交。</div>
+<div class="es">The action should be taken immediately. 這項行動應該立刻被採取。</div>
+<div class="script">如果主詞是事情不是人，而且後面有被動意思，就會出現助動詞加被動：should be taken、must be submitted、ought to be reviewed。看到空格前有 should，後面又是 action 這種被執行的東西，就要想到被動 be + p.p.。</div>
+<table class="tbl">
+<tr><th>主動</th><th>被動</th></tr>
+<tr><td>Employees should submit the report.（employees 是提交的人）</td><td>The report should be submitted by employees.（report 是被提交的東西）</td></tr>
+</table>
+</div></div>
+</div>
+<div class="ls" id="s-g6">
+<div class="sh"><div class="sn">6</div><div class="st">提供建議｜Advice and Suggestions</div><div class="stm">⏱ 12 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>6-1｜should / ought to：一般建議</div><div class="bb">
+<div class="es">You should listen to suggestions from your supervisors. 你應該聽主管給你的建議。</div>
+<div class="es">You ought to follow the company's policies. 你應該遵守公司的規定。</div>
+<div class="script">should 和 ought to 都是「應該」。should 比較常見，ought to 比較正式。考題中如果看到 ought，後面常常已經有 to，所以答案可能只需要選 ought，不要再加別的東西。</div>
+<table class="tbl">
+<tr><th>題型</th><th>答案</th><th>原因</th></tr>
+<tr><td>Customers ought ______ the service center. (call/to call/calling/called)</td><td>to call</td><td>ought 後面要有 to</td></tr>
+<tr><td>Customers ______ to call the service center. (should/ought/can/must)</td><td>ought</td><td>後面已有 to call，should 不能再加 to</td></tr>
+</table>
+<div class="tip"><p>TOEIC 不是問 ought 是什麼意思，而是問你有沒有看到後面的 to。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>6-2｜had better：強烈建議，帶有警告</div><div class="bb">
+<div class="formula">had better + 原形動詞　　= 最好……，不然可能有不好的結果</div>
+<div class="es">You had better get moving if you want to catch the train. 如果你想趕上火車，最好趕快動身。</div>
+<span class="tw">You had better to leave now.</span>
+<span class="trx">You had better leave now.</span>
+<div class="corr"><p>had better 看起來像過去式 had，但它是固定片語，後面直接接原形動詞，不接 to。語氣比 should 強：You should leave now.（應該）vs You had better leave now.（最好，不然可能有問題）。</p></div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>6-3｜could：溫和建議 / 可行性</div><div class="bb">
+<div class="es">You could ask your supervisor to provide more sales leads. 你可以要求主管提供更多客戶名單。</div>
+<div class="tip"><p>You should ask... 是你應該去問；You could ask... 是你可以考慮問，比較柔和。could 不只表示過去能力，也可用來提出委婉建議——有時不是過去式，而是禮貌、委婉、可能性。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>6-4｜suggest that + 主詞 + 原形動詞（TOEIC 高頻考點）</div><div class="bb">
+<div class="formula">suggest that + S + 原形動詞（假設語氣，不論主詞單複數）</div>
+<div class="es">I suggest that George establish his own consulting firm. 我建議 George 成立自己的顧問公司。</div>
+<div class="es">Mr. Chen suggests that Jack take more advanced training courses. Chen 先生建議 Jack 修更多進階訓練課程。</div>
+<div class="script">即使主詞是 George、Jack，也不是 establishes、takes，而是 establish、take。這叫假設語氣，但學生不用背難的名詞，只要記：suggest that 後面，動詞用原形。</div>
+<div class="tip"><p>同類動詞：recommend, request, require, insist, demand。例：The policy requires that all employees wear ID badges. 如果 that 子句裡是被動，也用 be + p.p.：The client requested that the order be delivered by Friday.（不是 is delivered，也不是 was delivered）</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>6-5｜should have + p.p.：過去應該做但沒做</div><div class="bb">
+<div class="formula">should have + p.p.　　= 本來應該做，但實際上沒有做</div>
+<div class="es">The employee should have reported the problem sooner. 這名員工本來應該更早回報問題。</div>
+<div class="es">You should not have told my secrets. 你本來不應該說出我的秘密。</div>
+<div class="script">should + V 是現在或未來的建議；should have + p.p. 是回頭看過去，表示「當時應該做，但沒有做」，帶有責備或後悔。You should report the problem.（現在/未來）vs You should have reported the problem.（當時應該已經回報，但你沒有）。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>6-6｜could have + p.p.：過去本來可能可以</div><div class="bb">
+<div class="formula">could have + p.p.　　= 本來可以；本來可能已經……</div>
+<div class="es">The IT Department could have helped him. 資訊部門本來可以幫助他。（可惜沒有）</div>
+<div class="es">We could have finished the project earlier. 我們本來可以更早完成專案。</div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>6-7｜must have + p.p.：過去一定是……（推測，不是必須）</div><div class="bb">
+<div class="formula">must have + p.p.　　= 對過去的強烈推測，「一定已經……」</div>
+<div class="es">She must have left already. 她一定已經離開了。</div>
+<div class="es">He must have forgotten the appointment. 他一定是忘了這個預約。</div>
+<div class="corr"><p>must have left 不是「必須離開」，是「一定已經離開」，是在推測過去，不要翻成必須。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>6-8｜may / might have + p.p.：過去可能已經……</div><div class="bb">
+<div class="formula">may / might have + p.p.　　= 過去可能已經……（might 比 may 更不確定）</div>
+<div class="es">The customer may have received the wrong item. 顧客可能已經收到錯的商品。</div>
+<div class="es">The assistant might have sent the file to the wrong address. 助理可能把檔案寄到錯的地址了。</div>
+<div class="tip"><p>這不是「現在可能收到」，而是「過去已經發生了，只是我們不確定」。</p></div>
+</div></div>
+</div>
+<div class="ls" id="s-g7">
+<div class="sh"><div class="sn">7</div><div class="st">描述偏好｜Preference</div><div class="stm">⏱ 6 min</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>7-1｜would rather V than V</div><div class="bb">
+<div class="formula">would rather + 原形動詞 + than + 原形動詞　　= 寧願做 A，而不願做 B</div>
+<div class="es">I would rather visit customers than stay in the office. 我寧願拜訪客戶，也不願待在辦公室。</div>
+<div class="es">I'd rather be lying on a beach in Guam than sitting at home now. 我現在寧願躺在關島的海灘上，也不想坐在家裡。</div>
+<div class="script">would rather 後面直接接原形動詞，不加 to：would rather visit，不是 would rather to visit。如果前後 be 動詞一樣，than 後面的 be 可以省略：I'd rather be lying on a beach than sitting at home。</div>
+</div></div>
+<div class="block"><div class="bh am"><span class="d"></span>7-2｜prefer 的三種用法</div><div class="bb">
+<table class="tbl">
+<tr><th>用法</th><th>例句</th></tr>
+<tr><td>prefer N to N</td><td>I prefer coffee to tea. 我喜歡咖啡勝過茶。</td></tr>
+<tr><td>prefer V-ing to V-ing</td><td>I prefer reading novels to painting pictures. 我喜歡讀小說勝過畫畫。</td></tr>
+<tr><td>prefer to V rather than V</td><td>I prefer to visit customers rather than join the meeting. 我寧願拜訪客戶，而不想參加會議。</td></tr>
+</table>
+<div class="tip"><p>would rather 後面接原形動詞。prefer A to B 的 to 是介系詞，後面接動詞要用 V-ing；prefer to V rather than V 的第一個 to 是不定詞，後面用原形。</p></div>
+</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>7-3｜would rather 和 prefer 轉換</div><div class="bb">
+<div class="es">I would rather visit customers than join the meeting.<br>= I prefer to visit customers rather than join the meeting.<br>= I prefer visiting customers to joining the meeting.</div>
+<div class="tip"><p>做題不要只看中文「寧願」，要看空格前面是 would rather 還是 prefer：would rather 後面找原形動詞；prefer to V 後面接 rather than V；prefer V-ing to V-ing 的 to 是介系詞。</p></div>
+</div></div>
+</div>
+
+<div class="ls" id="s-strategy">
+<div class="sh"><div class="sn">8</div><div class="st">本章 TOEIC 解題系統</div><div class="stm">⏱ 5 min</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>助動詞五步驟</div><div class="bb">
+<div class="script">Chapter 6 的 Part 5 題目，看到助動詞選項時，不要先背中文，要先跑五個問題。</div>
+<table class="tbl">
+<tr><th style="width:60px">步驟</th><th>問題</th></tr>
+<tr><td>Step 1</td><td>空格後面是什麼？如果是原形動詞，可能是 can/could/may/might/must/should/will/would/had better</td></tr>
+<tr><td>Step 2</td><td>句子是請求、允許、必要、建議、偏好，還是可能？</td></tr>
+<tr><td>Step 3</td><td>有沒有固定句型？</td></tr>
+<tr><td>Step 4</td><td>注意否定意思：must not = 禁止；don't have to = 不需要</td></tr>
+<tr><td>Step 5</td><td>如果主詞是事情，注意被動：should be taken / must be submitted</td></tr>
+</table>
+<table class="tbl mt12">
+<tr><th>語氣</th><th>常見答案</th></tr>
+<tr><td>客氣請求</td><td>Would / Could / May</td></tr>
+<tr><td>允許</td><td>May / Can / Would you mind if</td></tr>
+<tr><td>必須</td><td>must / have to</td></tr>
+<tr><td>禁止</td><td>must not</td></tr>
+<tr><td>不需要</td><td>don't have to</td></tr>
+<tr><td>建議</td><td>should / ought to / had better</td></tr>
+<tr><td>偏好</td><td>would rather / prefer</td></tr>
+<tr><td>可能</td><td>may / might / could</td></tr>
+</table>
+<table class="tbl mt12">
+<tr><th>固定句型</th><th>必背</th></tr>
+<tr><td>Would you mind + V-ing?</td><td>請你做某事</td></tr>
+<tr><td>Would you mind if + S + 過去式?</td><td>你介意我做某事嗎</td></tr>
+<tr><td>had better + V</td><td>最好做某事</td></tr>
+<tr><td>ought to + V</td><td>應該做某事</td></tr>
+<tr><td>would rather + V than V</td><td>寧願 A 而不願 B</td></tr>
+<tr><td>suggest that + S + V原</td><td>建議某人做某事</td></tr>
+<tr><td>should have + p.p.</td><td>本來應該做但沒做</td></tr>
+<tr><td>could have + p.p.</td><td>本來可以 / 可能已經</td></tr>
+<tr><td>must have + p.p.</td><td>過去一定是</td></tr>
+<tr><td>may / might have + p.p.</td><td>過去可能已經</td></tr>
+</table>
+</div></div>
+</div>
+<div class="ls" id="s-q-preview">
+<div class="sh"><div class="sn">P</div><div class="st">Preview Test 1–3</div></div>
+</div>
+
+<div class="qb" id="qpv1">
+<div class="qh"><span class="qn">Preview 1</span><span class="qt">Would you mind + V-ing</span></div>
+<div class="qbody">
+<div class="qsen">______ you mind handing me that piece of paper?</div>
+<div class="qzh">你介意把那張紙遞給我嗎？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>Would</div>
+<div class="qo"><span class="ol">B</span>Can</div>
+<div class="qo"><span class="ol">C</span>Will</div>
+<div class="qo"><span class="ol">D</span>Shall</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 mind，後面又是 handing，要想到固定句型 Would you mind + V-ing?，這是非常客氣的請求。</p><div class="al">答案</div><p class="ap">Would（A）— Would you mind handing me...? = 你介意幫我……嗎？</p></div>
+<div class="corr mt12"><p>Can you mind / Will you mind / Shall you mind 都不成立，mind 的請求句型固定用 Would。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">hand (v.)</span><span class="vd">遞給</span>
+<span class="vw">hand sb sth</span><span class="vd">遞給某人某物</span>
+<span class="vw">piece of paper</span><span class="vd">一張紙</span>
+<span class="vw">Would you mind + V-ing</span><span class="vd">你介意做……嗎</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpv2">
+<div class="qh"><span class="qn">Preview 2</span><span class="qt">suggest that + 原形</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">I suggest that George ______ his own consulting firm.</div>
+<div class="qzh">我建議 George 成立自己的顧問公司。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>to establish</div>
+<div class="qo"><span class="ol">B</span>establishing</div>
+<div class="qo ok"><span class="ol">C</span>establish</div>
+<div class="qo"><span class="ol">D</span>establishes</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>不要看到 George 就自動加 s。前面有 suggest that，正式英文中後面用原形動詞表示建議。</p><div class="al">答案</div><p class="ap">establish（C）— suggest that + S + 原形動詞</p></div>
+<div class="corr mt12"><p>to establish：that 子句不能直接放 to V 當主要動詞；establishing：不是完整謂語；establishes：一般現在式，但 suggest that 結構用原形。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">suggest that S+V原</span><span class="vd">建議……（假設語氣）</span>
+<span class="vw">consulting firm</span><span class="vd">顧問公司</span>
+</div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qpv3">
+<div class="qh"><span class="qn">Preview 3</span><span class="qt">may 表可能性</span></div>
+<div class="qbody">
+<div class="qsen">A bad decision ______ easily lead to project failure.</div>
+<div class="qzh">一個錯誤的決定可能很容易導致專案失敗。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>does</div>
+<div class="qo ok"><span class="ol">B</span>may</div>
+<div class="qo"><span class="ol">C</span>shall</div>
+<div class="qo"><span class="ol">D</span>must</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>一個壞決定會不會一定導致專案失敗？不一定，是有可能導致失敗。</p><div class="al">答案</div><p class="ap">may（B）— may + V = 可能會……</p></div>
+<div class="corr mt12"><p>does lead 語氣太肯定（確實會導致）；shall lead 不自然；must lead 太絕對（一定會）。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg">
+<span class="vw">lead to</span><span class="vd">導致</span>
+<span class="vw">project failure</span><span class="vd">專案失敗</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-q-textbook">
+<div class="sh"><div class="sn">T</div><div class="st">課本練習｜9 題</div></div>
+</div>
+
+<div class="qb" id="qtb1">
+<div class="qh"><span class="qn">課本 1</span><span class="qt">客氣要求</span></div>
+<div class="qbody">
+<div class="qsen">______ you send a meeting invitation to all members, please?</div>
+<div class="qzh">你可以寄會議邀請給所有成員嗎？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>May</div>
+<div class="qo"><span class="ol">B</span>Must</div>
+<div class="qo ok"><span class="ol">C</span>Would</div>
+<div class="qo"><span class="ol">D</span>Do</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這題是請對方做事，不是問我可不可以做，所以不能用 May I 的 May。句子是 you send，加上 please 語氣很禮貌。</p><div class="al">答案</div><p class="ap">Would（C）— Would you send..., please? = 請你寄……好嗎？</p></div>
+<div class="corr mt12"><p>May you 不自然；Must you 變成「你必須嗎？」語氣怪；Do you send 是問事實，不是請求。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">meeting invitation</span><span class="vd">會議邀請</span><span class="vw">send a meeting invitation</span><span class="vd">寄送會議邀請</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qtb2">
+<div class="qh"><span class="qn">課本 2</span><span class="qt">請求幫忙</span></div>
+<div class="qbody">
+<div class="qsen">______ you make all meeting attendees a copy of this agenda, please?</div>
+<div class="qzh">你可以為所有與會者影印一份議程嗎？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>Can</div>
+<div class="qo"><span class="ol">B</span>Should</div>
+<div class="qo"><span class="ol">C</span>Must</div>
+<div class="qo"><span class="ol">D</span>Do</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 you make，且有 please，這是在請對方幫忙做事。選項裡最自然的是 Can you make...?</p><div class="al">答案</div><p class="ap">Can（A）— Can you make...? = 你可以幫忙做……嗎？</p></div>
+<div class="corr mt12"><p>Should you make...? 是問應不應該；Must you make...? 語氣不自然；Do you make...? 是一般事實問句。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">attendee</span><span class="vd">與會者</span><span class="vw">agenda</span><span class="vd">議程</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qtb3">
+<div class="qh"><span class="qn">課本 3</span><span class="qt">Would you mind + V-ing</span></div>
+<div class="qbody">
+<div class="qsen">Would you mind ______ 10 minutes discussing the market research issue?</div>
+<div class="qzh">你介意花 10 分鐘討論市場研究的問題嗎？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>to spend</div>
+<div class="qo ok"><span class="ol">B</span>spending</div>
+<div class="qo"><span class="ol">C</span>spends</div>
+<div class="qo"><span class="ol">D</span>spent</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 Would you mind，先不要翻中文，直接問：mind 後面動詞要什麼形式？</p><div class="al">答案</div><p class="ap">spending（B）— mind 後接 V-ing。</p></div>
+<div class="corr mt12"><p>to spend：mind 後不接 to V；spends：三單，錯；spent：過去式，錯。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">spend time V-ing</span><span class="vd">花時間做某事</span><span class="vw">market research</span><span class="vd">市場研究</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qtb4">
+<div class="qh"><span class="qn">課本 4</span><span class="qt">must 表必要性</span></div>
+<div class="qbody">
+<div class="qsen">All beings ______ have oxygen in order to survive.</div>
+<div class="qzh">所有生物都必須有氧氣才能存活。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>may</div>
+<div class="qo"><span class="ol">B</span>will</div>
+<div class="qo ok"><span class="ol">C</span>must</div>
+<div class="qo"><span class="ol">D</span>better</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>這不是可能，不是未來，而是生存的必要條件。</p><div class="al">答案</div><p class="ap">must（C）— must + V = 必須……</p></div>
+<div class="corr mt12"><p>may = 可能，太弱；will = 將會，不表必要；better 不能單獨當助動詞，要 had better。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">being</span><span class="vd">生物；存在物</span><span class="vw">survive</span><span class="vd">存活</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qtb5">
+<div class="qh"><span class="qn">課本 5</span><span class="qt">should 表建議/職責</span></div>
+<div class="qbody">
+<div class="qsen">As a sales representative, you ______ make as many cold calls as possible.</div>
+<div class="qzh">身為業務代表，你應該盡可能多打陌生開發電話。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>does</div>
+<div class="qo ok"><span class="ol">B</span>should</div>
+<div class="qo"><span class="ol">C</span>may</div>
+<div class="qo"><span class="ol">D</span>are</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>身為 sales representative，你應該做什麼？make as many cold calls as possible。</p><div class="al">答案</div><p class="ap">should（B）— should + V = 應該做……</p></div>
+<div class="corr mt12"><p>does make / are make 結構錯誤；may make 太弱，只表可能。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">sales representative</span><span class="vd">業務代表</span><span class="vw">cold call</span><span class="vd">陌生開發電話</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qtb6">
+<div class="qh"><span class="qn">課本 6</span><span class="qt">suggest that + 原形</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Mr. Chen suggests that Jack ______ more advanced training courses.</div>
+<div class="qzh">Chen 先生建議 Jack 修更多進階訓練課程。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>take</div>
+<div class="qo"><span class="ol">B</span>taking</div>
+<div class="qo"><span class="ol">C</span>took</div>
+<div class="qo"><span class="ol">D</span>to take</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>跟 Preview 2 同一個文法：suggest that 後面用原形動詞，Jack 是第三人稱單數也不加 s。</p><div class="al">答案</div><p class="ap">take（A）</p></div>
+<div class="corr mt12"><p>taking 不是完整謂語；took 過去式不符建議句型；to take 不能直接當 that 子句主要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">advanced</span><span class="vd">進階的</span><span class="vw">training course</span><span class="vd">訓練課程</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qtb7">
+<div class="qh"><span class="qn">課本 7</span><span class="qt">should + 原形（混合陷阱）</span></div>
+<div class="qbody">
+<div class="qsen">The current strategy is not working, so I think we ______ try a different approach.</div>
+<div class="qzh">目前的策略沒有效，所以我認為我們應該嘗試不同的方法。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>should</div>
+<div class="qo"><span class="ol">B</span>must to</div>
+<div class="qo"><span class="ol">C</span>should better</div>
+<div class="qo"><span class="ol">D</span>ought need</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>句意是提出建議：策略不行，應該試別的方法。should 後面直接接 try。</p><div class="al">答案</div><p class="ap">should（A）</p></div>
+<div class="corr mt12"><p>must to 錯，must 後不加 to；should better 是混合錯誤（應為 had better 或 should）；ought need 不成立。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">strategy</span><span class="vd">策略</span><span class="vw">approach</span><span class="vd">方法；途徑</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qtb8">
+<div class="qh"><span class="qn">課本 8</span><span class="qt">would rather V than V</span></div>
+<div class="qbody">
+<div class="qsen">Jackie would ______ solve the problem by himself than consult his supervisor for advice.</div>
+<div class="qzh">Jackie 寧願自己解決問題，也不願向主管請教。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>rather</div>
+<div class="qo"><span class="ol">B</span>prefer</div>
+<div class="qo"><span class="ol">C</span>than</div>
+<div class="qo"><span class="ol">D</span>rather to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 would，後面又有 than，要想到 would rather A than B。would rather 後面直接接 solve，不加 to。</p><div class="al">答案</div><p class="ap">rather（A）</p></div>
+<div class="corr mt12"><p>prefer 要用 prefer to solve rather than consult 或 prefer solving to consulting；than 不能直接放在 would 後；rather to 錯，would rather 後不加 to。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">consult</span><span class="vd">諮詢；請教</span><span class="vw">supervisor</span><span class="vd">主管</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qtb9">
+<div class="qh"><span class="qn">課本 9</span><span class="qt">prefer to V rather than V</span></div>
+<div class="qbody">
+<div class="qsen">I prefer to read novels ______ paint pictures.</div>
+<div class="qzh">我比較喜歡讀小說，而不是畫畫。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>to</div>
+<div class="qo ok"><span class="ol">B</span>rather than</div>
+<div class="qo"><span class="ol">C</span>however</div>
+<div class="qo"><span class="ol">D</span>for</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前面是 prefer to read，若 prefer 後面已用 to V，後面常接 rather than V。</p><div class="al">答案</div><p class="ap">rather than（B）— prefer to read novels rather than paint pictures</p></div>
+<div class="corr mt12"><p>to 可用於 prefer V-ing to V-ing，但原句是 prefer to read，結構不同；however 語意不合；for 不合結構。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">novel</span><span class="vd">小說</span><span class="vw">paint pictures</span><span class="vd">畫畫</span></div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-q-review">
+<div class="sh"><div class="sn">R</div><div class="st">CH6 總複習例題｜Q1–Q13</div></div>
+</div>
+
+<div class="qb" id="qrv1">
+<div class="qh"><span class="qn">Q1</span><span class="qt">should not have + p.p.</span></div>
+<div class="qbody">
+<div class="qsen">I ______ told you my innermost secrets.</div>
+<div class="qzh">我本來不應該告訴你我內心最深處的秘密。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>shouldn't have</div>
+<div class="qo"><span class="ol">B</span>would need to</div>
+<div class="qo"><span class="ol">C</span>must</div>
+<div class="qo"><span class="ol">D</span>may</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>後面是 told，過去分詞。要表達「本來不應該做，但做了」，用 shouldn't have + p.p.。</p><div class="al">答案</div><p class="ap">shouldn't have（A）— I shouldn't have told you...</p></div>
+<div class="corr mt12"><p>would need to 後接原形動詞，不接 told；must / may 後面也要原形 tell，不能接 told。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">innermost</span><span class="vd">內心深處的</span><span class="vw">secret</span><span class="vd">秘密</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv2">
+<div class="qh"><span class="qn">Q2</span><span class="qt">had better</span></div>
+<div class="qbody">
+<div class="qsen">You ______ get up immediately, otherwise you will miss the flight.</div>
+<div class="qzh">你最好立刻起床，不然你會錯過班機。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>may</div>
+<div class="qo ok"><span class="ol">B</span>had better</div>
+<div class="qo"><span class="ol">C</span>can</div>
+<div class="qo"><span class="ol">D</span>are</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>otherwise 表示「否則」，後面說會有壞結果，前面要用帶警告語氣的助動詞。</p><div class="al">答案</div><p class="ap">had better（B）</p></div>
+<div class="corr mt12"><p>may = 可能，語氣太弱；can = 可以，不是警告；are 不能直接接 get up。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">immediately</span><span class="vd">立刻</span><span class="vw">otherwise</span><span class="vd">否則</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv3">
+<div class="qh"><span class="qn">Q3</span><span class="qt">should 表建議</span></div>
+<div class="qbody">
+<div class="qsen">I think you ______ learn more vocabulary words if you want to write well.</div>
+<div class="qzh">我認為如果你想寫得好，你應該學更多單字。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>had</div>
+<div class="qo"><span class="ol">B</span>may</div>
+<div class="qo ok"><span class="ol">C</span>should</div>
+<div class="qo"><span class="ol">D</span>are</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>I think you 後面是在給建議：如果你想寫得好，應該學更多單字。</p><div class="al">答案</div><p class="ap">should（C）</p></div>
+<div class="corr mt12"><p>had learn 不成立；may learn 太弱；are learn 結構錯誤。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">vocabulary</span><span class="vd">字彙</span><span class="vw">expand vocabulary</span><span class="vd">擴充字彙</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv4">
+<div class="qh"><span class="qn">Q4</span><span class="qt">May I 請求允許</span></div>
+<div class="qbody">
+<div class="qsen">I left my wallet in the office. ______ I borrow $100 from you, please?</div>
+<div class="qzh">我把錢包留在辦公室了。我可以跟你借 100 美元嗎？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>Must</div>
+<div class="qo"><span class="ol">B</span>Should</div>
+<div class="qo ok"><span class="ol">C</span>May</div>
+<div class="qo"><span class="ol">D</span>Will</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞是 I，在問「我可不可以借錢」，請求允許用 May I。</p><div class="al">答案</div><p class="ap">May（C）</p></div>
+<div class="corr mt12"><p>Must I borrow...? 變成我必須借嗎；Should I borrow...? 問我應不應該借；Will I borrow...? 是未來會不會借，不是請求允許。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">borrow sth from sb</span><span class="vd">向某人借某物</span><span class="vw">wallet</span><span class="vd">錢包</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv5">
+<div class="qh"><span class="qn">Q5</span><span class="qt">現在進行式陷阱（非助動詞）</span></div>
+<div class="qbody">
+<div class="qsen">He ______ currently working as a sales representative at a software company.</div>
+<div class="qzh">他目前正在一家軟體公司擔任業務代表。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>will be</div>
+<div class="qo"><span class="ol">B</span>was</div>
+<div class="qo"><span class="ol">C</span>has to</div>
+<div class="qo ok"><span class="ol">D</span>is</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>雖然在助動詞章節，但不要看到選項就亂選助動詞。後面是 currently working，現在正在工作 → 現在進行式 is working。</p><div class="al">答案</div><p class="ap">is（D）</p></div>
+<div class="corr mt12"><p>will be working 是未來進行，不符合 currently；was working 是過去進行；has to working 錯，has to 後面要原形 work。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">currently</span><span class="vd">目前</span><span class="vw">sales representative</span><span class="vd">業務代表</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv6">
+<div class="qh"><span class="qn">Q6</span><span class="qt">should + 原形</span></div>
+<div class="qbody">
+<div class="qsen">All the departments ______ carefully define their goals for the company before the monthly meeting next week.</div>
+<div class="qzh">所有部門都應該在下週月會前仔細定義公司目標。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>had</div>
+<div class="qo ok"><span class="ol">B</span>should</div>
+<div class="qo"><span class="ol">C</span>used</div>
+<div class="qo"><span class="ol">D</span>have</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 carefully define，原形動詞，句意是所有部門應該做的事。</p><div class="al">答案</div><p class="ap">should（B）</p></div>
+<div class="corr mt12"><p>had define 錯；used define 錯（used to 才接 to）；have define 錯（完成式要 have defined）。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">department</span><span class="vd">部門</span><span class="vw">define goals</span><span class="vd">定義目標</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv7">
+<div class="qh"><span class="qn">Q7</span><span class="qt">should + 原形（主動 vs 被動）</span></div>
+<div class="qbody">
+<div class="qsen">Any passenger who fails to locate his or her luggage should ______ it to the Customs service office.</div>
+<div class="qzh">任何找不到行李的乘客都應向海關服務處申報。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>be reported</div>
+<div class="qo"><span class="ol">B</span>to report</div>
+<div class="qo ok"><span class="ol">C</span>report</div>
+<div class="qo"><span class="ol">D</span>have reported</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>should 後面直接接原形動詞。主詞 passenger 是主動回報行李遺失，不是被回報。</p><div class="al">答案</div><p class="ap">report（C）</p></div>
+<div class="corr mt12"><p>be reported 被動，變成乘客被回報，語意不合；to report 錯，should 後不加 to；have reported 完成式，不合句型。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">passenger</span><span class="vd">乘客</span><span class="vw">luggage</span><span class="vd">行李（不可數）</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv8">
+<div class="qh"><span class="qn">Q8</span><span class="qt">ought to</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Customers who would like to file complaints ______ to phone our customer service center, where our consultants will be pleased to help them.</div>
+<div class="qzh">想要投訴的顧客應該打電話給我們的客服中心，我們的顧問會很樂意協助他們。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>should</div>
+<div class="qo"><span class="ol">B</span>might</div>
+<div class="qo ok"><span class="ol">C</span>ought</div>
+<div class="qo"><span class="ol">D</span>can</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面已經有 to phone。若選 should 會變成 should to phone（錯）。ought 剛好要和後面的 to 組成 ought to phone。</p><div class="al">答案</div><p class="ap">ought（C）</p></div>
+<div class="corr mt12"><p>should 後面不能接 to；might to phone / can to phone 都不成立。這題考的是「有沒有看到後面的 to」。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">file a complaint</span><span class="vd">提出投訴</span><span class="vw">customer service center</span><span class="vd">客服中心</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv9">
+<div class="qh"><span class="qn">Q9</span><span class="qt">時態一致：told → could</span></div>
+<div class="qbody">
+<div class="qsen">The director of the Personnel Department told the employee he would have seniority and ______ ask for more vacation time.</div>
+<div class="qzh">人事部門主管告訴那位員工，他會有年資，而且可以要求更多休假時間。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>could</div>
+<div class="qo"><span class="ol">B</span>could have</div>
+<div class="qo"><span class="ol">C</span>can</div>
+<div class="qo"><span class="ol">D</span>will</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前面是 told，過去式。過去的轉述裡，can 常變成 could。</p><div class="al">答案</div><p class="ap">could（A）— he could ask for more vacation time</p></div>
+<div class="corr mt12"><p>could have asked 是本來可以要求但沒做，意思不對；can 是現在式，與 told 的過去語境不一致；will 是未來式，也不合轉述時態。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">seniority</span><span class="vd">年資；資深程度</span><span class="vw">vacation time</span><span class="vd">休假時間</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv10">
+<div class="qh"><span class="qn">Q10</span><span class="qt">must 表強烈必要</span></div>
+<div class="qbody">
+<div class="qsen">I ______ insist on a revision of next year's budget before the annual sales meeting on Thursday.</div>
+<div class="qzh">我必須堅持在星期四年度銷售會議前修訂明年的預算。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>could</div>
+<div class="qo ok"><span class="ol">B</span>must</div>
+<div class="qo"><span class="ol">C</span>may</div>
+<div class="qo"><span class="ol">D</span>have</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>insist on 表示堅持，句意是「我必須堅持修改預算」，語氣很強。</p><div class="al">答案</div><p class="ap">must（B）</p></div>
+<div class="corr mt12"><p>could / may 都太弱；have 後面不能直接接 insist，要 have to insist。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">insist on</span><span class="vd">堅持</span><span class="vw">revision</span><span class="vd">修訂</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv11">
+<div class="qh"><span class="qn">Q11</span><span class="qt">will 表未來</span></div>
+<div class="qbody">
+<div class="qsen">The new software installed today ______ make our firm more productive in the future.</div>
+<div class="qzh">今天安裝的新軟體將會讓我們公司未來更有生產力。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>will</div>
+<div class="qo"><span class="ol">B</span>will have</div>
+<div class="qo"><span class="ol">C</span>might have</div>
+<div class="qo"><span class="ol">D</span>had to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>關鍵是 in the future，未來的結果用 will make。</p><div class="al">答案</div><p class="ap">will（A）</p></div>
+<div class="corr mt12"><p>will have make 錯，will have 後面要 p.p. made；might have made 是過去可能已經造成，時間不合；had to make 是過去不得不，與 in the future 不合。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">productive</span><span class="vd">有生產力的</span><span class="vw">firm</span><span class="vd">公司</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv12">
+<div class="qh"><span class="qn">Q12</span><span class="qt">should be + p.p.（被動）</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The board members could not agree on what action ______ taken.</div>
+<div class="qzh">董事會成員無法同意應該採取什麼行動。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>would have been</div>
+<div class="qo"><span class="ol">B</span>ought to have</div>
+<div class="qo ok"><span class="ol">C</span>should be</div>
+<div class="qo"><span class="ol">D</span>had to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>action 是被採取，不是自己採取，要用被動 be taken。前面表示「應該」用 should，合起來是 should be taken。</p><div class="al">答案</div><p class="ap">should be（C）</p></div>
+<div class="corr mt12"><p>would have been taken 是過去本來會被採取，語意不合；ought to have taken 少了 been，且語意變成過去本來應該採取；had to taken 結構錯誤，had to 後面要 take。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">board member</span><span class="vd">董事會成員</span><span class="vw">take action</span><span class="vd">採取行動（被動：action should be taken）</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qrv13">
+<div class="qh"><span class="qn">Q13</span><span class="qt">could have + p.p.</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The employee should have reported the problem sooner then so that the IT Department ______ helped him.</div>
+<div class="qzh">那名員工本來應該更早回報問題，這樣資訊部門本來就可以幫助他。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>could have</div>
+<div class="qo"><span class="ol">B</span>ought to</div>
+<div class="qo"><span class="ol">C</span>can</div>
+<div class="qo"><span class="ol">D</span>must</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前面是 should have reported，過去本來應該回報但沒有。後面 helped 是過去分詞，要表達「本來可以幫他」。</p><div class="al">答案</div><p class="ap">could have（A）— could have + p.p. = 過去本來可以……</p></div>
+<div class="corr mt12"><p>ought to helped 錯，ought to 後面要原形 help；can helped 錯，can 後面要原形 help；must helped 錯，must 後面要原形 help。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">sooner</span><span class="vd">更早</span><span class="vw">IT Department</span><span class="vd">資訊部門</span></div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-q-new">
+<div class="sh"><div class="sn">N</div><div class="st">新增練習題｜1–20</div></div>
+</div>
+
+<div class="qb" id="qnw1">
+<div class="qh"><span class="qn">新增 1</span><span class="qt">must 表規定</span></div>
+<div class="qbody">
+<div class="qsen">All visitors ______ wear identification badges while inside the facility.</div>
+<div class="qzh">所有訪客在設施內都必須佩戴識別證。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>may</div>
+<div class="qo ok"><span class="ol">B</span>must</div>
+<div class="qo"><span class="ol">C</span>would</div>
+<div class="qo"><span class="ol">D</span>can</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞 All visitors，後面 wear identification badges，這是設施規定。規定、義務、必須用 must。</p><div class="al">答案</div><p class="ap">must（B）</p></div>
+<div class="corr mt12"><p>may 太弱；would 不表規定；can 表能力或允許，不是強制規定。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">visitor</span><span class="vd">訪客</span><span class="vw">identification badge</span><span class="vd">識別證</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw2">
+<div class="qh"><span class="qn">新增 2</span><span class="qt">don't have to</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">You ______ submit the form today; tomorrow morning is also acceptable.</div>
+<div class="qzh">你不需要今天提交表格；明天早上也可以。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>must not</div>
+<div class="qo ok"><span class="ol">B</span>don't have to</div>
+<div class="qo"><span class="ol">C</span>had better not</div>
+<div class="qo"><span class="ol">D</span>couldn't</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>後面說 tomorrow morning is also acceptable，明天早上也可以。這不是禁止你今天交，而是你不需要今天交。</p><div class="al">答案</div><p class="ap">don't have to（B）</p></div>
+<div class="corr mt12"><p>must not = 禁止，不符合「明天也可以」的語氣；had better not = 最好不要，帶警告，不是單純不需要；couldn't = 不能，表能力或可能性，不合語意。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">submit a form</span><span class="vd">提交表格</span><span class="vw">acceptable</span><span class="vd">可接受的</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw3">
+<div class="qh"><span class="qn">新增 3</span><span class="qt">Would you mind + V-ing</span></div>
+<div class="qbody">
+<div class="qsen">Would you mind ______ the projector before the presentation begins?</div>
+<div class="qzh">你介意在簡報開始前檢查一下投影機嗎？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>check</div>
+<div class="qo"><span class="ol">B</span>to check</div>
+<div class="qo ok"><span class="ol">C</span>checking</div>
+<div class="qo"><span class="ol">D</span>checked</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 Would you mind，後面動詞要用 V-ing。這句是客氣地請對方檢查投影機。</p><div class="al">答案</div><p class="ap">checking（C）</p></div>
+<div class="corr mt12"><p>check：mind 後面不接原形；to check：mind 後面不接 to V；checked：過去式/過去分詞，不合結構。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">projector</span><span class="vd">投影機</span><span class="vw">presentation</span><span class="vd">簡報</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw4">
+<div class="qh"><span class="qn">新增 4</span><span class="qt">suggest that + 原形</span></div>
+<div class="qbody">
+<div class="qsen">The manager suggested that the team ______ the proposal before sending it to the client.</div>
+<div class="qzh">經理建議團隊在寄給客戶前修改提案。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>revises</div>
+<div class="qo ok"><span class="ol">B</span>revise</div>
+<div class="qo"><span class="ol">C</span>revising</div>
+<div class="qo"><span class="ol">D</span>to revise</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 suggested that，即使主詞是 the team，正式英文中仍用原形動詞。</p><div class="al">答案</div><p class="ap">revise（B）</p></div>
+<div class="corr mt12"><p>revises：一般現在式，不符此句型；revising：不是完整動詞；to revise：that 子句裡不能直接用 to V 當主要動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">revise</span><span class="vd">修改；修訂</span><span class="vw">proposal</span><span class="vd">提案</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw5">
+<div class="qh"><span class="qn">新增 5</span><span class="qt">must not（禁止）</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">Employees ______ share confidential information with people outside the company.</div>
+<div class="qzh">員工不得與公司外部人士分享機密資訊。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>don't have to</div>
+<div class="qo ok"><span class="ol">B</span>must not</div>
+<div class="qo"><span class="ol">C</span>may</div>
+<div class="qo"><span class="ol">D</span>would rather</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>confidential information（機密資訊）— 公司規定通常是不能外洩，這是禁止，不是沒有必要。</p><div class="al">答案</div><p class="ap">must not（B）</p></div>
+<div class="corr mt12"><p>don't have to = 不需要，不是禁止；may = 可能/可以，語意相反；would rather = 寧願，不合句型。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">confidential</span><span class="vd">機密的</span><span class="vw">outside the company</span><span class="vd">公司外部</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw6">
+<div class="qh"><span class="qn">新增 6</span><span class="qt">had better</span></div>
+<div class="qbody">
+<div class="qsen">If you want to avoid traffic, you ______ leave the office before 5 p.m.</div>
+<div class="qzh">如果你想避開交通，你最好下午五點前離開辦公室。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>had better</div>
+<div class="qo"><span class="ol">B</span>ought</div>
+<div class="qo"><span class="ol">C</span>may to</div>
+<div class="qo"><span class="ol">D</span>should to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>If you want to avoid traffic 暗示：不早點走可能會塞車。這種「最好……不然……」語氣用 had better，後面直接接 leave，不加 to。</p><div class="al">答案</div><p class="ap">had better（A）</p></div>
+<div class="corr mt12"><p>ought 後面要有 to，但本句後面直接是 leave；may to / should to 都錯，這兩個助動詞後面不加 to。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">avoid traffic</span><span class="vd">避開交通／塞車</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw7">
+<div class="qh"><span class="qn">新增 7</span><span class="qt">might have + p.p.</span></div>
+<div class="qbody">
+<div class="qsen">Ms. Parker ______ have missed the email because she replied to every other message.</div>
+<div class="qzh">Parker 女士可能漏看了那封電子郵件，因為她回覆了其他每一封訊息。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>must</div>
+<div class="qo ok"><span class="ol">B</span>might</div>
+<div class="qo"><span class="ol">C</span>should</div>
+<div class="qo"><span class="ol">D</span>will</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 have missed（助動詞+have+p.p.）。她回了其他每封信，所以可能漏看這封——是推測，不是一定。</p><div class="al">答案</div><p class="ap">might（B）— might have missed = 過去可能已經……</p></div>
+<div class="corr mt12"><p>must have missed = 一定漏看，語氣太強；should have missed = 本來應該漏看，不合語意；will have missed 未來完成式，不合語境。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">miss an email</span><span class="vd">漏看電子郵件</span><span class="vw">reply to</span><span class="vd">回覆</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw8">
+<div class="qh"><span class="qn">新增 8</span><span class="qt">should be + p.p.（被動）</span></div>
+<div class="qbody">
+<div class="qsen">The documents should ______ by the legal department before they are sent to the client.</div>
+<div class="qzh">這些文件在寄給客戶前應該由法務部門審閱。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>review</div>
+<div class="qo"><span class="ol">B</span>reviewed</div>
+<div class="qo ok"><span class="ol">C</span>be reviewed</div>
+<div class="qo"><span class="ol">D</span>reviewing</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞是 The documents，文件不會自己審閱，是被審閱。前面有 should，被動要用 should be reviewed。</p><div class="al">答案</div><p class="ap">be reviewed（C）</p></div>
+<div class="corr mt12"><p>review：主動，變成文件審閱別人；reviewed：少了 be，不能形成助動詞被動；reviewing：進行式，不合結構。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">legal department</span><span class="vd">法務部門</span><span class="vw">review documents</span><span class="vd">審閱文件</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw9">
+<div class="qh"><span class="qn">新增 9</span><span class="qt">would rather V than V</span></div>
+<div class="qbody">
+<div class="qsen">I would rather ______ the supplier directly than wait for another email.</div>
+<div class="qzh">我寧願直接聯絡供應商，也不想再等另一封電子郵件。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>contact</div>
+<div class="qo"><span class="ol">B</span>to contact</div>
+<div class="qo"><span class="ol">C</span>contacting</div>
+<div class="qo"><span class="ol">D</span>contacted</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 would rather，後面直接接原形動詞；後面 than wait 也是原形，形成平行結構。</p><div class="al">答案</div><p class="ap">contact（A）</p></div>
+<div class="corr mt12"><p>to contact：would rather 後不加 to；contacting：不是此句型；contacted：過去式，不合結構。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">supplier</span><span class="vd">供應商</span><span class="vw">contact sb directly</span><span class="vd">直接聯絡某人</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw10">
+<div class="qh"><span class="qn">新增 10</span><span class="qt">prefer V-ing to V-ing</span></div>
+<div class="qbody">
+<div class="qsen">We prefer ______ online meetings to traveling for short discussions.</div>
+<div class="qzh">比起為了短暫討論而出差，我們比較喜歡舉行線上會議。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>hold</div>
+<div class="qo ok"><span class="ol">B</span>holding</div>
+<div class="qo"><span class="ol">C</span>to hold</div>
+<div class="qo"><span class="ol">D</span>held</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>看到 prefer，後面又有 to traveling，這裡的 to 是介系詞。prefer 後面第一個動作也要用 V-ing：prefer holding... to traveling。</p><div class="al">答案</div><p class="ap">holding（B）</p></div>
+<div class="corr mt12"><p>hold：不能和後面的 to traveling 平行；to hold：prefer to V 後面通常接 rather than V，不是 to traveling；held：過去式/p.p.，不合結構。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">online meeting</span><span class="vd">線上會議</span><span class="vw">short discussion</span><span class="vd">短暫討論</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw11">
+<div class="qh"><span class="qn">新增 11</span><span class="qt">May I 請求允許</span></div>
+<div class="qbody">
+<div class="qsen">______ I ask you a few questions about your order?</div>
+<div class="qzh">我可以問您幾個關於訂單的問題嗎？</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>May</div>
+<div class="qo"><span class="ol">B</span>Would</div>
+<div class="qo"><span class="ol">C</span>Should</div>
+<div class="qo"><span class="ol">D</span>Must</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞是 I，動作是 ask，是在問「我可不可以問你問題」，正式禮貌的請求允許用 May I。</p><div class="al">答案</div><p class="ap">May（A）</p></div>
+<div class="corr mt12"><p>Would I ask...? 不自然；Should I ask...? 是我應不應該問；Must I ask...? 是我必須問嗎。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">order</span><span class="vd">訂單</span><span class="vw">place / confirm an order</span><span class="vd">下訂單 / 確認訂單</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw12">
+<div class="qh"><span class="qn">新增 12</span><span class="qt">should have + p.p.</span><span class="qs">⚠️ 教學提醒</span></div>
+<div class="qbody">
+<div class="qsen">The technician ______ have checked the machine more carefully before restarting it.</div>
+<div class="qzh">技術人員本來應該在重新啟動機器前更仔細地檢查它。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>had</div>
+<div class="qo ok"><span class="ol">B</span>should have</div>
+<div class="qo"><span class="ol">C</span>must</div>
+<div class="qo"><span class="ol">D</span>can</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>空格後面是 have checked。要表達「過去本來應該做，但沒做或沒做好」，用 should have + p.p.。</p><div class="al">答案</div><p class="ap">should have（B）— should have checked = 本來應該檢查</p></div>
+<div class="corr mt12"><p>老師出題提醒：原始選項若把 A 設為「should」會與 B「should have」重疊爭議（should 加上句中的 have checked 也會唸得通）。此處已修正選項為 (A) had，避免選項互相包含，確保答案唯一是 B。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">technician</span><span class="vd">技術人員</span><span class="vw">restart</span><span class="vd">重新啟動</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw13">
+<div class="qh"><span class="qn">新增 13</span><span class="qt">may 表可能性</span></div>
+<div class="qbody">
+<div class="qsen">The company ______ increase its advertising budget next quarter if sales continue to decline.</div>
+<div class="qzh">如果銷售持續下降，公司下季可能會增加廣告預算。</div>
+<div class="qopts">
+<div class="qo ok"><span class="ol">A</span>may</div>
+<div class="qo"><span class="ol">B</span>does</div>
+<div class="qo"><span class="ol">C</span>has</div>
+<div class="qo"><span class="ol">D</span>was</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>if sales continue to decline 表示：如果銷售繼續下降，公司「可能」會增加廣告預算，不是一定。</p><div class="al">答案</div><p class="ap">may（A）</p></div>
+<div class="corr mt12"><p>does increase 可以強調確實增加，但語意太肯定；has increase 結構錯（完成式要 has increased）；was increase 結構錯。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">advertising budget</span><span class="vd">廣告預算</span><span class="vw">decline</span><span class="vd">下降；衰退</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw14">
+<div class="qh"><span class="qn">新增 14</span><span class="qt">Would you mind if + 過去式</span></div>
+<div class="qbody">
+<div class="qsen">Would you mind if I ______ this seat?</div>
+<div class="qzh">你介意我坐這個位子嗎？</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>take</div>
+<div class="qo ok"><span class="ol">B</span>took</div>
+<div class="qo"><span class="ol">C</span>taking</div>
+<div class="qo"><span class="ol">D</span>to take</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>Would you mind if I... 正式語法中，if 後面用過去式表示委婉。注意 took 不是過去時間，而是禮貌距離。</p><div class="al">答案</div><p class="ap">took（B）</p></div>
+<div class="corr mt12"><p>take 太直接，不是正式 TOEIC 常考形式；taking：if 子句需要完整動詞；to take：不合結構。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">seat</span><span class="vd">座位</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw15">
+<div class="qh"><span class="qn">新增 15</span><span class="qt">ought to + V</span></div>
+<div class="qbody">
+<div class="qsen">Applicants ought ______ all required documents before the deadline.</div>
+<div class="qzh">申請者應該在截止日前提交所有必需文件。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>submit</div>
+<div class="qo"><span class="ol">B</span>submitting</div>
+<div class="qo ok"><span class="ol">C</span>to submit</div>
+<div class="qo"><span class="ol">D</span>submitted</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>ought 後面一定要有 to，再接原形動詞。</p><div class="al">答案</div><p class="ap">to submit（C）</p></div>
+<div class="corr mt12"><p>submit：少了 to；submitting：不是 ought 的用法；submitted：過去式/p.p.，不合結構。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">applicant</span><span class="vd">申請者</span><span class="vw">required document</span><span class="vd">必要文件</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw16">
+<div class="qh"><span class="qn">新增 16</span><span class="qt">might 不確定推測</span></div>
+<div class="qbody">
+<div class="qsen">The shipment ______ arrive tomorrow, but the exact time has not been confirmed.</div>
+<div class="qzh">這批貨可能明天抵達，但確切時間尚未確認。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>must</div>
+<div class="qo ok"><span class="ol">B</span>might</div>
+<div class="qo"><span class="ol">C</span>should not</div>
+<div class="qo"><span class="ol">D</span>had better</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>後面說 exact time has not been confirmed，確切時間還沒確認，所以不是 must（一定會到），是 might（可能會到）。</p><div class="al">答案</div><p class="ap">might（B）</p></div>
+<div class="corr mt12"><p>must = 一定，太肯定；should not = 不應該，不合語意；had better = 最好，不適用於 shipment 這種非人稱主詞的推測句。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">shipment</span><span class="vd">貨物；出貨</span><span class="vw">confirm</span><span class="vd">確認</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw17">
+<div class="qh"><span class="qn">新增 17</span><span class="qt">don't have to</span></div>
+<div class="qbody">
+<div class="qsen">You ______ call the client now; I already sent her the updated schedule.</div>
+<div class="qzh">你不用現在打給客戶；我已經寄給她更新後的時程了。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>must not</div>
+<div class="qo ok"><span class="ol">B</span>don't have to</div>
+<div class="qo"><span class="ol">C</span>may not</div>
+<div class="qo"><span class="ol">D</span>had better not</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>後面說 I already sent her the updated schedule，所以沒有必要再打電話，不是禁止你打。</p><div class="al">答案</div><p class="ap">don't have to（B）</p></div>
+<div class="corr mt12"><p>must not call = 不准打電話，語氣太強；may not = 可能不/不得，語意不清；had better not = 最好不要，帶警告，不是單純不需要。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">updated schedule</span><span class="vd">更新後的時程</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw18">
+<div class="qh"><span class="qn">新增 18</span><span class="qt">request that + 被動原形</span><span class="qs">⭐ 重點題</span></div>
+<div class="qbody">
+<div class="qsen">The CEO requested that the final report ______ by noon.</div>
+<div class="qzh">執行長要求最終報告在中午前提交。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>is submitted</div>
+<div class="qo ok"><span class="ol">B</span>be submitted</div>
+<div class="qo"><span class="ol">C</span>submits</div>
+<div class="qo"><span class="ol">D</span>submitting</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前面是 requested that，要求類動詞，that 子句中用原形動詞。主詞 the final report 是被提交，所以用被動：原形被動 be submitted。</p><div class="al">答案</div><p class="ap">be submitted（B）</p></div>
+<div class="corr mt12"><p>is submitted：一般現在被動，不是此正式句型；submits：報告不會自己提交；submitting：不是完整謂語。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">CEO</span><span class="vd">執行長</span><span class="vw">final report</span><span class="vd">最終報告</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw19">
+<div class="qh"><span class="qn">新增 19</span><span class="qt">prefer V-ing to V-ing</span></div>
+<div class="qbody">
+<div class="qsen">I prefer working with a small team ______ managing a large department.</div>
+<div class="qzh">比起管理大型部門，我比較喜歡和小團隊合作。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>rather than</div>
+<div class="qo ok"><span class="ol">B</span>to</div>
+<div class="qo"><span class="ol">C</span>than</div>
+<div class="qo"><span class="ol">D</span>for</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>前面是 prefer working，後面是 managing，這是 prefer V-ing to V-ing，這裡的 to 是介系詞，不是不定詞。</p><div class="al">答案</div><p class="ap">to（B）</p></div>
+<div class="corr mt12"><p>rather than 可用於 prefer to V rather than V，但本句不是此結構；than 通常搭配 rather 或比較級；for 不合結構。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">manage a department</span><span class="vd">管理部門</span></div>
+</div>
+</div>
+</div></div>
+
+<div class="qb" id="qnw20">
+<div class="qh"><span class="qn">新增 20</span><span class="qt">must be + p.p.（被動）</span></div>
+<div class="qbody">
+<div class="qsen">The staff ______ be trained before the new system is introduced next month.</div>
+<div class="qzh">在新系統下個月導入之前，員工必須接受訓練。</div>
+<div class="qopts">
+<div class="qo"><span class="ol">A</span>can to</div>
+<div class="qo ok"><span class="ol">B</span>must</div>
+<div class="qo"><span class="ol">C</span>must to</div>
+<div class="qo"><span class="ol">D</span>having to</div>
+</div>
+<div class="qtc">
+<div>
+<div class="gtl">解題引導</div>
+<div class="ask"><p>主詞 The staff 是被訓練，後面已經有 be trained，前面要選可以直接接 be 的助動詞：must be trained。</p><div class="al">答案</div><p class="ap">must（B）</p></div>
+<div class="corr mt12"><p>can to：can 後不加 to；must to：must 後不加 to；having to：不能在這裡當主要助動詞。</p></div>
+</div>
+<div>
+<div class="gtl">生詞 &amp; 搭配</div>
+<div class="vg"><span class="vw">staff</span><span class="vd">員工；職員（集合名詞）</span><span class="vw">introduce a system</span><span class="vd">導入系統</span></div>
+</div>
+</div>
+</div></div>
+<div class="ls" id="s-summary">
+<div class="sh"><div class="sn">✓</div><div class="st">總整理 &amp; 速查表</div></div>
+<div class="block"><div class="bh dk"><span class="d"></span>老師收尾逐字稿</div><div class="bb">
+<div class="script">今天 Chapter 6，我們不是背一堆 can、may、must、should，而是把助動詞整理成語氣系統。<br><br>
+<em>第一</em>，助動詞後面通常接原形動詞：can finish、should review、must submit、will make。<br>
+<em>第二</em>，客氣請求要看誰做動作：May I 是我可不可以；Would you / Could you 是你可以幫我嗎。<br>
+<em>第三</em>，Would you mind 有兩種：Would you mind if I closed the window? 是我做；Would you mind closing the window? 是請你做。mind 後面直接接動詞時要用 V-ing。<br>
+<em>第四</em>，must not 和 don't have to 完全不同：must not 是禁止，don't have to 是不需要。<br>
+<em>第五</em>，建議有語氣強弱：could 比較柔和；should / ought to 是一般建議；had better 是強烈建議，帶「最好……不然……」的感覺。<br>
+<em>第六</em>，suggest that 後面用原形動詞：I suggest that George establish...、Mr. Chen suggests that Jack take...<br>
+<em>第七</em>，過去語氣要看 have + p.p.：should have done 本來應該做但沒做；could have done 本來可以做但可能沒做；must have done 過去一定是做了；might have done 過去可能做了。<br>
+<em>第八</em>，偏好句型要看結構：would rather V than V；prefer to V rather than V；prefer V-ing to V-ing。<br><br>
+<strong>所以以後做助動詞題時，不要先翻中文，而是問：這句話的語氣是什麼？空格後面是什麼形式？這是不是固定句型？有沒有被動？有沒有過去本來應該做的意思？</strong></div>
+</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>Chapter 6 必背句型速查表</div><div class="bb">
+<table class="tbl">
+<tr><th>功能</th><th>句型</th><th>中文</th></tr>
+<tr><td>能力</td><td>can + V</td><td>可以；能夠</td></tr>
+<tr><td>可能</td><td>may / might / could + V</td><td>可能</td></tr>
+<tr><td>客氣請求</td><td>Would / Could you + V?</td><td>你可以……嗎？</td></tr>
+<tr><td>請求允許</td><td>May / Could I + V?</td><td>我可以……嗎？</td></tr>
+<tr><td>介意我做</td><td>Would you mind if I + 過去式?</td><td>你介意我……嗎？</td></tr>
+<tr><td>請你做</td><td>Would you mind + V-ing?</td><td>你介意做……嗎？</td></tr>
+<tr><td>必須</td><td>must / have to + V</td><td>必須</td></tr>
+<tr><td>禁止</td><td>must not + V</td><td>不准；禁止</td></tr>
+<tr><td>不需要</td><td>don't have to + V</td><td>不必；不需要</td></tr>
+<tr><td>建議</td><td>should / ought to + V</td><td>應該</td></tr>
+<tr><td>強烈建議</td><td>had better + V</td><td>最好</td></tr>
+<tr><td>過去後悔</td><td>should have + p.p.</td><td>本來應該</td></tr>
+<tr><td>過去可能</td><td>could have + p.p.</td><td>本來可以</td></tr>
+<tr><td>過去強烈推測</td><td>must have + p.p.</td><td>過去一定是</td></tr>
+<tr><td>過去不確定推測</td><td>may / might have + p.p.</td><td>過去可能已經</td></tr>
+<tr><td>偏好</td><td>would rather V than V</td><td>寧願……而不願……</td></tr>
+<tr><td>偏好</td><td>prefer to V rather than V</td><td>寧願……而不是……</td></tr>
+<tr><td>偏好</td><td>prefer V-ing to V-ing</td><td>比起……更喜歡……</td></tr>
+</table>
+</div></div>
+
+<div class="block"><div class="bh dk"><span class="d"></span>Chapter 6 常見錯誤速查表</div><div class="bb">
+<table class="tbl">
+<tr><th>錯誤</th><th>正確</th><th>原因</th></tr>
+<tr><td>He cans help.</td><td>He can help.</td><td>情態助動詞不加 s</td></tr>
+<tr><td>She should to go.</td><td>She should go.</td><td>should 後接原形</td></tr>
+<tr><td>You must to submit it.</td><td>You must submit it.</td><td>must 後接原形</td></tr>
+<tr><td>You had better to leave.</td><td>You had better leave.</td><td>had better 後接原形</td></tr>
+<tr><td>Would you mind close the door?</td><td>Would you mind closing the door?</td><td>mind 後接 V-ing</td></tr>
+<tr><td>May you send the report?</td><td>Could you send the report?</td><td>請對方做事不用 May you</td></tr>
+<tr><td>You must not worry.（想表達不必）</td><td>You don't have to worry.</td><td>must not = 禁止，不是「不需要」</td></tr>
+<tr><td>George establishes his firm.（建議句）</td><td>I suggest that George establish his firm.</td><td>suggest that 後用原形</td></tr>
+<tr><td>I would rather to stay.</td><td>I would rather stay.</td><td>would rather 後接原形</td></tr>
+<tr><td>I prefer reading to paint.</td><td>I prefer reading to painting.</td><td>prefer V-ing to V-ing</td></tr>
+</table>
+<div class="goal2 mt16"><p><strong>給老師的最後提醒：</strong>這章最好不要用「中文一對一翻譯」教，因為同一個中文「可以」可能是 can、may、could；同一個中文「應該」可能是 should、ought to、had better；同一個中文「不必」可能讓學生誤選 must not。教學核心應該是：<strong>語氣 → 結構 → 動詞形式 → 固定搭配 → 語意確認。</strong></p></div>
+</div></div>
+
+<div class="block"><div class="bh am"><span class="d"></span>下一堂預告</div><div class="bb">
+<div class="tip"><p>Lesson 10 涵蓋 Chapter 6 助動詞完整系統與 45 題練習，是純文法專章。下一堂可視進度銜接新的文法章節，或搭配 121–200 題目補充「助動詞在商業信件、公告、規定中的語氣判斷」（Part 6/7 閱讀延伸）。</p></div>
+</div></div>
+</div>
+</main>
+</div>
+<script>
+let sec=0,running=false,iv=null;
+function pad(n){return n.toString().padStart(2,'0')}
+function upd(){const m=Math.floor(sec/60),s=sec%60;document.getElementById('timer').textContent=pad(m)+':'+pad(s)}
+function toggleTimer(){
+  if(running){clearInterval(iv);running=false;document.querySelector('.tbtn').textContent='▶ 開始'}
+  else{iv=setInterval(()=>{sec++;upd()},1000);running=true;document.querySelector('.tbtn').textContent='⏸ 暫停'}
+}
+function resetTimer(){clearInterval(iv);running=false;sec=0;upd();document.querySelector('.tbtn').textContent='▶ 開始'}
+function goTo(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
+const allSecs=[
+  {id:'s-overview',label:'課程總覽'},
+  {id:'s-g1',label:'1 基本系統'},
+  {id:'s-g2',label:'2 語氣分類'},
+  {id:'s-g3',label:'3 客氣要求'},
+  {id:'s-g4',label:'4 Would you mind'},
+  {id:'s-g5',label:'5 必須性'},
+  {id:'s-g6',label:'6 建議'},
+  {id:'s-g7',label:'7 偏好'},
+  {id:'s-strategy',label:'8 解題五步驟'},
+  {id:'s-q-preview',label:'Preview Test'},
+  {id:'qpv1',label:'PV1'},{id:'qpv2',label:'PV2'},{id:'qpv3',label:'PV3'},
+  {id:'s-q-textbook',label:'課本練習'},
+  {id:'qtb1',label:'TB1'},{id:'qtb2',label:'TB2'},{id:'qtb3',label:'TB3'},{id:'qtb4',label:'TB4'},{id:'qtb5',label:'TB5'},{id:'qtb6',label:'TB6'},{id:'qtb7',label:'TB7'},{id:'qtb8',label:'TB8'},{id:'qtb9',label:'TB9'},
+  {id:'s-q-review',label:'總複習 Q1-13'},
+  {id:'qrv1',label:'Q1'},{id:'qrv2',label:'Q2'},{id:'qrv3',label:'Q3'},{id:'qrv4',label:'Q4'},{id:'qrv5',label:'Q5'},{id:'qrv6',label:'Q6'},{id:'qrv7',label:'Q7'},{id:'qrv8',label:'Q8'},{id:'qrv9',label:'Q9'},{id:'qrv10',label:'Q10'},{id:'qrv11',label:'Q11'},{id:'qrv12',label:'Q12'},{id:'qrv13',label:'Q13'},
+  {id:'s-q-new',label:'新增練習題'},
+  {id:'qnw1',label:'新增1'},{id:'qnw2',label:'新增2'},{id:'qnw3',label:'新增3'},{id:'qnw4',label:'新增4'},{id:'qnw5',label:'新增5'},{id:'qnw6',label:'新增6'},{id:'qnw7',label:'新增7'},{id:'qnw8',label:'新增8'},{id:'qnw9',label:'新增9'},{id:'qnw10',label:'新增10'},
+  {id:'qnw11',label:'新增11'},{id:'qnw12',label:'新增12'},{id:'qnw13',label:'新增13'},{id:'qnw14',label:'新增14'},{id:'qnw15',label:'新增15'},{id:'qnw16',label:'新增16'},{id:'qnw17',label:'新增17'},{id:'qnw18',label:'新增18'},{id:'qnw19',label:'新增19'},{id:'qnw20',label:'新增20'},
+  {id:'s-summary',label:'總整理'},
+];
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id=e.target.id;
+      const s=allSecs.find(x=>x.id===id);
+      if(s){
+        document.querySelectorAll('.sbl').forEach(l=>l.classList.remove('active'));
+        const lk=document.querySelector(`.sbl[onclick*="${id}"]`);
+        if(lk)lk.classList.add('active');
+        document.getElementById('csec').textContent=s.label;
+      }
+    }
+  });
+},{threshold:0.2,rootMargin:'-60px 0px -65% 0px'});
+allSecs.forEach(s=>{const el=document.getElementById(s.id);if(el)obs.observe(el)});
+</script>
+</body>
+</html>
