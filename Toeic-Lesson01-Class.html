@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lesson 01 上課投影版</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--navy:#0F172A;--amber:#F59E0B;--green:#059669;--red:#DC2626;--sky:#0EA5E9;--purple:#7C3AED}html,body{height:100%;overflow:hidden}body{font-family:"Noto Sans TC","Inter",sans-serif;background:var(--navy);color:white;display:flex;flex-direction:column}
+#topbar{height:52px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}.top-badge{background:var(--amber);color:var(--navy);font:800 11px Inter;padding:3px 10px;border-radius:20px;letter-spacing:.5px}.top-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.7);margin-left:12px}.top-right{display:flex;align-items:center;gap:16px}#progress-text{font:500 13px "JetBrains Mono";color:rgba(255,255,255,.45)}.pbwrap{width:140px;height:4px;background:rgba(255,255,255,.1);border-radius:2px}.progress-bar{height:100%;background:var(--amber);border-radius:2px;transition:width .25s}
+#slide-area{flex:1;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:28px 40px 16px}.slide{width:100%;max-width:940px;animation:fade .2s ease}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#bottombar{height:64px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.07)}.nav-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:white;border-radius:10px;padding:10px 20px;font:600 14px "Noto Sans TC";cursor:pointer}.nav-btn:hover{background:rgba(255,255,255,.14)}.nav-btn:disabled{opacity:.25;cursor:default}.center{display:flex;flex-direction:column;align-items:center;gap:6px}.action-row{display:flex;gap:8px}#slide-type{font:500 10px "JetBrains Mono";color:rgba(255,255,255,.3);letter-spacing:1px}.action{border:0;border-radius:9px;padding:8px 17px;font:800 13px "Noto Sans TC";cursor:pointer}.hidden{display:none!important}#reveal-btn{background:var(--amber);color:var(--navy)}#ask-btn{background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.25);color:var(--amber)}#zh-btn{background:rgba(14,165,233,.12);border:1px solid rgba(14,165,233,.28);color:#38BDF8}#zh-btn.on{background:var(--sky);color:white}
+.gram-label{font:700 11px Inter;letter-spacing:1.4px;color:var(--amber);margin-bottom:8px;text-transform:uppercase}.gram-title{font:900 29px Inter;margin-bottom:5px}.gram-sub{font-size:15px;color:rgba(255,255,255,.45);margin-bottom:20px}.g-question{font-size:19px;font-weight:700;background:rgba(245,158,11,.12);border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:14px}.g-highlight{background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.2);border-left:3px solid var(--amber);border-radius:0 8px 8px 0;padding:12px 15px;margin-bottom:14px}.g-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:14px}.g-table th,.g-table td{padding:9px 13px;text-align:left;border-bottom:1px solid rgba(255,255,255,.07)}.g-table th{font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase}.cell-em{font-family:"JetBrains Mono";color:var(--amber);font-weight:700}.snum{font-family:"JetBrains Mono";color:var(--amber);font-weight:800}.g-formula{font-family:"JetBrains Mono";background:rgba(14,165,233,.1);border:1px solid rgba(14,165,233,.2);border-radius:8px;padding:12px 15px;color:#38BDF8;margin-bottom:14px}.g-ex-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:4px 16px;margin-bottom:14px}.g-ex{padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.08);line-height:1.65}.g-ex:last-child{border:0}.g-ex b{color:var(--amber)}.g-note{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:11px 15px;font-size:13px}.g-wrong-right,.trap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:10px 14px}.gw,.gr{display:block}.gw{color:#F87171;text-decoration:line-through;margin-bottom:4px}.gr{color:#34D399;font-weight:700}.trap-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+#ask-panel{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);border-radius:11px;padding:15px 18px;margin-top:15px}.ask-progress{font:500 11px "JetBrains Mono";color:rgba(255,255,255,.35);margin-bottom:8px}.ask-q{font-size:16px;font-weight:700}.ask-a{display:none;margin-top:9px;background:rgba(5,150,105,.15);border-left:3px solid var(--green);padding:9px 13px;color:#34D399;font-weight:700}.ask-a.show{display:block}
+.q-header{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:14px}.q-num{font:800 13px Inter;background:rgba(255,255,255,.12);padding:4px 12px;border-radius:6px}.q-type{font-size:12px;font-weight:700;background:rgba(14,165,233,.15);color:#38BDF8;padding:4px 11px;border-radius:6px}.q-star{font-size:12px;font-weight:700;background:rgba(245,158,11,.15);color:var(--amber);padding:4px 10px;border-radius:6px}.q-sentence{font-size:18px;line-height:1.9;background:rgba(255,255,255,.05);border-left:3px solid rgba(255,255,255,.2);border-radius:0 10px 10px 0;padding:13px 17px;margin-bottom:5px}.q-sentence .blank{background:rgba(245,158,11,.18);color:var(--amber);font-weight:700;padding:0 6px;border-radius:4px}.q-zh{font-size:12px;color:rgba(255,255,255,.38);margin-bottom:15px}.zh-hidden{display:none!important}.q-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.q-opt{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:11px 15px;font-size:14px}.q-opt-label{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font:700 12px Inter}.q-opt.correct{background:rgba(5,150,105,.16);border-color:var(--green)}.q-opt.correct .q-opt-label{background:var(--green)}.q-opt.dim{opacity:.28}.answer-box{display:none;background:rgba(245,158,11,.08);border-left:3px solid var(--amber);border-radius:0 9px 9px 0;padding:11px 16px;font-size:13px;margin-top:12px}.answer-box.show{display:block}.answer-box strong{color:var(--amber);font-size:14px}.answer-detail{display:block;margin-top:5px;color:rgba(255,255,255,.7)}
+@media(max-width:700px){#topbar{padding:0 14px}.top-title{display:none}#slide-area{padding:18px 16px 10px}#bottombar{padding:0 12px}.nav-btn{padding:9px 12px}.q-opts,.trap-grid{grid-template-columns:1fr}.gram-title{font-size:24px}.pbwrap{width:90px}}
+</style></head><body>
+<div id="topbar"><div><span class="top-badge">上課投影</span><span class="top-title">Lesson 01 · TOEIC Part 5 入門與五大句型</span></div><div class="top-right"><span id="progress-text"></span><div class="pbwrap"><div class="progress-bar" id="progress-bar"></div></div></div></div>
+<div id="slide-area"><div class="slide" id="slide-content"></div></div>
+<div id="bottombar"><button class="nav-btn" id="prev-btn" onclick="navigate(-1)">← 上一頁</button><div class="center"><span id="slide-type"></span><div class="action-row"><button class="action" id="zh-btn" onclick="toggleZh()">中文 OFF</button><button class="action hidden" id="ask-btn" onclick="askAction()">❓ 問學生</button><button class="action hidden" id="reveal-btn" onclick="reveal()">揭曉答案 ▼</button></div></div><button class="nav-btn" id="next-btn" onclick="navigate(1)">下一頁 →</button></div>
+<script>
+const GRAMMAR=[{"type":"grammar","title":"TOEIC Reading Part 5 是什麼？","subtitle":"不會全部單字，也能靠結構找到答案","content":"<div class='g-highlight'>今天的目標不是背答案，而是學會一套能重複使用的解題方法。</div><div class='g-ex-box'><div class='g-ex'><b>Part 5</b> 是單句克漏字：每題一個句子、四個選項。</div><div class='g-ex'>不必先翻譯整句；先看空格前後的<b>句型、詞性、時態與固定搭配</b>。</div><div class='g-ex'>結構判斷完成後，最後才用句意確認。</div></div>","ask":[["看到不會的單字時，第一步應該做什麼？","先看空格前後的結構與詞性，不要立刻逐字翻譯。"]]},{"type":"grammar","title":"Part 5 最常考的五種能力","subtitle":"前三項是初學者最重要的基本功","content":"<table class='g-table'><tr><th>能力</th><th>判斷重點</th></tr><tr><td class='cell-em'>01 詞性判斷</td><td>空格需要名詞、動詞、形容詞或副詞？</td></tr><tr><td class='cell-em'>02 動詞形式</td><td>原形、過去式、過去分詞或 V-ing？</td></tr><tr><td class='cell-em'>03 時態</td><td>現在、過去或未來？時間線索在哪裡？</td></tr><tr><td class='cell-em'>04 固定搭配</td><td>介系詞、片語動詞與慣用結構</td></tr><tr><td class='cell-em'>05 句意判斷</td><td>結構都可行時，用上下文選合理意思</td></tr></table><div class='g-note'>詞性、動詞形式、時態先站穩，Part 5 多數文法題就會有方向。</div>","ask":[["五種能力中，做題時最先用哪幾項？","先看句型與詞性，再判斷動詞形式、時態和搭配。"]]},{"type":"grammar","title":"Part 5 解題流程","subtitle":"先結構，後意思","content":"<table class='g-table'><tr><th>Step</th><th>要問自己的問題</th></tr><tr><td class='snum'>1</td><td>空格前後是什麼？句子缺哪個成分？</td></tr><tr><td class='snum'>2</td><td>需要哪一種詞性或動詞形式？</td></tr><tr><td class='snum'>3</td><td>有沒有時間關鍵字或主詞單複數線索？</td></tr><tr><td class='snum'>4</td><td>是不是固定搭配或片語？</td></tr><tr><td class='snum'>5</td><td>最後才把答案放回句子檢查意思。</td></tr></table><div class='g-wrong-right'><span class='gw'>逐字翻譯 → 遇到生字就停住 → 猜答案</span><span class='gr'>句型 → 詞性 → 時態／搭配 → 句意確認</span></div>","ask":[["為什麼不要一開始就翻譯整句？","因為許多題只靠空格前後的結構就能排除大部分選項。"]]},{"type":"grammar","title":"示範一：先判斷詞性","subtitle":"名詞前通常需要形容詞修飾","content":"<div class='g-question'>The company needs an ______ manager.</div><div class='g-ex-box'><div class='g-ex'>(A) experience　(B) experienced　(C) experiencing　(D) experiences</div></div><div class='g-formula'>an + 形容詞 + 名詞 manager</div><div class='g-note'>空格後是名詞 manager，所以先找形容詞。<b>experienced</b> 表示「有經驗的」，答案 B。</div>","ask":[["空格後面是什麼詞？","manager，是名詞。"],["名詞前需要什麼詞性？","形容詞，所以選 experienced。"]]},{"type":"grammar","title":"示範二：找時間關鍵字","subtitle":"看到 tomorrow，先鎖定未來式","content":"<div class='g-question'>The meeting ______ tomorrow.</div><div class='g-ex-box'><div class='g-ex'>(A) begin　(B) began　(C) will begin　(D) beginning</div></div><div class='g-formula'>tomorrow → will + 原形動詞</div><div class='g-note'>yesterday / last week → 過去；tomorrow / next week → 未來；now / currently → 現在進行。</div>","ask":[["tomorrow 對應哪一個時態？","未來式，所以選 will begin。"]]},{"type":"grammar","title":"示範三：辨認固定搭配","subtitle":"片語要整組記，不要拆開猜","content":"<div class='g-question'>Please ______ the application form.</div><div class='g-ex-box'><div class='g-ex'>(A) fill out　(B) fill on　(C) fill over　(D) fill under</div></div><div class='g-formula'>fill out + a form = 填寫表格</div><div class='g-note'>看到 application form，要直接連想到 <b>fill out a form</b>。這是固定搭配題，答案 A。</div>","ask":[["「填寫表格」的固定說法是什麼？","fill out a form。"]]},{"type":"grammar","title":"五大句型總覽","subtitle":"先問：動詞後面還需不需要接東西？","content":"<table class='g-table'><tr><th>句型</th><th>功能</th><th>例句</th></tr><tr><td class='cell-em'>S + V</td><td>不及物動詞，句子已完整</td><td>Prices rose.</td></tr><tr><td class='cell-em'>S + V + O</td><td>及物動詞，後面需要受詞</td><td>She bought a ticket.</td></tr><tr><td class='cell-em'>S + V + SC</td><td>補充說明主詞</td><td>He seems tired.</td></tr><tr><td class='cell-em'>S + V + O + C</td><td>補充說明受詞</td><td>Keep the door open.</td></tr><tr><td class='cell-em'>S + V + O + O</td><td>給誰＋給什麼</td><td>She sent me an email.</td></tr></table>","ask":[["判斷句型時，最核心的問題是什麼？","動詞後面還需要什麼成分，句子才完整？"]]},{"type":"grammar","title":"句型一：S + V","subtitle":"不及物動詞後面不直接接受詞","content":"<div class='g-formula'><b>S</b> + <b>V</b></div><div class='g-ex-box'><div class='g-ex'>I <b>sleep</b>. — 不能問「睡什麼」，句子已完整。</div><div class='g-ex'>The price <b>rose</b>. — price 自己上升。</div><div class='g-ex'>He <b>arrived</b> at the airport. — at the airport 是介系詞片語，不是受詞。</div></div><div class='g-note'>不及物動詞後可接介系詞片語，但不能直接接名詞受詞。</div>","ask":[["He arrived at the airport 的 at the airport 是受詞嗎？","不是；arrive 是不及物動詞，at the airport 是地點補充。"]]},{"type":"grammar","title":"句型二：S + V + O","subtitle":"及物動詞後面需要受詞","content":"<div class='g-formula'><b>S</b> + <b>V</b> + <b>O</b></div><div class='g-ex-box'><div class='g-ex'>I <b>like English</b>. — 喜歡「什麼」？English 是受詞。</div><div class='g-ex'>She <b>bought a ticket</b>. — 買「什麼」？a ticket 是受詞。</div><div class='g-ex'>We <b>discussed the problem</b>. — discuss 直接接受詞，不加 about。</div></div>","ask":[["She bought a ticket 中的受詞是什麼？","a ticket。"],["discuss the problem 前要加 about 嗎？","不用；discuss 是及物動詞。"]]},{"type":"grammar","title":"句型三：S + V + SC","subtitle":"主詞補語描述主詞是誰或怎麼樣","content":"<div class='g-formula'><b>S</b> + <b>V</b> + <b>SC</b></div><div class='g-ex-box'><div class='g-ex'>Mary is <b>a teacher</b>. → Mary = a teacher</div><div class='g-ex'>The room looks <b>clean</b>. → clean 描述 room</div><div class='g-ex'>He seems <b>tired</b>. → tired 描述 He</div></div><div class='g-note'>常見連綴動詞：be, become, seem, look, feel, sound, smell, taste, remain, stay。</div>","ask":[["He seems tired 的 tired 描述誰？","描述主詞 He，所以是主詞補語 SC。"]]},{"type":"grammar","title":"句型四：S + V + O + C","subtitle":"受詞補語描述受詞的狀態","content":"<div class='g-formula'><b>S</b> + <b>V</b> + <b>O</b> + <b>C</b></div><div class='g-ex-box'><div class='g-ex'>The news made him <b>nervous</b>. → him is nervous</div><div class='g-ex'>Please keep the door <b>open</b>. → the door is open</div><div class='g-ex'>I found the test <b>difficult</b>. → the test is difficult</div></div><div class='g-note'>判斷法：如果可以說「O is / becomes C」，C 就是受詞補語。常見動詞：make, keep, find, call, name, elect, consider, appoint。</div>","ask":[["Please keep the door open 中，open 描述誰？","描述受詞 the door，所以是受詞補語。"]]},{"type":"grammar","title":"句型五：S + V + O + O","subtitle":"給誰＋給什麼的雙受詞結構","content":"<div class='g-formula'><b>S</b> + <b>V</b> + <b>O₁（給誰）</b> + <b>O₂（給什麼）</b></div><div class='g-ex-box'><div class='g-ex'>She sent <b>her boss</b> <b>an email</b>.</div><div class='g-ex'>= She sent <b>an email</b> to <b>her boss</b>.</div></div><div class='g-note'>常見雙受詞動詞：give, send, tell, show, lend, offer, bring, teach, ask。</div>","ask":[["She sent her boss an email：給誰？給什麼？","her boss 是 O₁；an email 是 O₂。"]]},{"type":"grammar","title":"及物／不及物動詞快速判斷","subtitle":"看名詞能不能直接接在動詞後面","content":"<table class='g-table'><tr><th>及物：直接接受詞</th><th>不及物：需介系詞</th></tr><tr><td class='cell-em'>discuss the issue</td><td class='cell-em'>arrive at the airport</td></tr><tr><td class='cell-em'>attend a meeting</td><td class='cell-em'>listen to music</td></tr><tr><td class='cell-em'>contact the customer</td><td class='cell-em'>wait for a customer</td></tr><tr><td class='cell-em'>answer the question</td><td class='cell-em'>agree with someone</td></tr></table><div class='g-highlight'>問自己：「動詞後面的名詞是受詞，還是介系詞片語裡的名詞？」</div>","ask":[["arrive the airport 為什麼不對？","arrive 是不及物動詞，要說 arrive at the airport。"],["contact with the customer 為什麼不對？","contact 是及物動詞，直接說 contact the customer。"]]},{"type":"grammar","title":"TOEIC 高頻動詞陷阱","subtitle":"多一個或少一個介系詞，答案就不同","content":"<div class='trap-grid'><div class='trap'><span class='gw'>discuss about the issue</span><span class='gr'>discuss the issue</span></div><div class='trap'><span class='gw'>arrive the airport</span><span class='gr'>arrive at the airport</span></div><div class='trap'><span class='gw'>attend to a meeting</span><span class='gr'>attend a meeting</span></div><div class='trap'><span class='gw'>contact with the customer</span><span class='gr'>contact the customer</span></div><div class='trap'><span class='gw'>listen music</span><span class='gr'>listen to music</span></div><div class='trap'><span class='gw'>answer to the question</span><span class='gr'>answer the question</span></div></div>","ask":[["哪三個動詞可以直接接受詞，不加介系詞？","discuss、attend、contact、answer 都可直接接受詞。"]]},{"type":"grammar","title":"進入 101–120 前的作答節奏","subtitle":"每題都說出理由，再揭曉答案","content":"<div class='g-highlight'>① 先讀空格前後　② 說出考點　③ 排除不合的選項　④ 選答案　⑤ 最後檢查句意</div><div class='g-ex-box'><div class='g-ex'><b>詞性題：</b>空格要哪種詞？</div><div class='g-ex'><b>動詞題：</b>主詞、時間與主被動是什麼？</div><div class='g-ex'><b>搭配題：</b>前後字是否形成固定組合？</div><div class='g-ex'><b>語意題：</b>句子需要正面、負面，還是特定商務意思？</div></div>","ask":[["做題時，答案前至少要說出哪一件事？","說出考點或關鍵線索，不能只猜選項字母。"]]},{"type":"grammar","title":"Lesson 1 總整理","subtitle":"Part 5 入門的核心不是翻譯，而是結構","content":"<div class='g-formula'>句型 → 詞性 → 動詞形式／時態 → 固定搭配 → 句意</div><table class='g-table'><tr><th>今天帶走的系統</th><th>一句話提醒</th></tr><tr><td class='cell-em'>五大句型</td><td>看動詞後面還缺什麼</td></tr><tr><td class='cell-em'>及物／不及物</td><td>名詞能否直接接在動詞後</td></tr><tr><td class='cell-em'>時間線索</td><td>tomorrow、yesterday、now 先鎖定時態</td></tr><tr><td class='cell-em'>固定搭配</td><td>片語整組記，不逐字猜</td></tr></table><div class='g-note'>回家優先複習 discuss / arrive / attend / contact / listen / answer 的接法。</div>","ask":[["今天最重要的解題順序是什麼？","先結構，再詞性與時態／搭配，最後才看意思。"]]}];
+const QUESTIONS=[
+  {
+    num: 101,
+    type: "片語動詞",
+    star: true,
+    sentence: "Our company plans to ______ more employees during the busy holiday season.",
+    translation: "我們公司計畫在繁忙的假期期間 ______ 更多員工。",
+    options: ["take on", "wait on", "move to", "apply for"],
+    answer: 0,
+    logic: "句子後面是 more employees（員工），要選能夠「雇用員工」的片語。take on employees = 雇用員工。",
+    keyPoint: "take on + 人 / 工作 / 責任 = 雇用；承擔",
+    optionNotes: [
+      "take on：雇用；承擔責任（✅ 正確）",
+      "wait on + customers：服務顧客（注意：wait for 才是「等待」）",
+      "move to + 地點：搬到某處",
+      "apply for + 工作 / 學校：申請"
+    ],
+    vocab: [["take on employees", "雇用員工"], ["apply for a job", "申請工作"]]
+  },
+  {
+    num: 102,
+    type: "時態",
+    star: true,
+    sentence: "The department store ______ for three days next week in order to take stock.",
+    translation: "這間百貨公司下週將 ______ 三天，以便盤點庫存。",
+    options: ["has closed", "will close", "be closed", "was closing"],
+    answer: 1,
+    logic: "關鍵字：next week（下週）→ 表示未來時間，所以用 will + 原形動詞。",
+    keyPoint: "看到 tomorrow / next week / next year → 直接想到未來式 will + V",
+    optionNotes: [
+      "has closed：現在完成式，表示「已經關了」，不適合未來",
+      "will close：未來式（✅ 正確）",
+      "be closed：缺少助動詞，不能直接放在主詞後",
+      "was closing：過去進行式，不適合 next week"
+    ],
+    vocab: [["department store", "百貨公司"], ["take stock", "盤點庫存"], ["in order to + V", "為了……"]]
+  },
+  {
+    num: 103,
+    type: "固定片語",
+    star: false,
+    sentence: "Our new juice products were selling like ______ at the end of last quarter.",
+    translation: "新果汁產品在上個季度末賣得像 ______ 一樣好。",
+    options: ["hotcakes", "hot goods", "white goods", "red tape"],
+    answer: 0,
+    logic: "固定片語：sell like hotcakes = 熱銷、賣得非常好。其他三個都是不同意思的片語。",
+    keyPoint: "sell like hotcakes = 非常暢銷",
+    optionNotes: [
+      "hotcakes：固定片語 sell like hotcakes（✅ 正確）",
+      "hot goods：不是這個固定片語",
+      "white goods：大型家電（冰箱、洗衣機等）",
+      "red tape：繁文縟節、官僚程序"
+    ],
+    vocab: [["sell like hotcakes", "熱銷"], ["white goods", "大型家電"], ["red tape", "繁文縟節"], ["quarter", "季度"]]
+  },
+  {
+    num: 104,
+    type: "詞性",
+    star: false,
+    sentence: "The most common source of dietary problems while traveling is ______ water.",
+    translation: "旅行時，飲食問題最常見的來源是 ______ 水。",
+    options: ["drinking", "drink", "drank", "drunk"],
+    answer: 0,
+    logic: "空格後面是名詞 water。drinking water 是固定名詞片語，意思是「飲用水」。這裡的 drinking 是現在分詞作形容詞用途修飾 water。",
+    keyPoint: "drinking water（飲用水）是固定搭配，類似 sleeping bag（睡袋）、waiting room（等候室）",
+    optionNotes: [
+      "drinking water：飲用水（固定片語，✅ 正確）",
+      "drink：動詞原形，不能修飾名詞",
+      "drank：過去式，不合",
+      "drunk：過去分詞 / 形容詞「喝醉的」，語意不合"
+    ],
+    vocab: [["source", "來源"], ["dietary", "飲食的"], ["drinking water", "飲用水"]]
+  },
+  {
+    num: 105,
+    type: "介系詞",
+    star: false,
+    sentence: "______ most managers, one common cause of problems in decision-making is over-optimism.",
+    translation: "______ 大多數經理，決策問題的一個常見原因是過度樂觀。",
+    options: ["In", "When", "By", "For"],
+    answer: 0,
+    logic: "句意是「在大多數經理身上，某種問題普遍存在」→ 用 in 表示某特質「存在於」某人身上。For most managers 雖然也常見，但這句強調問題「存在於」經理身上，所以用 in。",
+    keyPoint: "in most managers = 在大多數經理身上（存在某種特質）",
+    optionNotes: [
+      "In most managers：問題存在於經理身上（✅ 正確）",
+      "When：後面通常接完整子句",
+      "By：由……；藉由……",
+      "For most managers：對大多數經理而言（意義略有差異）"
+    ],
+    vocab: [["decision-making", "決策"], ["over-optimism", "過度樂觀"], ["common", "常見的"]]
+  },
+  {
+    num: 106,
+    type: "固定搭配",
+    star: true,
+    sentence: "People should arrange their daily schedules to include a healthy balance ______ work and leisure.",
+    translation: "人們應適當安排每日行程，以包含工作與休閒 ______ 健康平衡。",
+    options: ["relation", "between", "to", "linking"],
+    answer: 1,
+    logic: "固定搭配：balance between A and B = A 和 B 之間的平衡。空格要填的是連接 balance 和 work and leisure 之間的介系詞。",
+    keyPoint: "balance between A and B（固定搭配）",
+    optionNotes: [
+      "relation：名詞「關係」，詞性不對",
+      "between：balance between A and B（✅ 正確）",
+      "to：不能放在 balance 和 work 中間",
+      "linking：分詞，不合此位置"
+    ],
+    vocab: [["arrange", "安排"], ["appropriately", "適當地"], ["leisure", "休閒"], ["balance between A and B", "A和B之間的平衡"]]
+  },
+  {
+    num: 107,
+    type: "詞彙語意",
+    star: false,
+    sentence: "Recycling is one of many ______ ways to care for our environment.",
+    translation: "回收是許多照顧環境的 ______ 方法之一。",
+    options: ["additional", "impractical", "unworkable", "effective"],
+    answer: 3,
+    logic: "空格後面是 ways（方法），需要形容詞。句意是「回收是照顧環境的『有效』方法」，所以選 effective。另外三個都是語意不符。",
+    keyPoint: "回收 = 有效方法 → effective",
+    optionNotes: [
+      "additional：額外的（語意不符）",
+      "impractical：不實際的（語意不符）",
+      "unworkable：不可行的（語意不符）",
+      "effective：有效的（✅ 正確）"
+    ],
+    vocab: [["recycling", "回收"], ["effective", "有效的"], ["impractical", "不實際的"], ["unworkable", "不可行的"]]
+  },
+  {
+    num: 108,
+    type: "比較 / 語意",
+    star: false,
+    sentence: "Nowadays, with the vast popularity of email, ______ people communicate through letter writing.",
+    translation: "如今，由於電子郵件非常普及，______ 人透過寫信溝通。",
+    options: ["less", "more", "most", "unless"],
+    answer: 0,
+    logic: "Email 普及了 → 用寫信的人變『少』。選 less。（嚴格語法應用 fewer，但選項沒有，所以選 less。）",
+    keyPoint: "context：email 普及 → 寫信的人變少 → less / fewer",
+    optionNotes: [
+      "less：較少（✅ 正確，嚴格應為 fewer，但這是選項中最合理的）",
+      "more：更多（語意相反）",
+      "most：大多數（語意不符）",
+      "unless：除非（連接詞，詞性不對）"
+    ],
+    vocab: [["nowadays", "如今"], ["vast popularity", "廣泛普及"], ["letter writing", "寫信"]]
+  },
+  {
+    num: 109,
+    type: "主詞動詞一致",
+    star: true,
+    sentence: "A good designer usually ______ sharp observation and a good imagination.",
+    translation: "一位好的設計師通常 ______ 敏銳的觀察力和好的想像力。",
+    options: ["has", "have", "had", "has been"],
+    answer: 0,
+    logic: "主詞是 A good designer（單數）+ usually（現在習慣）→ 第三人稱單數現在式 → has。",
+    keyPoint: "A good designer（單數主詞）+ 現在式 → has（第三人稱單數加 s）",
+    optionNotes: [
+      "has：第三人稱單數現在式（✅ 正確）",
+      "have：用於 I/you/we/they 或複數主詞",
+      "had：過去式",
+      "has been：現在完成式，後面不能直接接 sharp observation"
+    ],
+    vocab: [["sharp observation", "敏銳觀察力"], ["imagination", "想像力"]]
+  },
+  {
+    num: 110,
+    type: "固定句型",
+    star: true,
+    sentence: "Nowadays, many parents are too busy ______ spend a sufficient amount of quality time with their children.",
+    translation: "如今，許多父母太忙，______ 花足夠的高品質時間陪孩子。",
+    options: ["than", "as well", "too", "to"],
+    answer: 3,
+    logic: "固定句型：too + 形容詞 + to V = 太……以至於不能……。題目已有 too busy，空格要填 to。",
+    keyPoint: "too + 形容詞 + to V（固定句型）→ too busy to spend",
+    optionNotes: [
+      "than：用於比較級",
+      "as well：也（通常放句尾）",
+      "too：前面已有 too，不能重複",
+      "to：too ... to ... 固定句型（✅ 正確）"
+    ],
+    vocab: [["sufficient", "足夠的"], ["quality time", "高品質相處時間"], ["too...to...", "太…以至於不能…"]]
+  },
+  {
+    num: 111,
+    type: "主詞動詞一致",
+    star: true,
+    sentence: "A person's appearance creates the first impression, but a good personality ______ more in the long run.",
+    translation: "外表創造第一印象，但好個性長遠來看更 ______。",
+    options: ["matter-of-fact", "matters", "matter", "doesn't matter"],
+    answer: 1,
+    logic: "主詞是 a good personality（單數）→ 動詞要加 s → matters（重要）。語意是「長遠來看個性更重要」。",
+    keyPoint: "matter（動詞）= 重要。單數主詞 → matters",
+    optionNotes: [
+      "matter-of-fact：形容詞「實事求是的」（詞性不對）",
+      "matters：第三人稱單數（✅ 正確）",
+      "matter：用於複數主詞",
+      "doesn't matter：語意相反（不重要）"
+    ],
+    vocab: [["appearance", "外表"], ["first impression", "第一印象"], ["in the long run", "長遠來看"], ["matter", "（動詞）重要"]]
+  },
+  {
+    num: 112,
+    type: "固定搭配",
+    star: true,
+    sentence: "In this competitive society, people are ______ a lot of stress.",
+    translation: "在這個競爭社會中，人們 ______ 很多壓力。",
+    options: ["gathering", "under", "exposed", "welcoming"],
+    answer: 1,
+    logic: "固定搭配：be under stress = 承受壓力。",
+    keyPoint: "under stress / under pressure（承受壓力）是固定搭配",
+    optionNotes: [
+      "gathering：收集；聚集（語意不符）",
+      "under：be under stress = 承受壓力（✅ 正確）",
+      "exposed：be exposed to stress 才正確（需要 to）",
+      "welcoming：歡迎的（語意不符）"
+    ],
+    vocab: [["competitive", "競爭的"], ["under stress", "承受壓力"], ["be exposed to", "暴露於……"]]
+  },
+  {
+    num: 113,
+    type: "固定句型",
+    star: true,
+    sentence: "To learn something successfully requires not only memorization ______ comprehension of facts.",
+    translation: "成功學習某件事不只需要記憶，______ 需要理解事實。",
+    options: ["but also", "follow by", "as long as", "along with"],
+    answer: 0,
+    logic: "前面有 not only，固定搭配是 not only A but also B（不但 A，而且 B）。",
+    keyPoint: "not only A but also B（固定搭配）",
+    optionNotes: [
+      "but also：not only ... but also ...（✅ 正確）",
+      "follow by：應為 followed by，「接著是……」",
+      "as long as：只要……（連接詞，語意不符）",
+      "along with：連同；和……一起"
+    ],
+    vocab: [["memorization", "記憶"], ["comprehension", "理解"], ["not only A but also B", "不但A，而且B"]]
+  },
+  {
+    num: 114,
+    type: "詞性",
+    star: true,
+    sentence: "Marketing people need to know how advertising and packaging ______ people's shopping decisions.",
+    translation: "行銷人員需要知道廣告和包裝如何 ______ 人們的購物決策。",
+    options: ["influenced", "influencing", "influence", "influential"],
+    answer: 2,
+    logic: "how 子句中，主詞是 advertising and packaging（複數），需要動詞原形（現在式）→ influence。",
+    keyPoint: "名詞子句中：主詞 + 動詞原形（複數主詞不加 s）",
+    optionNotes: [
+      "influenced：過去式 / 過去分詞（時態不對）",
+      "influencing：現在分詞（需要 be 動詞）",
+      "influence：動詞原形（✅ 正確）",
+      "influential：形容詞（詞性不對）"
+    ],
+    vocab: [["advertising", "廣告"], ["packaging", "包裝"], ["shopping decisions", "購物決策"], ["influence", "（動詞）影響"]]
+  },
+  {
+    num: 115,
+    type: "詞性",
+    star: true,
+    sentence: "Team work always helps in increasing workplace ______.",
+    translation: "團隊合作總是有助於提高職場 ______。",
+    options: ["productivity", "products", "producing", "produces"],
+    answer: 0,
+    logic: "空格前面是 workplace（名詞），空格也需要名詞，形成 workplace productivity（職場生產力）。",
+    keyPoint: "workplace productivity（職場生產力）是常見 TOEIC 詞組",
+    optionNotes: [
+      "productivity：生產力（名詞，✅ 正確）",
+      "products：產品（語意不符）",
+      "producing：動名詞 / 現在分詞（語意不符）",
+      "produces：動詞第三人稱（詞性不對）"
+    ],
+    vocab: [["teamwork", "團隊合作"], ["productivity", "生產力"], ["workplace", "職場"]]
+  },
+  {
+    num: 116,
+    type: "連接詞",
+    star: false,
+    sentence: "Soda ______ coffee are the beverages most commonly preferred by people in the US.",
+    translation: "汽水 ______ 咖啡是美國人最普遍偏好的飲料。",
+    options: ["or", "and", "both", "too"],
+    answer: 1,
+    logic: "Soda 和 coffee 並列為主詞，用 and 連接。如果要用 both，完整句型是 Both A and B，但空格只有一個位置在兩者之間，所以選 and。",
+    keyPoint: "A and B（並列）vs Both A and B（兩者都）",
+    optionNotes: [
+      "or：或（表示選擇，語意不符）",
+      "and：和（✅ 正確）",
+      "both：需要 both A and B 完整句型",
+      "too：也（通常放句尾）"
+    ],
+    vocab: [["soda", "汽水"], ["beverage", "飲料"], ["commonly", "普遍地"], ["prefer", "偏好"]]
+  },
+  {
+    num: 117,
+    type: "詞彙語意",
+    star: false,
+    sentence: "Employees are ______ when they can get additional learning opportunities sponsored by the employer.",
+    translation: "當員工能獲得由雇主贊助的額外學習機會時，他們會感到 ______。",
+    options: ["depressed", "deprived", "delighted", "despondent"],
+    answer: 2,
+    logic: "得到額外學習機會 → 正面情緒 → delighted（高興的）。其餘三個都是負面情緒。",
+    keyPoint: "情緒形容詞語意判斷：正面 = delighted / 負面 = depressed, deprived, despondent",
+    optionNotes: [
+      "depressed：沮喪的",
+      "deprived：被剝奪的（be deprived of）",
+      "delighted：高興的、開心的（✅ 正確）",
+      "despondent：灰心的、沮喪的（書面用語）"
+    ],
+    vocab: [["delighted", "高興的"], ["depressed", "沮喪的"], ["deprived", "被剝奪的"], ["sponsor", "贊助"]]
+  },
+  {
+    num: 118,
+    type: "被動語態",
+    star: true,
+    sentence: "My boss always reminds us that time is something that should be ______ and spent productively.",
+    translation: "老闆總是提醒我們，時間是應該被 ______ 並且有效運用的東西。",
+    options: ["treasured", "treasure", "treasurer", "treasuring"],
+    answer: 0,
+    logic: "句型是 should be + ______，後面應接過去分詞（p.p.）形成被動語態。treasure 的 p.p. 是 treasured。",
+    keyPoint: "should be + p.p. = 被動語態",
+    optionNotes: [
+      "treasured：過去分詞（✅ 正確）",
+      "treasure：動詞原形 / 名詞",
+      "treasurer：財務主管（名詞，詞性不對）",
+      "treasuring：V-ing（不能接在 should be 後面作被動）"
+    ],
+    vocab: [["treasure", "（動詞）珍惜"], ["treasured", "被珍惜的"], ["treasurer", "財務主管"], ["productively", "有效率地"]]
+  },
+  {
+    num: 119,
+    type: "詞彙語意",
+    star: false,
+    sentence: "This museum ______ extensions of international art from all over the world.",
+    translation: "這座博物館 ______ 來自世界各地的國際藝術展品。",
+    options: ["accommodates", "evaluates", "simplifies", "accomplishes"],
+    answer: 0,
+    logic: "主詞是博物館，受詞是藝術展品。博物館「容納、展示」展品 → accommodate。",
+    keyPoint: "accommodate = 容納；提供空間",
+    optionNotes: [
+      "accommodates：容納；提供空間（✅ 正確）",
+      "evaluates：評估（語意不符）",
+      "simplifies：簡化（語意不符）",
+      "accomplishes：完成、達成（語意不符）"
+    ],
+    vocab: [["accommodate", "容納"], ["evaluate", "評估"], ["simplify", "簡化"], ["accomplish", "完成"]]
+  },
+  {
+    num: 120,
+    type: "固定片語",
+    star: true,
+    sentence: "In general, people just read the newspaper to keep ______ on current events.",
+    translation: "一般來說，人們讀報只是為了保持對時事 ______。",
+    options: ["state-of-the-art", "outdated", "old-fashioned", "up-to-date"],
+    answer: 3,
+    logic: "固定片語：keep up-to-date on current events = 掌握時事、跟上最新消息。",
+    keyPoint: "keep up-to-date on current events（固定片語）",
+    optionNotes: [
+      "state-of-the-art：最先進的（常形容設備）",
+      "outdated：過時的（語意相反）",
+      "old-fashioned：老派的（語意不符）",
+      "up-to-date：最新的；跟上消息的（✅ 正確）"
+    ],
+    vocab: [["up-to-date", "最新的"], ["state-of-the-art", "最先進的"], ["outdated", "過時的"], ["current events", "時事"]]
+  }
+];
+const SLIDES=GRAMMAR.concat(QUESTIONS.map(function(q){return{type:'question',num:String(q.num),qtype:q.type,star:q.star,sentence:q.sentence,zh:q.translation,options:q.options,answer:q.answer,logic:q.logic,keyPoint:q.keyPoint}}));
+const TOTAL=SLIDES.length;let current=0,revealed=false,zhVisible=false,askIndex=0,askAnswer=false;
+function show(id,on){document.getElementById(id).classList.toggle('hidden',!on)}
+function toggleZh(){zhVisible=!zhVisible;document.querySelectorAll('.zh-target').forEach(function(e){e.classList.toggle('zh-hidden',!zhVisible)});const b=document.getElementById('zh-btn');b.textContent=zhVisible?'中文 ON':'中文 OFF';b.classList.toggle('on',zhVisible)}
+function render(){const s=SLIDES[current];revealed=false;askIndex=0;askAnswer=false;document.getElementById('progress-text').textContent=(current+1)+' / '+TOTAL;document.getElementById('progress-bar').style.width=Math.round((current+1)/TOTAL*100)+'%';document.getElementById('prev-btn').disabled=current===0;document.getElementById('next-btn').disabled=current===TOTAL-1;document.getElementById('slide-type').textContent=s.type==='grammar'?'文法教學':'PART 5 練習題';show('ask-btn',s.type==='grammar'&&s.ask&&s.ask.length);show('reveal-btn',s.type==='question');const el=document.getElementById('slide-content');if(s.type==='grammar'){el.innerHTML='<div class="gram-label">Lesson 01 · Part 5 基礎系統</div><div class="gram-title">'+s.title+'</div><div class="gram-sub">'+s.subtitle+'</div>'+s.content+(s.ask&&s.ask.length?'<div id="ask-panel" class="hidden"><div class="ask-progress" id="ask-progress"></div><div class="ask-q" id="ask-q"></div><div class="ask-a" id="ask-a"></div></div>':'');document.getElementById('ask-btn').textContent='❓ 問學生'}else{const opts=s.options.map(function(o,i){return '<div class="q-opt" id="opt-'+i+'"><span class="q-opt-label">'+String.fromCharCode(65+i)+'</span>'+o+'</div>'}).join('');el.innerHTML='<div class="q-header"><span class="q-num">'+s.num+'</span><span class="q-type">'+s.qtype+'</span>'+(s.star?'<span class="q-star">⭐ 重點題</span>':'')+'</div><div class="q-sentence">'+s.sentence.replace(/_{2,}/g,'<span class="blank">______</span>')+'</div><div class="q-zh zh-target '+(zhVisible?'':'zh-hidden')+'">'+s.zh+'</div><div class="q-opts">'+opts+'</div><div class="answer-box" id="answer-box"><strong>答案 '+String.fromCharCode(65+s.answer)+'：'+s.options[s.answer]+'</strong><span class="answer-detail">'+s.logic+'<br><b>重點：</b>'+s.keyPoint+'</span></div>'}document.getElementById('reveal-btn').textContent='揭曉答案 ▼'}
+function reveal(){const s=SLIDES[current];revealed=!revealed;s.options.forEach(function(_,i){const e=document.getElementById('opt-'+i);e.classList.toggle('correct',revealed&&i===s.answer);e.classList.toggle('dim',revealed&&i!==s.answer)});document.getElementById('answer-box').classList.toggle('show',revealed);document.getElementById('reveal-btn').textContent=revealed?'隱藏答案 ▲':'揭曉答案 ▼'}
+function askAction(){const s=SLIDES[current],panel=document.getElementById('ask-panel'),btn=document.getElementById('ask-btn');if(!panel||!s.ask.length)return;panel.classList.remove('hidden');if(askIndex>=s.ask.length){panel.classList.add('hidden');askIndex=0;askAnswer=false;btn.textContent='❓ 問學生';return}const pair=s.ask[askIndex],a=document.getElementById('ask-a');document.getElementById('ask-progress').textContent='問題 '+(askIndex+1)+' / '+s.ask.length;document.getElementById('ask-q').textContent=pair[0];a.textContent=pair[1];if(!askAnswer){a.classList.remove('show');askAnswer=true;btn.textContent='顯示回答'}else{a.classList.add('show');askAnswer=false;askIndex++;btn.textContent=askIndex<s.ask.length?'下一個問題 →':'收起問題'}}
+function navigate(dir){current=Math.max(0,Math.min(TOTAL-1,current+dir));render();document.getElementById('slide-area').scrollTop=0}
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowDown'){e.preventDefault();navigate(1)}else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();navigate(-1)}else if(e.key===' '||e.key==='Enter'){e.preventDefault();if(SLIDES[current].type==='question')reveal();else if(SLIDES[current].ask&&SLIDES[current].ask.length)askAction()}});render();
+</script></body></html>
